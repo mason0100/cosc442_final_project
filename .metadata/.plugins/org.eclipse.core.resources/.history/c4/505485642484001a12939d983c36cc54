@@ -1,0 +1,10 @@
+package net.sf.freecol;
+
+@RunWith(Suite.class)
+@Suite.SuiteClasses(
+
+{FreeColTest.class}
+)
+public class TestSuite{ // nothing
+}
+

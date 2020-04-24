@@ -1,6 +1,7 @@
 package net.sf.freecol;
 
 import java.io.File;
+import java.io.InputStream;
 import java.net.JarURLConnection;
 import java.util.Locale;
 
@@ -10,10 +11,13 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.tools.configuration.base.MethodRef;
 
+import org.powermock.reflect.Whitebox;
+
 import net.sf.freecol.common.io.FreeColTcFile;
 import net.sf.freecol.common.model.NationOptions.Advantages;
 import net.sf.freecol.common.model.Specification;
 import net.sf.freecol.common.model.StringTemplate;
+import net.sf.freecol.common.option.Option;
 import net.sf.freecol.common.option.OptionGroup;
 
 @Generated(value = "org.junit-tools-1.1.0")
@@ -66,7 +70,7 @@ public class FreeColTest {
 	@MethodRef(name = "fatal", signature = "(QStringTemplate;)V")
 	@Test
 	public void fatalTest() throws Exception {
-		StringTemplate template = "";
+		String template = "";
 
 		// default test
 		FreeCol.fatal(template);
@@ -89,7 +93,7 @@ public class FreeColTest {
 	@MethodRef(name = "gripe", signature = "(QStringTemplate;)V")
 	@Test
 	public void gripeTest() throws Exception {
-		StringTemplate template = "";
+		String template = "";
 
 		// default test
 		FreeCol.gripe(template);
@@ -127,11 +131,11 @@ public class FreeColTest {
 	@MethodRef(name = "printUsage", signature = "(QOptions;I)V")
 	@Test
 	public void printUsageTest() throws Exception {
-		Options options = null;
+		Option options = null;
 		int status = 0;
 
 		// default test
-		Whitebox.invokeMethod(FreeCol.class, "printUsage", new Object[] { Options.class, status });
+		Whitebox.invokeMethod(FreeCol.class, "printUsage", new Object[] { Option.class, status });
 	}
 
 	@MethodRef(name = "loadSpecification", signature = "(QFreeColTcFile;QAdvantages;QString;)QSpecification;")
