@@ -1,23 +1,22 @@
 package net.sf.freecol;
 
 import java.io.File;
-import java.io.InputStream;
 import java.net.JarURLConnection;
 import java.util.Locale;
 
 import javax.annotation.Generated;
 
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.tools.configuration.base.MethodRef;
-
 import org.powermock.reflect.Whitebox;
 
 import net.sf.freecol.common.io.FreeColTcFile;
 import net.sf.freecol.common.model.NationOptions.Advantages;
 import net.sf.freecol.common.model.Specification;
 import net.sf.freecol.common.model.StringTemplate;
-import net.sf.freecol.common.option.Option;
 import net.sf.freecol.common.option.OptionGroup;
 
 @Generated(value = "org.junit-tools-1.1.0")
@@ -27,6 +26,51 @@ public class FreeColTest {
 		return new FreeCol();
 	}
 
+	@MethodRef(name = "badLoad", signature = "(QFile;)QStringTemplate;")
+	@Test
+	public void badLoadTest() throws Exception {
+		File file = "null";
+		StringTemplate result;
+
+		// default test
+		result = FreeCol.badLoad(file);
+	}
+
+	@Before
+	public void setUp() throws Exception {
+
+	}
+
+	@Before
+	public void setUp_1() throws Exception {
+
+	}
+
+	@After
+	public void tearDown() throws Exception {
+
+	}
+
+	@Before
+	public void setUp_2() throws Exception {
+
+	}
+
+	@After
+	public void tearDown_1() throws Exception {
+
+	}
+
+	@Before
+	public void setUp_3() throws Exception {
+
+	}
+
+	@After
+	public void tearDown_2() throws Exception {
+
+	}
+
 	@MethodRef(name = "main", signature = "([QString;)V")
 	@Test
 	public void mainTest() throws Exception {
@@ -34,6 +78,8 @@ public class FreeColTest {
 
 		// default test
 		FreeCol.main(args);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getJarURLConnection", signature = "(QClass;)QJarURLConnection;")
@@ -44,6 +90,8 @@ public class FreeColTest {
 
 		// default test
 		result = Whitebox.invokeMethod(FreeCol.class, "getJarURLConnection", new Object[] { Class.class });
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "readVersion", signature = "(QJarURLConnection;)QString;")
@@ -54,6 +102,8 @@ public class FreeColTest {
 
 		// default test
 		result = Whitebox.invokeMethod(FreeCol.class, "readVersion", new Object[] { JarURLConnection.class });
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getDefaultSplashStream", signature = "(QJarURLConnection;)QInputStream;")
@@ -65,15 +115,19 @@ public class FreeColTest {
 		// default test
 		result = Whitebox.invokeMethod(FreeCol.class, "getDefaultSplashStream",
 				new Object[] { JarURLConnection.class });
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "fatal", signature = "(QStringTemplate;)V")
 	@Test
 	public void fatalTest() throws Exception {
-		String template = "";
+		StringTemplate template = "";
 
 		// default test
 		FreeCol.fatal(template);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "fatal", signature = "(QString;)V")
@@ -88,15 +142,19 @@ public class FreeColTest {
 		// test 2
 		err = "";
 		FreeCol.fatal(err);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "gripe", signature = "(QStringTemplate;)V")
 	@Test
 	public void gripeTest() throws Exception {
-		String template = "";
+		StringTemplate template = "";
 
 		// default test
 		FreeCol.gripe(template);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "gripe", signature = "(QString;)V")
@@ -106,6 +164,8 @@ public class FreeColTest {
 
 		// default test
 		FreeCol.gripe(key);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "findArg", signature = "(QString;[QString;)QString;")
@@ -117,6 +177,8 @@ public class FreeColTest {
 
 		// default test
 		result = Whitebox.invokeMethod(FreeCol.class, "findArg", new Object[] { option, args });
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "handleArgs", signature = "([QString;)V")
@@ -126,16 +188,20 @@ public class FreeColTest {
 
 		// default test
 		Whitebox.invokeMethod(FreeCol.class, "handleArgs", new Object[] { args });
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "printUsage", signature = "(QOptions;I)V")
 	@Test
 	public void printUsageTest() throws Exception {
-		Option options = null;
+		Options options = null;
 		int status = 0;
 
 		// default test
-		Whitebox.invokeMethod(FreeCol.class, "printUsage", new Object[] { Option.class, status });
+		Whitebox.invokeMethod(FreeCol.class, "printUsage", new Object[] { Options.class, status });
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "loadSpecification", signature = "(QFreeColTcFile;QAdvantages;QString;)QSpecification;")
@@ -148,6 +214,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.loadSpecification(tcf, advantages, difficulty);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getTCSpecification", signature = "()QSpecification;")
@@ -157,6 +225,8 @@ public class FreeColTest {
 
 		// default test
 		result = Whitebox.invokeMethod(FreeCol.class, "getTCSpecification");
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getAdvantages", signature = "()QAdvantages;")
@@ -166,6 +236,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.getAdvantages();
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "selectAdvantages", signature = "(QString;)QAdvantages;")
@@ -176,6 +248,8 @@ public class FreeColTest {
 
 		// default test
 		result = Whitebox.invokeMethod(FreeCol.class, "selectAdvantages", new Object[] { advantages });
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "setAdvantages", signature = "(QAdvantages;)V")
@@ -185,6 +259,8 @@ public class FreeColTest {
 
 		// default test
 		FreeCol.setAdvantages(advantages);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getValidAdvantages", signature = "()QString;")
@@ -194,6 +270,8 @@ public class FreeColTest {
 
 		// default test
 		result = Whitebox.invokeMethod(FreeCol.class, "getValidAdvantages");
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getDifficulty", signature = "()QString;")
@@ -203,6 +281,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.getDifficulty();
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "selectDifficulty", signature = "(QString;)QString;")
@@ -213,6 +293,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.selectDifficulty(arg);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "setDifficulty", signature = "(QOptionGroup;)V")
@@ -222,6 +304,8 @@ public class FreeColTest {
 
 		// default test
 		FreeCol.setDifficulty(difficulty);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "setDifficulty", signature = "(QString;)V")
@@ -231,6 +315,8 @@ public class FreeColTest {
 
 		// default test
 		FreeCol.setDifficulty(difficulty);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getValidDifficulties", signature = "()QString;")
@@ -240,6 +326,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.getValidDifficulties();
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getEuropeanCount", signature = "()I")
@@ -249,6 +337,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.getEuropeanCount();
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "setEuropeanCount", signature = "(I)V")
@@ -258,6 +348,8 @@ public class FreeColTest {
 
 		// default test
 		FreeCol.setEuropeanCount(n);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "setGUIScale", signature = "(QString;)Z")
@@ -275,6 +367,8 @@ public class FreeColTest {
 		arg = "";
 		result = FreeCol.setGUIScale(arg);
 		Assert.assertEquals(false, result);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getValidGUIScales", signature = "()QString;")
@@ -284,6 +378,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.getValidGUIScales();
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "selectEuropeanCount", signature = "(QString;)I")
@@ -294,6 +390,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.selectEuropeanCount(arg);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "setLogLevel", signature = "(QString;)V")
@@ -303,6 +401,8 @@ public class FreeColTest {
 
 		// default test
 		Whitebox.invokeMethod(FreeCol.class, "setLogLevel", new Object[] { arg });
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getName", signature = "()QString;")
@@ -312,6 +412,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.getName();
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "setName", signature = "(QString;)V")
@@ -321,6 +423,8 @@ public class FreeColTest {
 
 		// default test
 		FreeCol.setName(name);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getLocale", signature = "()QLocale;")
@@ -330,6 +434,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.getLocale();
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getRevision", signature = "()QString;")
@@ -339,6 +445,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.getRevision();
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getServerHost", signature = "()QString;")
@@ -348,6 +456,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.getServerHost();
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getServerPort", signature = "()I")
@@ -357,6 +467,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.getServerPort();
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "setServerPort", signature = "(QString;)Z")
@@ -374,6 +486,8 @@ public class FreeColTest {
 		arg = "";
 		result = FreeCol.setServerPort(arg);
 		Assert.assertEquals(false, result);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getTC", signature = "()QString;")
@@ -383,6 +497,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.getTC();
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "setTC", signature = "(QString;)V")
@@ -392,6 +508,8 @@ public class FreeColTest {
 
 		// default test
 		FreeCol.setTC(tc);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getTCFile", signature = "()QFreeColTcFile;")
@@ -401,6 +519,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.getTCFile();
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getTimeout", signature = "(Z)I")
@@ -411,6 +531,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.getTimeout(singlePlayer);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "setTimeout", signature = "(QString;)Z")
@@ -421,6 +543,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.setTimeout(timeout);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getVersion", signature = "()QString;")
@@ -430,6 +554,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.getVersion();
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "setWindowSize", signature = "(QString;)V")
@@ -444,16 +570,8 @@ public class FreeColTest {
 		// test 2
 		arg = "";
 		Whitebox.invokeMethod(FreeCol.class, "setWindowSize", new Object[] { arg });
-	}
 
-	@MethodRef(name = "badLoad", signature = "(QFile;)QStringTemplate;")
-	@Test
-	public void badLoadTest() throws Exception {
-		File file = null;
-		StringTemplate result;
-
-		// default test
-		result = FreeCol.badLoad(file);
+		Assert.fail();
 	}
 
 	@MethodRef(name = "badSave", signature = "(QFile;)QStringTemplate;")
@@ -464,6 +582,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.badSave(file);
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "getConfiguration", signature = "()QStringBuilder;")
@@ -473,6 +593,8 @@ public class FreeColTest {
 
 		// default test
 		result = FreeCol.getConfiguration();
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "startClient", signature = "(QString;)V")
@@ -482,6 +604,8 @@ public class FreeColTest {
 
 		// default test
 		Whitebox.invokeMethod(FreeCol.class, "startClient", new Object[] { userMsg });
+
+		Assert.fail();
 	}
 
 	@MethodRef(name = "startServer", signature = "()V")
@@ -490,5 +614,7 @@ public class FreeColTest {
 
 		// default test
 		Whitebox.invokeMethod(FreeCol.class, "startServer");
+
+		Assert.fail();
 	}
 }

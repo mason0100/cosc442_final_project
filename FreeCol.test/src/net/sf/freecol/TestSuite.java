@@ -6,6 +6,6 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses(
 
-{ FreeColTest.class })
+{ FreeColTest.class, net.sf.freecol.client.TestSuite.class })
 public class TestSuite { // nothing
 }

@@ -1,0 +1,46 @@
+package net.sf.freecol.client.gui;
+
+import java.awt.Dimension;
+import java.awt.Graphics2D;
+
+import javax.annotation.Generated;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.tools.configuration.base.MethodRef;
+
+import net.sf.freecol.common.model.Tile;
+
+@Generated(value = "org.junit-tools-1.1.0")
+public class RoadPainterTest {
+
+	@Before
+	public void setUp() throws Exception {
+
+	}
+
+	@After
+	public void tearDown() throws Exception {
+
+	}
+
+	private RoadPainter createTestSubject() {
+		return new RoadPainter(new Dimension());
+	}
+
+	@MethodRef(name = "displayRoad", signature = "(QGraphics2D;QTile;)V")
+	@Test
+	public void displayRoadTest() throws Exception {
+		RoadPainter testSubject;
+		Graphics2D g = null;
+		Tile tile = null;
+
+		// default test
+		testSubject = createTestSubject();
+		testSubject.displayRoad(g, tile);
+
+		Assert.fail();
+	}
+}
