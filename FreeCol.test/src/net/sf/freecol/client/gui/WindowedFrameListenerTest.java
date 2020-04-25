@@ -1,4 +1,4 @@
-package net.sf.freecol.client.gui;
+gitpackage net.sf.freecol.client.gui;
 
 import java.awt.event.WindowEvent;
 
