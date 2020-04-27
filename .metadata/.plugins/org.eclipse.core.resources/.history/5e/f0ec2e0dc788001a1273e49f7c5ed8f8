@@ -1,0 +1,10 @@
+package net.sf.freecol.server;
+
+@RunWith(Suite.class)
+@Suite.SuiteClasses(
+
+{FreeColServerTest.class}
+)
+public class TestSuite{ // nothing
+}
+

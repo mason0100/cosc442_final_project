@@ -1,0 +1,63 @@
+
+
+import java.util.*;
+import org.junit.Assert;
+import org.junit.Test;
+
+@Generated(value="org.junit-tools-1.1.0")
+public class TilePopupTest{
+
+	@Before
+	public void setUp() throws Exception {
+	
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	
+	}
+
+	private TilePopup createTestSubject()  {
+	 return new TilePopup(new FreeColClient(new InputStream(), ""), new Canvas(new FreeColClient(new InputStream(), ""), new GraphicsDevice(), new SwingGUI(new FreeColClient(new InputStream(), ""), 0), new Dimension(), new MapViewer(new FreeColClient(new InputStream(), ""))), new Tile(new Game(new Specification()), new TileType("", new Specification()), 0, 0));
+	}
+
+	@MethodRef(name="addDebugItems", signature="(QFreeColClient;QTile;)V")
+	@Test
+	public void addDebugItemsTest() throws Exception {
+	TilePopup testSubject;FreeColClient freeColClient = null;
+	Tile tile = null;
+	
+	
+	// default test
+	testSubject=createTestSubject();testSubject.addDebugItems(freeColClient, tile);
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="addUnit", signature="(QContainer;QUnit;ZZ)I")
+	@Test
+	public void addUnitTest() throws Exception {
+	TilePopup testSubject;Container menu = null;
+	Unit unit = null;
+	boolean enabled = false;
+	boolean indent = false;
+	int result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"addUnit", new Object[]{Container.class, Unit.class, enabled, indent});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="addColony", signature="(QColony;)V")
+	@Test
+	public void addColonyTest() throws Exception {
+	TilePopup testSubject;Colony colony = null;
+	
+	
+	// default test
+	testSubject=createTestSubject();Whitebox.invokeMethod(testSubject,"addColony", new Object[]{Colony.class});
+	
+	Assert.fail();
+	} 
+}

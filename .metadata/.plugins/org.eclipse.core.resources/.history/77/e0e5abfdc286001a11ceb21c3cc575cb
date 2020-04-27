@@ -1,0 +1,104 @@
+package net.sf.freecol;
+
+import java.io.File;
+import java.util.logging.Logger;
+
+import javax.annotation.Generated;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.tools.configuration.base.MethodRef;
+
+import net.sf.freecol.common.model.StringTemplate;
+import java.util.*;
+import org.junit.Assert;
+
+@Generated(value = "org.junit-tools-1.1.0")
+public class FreeColTest {
+
+	private FreeCol createTestSubject() {
+		return new FreeCol();
+	}
+
+	@MethodRef(name = "badLoad", signature = "(QFile;)QStringTemplate;")
+	@Test
+	public void badLoadTest() throws Exception {
+		File file = "null";
+		StringTemplate result;
+
+		// default test
+		result = FreeCol.badLoad(file);
+	}
+
+	@Before
+	public void setUp() throws Exception {
+
+	}
+
+	@Before
+	public void setUp_1() throws Exception {
+
+	}
+
+	@After
+	public void tearDown() throws Exception {
+
+	}
+
+	@Before
+	public void setUp_2() throws Exception {
+
+	}
+
+	@After
+	public void tearDown_1() throws Exception {
+
+	}
+
+	@Before
+	public void setUp_3() throws Exception {
+	
+	}
+
+	@After
+	public void tearDown_2() throws Exception {
+	
+	}
+
+	@MethodRef(name="main", signature="([QString;)V")
+	@Test
+	public void mainTest() throws Exception {
+	String[] args = new String[]{""};
+	
+	
+	// default test
+	FreeCol.main(args);
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="getJarURLConnection", signature="(QClass;)QJarURLConnection;")
+	@Test
+	public void getJarURLConnectionTest() throws Exception {
+	Class c = null;
+	JarURLConnection result;
+	
+	// default test
+	result=Whitebox.invokeMethod(FreeCol.class,"getJarURLConnection", new Object[]{Class.class});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="readVersion", signature="(QJarURLConnection;)QString;")
+	@Test
+	public void readVersionTest() throws Exception {
+	JarURLConnection juc = null;
+	String result;
+	
+	// default test
+	result=Whitebox.invokeMethod(FreeCol.class,"readVersion", new Object[]{JarURLConnection.class});
+	
+	Assert.fail();
+	}
+}

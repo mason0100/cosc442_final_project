@@ -1,0 +1,10 @@
+package net.sf.freecol.client.control;
+
+@RunWith(Suite.class)
+@Suite.SuiteClasses(
+
+{ConnectControllerTest.class}
+)
+public class TestSuite{ // nothing
+}
+

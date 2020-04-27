@@ -1,0 +1,35 @@
+
+
+import java.util.*;
+import org.junit.Assert;
+import org.junit.Test;
+
+@Generated(value="org.junit-tools-1.1.0")
+public class CanvasMouseMotionListenerTest{
+
+	@Before
+	public void setUp() throws Exception {
+	
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	
+	}
+
+	private CanvasMouseMotionListener createTestSubject()  {
+	 return new CanvasMouseMotionListener(new FreeColClient(new InputStream(), ""), new Canvas(new FreeColClient(new InputStream(), ""), new GraphicsDevice(), new SwingGUI(new FreeColClient(new InputStream(), ""), 0), new Dimension(), new MapViewer(new FreeColClient(new InputStream(), ""))));
+	}
+
+	@MethodRef(name="mouseMoved", signature="(QMouseEvent;)V")
+	@Test
+	public void mouseMovedTest() throws Exception {
+	CanvasMouseMotionListener testSubject;MouseEvent e = null;
+	
+	
+	// default test
+	testSubject=createTestSubject();testSubject.mouseMoved(e);
+	
+	Assert.fail();
+	} 
+}

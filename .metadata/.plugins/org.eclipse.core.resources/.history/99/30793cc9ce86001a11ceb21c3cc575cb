@@ -1,0 +1,12 @@
+package net.sf.freecol.client.gui;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+
+@RunWith(Suite.class)
+@Suite.SuiteClasses(
+
+{FrameMotionListenerTest.class, DialogHandlerTest.class, ChatDisplayTest.class, ChoiceItemTest.class, CanvasTest.class, GUIMessageTest.class, RoadPainterTest.class, CanvasMapEditorMouseListenerTest.class, ImageLibraryTest.class, FontLibraryTest.class, LoadingSavegameInfoTest.class, SwingGUITest.class, CanvasMouseListenerTest.class, GrayLayerTest.class, ScrollThreadTest.class, FreeColFrameTest.class, GUITest.class, AbstractCanvasListenerTest.class, FullScreenFrameListenerTest.class, OutForAnimationCallbackTest.class, MapViewerTest.class, CanvasMouseMotionListenerTest.class}
+)
+public class TestSuite{ // nothing
+}

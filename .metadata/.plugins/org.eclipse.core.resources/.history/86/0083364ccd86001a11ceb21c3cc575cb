@@ -1,0 +1,66 @@
+
+
+import java.util.*;
+import org.junit.Assert;
+import org.junit.Test;
+
+@Generated(value="org.junit-tools-1.1.0")
+public class CanvasMapEditorMouseListenerTest{
+
+	@Before
+	public void setUp() throws Exception {
+	
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	
+	}
+
+	private CanvasMapEditorMouseListener createTestSubject()  {
+	 return new CanvasMapEditorMouseListener(new FreeColClient(new InputStream(), ""), new Canvas(new FreeColClient(new InputStream(), ""), new GraphicsDevice(), new SwingGUI(new FreeColClient(new InputStream(), ""), 0), new Dimension(), new MapViewer(new FreeColClient(new InputStream(), ""))));
+	}
+
+	@MethodRef(name="getGUI", signature="()QGUI;")
+	@Test
+	public void getGUITest() throws Exception {
+	CanvasMapEditorMouseListener testSubject;GUI result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"getGUI");
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="getMap", signature="()QMap;")
+	@Test
+	public void getMapTest() throws Exception {
+	CanvasMapEditorMouseListener testSubject;Map result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"getMap");
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="drawBox", signature="(QJComponent;QPoint;QPoint;)V")
+	@Test
+	public void drawBoxTest() throws Exception {
+	CanvasMapEditorMouseListener testSubject;JComponent component = null;
+	Point startPoint = null;
+	Point endPoint = null;
+	
+	
+	// test 1
+	testSubject=createTestSubject();startPoint = null;
+	endPoint = null;
+	Whitebox.invokeMethod(testSubject,"drawBox", new Object[]{JComponent.class, Point.class, Point.class});
+	
+	// test 2
+	testSubject=createTestSubject();endPoint = null;
+	startPoint = null;
+	Whitebox.invokeMethod(testSubject,"drawBox", new Object[]{JComponent.class, Point.class, Point.class});
+	
+	Assert.fail();
+	} 
+}

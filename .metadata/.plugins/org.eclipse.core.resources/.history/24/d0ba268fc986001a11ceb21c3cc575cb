@@ -1,0 +1,196 @@
+
+
+import java.util.*;
+import org.junit.Assert;
+import org.junit.Test;
+
+@Generated(value="org.junit-tools-1.1.0")
+public class InGameInputHandlerTest{
+
+	@Before
+	public void setUp() throws Exception {
+	
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	
+	}
+
+	private InGameInputHandler createTestSubject()  {
+	 return new InGameInputHandler(new FreeColClient(new InputStream(), ""));
+	}
+
+	@MethodRef(name="igc", signature="()QInGameController;")
+	@Test
+	public void igcTest() throws Exception {
+	InGameInputHandler testSubject;InGameController result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"igc");
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="invokeAndWait", signature="(QRunnable;)V")
+	@Test
+	public void invokeAndWaitTest() throws Exception {
+	InGameInputHandler testSubject;Runnable runnable = null;
+	
+	
+	// default test
+	testSubject=createTestSubject();Whitebox.invokeMethod(testSubject,"invokeAndWait", new Object[]{Runnable.class});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="invokeLater", signature="(QRunnable;)V")
+	@Test
+	public void invokeLaterTest() throws Exception {
+	InGameInputHandler testSubject;Runnable runnable = null;
+	
+	
+	// default test
+	testSubject=createTestSubject();Whitebox.invokeMethod(testSubject,"invokeLater", new Object[]{Runnable.class});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="getIntegerAttribute", signature="(QElement;QString;)I")
+	@Test
+	public void getIntegerAttributeTest() throws Exception {
+	Element element = null;
+	String attrib = "";
+	int result;
+	
+	// default test
+	result=Whitebox.invokeMethod(InGameInputHandler.class,"getIntegerAttribute", new Object[]{Element.class, attrib});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="selectElement", signature="(QElement;QString;)QElement;")
+	@Test
+	public void selectElementTest() throws Exception {
+	Element parent = null;
+	String key = "";
+	Element result;
+	
+	// default test
+	result=Whitebox.invokeMethod(InGameInputHandler.class,"selectElement", new Object[]{Element.class, key});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="selectUnitFromElement", signature="(QGame;QElement;QString;)QUnit;")
+	@Test
+	public void selectUnitFromElementTest() throws Exception {
+	Game game = null;
+	Element element = null;
+	String id = "";
+	Unit result;
+	
+	// default test
+	result=Whitebox.invokeMethod(InGameInputHandler.class,"selectUnitFromElement", new Object[]{Game.class, Element.class, id});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="handle", signature="(QConnection;QElement;)QElement;")
+	@Test
+	public void handleTest() throws Exception {
+	InGameInputHandler testSubject;Connection connection = null;
+	Element element = null;
+	Element result;
+	
+	// test 1
+	testSubject=createTestSubject();element = null;
+	result=testSubject.handle(connection, element);
+	Assert.assertEquals(null, result);
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="addObject", signature="(QElement;)QElement;")
+	@Test
+	public void addObjectTest() throws Exception {
+	InGameInputHandler testSubject;Element element = null;
+	Element result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"addObject", new Object[]{Element.class});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="addPlayer", signature="(QElement;)QElement;")
+	@Test
+	public void addPlayerTest() throws Exception {
+	InGameInputHandler testSubject;Element element = null;
+	Element result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"addPlayer", new Object[]{Element.class});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="animateAttack", signature="(QElement;)QElement;")
+	@Test
+	public void animateAttackTest() throws Exception {
+	InGameInputHandler testSubject;Element element = null;
+	Element result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"animateAttack", new Object[]{Element.class});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="animateMove", signature="(QElement;)QElement;")
+	@Test
+	public void animateMoveTest() throws Exception {
+	InGameInputHandler testSubject;Element element = null;
+	Element result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"animateMove", new Object[]{Element.class});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="chat", signature="(QElement;)QElement;")
+	@Test
+	public void chatTest() throws Exception {
+	InGameInputHandler testSubject;Element element = null;
+	Element result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"chat", new Object[]{Element.class});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="chooseFoundingFather", signature="(QElement;)QElement;")
+	@Test
+	public void chooseFoundingFatherTest() throws Exception {
+	InGameInputHandler testSubject;Element element = null;
+	Element result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"chooseFoundingFather", new Object[]{Element.class});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="closeMenus", signature="()QElement;")
+	@Test
+	public void closeMenusTest() throws Exception {
+	InGameInputHandler testSubject;Element result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"closeMenus");
+	
+	Assert.fail();
+	} 
+}
