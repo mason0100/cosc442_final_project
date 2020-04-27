@@ -1,7 +1,0 @@
-
-
-import java.util.*;
-
-@Generated(value="org.junit-tools-1.1.0")
-public class FreeColServerTest{ 
-}
