@@ -1,4 +1,4 @@
-package net.sf.freecol;
+package net.sf.freecol.common;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -6,6 +6,6 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses(
 
-{ FreeColTest.class, net.sf.freecol.server.TestSuite.class })
+{ FreeColSeedTest.class, ServerInfoTest.class, ObjectWithIdTest.class })
 public class TestSuite { // nothing
 }
