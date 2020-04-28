@@ -38,17 +38,14 @@ public class FreeColTest {
 	@Test
 	public void badLoadTest() throws Exception {
 		//tests a random string as the name of a file that does not exist
-		//This method uses StringTemplate
-		//If StringTemplate does not work correctly this test will most likely
-		//work incorrectly. 
 		String fileName = "does not exist";
 		File file = new File(fileName);
 		StringTemplate result;
 		result = FreeCol.badLoad(file);
+		
+		
 		String actualResult = result.toString();
-		
 		String expectedResult = "TEMPLATE: error.couldNotLoad [[%name%: NAME: " + fileName + "]]";
-		
 		assertEquals(expectedResult,actualResult);
 		
 	}
@@ -107,7 +104,7 @@ public class FreeColTest {
 
 		// default test
 		result = Whitebox.invokeMethod(FreeCol.class, "getJarURLConnection", new Object[] { Class.class });
-		
+
 		Assert.fail();
 	}
 

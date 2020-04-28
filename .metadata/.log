@@ -1032,3 +1032,430 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY com.instantiations.eclipse 1 0 2020-04-27 17:08:42.734
 !MESSAGE StartupPlugin: could not remove workbench property change listener (1) ... workbench might already be shut down.
+!SESSION 2020-04-28 14:02:54.399 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-04-28 14:03:20.903
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Masonator'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.instantiations.eclipse 1 0 2020-04-28 14:03:24.565
+!MESSAGE StartupPlugin: could not add workbench property change listener (1) ... compatibility layer might not be installed.
+
+!ENTRY com.instantiations.eclipse 4 0 2020-04-28 14:17:51.157
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.NullPointerException
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.createDesignator(ExistingUnitTestAssertion.java:820)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.getDesignator(ExistingUnitTestAssertion.java:606)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.initializeAssertionMatrix(AssertionMatrix.java:326)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.<init>(AssertionMatrix.java:190)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestGroup.createAssertionMatrix(ExistingUnitTestGroup.java:373)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsDisplayGrid.drawWithCurrentTestGroup(TestsDisplayGrid.java:306)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsEditGrid.drawWithCurrentTestGroup(TestsEditGrid.java:196)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.drawGrid(CodeProTestsEditorTab.java:516)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.compilationUnitChanged(CodeProTestsEditorTab.java:460)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.fireChangedCompilationUnitEvent(TestsEditorController.java:492)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.requestSelectedTestGroup(TestsEditorController.java:262)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.reParse(TestsEditorController.java:883)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController$5.run(TestsEditorController.java:777)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-04-28 14:18:09.829
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.NullPointerException
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.createDesignator(ExistingUnitTestAssertion.java:820)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.getDesignator(ExistingUnitTestAssertion.java:606)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.initializeAssertionMatrix(AssertionMatrix.java:326)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.<init>(AssertionMatrix.java:190)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestGroup.createAssertionMatrix(ExistingUnitTestGroup.java:373)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsDisplayGrid.drawWithCurrentTestGroup(TestsDisplayGrid.java:306)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsEditGrid.drawWithCurrentTestGroup(TestsEditGrid.java:196)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.drawGrid(CodeProTestsEditorTab.java:516)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.compilationUnitChanged(CodeProTestsEditorTab.java:460)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.fireChangedCompilationUnitEvent(TestsEditorController.java:492)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.requestSelectedTestGroup(TestsEditorController.java:262)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.reParse(TestsEditorController.java:883)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController$5.run(TestsEditorController.java:777)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-04-28 14:18:10.678
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.NullPointerException
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.createDesignator(ExistingUnitTestAssertion.java:820)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.getDesignator(ExistingUnitTestAssertion.java:606)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.initializeAssertionMatrix(AssertionMatrix.java:326)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.<init>(AssertionMatrix.java:190)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestGroup.createAssertionMatrix(ExistingUnitTestGroup.java:373)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsDisplayGrid.drawWithCurrentTestGroup(TestsDisplayGrid.java:306)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsEditGrid.drawWithCurrentTestGroup(TestsEditGrid.java:196)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.drawGrid(CodeProTestsEditorTab.java:516)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.compilationUnitChanged(CodeProTestsEditorTab.java:460)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.fireChangedCompilationUnitEvent(TestsEditorController.java:492)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.requestSelectedTestGroup(TestsEditorController.java:262)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.reParse(TestsEditorController.java:883)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController$5.run(TestsEditorController.java:777)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-04-28 14:18:13.554
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.NullPointerException
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.createDesignator(ExistingUnitTestAssertion.java:820)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.getDesignator(ExistingUnitTestAssertion.java:606)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.initializeAssertionMatrix(AssertionMatrix.java:326)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.<init>(AssertionMatrix.java:190)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestGroup.createAssertionMatrix(ExistingUnitTestGroup.java:373)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsDisplayGrid.drawWithCurrentTestGroup(TestsDisplayGrid.java:306)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsEditGrid.drawWithCurrentTestGroup(TestsEditGrid.java:196)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.drawGrid(CodeProTestsEditorTab.java:516)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.compilationUnitChanged(CodeProTestsEditorTab.java:460)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.fireChangedCompilationUnitEvent(TestsEditorController.java:492)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.requestSelectedTestGroup(TestsEditorController.java:262)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.reParse(TestsEditorController.java:883)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController$5.run(TestsEditorController.java:777)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-04-28 14:18:52.762
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.NullPointerException
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.createDesignator(ExistingUnitTestAssertion.java:820)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.getDesignator(ExistingUnitTestAssertion.java:606)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.initializeAssertionMatrix(AssertionMatrix.java:326)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.<init>(AssertionMatrix.java:190)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestGroup.createAssertionMatrix(ExistingUnitTestGroup.java:373)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsDisplayGrid.drawWithCurrentTestGroup(TestsDisplayGrid.java:306)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsEditGrid.drawWithCurrentTestGroup(TestsEditGrid.java:196)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.drawGrid(CodeProTestsEditorTab.java:516)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.compilationUnitChanged(CodeProTestsEditorTab.java:460)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.fireChangedCompilationUnitEvent(TestsEditorController.java:492)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.requestSelectedTestGroup(TestsEditorController.java:262)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.reParse(TestsEditorController.java:883)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController$5.run(TestsEditorController.java:777)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-04-28 14:18:53.559
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.NullPointerException
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.createDesignator(ExistingUnitTestAssertion.java:820)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.getDesignator(ExistingUnitTestAssertion.java:606)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.initializeAssertionMatrix(AssertionMatrix.java:326)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.<init>(AssertionMatrix.java:190)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestGroup.createAssertionMatrix(ExistingUnitTestGroup.java:373)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsDisplayGrid.drawWithCurrentTestGroup(TestsDisplayGrid.java:306)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsEditGrid.drawWithCurrentTestGroup(TestsEditGrid.java:196)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.drawGrid(CodeProTestsEditorTab.java:516)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.compilationUnitChanged(CodeProTestsEditorTab.java:460)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.fireChangedCompilationUnitEvent(TestsEditorController.java:492)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.requestSelectedTestGroup(TestsEditorController.java:262)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.reParse(TestsEditorController.java:883)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController$5.run(TestsEditorController.java:777)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-04-28 14:18:54.754
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.NullPointerException
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.createDesignator(ExistingUnitTestAssertion.java:820)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.getDesignator(ExistingUnitTestAssertion.java:606)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.initializeAssertionMatrix(AssertionMatrix.java:326)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.<init>(AssertionMatrix.java:190)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestGroup.createAssertionMatrix(ExistingUnitTestGroup.java:373)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsDisplayGrid.drawWithCurrentTestGroup(TestsDisplayGrid.java:306)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsEditGrid.drawWithCurrentTestGroup(TestsEditGrid.java:196)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.drawGrid(CodeProTestsEditorTab.java:516)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.compilationUnitChanged(CodeProTestsEditorTab.java:460)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.fireChangedCompilationUnitEvent(TestsEditorController.java:492)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.requestSelectedTestGroup(TestsEditorController.java:262)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.reParse(TestsEditorController.java:883)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController$11.run(TestsEditorController.java:1008)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-04-28 14:19:15.755
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.NullPointerException
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.createDesignator(ExistingUnitTestAssertion.java:820)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.getDesignator(ExistingUnitTestAssertion.java:606)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.initializeAssertionMatrix(AssertionMatrix.java:326)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.<init>(AssertionMatrix.java:190)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestGroup.createAssertionMatrix(ExistingUnitTestGroup.java:373)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsDisplayGrid.drawWithCurrentTestGroup(TestsDisplayGrid.java:306)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsEditGrid.drawWithCurrentTestGroup(TestsEditGrid.java:196)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.drawGrid(CodeProTestsEditorTab.java:516)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.compilationUnitChanged(CodeProTestsEditorTab.java:460)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.fireChangedCompilationUnitEvent(TestsEditorController.java:492)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.requestSelectedTestGroup(TestsEditorController.java:262)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.reParse(TestsEditorController.java:883)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController$5.run(TestsEditorController.java:777)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-04-28 14:19:22.293
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.NullPointerException
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.createDesignator(ExistingUnitTestAssertion.java:820)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.getDesignator(ExistingUnitTestAssertion.java:606)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.initializeAssertionMatrix(AssertionMatrix.java:326)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.<init>(AssertionMatrix.java:190)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestGroup.createAssertionMatrix(ExistingUnitTestGroup.java:373)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsDisplayGrid.drawWithCurrentTestGroup(TestsDisplayGrid.java:306)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsEditGrid.drawWithCurrentTestGroup(TestsEditGrid.java:196)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.drawGrid(CodeProTestsEditorTab.java:516)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.compilationUnitChanged(CodeProTestsEditorTab.java:460)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.fireChangedCompilationUnitEvent(TestsEditorController.java:492)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.requestSelectedTestGroup(TestsEditorController.java:262)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.reParse(TestsEditorController.java:883)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController$5.run(TestsEditorController.java:777)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.instantiations.eclipse 1 0 2020-04-28 14:33:21.904
+!MESSAGE StartupPlugin: could not remove workbench property change listener (1) ... workbench might already be shut down.
+!SESSION 2020-04-28 15:38:48.988 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY com.instantiations.eclipse 1 0 2020-04-28 15:39:06.162
+!MESSAGE StartupPlugin: could not add workbench property change listener (1) ... compatibility layer might not be installed.
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-04-28 15:39:18.914
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Masonator'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.instantiations.eclipse 1 0 2020-04-28 19:33:59.016
+!MESSAGE StartupPlugin: could not remove workbench property change listener (1) ... workbench might already be shut down.

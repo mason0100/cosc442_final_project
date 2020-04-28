@@ -50,6 +50,8 @@ public class FreeColTest {
 		String expectedResult = "TEMPLATE: error.couldNotLoad [[%name%: NAME: " + fileName + "]]";
 		
 		assertEquals(expectedResult,actualResult);
+		System.out.println(expectedResult);
+		System.out.println(actualResult);
 		
 	}
 
@@ -107,7 +109,7 @@ public class FreeColTest {
 
 		// default test
 		result = Whitebox.invokeMethod(FreeCol.class, "getJarURLConnection", new Object[] { Class.class });
-		
+
 		Assert.fail();
 	}
 

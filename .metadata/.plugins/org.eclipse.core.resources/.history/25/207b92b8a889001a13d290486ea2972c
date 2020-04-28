@@ -107,7 +107,7 @@ public class FreeColTest {
 
 		// default test
 		result = Whitebox.invokeMethod(FreeCol.class, "getJarURLConnection", new Object[] { Class.class });
-		
+
 		Assert.fail();
 	}
 
