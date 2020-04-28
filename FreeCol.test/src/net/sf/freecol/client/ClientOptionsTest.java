@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package net.sf.freecol.client;
 
 import java.io.BufferedInputStream;
@@ -23,23 +26,47 @@ import net.sf.freecol.common.model.ModelMessage;
 import net.sf.freecol.common.model.Player;
 import net.sf.freecol.common.option.BooleanOption;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ClientOptionsTest.
+ */
 @Generated(value = "org.junit-tools-1.1.0")
 public class ClientOptionsTest {
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
+	/**
+	 * Creates the test subject.
+	 *
+	 * @return the client options
+	 */
 	private ClientOptions createTestSubject() {
 		return new ClientOptions();
 	}
 
+	/**
+	 * Load test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "load", signature = "(QFreeColXMLReader;)Z")
 	@Test
 	public void loadTest() throws Exception {
@@ -56,6 +83,11 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Load test 1.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "load", signature = "(QBufferedInputStream;)Z")
 	@Test
 	public void loadTest_1() throws Exception {
@@ -72,6 +104,11 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Load test 2.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "load", signature = "(QInputStream;)Z")
 	@Test
 	public void loadTest_2() throws Exception {
@@ -86,6 +123,11 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Load test 3.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "load", signature = "(QFile;)Z")
 	@Test
 	public void loadTest_3() throws Exception {
@@ -102,6 +144,11 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Merge test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "merge", signature = "(QFile;)Z")
 	@Test
 	public void mergeTest() throws Exception {
@@ -116,6 +163,11 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Load test 4.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "load", signature = "(QFreeColSavegameFile;)Z")
 	@Test
 	public void loadTest_4() throws Exception {
@@ -132,6 +184,11 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Merge test 1.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "merge", signature = "(QFreeColSavegameFile;)Z")
 	@Test
 	public void mergeTest_1() throws Exception {
@@ -146,6 +203,12 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the active mods test.
+	 *
+	 * @return the active mods test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getActiveMods", signature = "()QList<QFreeColModFile;>;")
 	@Test
 	public void getActiveModsTest() throws Exception {
@@ -159,6 +222,12 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the language option test.
+	 *
+	 * @return the language option test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getLanguageOption", signature = "()QString;")
 	@Test
 	public void getLanguageOptionTest() throws Exception {
@@ -170,6 +239,12 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the display tile text test.
+	 *
+	 * @return the display tile text test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getDisplayTileText", signature = "()I")
 	@Test
 	public void getDisplayTileTextTest() throws Exception {
@@ -183,6 +258,12 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the sorted colonies test.
+	 *
+	 * @return the sorted colonies test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSortedColonies", signature = "(QPlayer;)QList<QColony;>;")
 	@Test
 	public void getSortedColoniesTest() throws Exception {
@@ -197,6 +278,12 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the colony comparator test.
+	 *
+	 * @return the colony comparator test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getColonyComparator", signature = "()QComparator<QColony;>;")
 	@Test
 	public void getColonyComparatorTest() throws Exception {
@@ -210,6 +297,12 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the colony comparator test 1.
+	 *
+	 * @return the colony comparator test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getColonyComparator", signature = "(I)QComparator<QColony;>;")
 	@Test
 	public void getColonyComparatorTest_1() throws Exception {
@@ -222,6 +315,12 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the model message comparator test.
+	 *
+	 * @return the model message comparator test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getModelMessageComparator", signature = "(QGame;)QComparator<QModelMessage;>;")
 	@Test
 	public void getModelMessageComparatorTest() throws Exception {
@@ -236,6 +335,12 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the boolean option test.
+	 *
+	 * @return the boolean option test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getBooleanOption", signature = "(QModelMessage;)QBooleanOption;")
 	@Test
 	public void getBooleanOptionTest() throws Exception {
@@ -250,6 +355,11 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Fix client options test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "fixClientOptions", signature = "()V")
 	@Test
 	public void fixClientOptionsTest() throws Exception {
@@ -262,6 +372,11 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Adds the boolean option test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "addBooleanOption", signature = "(QString;QString;Z)V")
 	@Test
 	public void addBooleanOptionTest() throws Exception {
@@ -277,6 +392,11 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Adds the integer option test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "addIntegerOption", signature = "(QString;QString;I)V")
 	@Test
 	public void addIntegerOptionTest() throws Exception {
@@ -292,6 +412,11 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Adds the text option test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "addTextOption", signature = "(QString;QString;QString;)V")
 	@Test
 	public void addTextOptionTest() throws Exception {
@@ -307,6 +432,12 @@ public class ClientOptionsTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the XML element tag name test.
+	 *
+	 * @return the XML element tag name test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getXMLElementTagName", signature = "()QString;")
 	@Test
 	public void getXMLElementTagNameTest() throws Exception {

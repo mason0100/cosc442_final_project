@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package net.sf.freecol.client.gui;
 
 import java.awt.event.ActionEvent;
@@ -11,23 +14,47 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.tools.configuration.base.MethodRef;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TerrainCursorTest.
+ */
 @Generated(value = "org.junit-tools-1.1.0")
 public class TerrainCursorTest {
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
+	/**
+	 * Creates the test subject.
+	 *
+	 * @return the terrain cursor
+	 */
 	private TerrainCursor createTestSubject() {
 		return new TerrainCursor();
 	}
 
+	/**
+	 * Checks if is active test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "isActive", signature = "()Z")
 	@Test
 	public void isActiveTest() throws Exception {
@@ -41,6 +68,11 @@ public class TerrainCursorTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the active test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setActive", signature = "(Z)V")
 	@Test
 	public void setActiveTest() throws Exception {
@@ -54,6 +86,11 @@ public class TerrainCursorTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Start blinking test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "startBlinking", signature = "()V")
 	@Test
 	public void startBlinkingTest() throws Exception {
@@ -66,6 +103,11 @@ public class TerrainCursorTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Stop blinking test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "stopBlinking", signature = "()V")
 	@Test
 	public void stopBlinkingTest() throws Exception {
@@ -78,6 +120,11 @@ public class TerrainCursorTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Adds the action listener test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "addActionListener", signature = "(QActionListener;)V")
 	@Test
 	public void addActionListenerTest() throws Exception {
@@ -91,6 +138,11 @@ public class TerrainCursorTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Removes the action listener test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "removeActionListener", signature = "(QActionListener;)V")
 	@Test
 	public void removeActionListenerTest() throws Exception {
@@ -104,6 +156,11 @@ public class TerrainCursorTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Fire action event test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "fireActionEvent", signature = "(QActionEvent;)V")
 	@Test
 	public void fireActionEventTest() throws Exception {
@@ -117,6 +174,11 @@ public class TerrainCursorTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Action performed test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "actionPerformed", signature = "(QActionEvent;)V")
 	@Test
 	public void actionPerformedTest() throws Exception {

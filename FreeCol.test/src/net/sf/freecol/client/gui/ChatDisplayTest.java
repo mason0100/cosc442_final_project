@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package net.sf.freecol.client.gui;
 
 import java.awt.Dimension;
@@ -12,23 +15,47 @@ import org.junit.Test;
 import org.junit.tools.configuration.base.MethodRef;
 import org.powermock.reflect.Whitebox;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ChatDisplayTest.
+ */
 @Generated(value = "org.junit-tools-1.1.0")
 public class ChatDisplayTest {
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
+	/**
+	 * Creates the test subject.
+	 *
+	 * @return the chat display
+	 */
 	private ChatDisplay createTestSubject() {
 		return new ChatDisplay();
 	}
 
+	/**
+	 * Adds the message test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "addMessage", signature = "(QGUIMessage;)V")
 	@Test
 	public void addMessageTest() throws Exception {
@@ -42,6 +69,12 @@ public class ChatDisplayTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the message test.
+	 *
+	 * @return the message test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getMessage", signature = "(I)QGUIMessage;")
 	@Test
 	public void getMessageTest() throws Exception {
@@ -56,6 +89,12 @@ public class ChatDisplayTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the message count test.
+	 *
+	 * @return the message count test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getMessageCount", signature = "()I")
 	@Test
 	public void getMessageCountTest() throws Exception {
@@ -69,6 +108,11 @@ public class ChatDisplayTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Display test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "display", signature = "(QGraphics2D;QImageLibrary;QDimension;)V")
 	@Test
 	public void displayTest() throws Exception {
@@ -84,6 +128,11 @@ public class ChatDisplayTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Removes the old messages test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "removeOldMessages", signature = "()Z")
 	@Test
 	public void removeOldMessagesTest() throws Exception {

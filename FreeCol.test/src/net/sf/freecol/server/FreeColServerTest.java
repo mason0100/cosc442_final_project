@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package net.sf.freecol.server;
 
 import java.awt.image.BufferedImage;
@@ -31,23 +34,48 @@ import net.sf.freecol.server.model.ServerGame;
 import net.sf.freecol.server.model.ServerPlayer;
 import net.sf.freecol.server.networking.Server;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class FreeColServerTest.
+ */
 @Generated(value = "org.junit-tools-1.1.0")
 public class FreeColServerTest {
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
+	/**
+	 * Creates the test subject.
+	 *
+	 * @return the free col server
+	 */
 	private FreeColServer createTestSubject() {
 		return new FreeColServer(false, false, new Specification(), 0, "");
 	}
 
+	/**
+	 * Gets the single player test.
+	 *
+	 * @return the single player test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSinglePlayer", signature = "()Z")
 	@Test
 	public void getSinglePlayerTest() throws Exception {
@@ -61,6 +89,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the single player test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setSinglePlayer", signature = "(Z)V")
 	@Test
 	public void setSinglePlayerTest() throws Exception {
@@ -74,6 +107,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the public server test.
+	 *
+	 * @return the public server test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getPublicServer", signature = "()Z")
 	@Test
 	public void getPublicServerTest() throws Exception {
@@ -87,6 +126,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the public server test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setPublicServer", signature = "(Z)V")
 	@Test
 	public void setPublicServerTest() throws Exception {
@@ -100,6 +144,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the name test.
+	 *
+	 * @return the name test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getName", signature = "()QString;")
 	@Test
 	public void getNameTest() throws Exception {
@@ -113,6 +163,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the name test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setName", signature = "(QString;)V")
 	@Test
 	public void setNameTest() throws Exception {
@@ -126,6 +181,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the host test.
+	 *
+	 * @return the host test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getHost", signature = "()QString;")
 	@Test
 	public void getHostTest() throws Exception {
@@ -139,6 +200,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the port test.
+	 *
+	 * @return the port test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getPort", signature = "()I")
 	@Test
 	public void getPortTest() throws Exception {
@@ -152,6 +219,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Server start test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "serverStart", signature = "(I)QServer;")
 	@Test
 	public void serverStartTest() throws Exception {
@@ -180,6 +252,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the specification test.
+	 *
+	 * @return the specification test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSpecification", signature = "()QSpecification;")
 	@Test
 	public void getSpecificationTest() throws Exception {
@@ -193,6 +271,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the user connection handler test.
+	 *
+	 * @return the user connection handler test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getUserConnectionHandler", signature = "()QUserConnectionHandler;")
 	@Test
 	public void getUserConnectionHandlerTest() throws Exception {
@@ -206,6 +290,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the controller test.
+	 *
+	 * @return the controller test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getController", signature = "()QController;")
 	@Test
 	public void getControllerTest() throws Exception {
@@ -219,6 +309,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the pre game input handler test.
+	 *
+	 * @return the pre game input handler test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getPreGameInputHandler", signature = "()QPreGameInputHandler;")
 	@Test
 	public void getPreGameInputHandlerTest() throws Exception {
@@ -232,6 +328,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the in game input handler test.
+	 *
+	 * @return the in game input handler test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getInGameInputHandler", signature = "()QInGameInputHandler;")
 	@Test
 	public void getInGameInputHandlerTest() throws Exception {
@@ -245,6 +347,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the in game controller test.
+	 *
+	 * @return the in game controller test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getInGameController", signature = "()QInGameController;")
 	@Test
 	public void getInGameControllerTest() throws Exception {
@@ -258,6 +366,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the game test.
+	 *
+	 * @return the game test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getGame", signature = "()QServerGame;")
 	@Test
 	public void getGameTest() throws Exception {
@@ -271,6 +385,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the game test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setGame", signature = "(QServerGame;)V")
 	@Test
 	public void setGameTest() throws Exception {
@@ -284,6 +403,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the AI main test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setAIMain", signature = "(QAIMain;)V")
 	@Test
 	public void setAIMainTest() throws Exception {
@@ -297,6 +421,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the AI main test.
+	 *
+	 * @return the AI main test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getAIMain", signature = "()QAIMain;")
 	@Test
 	public void getAIMainTest() throws Exception {
@@ -310,6 +440,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the game state test.
+	 *
+	 * @return the game state test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getGameState", signature = "()QGameState;")
 	@Test
 	public void getGameStateTest() throws Exception {
@@ -323,6 +459,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the game state test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setGameState", signature = "(QGameState;)V")
 	@Test
 	public void setGameStateTest() throws Exception {
@@ -336,6 +477,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the server test.
+	 *
+	 * @return the server test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getServer", signature = "()QServer;")
 	@Test
 	public void getServerTest() throws Exception {
@@ -349,6 +496,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the integrity test.
+	 *
+	 * @return the integrity test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getIntegrity", signature = "()I")
 	@Test
 	public void getIntegrityTest() throws Exception {
@@ -362,6 +515,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the map generator test.
+	 *
+	 * @return the map generator test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getMapGenerator", signature = "()QMapGenerator;")
 	@Test
 	public void getMapGeneratorTest() throws Exception {
@@ -375,6 +534,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the map generator test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setMapGenerator", signature = "(QMapGenerator;)V")
 	@Test
 	public void setMapGeneratorTest() throws Exception {
@@ -388,6 +552,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the server random test.
+	 *
+	 * @return the server random test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getServerRandom", signature = "()QRandom;")
 	@Test
 	public void getServerRandomTest() throws Exception {
@@ -401,6 +571,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the server random test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setServerRandom", signature = "(QRandom;)V")
 	@Test
 	public void setServerRandomTest() throws Exception {
@@ -414,6 +589,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the active unit test.
+	 *
+	 * @return the active unit test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getActiveUnit", signature = "()QUnit;")
 	@Test
 	public void getActiveUnitTest() throws Exception {
@@ -427,6 +608,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the active unit test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setActiveUnit", signature = "(QUnit;)V")
 	@Test
 	public void setActiveUnitTest() throws Exception {
@@ -440,6 +626,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Update meta server test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "updateMetaServer", signature = "()Z")
 	@Test
 	public void updateMetaServerTest() throws Exception {
@@ -453,6 +644,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Update meta server test 1.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "updateMetaServer", signature = "(Z)Z")
 	@Test
 	public void updateMetaServerTest_1() throws Exception {
@@ -467,6 +663,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Removes the from meta server test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "removeFromMetaServer", signature = "()Z")
 	@Test
 	public void removeFromMetaServerTest() throws Exception {
@@ -480,6 +681,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the slots available test.
+	 *
+	 * @return the slots available test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSlotsAvailable", signature = "()I")
 	@Test
 	public void getSlotsAvailableTest() throws Exception {
@@ -493,6 +700,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the number of living human players test.
+	 *
+	 * @return the number of living human players test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getNumberOfLivingHumanPlayers", signature = "()I")
 	@Test
 	public void getNumberOfLivingHumanPlayersTest() throws Exception {
@@ -506,6 +719,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Save game test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "saveGame", signature = "(QFile;QOptionGroup;)V")
 	@Test
 	public void saveGameTest() throws Exception {
@@ -520,6 +738,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Save map editor game test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "saveMapEditorGame", signature = "(QFile;QBufferedImage;)V")
 	@Test
 	public void saveMapEditorGameTest() throws Exception {
@@ -534,6 +757,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Save game test 1.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "saveGame", signature = "(QFile;QOptionGroup;QBufferedImage;)V")
 	@Test
 	public void saveGameTest_1() throws Exception {
@@ -549,6 +777,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Load game test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "loadGame", signature = "(QFreeColSavegameFile;)QServerGame;")
 	@Test
 	public void loadGameTest() throws Exception {
@@ -563,6 +796,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Read game test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "readGame", signature = "(QFile;QSpecification;QFreeColServer;)QServerGame;")
 	@Test
 	public void readGameTest() throws Exception {
@@ -577,6 +815,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Read game test 1.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "readGame", signature = "(QFreeColSavegameFile;QSpecification;QFreeColServer;)QServerGame;")
 	@Test
 	public void readGameTest_1() throws Exception {
@@ -591,6 +834,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Load game test 1.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "loadGame", signature = "(QFreeColSavegameFile;QSpecification;QServer;)QServerGame;")
 	@Test
 	public void loadGameTest_1() throws Exception {
@@ -608,6 +856,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Establish unknown enemy test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "establishUnknownEnemy", signature = "(QGame;)QServerPlayer;")
 	@Test
 	public void establishUnknownEnemyTest() throws Exception {
@@ -622,6 +875,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the empty map test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createEmptyMap", signature = "(QGame;II)QMap;")
 	@Test
 	public void createEmptyMapTest() throws Exception {
@@ -638,6 +896,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Builds the game test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "buildGame", signature = "()QGame;")
 	@Test
 	public void buildGameTest() throws Exception {
@@ -651,6 +914,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Make AI player test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "makeAIPlayer", signature = "(QNation;)QServerPlayer;")
 	@Test
 	public void makeAIPlayerTest() throws Exception {
@@ -665,6 +933,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Removes the autosaves test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "removeAutosaves", signature = "(QString;)V")
 	@Test
 	public void removeAutosavesTest() throws Exception {
@@ -676,6 +949,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Explore map for all players test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "exploreMapForAllPlayers", signature = "(Z)V")
 	@Test
 	public void exploreMapForAllPlayersTest() throws Exception {
@@ -689,6 +967,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the player test.
+	 *
+	 * @return the player test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getPlayer", signature = "(QConnection;)QServerPlayer;")
 	@Test
 	public void getPlayerTest() throws Exception {
@@ -703,6 +987,12 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the AI player test.
+	 *
+	 * @return the AI player test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getAIPlayer", signature = "(QPlayer;)QAIPlayer;")
 	@Test
 	public void getAIPlayerTest() throws Exception {
@@ -717,6 +1007,11 @@ public class FreeColServerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Shutdown test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "shutdown", signature = "()V")
 	@Test
 	public void shutdownTest() throws Exception {

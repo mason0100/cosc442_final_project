@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package net.sf.freecol.client.gui;
 
 import static org.junit.Assert.*;
@@ -5,23 +8,48 @@ import java.util.*;
 import org.junit.Assert;
 import org.junit.Test;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ImageLibraryTest.
+ */
 @Generated(value = "org.junit-tools-1.1.0")
 public class ImageLibraryTest {
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
+	/**
+	 * Creates the test subject.
+	 *
+	 * @return the image library
+	 */
 	private ImageLibrary createTestSubject() {
 		return new ImageLibrary();
 	}
 
+	/**
+	 * Gets the scale factor test.
+	 *
+	 * @return the scale factor test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getScaleFactor", signature = "()F")
 	@Test
 	public void getScaleFactorTest() throws Exception {
@@ -35,6 +63,11 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Scale dimension test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "scaleDimension", signature = "(QDimension;)QDimension;")
 	@Test
 	public void scaleDimensionTest() throws Exception {
@@ -49,6 +82,11 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Scale dimension test 1.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "scaleDimension", signature = "(QDimension;F)QDimension;")
 	@Test
 	public void scaleDimensionTest_1() throws Exception {
@@ -62,6 +100,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the foreground color test.
+	 *
+	 * @return the foreground color test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getForegroundColor", signature = "(QColor;)QColor;")
 	@Test
 	public void getForegroundColorTest() throws Exception {
@@ -74,6 +118,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the string border color test.
+	 *
+	 * @return the string border color test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getStringBorderColor", signature = "(QColor;)QColor;")
 	@Test
 	public void getStringBorderColorTest() throws Exception {
@@ -86,6 +136,11 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Checks if is even test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "isEven", signature = "(II)Z")
 	@Test
 	public void isEvenTest() throws Exception {
@@ -99,6 +154,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the beach corner image test.
+	 *
+	 * @return the beach corner image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getBeachCornerImage", signature = "(III)QBufferedImage;")
 	@Test
 	public void getBeachCornerImageTest() throws Exception {
@@ -115,6 +176,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the beach edge image test.
+	 *
+	 * @return the beach edge image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getBeachEdgeImage", signature = "(III)QBufferedImage;")
 	@Test
 	public void getBeachEdgeImageTest() throws Exception {
@@ -131,6 +198,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the border image test.
+	 *
+	 * @return the border image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getBorderImage", signature = "(QTileType;QDirection;II)QBufferedImage;")
 	@Test
 	public void getBorderImageTest() throws Exception {
@@ -148,6 +221,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the forest image test.
+	 *
+	 * @return the forest image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getForestImage", signature = "(QTileType;)QBufferedImage;")
 	@Test
 	public void getForestImageTest() throws Exception {
@@ -162,6 +241,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the forest image test 1.
+	 *
+	 * @return the forest image test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getForestImage", signature = "(QTileType;QDimension;)QBufferedImage;")
 	@Test
 	public void getForestImageTest_1() throws Exception {
@@ -175,6 +260,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the forest image test 2.
+	 *
+	 * @return the forest image test 2
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getForestImage", signature = "(QTileType;QTileImprovementStyle;)QBufferedImage;")
 	@Test
 	public void getForestImageTest_2() throws Exception {
@@ -190,6 +281,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the forest image test 3.
+	 *
+	 * @return the forest image test 3
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getForestImage", signature = "(QTileType;QTileImprovementStyle;QDimension;)QBufferedImage;")
 	@Test
 	public void getForestImageTest_3() throws Exception {
@@ -206,6 +303,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the founding father image test.
+	 *
+	 * @return the founding father image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getFoundingFatherImage", signature = "(QFoundingFather;Z)QBufferedImage;")
 	@Test
 	public void getFoundingFatherImageTest() throws Exception {
@@ -219,6 +322,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the small buildable image test.
+	 *
+	 * @return the small buildable image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSmallBuildableImage", signature = "(QBuildableType;QPlayer;)QBufferedImage;")
 	@Test
 	public void getSmallBuildableImageTest() throws Exception {
@@ -234,6 +343,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the buildable image test.
+	 *
+	 * @return the buildable image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getBuildableImage", signature = "(QBuildableType;QDimension;)QBufferedImage;")
 	@Test
 	public void getBuildableImageTest() throws Exception {
@@ -247,6 +362,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the small building image test.
+	 *
+	 * @return the small building image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSmallBuildingImage", signature = "(QBuilding;)QBufferedImage;")
 	@Test
 	public void getSmallBuildingImageTest() throws Exception {
@@ -261,6 +382,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the building image test.
+	 *
+	 * @return the building image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getBuildingImage", signature = "(QBuilding;)QBufferedImage;")
 	@Test
 	public void getBuildingImageTest() throws Exception {
@@ -275,6 +402,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the building image test 1.
+	 *
+	 * @return the building image test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getBuildingImage", signature = "(QBuildingType;QPlayer;F)QBufferedImage;")
 	@Test
 	public void getBuildingImageTest_1() throws Exception {
@@ -289,6 +422,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the building image test 2.
+	 *
+	 * @return the building image test 2
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getBuildingImage", signature = "(QBuildingType;F)QBufferedImage;")
 	@Test
 	public void getBuildingImageTest_2() throws Exception {
@@ -302,6 +441,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the building image test 3.
+	 *
+	 * @return the building image test 3
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getBuildingImage", signature = "(QBuildingType;QDimension;)QBufferedImage;")
 	@Test
 	public void getBuildingImageTest_3() throws Exception {
@@ -315,6 +460,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the smaller icon image test.
+	 *
+	 * @return the smaller icon image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSmallerIconImage", signature = "(QFreeColGameObjectType;)QBufferedImage;")
 	@Test
 	public void getSmallerIconImageTest() throws Exception {
@@ -329,6 +480,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the small icon image test.
+	 *
+	 * @return the small icon image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSmallIconImage", signature = "(QFreeColGameObjectType;)QBufferedImage;")
 	@Test
 	public void getSmallIconImageTest() throws Exception {
@@ -343,6 +500,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the icon image test.
+	 *
+	 * @return the icon image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getIconImage", signature = "(QFreeColGameObjectType;)QBufferedImage;")
 	@Test
 	public void getIconImageTest() throws Exception {
@@ -357,6 +520,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the smaller misc icon image test.
+	 *
+	 * @return the smaller misc icon image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSmallerMiscIconImage", signature = "(QFreeColGameObjectType;)QBufferedImage;")
 	@Test
 	public void getSmallerMiscIconImageTest() throws Exception {
@@ -371,6 +540,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the small misc icon image test.
+	 *
+	 * @return the small misc icon image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSmallMiscIconImage", signature = "(QFreeColGameObjectType;)QBufferedImage;")
 	@Test
 	public void getSmallMiscIconImageTest() throws Exception {
@@ -385,6 +560,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the misc icon image test.
+	 *
+	 * @return the misc icon image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getMiscIconImage", signature = "(QFreeColGameObjectType;)QBufferedImage;")
 	@Test
 	public void getMiscIconImageTest() throws Exception {
@@ -399,6 +580,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the misc icon image test 1.
+	 *
+	 * @return the misc icon image test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getMiscIconImage", signature = "(QFreeColGameObjectType;F)QBufferedImage;")
 	@Test
 	public void getMiscIconImageTest_1() throws Exception {
@@ -412,6 +599,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the misc icon image test 2.
+	 *
+	 * @return the misc icon image test 2
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getMiscIconImage", signature = "(QFreeColGameObjectType;QDimension;)QBufferedImage;")
 	@Test
 	public void getMiscIconImageTest_2() throws Exception {
@@ -425,6 +618,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the misc image test.
+	 *
+	 * @return the misc image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getMiscImage", signature = "(QString;)QBufferedImage;")
 	@Test
 	public void getMiscImageTest() throws Exception {
@@ -439,6 +638,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the misc image test 1.
+	 *
+	 * @return the misc image test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getMiscImage", signature = "(QString;F)QBufferedImage;")
 	@Test
 	public void getMiscImageTest_1() throws Exception {
@@ -452,6 +657,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the misc image test 2.
+	 *
+	 * @return the misc image test 2
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getMiscImage", signature = "(QString;QDimension;)QBufferedImage;")
 	@Test
 	public void getMiscImageTest_2() throws Exception {
@@ -465,6 +676,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the object image test.
+	 *
+	 * @return the object image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getObjectImage", signature = "(QFreeColObject;F)QBufferedImage;")
 	@Test
 	public void getObjectImageTest() throws Exception {
@@ -480,6 +697,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the monarch image test.
+	 *
+	 * @return the monarch image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getMonarchImage", signature = "(QNation;)QBufferedImage;")
 	@Test
 	public void getMonarchImageTest() throws Exception {
@@ -492,6 +715,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the overlay image test.
+	 *
+	 * @return the overlay image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getOverlayImage", signature = "(QTile;)QBufferedImage;")
 	@Test
 	public void getOverlayImageTest() throws Exception {
@@ -506,6 +735,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the overlay image test 1.
+	 *
+	 * @return the overlay image test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getOverlayImage", signature = "(QTileType;QString;QDimension;)QBufferedImage;")
 	@Test
 	public void getOverlayImageTest_1() throws Exception {
@@ -520,6 +755,11 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the overlay cache test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createOverlayCache", signature = "()QSet<QString;>;")
 	@Test
 	public void createOverlayCacheTest() throws Exception {
@@ -531,6 +771,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the overlay image test 2.
+	 *
+	 * @return the overlay image test 2
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getOverlayImage", signature = "(QTile;QSet<QString;>;)QBufferedImage;")
 	@Test
 	public void getOverlayImageTest_2() throws Exception {
@@ -546,6 +792,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the overlay image test 3.
+	 *
+	 * @return the overlay image test 3
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getOverlayImage", signature = "(QTileType;QString;QDimension;QSet<QString;>;)QBufferedImage;")
 	@Test
 	public void getOverlayImageTest_3() throws Exception {
@@ -561,6 +813,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the randomized image test.
+	 *
+	 * @return the randomized image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name="getRandomizedImage", signature="(QList<QString;>;QString;QDimension;)QBufferedImage;")
 	@Test
 	public void getRandomizedImageTest() throws Exception {
@@ -575,6 +833,12 @@ public class ImageLibraryTest {
 	Assert.fail();
 	}
 
+	/**
+	 * Gets the path image test.
+	 *
+	 * @return the path image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getPathImage", signature = "(QPathType;)QBufferedImage;")
 	@Test
 	public void getPathImageTest() throws Exception {
@@ -587,6 +851,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the path image test 1.
+	 *
+	 * @return the path image test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getPathImage", signature = "(QUnit;)QBufferedImage;")
 	@Test
 	public void getPathImageTest_1() throws Exception {
@@ -599,6 +869,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the path next turn image test.
+	 *
+	 * @return the path next turn image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getPathNextTurnImage", signature = "(QPathType;)QBufferedImage;")
 	@Test
 	public void getPathNextTurnImageTest() throws Exception {
@@ -611,6 +887,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the path next turn image test 1.
+	 *
+	 * @return the path next turn image test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getPathNextTurnImage", signature = "(QUnit;)QBufferedImage;")
 	@Test
 	public void getPathNextTurnImageTest_1() throws Exception {
@@ -623,6 +905,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the river image test.
+	 *
+	 * @return the river image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getRiverImage", signature = "(QTileImprovementStyle;)QBufferedImage;")
 	@Test
 	public void getRiverImageTest() throws Exception {
@@ -637,6 +925,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the river image test 1.
+	 *
+	 * @return the river image test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getRiverImage", signature = "(QString;QDimension;)QBufferedImage;")
 	@Test
 	public void getRiverImageTest_1() throws Exception {
@@ -650,6 +944,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the river mouth image test.
+	 *
+	 * @return the river mouth image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getRiverMouthImage", signature = "(QDirection;III)QBufferedImage;")
 	@Test
 	public void getRiverMouthImageTest() throws Exception {
@@ -667,6 +967,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the small settlement image test.
+	 *
+	 * @return the small settlement image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSmallSettlementImage", signature = "(QSettlement;)QBufferedImage;")
 	@Test
 	public void getSmallSettlementImageTest() throws Exception {
@@ -681,6 +987,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the settlement image test.
+	 *
+	 * @return the settlement image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSettlementImage", signature = "(QSettlement;)QBufferedImage;")
 	@Test
 	public void getSettlementImageTest() throws Exception {
@@ -695,6 +1007,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the settlement image test 1.
+	 *
+	 * @return the settlement image test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSettlementImage", signature = "(QSettlement;F)QBufferedImage;")
 	@Test
 	public void getSettlementImageTest_1() throws Exception {
@@ -708,6 +1026,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the settlement image test 2.
+	 *
+	 * @return the settlement image test 2
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSettlementImage", signature = "(QSettlement;QDimension;)QBufferedImage;")
 	@Test
 	public void getSettlementImageTest_2() throws Exception {
@@ -721,6 +1045,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the settlement image test 3.
+	 *
+	 * @return the settlement image test 3
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSettlementImage", signature = "(QSettlementType;)QBufferedImage;")
 	@Test
 	public void getSettlementImageTest_3() throws Exception {
@@ -735,6 +1065,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the settlement image test 4.
+	 *
+	 * @return the settlement image test 4
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSettlementImage", signature = "(QSettlementType;F)QBufferedImage;")
 	@Test
 	public void getSettlementImageTest_4() throws Exception {
@@ -748,6 +1084,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the terrain image test.
+	 *
+	 * @return the terrain image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getTerrainImage", signature = "(QTileType;II)QBufferedImage;")
 	@Test
 	public void getTerrainImageTest() throws Exception {
@@ -764,6 +1106,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the terrain image test 1.
+	 *
+	 * @return the terrain image test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getTerrainImage", signature = "(QTileType;IIQDimension;)QBufferedImage;")
 	@Test
 	public void getTerrainImageTest_1() throws Exception {
@@ -779,6 +1127,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the smaller unit image test.
+	 *
+	 * @return the smaller unit image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSmallerUnitImage", signature = "(QUnit;)QBufferedImage;")
 	@Test
 	public void getSmallerUnitImageTest() throws Exception {
@@ -793,6 +1147,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the small unit image test.
+	 *
+	 * @return the small unit image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSmallUnitImage", signature = "(QUnit;)QBufferedImage;")
 	@Test
 	public void getSmallUnitImageTest() throws Exception {
@@ -807,6 +1167,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the small unit image test 1.
+	 *
+	 * @return the small unit image test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSmallUnitImage", signature = "(QUnit;Z)QBufferedImage;")
 	@Test
 	public void getSmallUnitImageTest_1() throws Exception {
@@ -822,6 +1188,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the unit image test.
+	 *
+	 * @return the unit image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getUnitImage", signature = "(QUnit;)QBufferedImage;")
 	@Test
 	public void getUnitImageTest() throws Exception {
@@ -836,6 +1208,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the unit image test 1.
+	 *
+	 * @return the unit image test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getUnitImage", signature = "(QUnit;Z)QBufferedImage;")
 	@Test
 	public void getUnitImageTest_1() throws Exception {
@@ -851,6 +1229,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the unit image test 2.
+	 *
+	 * @return the unit image test 2
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getUnitImage", signature = "(QUnit;F)QBufferedImage;")
 	@Test
 	public void getUnitImageTest_2() throws Exception {
@@ -864,6 +1248,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the tiny unit image test.
+	 *
+	 * @return the tiny unit image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getTinyUnitImage", signature = "(QUnitType;)QBufferedImage;")
 	@Test
 	public void getTinyUnitImageTest() throws Exception {
@@ -878,6 +1268,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the tiny unit image test 1.
+	 *
+	 * @return the tiny unit image test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getTinyUnitImage", signature = "(QUnitType;Z)QBufferedImage;")
 	@Test
 	public void getTinyUnitImageTest_1() throws Exception {
@@ -893,6 +1289,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the smaller unit image test 1.
+	 *
+	 * @return the smaller unit image test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSmallerUnitImage", signature = "(QUnitType;)QBufferedImage;")
 	@Test
 	public void getSmallerUnitImageTest_1() throws Exception {
@@ -907,6 +1309,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the small unit image test 2.
+	 *
+	 * @return the small unit image test 2
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSmallUnitImage", signature = "(QUnitType;)QBufferedImage;")
 	@Test
 	public void getSmallUnitImageTest_2() throws Exception {
@@ -921,6 +1329,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the small unit image test 3.
+	 *
+	 * @return the small unit image test 3
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSmallUnitImage", signature = "(QUnitType;Z)QBufferedImage;")
 	@Test
 	public void getSmallUnitImageTest_3() throws Exception {
@@ -936,6 +1350,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the small unit image test 4.
+	 *
+	 * @return the small unit image test 4
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSmallUnitImage", signature = "(QUnitType;QString;Z)QBufferedImage;")
 	@Test
 	public void getSmallUnitImageTest_4() throws Exception {
@@ -952,6 +1372,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the unit image test 3.
+	 *
+	 * @return the unit image test 3
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getUnitImage", signature = "(QUnitType;)QBufferedImage;")
 	@Test
 	public void getUnitImageTest_3() throws Exception {
@@ -966,6 +1392,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the unit image test 4.
+	 *
+	 * @return the unit image test 4
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getUnitImage", signature = "(QUnitType;F)QBufferedImage;")
 	@Test
 	public void getUnitImageTest_4() throws Exception {
@@ -979,6 +1411,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the unit image test 5.
+	 *
+	 * @return the unit image test 5
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getUnitImage", signature = "(QUnitType;QString;ZZF)QBufferedImage;")
 	@Test
 	public void getUnitImageTest_5() throws Exception {
@@ -995,6 +1433,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the unit image test 6.
+	 *
+	 * @return the unit image test 6
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getUnitImage", signature = "(QUnit;QDimension;)QBufferedImage;")
 	@Test
 	public void getUnitImageTest_6() throws Exception {
@@ -1008,6 +1452,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the unit image test 7.
+	 *
+	 * @return the unit image test 7
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getUnitImage", signature = "(QUnitType;QDimension;)QBufferedImage;")
 	@Test
 	public void getUnitImageTest_7() throws Exception {
@@ -1021,6 +1471,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the unit image test 8.
+	 *
+	 * @return the unit image test 8
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getUnitImage", signature = "(QUnitType;QString;ZQDimension;)QBufferedImage;")
 	@Test
 	public void getUnitImageTest_8() throws Exception {
@@ -1036,6 +1492,11 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Draw tiled image test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "drawTiledImage", signature = "(QString;QGraphics;QJComponent;QInsets;)V")
 	@Test
 	public void drawTiledImageTest() throws Exception {
@@ -1051,6 +1512,11 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Fill texture test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "fillTexture", signature = "(QGraphics2D;QBufferedImage;IIII)V")
 	@Test
 	public void fillTextureTest() throws Exception {
@@ -1067,6 +1533,11 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the buffered image test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createBufferedImage", signature = "(QImage;)QBufferedImage;")
 	@Test
 	public void createBufferedImageTest() throws Exception {
@@ -1081,6 +1552,11 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the mirrored image test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createMirroredImage", signature = "(QImage;)QBufferedImage;")
 	@Test
 	public void createMirroredImageTest() throws Exception {
@@ -1095,6 +1571,11 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the resized image test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createResizedImage", signature = "(QImage;II)QBufferedImage;")
 	@Test
 	public void createResizedImageTest() throws Exception {
@@ -1109,6 +1590,11 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Fade image test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "fadeImage", signature = "(QImage;FF)QBufferedImage;")
 	@Test
 	public void fadeImageTest() throws Exception {
@@ -1123,6 +1609,11 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the chip test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createChip", signature = "(QGraphics2D;QString;QColor;QColor;QColor;)QBufferedImage;")
 	@Test
 	public void createChipTest() throws Exception {
@@ -1142,6 +1633,11 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the filled chip test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createFilledChip", signature = "(QGraphics2D;QString;QColor;QColor;DQColor;QColor;)QBufferedImage;")
 	@Test
 	public void createFilledChipTest() throws Exception {
@@ -1200,6 +1696,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the alarm chip test.
+	 *
+	 * @return the alarm chip test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getAlarmChip", signature = "(QGraphics2D;QIndianSettlement;QPlayer;)QBufferedImage;")
 	@Test
 	public void getAlarmChipTest() throws Exception {
@@ -1218,6 +1720,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the indian settlement chip test.
+	 *
+	 * @return the indian settlement chip test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getIndianSettlementChip", signature = "(QGraphics2D;QIndianSettlement;)QBufferedImage;")
 	@Test
 	public void getIndianSettlementChipTest() throws Exception {
@@ -1233,6 +1741,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the mission chip test.
+	 *
+	 * @return the mission chip test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getMissionChip", signature = "(QGraphics2D;QPlayer;Z)QBufferedImage;")
 	@Test
 	public void getMissionChipTest() throws Exception {
@@ -1249,6 +1763,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the occupation indicator chip test.
+	 *
+	 * @return the occupation indicator chip test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getOccupationIndicatorChip", signature = "(QGraphics2D;QUnit;QString;)QBufferedImage;")
 	@Test
 	public void getOccupationIndicatorChipTest() throws Exception {
@@ -1265,6 +1785,12 @@ public class ImageLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the string image test.
+	 *
+	 * @return the string image test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getStringImage", signature = "(QGraphics;QString;QColor;QFont;)QBufferedImage;")
 	@Test
 	public void getStringImageTest() throws Exception {

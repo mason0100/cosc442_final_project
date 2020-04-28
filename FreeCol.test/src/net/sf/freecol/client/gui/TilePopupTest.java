@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package net.sf.freecol.client.gui;
 
 import java.awt.Container;
@@ -22,19 +25,38 @@ import net.sf.freecol.common.model.Tile;
 import net.sf.freecol.common.model.TileType;
 import net.sf.freecol.common.model.Unit;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class TilePopupTest.
+ */
 @Generated(value = "org.junit-tools-1.1.0")
 public class TilePopupTest {
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
+	/**
+	 * Creates the test subject.
+	 *
+	 * @return the tile popup
+	 */
 	private TilePopup createTestSubject() {
 		return new TilePopup(new FreeColClient(new InputStream(), ""),
 				new Canvas(new FreeColClient(new InputStream(), ""), new GraphicsDevice(),
@@ -43,6 +65,11 @@ public class TilePopupTest {
 				new Tile(new Game(new Specification()), new TileType("", new Specification()), 0, 0));
 	}
 
+	/**
+	 * Adds the debug items test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "addDebugItems", signature = "(QFreeColClient;QTile;)V")
 	@Test
 	public void addDebugItemsTest() throws Exception {
@@ -57,6 +84,11 @@ public class TilePopupTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Adds the unit test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "addUnit", signature = "(QContainer;QUnit;ZZ)I")
 	@Test
 	public void addUnitTest() throws Exception {
@@ -75,6 +107,11 @@ public class TilePopupTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Adds the colony test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "addColony", signature = "(QColony;)V")
 	@Test
 	public void addColonyTest() throws Exception {
@@ -88,6 +125,11 @@ public class TilePopupTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Adds the indian settlement test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "addIndianSettlement", signature = "(QIndianSettlement;)V")
 	@Test
 	public void addIndianSettlementTest() throws Exception {
@@ -101,6 +143,11 @@ public class TilePopupTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Adds the tile test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "addTile", signature = "(QTile;)V")
 	@Test
 	public void addTileTest() throws Exception {
@@ -114,6 +161,11 @@ public class TilePopupTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Checks for item test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "hasItem", signature = "()Z")
 	@Test
 	public void hasItemTest() throws Exception {

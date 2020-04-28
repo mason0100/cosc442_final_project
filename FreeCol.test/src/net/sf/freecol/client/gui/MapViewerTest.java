@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package net.sf.freecol.client.gui;
 
 import java.awt.Color;
@@ -26,23 +29,48 @@ import net.sf.freecol.common.model.Settlement;
 import net.sf.freecol.common.model.Tile;
 import net.sf.freecol.common.model.Unit;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MapViewerTest.
+ */
 @Generated(value = "org.junit-tools-1.1.0")
 public class MapViewerTest {
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
+	/**
+	 * Creates the test subject.
+	 *
+	 * @return the map viewer
+	 */
 	private MapViewer createTestSubject() {
 		return new MapViewer(new FreeColClient(new InputStream(), ""));
 	}
 
+	/**
+	 * Gets the image library test.
+	 *
+	 * @return the image library test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getImageLibrary", signature = "()QImageLibrary;")
 	@Test
 	public void getImageLibraryTest() throws Exception {
@@ -56,6 +84,12 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the view mode test.
+	 *
+	 * @return the view mode test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getViewMode", signature = "()I")
 	@Test
 	public void getViewModeTest() throws Exception {
@@ -69,6 +103,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Toggle view mode test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "toggleViewMode", signature = "()V")
 	@Test
 	public void toggleViewModeTest() throws Exception {
@@ -81,6 +120,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Change view mode test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "changeViewMode", signature = "(I)V")
 	@Test
 	public void changeViewModeTest() throws Exception {
@@ -94,6 +138,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Center active unit test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "centerActiveUnit", signature = "()V")
 	@Test
 	public void centerActiveUnitTest() throws Exception {
@@ -106,6 +155,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Convert to map tile test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "convertToMapTile", signature = "(II)QTile;")
 	@Test
 	public void convertToMapTileTest() throws Exception {
@@ -121,6 +175,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Execute with unit out for animation test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "executeWithUnitOutForAnimation", signature = "(QUnit;QTile;QOutForAnimationCallback;)V")
 	@Test
 	public void executeWithUnitOutForAnimationTest() throws Exception {
@@ -137,6 +196,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Enter unit out for animation test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "enterUnitOutForAnimation", signature = "(QUnit;QTile;)QJLabel;")
 	@Test
 	public void enterUnitOutForAnimationTest() throws Exception {
@@ -153,6 +217,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Release unit out for animation test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "releaseUnitOutForAnimation", signature = "(QUnit;)V")
 	@Test
 	public void releaseUnitOutForAnimationTest() throws Exception {
@@ -166,6 +235,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Checks if is out for animation test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "isOutForAnimation", signature = "(QUnit;)Z")
 	@Test
 	public void isOutForAnimationTest() throws Exception {
@@ -180,6 +254,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the unit label test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createUnitLabel", signature = "(QUnit;)QJLabel;")
 	@Test
 	public void createUnitLabelTest() throws Exception {
@@ -194,6 +273,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Calculate tile bounds test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "calculateTileBounds", signature = "(QTile;)QRectangle;")
 	@Test
 	public void calculateTileBoundsTest() throws Exception {
@@ -208,6 +292,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Calculate tile position test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "calculateTilePosition", signature = "(QTile;)QPoint;")
 	@Test
 	public void calculateTilePositionTest() throws Exception {
@@ -222,6 +311,12 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the tile width test.
+	 *
+	 * @return the tile width test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getTileWidth", signature = "()I")
 	@Test
 	public void getTileWidthTest() throws Exception {
@@ -235,6 +330,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Calculate unit label position in tile test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "calculateUnitLabelPositionInTile", signature = "(IIQPoint;)QPoint;")
 	@Test
 	public void calculateUnitLabelPositionInTileTest() throws Exception {
@@ -254,6 +354,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * On screen test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "onScreen", signature = "(QTile;)Z")
 	@Test
 	public void onScreenTest() throws Exception {
@@ -270,6 +375,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Start cursor blinking test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "startCursorBlinking", signature = "()V")
 	@Test
 	public void startCursorBlinkingTest() throws Exception {
@@ -282,6 +392,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Stop blinking test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "stopBlinking", signature = "()V")
 	@Test
 	public void stopBlinkingTest() throws Exception {
@@ -294,6 +409,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Restart blinking test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "restartBlinking", signature = "()V")
 	@Test
 	public void restartBlinkingTest() throws Exception {
@@ -306,6 +426,12 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the focus test.
+	 *
+	 * @return the focus test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getFocus", signature = "()QTile;")
 	@Test
 	public void getFocusTest() throws Exception {
@@ -319,6 +445,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the focus test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setFocus", signature = "(QTile;)V")
 	@Test
 	public void setFocusTest() throws Exception {
@@ -332,6 +463,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the offset focus test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setOffsetFocus", signature = "(QTile;)I")
 	@Test
 	public void setOffsetFocusTest() throws Exception {
@@ -348,6 +484,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Force reposition test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "forceReposition", signature = "()V")
 	@Test
 	public void forceRepositionTest() throws Exception {
@@ -360,6 +501,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Reposition map if needed test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "repositionMapIfNeeded", signature = "()V")
 	@Test
 	public void repositionMapIfNeededTest() throws Exception {
@@ -372,6 +518,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Position map test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "positionMap", signature = "(QTile;)V")
 	@Test
 	public void positionMapTest() throws Exception {
@@ -385,6 +536,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Scroll map test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "scrollMap", signature = "(QDirection;)Z")
 	@Test
 	public void scrollMapTest() throws Exception {
@@ -399,6 +555,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Checks if is map near bottom test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "isMapNearBottom", signature = "(I)Z")
 	@Test
 	public void isMapNearBottomTest() throws Exception {
@@ -413,6 +574,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Checks if is map near left test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "isMapNearLeft", signature = "(II)Z")
 	@Test
 	public void isMapNearLeftTest() throws Exception {
@@ -428,6 +594,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Checks if is map near right test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "isMapNearRight", signature = "(II)Z")
 	@Test
 	public void isMapNearRightTest() throws Exception {
@@ -443,6 +614,12 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the left columns test.
+	 *
+	 * @return the left columns test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getLeftColumns", signature = "()I")
 	@Test
 	public void getLeftColumnsTest() throws Exception {
@@ -456,6 +633,12 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the left columns test 1.
+	 *
+	 * @return the left columns test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getLeftColumns", signature = "(I)I")
 	@Test
 	public void getLeftColumnsTest_1() throws Exception {
@@ -470,6 +653,12 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the right columns test.
+	 *
+	 * @return the right columns test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getRightColumns", signature = "()I")
 	@Test
 	public void getRightColumnsTest() throws Exception {
@@ -483,6 +672,12 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the right columns test 1.
+	 *
+	 * @return the right columns test 1
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getRightColumns", signature = "(I)I")
 	@Test
 	public void getRightColumnsTest_1() throws Exception {
@@ -497,6 +692,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Checks if is map near top test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "isMapNearTop", signature = "(I)Z")
 	@Test
 	public void isMapNearTopTest() throws Exception {
@@ -511,6 +711,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Checks if is tile visible test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "isTileVisible", signature = "(QTile;)Z")
 	@Test
 	public void isTileVisibleTest() throws Exception {
@@ -527,6 +732,12 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the selected tile test.
+	 *
+	 * @return the selected tile test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getSelectedTile", signature = "()QTile;")
 	@Test
 	public void getSelectedTileTest() throws Exception {
@@ -540,6 +751,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the selected tile test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setSelectedTile", signature = "(QTile;)Z")
 	@Test
 	public void setSelectedTileTest() throws Exception {
@@ -554,6 +770,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Find unit in front test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "findUnitInFront", signature = "(QTile;)QUnit;")
 	@Test
 	public void findUnitInFrontTest() throws Exception {
@@ -570,6 +791,12 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the active unit test.
+	 *
+	 * @return the active unit test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getActiveUnit", signature = "()QUnit;")
 	@Test
 	public void getActiveUnitTest() throws Exception {
@@ -583,6 +810,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the active unit test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setActiveUnit", signature = "(QUnit;)Z")
 	@Test
 	public void setActiveUnitTest() throws Exception {
@@ -605,6 +837,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Checks if is goto started test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "isGotoStarted", signature = "()Z")
 	@Test
 	public void isGotoStartedTest() throws Exception {
@@ -618,6 +855,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Start goto test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "startGoto", signature = "()V")
 	@Test
 	public void startGotoTest() throws Exception {
@@ -630,6 +872,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Stop goto test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "stopGoto", signature = "()V")
 	@Test
 	public void stopGotoTest() throws Exception {
@@ -642,6 +889,12 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the goto path test.
+	 *
+	 * @return the goto path test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getGotoPath", signature = "()QPathNode;")
 	@Test
 	public void getGotoPathTest() throws Exception {
@@ -655,6 +908,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the goto path test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setGotoPath", signature = "(QPathNode;)V")
 	@Test
 	public void setGotoPathTest() throws Exception {
@@ -668,6 +926,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Update current path for active unit test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "updateCurrentPathForActiveUnit", signature = "()V")
 	@Test
 	public void updateCurrentPathForActiveUnitTest() throws Exception {
@@ -680,6 +943,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the current path test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setCurrentPath", signature = "(QPathNode;)V")
 	@Test
 	public void setCurrentPathTest() throws Exception {
@@ -693,6 +961,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the size test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setSize", signature = "(QDimension;)V")
 	@Test
 	public void setSizeTest() throws Exception {
@@ -706,6 +979,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Reset map scale test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "resetMapScale", signature = "()V")
 	@Test
 	public void resetMapScaleTest() throws Exception {
@@ -718,6 +996,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Checks if is at max map scale test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "isAtMaxMapScale", signature = "()Z")
 	@Test
 	public void isAtMaxMapScaleTest() throws Exception {
@@ -731,6 +1014,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Checks if is at min map scale test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "isAtMinMapScale", signature = "()Z")
 	@Test
 	public void isAtMinMapScaleTest() throws Exception {
@@ -744,6 +1032,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Increase map scale test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "increaseMapScale", signature = "()V")
 	@Test
 	public void increaseMapScaleTest() throws Exception {
@@ -756,6 +1049,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Decrease map scale test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "decreaseMapScale", signature = "()V")
 	@Test
 	public void decreaseMapScaleTest() throws Exception {
@@ -768,6 +1066,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Update map display variables test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "updateMapDisplayVariables", signature = "()V")
 	@Test
 	public void updateMapDisplayVariablesTest() throws Exception {
@@ -780,6 +1083,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the image library and update data test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setImageLibraryAndUpdateData", signature = "(QImageLibrary;)V")
 	@Test
 	public void setImageLibraryAndUpdateDataTest() throws Exception {
@@ -793,6 +1101,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Display map test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "displayMap", signature = "(QGraphics2D;)V")
 	@Test
 	public void displayMapTest() throws Exception {
@@ -806,6 +1119,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Display settlement labels test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "displaySettlementLabels", signature = "(QGraphics2D;QSettlement;QPlayer;IQFont;QFont;QFont;)V")
 	@Test
 	public void displaySettlementLabelsTest() throws Exception {
@@ -826,6 +1144,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the capital label test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createCapitalLabel", signature = "(IIQColor;)QBufferedImage;")
 	@Test
 	public void createCapitalLabelTest() throws Exception {
@@ -841,6 +1164,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the label test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createLabel", signature = "(QGraphics2D;QString;QFont;QColor;)QBufferedImage;")
 	@Test
 	public void createLabelTest() throws Exception {
@@ -857,6 +1185,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the label test 1.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createLabel", signature = "(QGraphics2D;[QTextSpecification;QColor;)QBufferedImage;")
 	@Test
 	public void createLabelTest_1() throws Exception {
@@ -872,6 +1205,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the religious mission label test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createReligiousMissionLabel", signature = "(IIQColor;Z)QBufferedImage;")
 	@Test
 	public void createReligiousMissionLabelTest() throws Exception {
@@ -888,6 +1226,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Display path test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "displayPath", signature = "(QGraphics2D;QPathNode;)V")
 	@Test
 	public void displayPathTest() throws Exception {
@@ -902,6 +1245,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Display unit test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "displayUnit", signature = "(QGraphics2D;QUnit;)V")
 	@Test
 	public void displayUnitTest() throws Exception {
@@ -916,6 +1264,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Calculate unit image position in tile test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "calculateUnitImagePositionInTile", signature = "(QBufferedImage;)QPoint;")
 	@Test
 	public void calculateUnitImagePositionInTileTest() throws Exception {
@@ -931,6 +1284,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Display cursor test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "displayCursor", signature = "(QGraphics2D;)V")
 	@Test
 	public void displayCursorTest() throws Exception {
@@ -944,6 +1302,11 @@ public class MapViewerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Display territorial borders test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "displayTerritorialBorders", signature = "(QGraphics2D;QTile;QBorderType;Z)V")
 	@Test
 	public void displayTerritorialBordersTest() throws Exception {

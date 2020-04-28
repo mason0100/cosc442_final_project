@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package net.sf.freecol.client.gui;
 
 import java.awt.Dimension;
@@ -14,19 +17,38 @@ import org.powermock.reflect.Whitebox;
 
 import net.sf.freecol.client.FreeColClient;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AbstractCanvasListenerTest.
+ */
 @Generated(value = "org.junit-tools-1.1.0")
 public class AbstractCanvasListenerTest {
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
+	/**
+	 * Creates the test subject.
+	 *
+	 * @return the abstract canvas listener
+	 */
 	private AbstractCanvasListener createTestSubject() {
 		return new AbstractCanvasListener(new FreeColClient(new InputStream(), ""),
 				new Canvas(new FreeColClient(new InputStream(), ""), new GraphicsDevice(),
@@ -34,6 +56,11 @@ public class AbstractCanvasListenerTest {
 						new MapViewer(new FreeColClient(new InputStream(), ""))));
 	}
 
+	/**
+	 * Perform auto scroll if active test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "performAutoScrollIfActive", signature = "(QMouseEvent;)V")
 	@Test
 	public void performAutoScrollIfActiveTest() throws Exception {
@@ -47,6 +74,11 @@ public class AbstractCanvasListenerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Perform drag scroll if active test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "performDragScrollIfActive", signature = "(QMouseEvent;)V")
 	@Test
 	public void performDragScrollIfActiveTest() throws Exception {
@@ -60,6 +92,11 @@ public class AbstractCanvasListenerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Stop scroll if scroll is active test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "stopScrollIfScrollIsActive", signature = "()V")
 	@Test
 	public void stopScrollIfScrollIsActiveTest() throws Exception {
@@ -72,6 +109,11 @@ public class AbstractCanvasListenerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Scroll test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "scroll", signature = "(III)V")
 	@Test
 	public void scrollTest() throws Exception {

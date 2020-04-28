@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package net.sf.freecol.client.gui;
 
 import java.awt.Dimension;
@@ -16,19 +19,38 @@ import org.junit.tools.configuration.base.MethodRef;
 
 import net.sf.freecol.client.FreeColClient;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class FullScreenFrameListenerTest.
+ */
 @Generated(value = "org.junit-tools-1.1.0")
 public class FullScreenFrameListenerTest {
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
+	/**
+	 * Creates the test subject.
+	 *
+	 * @return the full screen frame listener
+	 */
 	private FullScreenFrameListener createTestSubject() {
 		return new FullScreenFrameListener(new FreeColClient(new InputStream(), ""),
 				new FreeColFrame(new FreeColClient(new InputStream(), ""), new GraphicsDevice(), new JMenuBar(),
@@ -38,6 +60,11 @@ public class FullScreenFrameListenerTest {
 						false, new Rectangle()));
 	}
 
+	/**
+	 * Window activated test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "windowActivated", signature = "(QWindowEvent;)V")
 	@Test
 	public void windowActivatedTest() throws Exception {
@@ -51,6 +78,11 @@ public class FullScreenFrameListenerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Window closed test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "windowClosed", signature = "(QWindowEvent;)V")
 	@Test
 	public void windowClosedTest() throws Exception {
@@ -64,6 +96,11 @@ public class FullScreenFrameListenerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Window closing test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "windowClosing", signature = "(QWindowEvent;)V")
 	@Test
 	public void windowClosingTest() throws Exception {
@@ -77,6 +114,11 @@ public class FullScreenFrameListenerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Window deactivated test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "windowDeactivated", signature = "(QWindowEvent;)V")
 	@Test
 	public void windowDeactivatedTest() throws Exception {
@@ -90,6 +132,11 @@ public class FullScreenFrameListenerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Window deiconified test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "windowDeiconified", signature = "(QWindowEvent;)V")
 	@Test
 	public void windowDeiconifiedTest() throws Exception {
@@ -103,6 +150,11 @@ public class FullScreenFrameListenerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Window iconified test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "windowIconified", signature = "(QWindowEvent;)V")
 	@Test
 	public void windowIconifiedTest() throws Exception {
@@ -116,6 +168,11 @@ public class FullScreenFrameListenerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Window opened test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "windowOpened", signature = "(QWindowEvent;)V")
 	@Test
 	public void windowOpenedTest() throws Exception {

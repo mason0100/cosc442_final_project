@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package net.sf.freecol.client.gui;
 
 import java.awt.Font;
@@ -14,23 +17,47 @@ import org.powermock.reflect.Whitebox;
 import net.sf.freecol.client.gui.FontLibrary.FontSize;
 import net.sf.freecol.client.gui.FontLibrary.FontType;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class FontLibraryTest.
+ */
 @Generated(value = "org.junit-tools-1.1.0")
 public class FontLibraryTest {
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
+	/**
+	 * Creates the test subject.
+	 *
+	 * @return the font library
+	 */
 	private FontLibrary createTestSubject() {
 		return new FontLibrary();
 	}
 
+	/**
+	 * Creates the main font test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createMainFont", signature = "(QString;F)QFont;")
 	@Test
 	public void createMainFontTest() throws Exception {
@@ -51,6 +78,11 @@ public class FontLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the scaled font test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createScaledFont", signature = "(QFontType;QFontSize;)QFont;")
 	@Test
 	public void createScaledFontTest() throws Exception {
@@ -66,6 +98,11 @@ public class FontLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the scaled font test 1.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createScaledFont", signature = "(QFontType;QFontSize;I)QFont;")
 	@Test
 	public void createScaledFontTest_1() throws Exception {
@@ -82,6 +119,11 @@ public class FontLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the compatible scaled font test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createCompatibleScaledFont", signature = "(QString;QFontType;QFontSize;)QFont;")
 	@Test
 	public void createCompatibleScaledFontTest() throws Exception {
@@ -98,6 +140,11 @@ public class FontLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the compatible scaled font test 1.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createCompatibleScaledFont", signature = "(QString;QFontType;QFontSize;I)QFont;")
 	@Test
 	public void createCompatibleScaledFontTest_1() throws Exception {
@@ -115,6 +162,11 @@ public class FontLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the font test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createFont", signature = "(QFontType;QFontSize;)QFont;")
 	@Test
 	public void createFontTest() throws Exception {
@@ -128,6 +180,11 @@ public class FontLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the font test 1.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createFont", signature = "(QFontType;QFontSize;I)QFont;")
 	@Test
 	public void createFontTest_1() throws Exception {
@@ -142,6 +199,11 @@ public class FontLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the font test 2.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createFont", signature = "(QFontType;QFontSize;F)QFont;")
 	@Test
 	public void createFontTest_2() throws Exception {
@@ -156,6 +218,11 @@ public class FontLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the compatible font test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createCompatibleFont", signature = "(QString;QFontType;QFontSize;)QFont;")
 	@Test
 	public void createCompatibleFontTest() throws Exception {
@@ -170,6 +237,11 @@ public class FontLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the compatible font test 1.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createCompatibleFont", signature = "(QString;QFontType;QFontSize;I)QFont;")
 	@Test
 	public void createCompatibleFontTest_1() throws Exception {
@@ -185,6 +257,11 @@ public class FontLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the compatible font test 2.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createCompatibleFont", signature = "(QString;QFontType;QFontSize;F)QFont;")
 	@Test
 	public void createCompatibleFontTest_2() throws Exception {
@@ -200,6 +277,11 @@ public class FontLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the font test 3.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createFont", signature = "(QFontType;QFontSize;IF)QFont;")
 	@Test
 	public void createFontTest_3() throws Exception {
@@ -215,6 +297,11 @@ public class FontLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Creates the compatible font test 3.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "createCompatibleFont", signature = "(QString;QFontType;QFontSize;IF)QFont;")
 	@Test
 	public void createCompatibleFontTest_3() throws Exception {
@@ -231,6 +318,11 @@ public class FontLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Calc scaled size test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "calcScaledSize", signature = "(QFontSize;F)F")
 	@Test
 	public void calcScaledSizeTest() throws Exception {
@@ -245,6 +337,12 @@ public class FontLibraryTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the font key test.
+	 *
+	 * @return the font key test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getFontKey", signature = "(QFontType;)QString;")
 	@Test
 	public void getFontKeyTest() throws Exception {

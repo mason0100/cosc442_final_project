@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package net.sf.freecol.client.control;
 
 import java.awt.Color;
@@ -15,23 +18,47 @@ import net.sf.freecol.common.model.Nation;
 import net.sf.freecol.common.model.NationOptions.NationState;
 import net.sf.freecol.common.model.NationType;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PreGameControllerTest.
+ */
 @Generated(value = "org.junit-tools-1.1.0")
 public class PreGameControllerTest {
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
+	/**
+	 * Creates the test subject.
+	 *
+	 * @return the pre game controller
+	 */
 	private PreGameController createTestSubject() {
 		return new PreGameController(new FreeColClient(new InputStream(), ""));
 	}
 
+	/**
+	 * Chat test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "chat", signature = "(QString;)V")
 	@Test
 	public void chatTest() throws Exception {
@@ -45,6 +72,11 @@ public class PreGameControllerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the ready test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setReady", signature = "(Z)V")
 	@Test
 	public void setReadyTest() throws Exception {
@@ -58,6 +90,11 @@ public class PreGameControllerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Request launch test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "requestLaunch", signature = "()V")
 	@Test
 	public void requestLaunchTest() throws Exception {
@@ -70,6 +107,11 @@ public class PreGameControllerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the available test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setAvailable", signature = "(QNation;QNationState;)V")
 	@Test
 	public void setAvailableTest() throws Exception {
@@ -84,6 +126,11 @@ public class PreGameControllerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the color test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setColor", signature = "(QNation;QColor;)V")
 	@Test
 	public void setColorTest() throws Exception {
@@ -98,6 +145,11 @@ public class PreGameControllerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the nation test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setNation", signature = "(QNation;)V")
 	@Test
 	public void setNationTest() throws Exception {
@@ -111,6 +163,11 @@ public class PreGameControllerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the nation type test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setNationType", signature = "(QNationType;)V")
 	@Test
 	public void setNationTypeTest() throws Exception {
@@ -124,6 +181,11 @@ public class PreGameControllerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Start game test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "startGame", signature = "()Z")
 	@Test
 	public void startGameTest() throws Exception {
@@ -137,6 +199,11 @@ public class PreGameControllerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Update game options test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "updateGameOptions", signature = "()V")
 	@Test
 	public void updateGameOptionsTest() throws Exception {
@@ -149,6 +216,11 @@ public class PreGameControllerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Update map generator options test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "updateMapGeneratorOptions", signature = "()V")
 	@Test
 	public void updateMapGeneratorOptionsTest() throws Exception {

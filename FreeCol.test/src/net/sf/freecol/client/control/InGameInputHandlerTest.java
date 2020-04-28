@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package net.sf.freecol.client.control;
 
 import javax.annotation.Generated;
@@ -13,23 +16,47 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.common.model.Game;
 import net.sf.freecol.common.model.Unit;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class InGameInputHandlerTest.
+ */
 @Generated(value = "org.junit-tools-1.1.0")
 public class InGameInputHandlerTest {
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
+	/**
+	 * Creates the test subject.
+	 *
+	 * @return the in game input handler
+	 */
 	private InGameInputHandler createTestSubject() {
 		return new InGameInputHandler(new FreeColClient(new InputStream(), ""));
 	}
 
+	/**
+	 * Igc test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "igc", signature = "()QInGameController;")
 	@Test
 	public void igcTest() throws Exception {
@@ -43,6 +70,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Invoke and wait test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "invokeAndWait", signature = "(QRunnable;)V")
 	@Test
 	public void invokeAndWaitTest() throws Exception {
@@ -56,6 +88,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Invoke later test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "invokeLater", signature = "(QRunnable;)V")
 	@Test
 	public void invokeLaterTest() throws Exception {
@@ -69,6 +106,12 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Gets the integer attribute test.
+	 *
+	 * @return the integer attribute test
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "getIntegerAttribute", signature = "(QElement;QString;)I")
 	@Test
 	public void getIntegerAttributeTest() throws Exception {
@@ -83,6 +126,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Select element test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "selectElement", signature = "(QElement;QString;)QElement;")
 	@Test
 	public void selectElementTest() throws Exception {
@@ -96,6 +144,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Select unit from element test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "selectUnitFromElement", signature = "(QGame;QElement;QString;)QUnit;")
 	@Test
 	public void selectUnitFromElementTest() throws Exception {
@@ -111,6 +164,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Handle test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "handle", signature = "(QConnection;QElement;)QElement;")
 	@Test
 	public void handleTest() throws Exception {
@@ -128,6 +186,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Adds the object test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "addObject", signature = "(QElement;)QElement;")
 	@Test
 	public void addObjectTest() throws Exception {
@@ -142,6 +205,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Adds the player test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "addPlayer", signature = "(QElement;)QElement;")
 	@Test
 	public void addPlayerTest() throws Exception {
@@ -156,6 +224,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Animate attack test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "animateAttack", signature = "(QElement;)QElement;")
 	@Test
 	public void animateAttackTest() throws Exception {
@@ -170,6 +243,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Animate move test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "animateMove", signature = "(QElement;)QElement;")
 	@Test
 	public void animateMoveTest() throws Exception {
@@ -184,6 +262,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Chat test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "chat", signature = "(QElement;)QElement;")
 	@Test
 	public void chatTest() throws Exception {
@@ -198,6 +281,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Choose founding father test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "chooseFoundingFather", signature = "(QElement;)QElement;")
 	@Test
 	public void chooseFoundingFatherTest() throws Exception {
@@ -212,6 +300,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Close menus test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "closeMenus", signature = "()QElement;")
 	@Test
 	public void closeMenusTest() throws Exception {
@@ -225,6 +318,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Diplomacy test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "diplomacy", signature = "(QElement;)QElement;")
 	@Test
 	public void diplomacyTest() throws Exception {
@@ -239,6 +337,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Dispose units test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "disposeUnits", signature = "(QElement;)QElement;")
 	@Test
 	public void disposeUnitsTest() throws Exception {
@@ -253,6 +356,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Error test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "error", signature = "(QElement;)QElement;")
 	@Test
 	public void errorTest() throws Exception {
@@ -267,6 +375,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Feature change test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "featureChange", signature = "(QElement;)QElement;")
 	@Test
 	public void featureChangeTest() throws Exception {
@@ -281,6 +394,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * First contact test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "firstContact", signature = "(QElement;)QElement;")
 	@Test
 	public void firstContactTest() throws Exception {
@@ -295,6 +413,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Fountain of youth test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "fountainOfYouth", signature = "(QElement;)QElement;")
 	@Test
 	public void fountainOfYouthTest() throws Exception {
@@ -309,6 +432,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Game ended test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "gameEnded", signature = "(QElement;)QElement;")
 	@Test
 	public void gameEndedTest() throws Exception {
@@ -323,6 +451,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Indian demand test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "indianDemand", signature = "(QElement;)QElement;")
 	@Test
 	public void indianDemandTest() throws Exception {
@@ -337,6 +470,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Loot cargo test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "lootCargo", signature = "(QElement;)QElement;")
 	@Test
 	public void lootCargoTest() throws Exception {
@@ -351,6 +489,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Monarch action test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "monarchAction", signature = "(QElement;)QElement;")
 	@Test
 	public void monarchActionTest() throws Exception {
@@ -365,6 +508,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Multiple test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "multiple", signature = "(QConnection;QElement;)QElement;")
 	@Test
 	public void multipleTest() throws Exception {
@@ -380,6 +528,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * New land name test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "newLandName", signature = "(QElement;)QElement;")
 	@Test
 	public void newLandNameTest() throws Exception {
@@ -394,6 +547,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * New region name test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "newRegionName", signature = "(QElement;)QElement;")
 	@Test
 	public void newRegionNameTest() throws Exception {
@@ -408,6 +566,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * New turn test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "newTurn", signature = "(QElement;)QElement;")
 	@Test
 	public void newTurnTest() throws Exception {
@@ -422,6 +585,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Reconnect test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "reconnect", signature = "(QElement;)QElement;")
 	@Test
 	public void reconnectTest() throws Exception {
@@ -436,6 +604,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Removes the test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "remove", signature = "(QElement;)QElement;")
 	@Test
 	public void removeTest() throws Exception {
@@ -450,6 +623,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the AI test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setAI", signature = "(QElement;)QElement;")
 	@Test
 	public void setAITest() throws Exception {
@@ -464,6 +642,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the current player test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setCurrentPlayer", signature = "(QElement;)QElement;")
 	@Test
 	public void setCurrentPlayerTest() throws Exception {
@@ -478,6 +661,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the dead test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setDead", signature = "(QElement;)QElement;")
 	@Test
 	public void setDeadTest() throws Exception {
@@ -492,6 +680,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Sets the stance test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "setStance", signature = "(QElement;)QElement;")
 	@Test
 	public void setStanceTest() throws Exception {
@@ -506,6 +699,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Spy result test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "spyResult", signature = "(QElement;)QElement;")
 	@Test
 	public void spyResultTest() throws Exception {
@@ -520,6 +718,11 @@ public class InGameInputHandlerTest {
 		Assert.fail();
 	}
 
+	/**
+	 * Update test.
+	 *
+	 * @throws Exception the exception
+	 */
 	@MethodRef(name = "update", signature = "(QElement;)QElement;")
 	@Test
 	public void updateTest() throws Exception {
