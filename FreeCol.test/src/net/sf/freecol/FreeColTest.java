@@ -1,6 +1,3 @@
-/*
- * 
- */
 package net.sf.freecol;
 
 import java.io.File;
@@ -22,27 +19,13 @@ import net.sf.freecol.common.model.Specification;
 import net.sf.freecol.common.model.StringTemplate;
 import net.sf.freecol.common.option.OptionGroup;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Class FreeColTest.
- */
 @Generated(value = "org.junit-tools-1.1.0")
 public class FreeColTest {
 
-	/**
-	 * Creates the test subject.
-	 *
-	 * @return the free col
-	 */
 	private FreeCol createTestSubject() {
 		return new FreeCol();
 	}
 
-	/**
-	 * Bad load test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "badLoad", signature = "(QFile;)QStringTemplate;")
 	@Test
 	public void badLoadTest() throws Exception {
@@ -53,81 +36,41 @@ public class FreeColTest {
 		result = FreeCol.badLoad(file);
 	}
 
-	/**
-	 * Sets the up.
-	 *
-	 * @throws Exception the exception
-	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
-	/**
-	 * Sets the up 1.
-	 *
-	 * @throws Exception the exception
-	 */
 	@Before
 	public void setUp_1() throws Exception {
 
 	}
 
-	/**
-	 * Tear down.
-	 *
-	 * @throws Exception the exception
-	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
-	/**
-	 * Sets the up 2.
-	 *
-	 * @throws Exception the exception
-	 */
 	@Before
 	public void setUp_2() throws Exception {
 
 	}
 
-	/**
-	 * Tear down 1.
-	 *
-	 * @throws Exception the exception
-	 */
 	@After
 	public void tearDown_1() throws Exception {
 
 	}
 
-	/**
-	 * Sets the up 3.
-	 *
-	 * @throws Exception the exception
-	 */
 	@Before
 	public void setUp_3() throws Exception {
 
 	}
 
-	/**
-	 * Tear down 2.
-	 *
-	 * @throws Exception the exception
-	 */
 	@After
 	public void tearDown_2() throws Exception {
 
 	}
 
-	/**
-	 * Main test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "main", signature = "([QString;)V")
 	@Test
 	public void mainTest() throws Exception {
@@ -139,12 +82,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the jar URL connection test.
-	 *
-	 * @return the jar URL connection test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getJarURLConnection", signature = "(QClass;)QJarURLConnection;")
 	@Test
 	public void getJarURLConnectionTest() throws Exception {
@@ -157,11 +94,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Read version test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "readVersion", signature = "(QJarURLConnection;)QString;")
 	@Test
 	public void readVersionTest() throws Exception {
@@ -174,12 +106,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the default splash stream test.
-	 *
-	 * @return the default splash stream test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getDefaultSplashStream", signature = "(QJarURLConnection;)QInputStream;")
 	@Test
 	public void getDefaultSplashStreamTest() throws Exception {
@@ -193,11 +119,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Fatal test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "fatal", signature = "(QStringTemplate;)V")
 	@Test
 	public void fatalTest() throws Exception {
@@ -209,11 +130,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Fatal test 1.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "fatal", signature = "(QString;)V")
 	@Test
 	public void fatalTest_1() throws Exception {
@@ -230,11 +146,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gripe test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "gripe", signature = "(QStringTemplate;)V")
 	@Test
 	public void gripeTest() throws Exception {
@@ -246,11 +157,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gripe test 1.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "gripe", signature = "(QString;)V")
 	@Test
 	public void gripeTest_1() throws Exception {
@@ -262,11 +168,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Find arg test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "findArg", signature = "(QString;[QString;)QString;")
 	@Test
 	public void findArgTest() throws Exception {
@@ -280,11 +181,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Handle args test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "handleArgs", signature = "([QString;)V")
 	@Test
 	public void handleArgsTest() throws Exception {
@@ -296,11 +192,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Prints the usage test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "printUsage", signature = "(QOptions;I)V")
 	@Test
 	public void printUsageTest() throws Exception {
@@ -313,11 +204,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Load specification test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "loadSpecification", signature = "(QFreeColTcFile;QAdvantages;QString;)QSpecification;")
 	@Test
 	public void loadSpecificationTest() throws Exception {
@@ -332,12 +218,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the TC specification test.
-	 *
-	 * @return the TC specification test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getTCSpecification", signature = "()QSpecification;")
 	@Test
 	public void getTCSpecificationTest() throws Exception {
@@ -349,12 +229,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the advantages test.
-	 *
-	 * @return the advantages test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getAdvantages", signature = "()QAdvantages;")
 	@Test
 	public void getAdvantagesTest() throws Exception {
@@ -366,11 +240,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Select advantages test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "selectAdvantages", signature = "(QString;)QAdvantages;")
 	@Test
 	public void selectAdvantagesTest() throws Exception {
@@ -383,11 +252,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the advantages test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setAdvantages", signature = "(QAdvantages;)V")
 	@Test
 	public void setAdvantagesTest() throws Exception {
@@ -399,12 +263,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the valid advantages test.
-	 *
-	 * @return the valid advantages test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getValidAdvantages", signature = "()QString;")
 	@Test
 	public void getValidAdvantagesTest() throws Exception {
@@ -416,12 +274,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the difficulty test.
-	 *
-	 * @return the difficulty test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getDifficulty", signature = "()QString;")
 	@Test
 	public void getDifficultyTest() throws Exception {
@@ -433,11 +285,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Select difficulty test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "selectDifficulty", signature = "(QString;)QString;")
 	@Test
 	public void selectDifficultyTest() throws Exception {
@@ -450,11 +297,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the difficulty test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setDifficulty", signature = "(QOptionGroup;)V")
 	@Test
 	public void setDifficultyTest() throws Exception {
@@ -466,11 +308,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the difficulty test 1.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setDifficulty", signature = "(QString;)V")
 	@Test
 	public void setDifficultyTest_1() throws Exception {
@@ -482,12 +319,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the valid difficulties test.
-	 *
-	 * @return the valid difficulties test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getValidDifficulties", signature = "()QString;")
 	@Test
 	public void getValidDifficultiesTest() throws Exception {
@@ -499,12 +330,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the european count test.
-	 *
-	 * @return the european count test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getEuropeanCount", signature = "()I")
 	@Test
 	public void getEuropeanCountTest() throws Exception {
@@ -516,11 +341,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the european count test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setEuropeanCount", signature = "(I)V")
 	@Test
 	public void setEuropeanCountTest() throws Exception {
@@ -532,11 +352,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the GUI scale test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setGUIScale", signature = "(QString;)Z")
 	@Test
 	public void setGUIScaleTest() throws Exception {
@@ -556,12 +371,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the valid GUI scales test.
-	 *
-	 * @return the valid GUI scales test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getValidGUIScales", signature = "()QString;")
 	@Test
 	public void getValidGUIScalesTest() throws Exception {
@@ -573,11 +382,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Select european count test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "selectEuropeanCount", signature = "(QString;)I")
 	@Test
 	public void selectEuropeanCountTest() throws Exception {
@@ -590,11 +394,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the log level test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setLogLevel", signature = "(QString;)V")
 	@Test
 	public void setLogLevelTest() throws Exception {
@@ -606,12 +405,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the name test.
-	 *
-	 * @return the name test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getName", signature = "()QString;")
 	@Test
 	public void getNameTest() throws Exception {
@@ -623,11 +416,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the name test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setName", signature = "(QString;)V")
 	@Test
 	public void setNameTest() throws Exception {
@@ -639,12 +427,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the locale test.
-	 *
-	 * @return the locale test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getLocale", signature = "()QLocale;")
 	@Test
 	public void getLocaleTest() throws Exception {
@@ -656,12 +438,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the revision test.
-	 *
-	 * @return the revision test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getRevision", signature = "()QString;")
 	@Test
 	public void getRevisionTest() throws Exception {
@@ -673,12 +449,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the server host test.
-	 *
-	 * @return the server host test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getServerHost", signature = "()QString;")
 	@Test
 	public void getServerHostTest() throws Exception {
@@ -690,12 +460,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the server port test.
-	 *
-	 * @return the server port test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getServerPort", signature = "()I")
 	@Test
 	public void getServerPortTest() throws Exception {
@@ -707,11 +471,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the server port test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setServerPort", signature = "(QString;)Z")
 	@Test
 	public void setServerPortTest() throws Exception {
@@ -731,12 +490,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the TC test.
-	 *
-	 * @return the TC test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getTC", signature = "()QString;")
 	@Test
 	public void getTCTest() throws Exception {
@@ -748,11 +501,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the TC test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setTC", signature = "(QString;)V")
 	@Test
 	public void setTCTest() throws Exception {
@@ -764,12 +512,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the TC file test.
-	 *
-	 * @return the TC file test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getTCFile", signature = "()QFreeColTcFile;")
 	@Test
 	public void getTCFileTest() throws Exception {
@@ -781,12 +523,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the timeout test.
-	 *
-	 * @return the timeout test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getTimeout", signature = "(Z)I")
 	@Test
 	public void getTimeoutTest() throws Exception {
@@ -799,11 +535,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the timeout test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setTimeout", signature = "(QString;)Z")
 	@Test
 	public void setTimeoutTest() throws Exception {
@@ -816,12 +547,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the version test.
-	 *
-	 * @return the version test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getVersion", signature = "()QString;")
 	@Test
 	public void getVersionTest() throws Exception {
@@ -833,11 +558,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the window size test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setWindowSize", signature = "(QString;)V")
 	@Test
 	public void setWindowSizeTest() throws Exception {
@@ -854,11 +574,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Bad save test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "badSave", signature = "(QFile;)QStringTemplate;")
 	@Test
 	public void badSaveTest() throws Exception {
@@ -871,12 +586,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the configuration test.
-	 *
-	 * @return the configuration test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getConfiguration", signature = "()QStringBuilder;")
 	@Test
 	public void getConfigurationTest() throws Exception {
@@ -888,11 +597,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Start client test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "startClient", signature = "(QString;)V")
 	@Test
 	public void startClientTest() throws Exception {
@@ -904,11 +608,6 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Start server test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "startServer", signature = "()V")
 	@Test
 	public void startServerTest() throws Exception {

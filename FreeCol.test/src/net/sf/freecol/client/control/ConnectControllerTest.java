@@ -1,6 +1,3 @@
-/*
- * 
- */
 package net.sf.freecol.client.control;
 
 import java.io.File;
@@ -21,47 +18,23 @@ import net.sf.freecol.common.model.Specification;
 import net.sf.freecol.server.FreeColServer;
 import net.sf.freecol.server.FreeColServer.GameState;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Class ConnectControllerTest.
- */
 @Generated(value = "org.junit-tools-1.1.0")
 public class ConnectControllerTest {
 
-	/**
-	 * Sets the up.
-	 *
-	 * @throws Exception the exception
-	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
-	/**
-	 * Tear down.
-	 *
-	 * @throws Exception the exception
-	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
-	/**
-	 * Creates the test subject.
-	 *
-	 * @return the connect controller
-	 */
 	private ConnectController createTestSubject() {
 		return new ConnectController(new FreeColClient(new InputStream(), ""));
 	}
 
-	/**
-	 * Finish test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "finish", signature = "()V")
 	@Test
 	public void finishTest() throws Exception {
@@ -74,11 +47,6 @@ public class ConnectControllerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Unblock server test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "unblockServer", signature = "(I)Z")
 	@Test
 	public void unblockServerTest() throws Exception {
@@ -93,11 +61,6 @@ public class ConnectControllerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Start server test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "startServer", signature = "(ZZQSpecification;I)QFreeColServer;")
 	@Test
 	public void startServerTest() throws Exception {
@@ -116,12 +79,6 @@ public class ConnectControllerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the connection test.
-	 *
-	 * @return the connection test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getConnection", signature = "(QString;I)QConnection;")
 	@Test
 	public void getConnectionTest() throws Exception {
@@ -137,12 +94,6 @@ public class ConnectControllerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the game state test.
-	 *
-	 * @return the game state test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getGameState", signature = "(QString;I)QGameState;")
 	@Test
 	public void getGameStateTest() throws Exception {
@@ -158,12 +109,6 @@ public class ConnectControllerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the vacant players test.
-	 *
-	 * @return the vacant players test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getVacantPlayers", signature = "(QString;I)QList<QString;>;")
 	@Test
 	public void getVacantPlayersTest() throws Exception {
@@ -179,11 +124,6 @@ public class ConnectControllerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Login test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "login", signature = "(QString;QString;I)Z")
 	@Test
 	public void loginTest() throws Exception {
@@ -200,11 +140,6 @@ public class ConnectControllerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Start multiplayer game test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "startMultiplayerGame", signature = "(QSpecification;ZI)Z")
 	@Test
 	public void startMultiplayerGameTest() throws Exception {
@@ -221,11 +156,6 @@ public class ConnectControllerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Join multiplayer game test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "joinMultiplayerGame", signature = "(QString;I)Z")
 	@Test
 	public void joinMultiplayerGameTest() throws Exception {
@@ -241,11 +171,6 @@ public class ConnectControllerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Start single player game test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "startSinglePlayerGame", signature = "(QSpecification;Z)Z")
 	@Test
 	public void startSinglePlayerGameTest() throws Exception {
@@ -261,11 +186,6 @@ public class ConnectControllerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Start saved game test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "startSavedGame", signature = "(QFile;QString;)Z")
 	@Test
 	public void startSavedGameTest() throws Exception {
@@ -281,11 +201,6 @@ public class ConnectControllerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Reconnect test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "reconnect", signature = "()Z")
 	@Test
 	public void reconnectTest() throws Exception {
@@ -299,11 +214,6 @@ public class ConnectControllerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Logout test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "logout", signature = "(Z)V")
 	@Test
 	public void logoutTest() throws Exception {
@@ -317,11 +227,6 @@ public class ConnectControllerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Quit game test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "quitGame", signature = "(ZZ)V")
 	@Test
 	public void quitGameTest() throws Exception {
@@ -336,11 +241,6 @@ public class ConnectControllerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Quit game test 1.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "quitGame", signature = "(Z)V")
 	@Test
 	public void quitGameTest_1() throws Exception {
@@ -354,12 +254,6 @@ public class ConnectControllerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the server list test.
-	 *
-	 * @return the server list test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getServerList", signature = "()QList<QServerInfo;>;")
 	@Test
 	public void getServerListTest() throws Exception {
