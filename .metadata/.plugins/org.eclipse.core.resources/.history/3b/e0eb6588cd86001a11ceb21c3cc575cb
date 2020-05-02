@@ -1,0 +1,56 @@
+
+
+import java.util.*;
+import org.junit.Assert;
+import org.junit.Test;
+
+@Generated(value="org.junit-tools-1.1.0")
+public class ChoiceItemTest{
+
+	@Before
+	public void setUp() throws Exception {
+	
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	
+	}
+
+	private ChoiceItem createTestSubject()  {
+	 return new ChoiceItem("", null, false);
+	}
+
+	@MethodRef(name="getObject", signature="()QT;")
+	@Test
+	public void getObjectTest() throws Exception {
+	ChoiceItem testSubject;T result;
+	
+	// default test
+	testSubject=createTestSubject();result=testSubject.getObject();
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="getChoice", signature="()I")
+	@Test
+	public void getChoiceTest() throws Exception {
+	ChoiceItem testSubject;int result;
+	
+	// default test
+	testSubject=createTestSubject();result=testSubject.getChoice();
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="isEnabled", signature="()Z")
+	@Test
+	public void isEnabledTest() throws Exception {
+	ChoiceItem testSubject;boolean result;
+	
+	// default test
+	testSubject=createTestSubject();result=testSubject.isEnabled();
+	
+	Assert.fail();
+	} 
+}

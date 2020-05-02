@@ -1,0 +1,102 @@
+
+
+import java.util.*;
+import org.junit.Assert;
+import org.junit.Test;
+
+@Generated(value="org.junit-tools-1.1.0")
+public class MapEditorControllerTest{
+
+	@Before
+	public void setUp() throws Exception {
+	
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	
+	}
+
+	private MapEditorController createTestSubject()  {
+	 return new MapEditorController(new FreeColClient(new InputStream(), ""));
+	}
+
+	@MethodRef(name="startMapEditor", signature="()V")
+	@Test
+	public void startMapEditorTest() throws Exception {
+	MapEditorController testSubject;
+	
+	// default test
+	testSubject=createTestSubject();testSubject.startMapEditor();
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="getDefaultSpecification", signature="()QSpecification;")
+	@Test
+	public void getDefaultSpecificationTest() throws Exception {
+	MapEditorController testSubject;Specification result;
+	
+	// default test
+	testSubject=createTestSubject();result=testSubject.getDefaultSpecification();
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="setMapTransform", signature="(QIMapTransform;)V")
+	@Test
+	public void setMapTransformTest() throws Exception {
+	MapEditorController testSubject;IMapTransform mt = null;
+	
+	
+	// default test
+	testSubject=createTestSubject();testSubject.setMapTransform(mt);
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="getMapTransform", signature="()QIMapTransform;")
+	@Test
+	public void getMapTransformTest() throws Exception {
+	MapEditorController testSubject;IMapTransform result;
+	
+	// default test
+	testSubject=createTestSubject();result=testSubject.getMapTransform();
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="transform", signature="(QTile;)V")
+	@Test
+	public void transformTest() throws Exception {
+	MapEditorController testSubject;Tile t = null;
+	
+	
+	// default test
+	testSubject=createTestSubject();testSubject.transform(t);
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="newMap", signature="()V")
+	@Test
+	public void newMapTest() throws Exception {
+	MapEditorController testSubject;
+	
+	// default test
+	testSubject=createTestSubject();testSubject.newMap();
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="saveGame", signature="()V")
+	@Test
+	public void saveGameTest() throws Exception {
+	MapEditorController testSubject;
+	
+	// default test
+	testSubject=createTestSubject();testSubject.saveGame();
+	
+	Assert.fail();
+	} 
+}

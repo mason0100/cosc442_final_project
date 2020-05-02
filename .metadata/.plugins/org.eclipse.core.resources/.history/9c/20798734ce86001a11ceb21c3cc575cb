@@ -1,0 +1,264 @@
+
+
+import java.util.*;
+import org.junit.Assert;
+import org.junit.Test;
+
+@Generated(value="org.junit-tools-1.1.0")
+public class MapViewerTest{
+
+	@Before
+	public void setUp() throws Exception {
+	
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	
+	}
+
+	private MapViewer createTestSubject()  {
+	 return new MapViewer(new FreeColClient(new InputStream(), ""));
+	}
+
+	@MethodRef(name="getImageLibrary", signature="()QImageLibrary;")
+	@Test
+	public void getImageLibraryTest() throws Exception {
+	MapViewer testSubject;ImageLibrary result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"getImageLibrary");
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="getViewMode", signature="()I")
+	@Test
+	public void getViewModeTest() throws Exception {
+	MapViewer testSubject;int result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"getViewMode");
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="toggleViewMode", signature="()V")
+	@Test
+	public void toggleViewModeTest() throws Exception {
+	MapViewer testSubject;
+	
+	// default test
+	testSubject=createTestSubject();Whitebox.invokeMethod(testSubject,"toggleViewMode");
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="changeViewMode", signature="(I)V")
+	@Test
+	public void changeViewModeTest() throws Exception {
+	MapViewer testSubject;int newViewMode = 0;
+	
+	
+	// default test
+	testSubject=createTestSubject();Whitebox.invokeMethod(testSubject,"changeViewMode", new Object[]{newViewMode});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="centerActiveUnit", signature="()V")
+	@Test
+	public void centerActiveUnitTest() throws Exception {
+	MapViewer testSubject;
+	
+	// default test
+	testSubject=createTestSubject();Whitebox.invokeMethod(testSubject,"centerActiveUnit");
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="convertToMapTile", signature="(II)QTile;")
+	@Test
+	public void convertToMapTileTest() throws Exception {
+	MapViewer testSubject;int x = 0;
+	int y = 0;
+	Tile result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"convertToMapTile", new Object[]{x, y});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="executeWithUnitOutForAnimation", signature="(QUnit;QTile;QOutForAnimationCallback;)V")
+	@Test
+	public void executeWithUnitOutForAnimationTest() throws Exception {
+	MapViewer testSubject;Unit unit = null;
+	Tile sourceTile = null;
+	OutForAnimationCallback r = null;
+	
+	
+	// default test
+	testSubject=createTestSubject();Whitebox.invokeMethod(testSubject,"executeWithUnitOutForAnimation", new Object[]{Unit.class, Tile.class, OutForAnimationCallback.class});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="enterUnitOutForAnimation", signature="(QUnit;QTile;)QJLabel;")
+	@Test
+	public void enterUnitOutForAnimationTest() throws Exception {
+	MapViewer testSubject;Unit unit = null;
+	Tile sourceTile = null;
+	JLabel result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"enterUnitOutForAnimation", new Object[]{Unit.class, Tile.class});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="releaseUnitOutForAnimation", signature="(QUnit;)V")
+	@Test
+	public void releaseUnitOutForAnimationTest() throws Exception {
+	MapViewer testSubject;Unit unit = null;
+	
+	
+	// default test
+	testSubject=createTestSubject();Whitebox.invokeMethod(testSubject,"releaseUnitOutForAnimation", new Object[]{Unit.class});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="isOutForAnimation", signature="(QUnit;)Z")
+	@Test
+	public void isOutForAnimationTest() throws Exception {
+	MapViewer testSubject;Unit unit = null;
+	boolean result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"isOutForAnimation", new Object[]{Unit.class});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="createUnitLabel", signature="(QUnit;)QJLabel;")
+	@Test
+	public void createUnitLabelTest() throws Exception {
+	MapViewer testSubject;Unit unit = null;
+	JLabel result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"createUnitLabel", new Object[]{Unit.class});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="calculateTileBounds", signature="(QTile;)QRectangle;")
+	@Test
+	public void calculateTileBoundsTest() throws Exception {
+	MapViewer testSubject;Tile tile = null;
+	Rectangle result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"calculateTileBounds", new Object[]{Tile.class});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="calculateTilePosition", signature="(QTile;)QPoint;")
+	@Test
+	public void calculateTilePositionTest() throws Exception {
+	MapViewer testSubject;Tile t = null;
+	Point result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"calculateTilePosition", new Object[]{Tile.class});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="getTileWidth", signature="()I")
+	@Test
+	public void getTileWidthTest() throws Exception {
+	MapViewer testSubject;int result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"getTileWidth");
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="calculateUnitLabelPositionInTile", signature="(IIQPoint;)QPoint;")
+	@Test
+	public void calculateUnitLabelPositionInTileTest() throws Exception {
+	MapViewer testSubject;int labelWidth = 0;
+	int labelHeight = 0;
+	Point tileP = null;
+	Point result;
+	
+	// test 1
+	testSubject=createTestSubject();tileP = null;
+	result=Whitebox.invokeMethod(testSubject,"calculateUnitLabelPositionInTile", new Object[]{labelWidth, labelHeight, Point.class});
+	Assert.assertEquals(null, result);
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="onScreen", signature="(QTile;)Z")
+	@Test
+	public void onScreenTest() throws Exception {
+	MapViewer testSubject;Tile tileToCheck = null;
+	boolean result;
+	
+	// test 1
+	testSubject=createTestSubject();tileToCheck = null;
+	result=Whitebox.invokeMethod(testSubject,"onScreen", new Object[]{Tile.class});
+	Assert.assertEquals(false, result);
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="startCursorBlinking", signature="()V")
+	@Test
+	public void startCursorBlinkingTest() throws Exception {
+	MapViewer testSubject;
+	
+	// default test
+	testSubject=createTestSubject();Whitebox.invokeMethod(testSubject,"startCursorBlinking");
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="stopBlinking", signature="()V")
+	@Test
+	public void stopBlinkingTest() throws Exception {
+	MapViewer testSubject;
+	
+	// default test
+	testSubject=createTestSubject();Whitebox.invokeMethod(testSubject,"stopBlinking");
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="restartBlinking", signature="()V")
+	@Test
+	public void restartBlinkingTest() throws Exception {
+	MapViewer testSubject;
+	
+	// default test
+	testSubject=createTestSubject();Whitebox.invokeMethod(testSubject,"restartBlinking");
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="getFocus", signature="()QTile;")
+	@Test
+	public void getFocusTest() throws Exception {
+	MapViewer testSubject;Tile result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"getFocus");
+	
+	Assert.fail();
+	} 
+}

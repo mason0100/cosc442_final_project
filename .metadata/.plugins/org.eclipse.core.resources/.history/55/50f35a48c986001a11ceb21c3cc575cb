@@ -1,0 +1,61 @@
+
+
+import java.util.*;
+import org.junit.Assert;
+import org.junit.Test;
+
+@Generated(value="org.junit-tools-1.1.0")
+public class ConnectControllerTest{
+
+	@Before
+	public void setUp() throws Exception {
+	
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	
+	}
+
+	private ConnectController createTestSubject()  {
+	 return new ConnectController(new FreeColClient(new InputStream(), ""));
+	}
+
+	@MethodRef(name="finish", signature="()V")
+	@Test
+	public void finishTest() throws Exception {
+	ConnectController testSubject;
+	
+	// default test
+	testSubject=createTestSubject();Whitebox.invokeMethod(testSubject,"finish");
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="unblockServer", signature="(I)Z")
+	@Test
+	public void unblockServerTest() throws Exception {
+	ConnectController testSubject;int port = 0;
+	boolean result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"unblockServer", new Object[]{port});
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="startServer", signature="(ZZQSpecification;I)QFreeColServer;")
+	@Test
+	public void startServerTest() throws Exception {
+	ConnectController testSubject;boolean publicServer = false;
+	boolean singlePlayer = false;
+	Specification spec = null;
+	int port = 0;
+	FreeColServer result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"startServer", new Object[]{publicServer, singlePlayer, Specification.class, port});
+	
+	Assert.fail();
+	} 
+}

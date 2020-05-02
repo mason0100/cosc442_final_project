@@ -1,0 +1,34 @@
+
+
+import java.util.*;
+import org.junit.Assert;
+import org.junit.Test;
+
+@Generated(value="org.junit-tools-1.1.0")
+public class CanvasMapEditorMouseListenerTest{
+
+	@Before
+	public void setUp() throws Exception {
+	
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	
+	}
+
+	private CanvasMapEditorMouseListener createTestSubject()  {
+	 return new CanvasMapEditorMouseListener(new FreeColClient(new InputStream(), ""), new Canvas(new FreeColClient(new InputStream(), ""), new GraphicsDevice(), new SwingGUI(new FreeColClient(new InputStream(), ""), 0), new Dimension(), new MapViewer(new FreeColClient(new InputStream(), ""))));
+	}
+
+	@MethodRef(name="getGUI", signature="()QGUI;")
+	@Test
+	public void getGUITest() throws Exception {
+	CanvasMapEditorMouseListener testSubject;GUI result;
+	
+	// default test
+	testSubject=createTestSubject();result=Whitebox.invokeMethod(testSubject,"getGUI");
+	
+	Assert.fail();
+	} 
+}

@@ -1,0 +1,37 @@
+package net.sf.freecol.client.gui;
+
+
+import static org.junit.Assert.*;
+import java.util.*;
+import org.junit.Assert;
+import org.junit.Test;
+
+@Generated(value="org.junit-tools-1.1.0")
+public class OutForAnimationCallbackTest{
+
+	@Before
+	public void setUp() throws Exception {
+	
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	
+	}
+
+	private OutForAnimationCallback createTestSubject()  {
+	 return new OutForAnimationCallback();
+	}
+
+	@MethodRef(name="executeWithUnitOutForAnimation", signature="(QJLabel;)V")
+	@Test
+	public void executeWithUnitOutForAnimationTest() throws Exception {
+	OutForAnimationCallback testSubject;JLabel unitLabel = null;
+	
+	
+	// default test
+	testSubject=createTestSubject();Whitebox.invokeMethod(testSubject,"executeWithUnitOutForAnimation", new Object[]{JLabel.class});
+	
+	Assert.fail();
+	} 
+}

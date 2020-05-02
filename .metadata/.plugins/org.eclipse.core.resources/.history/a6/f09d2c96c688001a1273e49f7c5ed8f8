@@ -1,0 +1,87 @@
+
+
+import java.util.*;
+import org.junit.Assert;
+import org.junit.Test;
+
+@Generated(value="org.junit-tools-1.1.0")
+public class ServerInfoTest{
+
+	@Before
+	public void setUp() throws Exception {
+	
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	
+	}
+
+	private ServerInfo createTestSubject()  {
+	 return new ServerInfo();
+	}
+
+	@MethodRef(name="update", signature="(QString;QString;IIIZQString;I)V")
+	@Test
+	public void updateTest() throws Exception {
+	ServerInfo testSubject;String name = "";
+	String address = "";
+	int port = 0;
+	int slotsAvailable = 0;
+	int currentlyPlaying = 0;
+	boolean isGameStarted = false;
+	String version = "";
+	int gameState = 0;
+	
+	
+	// default test
+	testSubject=createTestSubject();testSubject.update(name, address, port, slotsAvailable, currentlyPlaying, isGameStarted, version, gameState);
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="update", signature="(QElement;)V")
+	@Test
+	public void updateTest_1() throws Exception {
+	ServerInfo testSubject;Element element = null;
+	
+	
+	// default test
+	testSubject=createTestSubject();testSubject.update(element);
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="getName", signature="()QString;")
+	@Test
+	public void getNameTest() throws Exception {
+	ServerInfo testSubject;String result;
+	
+	// default test
+	testSubject=createTestSubject();result=testSubject.getName();
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="getAddress", signature="()QString;")
+	@Test
+	public void getAddressTest() throws Exception {
+	ServerInfo testSubject;String result;
+	
+	// default test
+	testSubject=createTestSubject();result=testSubject.getAddress();
+	
+	Assert.fail();
+	}
+
+	@MethodRef(name="getPort", signature="()I")
+	@Test
+	public void getPortTest() throws Exception {
+	ServerInfo testSubject;int result;
+	
+	// default test
+	testSubject=createTestSubject();result=testSubject.getPort();
+	
+	Assert.fail();
+	} 
+}

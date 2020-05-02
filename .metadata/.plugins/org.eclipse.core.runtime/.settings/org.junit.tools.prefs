@@ -1,0 +1,5 @@
+MOCK_FRAMEWORK=powermock
+MOCK_SAVE_IN_TESTPROJECT=true
+TEST_METHOD_POSTFIX=Test
+TEST_METHOD_PREFIX=
+eclipse.preferences.version=1
