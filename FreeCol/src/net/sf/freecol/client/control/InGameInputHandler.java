@@ -903,7 +903,7 @@ public final class InGameInputHandler extends InputHandler {
      *     tree) that holds all the information.
      * @return Null.
      */
-    private Element reconnect(@SuppressWarnings("unused") Element element) {
+    private Element reconnect(Element element) {
         logger.finest("Entered reconnect.");
 
         invokeLater(reconnectRunnable);
