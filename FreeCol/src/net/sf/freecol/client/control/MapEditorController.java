@@ -117,7 +117,7 @@ public final class MapEditorController {
             gui.startMapEditorGUI();
         } catch (IOException e) {
             gui.showErrorMessage("server.initialize");
-            return;
+            //return;
         }
     }
 
@@ -172,14 +172,14 @@ public final class MapEditorController {
      */
     public void newMap() {
         final Game game = freeColClient.getGame();
-        final Specification spec = game.getSpecification();
+        //final Specification spec = game.getSpecification();
 
         gui.removeInGameComponents();
         OptionGroup mgo = gui.showMapGeneratorOptionsDialog(true);
         if (mgo == null) return;
         game.setMapGeneratorOptions(mgo);
-        Map map = freeColClient.getFreeColServer().getMapGenerator()
-            .createMap(new LogBuilder(-1));
+        //Map map = freeColClient.getFreeColServer().getMapGenerator()
+        //    .createMap(new LogBuilder(-1));
         requireNativeNations(game);
         gui.setFocus(game.getMap().getTile(1,1));
         gui.updateMenuBar();

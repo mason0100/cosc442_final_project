@@ -121,53 +121,53 @@ public final class InGameController implements NetworkConstants {
     }
 
     /** Actions when dealing with a boycott. */
-    public static enum BoycottAction {
+    public enum BoycottAction {
         PAY_ARREARS,
         DUMP_CARGO
     }
 
     /** Actions when buying from the natives. */
-    public static enum BuyAction {
+    public enum BuyAction {
         BUY,
         HAGGLE
     }
 
     /** Actions when claiming land. */
-    public static enum ClaimAction {
+    public enum ClaimAction {
         ACCEPT,
         STEAL
     }
 
     /** Actions with a missionary at a native settlement. */
-    public static enum MissionaryAction {
+    public enum MissionaryAction {
         ESTABLISH_MISSION,
         DENOUNCE_HERESY,
         INCITE_INDIANS
     }
 
     /** Actions in scouting a colony. */
-    public static enum ScoutColonyAction {
+    public enum ScoutColonyAction {
         FOREIGN_COLONY_NEGOTIATE,
         FOREIGN_COLONY_SPY,
         FOREIGN_COLONY_ATTACK
     }
 
     /** Actions in scouting a native settlement. */
-    public static enum ScoutIndianSettlementAction {
+    public enum ScoutIndianSettlementAction {
         INDIAN_SETTLEMENT_SPEAK,
         INDIAN_SETTLEMENT_TRIBUTE,
         INDIAN_SETTLEMENT_ATTACK
     }
 
     /** Actions when selling to the natives. */
-    public static enum SellAction {
+    public enum SellAction {
         SELL,
         HAGGLE,
         GIFT
     }
 
     /** Choice of sales action at a native settlement. */
-    public static enum TradeAction {
+    public enum TradeAction {
         BUY,
         SELL,
         GIFT
@@ -177,7 +177,7 @@ public final class InGameController implements NetworkConstants {
      * Selecting next unit depends on mode--- either from the active list,
      * from the going-to list, or flush going-to and end the turn.
      */
-    private static enum MoveMode {
+    private enum MoveMode {
         NEXT_ACTIVE_UNIT,
         EXECUTE_GOTO_ORDERS,
         END_TURN;
@@ -324,10 +324,10 @@ public final class InGameController implements NetworkConstants {
      */
     private void updateGUI(Tile tile) {
         if (displayModelMessages(false, false)) {
-            ; // If messages are displayed they probably refer to the
+             // If messages are displayed they probably refer to the
               // current unit, so do not update it.
         } else if (updateActiveUnit(tile)) {
-            ; // setActiveUnit will update the menu bar
+             // setActiveUnit will update the menu bar
         } else {
             gui.updateMapControls();
             gui.updateMenuBar();
@@ -516,11 +516,16 @@ public final class InGameController implements NetworkConstants {
             // Are the goods boycotted?
             if (!player.canTrade(type)) return false;
 
-            // Check that the purchase is funded.
-            if (!player.checkGold(market.getBidPrice(type, amount))) {
-                gui.showInformationMessage("info.notEnoughGold");
-                return false;
+            try{
+                // Check that the purchase is funded.
+                if (!player.checkGold(market.getBidPrice(type, amount))) {
+                    gui.showInformationMessage("info.notEnoughGold");
+                    return false;
+                }
+            }catch(NullPointerException exception){
+            	System.out.print(exception);
             }
+       
         }
 
         // Try to purchase.
@@ -1326,8 +1331,7 @@ public final class InGameController implements NetworkConstants {
     private boolean moveDiplomacy(Unit unit, Direction direction,
                                   DiplomaticTrade dt) {
         Settlement settlement = getSettlementAt(unit.getTile(), direction);
-        if (settlement == null
-            || !(settlement instanceof Colony)) return false;
+        if (!(settlement instanceof Colony)) return false;
         Colony colony = (Colony)settlement;
 
         // Can not negotiate with the REF.
@@ -2427,7 +2431,7 @@ public final class InGameController implements NetworkConstants {
 
         // Unload everything that is on the carrier but not listed to
         // be loaded at this stop.
-        Game game = freeColClient.getGame();
+        //Game game = freeColClient.getGame();
         for (Goods goods : unit.getCompactGoodsList()) {
             GoodsType type = goods.getType();
             if (goodsTypesToLoad.contains(type)) continue; // Keep this cargo.
@@ -3182,7 +3186,8 @@ public final class InGameController implements NetworkConstants {
                                      DiplomaticTrade agreement) {
         final Player player = freeColClient.getMyPlayer();
         final Player otherPlayer = agreement.getOtherPlayer(player);
-        StringTemplate t, nation = otherPlayer.getNationLabel();
+        StringTemplate t; 
+        StringTemplate nation = otherPlayer.getNationLabel();
 
         switch (agreement.getStatus()) {
         case ACCEPT_TRADE:
@@ -3421,7 +3426,7 @@ public final class InGameController implements NetworkConstants {
      */
     public boolean firstContact(Player player, Player other, Tile tile,
                                 boolean result) {
-        if (player == null || player == null || player == other
+        if (player == null || player == other
             || tile == null) return false;
 
         boolean ret = askServer().firstContact(player, other, tile, result);
