@@ -1,6 +1,3 @@
-/*
- * 
- */
 package net.sf.freecol.client.control;
 
 import javax.annotation.Generated;
@@ -14,47 +11,23 @@ import org.powermock.reflect.Whitebox;
 
 import net.sf.freecol.client.FreeColClient;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Class PreGameInputHandlerTest.
- */
 @Generated(value = "org.junit-tools-1.1.0")
 public class PreGameInputHandlerTest {
 
-	/**
-	 * Sets the up.
-	 *
-	 * @throws Exception the exception
-	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
-	/**
-	 * Tear down.
-	 *
-	 * @throws Exception the exception
-	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
-	/**
-	 * Creates the test subject.
-	 *
-	 * @return the pre game input handler
-	 */
 	private PreGameInputHandler createTestSubject() {
 		return new PreGameInputHandler(new FreeColClient(new InputStream(), ""));
 	}
 
-	/**
-	 * Handle test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "handle", signature = "(QConnection;QElement;)QElement;")
 	@Test
 	public void handleTest() throws Exception {
@@ -70,11 +43,6 @@ public class PreGameInputHandlerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Adds the player test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "addPlayer", signature = "(QElement;)QElement;")
 	@Test
 	public void addPlayerTest() throws Exception {
@@ -89,11 +57,6 @@ public class PreGameInputHandlerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Chat test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "chat", signature = "(QElement;)QElement;")
 	@Test
 	public void chatTest() throws Exception {
@@ -108,11 +71,6 @@ public class PreGameInputHandlerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Error test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "error", signature = "(QElement;)QElement;")
 	@Test
 	public void errorTest() throws Exception {
@@ -127,11 +85,6 @@ public class PreGameInputHandlerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Logout test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "logout", signature = "(QElement;)QElement;")
 	@Test
 	public void logoutTest() throws Exception {
@@ -146,11 +99,6 @@ public class PreGameInputHandlerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Multiple test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "multiple", signature = "(QConnection;QElement;)QElement;")
 	@Test
 	public void multipleTest() throws Exception {
@@ -166,11 +114,6 @@ public class PreGameInputHandlerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Player ready test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "playerReady", signature = "(QElement;)QElement;")
 	@Test
 	public void playerReadyTest() throws Exception {
@@ -185,11 +128,6 @@ public class PreGameInputHandlerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Removes the player test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "removePlayer", signature = "(QElement;)QElement;")
 	@Test
 	public void removePlayerTest() throws Exception {
@@ -204,11 +142,6 @@ public class PreGameInputHandlerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the available test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setAvailable", signature = "(QElement;)QElement;")
 	@Test
 	public void setAvailableTest() throws Exception {
@@ -223,11 +156,6 @@ public class PreGameInputHandlerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Start game test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "startGame", signature = "(QElement;)QElement;")
 	@Test
 	public void startGameTest() throws Exception {
@@ -242,11 +170,6 @@ public class PreGameInputHandlerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Update color test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "updateColor", signature = "(QElement;)QElement;")
 	@Test
 	public void updateColorTest() throws Exception {
@@ -261,11 +184,6 @@ public class PreGameInputHandlerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Update game test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "updateGame", signature = "(QElement;)QElement;")
 	@Test
 	public void updateGameTest() throws Exception {
@@ -280,11 +198,6 @@ public class PreGameInputHandlerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Update game options test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "updateGameOptions", signature = "(QElement;)QElement;")
 	@Test
 	public void updateGameOptionsTest() throws Exception {
@@ -299,11 +212,6 @@ public class PreGameInputHandlerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Update map generator options test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "updateMapGeneratorOptions", signature = "(QElement;)QElement;")
 	@Test
 	public void updateMapGeneratorOptionsTest() throws Exception {
@@ -318,11 +226,6 @@ public class PreGameInputHandlerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Update nation test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "updateNation", signature = "(QElement;)QElement;")
 	@Test
 	public void updateNationTest() throws Exception {
@@ -337,11 +240,6 @@ public class PreGameInputHandlerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Update nation type test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "updateNationType", signature = "(QElement;)QElement;")
 	@Test
 	public void updateNationTypeTest() throws Exception {

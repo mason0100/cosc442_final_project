@@ -1,6 +1,3 @@
-/*
- * 
- */
 package net.sf.freecol.client.gui;
 
 import java.awt.Dimension;
@@ -20,38 +17,19 @@ import org.powermock.reflect.Whitebox;
 
 import net.sf.freecol.client.FreeColClient;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Class CanvasMapEditorMouseListenerTest.
- */
 @Generated(value = "org.junit-tools-1.1.0")
 public class CanvasMapEditorMouseListenerTest {
 
-	/**
-	 * Sets the up.
-	 *
-	 * @throws Exception the exception
-	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
-	/**
-	 * Tear down.
-	 *
-	 * @throws Exception the exception
-	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
-	/**
-	 * Creates the test subject.
-	 *
-	 * @return the canvas map editor mouse listener
-	 */
 	private CanvasMapEditorMouseListener createTestSubject() {
 		return new CanvasMapEditorMouseListener(new FreeColClient(new InputStream(), ""),
 				new Canvas(new FreeColClient(new InputStream(), ""), new GraphicsDevice(),
@@ -59,12 +37,6 @@ public class CanvasMapEditorMouseListenerTest {
 						new MapViewer(new FreeColClient(new InputStream(), ""))));
 	}
 
-	/**
-	 * Gets the GUI test.
-	 *
-	 * @return the GUI test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getGUI", signature = "()QGUI;")
 	@Test
 	public void getGUITest() throws Exception {
@@ -78,12 +50,6 @@ public class CanvasMapEditorMouseListenerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the map test.
-	 *
-	 * @return the map test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getMap", signature = "()QMap;")
 	@Test
 	public void getMapTest() throws Exception {
@@ -97,11 +63,6 @@ public class CanvasMapEditorMouseListenerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Draw box test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "drawBox", signature = "(QJComponent;QPoint;QPoint;)V")
 	@Test
 	public void drawBoxTest() throws Exception {
@@ -125,11 +86,6 @@ public class CanvasMapEditorMouseListenerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Mouse clicked test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "mouseClicked", signature = "(QMouseEvent;)V")
 	@Test
 	public void mouseClickedTest() throws Exception {
@@ -143,11 +99,6 @@ public class CanvasMapEditorMouseListenerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Mouse pressed test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "mousePressed", signature = "(QMouseEvent;)V")
 	@Test
 	public void mousePressedTest() throws Exception {
@@ -161,11 +112,6 @@ public class CanvasMapEditorMouseListenerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Mouse released test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "mouseReleased", signature = "(QMouseEvent;)V")
 	@Test
 	public void mouseReleasedTest() throws Exception {
@@ -179,11 +125,6 @@ public class CanvasMapEditorMouseListenerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Mouse entered test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "mouseEntered", signature = "(QMouseEvent;)V")
 	@Test
 	public void mouseEnteredTest() throws Exception {
@@ -197,11 +138,6 @@ public class CanvasMapEditorMouseListenerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Mouse exited test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "mouseExited", signature = "(QMouseEvent;)V")
 	@Test
 	public void mouseExitedTest() throws Exception {
@@ -215,11 +151,6 @@ public class CanvasMapEditorMouseListenerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Mouse dragged test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "mouseDragged", signature = "(QMouseEvent;)V")
 	@Test
 	public void mouseDraggedTest() throws Exception {
@@ -233,11 +164,6 @@ public class CanvasMapEditorMouseListenerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Mouse moved test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "mouseMoved", signature = "(QMouseEvent;)V")
 	@Test
 	public void mouseMovedTest() throws Exception {

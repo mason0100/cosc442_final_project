@@ -1,6 +1,3 @@
-/*
- * 
- */
 package net.sf.freecol.client.gui;
 
 import static org.junit.Assert.*;
@@ -8,49 +5,25 @@ import java.util.*;
 import org.junit.Assert;
 import org.junit.Test;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Class CanvasTest.
- */
 @Generated(value = "org.junit-tools-1.1.0")
 public class CanvasTest {
 
-	/**
-	 * Sets the up.
-	 *
-	 * @throws Exception the exception
-	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
-	/**
-	 * Tear down.
-	 *
-	 * @throws Exception the exception
-	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
-	/**
-	 * Creates the test subject.
-	 *
-	 * @return the canvas
-	 */
 	private Canvas createTestSubject() {
 		return new Canvas(new FreeColClient(new InputStream(), ""), new GraphicsDevice(),
 				new SwingGUI(new FreeColClient(new InputStream(), ""), 0), new Dimension(),
 				new MapViewer(new FreeColClient(new InputStream(), "")));
 	}
 
-	/**
-	 * Checks if is windowed test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "isWindowed", signature = "()Z")
 	@Test
 	public void isWindowedTest() throws Exception {
@@ -64,11 +37,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Change windowed mode test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "changeWindowedMode", signature = "()V")
 	@Test
 	public void changeWindowedModeTest() throws Exception {
@@ -81,11 +49,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Creates the frame test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "createFrame", signature = "(QJMenuBar;QRectangle;)V")
 	@Test
 	public void createFrameTest() throws Exception {
@@ -100,11 +63,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Start map editor GUI test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "startMapEditorGUI", signature = "()V")
 	@Test
 	public void startMapEditorGUITest() throws Exception {
@@ -117,11 +75,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Quit test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "quit", signature = "()V")
 	@Test
 	public void quitTest() throws Exception {
@@ -134,11 +87,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Initialize in game test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "initializeInGame", signature = "()V")
 	@Test
 	public void initializeInGameTest() throws Exception {
@@ -151,11 +99,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Reset menu bar test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "resetMenuBar", signature = "()V")
 	@Test
 	public void resetMenuBarTest() throws Exception {
@@ -168,11 +111,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Update menu bar test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "updateMenuBar", signature = "()V")
 	@Test
 	public void updateMenuBarTest() throws Exception {
@@ -185,11 +123,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Scroll map test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "scrollMap", signature = "(QDirection;)Z")
 	@Test
 	public void scrollMapTest() throws Exception {
@@ -204,11 +137,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Convert to map tile test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "convertToMapTile", signature = "(II)QTile;")
 	@Test
 	public void convertToMapTileTest() throws Exception {
@@ -224,12 +152,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the view mode test.
-	 *
-	 * @return the view mode test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getViewMode", signature = "()I")
 	@Test
 	public void getViewModeTest() throws Exception {
@@ -243,12 +165,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the active unit test.
-	 *
-	 * @return the active unit test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getActiveUnit", signature = "()QUnit;")
 	@Test
 	public void getActiveUnitTest() throws Exception {
@@ -262,11 +178,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the current path test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setCurrentPath", signature = "(QPathNode;)V")
 	@Test
 	public void setCurrentPathTest() throws Exception {
@@ -280,11 +191,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Update current path for active unit test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "updateCurrentPathForActiveUnit", signature = "()V")
 	@Test
 	public void updateCurrentPathForActiveUnitTest() throws Exception {
@@ -297,12 +203,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the drag point test.
-	 *
-	 * @return the drag point test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getDragPoint", signature = "()QPoint;")
 	@Test
 	public void getDragPointTest() throws Exception {
@@ -316,11 +216,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the drag point test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setDragPoint", signature = "(II)V")
 	@Test
 	public void setDragPointTest() throws Exception {
@@ -335,11 +230,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Checks if is goto started test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "isGotoStarted", signature = "()Z")
 	@Test
 	public void isGotoStartedTest() throws Exception {
@@ -353,12 +243,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the goto path test.
-	 *
-	 * @return the goto path test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getGotoPath", signature = "()QPathNode;")
 	@Test
 	public void getGotoPathTest() throws Exception {
@@ -372,11 +256,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the goto path test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setGotoPath", signature = "(QPathNode;)V")
 	@Test
 	public void setGotoPathTest() throws Exception {
@@ -390,11 +269,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Start goto test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "startGoto", signature = "()V")
 	@Test
 	public void startGotoTest() throws Exception {
@@ -407,11 +281,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Stop goto test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "stopGoto", signature = "()V")
 	@Test
 	public void stopGotoTest() throws Exception {
@@ -424,11 +293,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Adds the as frame test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "addAsFrame", signature = "(QJComponent;ZQPopupPosition;Z)QJInternalFrame;")
 	@Test
 	public void addAsFrameTest() throws Exception {
@@ -447,11 +311,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Adds the centered test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "addCentered", signature = "(QComponent;QInteger;)V")
 	@Test
 	public void addCenteredTest() throws Exception {
@@ -466,11 +325,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Adds the to canvas test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "addToCanvas", signature = "(QComponent;QInteger;)V")
 	@Test
 	public void addToCanvasTest() throws Exception {
@@ -485,11 +339,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Choose location test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "chooseLocation", signature = "(QComponent;IIQPopupPosition;)QPoint;")
 	@Test
 	public void chooseLocationTest() throws Exception {
@@ -510,11 +359,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Creates the key bindings test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "createKeyBindings", signature = "()V")
 	@Test
 	public void createKeyBindingsTest() throws Exception {
@@ -527,12 +371,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the clear space test.
-	 *
-	 * @return the clear space test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getClearSpace", signature = "(IIIII)QPoint;")
 	@Test
 	public void getClearSpaceTest() throws Exception {
@@ -551,12 +389,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the colony panel test.
-	 *
-	 * @return the colony panel test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getColonyPanel", signature = "(QColony;)QColonyPanel;")
 	@Test
 	public void getColonyPanelTest() throws Exception {
@@ -571,12 +403,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the internal frame test.
-	 *
-	 * @return the internal frame test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getInternalFrame", signature = "(QComponent;)QJInternalFrame;")
 	@Test
 	public void getInternalFrameTest() throws Exception {
@@ -591,11 +417,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the offset focus test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setOffsetFocus", signature = "(QTile;)QPopupPosition;")
 	@Test
 	public void setOffsetFocusTest() throws Exception {
@@ -612,12 +433,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the saved position test.
-	 *
-	 * @return the saved position test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getSavedPosition", signature = "(QComponent;)QPoint;")
 	@Test
 	public void getSavedPositionTest() throws Exception {
@@ -632,12 +447,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the saved size test.
-	 *
-	 * @return the saved size test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getSavedSize", signature = "(QComponent;)QDimension;")
 	@Test
 	public void getSavedSizeTest() throws Exception {
@@ -652,12 +461,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the file filters test.
-	 *
-	 * @return the file filters test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getFileFilters", signature = "()[QFileFilter;")
 	@Test
 	public void getFileFiltersTest() throws Exception {
@@ -671,11 +474,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Notify close test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "notifyClose", signature = "(QComponent;QJInternalFrame;)V")
 	@Test
 	public void notifyCloseTest() throws Exception {
@@ -691,11 +489,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Removes the european subpanels test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "removeEuropeanSubpanels", signature = "()V")
 	@Test
 	public void removeEuropeanSubpanelsTest() throws Exception {
@@ -708,11 +501,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Save integer test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "saveInteger", signature = "(QString;QString;I)V")
 	@Test
 	public void saveIntegerTest() throws Exception {
@@ -728,11 +516,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Save position test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "savePosition", signature = "(QComponent;QPoint;)V")
 	@Test
 	public void savePositionTest() throws Exception {
@@ -747,11 +530,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Save size test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "saveSize", signature = "(QComponent;QDimension;)V")
 	@Test
 	public void saveSizeTest() throws Exception {
@@ -766,11 +544,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Restart blinking test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "restartBlinking", signature = "()V")
 	@Test
 	public void restartBlinkingTest() throws Exception {
@@ -783,11 +556,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Stop blinking test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "stopBlinking", signature = "()V")
 	@Test
 	public void stopBlinkingTest() throws Exception {
@@ -800,11 +568,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show free col dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="showFreeColDialog", signature="(QFreeColDialog<QT;>;QTile;)QT;")
 	@Test
 	public void showFreeColDialogTest() throws Exception {
@@ -818,11 +581,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Show free col panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showFreeColPanel", signature = "(QFreeColPanel;QTile;Z)V")
 	@Test
 	public void showFreeColPanelTest() throws Exception {
@@ -839,11 +597,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show sub panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showSubPanel", signature = "(QFreeColPanel;Z)V")
 	@Test
 	public void showSubPanelTest() throws Exception {
@@ -858,11 +611,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show sub panel test 1.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showSubPanel", signature = "(QFreeColPanel;QPopupPosition;Z)V")
 	@Test
 	public void showSubPanelTest_1() throws Exception {
@@ -879,11 +627,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Adds the test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "add", signature = "(QComponent;)QComponent;")
 	@Test
 	public void addTest() throws Exception {
@@ -898,11 +641,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Adds the test 1.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "add", signature = "(QComponent;QInteger;)V")
 	@Test
 	public void addTest_1() throws Exception {
@@ -917,11 +655,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Close menus test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "closeMenus", signature = "()V")
 	@Test
 	public void closeMenusTest() throws Exception {
@@ -934,11 +667,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Close main panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "closeMainPanel", signature = "()V")
 	@Test
 	public void closeMainPanelTest() throws Exception {
@@ -951,11 +679,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Close status panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "closeStatusPanel", signature = "()V")
 	@Test
 	public void closeStatusPanelTest() throws Exception {
@@ -968,11 +691,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Contains in game components test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "containsInGameComponents", signature = "()Z")
 	@Test
 	public void containsInGameComponentsTest() throws Exception {
@@ -986,11 +704,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Display chat message test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "displayChatMessage", signature = "(QGUIMessage;)V")
 	@Test
 	public void displayChatMessageTest() throws Exception {
@@ -1004,11 +717,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Dialog add test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="dialogAdd", signature="(QFreeColDialog<*>;)V")
 	@Test
 	public void dialogAddTest() throws Exception {
@@ -1021,11 +729,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Dialog remove test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="dialogRemove", signature="(QFreeColDialog<*>;)V")
 	@Test
 	public void dialogRemoveTest() throws Exception {
@@ -1038,12 +741,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Gets the existing free col panel test.
-	 *
-	 * @return the existing free col panel test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="getExistingFreeColPanel", signature="(QClass<QT;>;)QT;")
 	@Test
 	public void getExistingFreeColPanelTest() throws Exception {
@@ -1056,12 +753,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Gets the loading savegame dialog test.
-	 *
-	 * @return the loading savegame dialog test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getLoadingSavegameDialog", signature = "()QLoadingSavegameDialog;")
 	@Test
 	public void getLoadingSavegameDialogTest() throws Exception {
@@ -1075,12 +766,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the showing sub panel test.
-	 *
-	 * @return the showing sub panel test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getShowingSubPanel", signature = "()QComponent;")
 	@Test
 	public void getShowingSubPanelTest() throws Exception {
@@ -1094,11 +779,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Checks if is client options dialog showing test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "isClientOptionsDialogShowing", signature = "()Z")
 	@Test
 	public void isClientOptionsDialogShowingTest() throws Exception {
@@ -1112,11 +792,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Checks if is mapboard actions enabled test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "isMapboardActionsEnabled", signature = "()Z")
 	@Test
 	public void isMapboardActionsEnabledTest() throws Exception {
@@ -1130,11 +805,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Checks if is showing sub panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "isShowingSubPanel", signature = "()Z")
 	@Test
 	public void isShowingSubPanelTest() throws Exception {
@@ -1148,11 +818,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Refresh test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "refresh", signature = "()V")
 	@Test
 	public void refreshTest() throws Exception {
@@ -1165,11 +830,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Removes the from canvas test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "removeFromCanvas", signature = "(QComponent;)V")
 	@Test
 	public void removeFromCanvasTest() throws Exception {
@@ -1184,11 +844,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Removes the in game components test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "removeInGameComponents", signature = "()V")
 	@Test
 	public void removeInGameComponentsTest() throws Exception {
@@ -1201,11 +856,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Restore saved size test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "restoreSavedSize", signature = "(QComponent;QDimension;)V")
 	@Test
 	public void restoreSavedSizeTest() throws Exception {
@@ -1220,11 +870,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Return to title test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "returnToTitle", signature = "()V")
 	@Test
 	public void returnToTitleTest() throws Exception {
@@ -1237,11 +882,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Setup mouse listeners test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setupMouseListeners", signature = "()V")
 	@Test
 	public void setupMouseListenersTest() throws Exception {
@@ -1254,11 +894,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Update sizes test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "updateSizes", signature = "()V")
 	@Test
 	public void updateSizesTest() throws Exception {
@@ -1271,11 +906,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Paint component test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "paintComponent", signature = "(QGraphics;)V")
 	@Test
 	public void paintComponentTest() throws Exception {
@@ -1289,11 +919,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Removes the test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "remove", signature = "(QComponent;)V")
 	@Test
 	public void removeTest() throws Exception {
@@ -1307,11 +932,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Refresh players table test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "refreshPlayersTable", signature = "()V")
 	@Test
 	public void refreshPlayersTableTest() throws Exception {
@@ -1324,11 +944,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Update game options test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "updateGameOptions", signature = "()V")
 	@Test
 	public void updateGameOptionsTest() throws Exception {
@@ -1341,11 +956,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Update map generator options test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "updateMapGeneratorOptions", signature = "()V")
 	@Test
 	public void updateMapGeneratorOptionsTest() throws Exception {
@@ -1358,11 +968,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show choice dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="showChoiceDialog", signature="(QTile;QObject;QImageIcon;QString;QList<QChoiceItem<QT;>;>;)QT;")
 	@Test
 	public void showChoiceDialogTest() throws Exception {
@@ -1379,11 +984,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Show confirm dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showConfirmDialog", signature = "(QTile;QObject;QImageIcon;QString;QString;)Z")
 	@Test
 	public void showConfirmDialogTest() throws Exception {
@@ -1403,11 +1003,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show input dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showInputDialog", signature = "(QTile;QStringTemplate;QString;QString;QString;)QString;")
 	@Test
 	public void showInputDialogTest() throws Exception {
@@ -1427,11 +1022,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * View free col dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="viewFreeColDialog", signature="(QFreeColDialog<QT;>;QTile;)V")
 	@Test
 	public void viewFreeColDialogTest() throws Exception {
@@ -1445,11 +1035,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Removes the trade route panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "removeTradeRoutePanel", signature = "(QTradeRoutePanel;)V")
 	@Test
 	public void removeTradeRoutePanelTest() throws Exception {
@@ -1463,11 +1048,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show about panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showAboutPanel", signature = "()V")
 	@Test
 	public void showAboutPanelTest() throws Exception {
@@ -1480,11 +1060,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show build queue panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showBuildQueuePanel", signature = "(QColony;)V")
 	@Test
 	public void showBuildQueuePanelTest() throws Exception {
@@ -1498,11 +1073,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show build queue panel test 1.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showBuildQueuePanel", signature = "(QColony;QRunnable;)V")
 	@Test
 	public void showBuildQueuePanelTest_1() throws Exception {
@@ -1517,11 +1087,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show capture goods dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="showCaptureGoodsDialog", signature="(QUnit;QList<QGoods;>;QDialogHandler<QList<QGoods;>;>;)V")
 	@Test
 	public void showCaptureGoodsDialogTest() throws Exception {
@@ -1536,11 +1101,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Show chat panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showChatPanel", signature = "()V")
 	@Test
 	public void showChatPanelTest() throws Exception {
@@ -1553,11 +1113,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show choose founding father dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="showChooseFoundingFatherDialog", signature="(QList<QFoundingFather;>;QDialogHandler<QFoundingFather;>;)V")
 	@Test
 	public void showChooseFoundingFatherDialogTest() throws Exception {
@@ -1571,11 +1126,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Show client options dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showClientOptionsDialog", signature = "()QOptionGroup;")
 	@Test
 	public void showClientOptionsDialogTest() throws Exception {
@@ -1589,11 +1139,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show colony panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showColonyPanel", signature = "(QColony;QUnit;)QColonyPanel;")
 	@Test
 	public void showColonyPanelTest() throws Exception {
@@ -1611,11 +1156,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show colopedia panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showColopediaPanel", signature = "(QString;)V")
 	@Test
 	public void showColopediaPanelTest() throws Exception {
@@ -1629,11 +1169,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show color chooser panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showColorChooserPanel", signature = "(QActionListener;)QColorChooserPanel;")
 	@Test
 	public void showColorChooserPanelTest() throws Exception {
@@ -1648,11 +1183,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show compact labour report test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showCompactLabourReport", signature = "()V")
 	@Test
 	public void showCompactLabourReportTest() throws Exception {
@@ -1665,11 +1195,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show compact labour report test 1.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showCompactLabourReport", signature = "(QUnitData;)V")
 	@Test
 	public void showCompactLabourReportTest_1() throws Exception {
@@ -1683,11 +1208,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show confirm declaration dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showConfirmDeclarationDialog", signature = "()QList<QString;>;")
 	@Test
 	public void showConfirmDeclarationDialogTest() throws Exception {
@@ -1701,11 +1221,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show declaration panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showDeclarationPanel", signature = "()V")
 	@Test
 	public void showDeclarationPanelTest() throws Exception {
@@ -1718,11 +1233,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show difficulty dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showDifficultyDialog", signature = "(QSpecification;QOptionGroup;Z)QOptionGroup;")
 	@Test
 	public void showDifficultyDialogTest() throws Exception {
@@ -1740,11 +1250,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show dump cargo dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="showDumpCargoDialog", signature="(QUnit;QDialogHandler<QList<QGoods;>;>;)V")
 	@Test
 	public void showDumpCargoDialogTest() throws Exception {
@@ -1758,11 +1263,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Show edit option dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showEditOptionDialog", signature = "(QOption;)Z")
 	@Test
 	public void showEditOptionDialogTest() throws Exception {
@@ -1777,11 +1277,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show edit settlement dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showEditSettlementDialog", signature = "(QIndianSettlement;)V")
 	@Test
 	public void showEditSettlementDialogTest() throws Exception {
@@ -1795,11 +1290,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show emigration dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="showEmigrationDialog", signature="(QPlayer;ZQDialogHandler<QInteger;>;)V")
 	@Test
 	public void showEmigrationDialogTest() throws Exception {
@@ -1814,11 +1304,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Show end turn dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="showEndTurnDialog", signature="(QList<QUnit;>;QDialogHandler<QBoolean;>;)V")
 	@Test
 	public void showEndTurnDialogTest() throws Exception {
@@ -1832,11 +1317,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Show error message test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showErrorMessage", signature = "(QString;)V")
 	@Test
 	public void showErrorMessageTest() throws Exception {
@@ -1850,11 +1330,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show error message test 1.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showErrorMessage", signature = "(QString;QString;)V")
 	@Test
 	public void showErrorMessageTest_1() throws Exception {
@@ -1875,11 +1350,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show europe panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showEuropePanel", signature = "()V")
 	@Test
 	public void showEuropePanelTest() throws Exception {
@@ -1892,11 +1362,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show event panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showEventPanel", signature = "(QString;QString;QString;)V")
 	@Test
 	public void showEventPanelTest() throws Exception {
@@ -1912,11 +1377,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show find settlement panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showFindSettlementPanel", signature = "()V")
 	@Test
 	public void showFindSettlementPanelTest() throws Exception {
@@ -1929,11 +1389,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show first contact dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="showFirstContactDialog", signature="(QPlayer;QPlayer;QTile;IQDialogHandler<QBoolean;>;)V")
 	@Test
 	public void showFirstContactDialogTest() throws Exception {
@@ -1950,11 +1405,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Show foreign colony test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showForeignColony", signature = "(QSettlement;)V")
 	@Test
 	public void showForeignColonyTest() throws Exception {
@@ -1968,11 +1418,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show game options dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showGameOptionsDialog", signature = "(ZZ)QOptionGroup;")
 	@Test
 	public void showGameOptionsDialogTest() throws Exception {
@@ -1988,11 +1433,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show high scores panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="showHighScoresPanel", signature="(QString;QList<QHighScore;>;)V")
 	@Test
 	public void showHighScoresPanelTest() throws Exception {
@@ -2006,11 +1446,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Show indian settlement panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showIndianSettlementPanel", signature = "(QIndianSettlement;)V")
 	@Test
 	public void showIndianSettlementPanelTest() throws Exception {
@@ -2024,11 +1459,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Creates the image icon test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "createImageIcon", signature = "(QImage;)QImageIcon;")
 	@Test
 	public void createImageIconTest() throws Exception {
@@ -2041,11 +1471,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Creates the object image icon test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "createObjectImageIcon", signature = "(QFreeColObject;)QImageIcon;")
 	@Test
 	public void createObjectImageIconTest() throws Exception {
@@ -2060,11 +1485,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show information message test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showInformationMessage", signature = "(QFreeColObject;QStringTemplate;)V")
 	@Test
 	public void showInformationMessageTest() throws Exception {
@@ -2080,11 +1500,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show information message test 1.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showInformationMessage", signature = "(QFreeColObject;QTile;QImageIcon;QStringTemplate;)V")
 	@Test
 	public void showInformationMessageTest_1() throws Exception {
@@ -2102,11 +1517,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show load dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showLoadDialog", signature = "(QFile;[QFileFilter;)QFile;")
 	@Test
 	public void showLoadDialogTest() throws Exception {
@@ -2130,11 +1540,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show loading savegame dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showLoadingSavegameDialog", signature = "(ZZ)Z")
 	@Test
 	public void showLoadingSavegameDialogTest() throws Exception {
@@ -2151,11 +1556,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show log file panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showLogFilePanel", signature = "()V")
 	@Test
 	public void showLogFilePanelTest() throws Exception {
@@ -2168,11 +1568,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show main panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showMainPanel", signature = "(QString;)V")
 	@Test
 	public void showMainPanelTest() throws Exception {
@@ -2192,11 +1587,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show map editor transform panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showMapEditorTransformPanel", signature = "()V")
 	@Test
 	public void showMapEditorTransformPanelTest() throws Exception {
@@ -2209,11 +1599,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show map generator options dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showMapGeneratorOptionsDialog", signature = "(Z)QOptionGroup;")
 	@Test
 	public void showMapGeneratorOptionsDialogTest() throws Exception {
@@ -2228,11 +1613,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show map size dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showMapSizeDialog", signature = "()QDimension;")
 	@Test
 	public void showMapSizeDialogTest() throws Exception {
@@ -2246,11 +1626,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show model messages test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="showModelMessages", signature="(QList<QModelMessage;>;)V")
 	@Test
 	public void showModelMessagesTest() throws Exception {
@@ -2263,11 +1638,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Show monarch dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="showMonarchDialog", signature="(QMonarchAction;QStringTemplate;QString;QDialogHandler<QBoolean;>;)V")
 	@Test
 	public void showMonarchDialogTest() throws Exception {
@@ -2283,11 +1653,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Show naming dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="showNamingDialog", signature="(QStringTemplate;QString;QUnit;QDialogHandler<QString;>;)V")
 	@Test
 	public void showNamingDialogTest() throws Exception {
@@ -2303,11 +1668,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Show negotiation dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showNegotiationDialog", signature = "(QFreeColGameObject;QFreeColGameObject;QDiplomaticTrade;QStringTemplate;)QDiplomaticTrade;")
 	@Test
 	public void showNegotiationDialogTest() throws Exception {
@@ -2326,11 +1686,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show new panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showNewPanel", signature = "(QSpecification;)V")
 	@Test
 	public void showNewPanelTest() throws Exception {
@@ -2344,11 +1699,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show video component test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showVideoComponent", signature = "(QComponent;QMouseListener;QKeyListener;)V")
 	@Test
 	public void showVideoComponentTest() throws Exception {
@@ -2365,11 +1715,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show parameters dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showParametersDialog", signature = "()QParameters;")
 	@Test
 	public void showParametersDialogTest() throws Exception {
@@ -2383,11 +1728,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show pre combat dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showPreCombatDialog", signature = "(QUnit;QFreeColGameObject;QTile;)Z")
 	@Test
 	public void showPreCombatDialogTest() throws Exception {
@@ -2405,11 +1745,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show purchase panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showPurchasePanel", signature = "()V")
 	@Test
 	public void showPurchasePanelTest() throws Exception {
@@ -2422,11 +1757,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show recruit panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showRecruitPanel", signature = "()V")
 	@Test
 	public void showRecruitPanelTest() throws Exception {
@@ -2439,11 +1769,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report labour detail panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="showReportLabourDetailPanel", signature="(QUnitType;QMap<QUnitType;QMap<QLocation;QInteger;>;>;QTypeCountMap<QUnitType;>;QList<QColony;>;)V")
 	@Test
 	public void showReportLabourDetailPanelTest() throws Exception {
@@ -2459,11 +1784,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Show river style dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showRiverStyleDialog", signature = "(QTile;)QString;")
 	@Test
 	public void showRiverStyleDialogTest() throws Exception {
@@ -2478,11 +1798,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show save dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showSaveDialog", signature = "(QFile;[QFileFilter;QString;)QFile;")
 	@Test
 	public void showSaveDialogTest() throws Exception {
@@ -2507,11 +1822,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show scale map size dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showScaleMapSizeDialog", signature = "()QDimension;")
 	@Test
 	public void showScaleMapSizeDialogTest() throws Exception {
@@ -2525,11 +1835,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show select amount dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showSelectAmountDialog", signature = "(QGoodsType;IIZ)I")
 	@Test
 	public void showSelectAmountDialogTest() throws Exception {
@@ -2548,11 +1853,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show select tribute amount dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showSelectTributeAmountDialog", signature = "(QStringTemplate;I)I")
 	@Test
 	public void showSelectTributeAmountDialogTest() throws Exception {
@@ -2569,11 +1869,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show select destination dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showSelectDestinationDialog", signature = "(QUnit;)QLocation;")
 	@Test
 	public void showSelectDestinationDialogTest() throws Exception {
@@ -2588,11 +1883,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show server list panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="showServerListPanel", signature="(QList<QServerInfo;>;)V")
 	@Test
 	public void showServerListPanelTest() throws Exception {
@@ -2605,11 +1895,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Show spy colony panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showSpyColonyPanel", signature = "(QTile;)QColonyPanel;")
 	@Test
 	public void showSpyColonyPanelTest() throws Exception {
@@ -2624,11 +1909,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show start game panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showStartGamePanel", signature = "(QGame;QPlayer;Z)V")
 	@Test
 	public void showStartGamePanelTest() throws Exception {
@@ -2652,11 +1932,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show statistics panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showStatisticsPanel", signature = "()V")
 	@Test
 	public void showStatisticsPanelTest() throws Exception {
@@ -2669,11 +1944,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show status panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showStatusPanel", signature = "(QString;)V")
 	@Test
 	public void showStatusPanelTest() throws Exception {
@@ -2687,11 +1957,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show tile panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showTilePanel", signature = "(QTile;)V")
 	@Test
 	public void showTilePanelTest() throws Exception {
@@ -2706,11 +1971,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show tile popup test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showTilePopup", signature = "(QTile;II)V")
 	@Test
 	public void showTilePopupTest() throws Exception {
@@ -2727,11 +1987,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show trade route panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showTradeRoutePanel", signature = "(QUnit;)V")
 	@Test
 	public void showTradeRoutePanelTest() throws Exception {
@@ -2745,11 +2000,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show trade route input panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showTradeRouteInputPanel", signature = "(QTradeRoute;QRunnable;)V")
 	@Test
 	public void showTradeRouteInputPanelTest() throws Exception {
@@ -2765,11 +2015,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show train panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showTrainPanel", signature = "()V")
 	@Test
 	public void showTrainPanelTest() throws Exception {
@@ -2782,11 +2027,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show victory dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="showVictoryDialog", signature="(QDialogHandler<QBoolean;>;)V")
 	@Test
 	public void showVictoryDialogTest() throws Exception {
@@ -2799,11 +2039,6 @@ public class CanvasTest {
 	Assert.fail();
 	}
 
-	/**
-	 * Show warehouse dialog test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showWarehouseDialog", signature = "(QColony;)Z")
 	@Test
 	public void showWarehouseDialogTest() throws Exception {
@@ -2818,11 +2053,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show work production panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showWorkProductionPanel", signature = "(QUnit;)V")
 	@Test
 	public void showWorkProductionPanelTest() throws Exception {
@@ -2836,11 +2066,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Update european subpanels test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "updateEuropeanSubpanels", signature = "()V")
 	@Test
 	public void updateEuropeanSubpanelsTest() throws Exception {
@@ -2853,11 +2078,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report cargo panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showReportCargoPanel", signature = "()V")
 	@Test
 	public void showReportCargoPanelTest() throws Exception {
@@ -2870,11 +2090,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report colony panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showReportColonyPanel", signature = "()V")
 	@Test
 	public void showReportColonyPanelTest() throws Exception {
@@ -2887,11 +2102,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report continental congress panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showReportContinentalCongressPanel", signature = "()V")
 	@Test
 	public void showReportContinentalCongressPanelTest() throws Exception {
@@ -2904,11 +2114,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report education panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showReportEducationPanel", signature = "()V")
 	@Test
 	public void showReportEducationPanelTest() throws Exception {
@@ -2921,11 +2126,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report exploration panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showReportExplorationPanel", signature = "()V")
 	@Test
 	public void showReportExplorationPanelTest() throws Exception {
@@ -2938,11 +2138,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report foreign affair panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showReportForeignAffairPanel", signature = "()V")
 	@Test
 	public void showReportForeignAffairPanelTest() throws Exception {
@@ -2955,11 +2150,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report history panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showReportHistoryPanel", signature = "()V")
 	@Test
 	public void showReportHistoryPanelTest() throws Exception {
@@ -2972,11 +2162,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report indian panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showReportIndianPanel", signature = "()V")
 	@Test
 	public void showReportIndianPanelTest() throws Exception {
@@ -2989,11 +2174,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report labour panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showReportLabourPanel", signature = "()V")
 	@Test
 	public void showReportLabourPanelTest() throws Exception {
@@ -3006,11 +2186,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report military panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showReportMilitaryPanel", signature = "()V")
 	@Test
 	public void showReportMilitaryPanelTest() throws Exception {
@@ -3023,11 +2198,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report naval panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showReportNavalPanel", signature = "()V")
 	@Test
 	public void showReportNavalPanelTest() throws Exception {
@@ -3040,11 +2210,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report production panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showReportProductionPanel", signature = "()V")
 	@Test
 	public void showReportProductionPanelTest() throws Exception {
@@ -3057,11 +2222,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report religious panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showReportReligiousPanel", signature = "()V")
 	@Test
 	public void showReportReligiousPanelTest() throws Exception {
@@ -3074,11 +2234,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report requirements panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showReportRequirementsPanel", signature = "()V")
 	@Test
 	public void showReportRequirementsPanelTest() throws Exception {
@@ -3091,11 +2246,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report trade panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "showReportTradePanel", signature = "()V")
 	@Test
 	public void showReportTradePanelTest() throws Exception {
@@ -3108,11 +2258,6 @@ public class CanvasTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Show report turn panel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name="showReportTurnPanel", signature="(QList<QModelMessage;>;)V")
 	@Test
 	public void showReportTurnPanelTest() throws Exception {

@@ -1,14 +1,8 @@
-/*
- * 
- */
 package net.sf.freecol.client.control;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-/**
- * The Class TestSuite.
- */
 @RunWith(Suite.class)
 @Suite.SuiteClasses(
 

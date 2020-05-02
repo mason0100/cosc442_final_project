@@ -1,6 +1,3 @@
-/*
- * 
- */
 package net.sf.freecol.client.gui;
 
 import java.awt.Dimension;
@@ -23,48 +20,23 @@ import net.sf.freecol.common.model.TileImprovement;
 import net.sf.freecol.common.model.TileItem;
 import net.sf.freecol.common.model.TileType;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Class TileViewerTest.
- */
 @Generated(value = "org.junit-tools-1.1.0")
 public class TileViewerTest {
 
-	/**
-	 * Sets the up.
-	 *
-	 * @throws Exception the exception
-	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
-	/**
-	 * Tear down.
-	 *
-	 * @throws Exception the exception
-	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
-	/**
-	 * Creates the test subject.
-	 *
-	 * @return the tile viewer
-	 */
 	private TileViewer createTestSubject() {
 		return new TileViewer(new FreeColClient(new InputStream(), ""));
 	}
 
-	/**
-	 * Gets the image library test.
-	 *
-	 * @return the image library test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getImageLibrary", signature = "()QImageLibrary;")
 	@Test
 	public void getImageLibraryTest() throws Exception {
@@ -78,11 +50,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Creates the tile image with overlay and forest test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "createTileImageWithOverlayAndForest", signature = "(QTileType;QDimension;)QBufferedImage;")
 	@Test
 	public void createTileImageWithOverlayAndForestTest() throws Exception {
@@ -97,11 +64,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Creates the tile image with beach border and items test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "createTileImageWithBeachBorderAndItems", signature = "(QTile;)QBufferedImage;")
 	@Test
 	public void createTileImageWithBeachBorderAndItemsTest() throws Exception {
@@ -117,11 +79,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Creates the tile image test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "createTileImage", signature = "(QTile;)QBufferedImage;")
 	@Test
 	public void createTileImageTest() throws Exception {
@@ -136,11 +93,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Creates the colony tile image test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "createColonyTileImage", signature = "(QTile;QColony;)QBufferedImage;")
 	@Test
 	public void createColonyTileImageTest() throws Exception {
@@ -156,11 +108,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Display colony tiles test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "displayColonyTiles", signature = "(QGraphics2D;[[QTile;QColony;)V")
 	@Test
 	public void displayColonyTilesTest() throws Exception {
@@ -177,11 +124,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Display colony tile test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "displayColonyTile", signature = "(QGraphics2D;QTile;QColony;QBufferedImage;)V")
 	@Test
 	public void displayColonyTileTest() throws Exception {
@@ -199,11 +141,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Display tile test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "displayTile", signature = "(QGraphics2D;QTile;QBufferedImage;)V")
 	@Test
 	public void displayTileTest() throws Exception {
@@ -220,11 +157,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the image library and update data test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setImageLibraryAndUpdateData", signature = "(QImageLibrary;)V")
 	@Test
 	public void setImageLibraryAndUpdateDataTest() throws Exception {
@@ -238,11 +170,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Display centered image test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "displayCenteredImage", signature = "(QGraphics2D;QBufferedImage;)V")
 	@Test
 	public void displayCenteredImageTest() throws Exception {
@@ -258,11 +185,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Display large centered image test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "displayLargeCenteredImage", signature = "(QGraphics2D;QBufferedImage;)V")
 	@Test
 	public void displayLargeCenteredImageTest() throws Exception {
@@ -278,11 +200,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Display tile with beach and border test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "displayTileWithBeachAndBorder", signature = "(QGraphics2D;QTile;)V")
 	@Test
 	public void displayTileWithBeachAndBorderTest() throws Exception {
@@ -299,11 +216,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Display unknown tile border test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "displayUnknownTileBorder", signature = "(QGraphics2D;QTile;)V")
 	@Test
 	public void displayUnknownTileBorderTest() throws Exception {
@@ -318,11 +230,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Display fog of war test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "displayFogOfWar", signature = "(QGraphics2D;QTile;)V")
 	@Test
 	public void displayFogOfWarTest() throws Exception {
@@ -337,11 +244,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Display optional tile text test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "displayOptionalTileText", signature = "(QGraphics2D;QTile;)V")
 	@Test
 	public void displayOptionalTileTextTest() throws Exception {
@@ -356,11 +258,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Display settlement with chips or population number test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "displaySettlementWithChipsOrPopulationNumber", signature = "(QGraphics2D;QTile;Z)V")
 	@Test
 	public void displaySettlementWithChipsOrPopulationNumberTest() throws Exception {
@@ -377,11 +274,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Display tile items test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "displayTileItems", signature = "(QGraphics2D;QTile;QBufferedImage;)V")
 	@Test
 	public void displayTileItemsTest() throws Exception {
@@ -399,11 +291,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Display tile item test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "displayTileItem", signature = "(QGraphics2D;QTile;QTileItem;)V")
 	@Test
 	public void displayTileItemTest() throws Exception {
@@ -420,11 +307,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Display resource tile item test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "displayResourceTileItem", signature = "(QGraphics2D;QResource;)V")
 	@Test
 	public void displayResourceTileItemTest() throws Exception {
@@ -440,11 +322,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Display lost city rumour test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "displayLostCityRumour", signature = "(QGraphics2D;)V")
 	@Test
 	public void displayLostCityRumourTest() throws Exception {
@@ -458,11 +335,6 @@ public class TileViewerTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Display tile improvement test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "displayTileImprovement", signature = "(QGraphics2D;QTile;QTileImprovement;)V")
 	@Test
 	public void displayTileImprovementTest() throws Exception {

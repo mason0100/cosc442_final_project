@@ -1,6 +1,3 @@
-/*
- * 
- */
 package net.sf.freecol.client.gui;
 
 import javax.annotation.Generated;
@@ -12,48 +9,23 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.tools.configuration.base.MethodRef;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Class ChoiceItemTest.
- */
 @Generated(value = "org.junit-tools-1.1.0")
 public class ChoiceItemTest {
 
-	/**
-	 * Sets the up.
-	 *
-	 * @throws Exception the exception
-	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
-	/**
-	 * Tear down.
-	 *
-	 * @throws Exception the exception
-	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
-	/**
-	 * Creates the test subject.
-	 *
-	 * @return the choice item
-	 */
 	private ChoiceItem createTestSubject() {
 		return new ChoiceItem("", null, false);
 	}
 
-	/**
-	 * Gets the object test.
-	 *
-	 * @return the object test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getObject", signature = "()QT;")
 	@Test
 	public void getObjectTest() throws Exception {
@@ -67,12 +39,6 @@ public class ChoiceItemTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the choice test.
-	 *
-	 * @return the choice test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getChoice", signature = "()I")
 	@Test
 	public void getChoiceTest() throws Exception {
@@ -86,11 +52,6 @@ public class ChoiceItemTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Checks if is enabled test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "isEnabled", signature = "()Z")
 	@Test
 	public void isEnabledTest() throws Exception {
@@ -104,11 +65,6 @@ public class ChoiceItemTest {
 		Assert.fail();
 	}
 
-	/**
-	 * To string test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "toString", signature = "()QString;")
 	@Test
 	public void toStringTest() throws Exception {
@@ -122,12 +78,6 @@ public class ChoiceItemTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the icon test.
-	 *
-	 * @return the icon test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getIcon", signature = "()QImageIcon;")
 	@Test
 	public void getIconTest() throws Exception {
@@ -141,11 +91,6 @@ public class ChoiceItemTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Sets the icon test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "setIcon", signature = "(QImageIcon;)QChoiceItem<QT;>;")
 	@Test
 	public void setIconTest() throws Exception {
@@ -160,11 +105,6 @@ public class ChoiceItemTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Checks if is OK test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "isOK", signature = "()Z")
 	@Test
 	public void isOKTest() throws Exception {
@@ -178,11 +118,6 @@ public class ChoiceItemTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Ok option test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "okOption", signature = "()QChoiceItem<QT;>;")
 	@Test
 	public void okOptionTest() throws Exception {
@@ -196,11 +131,6 @@ public class ChoiceItemTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Checks if is cancel test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "isCancel", signature = "()Z")
 	@Test
 	public void isCancelTest() throws Exception {
@@ -214,11 +144,6 @@ public class ChoiceItemTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Cancel option test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "cancelOption", signature = "()QChoiceItem<QT;>;")
 	@Test
 	public void cancelOptionTest() throws Exception {
@@ -232,11 +157,6 @@ public class ChoiceItemTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Checks if is default test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "isDefault", signature = "()Z")
 	@Test
 	public void isDefaultTest() throws Exception {
@@ -250,11 +170,6 @@ public class ChoiceItemTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Default option test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "defaultOption", signature = "()QChoiceItem<QT;>;")
 	@Test
 	public void defaultOptionTest() throws Exception {
@@ -268,11 +183,6 @@ public class ChoiceItemTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Compare to test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "compareTo", signature = "(QChoiceItem<QT;>;)I")
 	@Test
 	public void compareToTest() throws Exception {
