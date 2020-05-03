@@ -1370,3 +1370,6 @@ java.lang.Exception: The project description file (.project) for 'FreeCol' is mi
 	at org.eclipse.ui.actions.OpenResourceAction$1.runInWorkspace(OpenResourceAction.java:279)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.instantiations.eclipse 1 0 2020-05-03 14:07:36.185
+!MESSAGE StartupPlugin: could not remove workbench property change listener (1) ... workbench might already be shut down.
