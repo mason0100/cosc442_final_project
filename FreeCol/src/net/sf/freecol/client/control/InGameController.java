@@ -121,53 +121,85 @@ public final class InGameController implements NetworkConstants {
     }
 
     /** Actions when dealing with a boycott. */
+<<<<<<< HEAD
     public static enum BoycottAction {
+=======
+    public enum BoycottAction {
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
         PAY_ARREARS,
         DUMP_CARGO
     }
 
     /** Actions when buying from the natives. */
+<<<<<<< HEAD
     public static enum BuyAction {
+=======
+    public enum BuyAction {
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
         BUY,
         HAGGLE
     }
 
     /** Actions when claiming land. */
+<<<<<<< HEAD
     public static enum ClaimAction {
+=======
+    public enum ClaimAction {
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
         ACCEPT,
         STEAL
     }
 
     /** Actions with a missionary at a native settlement. */
+<<<<<<< HEAD
     public static enum MissionaryAction {
+=======
+    public enum MissionaryAction {
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
         ESTABLISH_MISSION,
         DENOUNCE_HERESY,
         INCITE_INDIANS
     }
 
     /** Actions in scouting a colony. */
+<<<<<<< HEAD
     public static enum ScoutColonyAction {
+=======
+    public enum ScoutColonyAction {
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
         FOREIGN_COLONY_NEGOTIATE,
         FOREIGN_COLONY_SPY,
         FOREIGN_COLONY_ATTACK
     }
 
     /** Actions in scouting a native settlement. */
+<<<<<<< HEAD
     public static enum ScoutIndianSettlementAction {
+=======
+    public enum ScoutIndianSettlementAction {
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
         INDIAN_SETTLEMENT_SPEAK,
         INDIAN_SETTLEMENT_TRIBUTE,
         INDIAN_SETTLEMENT_ATTACK
     }
 
     /** Actions when selling to the natives. */
+<<<<<<< HEAD
     public static enum SellAction {
+=======
+    public enum SellAction {
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
         SELL,
         HAGGLE,
         GIFT
     }
 
     /** Choice of sales action at a native settlement. */
+<<<<<<< HEAD
     public static enum TradeAction {
+=======
+    public enum TradeAction {
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
         BUY,
         SELL,
         GIFT
@@ -177,7 +209,11 @@ public final class InGameController implements NetworkConstants {
      * Selecting next unit depends on mode--- either from the active list,
      * from the going-to list, or flush going-to and end the turn.
      */
+<<<<<<< HEAD
     private static enum MoveMode {
+=======
+    private enum MoveMode {
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
         NEXT_ACTIVE_UNIT,
         EXECUTE_GOTO_ORDERS,
         END_TURN;
@@ -324,10 +360,17 @@ public final class InGameController implements NetworkConstants {
      */
     private void updateGUI(Tile tile) {
         if (displayModelMessages(false, false)) {
+<<<<<<< HEAD
             ; // If messages are displayed they probably refer to the
               // current unit, so do not update it.
         } else if (updateActiveUnit(tile)) {
             ; // setActiveUnit will update the menu bar
+=======
+             // If messages are displayed they probably refer to the
+              // current unit, so do not update it.
+        } else if (updateActiveUnit(tile)) {
+             // setActiveUnit will update the menu bar
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
         } else {
             gui.updateMapControls();
             gui.updateMenuBar();
@@ -516,11 +559,24 @@ public final class InGameController implements NetworkConstants {
             // Are the goods boycotted?
             if (!player.canTrade(type)) return false;
 
+<<<<<<< HEAD
             // Check that the purchase is funded.
             if (!player.checkGold(market.getBidPrice(type, amount))) {
                 gui.showInformationMessage("info.notEnoughGold");
                 return false;
             }
+=======
+            try{
+                // Check that the purchase is funded.
+                if (!player.checkGold(market.getBidPrice(type, amount))) {
+                    gui.showInformationMessage("info.notEnoughGold");
+                    return false;
+                }
+            }catch(NullPointerException exception){
+            	System.out.print(exception);
+            }
+       
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
         }
 
         // Try to purchase.
@@ -1326,8 +1382,12 @@ public final class InGameController implements NetworkConstants {
     private boolean moveDiplomacy(Unit unit, Direction direction,
                                   DiplomaticTrade dt) {
         Settlement settlement = getSettlementAt(unit.getTile(), direction);
+<<<<<<< HEAD
         if (settlement == null
             || !(settlement instanceof Colony)) return false;
+=======
+        if (!(settlement instanceof Colony)) return false;
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
         Colony colony = (Colony)settlement;
 
         // Can not negotiate with the REF.
@@ -2427,7 +2487,11 @@ public final class InGameController implements NetworkConstants {
 
         // Unload everything that is on the carrier but not listed to
         // be loaded at this stop.
+<<<<<<< HEAD
         Game game = freeColClient.getGame();
+=======
+        //Game game = freeColClient.getGame();
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
         for (Goods goods : unit.getCompactGoodsList()) {
             GoodsType type = goods.getType();
             if (goodsTypesToLoad.contains(type)) continue; // Keep this cargo.
@@ -3182,7 +3246,12 @@ public final class InGameController implements NetworkConstants {
                                      DiplomaticTrade agreement) {
         final Player player = freeColClient.getMyPlayer();
         final Player otherPlayer = agreement.getOtherPlayer(player);
+<<<<<<< HEAD
         StringTemplate t, nation = otherPlayer.getNationLabel();
+=======
+        StringTemplate t; 
+        StringTemplate nation = otherPlayer.getNationLabel();
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
 
         switch (agreement.getStatus()) {
         case ACCEPT_TRADE:
@@ -3421,7 +3490,11 @@ public final class InGameController implements NetworkConstants {
      */
     public boolean firstContact(Player player, Player other, Tile tile,
                                 boolean result) {
+<<<<<<< HEAD
         if (player == null || player == null || player == other
+=======
+        if (player == null || player == other
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
             || tile == null) return false;
 
         boolean ret = askServer().firstContact(player, other, tile, result);

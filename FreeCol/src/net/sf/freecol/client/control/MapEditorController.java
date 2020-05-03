@@ -117,7 +117,11 @@ public final class MapEditorController {
             gui.startMapEditorGUI();
         } catch (IOException e) {
             gui.showErrorMessage("server.initialize");
+<<<<<<< HEAD
             return;
+=======
+            //return;
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
         }
     }
 
@@ -172,14 +176,23 @@ public final class MapEditorController {
      */
     public void newMap() {
         final Game game = freeColClient.getGame();
+<<<<<<< HEAD
         final Specification spec = game.getSpecification();
+=======
+        //final Specification spec = game.getSpecification();
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
 
         gui.removeInGameComponents();
         OptionGroup mgo = gui.showMapGeneratorOptionsDialog(true);
         if (mgo == null) return;
         game.setMapGeneratorOptions(mgo);
+<<<<<<< HEAD
         Map map = freeColClient.getFreeColServer().getMapGenerator()
             .createMap(new LogBuilder(-1));
+=======
+        //Map map = freeColClient.getFreeColServer().getMapGenerator()
+        //    .createMap(new LogBuilder(-1));
+>>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
         requireNativeNations(game);
         gui.setFocus(game.getMap().getTile(1,1));
         gui.updateMenuBar();
