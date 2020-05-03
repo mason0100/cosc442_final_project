@@ -8,5 +8,6 @@ org.eclipse.jdt.internal.ui.navigator.layout=2
 org.eclipse.jdt.internal.ui.navigator.librariesnode=true
 org.eclipse.jdt.ui.formatterprofiles.version=18
 spelling_locale_initialized=true
+spelling_user_dictionary=C\:\\Users\\Masonator\\eclipse\\java-2019-122\\eclipse\\configuration\\org.eclipse.osgi\\535\\0\\.cp\\nl\\en\\spelling.dictionary
 useAnnotationsPrefPage=true
 useQuickDiffPrefPage=true

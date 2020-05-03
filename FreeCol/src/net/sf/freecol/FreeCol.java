@@ -73,8 +73,8 @@ import org.apache.commons.cli.PosixParser;
  * @see net.sf.freecol.client.FreeColClient FreeColClient
  * @see net.sf.freecol.server.FreeColServer FreeColServer
  */
-public final class FreeCol {
-
+public /*final*/ class FreeCol {
+	//final is commented out to make a mock class in tessting
     private static final Logger logger = Logger.getLogger(FreeCol.class.getName());
 
     /** The FreeCol release version number. */

@@ -2,6 +2,7 @@ package net.sf.freecol.client;
 
 import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.InputStream;
 import java.util.Comparator;
 import java.util.List;
 

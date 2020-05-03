@@ -27,6 +27,7 @@ import net.sf.freecol.common.option.OptionGroup;
 public class FreeColTest {
 	
 	
+	
 
 	private FreeCol createTestSubject() {
 		return new FreeCol();
@@ -567,25 +568,28 @@ public class FreeColTest {
 	@MethodRef(name = "getVersion", signature = "()QString;")
 	@Test
 	public void getVersionTest() throws Exception {
-		String result;
-
+		String actualResult;
+		
+		String expectedResult ="0.11.6";
 		// default test
-		result = FreeCol.getVersion();
+		actualResult = FreeCol.getVersion();
 
-		Assert.fail();
+		assertEquals(expectedResult,actualResult);
 	}
 
 	@MethodRef(name = "setWindowSize", signature = "(QString;)V")
 	@Test
 	public void setWindowSizeTest() throws Exception {
+		//currently working on this method
+		//FIXME: figure out whitebox
 		String arg = "";
-
+		FreeCol temp = new FreeCol();
 		// test 1
 		arg = null;
-		Whitebox.invokeMethod(FreeCol.class, "setWindowSize", new Object[] { arg });
+		Whitebox.invokeMethod(temp, "setWindowSize", arg);
 
 		// test 2
-		arg = "";
+		arg = "2z4";
 		Whitebox.invokeMethod(FreeCol.class, "setWindowSize", new Object[] { arg });
 
 		Assert.fail();
