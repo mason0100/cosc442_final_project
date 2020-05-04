@@ -92,7 +92,6 @@ public final class TilePopup extends JPopupMenu {
         final Unit activeUnit = gui.getActiveUnit();
         final boolean owned = player != null && activeUnit != null
             && player.owns(activeUnit);
-        Tile unitTile;
         activeUnit(freeColClient, canvas, tile, player, activeUnit, owned);
 
         Settlement settlement = tile.getSettlement();

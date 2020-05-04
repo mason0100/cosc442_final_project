@@ -442,7 +442,6 @@ public final class TileViewer {
                 tileisLand(g, tile, x, y);
 
                 List<SortableImage> imageBorders = new ArrayList<>(8);
-                SortableImage si;
                 for (Direction direction : Direction.values()) {
                     Tile borderingTile = tile.getNeighbourOrNull(direction);
                     if (borderingTile != null && borderingTile.isExplored()) {
