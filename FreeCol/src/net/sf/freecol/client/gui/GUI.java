@@ -85,7 +85,7 @@ public class GUI {
     protected static final Logger logger = Logger.getLogger(GUI.class.getName());
 
     /** Warning levels. */
-    protected static final String levels[] = {
+    protected static final String[] levels = {
         "low", "normal", "high"
     };
 
@@ -1261,9 +1261,11 @@ public class GUI {
     }
 
     public void showLogFilePanel() {
+    	//Ignore for now
     }
 
     public void showMainPanel(String userMsg) {
+    	//Ignore for now
     }
 
     public OptionGroup showMapGeneratorOptionsDialog(boolean editable) {
@@ -1275,22 +1277,26 @@ public class GUI {
     }
 
     public void showModelMessages(List<ModelMessage> modelMessages) {
+    	//Ignore for now
     }
 
     public void showMonarchDialog(final MonarchAction action,
                                   StringTemplate template, String monarchKey,
                                   DialogHandler<Boolean> handler) {
+    	//Ignore for now
     }
 
     public void showNamingDialog(StringTemplate template,
                                  final String defaultName,
                                  final Unit unit,
                                  DialogHandler<String> handler) {
+    	//Ignore for now
     }
 
     public void showFirstContactDialog(final Player player, final Player other,
                                        final Tile tile, int settlementCount,
                                        DialogHandler<Boolean> handler) {
+    	//Ignore for now
     }
 
     public DiplomaticTrade showNegotiationDialog(FreeColGameObject our,
@@ -1319,51 +1325,67 @@ public class GUI {
     }
 
     public void showReportCargoPanel() {
+    	//Ignore for now
     }
 
     public void showReportColonyPanel() {
+    	//Ignore for now
     }
 
     public void showReportContinentalCongressPanel() {
+    	//Ignore for now
     }
 
     public void showReportEducationPanel() {
+    	//Ignore for now
     }
 
     public void showReportExplorationPanel() {
+    	//Ignore for now
     }
 
     public void showReportForeignAffairPanel() {
+    	//Ignore for now
     }
 
     public void showReportHistoryPanel() {
+    	//Ignore for now
     }
 
     public void showReportIndianPanel() {
+    	//Ignore for now
     }
 
     public void showReportLabourPanel() {
+    	//Ignore for now
     }
 
     public void showReportMilitaryPanel() {
+    	//Ignore for now
     }
 
     public void showReportNavalPanel() {
+    	//Ignore for now
     }
 
     public void showReportProductionPanel() {
+    	//Ignore for now
     }
 
     public void showReportReligiousPanel() {
+    	//Ignore for now
     }
 
     public void showReportRequirementsPanel() {
+    	//Ignore for now
     }
 
     public void showReportTradePanel() {
+    	//Ignore for now
     }
 
     public void showReportTurnPanel(List<ModelMessage> messages) {
+    	//Ignore for now
     }
 
     public File showSaveDialog(File directory, String defaultName) {
@@ -1390,33 +1412,43 @@ public class GUI {
 
     public void showStartGamePanel(Game game, Player player,
                                    boolean singlePlayerMode) {
+    	//Ignore for now
     }
 
     public void showStatisticsPanel() {
+    	//Ignore for now
     }
 
     public void showStatusPanel(String message) {
+    	//Ignore for now
     }
 
     public void showTilePopUpAtSelectedTile() {
+    	//Ignore for now
     }
 
     public void showTradeRoutePanel(Unit unit) {
+    	//Ignore for now
     }
 
     public void showVictoryDialog(DialogHandler<Boolean> handler) {
+    	//Ignore for now
     }
 
     public void updateGameOptions() {
+    	//Ignore for now
     }
 
     public void updateMapGeneratorOptions() {
+    	//Ignore for now
     }
 
     public void centerActiveUnit() {
+    	//Ignore for now
     }
 
     public void changeViewMode(int newViewMode) {
+    	//Ignore for now
     }
 
     public Unit getActiveUnit() {
@@ -1436,6 +1468,7 @@ public class GUI {
     }
 
     public void setFocus(Tile tileToFocus) {
+    	//Ignore for now
     }
 
     public boolean setSelectedTile(Tile newTileToSelect) {
@@ -1443,6 +1476,7 @@ public class GUI {
     }
 
     public void toggleViewMode() {
+    	//Ignore for now
     }
 
 

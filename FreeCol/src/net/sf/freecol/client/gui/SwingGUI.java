@@ -271,11 +271,13 @@ public class SwingGUI extends GUI {
 
             @Override
             public void keyReleased(KeyEvent e1) {
+            	//Ignore for now
                 execute();
             }
 
             @Override
             public void keyTyped(KeyEvent e2) {
+            	//Ignore for now
             }
 
             @Override
@@ -285,18 +287,22 @@ public class SwingGUI extends GUI {
 
             @Override
             public void mouseEntered(MouseEvent e4) {
+            	//Ignore for now
             }
 
             @Override
             public void mouseExited(MouseEvent e5) {
+            	//Ignore for now
             }
 
             @Override
             public void mousePressed(MouseEvent e6) {
+            	//Ignore for now
             }
 
             @Override
             public void mouseReleased(MouseEvent e7) {
+            	//Ignore for now
             }
 
             @Override
@@ -317,7 +323,6 @@ public class SwingGUI extends GUI {
                 canvas.removeKeyListener(this);
                 canvas.removeMouseListener(this);
                 vp.removeMouseListener(this);
-                //vp.removeVideoListener(this);
                 vp.stop();
                 canvas.remove(vp);
                 if (t != null) {
@@ -329,7 +334,6 @@ public class SwingGUI extends GUI {
         }
         AbortListener l = new AbortListener();
         vp.addMouseListener(l);
-        //vp.addVideoListener(l);
         canvas.showVideoComponent(vp, l, l);
         vp.play();
         // Cortado applet is failing to quit when finished, make sure it
@@ -350,13 +354,17 @@ public class SwingGUI extends GUI {
     private static GraphicsDevice getGoodGraphicsDevice() {
         try {
             return MouseInfo.getPointerInfo().getDevice();
-        } catch (HeadlessException he) {}
+        } catch (HeadlessException he) {
+        	//Ignore for now
+        }
 
         try {
             final GraphicsEnvironment lge
                 = GraphicsEnvironment.getLocalGraphicsEnvironment();
             return lge.getDefaultScreenDevice();
-        } catch (HeadlessException he) {}
+        } catch (HeadlessException he) {
+        	//Ignore for now
+        }
 
         FreeColClient.fatal("Could not find a GraphicsDevice!");
         return null;
@@ -604,6 +612,7 @@ public class SwingGUI extends GUI {
      * @param tile The <code>Tile</code> to check.
      * @return True if the focus was set.
      */
+    @Override
     public boolean requireFocus(Tile tile) {
         // Account for the ALWAYS_CENTER client option.
         boolean required = freeColClient.getClientOptions()

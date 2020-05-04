@@ -54,6 +54,7 @@ public final class FullScreenFrameListener implements WindowListener {
      */
     @Override
     public void windowActivated(WindowEvent event) {
+    	//Ignore for now
     }
 
     /**
@@ -63,6 +64,7 @@ public final class FullScreenFrameListener implements WindowListener {
      */
     @Override
     public void windowClosed(WindowEvent event) {
+    	//Ignore for now
     }
 
     /**
@@ -86,6 +88,7 @@ public final class FullScreenFrameListener implements WindowListener {
      */
     @Override
     public void windowDeactivated(WindowEvent event) {
+    	//Ignore for now
     }
 
     /**
@@ -95,6 +98,7 @@ public final class FullScreenFrameListener implements WindowListener {
      */
     @Override
     public void windowDeiconified(WindowEvent event) {
+    	//Ignore for now
     }
 
     /**
@@ -121,5 +125,6 @@ public final class FullScreenFrameListener implements WindowListener {
      */
     @Override
     public void windowOpened(WindowEvent event) {
+    	//Ignore for now
     }
 }

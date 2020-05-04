@@ -82,7 +82,7 @@ public final class MapViewer {
 
     private static final Logger logger = Logger.getLogger(MapViewer.class.getName());
 
-    private static enum BorderType { COUNTRY, REGION }
+    private enum BorderType { COUNTRY, REGION }
 
     private static class TextSpecification {
 
@@ -124,8 +124,15 @@ public final class MapViewer {
     private boolean gotoStarted = false;
 
     // Helper variables for displaying the map.
-    private int tileHeight, tileWidth, halfHeight, halfWidth,
-        topSpace, topRows, /*bottomSpace,*/ bottomRows, leftSpace, rightSpace;
+    private int tileHeight;
+    private int tileWidth;
+    private int halfHeight;
+    private int halfWidth;
+    private int topSpace;
+    private int topRows;
+    private int bottomRows;
+    private int leftSpace;
+    private int rightSpace;
 
     // The y-coordinate of the Tiles that will be drawn at the bottom
     private int bottomRow = -1;
@@ -152,8 +159,10 @@ public final class MapViewer {
     private int leftColumnX;
 
     // Whether the map is currently aligned with the edge.
-    private boolean alignedTop = false, alignedBottom = false,
-        alignedLeft = false, alignedRight = false;
+    private boolean alignedTop = false;
+    private boolean alignedBottom = false;
+    private boolean alignedLeft = false;
+    private boolean	alignedRight = false;
 
     // How the map can be scaled
     private static final float MAP_SCALE_MIN = 0.25f;
@@ -2051,7 +2060,8 @@ public final class MapViewer {
                             // big corner
                             Direction previous = d.getPreviousDirection();
                             Direction previous2 = previous.getPreviousDirection();
-                            int ddx = 0, ddy = 0;
+                            int ddx = 0;
+                            int ddy = 0;
                             switch(d) {
                             case NW: ddy = -tileHeight; break;
                             case NE: ddx = tileWidth; break;

@@ -87,24 +87,24 @@ public final class ImageLibrary {
      * Most other images are currently still shown in a size of image size
      * times scaling factor times requested size.
      */
-    public static final Dimension ICON_SIZE = new Dimension(32, 32),
-                                  BUILDING_SIZE = new Dimension(128, 96),
-                                  TILE_SIZE = new Dimension(128, 64),
-                                  TILE_OVERLAY_SIZE = new Dimension(128, 96),
-                                  TILE_FOREST_SIZE = new Dimension(128, 84);
+    public static final Dimension ICON_SIZE = new Dimension(32, 32);
+    public static final Dimension BUILDING_SIZE = new Dimension(128, 96);
+    public static final Dimension TILE_SIZE = new Dimension(128, 64);
+    public static final Dimension TILE_OVERLAY_SIZE = new Dimension(128, 96);
+    public static final Dimension TILE_FOREST_SIZE = new Dimension(128, 84);
 
-    public static final String DELETE = "image.miscicon.delete",
-                               PLOWED = "image.tile.model.improvement.plow",
-                               UNIT_SELECT = "image.tile.unitSelect",
-                               TILE_TAKEN = "image.tile.tileTaken",
-                               TILE_OWNED_BY_INDIANS = "image.tileitem.nativeLand",
-                               LOST_CITY_RUMOUR = "image.tileitem.lostCityRumour",
-                               DARKNESS = "image.halo.dark",
-                               ICON_LOCK = "image.icon.lock",
-                               ICON_COIN = "image.icon.coin",
-                               BELLS = "image.icon.model.goods.bells";
+    public static final String DELETE = "image.miscicon.delete";
+    public static final String PLOWED = "image.tile.model.improvement.plow";
+    public static final String UNIT_SELECT = "image.tile.unitSelect";
+    public static final String TILE_TAKEN = "image.tile.tileTaken";
+    public static final String TILE_OWNED_BY_INDIANS = "image.tileitem.nativeLand";
+    public static final String LOST_CITY_RUMOUR = "image.tileitem.lostCityRumour";
+    public static final String DARKNESS = "image.halo.dark";
+    public static final String ICON_LOCK = "image.icon.lock";
+    public static final String ICON_COIN = "image.icon.coin";
+    public static final String BELLS = "image.icon.model.goods.bells";
 
-    public static enum PathType {
+    public enum PathType {
         NAVAL,
         WAGON,
         HORSE,
@@ -140,7 +140,7 @@ public final class ImageLibrary {
                 : (u.isPerson()) ? PathType.FOOT
                 : PathType.WAGON;
         }
-    };
+    }
 
 
     /**
@@ -150,7 +150,9 @@ public final class ImageLibrary {
      */
     private final float scaleFactor;
 
-    final Dimension tileSize, tileOverlaySize, tileForestSize;
+    final Dimension tileSize;
+    final Dimension tileOverlaySize;
+    final Dimension tileForestSize;
 
     private final HashMap<String,BufferedImage> stringImageCache;
 
@@ -303,12 +305,13 @@ public final class ImageLibrary {
      * @param type The type of the terrain-image to return.
      * @return The image at the given index.
      */
+    static String tileForest = "image.tileforest.";
     public BufferedImage getForestImage(TileType type) {
         return getForestImage(type, tileForestSize);
     }
 
     public static BufferedImage getForestImage(TileType type, Dimension size) {
-        return ResourceManager.getImage("image.tileforest." + type.getId(),
+		return ResourceManager.getImage(tileForest + type.getId(),
                                         size);
     }
 
@@ -321,7 +324,7 @@ public final class ImageLibrary {
                                                TileImprovementStyle riverStyle,
                                                Dimension size) {
         if (riverStyle != null) {
-            String key = "image.tileforest." + type.getId() + ".s" + riverStyle.getMask();
+            String key = tileForest + type.getId() + ".s" + riverStyle.getMask();
             // @compat 0.10.6
             // Workaround for BR#3599586.  America_large used to contain
             // tiles with an isolated river (old river style="0"!).
@@ -333,7 +336,7 @@ public final class ImageLibrary {
             // end @compat
                 return ResourceManager.getImage(key, size);
         }
-        return ResourceManager.getImage("image.tileforest." + type.getId(), size);
+        return ResourceManager.getImage(tileForest + type.getId(), size);
     }
 
     /**
@@ -376,41 +379,42 @@ public final class ImageLibrary {
         return getBuildingImage(building.getType(), building.getOwner(),
             scaleFactor);
     }
-
+    static String buildingIcon = "image.buildingicon.";
+    static String icon = "image.icon.";
     public static BufferedImage getBuildingImage(BuildingType buildingType,
                                                  Player player, float scale) {
-        String key = "image.buildingicon." + buildingType.getId()
+		String key = buildingIcon + buildingType.getId()
             + "." + player.getNationResourceKey();
         if (!ResourceManager.hasImageResource(key)) {
-            key = "image.buildingicon." + buildingType.getId();
+            key = buildingIcon + buildingType.getId();
         }
         return ResourceManager.getImage(key, scale);
     }
 
     public static BufferedImage getBuildingImage(BuildingType buildingType,
                                                  float scale) {
-        return ResourceManager.getImage("image.buildingicon."
+        return ResourceManager.getImage(buildingIcon
             + buildingType.getId(), scale);
     }
 
     public static BufferedImage getBuildingImage(BuildingType buildingType,
                                                  Dimension size) {
-        return ResourceManager.getImage("image.buildingicon."
+        return ResourceManager.getImage(buildingIcon
             + buildingType.getId(), size);
     }
 
     public BufferedImage getSmallerIconImage(FreeColGameObjectType type) {
-        return getMiscImage("image.icon." + type.getId(),
+		return getMiscImage(icon + type.getId(),
             scaleDimension(ICON_SIZE, scaleFactor * 0.5f));
     }
 
     public BufferedImage getSmallIconImage(FreeColGameObjectType type) {
-        return getMiscImage("image.icon." + type.getId(),
+        return getMiscImage(icon + type.getId(),
             scaleDimension(ICON_SIZE, scaleFactor * 0.75f));
     }
 
     public BufferedImage getIconImage(FreeColGameObjectType type) {
-        return getMiscImage("image.icon." + type.getId(),
+        return getMiscImage(icon + type.getId(),
             scaleDimension(ICON_SIZE, scaleFactor));
     }
 
@@ -536,15 +540,16 @@ public final class ImageLibrary {
      * @param size The size of the image to return.
      * @return The terrain-image at the given index.
      */
+    static String tileOverlay = "image.tileoverlay.";
     public static BufferedImage getOverlayImage(TileType type, String id,
                                                 Dimension size) {
-        String prefix = "image.tileoverlay." + type.getId();
+		String prefix = tileOverlay + type.getId();
         List<String> keys = ResourceManager.getImageKeys(prefix);
         return getRandomizedImage(keys, id, size);
     }
 
     public static Set<String> createOverlayCache() {
-        return ResourceManager.getImageKeySet("image.tileoverlay.");
+        return ResourceManager.getImageKeySet(tileOverlay);
     }
 
     public BufferedImage getOverlayImage(Tile tile, Set<String> overlayCache) {
@@ -555,7 +560,7 @@ public final class ImageLibrary {
     public static BufferedImage getOverlayImage(TileType type, String id,
                                                 Dimension size,
                                                 Set<String> overlayCache) {
-        final String prefix = "image.tileoverlay." + type.getId() + ".r";
+        final String prefix = tileOverlay + type.getId() + ".r";
         final List<String> keys = overlayCache.stream()
             .filter(k -> k.startsWith(prefix))
             .collect(Collectors.toList());
@@ -809,6 +814,7 @@ public final class ImageLibrary {
      * @param scale How much the image is scaled.
      * @return A suitable <code>BufferedImage</code>.
      */
+    static String unitImage = "image.unit.";
     public static BufferedImage getUnitImage(UnitType unitType, String roleId,
                                              boolean nativeEthnicity,
                                              boolean grayscale, float scale) {
@@ -820,10 +826,10 @@ public final class ImageLibrary {
         // try to get an image matching the key
         String roleQual = (Role.isDefaultRoleId(roleId)) ? ""
             : "." + Role.getRoleSuffix(roleId);
-        String key = "image.unit." + unitType.getId() + roleQual
+		String key = unitImage + unitType.getId() + roleQual
             + ((nativeEthnicity) ? ".native" : "");
         if (!ResourceManager.hasImageResource(key) && nativeEthnicity) {
-            key = "image.unit." + unitType.getId() + roleQual;
+            key = unitImage + unitType.getId() + roleQual;
         }
         BufferedImage image = (grayscale)
             ? ResourceManager.getGrayscaleImage(key, scale)
@@ -840,7 +846,7 @@ public final class ImageLibrary {
         String roleId = unitType.getDisplayRoleId();
         String roleQual = (Role.isDefaultRoleId(roleId)) ? ""
             : "." + Role.getRoleSuffix(roleId);
-        String key = "image.unit." + unitType.getId() + roleQual;
+        String key = unitImage + unitType.getId() + roleQual;
         return ResourceManager.getImage(key, size);
     }
 
@@ -855,10 +861,10 @@ public final class ImageLibrary {
         // try to get an image matching the key
         String roleQual = (Role.isDefaultRoleId(roleId)) ? ""
             : "." + Role.getRoleSuffix(roleId);
-        String key = "image.unit." + unitType.getId() + roleQual
+        String key = unitImage + unitType.getId() + roleQual
             + ((nativeEthnicity) ? ".native" : "");
         if (!ResourceManager.hasImageResource(key) && nativeEthnicity) {
-            key = "image.unit." + unitType.getId() + roleQual;
+            key = unitImage + unitType.getId() + roleQual;
         }
         BufferedImage image = ResourceManager.getImage(key, size);
         return image;
@@ -882,7 +888,8 @@ public final class ImageLibrary {
                                       JComponent c, Insets insets) {
         int width = c.getWidth();
         int height = c.getHeight();
-        int xmin, ymin;
+        int xmin;
+        int ymin;
         if (insets == null) {
             xmin = 0;
             ymin = 0;
@@ -1209,7 +1216,9 @@ public final class ImageLibrary {
         // draw the border around letters
         int borderWidth = 1;
         int borderColor = getStringBorderColor(color).getRGB();
-        int srcRGB, dstRGB, srcA;
+        int srcRGB; 
+        int dstRGB; 
+        int srcA;
         for (int biY = 0; biY < height; biY++) {
             for (int biX = borderWidth; biX < width - borderWidth; biX++) {
                 int biXI = width - biX - 1;

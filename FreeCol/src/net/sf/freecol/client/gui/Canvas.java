@@ -721,17 +721,17 @@ public final class Canvas extends JDesktopPane {
             // Guarantee eventual completion
             if (--tries <= 0) break;
 
-            int n = todo.size(),
+            int n = todo.size();
                 // Some alternative new positions
                 //   0: move right/down to avoid the collision
                 //   1: move as far as possible right/down
                 //   2: wrap back to the far left
-                x0 = found.getX() + found.getWidth() + 1,
-                y0 = found.getY() + found.getHeight() + 1,
-                x1 = bounds.x + bounds.width - w - 1,
-                y1 = bounds.y + bounds.height - h - 1,
-                x2 = bounds.x,
-                y2 = bounds.y;
+            int x0 = found.getX() + found.getWidth() + 1;
+            int y0 = found.getY() + found.getHeight() + 1;
+            int x1 = bounds.x + bounds.width - w - 1;
+            int y1 = bounds.y + bounds.height - h - 1;
+            int x2 = bounds.x;
+            int y2 = bounds.y;
             boolean x0ok = bounds.contains(x0 + w, y),
                 y0ok = bounds.contains(x, y0 + h),
                 x1ok = bounds.contains(x1, y),

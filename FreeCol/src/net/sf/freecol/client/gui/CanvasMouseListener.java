@@ -43,15 +43,16 @@ public final class CanvasMouseListener implements ActionListener, MouseListener 
 
     private static final Logger logger = Logger.getLogger(CanvasMouseListener.class.getName());
 
-    private static final int doubleClickDelay = 200; // Milliseconds
+    private static final int DOUBLECLICKDELAY = 200; // Milliseconds
 
     private final FreeColClient freeColClient;
 
     private final Canvas canvas;
 
-    private final Timer doubleClickTimer = new Timer(doubleClickDelay,this);
+    private final Timer doubleClickTimer = new Timer(DOUBLECLICKDELAY,this);
 
-    private int centerX, centerY;
+    private int centerX;
+    private int centerY;
 
 
     /**

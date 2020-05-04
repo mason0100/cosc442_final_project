@@ -200,26 +200,29 @@ public final class CanvasMapEditorMouseListener extends AbstractCanvasListener
         }
 
         // find the area to transform
-        int min_x, max_x, min_y, max_y;
+        int minX;
+        int maxX;
+        int minY;
+        int maxY;
         if (start.getX() < end.getX()) {
-            min_x = start.getX();
-            max_x = end.getX();
+            minX = start.getX();
+            maxX = end.getX();
         } else {
-            min_x = end.getX();
-            max_x = start.getX();
+            minX = end.getX();
+            maxX = start.getX();
         }
         if (start.getY() < end.getY()) {
-            min_y = start.getY();
-            max_y = end.getY();
+            minY = start.getY();
+            maxY = end.getY();
         } else {
-            min_y = end.getY();
-            max_y = start.getY();
+            minY = end.getY();
+            maxY = start.getY();
         }
 
         // apply transformation to all tiles in the area
         Tile t = null;
-        for (int x = min_x; x <= max_x; x++) {
-            for (int y = min_y; y <= max_y; y++) {
+        for (int x = minX; x <= maxX; x++) {
+            for (int y = minY; y <= maxY; y++) {
                 t = getMap().getTile(x, y);
                 if (t != null) {
                     controller.transform(t);
@@ -227,8 +230,8 @@ public final class CanvasMapEditorMouseListener extends AbstractCanvasListener
             }
         }
         if (controller.getMapTransform() instanceof TileTypeTransform) {
-            for (int x = min_x - 2; x <= max_x + 2; x++) {
-                for (int y = min_y - 2; y <= max_y + 2; y++) {
+            for (int x = minX - 2; x <= maxX + 2; x++) {
+                for (int y = minY - 2; y <= maxY + 2; y++) {
                     t = getMap().getTile(x, y);
                     if (t != null && t.getType().isWater()) {
                         TerrainGenerator.encodeStyle(t);
@@ -244,13 +247,17 @@ public final class CanvasMapEditorMouseListener extends AbstractCanvasListener
      * {@inheritDoc}
      */
     @Override
-    public void mouseEntered(MouseEvent e) {} // Ignore for now.
+    public void mouseEntered(MouseEvent e) {
+    	// Ignore for now.
+    }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public void mouseExited(MouseEvent e) {} // Ignore for now.
+    public void mouseExited(MouseEvent e) {
+    	// Ignore for now.
+    } 
 
 
     // Implement MouseMotionListener

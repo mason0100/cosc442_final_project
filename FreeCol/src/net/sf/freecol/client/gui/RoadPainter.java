@@ -45,7 +45,10 @@ import net.sf.freecol.common.resources.ResourceManager;
  */
 public final class RoadPainter {
     // Helper variables for displaying the map.
-    private int tileHeight, tileWidth, halfHeight, halfWidth;
+    private int tileHeight;
+    private int tileWidth;
+    private int halfHeight;
+    private int halfWidth;
 
     // roads
     private final EnumMap<Direction, Point2D.Float> corners =
@@ -131,21 +134,10 @@ public final class RoadPainter {
             path.quadTo(halfWidth, halfHeight, points.get(1).getX(), points.get(1).getY());
             break;
         case 3:
-        case 4: {
-            Direction pen = directions.get(directions.size() - 1);
-            Point2D p = corners.get(pen);
-            path.moveTo(p.getX(), p.getY());
-            for (Direction d : directions) {
-                p = corners.get(d);
-                if(prohibitedRoads.get(pen).contains(d)) {
-                    path.moveTo(p.getX(), p.getY());
-                } else {
-                    path.quadTo(halfWidth, halfHeight, p.getX(), p.getY());
-                }
-                pen = d;
-            }
+        case 4: 
+            directionPen(path, directions);
             break;
-        }
+        
         default:
             for (Point2D p : points) {
                 path.moveTo(halfWidth, halfHeight);
@@ -156,5 +148,20 @@ public final class RoadPainter {
         g.setColor(oldColor);
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
     }
+
+	private void directionPen(GeneralPath path, List<Direction> directions) {
+		Direction pen = directions.get(directions.size() - 1);
+		Point2D p = corners.get(pen);
+		path.moveTo(p.getX(), p.getY());
+		for (Direction d : directions) {
+		    p = corners.get(d);
+		    if(prohibitedRoads.get(pen).contains(d)) {
+		        path.moveTo(p.getX(), p.getY());
+		    } else {
+		        path.quadTo(halfWidth, halfHeight, p.getX(), p.getY());
+		    }
+		    pen = d;
+		}
+	}
 
 }
