@@ -33,7 +33,7 @@ import net.sf.freecol.common.model.Tile;
  */
 public class ScaleMapAction extends FreeColAction {
 
-    public static final String id = "scaleMapAction";
+    public static final String ID = "scaleMapAction";
 
 
     /**
@@ -42,7 +42,7 @@ public class ScaleMapAction extends FreeColAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public ScaleMapAction(FreeColClient freeColClient) {
-        super(freeColClient, id);
+        super(freeColClient, ID);
     }
 
 

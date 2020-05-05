@@ -65,10 +65,10 @@ public final class MainPanel extends FreeColPanel {
 
         ActionManager am = getFreeColClient().getActionManager();
         JButton newButton = new JButton(am.getFreeColAction(NewAction.ID));
-        JButton openButton = new JButton(am.getFreeColAction(OpenAction.id));
+        JButton openButton = new JButton(am.getFreeColAction(OpenAction.ID));
         JButton mapEditorButton = new JButton(am.getFreeColAction(MapEditorAction.ID));
-        JButton optionsButton = new JButton(am.getFreeColAction(PreferencesAction.id));
-        JButton quitButton = new JButton(am.getFreeColAction(QuitAction.id));
+        JButton optionsButton = new JButton(am.getFreeColAction(PreferencesAction.ID));
+        JButton quitButton = new JButton(am.getFreeColAction(QuitAction.ID));
 
         setCancelComponent(quitButton);
         okButton.setAction(am.getFreeColAction((canContinue)
