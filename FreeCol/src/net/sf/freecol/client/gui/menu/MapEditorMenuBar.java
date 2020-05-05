@@ -113,7 +113,9 @@ public class MapEditorMenuBar extends FreeColMenuBar {
                     .getOptionsFile(FreeColDirectories.MAP_GENERATOR_OPTIONS_FILE_NAME);
                 try {
                     options.save(mapOptionsFile);
-                } catch (FileNotFoundException fnfe) {}
+                } catch (FileNotFoundException fnfe) {
+                	//Ignore for now
+                }
                 freeColClient.newGame(true);
             });
         menu.add(playItem);
