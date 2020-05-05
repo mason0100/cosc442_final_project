@@ -93,7 +93,7 @@ public class MapEditorMenuBar extends FreeColMenuBar {
         menu.setOpaque(false);
         menu.setMnemonic(KeyEvent.VK_G);
 
-        menu.add(getMenuItem(NewAction.id));
+        menu.add(getMenuItem(NewAction.ID));
         menu.add(getMenuItem(NewEmptyMapAction.id));
 
         menu.addSeparator();
@@ -135,14 +135,14 @@ public class MapEditorMenuBar extends FreeColMenuBar {
         menu.setOpaque(false);
         menu.setMnemonic(KeyEvent.VK_V);
 
-        menu.add(getCheckBoxMenuItem(MapControlsAction.id));
-        menu.add(getCheckBoxMenuItem(DisplayGridAction.id));
+        menu.add(getCheckBoxMenuItem(MapControlsAction.ID));
+        menu.add(getCheckBoxMenuItem(DisplayGridAction.ID));
         menu.add(getCheckBoxMenuItem(ChangeWindowedModeAction.id));
 
         menu.addSeparator();
         ButtonGroup tileTextGroup = new ButtonGroup();
         for (DisplayText type : DisplayText.values()) {
-            menu.add(getRadioButtonMenuItem(DisplayTileTextAction.id + type.getKey(),
+            menu.add(getRadioButtonMenuItem(DisplayTileTextAction.ID + type.getKey(),
                                             tileTextGroup));
         }
 
@@ -160,7 +160,7 @@ public class MapEditorMenuBar extends FreeColMenuBar {
         menu.setMnemonic(KeyEvent.VK_T);
 
         menu.add(getMenuItem(ScaleMapAction.id));
-        menu.add(getMenuItem(DetermineHighSeasAction.id));
+        menu.add(getMenuItem(DetermineHighSeasAction.ID));
 
         add(menu);
     }

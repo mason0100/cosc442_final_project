@@ -92,7 +92,7 @@ public abstract class MapControls {
             unitButtons.add(new UnitButton(am, WaitAction.id));
             unitButtons.add(new UnitButton(am, SkipUnitAction.id));
             unitButtons.add(new UnitButton(am, SentryAction.id));
-            unitButtons.add(new UnitButton(am, FortifyAction.id));
+            unitButtons.add(new UnitButton(am, FortifyAction.ID));
             
             final Specification spec = game.getSpecification();
             if (spec != null) {
@@ -105,13 +105,13 @@ public abstract class MapControls {
                     }
                 }
             }
-            unitButtons.add(new UnitButton(am, BuildColonyAction.id));
-            unitButtons.add(new UnitButton(am, DisbandUnitAction.id));
+            unitButtons.add(new UnitButton(am, BuildColonyAction.ID));
+            unitButtons.add(new UnitButton(am, DisbandUnitAction.ID));
         }
-        miniMapToggleBorders = new UnitButton(am, MiniMapToggleViewAction.id);
-        miniMapToggleFogOfWarButton = new UnitButton(am, MiniMapToggleFogOfWarAction.id);
-        miniMapZoomOutButton = new UnitButton(am, MiniMapZoomOutAction.id);
-        miniMapZoomInButton = new UnitButton(am, MiniMapZoomInAction.id);
+        miniMapToggleBorders = new UnitButton(am, MiniMapToggleViewAction.ID);
+        miniMapToggleFogOfWarButton = new UnitButton(am, MiniMapToggleFogOfWarAction.ID);
+        miniMapZoomOutButton = new UnitButton(am, MiniMapZoomOutAction.ID);
+        miniMapZoomInButton = new UnitButton(am, MiniMapZoomInAction.ID);
 
         miniMapToggleBorders.setFocusable(false);
         miniMapToggleFogOfWarButton.setFocusable(false);

@@ -30,7 +30,7 @@ import net.sf.freecol.client.FreeColClient;
  */
 public class MiniMapToggleViewAction extends MapboardAction {
     
-    public static final String id = "miniMapToggleBordersAction";
+    public static final String ID = "miniMapToggleBordersAction";
     
     
     /**
@@ -38,10 +38,11 @@ public class MiniMapToggleViewAction extends MapboardAction {
      *
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
+    static String togglePolitics = "toggle_view_politics";
     public MiniMapToggleViewAction(FreeColClient freeColClient) {
-        super(freeColClient, id);
+        super(freeColClient, ID);
 
-        addImageIcons("toggle_view_politics");
+		addImageIcons(togglePolitics);
     }
 
     /**
@@ -51,9 +52,9 @@ public class MiniMapToggleViewAction extends MapboardAction {
      * @param b a <code>boolean</code> value
      */
     public MiniMapToggleViewAction(FreeColClient freeColClient, boolean b) {
-        super(freeColClient, id + ".secondary");
+        super(freeColClient, ID + ".secondary");
  
-        addImageIcons("toggle_view_politics");
+        addImageIcons(togglePolitics);
     }
 
     // Interface ActionListener
@@ -66,7 +67,7 @@ public class MiniMapToggleViewAction extends MapboardAction {
         getGUI().miniMapToggleViewControls();
 
         if (freeColClient.getClientOptions().getBoolean(ClientOptions.MINIMAP_TOGGLE_BORDERS)) {
-            addImageIcons("toggle_view_politics");
+            addImageIcons(togglePolitics);
         } else {
             addImageIcons("toggle_view_economic");
         }

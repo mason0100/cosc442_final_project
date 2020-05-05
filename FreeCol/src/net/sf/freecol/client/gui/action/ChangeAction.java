@@ -38,7 +38,7 @@ import net.sf.freecol.common.model.Unit;
  */
 public class ChangeAction extends UnitAction {
 
-    public static final String id = "changeAction";
+    public static final String ID = "changeAction";
 
 
     /**
@@ -47,7 +47,7 @@ public class ChangeAction extends UnitAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public ChangeAction(FreeColClient freeColClient) {
-        super(freeColClient, id);
+        super(freeColClient, ID);
 
         update();
     }

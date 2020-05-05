@@ -31,10 +31,10 @@ import static net.sf.freecol.common.util.StringUtils.*;
  */
 public class ColopediaAction extends FreeColAction {
 
-    public static final String id = "colopediaAction.";
+    public static final String ID = "colopediaAction.";
 
     // Order of elements will influence ingame order of menu items.
-    public static enum PanelType {
+    public enum PanelType {
         TERRAIN, RESOURCES, GOODS, UNITS,
         BUILDINGS, FATHERS, NATIONS,
         NATION_TYPES, CONCEPTS;
@@ -64,7 +64,7 @@ public class ColopediaAction extends FreeColAction {
      * @param panelType The <code>PanelType</code> to use.
      */
     public ColopediaAction(FreeColClient freeColClient, PanelType panelType) {
-        super(freeColClient, id + panelType.getKey());
+        super(freeColClient, ID + panelType.getKey());
 
         setMnemonic(mnemonics[panelType.ordinal()]);
     }

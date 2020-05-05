@@ -536,7 +536,7 @@ public final class ImageLibrary {
      * Currently used for hills and mountains.
      *
      * @param type The type of the terrain-image to return.
-     * @param id A string used to get a random image.
+     * @param ID A string used to get a random image.
      * @param size The size of the image to return.
      * @return The terrain-image at the given index.
      */
