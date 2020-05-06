@@ -82,7 +82,6 @@ public final class FileOptionUI extends OptionUI<FileOption>  {
         fileField.setEnabled(false);
         getJLabel().setLabelFor(fileField);
         /*
-        fileField.getDocument().addDocumentListener(new DocumentListener() {
             public void changedUpdate(DocumentEvent arg0) {
                 editUpdate();
             }
