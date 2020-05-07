@@ -53,7 +53,7 @@ public class Flag {
         NONE,
         HORIZONTAL,
         VERTICAL
-    };
+    }
 
     /**
      * The "background layer" of the flag, generally one or several
@@ -81,7 +81,7 @@ public class Flag {
         Background(Alignment alignment) {
             this.alignment = alignment;
         }
-    };
+    }
 
     /**
      * The "middle layer" of the flag, generally a number of vertical,
@@ -116,7 +116,7 @@ public class Flag {
             this.unionShape = shape;
         }
 
-    };
+    }
 
     /**
      * The shape of the "union", which generally depends on the
@@ -128,7 +128,7 @@ public class Flag {
         CHEVRON,
         BEND,
         RHOMBUS
-    };
+    }
 
     /**
      * The position of the "union", which depends on the alignment of
@@ -653,7 +653,7 @@ public class Flag {
         } else if (unionShape == UnionShape.TRIANGLE) {
             if (unionPosition == UnionPosition.LEFT
                 || unionPosition == UnionPosition.RIGHT) {
-                x = WIDTH / 2;
+                x = WIDTH / 2.00;
                 y = HEIGHT;
                 if (small) {
                     x -= BEND_X;
@@ -661,7 +661,7 @@ public class Flag {
                 }
                 r = SQRT_3 * y / 6;
             } else {
-                x = HEIGHT / 2;
+                x = HEIGHT / 2.00;
                 y = WIDTH;
                 if (small) {
                     x -= BEND_Y;
@@ -680,8 +680,8 @@ public class Flag {
                 y -= BEND_Y;
             }
             double c = Math.sqrt(x * x + y * y);
-            double A = x * y / 2;
-            r = 2 * A / (x + y + c);
+            double a = x * y / 2;
+            r = 2 * a / (x + y + c);
         }
         // leave a margin
         double radius = r * 0.6;
@@ -692,9 +692,9 @@ public class Flag {
             if (isosceles) {
                 if (unionPosition == UnionPosition.LEFT
                     || unionPosition == UnionPosition.RIGHT) {
-                    center(unionPath, r, HEIGHT / 2);
+                    center(unionPath, r, HEIGHT / 2.00);
                 } else {
-                    center(unionPath, r, WIDTH / 2);
+                    center(unionPath, r, WIDTH / 2.00);
                 }
             } else {
                 center(unionPath, r, r);
@@ -725,10 +725,10 @@ public class Flag {
                 int count = index;
                 if (missing > 0) {
                     count = index - missing;
-                    yy += missing / 2 * dy;
+                    yy += missing / 2.00 * dy;
                     missing = 0;
                 }
-                for (int star = 0; star < count; star++) {
+                for (int starVal = 0; starVal < count; starVal++) {
                     unionPath.append(getStar(xx, yy + offset), false);
                     yy += dy;
                 }
@@ -803,15 +803,15 @@ public class Flag {
         int rows = stars / count;
         if (rows * count < stars) rows++;
         int starCount = 0;
-        double a = WIDTH / 2 - BEND_X;
-        double b = HEIGHT / 2 - BEND_Y;
+        double a = WIDTH / 2.00 - BEND_X;
+        double b = HEIGHT / 2.00 - BEND_Y;
 
         if (stars < 14) {
             double c = Math.sqrt(a * a + b * b);
             double r = (a * b) / c;
             double radius = 0.6 * r;
             unionPath = getCircleOfStars(radius);
-            center(unionPath, WIDTH / 2, HEIGHT / 2);
+            center(unionPath, WIDTH / 2.00, HEIGHT / 2.00);
         } else {
             double dx = a / count;
             double dy = b / count;
@@ -819,8 +819,8 @@ public class Flag {
             double dy1 = b / rows;
             outer: for (int index = 0; index < rows; index++) {
                 double x = BEND_X + dx + index * dx1;
-                double y = HEIGHT / 2 - index * dy1;
-                for (int star = 0; star < count; star++) {
+                double y = HEIGHT / 2.00 - index * dy1;
+                for (int starDouble = 0; starDouble < count; starDouble++) {
                     unionPath.append(getStar(x, y), false);
                     starCount++;
                     if (starCount == stars) {
@@ -886,8 +886,8 @@ public class Flag {
         int colors = backgroundColors.size();
         int[] x = { 0, 1, 1, 0 };
         int[] y = { 0, 0, 1, 1 };
-        double halfWidth = WIDTH / 2;
-        double halfHeight = HEIGHT / 2;
+        double halfWidth = WIDTH / 2.00;
+        double halfHeight = HEIGHT / 2.00;
         double offset = (decoration == Decoration.SCANDINAVIAN_CROSS)
             ? CROSS_OFFSET : 0;
         Rectangle2D.Double rectangle = new Rectangle2D.Double();
@@ -915,8 +915,8 @@ public class Flag {
         GeneralPath path = new GeneralPath();
         int[] x = { 0, WIDTH, WIDTH, 0 };
         int[] y = { 0, 0, HEIGHT, HEIGHT };
-        double halfWidth = WIDTH / 2;
-        double halfHeight = HEIGHT / 2;
+        double halfWidth = WIDTH / 2.00;
+        double halfHeight = HEIGHT / 2.00;
         for (int index = 0; index < 4; index++) {
             path.moveTo(x[index], y[index]);
             path.lineTo(halfWidth, halfHeight);
@@ -1012,18 +1012,18 @@ public class Flag {
             break;
         case CHEVRON:
             path.moveTo(0, y);
-            path.lineTo(CHEVRON_X - x, HEIGHT / 2);
+            path.lineTo(CHEVRON_X - x, HEIGHT / 2.00);
             path.lineTo(0, HEIGHT - y);
             break;
         case TRIANGLE:
             if (unionPosition == UnionPosition.LEFT
                 || unionPosition == UnionPosition.RIGHT) {
                 path.moveTo(0, y);
-                path.lineTo(WIDTH / 2 - x, HEIGHT / 2);
+                path.lineTo(WIDTH / 2.00 - x, HEIGHT / 2.00);
                 path.lineTo(0, HEIGHT - y);
             } else {
                 path.moveTo(0, x);
-                path.lineTo(HEIGHT / 2 - y, WIDTH / 2);
+                path.lineTo(HEIGHT / 2.00 - y, WIDTH / 2.00);
                 path.lineTo(0, WIDTH - x);
             }
             break;
@@ -1035,10 +1035,10 @@ public class Flag {
 
     private GeneralPath getRhombus() {
         GeneralPath rhombus = new GeneralPath();
-        rhombus.moveTo(WIDTH / 2, BEND_Y);
-        rhombus.lineTo(WIDTH - BEND_X, HEIGHT / 2);
-        rhombus.lineTo(WIDTH / 2, HEIGHT - BEND_Y);
-        rhombus.lineTo(BEND_X, HEIGHT / 2);
+        rhombus.moveTo(WIDTH / 2.00, BEND_Y);
+        rhombus.lineTo(WIDTH - BEND_X, HEIGHT / 2.00);
+        rhombus.lineTo(WIDTH / 2.00, HEIGHT - BEND_Y);
+        rhombus.lineTo(BEND_X, HEIGHT / 2.00);
         return rhombus;
     }
 
@@ -1052,10 +1052,10 @@ public class Flag {
                 && stripes < 3) {
                 union.width = WIDTH / stripes;
                 if (stripes == 2 && unionPosition == UnionPosition.RIGHT) {
-                    union.x = WIDTH /2;
+                    union.x = WIDTH /2.00;
                 }
             } else {
-                union.width = WIDTH / 3;
+                union.width = WIDTH / 3.00;
                 union.x = unionPosition.index * union.width;
             }
             union.height = HEIGHT;
@@ -1064,34 +1064,34 @@ public class Flag {
                 && stripes < 3) {
                 union.height = HEIGHT / stripes;
                 if (stripes == 2 && unionPosition == UnionPosition.BOTTOM) {
-                    union.y = HEIGHT / 2;
+                    union.y = HEIGHT / 2.00;
                 }
             } else {
-                union.height = HEIGHT / 3;
+                union.height = HEIGHT / 3.00;
                 union.y = unionPosition.index * union.height;
             }
             union.width = WIDTH;
         } else {
             // canton
-            union.width = WIDTH / 2;
-            union.height = HEIGHT / 2;
+            union.width = WIDTH / 2.00;
+            union.height = HEIGHT / 2.00;
             if (background.alignment == Alignment.HORIZONTAL) {
-                union.height = (stripes < 3)
-                    ? HEIGHT / 2
-                    : (stripes / 2) * getStripeHeight(background.alignment);
+                union.height = (stripes < 3.00)
+                    ? HEIGHT / 2.00
+                    : (stripes / 2.00) * getStripeHeight(background.alignment);
             } else if (background.alignment == Alignment.VERTICAL) {
-                union.width = (stripes < 3)
-                    ? WIDTH / 2
-                    : (stripes / 2) * getStripeWidth(background.alignment);
+                union.width = (stripes < 3.00)
+                    ? WIDTH / 2.00
+                    : (stripes / 2.00) * getStripeWidth(background.alignment);
             }
             if (decoration == Decoration.GREEK_CROSS
                 || decoration == Decoration.CROSS) {
-                union.width = (WIDTH - DECORATION_SIZE) / 2;
-                union.height = (HEIGHT - DECORATION_SIZE) / 2;
+                union.width = (WIDTH - DECORATION_SIZE) / 2.00;
+                union.height = (HEIGHT - DECORATION_SIZE) / 2.00;
             } else if (decoration == Decoration.SCANDINAVIAN_CROSS) {
-                union.width = (WIDTH - DECORATION_SIZE) / 2
+                union.width = (WIDTH - DECORATION_SIZE) / 2.00
                     - CROSS_OFFSET;
-                union.height = (HEIGHT - DECORATION_SIZE) / 2;
+                union.height = (HEIGHT - DECORATION_SIZE) / 2.00;
             }
         }
 

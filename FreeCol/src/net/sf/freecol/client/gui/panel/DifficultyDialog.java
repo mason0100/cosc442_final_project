@@ -48,10 +48,13 @@ import net.sf.freecol.common.option.OptionGroup;
 public final class DifficultyDialog extends OptionsDialog
     implements TreeSelectionListener {
 
+    private static final Logger logger = Logger.getLogger(DifficultyDialog.class.getName());
+
     /** File filters array to filter for XML files. */
     private static final FileFilter[] filters = { null };
 
     /** The currently selected subgroup. */
+    private OptionGroup selected;
 
     /**
      * We need our own copy of the specification, as the dialog is

@@ -65,10 +65,10 @@ public class FreeColDialog<T> extends JDialog implements PropertyChangeListener 
 
     private static final Logger logger = Logger.getLogger(FreeColDialog.class.getName());
 
-    public static enum DialogType {
+    public enum DialogType {
         PLAIN,
         QUESTION,
-    };
+    }
 
     /** The enclosing client. */
     protected final FreeColClient freeColClient;
@@ -127,7 +127,10 @@ public class FreeColDialog<T> extends JDialog implements PropertyChangeListener 
      * @return The option to select initially.
      */
     private int selectDefault(List<ChoiceItem<T>> options) {
-        int def = -1, can = -1, ok = -1, i = 0;
+        int def = -1;
+        int can = -1;
+        int ok = -1;
+        int i = 0;
         for (ChoiceItem<T> ci : options) {
             if (ci.isDefault()) def = i;
             else if (ci.isCancel()) can = i;
@@ -233,12 +236,6 @@ public class FreeColDialog<T> extends JDialog implements PropertyChangeListener 
 
         addMouseListener(new MouseAdapter() {
                 private Point loc;
-
-                //@Override
-                //public void mouseDragged(MouseEvent e) {}
-
-                //@Override
-                //public void mouseMoved(MouseEvent e) {}
 
                 @Override
                 public void mousePressed(MouseEvent e) {

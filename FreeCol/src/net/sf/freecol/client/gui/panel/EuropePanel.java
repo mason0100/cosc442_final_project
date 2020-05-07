@@ -92,7 +92,9 @@ public final class EuropePanel extends PortPanel {
         /**
          * Cleans up this DestinationPanel.
          */
-        public void cleanup() {}
+        public void cleanup() {
+        	//Ignore for now
+        }
 
         /**
          * Update this DestinationPanel.
@@ -113,9 +115,10 @@ public final class EuropePanel extends PortPanel {
                                 && unit.getDestination().getTile().getMap()
                                 == destination);
                     } else {
-                        logger.warning("Bogus DestinationPanel location: "
+                        String loggerWarningBogus = "Bogus DestinationPanel location: "
                             + destination
-                            + " for unit: " + unit);
+                            + " for unit: " + unit;
+						logger.warning(loggerWarningBogus);
                         belongs = false;
                     }
                     if (belongs) {
@@ -157,7 +160,8 @@ public final class EuropePanel extends PortPanel {
         public Component add(Component comp, boolean editState) {
             if (editState) {
                 if (!(comp instanceof UnitLabel)) {
-                    logger.warning("Invalid component: " + comp);
+                    String loggerWarningInvalid = "Invalid component: " + comp;
+					logger.warning(loggerWarningInvalid);
                     return null;
                 }
                 final Unit unit = ((UnitLabel)comp).getUnit();
@@ -372,7 +376,9 @@ public final class EuropePanel extends PortPanel {
         /**
          * Cleans up this MarketPanel.
          */
-        public void cleanup() {}
+        public void cleanup() {
+        	//Ignore for now
+        }
 
 
         // Interface DropTarget
@@ -397,7 +403,8 @@ public final class EuropePanel extends PortPanel {
         public Component add(Component comp, boolean editState) {
             if (editState) {
                 if (!(comp instanceof GoodsLabel)) {
-                    logger.warning("Invalid component: " + comp);
+                    String loggerWarningInvalid = "Invalid component: " + comp;
+					logger.warning(loggerWarningInvalid);
                     return null;
                 }
 
@@ -416,8 +423,9 @@ public final class EuropePanel extends PortPanel {
                             igc().unloadCargo(goods, true);
                             break;
                         default:
-                            logger.warning("showBoycottedGoodsDialog fail: "
-                                + act);
+                            String loggerWarningGoods = "showBoycottedGoodsDialog fail: "
+                                + act;
+							logger.warning(loggerWarningGoods);
                             break;
                         }
                     }
@@ -501,12 +509,13 @@ public final class EuropePanel extends PortPanel {
         @Override
         public void logPurchase(GoodsType goodsType, int amount, int price) {
             int total = amount * price;
-            StringTemplate t1 = StringTemplate.template("europePanel.transaction.purchase")
+            String gold = "%gold%";
+			StringTemplate t1 = StringTemplate.template("europePanel.transaction.purchase")
                 .addNamed("%goods%", goodsType)
                 .addAmount("%amount%", amount)
-                .addAmount("%gold%", price);
+                .addAmount(gold, price);
             StringTemplate t2 = StringTemplate.template("europePanel.transaction.price")
-                .addAmount("%gold%", total);
+                .addAmount(gold, total);
             add(Messages.message(t1) + "\n" + Messages.message(t2));
         }
 
@@ -520,24 +529,25 @@ public final class EuropePanel extends PortPanel {
             int totalTax = totalBeforeTax * tax / 100;
             int totalAfterTax = totalBeforeTax - totalTax;
 
-            StringTemplate t1 = StringTemplate.template("europePanel.transaction.sale")
+            String gold = "%gold%";
+			StringTemplate t1 = StringTemplate.template("europePanel.transaction.sale")
                 .addNamed("%goods%", goodsType)
                 .addAmount("%amount%", amount)
-                .addAmount("%gold%", price);
+                .addAmount(gold, price);
             StringTemplate t2 = StringTemplate.template("europePanel.transaction.price")
-                .addAmount("%gold%", totalBeforeTax);
+                .addAmount(gold, totalBeforeTax);
             StringTemplate t3 = StringTemplate.template("europePanel.transaction.tax")
                 .addAmount("%tax%", tax)
-                .addAmount("%gold%", totalTax);
+                .addAmount(gold, totalTax);
             StringTemplate t4 = StringTemplate.template("europePanel.transaction.net")
-                .addAmount("%gold%", totalAfterTax);
+                .addAmount(gold, totalAfterTax);
             add(Messages.message(t1) + "\n" + Messages.message(t2)
                 + "\n" + Messages.message(t3) + "\n" + Messages.message(t4));
         }
     }
 
 
-    public static enum EuropeAction {
+    public enum EuropeAction {
         EXIT,
         RECRUIT,
         PURCHASE,
@@ -556,8 +566,12 @@ public final class EuropePanel extends PortPanel {
 
     private TransactionLog log;
 
-    private JButton exitButton, trainButton, purchaseButton,
-                    recruitButton, unloadButton, sailButton;
+    private JButton exitButton;
+    private JButton trainButton;
+    private JButton purchaseButton;
+    private JButton recruitButton;
+    private JButton unloadButton;
+    private JButton sailButton;
 
     private final Europe europe;
 
@@ -596,7 +610,6 @@ public final class EuropePanel extends PortPanel {
 
         SimpleAttributeSet attributes = new SimpleAttributeSet();
         StyleConstants.setAlignment(attributes, StyleConstants.ALIGN_RIGHT);
-        //StyleConstants.setForeground(attributes, Color.WHITE);
         StyleConstants.setBold(attributes, true);
         log.setParagraphAttributes(attributes, true);
 
@@ -680,10 +693,11 @@ public final class EuropePanel extends PortPanel {
             add(Utility.localizedHeader(europe.getNameKey(), false),
                 "span, top, center");
         }
-        add(toAmericaScroll, "sg, height 15%:, grow");
-        add(toEuropeScroll, "sg, height 15%:, grow");
+        String heightGrow = "sg, height 15%:, grow";
+		add(toAmericaScroll, heightGrow);
+        add(toEuropeScroll, heightGrow);
         add(logScroll, "spany 3, grow");
-        add(inPortScroll, "sg, height 15%:, grow");
+        add(inPortScroll, heightGrow);
         add(docksScroll, "spany 2, grow");
         add(cargoScroll, "height 10%:, grow");
         add(marketScroll, "span, height 10%:, grow");

@@ -96,13 +96,13 @@ public final class InfoPanel extends FreeColPanel {
                                       getFontMetrics(font), 150)) {
                 JLabel label = new JLabel(s);
                 label.setFont(font);
-                add(label);
+                super.add(label);
             }
 
             JButton button = new JButton(getFreeColClient().getActionManager()
                 .getFreeColAction(EndTurnAction.ID));
             button.setFont(font);
-            add(button);
+            super.add(button);
             setOpaque(false);
             setSize(getPreferredSize());
         }
@@ -118,7 +118,6 @@ public final class InfoPanel extends FreeColPanel {
         private Tile tile;
 
         // TODO: Find a way of removing the need for an extremely tiny font.
-        //private final Font font = new JLabel().getFont().deriveFont(8f);
 
 
         /**
@@ -153,36 +152,34 @@ public final class InfoPanel extends FreeColPanel {
                     for (String s : splitText(text, " /",
                                               getFontMetrics(font), width)) {
                         JLabel label = new JLabel(s);
-                        //itemLabel.setFont(font);
-                        add(label, "span, align center");
+                        super.add(label, "span, align center");
                     }
 
-                    add(new JLabel(new ImageIcon(image)), "spany");
+                    super.add(new JLabel(new ImageIcon(image)), "spany");
 
                     final Player owner = tile.getOwner();
-                    if (owner == null) {
-                        add(new JLabel(), "span " + PRODUCTION);
+                    String span = "span ";
+					if (owner == null) {
+                        super.add(new JLabel(), span + PRODUCTION);
                     } else {
                         StringTemplate t = owner.getNationLabel();
-                        add(Utility.localizedLabel(t), "span " + PRODUCTION);
+                        super.add(Utility.localizedLabel(t), span + PRODUCTION);
                     }
 
                     JLabel defenceLabel = Utility.localizedLabel(StringTemplate
                         .template("infoPanel.defenseBonus")
                         .addAmount("%bonus%", tile.getDefenceBonusPercentage()));
-                    //defenceLabel.setFont(font);
-                    add(defenceLabel, "span " + PRODUCTION);
+                    super.add(defenceLabel, span + PRODUCTION);
 
                     JLabel moveLabel = Utility.localizedLabel(StringTemplate
                         .template("infoPanel.movementCost")
                         .addAmount("%cost%", tile.getType().getBasicMoveCost()/3));
-                    //moveLabel.setFont(font);
-                    add(moveLabel, "span " + PRODUCTION);
+                    super.add(moveLabel, span + PRODUCTION);
 
                     List<AbstractGoods> produce = tile.getType()
                         .getPossibleProduction(true);
                     if (produce.isEmpty()) {
-                        add(new JLabel(), "span " + PRODUCTION);
+                        super.add(new JLabel(), span + PRODUCTION);
                     } else {
                         Collections.sort(produce,
                             AbstractGoods.abstractGoodsComparator);
@@ -194,13 +191,13 @@ public final class InfoPanel extends FreeColPanel {
                                 JLabel.RIGHT);
                             label.setToolTipText(Messages.getName(type));
                             label.setFont(font);
-                            add(label);
+                            super.add(label);
                         }
                     }
                 } else {
-                    add(Utility.localizedLabel("unexplored"),
+                    super.add(Utility.localizedLabel("unexplored"),
                         "span, align center");
-                    add(new JLabel(new ImageIcon(image)), "spany");
+                    super.add(new JLabel(new ImageIcon(image)), "spany");
                 }
             }
             revalidate();
@@ -293,14 +290,14 @@ public final class InfoPanel extends FreeColPanel {
             if (unit != null) {
                 ImageIcon ii = new ImageIcon(lib.getUnitImage(unit));
                 JLabel imageLabel = new JLabel(ii);
-                add(imageLabel, "spany, gapafter 5px");
+                super.add(imageLabel, "spany, gapafter 5px");
                 int width = getWidth() - ii.getIconWidth() - SLACK;
                 text = unit.getDescription(Unit.UnitLabelType.FULL);
                 for (String s : splitText(text, " /",
                                           getFontMetrics(font), width)) {
                     textLabel = new JLabel(s);
                     textLabel.setFont(font);
-                    add(textLabel, "span 5");
+                    super.add(textLabel, "span 5");
                 }
 
                 text = (unit.isInEurope())
@@ -309,7 +306,7 @@ public final class InfoPanel extends FreeColPanel {
                         + " " + unit.getMovesAsString();
                 textLabel = new JLabel(text);
                 textLabel.setFont(font);
-                add(textLabel, "span 5");
+                super.add(textLabel, "span 5");
 
                 if (unit.isCarrier()) {
                     ImageIcon icon;
@@ -329,7 +326,7 @@ public final class InfoPanel extends FreeColPanel {
                         text = Messages.message(goods.getLabel(true));
                         label.setFont(font);
                         label.setToolTipText(text);
-                        add(label);
+                        super.add(label);
                     }
                     for (Unit carriedUnit : unit.getUnitList()) {
                         icon = new ImageIcon(lib.getSmallerUnitImage(carriedUnit));
@@ -337,7 +334,7 @@ public final class InfoPanel extends FreeColPanel {
                         text = carriedUnit.getDescription(Unit.UnitLabelType.NATIONAL);
                         label.setFont(font);
                         label.setToolTipText(text);
-                        add(label);
+                        super.add(label);
                     }
                 }
             }
@@ -356,7 +353,7 @@ public final class InfoPanel extends FreeColPanel {
         }
     }
 
-    private static enum InfoPanelMode {
+    private enum InfoPanelMode {
         NONE, END, MAP, TILE, UNIT;
     }
 
@@ -514,9 +511,11 @@ public final class InfoPanel extends FreeColPanel {
             logger.warning("Inconsistent InfoPanel status");
         }
         if (this.mode != newMode) {
-            logger.info("Switching InfoPanel mode from " + mode +
-                        " to " + newMode);
-            switch (this.mode = newMode) {
+            String loggerInfoSwitching = "Switching InfoPanel mode from " + mode +
+                        " to " + newMode;
+			logger.info(loggerInfoSwitching);
+            InfoPanelMode switchMode = this.mode = newMode;
+			switch (switchMode) {
             case END:
                 this.mapEditorPanel.setVisible(false);
                 this.tileInfoPanel.setVisible(false);

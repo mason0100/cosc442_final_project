@@ -82,7 +82,7 @@ public final class ErrorPanel extends FreeColPanel {
             logFileStream.read(buffer);
             message = new String(buffer, "UTF-8");
         } catch (Exception e) {
-            ;// ignore
+        	//Ignore for now
         }
 
         JTextArea textArea = Utility.getDefaultTextArea(message, 40);
