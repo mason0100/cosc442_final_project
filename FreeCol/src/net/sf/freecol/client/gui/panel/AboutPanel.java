@@ -110,36 +110,38 @@ public final class AboutPanel extends FreeColPanel {
         JLabel apRevision = new JLabel(FreeCol.getRevision());
         apRevision.setFont(fontNormal);
         add(apVersion, "newline 20");
-        add(apRevision, "newline");
+        String newLine = "newline";
+		add(apRevision, newLine);
 
         // Official Site Link
         JLabel apOfficialSite = new JLabel();
         apOfficialSite = Utility.localizedLabel("aboutPanel.officialSite");
         apOfficialSite.setFont(fontBold);
-        add(apOfficialSite, "newline 10");
+        String newlineTen = "newline 10";
+		add(apOfficialSite, newlineTen);
         JButton apSiteURL = Utility.getLinkButton(SITE_URL, null, SITE_URL);
         apSiteURL.addActionListener(this);
         apSiteURL.setFont(fontNormal);
-        add(apSiteURL, "newline");
+        add(apSiteURL, newLine);
 
         // SourceForge Project Site Link
         JLabel apSFProject = new JLabel();
         apSFProject = Utility.localizedLabel("aboutPanel.sfProject");      
         apSFProject.setFont(fontBold);
-        add(apSFProject, "newline 10");
+        add(apSFProject, newlineTen);
         JButton apProjectURL = Utility.getLinkButton(PROJECT_URL, null, PROJECT_URL);
         apProjectURL.addActionListener(this);
         apProjectURL.setFont(fontNormal);
-        add(apProjectURL, "newline");
+        add(apProjectURL, newLine);
 
         // Manual
         JLabel apManual = Utility.localizedLabel("aboutPanel.manual");
         apManual.setFont(fontBold);
-        add(apManual, "newline 10");
+        add(apManual, newlineTen);
         JButton apManualURL = Utility.getLinkButton(MANUAL_URL, null,
                                                     MANUAL_URL);
         apManualURL.addActionListener(this);
-        add(apManualURL, "newline");
+        add(apManualURL, newLine);
         
         // License Disclaimer
         JTextArea apLegal
@@ -150,7 +152,7 @@ public final class AboutPanel extends FreeColPanel {
         // Copyright
         JLabel apCopyright = Utility.localizedLabel("aboutPanel.copyright");
         apCopyright.setFont(fontNormal);
-        add(apCopyright, "newline 10");
+        add(apCopyright, newlineTen);
 
         add(okButton, "newline 20, tag ok");
     }

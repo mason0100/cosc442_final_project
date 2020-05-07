@@ -47,7 +47,7 @@ import net.sf.freecol.common.i18n.Messages;
 public class ConceptDetailPanel extends FreeColPanel
     implements ColopediaDetailPanel<String> {
 
-    private static final String id = "colopediaAction."
+    private static final String ID = "colopediaAction."
         + PanelType.CONCEPTS.getKey();
 
     private static final String[] concepts = {
@@ -82,7 +82,7 @@ public class ConceptDetailPanel extends FreeColPanel
 
     @Override
     public String getName() {
-        return Messages.getName(id);
+        return Messages.getName(ID);
     }
 
     // Implement ColopediaDetailPanel
@@ -93,7 +93,7 @@ public class ConceptDetailPanel extends FreeColPanel
     @Override
     public void addSubTrees(DefaultMutableTreeNode root) {
         DefaultMutableTreeNode node
-            = new DefaultMutableTreeNode(new ColopediaTreeItem(this, id,
+            = new DefaultMutableTreeNode(new ColopediaTreeItem(this, ID,
                     getName(), null));
         List<DefaultMutableTreeNode> nodes = new ArrayList<>();
         for (String concept : concepts) {
@@ -114,7 +114,7 @@ public class ConceptDetailPanel extends FreeColPanel
      */
     @Override
     public void buildDetail(String id, JPanel panel) {
-        if (this.id.equals(id)) return;
+        if (this.ID.equals(id)) return;
 
         panel.setLayout(new MigLayout("wrap 1, center"));
 
@@ -132,7 +132,6 @@ public class ConceptDetailPanel extends FreeColPanel
                                             RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
                 /*
                 graphics2d.setRenderingHint(RenderingHints.KEY_RENDERING,
-                                            RenderingHints.VALUE_RENDER_QUALITY);
                 graphics2d.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS,
                                             RenderingHints.VALUE_FRACTIONALMETRICS_ON);
                 */

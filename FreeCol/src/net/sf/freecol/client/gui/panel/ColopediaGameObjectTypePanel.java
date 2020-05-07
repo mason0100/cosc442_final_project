@@ -250,9 +250,10 @@ public abstract class ColopediaGameObjectTypePanel<T extends FreeColGameObjectTy
         List<JButton> requiredTypes = new ArrayList<>();
         for (Entry<String, Boolean> entry
                  : buildableType.getRequiredAbilities().entrySet()) {
-            doc.insertString(doc.getLength(),
+            String getstyleRegular = "regular";
+			doc.insertString(doc.getLength(),
                              Messages.getName(entry.getKey()),
-                             doc.getStyle("regular"));
+                             doc.getStyle(getstyleRegular));
             requiredTypes.clear();
             for (FreeColGameObjectType type : getSpecification()
                      .getTypesProviding(entry.getKey(), entry.getValue())) {
@@ -261,18 +262,19 @@ public abstract class ColopediaGameObjectTypePanel<T extends FreeColGameObjectTy
                 requiredTypes.add(typeButton);
             }
             if (!requiredTypes.isEmpty()) {
-                doc.insertString(doc.getLength(), " (", doc.getStyle("regular"));
-                StyleConstants.setComponent(doc.getStyle("button"), requiredTypes.get(0));
-                doc.insertString(doc.getLength(), " ", doc.getStyle("button"));
+                doc.insertString(doc.getLength(), " (", doc.getStyle(getstyleRegular));
+                String getstyleButton = "button";
+				StyleConstants.setComponent(doc.getStyle(getstyleButton), requiredTypes.get(0));
+                doc.insertString(doc.getLength(), " ", doc.getStyle(getstyleButton));
                 for (int index = 1; index < requiredTypes.size(); index++) {
                     JButton button = requiredTypes.get(index);
-                    doc.insertString(doc.getLength(), " / ", doc.getStyle("regular"));
-                    StyleConstants.setComponent(doc.getStyle("button"), button);
-                    doc.insertString(doc.getLength(), " ", doc.getStyle("button"));
+                    doc.insertString(doc.getLength(), " / ", doc.getStyle(getstyleRegular));
+                    StyleConstants.setComponent(doc.getStyle(getstyleButton), button);
+                    doc.insertString(doc.getLength(), " ", doc.getStyle(getstyleButton));
                 }
-                doc.insertString(doc.getLength(), ")", doc.getStyle("regular"));
+                doc.insertString(doc.getLength(), ")", doc.getStyle(getstyleRegular));
             }
-            doc.insertString(doc.getLength(), "\n", doc.getStyle("regular"));
+            doc.insertString(doc.getLength(), "\n", doc.getStyle(getstyleRegular));
         }
     }
 

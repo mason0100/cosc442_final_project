@@ -53,13 +53,13 @@ public final class DeclarationPanel extends FreeColPanel {
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(DeclarationPanel.class.getName());
 
-    private final int SIGNATURE_Y = 450;
+    private static final int SIGNATURE_Y = 450;
     
-    private final String ANIMATION_STOPPED = "AnimationStopped";
+    private static final String ANIMATION_STOPPED = "AnimationStopped";
 
-    private final int START_DELAY = 2000; // 2s before signing
-    private final int ANIMATION_DELAY = 50; // 50ms between signature steps
-    private final int FINISH_DELAY = 5000; // 5s before closing
+    private static final int START_DELAY = 2000; // 2s before signing
+    private static final int ANIMATION_DELAY = 50; // 50ms between signature steps
+    private static final int FINISH_DELAY = 5000; // 5s before closing
 
 
     /**
@@ -112,7 +112,7 @@ public final class DeclarationPanel extends FreeColPanel {
     public void actionPerformed(ActionEvent ae) {
         final String command = ae.getActionCommand();
         if (ANIMATION_STOPPED.equals(command)) {
-            Timer t = new Timer(FINISH_DELAY, (x) -> {
+            Timer t = new Timer(FINISH_DELAY, x -> {
                     getGUI().removeFromCanvas(DeclarationPanel.this);
                 });
             t.setRepeats(false);
@@ -188,7 +188,8 @@ public final class DeclarationPanel extends FreeColPanel {
                 partNames = newPartNames;
             }
 
-            String first = partNames[0], second = partNames[1];
+            String first = partNames[0];
+            String second = partNames[1];
             String s = join(" ", partNames);
             if (!isTooLarge(s)) return s;
             s = first.charAt(0) + ". " + second;

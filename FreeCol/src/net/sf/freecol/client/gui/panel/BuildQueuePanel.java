@@ -32,7 +32,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -170,7 +169,6 @@ public class BuildQueuePanel extends FreeColPanel implements ItemListener {
         }
 
         private JList<? extends BuildableType> source = null;
-        //private int[] indices = null;
         private int numberOfItems = 0; // number of items to be added
 
         
@@ -261,14 +259,12 @@ public class BuildQueuePanel extends FreeColPanel implements ItemListener {
 
                 // Suppress dropping the selection onto itself.
                 if (preferredIndex != -1 && prevPos == preferredIndex) {
-                    //indices = null;
                     return false;
                 }
 
                 // Insist drop is within bounds.
                 int maximumIndex = getMaximumIndex(queue.get(0));
                 if (preferredIndex > maximumIndex) {
-                    //indices = null;
                     return false;
                 }
 
@@ -326,7 +322,6 @@ public class BuildQueuePanel extends FreeColPanel implements ItemListener {
         @Override
         protected void exportDone(JComponent source, Transferable data, 
                                   int action) {
-            //this.indices = null;
             this.numberOfItems = 0;
             updateAllLists();
         }
@@ -348,7 +343,6 @@ public class BuildQueuePanel extends FreeColPanel implements ItemListener {
             
             this.source = BuildQueuePanel.this.convertJComp(comp);
             if (this.source == null) return null;
-            //this.indices = this.source.getSelectedIndices();
             return new BuildablesTransferable(this.source.getSelectedValuesList());
         }
 
@@ -599,9 +593,10 @@ public class BuildQueuePanel extends FreeColPanel implements ItemListener {
 
         this.constructionPanel
             = new ConstructionPanel(freeColClient, this.colony, false);
-        this.constructionPanel.setDefaultLabel(StringTemplate
+        String buildable = "%buildable%";
+		this.constructionPanel.setDefaultLabel(StringTemplate
             .template("buildQueuePanel.currentlyBuilding")
-            .add("%buildable%", "nothing"));
+            .add(buildable, "nothing"));
 
         this.buildQueueList = new JList<>(current);
         this.buildQueueList.setTransferHandler(buildQueueHandler);
@@ -655,10 +650,11 @@ public class BuildQueuePanel extends FreeColPanel implements ItemListener {
         updateAllLists();
 
         // Add all the components
+        String alignCenter = "align center";
         add(header, "span 3, align center, wrap 40");
-        add(bqpUnits, "align center");
-        add(bpqBuildQueue, "align center");
-        add(bqpBuildings, "align center");
+		add(bqpUnits, alignCenter);
+        add(bpqBuildQueue, alignCenter);
+        add(bqpBuildings, alignCenter);
         add(new JScrollPane(this.unitList), "grow");
         add(this.constructionPanel, "split 2, flowy");
         add(new JScrollPane(this.buildQueueList), "grow");

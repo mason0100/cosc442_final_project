@@ -59,8 +59,6 @@ public final class ChatPanel extends FreeColPanel {
 
         add(label);
         add(field);
-
-        //setFocusable(false);
         label.setFocusable(false);
         field.setFocusable(true);
 
@@ -98,16 +96,16 @@ public final class ChatPanel extends FreeColPanel {
     public void actionPerformed(ActionEvent ae) {
         final String command = ae.getActionCommand();
         try {
-            switch (Integer.parseInt(command)) {
-            case CHAT:
-                String message = getChatText();
-                igc().sendChat(message);
-                getGUI().displayChatMessage(getMyPlayer(), message, false);
-                getGUI().removeFromCanvas(this);
-                break;
-            default:
-                super.actionPerformed(ae);
-            }
+        	if(Integer.parseInt(command) == CHAT){
+        		 String message = getChatText();
+                 igc().sendChat(message);
+                 getGUI().displayChatMessage(getMyPlayer(), message, false);
+                 getGUI().removeFromCanvas(this);
+        		
+        	}
+        	else{
+        		super.actionPerformed(ae);
+        	}
         } catch (NumberFormatException e) {
             logger.warning("Invalid ActionEvent, not a number: " + command);
         }

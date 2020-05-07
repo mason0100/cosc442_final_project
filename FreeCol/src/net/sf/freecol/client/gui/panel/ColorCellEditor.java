@@ -115,7 +115,8 @@ public final class ColorCellEditor extends AbstractCellEditor
                 }   fireEditingCanceled();
                 break;
             default:
-                logger.warning("Bad event: " + command);
+			String loggerWarning = "Bad event: " + command;
+			logger.warning(loggerWarning);
                 break;
         }
     }
