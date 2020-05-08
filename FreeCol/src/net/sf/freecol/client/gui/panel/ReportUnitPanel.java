@@ -91,13 +91,13 @@ public abstract class ReportUnitPanel extends ReportPanel {
         super(freeColClient, key);
 
         this.showColonies = showColonies;
-        reportPanel.setLayout(new MigLayout("fillx, wrap 12", "", ""));
+        reportJPanel.setLayout(new MigLayout("fillx, wrap 12", "", ""));
 
         gatherData();
         addREFUnits();
         addOwnUnits();
 
-        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL),
+        reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL),
                         "newline, span, growx, wrap 40");
 
         // Colonies first, sorted according to user preferences
@@ -178,29 +178,29 @@ public abstract class ReportUnitPanel extends ReportPanel {
             button.addActionListener(this);
             component = button;
         }
-        reportPanel.add(component, "newline, span, split 2");
+        reportJPanel.add(component, "newline, span, split 2");
 
-        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
+        reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
 
         if (unitList == null || unitList.isEmpty()) {
-            reportPanel.add(Utility.localizedLabel("none"), "sg");
+            reportJPanel.add(Utility.localizedLabel("none"), "sg");
         } else {
             for (Unit u : unitList.stream()
                      .sorted(Unit.typeRoleComparator).collect(Collectors.toList())) {
                 JButton unitButton = getUnitButton(u);
                 if (u.isCarrier()) {
-                    reportPanel.add(unitButton, "newline, sg");
+                    reportJPanel.add(unitButton, "newline, sg");
                     for (Goods goods : u.getGoodsList()) {
                         GoodsLabel goodsLabel = new GoodsLabel(getGUI(), goods);
-                        reportPanel.add(goodsLabel);
+                        reportJPanel.add(goodsLabel);
                     }
                     for (Unit unitLoaded : u.getUnitList()) {
                         UnitLabel unitLoadedLabel
                             = new UnitLabel(getFreeColClient(), unitLoaded, true);
-                        reportPanel.add(unitLoadedLabel);
+                        reportJPanel.add(unitLoadedLabel);
                     }
                 } else {
-                    reportPanel.add(unitButton, "sg");
+                    reportJPanel.add(unitButton, "sg");
                 }
             }
         }

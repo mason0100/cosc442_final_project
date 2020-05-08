@@ -62,7 +62,7 @@ public final class ReportExplorationPanel extends ReportPanel {
         super(freeColClient, "reportExplorationAction");
 
         // Display Panel
-        reportPanel.removeAll();
+        reportJPanel.removeAll();
 
         List<Region> regions = new ArrayList<>();
         for (Region region : getGame().getMap().getRegions()) {
@@ -72,7 +72,7 @@ public final class ReportExplorationPanel extends ReportPanel {
         }
         Collections.sort(regions, regionComparator);
 
-        reportPanel.setLayout(new MigLayout("wrap 5, fillx", "", ""));
+        reportJPanel.setLayout(new MigLayout("wrap 5, fillx", "", ""));
 
         /**
          * Header Row
@@ -81,19 +81,19 @@ public final class ReportExplorationPanel extends ReportPanel {
             FontLibrary.FontSize.TINY, Font.BOLD, getImageLibrary().getScaleFactor());
         JLabel nameOfRegion = Utility.localizedLabel("report.exploration.nameOfRegion");
         nameOfRegion.setFont(font);
-        reportPanel.add(nameOfRegion);
+        reportJPanel.add(nameOfRegion);
         JLabel typeOfRegion = Utility.localizedLabel("report.exploration.typeOfRegion");
         typeOfRegion.setFont(font);
-        reportPanel.add(typeOfRegion);
+        reportJPanel.add(typeOfRegion);
         JLabel discoveredIn = Utility.localizedLabel("report.exploration.discoveredIn");
         discoveredIn.setFont(font);
-        reportPanel.add(discoveredIn);
+        reportJPanel.add(discoveredIn);
         JLabel discoveredBy = Utility.localizedLabel("report.exploration.discoveredBy");
         discoveredBy.setFont(font);
-        reportPanel.add(discoveredBy);
+        reportJPanel.add(discoveredBy);
         JLabel valueOfRegion = Utility.localizedLabel("report.exploration.valueOfRegion");
         valueOfRegion.setFont(font);
-        reportPanel.add(valueOfRegion);
+        reportJPanel.add(valueOfRegion);
         
         /**
          * Content Rows
@@ -101,13 +101,13 @@ public final class ReportExplorationPanel extends ReportPanel {
          * TODO: Display "None" if no contents, though this would be rare.
          */
         for (Region region : regions) {
-            reportPanel.add(new JLabel(region.getName()));
-            reportPanel.add(Utility.localizedLabel(region.getType()));
-            reportPanel.add(Utility.localizedLabel(region.getDiscoveredIn()
+            reportJPanel.add(new JLabel(region.getName()));
+            reportJPanel.add(Utility.localizedLabel(region.getType()));
+            reportJPanel.add(Utility.localizedLabel(region.getDiscoveredIn()
                     .getLabel()));
-            reportPanel.add(Utility.localizedLabel(region.getDiscoveredBy()
+            reportJPanel.add(Utility.localizedLabel(region.getDiscoveredBy()
                     .getCountryLabel()));
-            reportPanel.add(new JLabel(String.valueOf(region.getScoreValue())));
+            reportJPanel.add(new JLabel(String.valueOf(region.getScoreValue())));
         }
     }
 }

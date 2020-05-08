@@ -55,18 +55,25 @@ public final class StartGamePanel extends FreeColPanel {
 
     private static final Logger logger = Logger.getLogger(StartGamePanel.class.getName());
 
-    private static final int START = 0, CANCEL = 1,
-        READY = 3, CHAT = 4, GAME_OPTIONS = 5, MAP_GENERATOR_OPTIONS = 6;
+    private static final int START = 0;
+    private static final int CANCEL = 1;
+    private static final int READY = 3;
+    private static final int CHAT = 4;
+    private static final int GAME_OPTIONS = 5;
+    private static final int MAP_GENERATOR_OPTIONS = 6;
 
     private boolean singlePlayerGame;
 
     private JCheckBox readyBox;
 
-    private JTextField chat;
+    private JTextField buttonChat;
 
     private JTextArea chatArea;
 
-    private JButton start, cancel, gameOptions, mapGeneratorOptions;
+    private JButton buttonStart;
+    private JButton buttonCancel;
+    private JButton gameOptions;
+    private JButton mapGeneratorOptions;
 
     private PlayersTable table;
 
@@ -109,15 +116,16 @@ public final class StartGamePanel extends FreeColPanel {
 
         NationOptions nationOptions = getGame().getNationOptions();
 
-        cancel = Utility.localizedButton("cancel");
-        setCancelComponent(cancel);
+        buttonCancel = Utility.localizedButton("cancel");
+        setCancelComponent(buttonCancel);
 
-        JScrollPane chatScroll = null, tableScroll;
+        JScrollPane chatScroll = null;
+        JScrollPane tableScroll;
 
         table = new PlayersTable(getFreeColClient(), nationOptions,
                                  getMyPlayer());
 
-        start = Utility.localizedButton("startGame");
+        buttonStart = Utility.localizedButton("startGame");
 
         gameOptions = Utility.localizedButton(Messages
             .nameKey(GameOptions.getXMLElementTagName()));
@@ -135,7 +143,7 @@ public final class StartGamePanel extends FreeColPanel {
             readyBox.setSelected(true);
         } else {
             readyBox.setSelected(getMyPlayer().isReady());
-            chat = new JTextField();
+            buttonChat = new JTextField();
             chatArea = new JTextArea();
             chatScroll = new JScrollPane(chatArea, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS,
                                          ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -153,29 +161,29 @@ public final class StartGamePanel extends FreeColPanel {
         add(mapGeneratorOptions, "newline, split 2, growx, top, sg");
         add(gameOptions, "growx, top, sg");
         if (!singlePlayerGame) {
-            add(chat, "grow, top");
+            add(buttonChat, "grow, top");
         }
         add(readyBox, "newline");
-        add(start, "newline, span, split 2, tag ok");
-        add(cancel, "tag cancel");
+        add(buttonStart, "newline, span, split 2, tag ok");
+        add(buttonCancel, "tag cancel");
 
-        start.setActionCommand(String.valueOf(START));
-        cancel.setActionCommand(String.valueOf(CANCEL));
+        buttonStart.setActionCommand(String.valueOf(START));
+        buttonCancel.setActionCommand(String.valueOf(CANCEL));
         readyBox.setActionCommand(String.valueOf(READY));
         gameOptions.setActionCommand(String.valueOf(GAME_OPTIONS));
         mapGeneratorOptions.setActionCommand(String.valueOf(MAP_GENERATOR_OPTIONS));
 
         if (!singlePlayerGame) {
-            chat.setActionCommand(String.valueOf(CHAT));
-            chat.addActionListener(this);
+            buttonChat.setActionCommand(String.valueOf(CHAT));
+            buttonChat.addActionListener(this);
             chatArea.setEditable(false);
             chatArea.setLineWrap(true);
             chatArea.setWrapStyleWord(true);
             chatArea.setText("");
         }
 
-        start.addActionListener(this);
-        cancel.addActionListener(this);
+        buttonStart.addActionListener(this);
+        buttonCancel.addActionListener(this);
         readyBox.addActionListener(this);
         gameOptions.addActionListener(this);
         mapGeneratorOptions.addActionListener(this);
@@ -185,7 +193,7 @@ public final class StartGamePanel extends FreeColPanel {
 
     @Override
     public void requestFocus() {
-        start.requestFocus();
+        buttonStart.requestFocus();
     }
 
     /**
@@ -226,7 +234,7 @@ public final class StartGamePanel extends FreeColPanel {
         }
 
         if (enabled) {
-            start.setEnabled(getFreeColClient().isAdmin());
+            buttonStart.setEnabled(getFreeColClient().isAdmin());
         }
 
         gameOptions.setEnabled(enabled);
@@ -326,11 +334,11 @@ public final class StartGamePanel extends FreeColPanel {
                 refreshPlayersTable();
                 break;
             case CHAT:
-                if (!chat.getText().isEmpty()) {
-                    fcc.getPreGameController().chat(chat.getText());
-                    displayChat(getMyPlayer().getName(), chat.getText(),
+                if (!buttonChat.getText().isEmpty()) {
+                    fcc.getPreGameController().chat(buttonChat.getText());
+                    displayChat(getMyPlayer().getName(), buttonChat.getText(),
                                 false);
-                    chat.setText("");
+                    buttonChat.setText("");
                 }
                 break;
             case GAME_OPTIONS:
@@ -366,11 +374,11 @@ public final class StartGamePanel extends FreeColPanel {
         // Do not propagate to superclass.  This panel is reused so
         // avoid the destructive cleanups in FreeColPanel.removeNotify.
 
-        start.removeActionListener(this);
-        cancel.removeActionListener(this);
+        buttonStart.removeActionListener(this);
+        buttonCancel.removeActionListener(this);
         readyBox.removeActionListener(this);
         gameOptions.removeActionListener(this);
         mapGeneratorOptions.removeActionListener(this);
-        if (chat != null) chat.removeActionListener(this);
+        if (buttonChat != null) buttonChat.removeActionListener(this);
     }
 }

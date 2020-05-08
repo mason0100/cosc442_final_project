@@ -81,26 +81,26 @@ public final class ReportProductionPanel extends ReportPanel {
             this.boxes.add(newBox);
         }
 
-        reportPanel.setLayout(new MigLayout("gap 0 0", "[fill]", "[fill]"));
+        reportJPanel.setLayout(new MigLayout("gap 0 0", "[fill]", "[fill]"));
         update();
     }
 
 
     private void update() {
-        reportPanel.removeAll();
+        reportJPanel.removeAll();
         JLabel selectLabel = Utility.localizedLabel("report.production.selectGoods");
-        reportPanel.add(selectLabel);
+        reportJPanel.add(selectLabel);
 
         JButton selectButton = Utility.localizedButton("report.production.update");
         selectButton.addActionListener((ActionEvent ae) -> {
                 update();
             });
-        reportPanel.add(selectButton, "wrap");
+        reportJPanel.add(selectButton, "wrap");
 
         List<GoodsType> selectedTypes = new ArrayList<>();
         for (int index = 0; index < NUMBER_OF_GOODS; index++) {
             JComboBox<String> box = this.boxes.get(index);
-            reportPanel.add(box);
+            reportJPanel.add(box);
             int selectedIndex = box.getSelectedIndex();
             if (selectedIndex > 0) {
                 selectedTypes.add(this.goodsTypes.get(selectedIndex - 1));
@@ -129,17 +129,17 @@ public final class ReportProductionPanel extends ReportPanel {
             JLabel newLabel;
             newLabel = Utility.localizedLabel("Colony");
             newLabel.setBorder(Utility.TOPLEFTCELLBORDER);
-            reportPanel.add(newLabel, "newline 20");
+            reportJPanel.add(newLabel, "newline 20");
 
             for (int index = 0; index < selectedTypes.size(); index++) {
                 newLabel = Utility.localizedLabel(selectedTypes.get(index));
                 newLabel.setBorder(Utility.TOPCELLBORDER);
-                reportPanel.add(newLabel);
+                reportJPanel.add(newLabel);
 
                 for (BuildingType buildingType : basicBuildingTypes.get(index)) {
                     newLabel = Utility.localizedLabel(buildingType);
                     newLabel.setBorder(Utility.TOPCELLBORDER);
-                    reportPanel.add(newLabel);
+                    reportJPanel.add(newLabel);
                 }
             }
 
@@ -150,7 +150,7 @@ public final class ReportProductionPanel extends ReportPanel {
                     null, colony.getId());
                 colonyButton.setBorder(Utility.LEFTCELLBORDER);
                 colonyButton.addActionListener(this);
-                reportPanel.add(colonyButton, "newline");
+                reportJPanel.add(colonyButton, "newline");
 
                 // production
                 for (int index = 0; index < selectedTypes.size(); index++) {
@@ -161,21 +161,21 @@ public final class ReportProductionPanel extends ReportPanel {
                     GoodsLabel goodsLabel = new GoodsLabel(getGUI(), goods);
                     goodsLabel.setHorizontalAlignment(JLabel.LEADING);
                     goodsLabel.setBorder(Utility.CELLBORDER);
-                    reportPanel.add(goodsLabel);
+                    reportJPanel.add(goodsLabel);
 
                     for (BuildingType buildingType : basicBuildingTypes.get(index)) {
                         Building building = colony.getBuilding(buildingType);
                         if (building == null) {
                             newLabel = new JLabel();
                             newLabel.setBorder(Utility.CELLBORDER);
-                            reportPanel.add(newLabel);
+                            reportJPanel.add(newLabel);
                         } else {
                             buildingCount.incrementCount(building.getType(), 1);
                             BuildingPanel buildingPanel =
                                 new BuildingPanel(getFreeColClient(), building);
                             buildingPanel.setBorder(Utility.CELLBORDER);
                             buildingPanel.initialize();
-                            reportPanel.add(buildingPanel);
+                            reportJPanel.add(buildingPanel);
                         }
                     }
                 }

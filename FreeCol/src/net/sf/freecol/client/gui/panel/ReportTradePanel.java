@@ -79,7 +79,7 @@ public final class ReportTradePanel extends ReportPanel {
         Market market = player.getMarket();
 
         // Display Panel
-        reportPanel.removeAll();
+        reportJPanel.removeAll();
         goodsHeader.removeAll();
 
         ImageLibrary lib = getImageLibrary();
@@ -91,7 +91,7 @@ public final class ReportTradePanel extends ReportPanel {
             + "!, fill]";
         String rowConstraints = "[fill]";
 
-        reportPanel.setLayout(new MigLayout(layoutConstraints,
+        reportJPanel.setLayout(new MigLayout(layoutConstraints,
                                             columnConstraints, rowConstraints));
         goodsHeader.setLayout(new MigLayout(layoutConstraints,
                                             columnConstraints, rowConstraints));
@@ -106,12 +106,12 @@ public final class ReportTradePanel extends ReportPanel {
          */
         JLabel jl = createLeftLabel("report.trade.unitsSold");
         jl.setBorder(Utility.TOPLEFTCELLBORDER);
-        reportPanel.add(jl, "cell 0 0");
-        reportPanel.add(createLeftLabel("report.trade.beforeTaxes"), "cell 0 1");
-        reportPanel.add(createLeftLabel("report.trade.afterTaxes"), "cell 0 2");
-        reportPanel.add(createLeftLabel("report.trade.cargoUnits"), "cell 0 3");
-        reportPanel.add(createLeftLabel("report.trade.totalUnits"), "cell 0 4");
-        reportPanel.add(createLeftLabel("report.trade.totalDelta"), "cell 0 5");
+        reportJPanel.add(jl, "cell 0 0");
+        reportJPanel.add(createLeftLabel("report.trade.beforeTaxes"), "cell 0 1");
+        reportJPanel.add(createLeftLabel("report.trade.afterTaxes"), "cell 0 2");
+        reportJPanel.add(createLeftLabel("report.trade.cargoUnits"), "cell 0 3");
+        reportJPanel.add(createLeftLabel("report.trade.totalUnits"), "cell 0 4");
+        reportJPanel.add(createLeftLabel("report.trade.totalDelta"), "cell 0 5");
 
         TypeCountMap<GoodsType> totalUnits = new TypeCountMap<>();
         TypeCountMap<GoodsType> deltaUnits = new TypeCountMap<>();
@@ -139,12 +139,12 @@ public final class ReportTradePanel extends ReportPanel {
 
             jl = createNumberLabel(sales);
             jl.setBorder(Utility.TOPCELLBORDER);
-            reportPanel.add(jl, "cell " + column + " 0");
-            reportPanel.add(createNumberLabel(beforeTaxes),
+            reportJPanel.add(jl, "cell " + column + " 0");
+            reportJPanel.add(createNumberLabel(beforeTaxes),
                             "cell " + column + " 1");
-            reportPanel.add(createNumberLabel(afterTaxes),
+            reportJPanel.add(createNumberLabel(afterTaxes),
                             "cell " + column + " 2");
-            reportPanel.add(createNumberLabel(cargoUnits.getCount(goodsType)),
+            reportJPanel.add(createNumberLabel(cargoUnits.getCount(goodsType)),
                             "cell " + column + " 3");
         }
 
@@ -163,7 +163,7 @@ public final class ReportTradePanel extends ReportPanel {
             }
             colonyButton.setBorder((first) ? Utility.TOPLEFTCELLBORDER
                 : Utility.LEFTCELLBORDER);
-            reportPanel.add(colonyButton, "cell 0 " + row + " 1 2");
+            reportJPanel.add(colonyButton, "cell 0 " + row + " 1 2");
 
             column = 0;
             for (GoodsType goodsType : storableGoods) {
@@ -182,7 +182,7 @@ public final class ReportTradePanel extends ReportPanel {
                             .addNamed("%goods%", goodsType)
                             .addAmount("%amount%", ed.getExportLevel())));
                 }
-                reportPanel.add(goodsLabel, "cell " + column + " " + row);
+                reportJPanel.add(goodsLabel, "cell " + column + " " + row);
 
                 int production = colony.getNetProductionOf(goodsType);
                 JLabel productionLabel = createNumberLabel(production, true);
@@ -200,7 +200,7 @@ public final class ReportTradePanel extends ReportPanel {
                     productionLabel.setToolTipText(sb.toString());
                     productionLabel.setForeground(warnColor);
                 }
-                reportPanel.add(productionLabel,
+                reportJPanel.add(productionLabel,
                                 "cell " + column + " " + (row + 1));
             }
             row += 2;
@@ -208,15 +208,15 @@ public final class ReportTradePanel extends ReportPanel {
         }
 
         row++;
-        reportPanel.add(Utility.localizedLabel("report.trade.hasCustomHouse"),
+        reportJPanel.add(Utility.localizedLabel("report.trade.hasCustomHouse"),
                         "cell 0 " + row + ", span");
 
         column = 0;
         for (GoodsType goodsType : storableGoods) {
             column++;
-            reportPanel.add(createNumberLabel(totalUnits.getCount(goodsType)),
+            reportJPanel.add(createNumberLabel(totalUnits.getCount(goodsType)),
                             "cell " + column + " 4");
-            reportPanel.add(createNumberLabel(deltaUnits.getCount(goodsType), true),
+            reportJPanel.add(createNumberLabel(deltaUnits.getCount(goodsType), true),
                             "cell " + column + " 5, wrap 20");
         }
     }

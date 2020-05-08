@@ -33,14 +33,13 @@ import net.sf.freecol.common.model.Modifier;
 import net.sf.freecol.common.model.Modifier.ModifierType;
 import net.sf.freecol.common.model.Nameable;
 import net.sf.freecol.common.model.Named;
-import net.sf.freecol.common.model.Scope;
 import net.sf.freecol.common.model.Turn;
 
 
 public class ModifierFormat {
 
     /** The decimal format to use for Modifiers. */
-    private static final DecimalFormat modifierFormat
+    private static final DecimalFormat MODIFIERFORMATVALUE
         = new DecimalFormat("0.00");
 
 
@@ -51,7 +50,7 @@ public class ModifierFormat {
     public static final String format(double value) {
         return (value == Modifier.UNKNOWN)
             ? getUnknownValue()
-            : modifierFormat.format(value);
+            : MODIFIERFORMATVALUE.format(value);
     }
 
     public static final String[] getModifierStrings(Modifier modifier) {
@@ -60,7 +59,7 @@ public class ModifierFormat {
 
     public static final String[] getModifierStrings(float value,
                                                     ModifierType type) {
-        String bonus = modifierFormat.format(value);
+        String bonus = MODIFIERFORMATVALUE.format(value);
         if (value == Modifier.UNKNOWN) {
             return new String[] { " ", bonus, null };
         }

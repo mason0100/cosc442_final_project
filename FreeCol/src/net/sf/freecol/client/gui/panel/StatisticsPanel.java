@@ -56,10 +56,11 @@ public final class StatisticsPanel extends FreeColPanel {
 
     private static class StatisticsModel extends AbstractTableModel {
 
-        private static final int NAME_COLUMN = 0, VALUE_COLUMN = 1;
+        private static final int NAME_COLUMN = 0;
+        private static final int VALUE_COLUMN = 1;
         private final String[] columnNames = { "name", "value" };
 
-        private Object data[][] = null;
+        private Object[][] data = null;
 
 
         /**
@@ -101,14 +102,6 @@ public final class StatisticsPanel extends FreeColPanel {
             return Messages.message(columnNames[column]);
         }
 
-        ///**
-        // * {@inheritDoc}
-        // */
-        //@Override
-        //public boolean isCellEditable(int row, int column) {
-        //    return false;
-        //}
-
 
         // Interface TableModel
 
@@ -140,6 +133,7 @@ public final class StatisticsPanel extends FreeColPanel {
                     return data[NAME_COLUMN][row];
                 case StatisticsModel.VALUE_COLUMN:
                     return data[VALUE_COLUMN][row];
+                default: return null;
                 }
             }
             return null;

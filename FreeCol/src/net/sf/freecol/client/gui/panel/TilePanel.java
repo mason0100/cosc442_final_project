@@ -186,23 +186,24 @@ public final class TilePanel extends FreeColPanel {
         if (debugPlayer != null) {
             List<Double> values = debugPlayer.getAllColonyValues(tile);
             int result = debugPlayer.getColonyValue(tile);
-            if (result < 0) {
+            String alignCenter = "newline 5, span, align center";
+			if (result < 0) {
                 add(new JLabel(DebugUtils.getColonyValue(tile)),
-                    "newline 5, span, align center");
+                    alignCenter);
             } else {
                 for (Player.ColonyValueCategory c
                          : Player.ColonyValueCategory.values()) {
                     String cat = c.toString();
                     add(new JLabel(cat + values.get(c.ordinal())),
-                        "newline 5, span, align center");
+                        alignCenter);
                 }
                 for (int a = Player.ColonyValueCategory.A_GOODS.ordinal();
                      a < values.size(); a++) {
                     add(new JLabel("... " + values.get(a)),
-                        "newline 5, span, align center");
+                        alignCenter);
                 }
                 add(new JLabel("Result " + result),
-                    "newline 5, span, align center");
+                    alignCenter);
             }
         }
 

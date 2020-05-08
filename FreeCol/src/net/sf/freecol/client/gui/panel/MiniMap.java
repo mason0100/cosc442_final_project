@@ -68,13 +68,15 @@ public final class MiniMap extends JPanel implements MouseInputListener {
      * The top left tile on the mini map represents the tile.
      * (firstColumn, firstRow) in the world map
      */
-    private int firstColumn, firstRow;
+    private int firstColumn;
+    private int firstRow;
 
     /**
      * Used for adjusting the position of the mapboard image.
      * @see #paintMap
      */
-    private int adjustX = 0, adjustY = 0;
+    private int adjustX = 0;
+    private int adjustY = 0;
 
 
     /**
@@ -391,7 +393,8 @@ public final class MiniMap extends JPanel implements MouseInputListener {
 
 
     private void focus(int x, int y) {
-        int tileX, tileY;
+        int tileX;
+        int tileY;
 
         // When focusing out on the minimap, the last available focus out takes a larger jump than previous ones.
         // This if statement adjusts for the last larger jump in focus out.
@@ -414,6 +417,7 @@ public final class MiniMap extends JPanel implements MouseInputListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+    	//Ignore for now
     }
 
     /**
@@ -428,14 +432,17 @@ public final class MiniMap extends JPanel implements MouseInputListener {
 
     @Override
     public void mouseReleased(MouseEvent e) {
+    	//Ignore for now
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
+    	//Ignore for now
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
+    	//Ignore for now
     }
 
     @Override
@@ -445,6 +452,7 @@ public final class MiniMap extends JPanel implements MouseInputListener {
 
     @Override
     public void mouseMoved(MouseEvent e) {
+    	//Ignore for now
     }
 
 }

@@ -164,7 +164,7 @@ public final class CompactLabourReport extends ReportPanel {
         String rowConstraints = "[fill]";
 
         headerRow.setLayout(new MigLayout(layoutConstraints, columnConstraints, rowConstraints));
-        reportPanel.setLayout(new MigLayout(layoutConstraints, columnConstraints, rowConstraints));
+        reportJPanel.setLayout(new MigLayout(layoutConstraints, columnConstraints, rowConstraints));
 
         addHeader();
 
@@ -294,10 +294,10 @@ public final class CompactLabourReport extends ReportPanel {
             if (productionWL != null && row > buildingStartRow) {
                 JLabel buildingLabel = Utility.localizedLabel(productionWL.getLabel());
                 buildingLabel.setBorder(Utility.CELLBORDER);
-                reportPanel.add(buildingLabel, cell + BUILDING_COLUMN + " " + buildingStartRow + " 1 " + (row - buildingStartRow));
+                reportJPanel.add(buildingLabel, cell + BUILDING_COLUMN + " " + buildingStartRow + " 1 " + (row - buildingStartRow));
                 buildingStartRow = row;
             } else {
-                reportPanel.add(createEmptyLabel(), cell + BUILDING_COLUMN + " " + buildingStartRow + " 1 " + (row - buildingStartRow));
+                reportJPanel.add(createEmptyLabel(), cell + BUILDING_COLUMN + " " + buildingStartRow + " 1 " + (row - buildingStartRow));
             }
         }
 
@@ -322,7 +322,7 @@ public final class CompactLabourReport extends ReportPanel {
             : null;
 
         if (showBuildings && school != null && row > buildingStartRow) {
-            reportPanel.add(createEmptyLabel(), cell + BUILDING_COLUMN
+            reportJPanel.add(createEmptyLabel(), cell + BUILDING_COLUMN
                 + " " + buildingStartRow + " 1 " + (row - buildingStartRow));
             buildingStartRow = row;
         }
@@ -376,13 +376,13 @@ public final class CompactLabourReport extends ReportPanel {
             JLabel buildingLabel = new JLabel((school == null) ? ""
                 : Messages.message(school.getLabel()));
             buildingLabel.setBorder(Utility.CELLBORDER);
-            reportPanel.add(buildingLabel, cell + BUILDING_COLUMN
+            reportJPanel.add(buildingLabel, cell + BUILDING_COLUMN
                 + " " + buildingStartRow
                 + " 1 " + (row - buildingStartRow));
         }
 
         if (data.getUnitData().showProduction() && row > notProducingStartRow) {
-            reportPanel.add(createEmptyLabel(), cell + PRODUCTION_COLUMN
+            reportJPanel.add(createEmptyLabel(), cell + PRODUCTION_COLUMN
                 + " " + notProducingStartRow
                 + " 1 " + (row - notProducingStartRow));
         }
@@ -396,7 +396,7 @@ public final class CompactLabourReport extends ReportPanel {
         int row = 1;
         JLabel summaryLabel = Utility.localizedLabel("report.labour.summary");
         summaryLabel.setBorder(Utility.LEFTCELLBORDER);
-        reportPanel.add(summaryLabel, "cell " + COLONY_COLUMN + " " + row
+        reportJPanel.add(summaryLabel, "cell " + COLONY_COLUMN + " " + row
             + " 1 " + unitTotal.getRowCount());
 
         row = addLocationData(unitTotal, null, row);
@@ -405,7 +405,7 @@ public final class CompactLabourReport extends ReportPanel {
             LabourData.LocationData colonyData
                 = unitData.getDetails().get(colony);
             if (colonyData != null) {
-                reportPanel.add(createColonyButton(colony),
+                reportJPanel.add(createColonyButton(colony),
                     "cell " + COLONY_COLUMN + " " + row
                     + " 1 " + colonyData.getRowCount());
                 row = addLocationData(colonyData, colony, row);
@@ -416,7 +416,7 @@ public final class CompactLabourReport extends ReportPanel {
             String nam = Messages.getName(getMyPlayer().getEurope());
             JButton button = createButton(nam,
                 (ActionEvent ae) -> { getGUI().showEuropePanel(); });
-            reportPanel.add(button, "cell " + COLONY_COLUMN + " " + row
+            reportJPanel.add(button, "cell " + COLONY_COLUMN + " " + row
                 + " 1 " + europe.getRowCount());
             row = addLocationData(europe, null, row);
         }
@@ -425,7 +425,7 @@ public final class CompactLabourReport extends ReportPanel {
         row = addNonLinkedLocation(unitData.getUnitsAtSea(),
                                    "report.labour.atSea", row);
 
-        reportPanel.add(Utility.localizedLabel("report.labour.canTrain"),
+        reportJPanel.add(Utility.localizedLabel("report.labour.canTrain"),
                         "cell 1 " + row + " " + COLUMNS + " 1");
     }
 
@@ -455,7 +455,7 @@ public final class CompactLabourReport extends ReportPanel {
         JLabel colonistsLabel = createNumberLabel(data.getTotalColonists(), null);
         if (data.getUnitData().isSummary()) {
             if (isOverview()) {
-                reportPanel.add(createEmptyLabel(), "cell " + UNIT_TYPE_COLUMN + " " + row + " 1 " + rows);
+                reportJPanel.add(createEmptyLabel(), "cell " + UNIT_TYPE_COLUMN + " " + row + " 1 " + rows);
             }
         } else {
             Utility.localizeToolTip(colonistsLabel, StringTemplate
@@ -463,10 +463,10 @@ public final class CompactLabourReport extends ReportPanel {
                 .addName("%unit%", data.getUnitData().getUnitName()));
         }
 
-        reportPanel.add(colonistsLabel, "cell " + COLONIST_SUMMARY_COLUMN + " " + row + " 1 " + data.getRowCount());
+        reportJPanel.add(colonistsLabel, "cell " + COLONIST_SUMMARY_COLUMN + " " + row + " 1 " + data.getRowCount());
 
         if (showProduction && !data.getUnitData().showProduction()) {
-            reportPanel.add(createEmptyLabel(), "cell " + PRODUCTION_SYMBOL_COLUMN + " " + row + " 4 " + rows);
+            reportJPanel.add(createEmptyLabel(), "cell " + PRODUCTION_SYMBOL_COLUMN + " " + row + " 4 " + rows);
             return;
         }
 
@@ -476,7 +476,7 @@ public final class CompactLabourReport extends ReportPanel {
                 productionLabel.setText("");
             }
 
-            reportPanel.add(productionLabel, "cell " + PRODUCTION_SUMMARY_COLUMN + " " + row + " 1 " + rows);
+            reportJPanel.add(productionLabel, "cell " + PRODUCTION_SUMMARY_COLUMN + " " + row + " 1 " + rows);
         }
 
         if (showNetProduction) {
@@ -491,7 +491,7 @@ public final class CompactLabourReport extends ReportPanel {
             } else {
                 netProductionLabel.setForeground(Color.RED);
             }
-            reportPanel.add(netProductionLabel, "cell " + NETPRODUCTION_SUMMARY_COLUMN + " " + row + " 1 " + rows);
+            reportJPanel.add(netProductionLabel, "cell " + NETPRODUCTION_SUMMARY_COLUMN + " " + row + " 1 " + rows);
         }
 
         if (showProductionSymbols) {
@@ -501,7 +501,7 @@ public final class CompactLabourReport extends ReportPanel {
             if (goods != null) {
                 icon.setIcon(new ImageIcon(getImageLibrary().getIconImage(goods)));
             }
-            reportPanel.add(icon, "cell " + PRODUCTION_SYMBOL_COLUMN + " " + row + " 1 " + rows);
+            reportJPanel.add(icon, "cell " + PRODUCTION_SYMBOL_COLUMN + " " + row + " 1 " + rows);
         }
     }
 
@@ -511,7 +511,7 @@ public final class CompactLabourReport extends ReportPanel {
             JLabel label = Utility.localizedLabel(messageKey);
             label.setBorder(Utility.LEFTCELLBORDER);
             label.setForeground(Color.GRAY);
-            reportPanel.add(label, "cell " + COLONY_COLUMN + " " + row + " 1 " + rows);
+            reportJPanel.add(label, "cell " + COLONY_COLUMN + " " + row + " 1 " + rows);
             return addLocationData(data, null, row);
         }
         return row;
@@ -529,17 +529,17 @@ public final class CompactLabourReport extends ReportPanel {
         if (!data.getUnitData().isSummary()) {
             JLabel typeLabel = new JLabel(typeName);
             typeLabel.setBorder(Utility.CELLBORDER);
-            reportPanel.add(typeLabel, "cell " + UNIT_TYPE_COLUMN + " " + row);
+            reportJPanel.add(typeLabel, "cell " + UNIT_TYPE_COLUMN + " " + row);
         }
 
         JLabel activityLabel = new JLabel(activity);
         activityLabel.setBorder(Utility.CELLBORDER);
-        reportPanel.add(activityLabel, "cell " + WORKING_COLUMN + " " + row);
+        reportJPanel.add(activityLabel, "cell " + WORKING_COLUMN + " " + row);
 
-        reportPanel.add(colonistLabel, "cell " + COLONIST_COLUMN + " " + row);
+        reportJPanel.add(colonistLabel, "cell " + COLONIST_COLUMN + " " + row);
 
         if (data.getUnitData().showProduction() && production > 0) {
-            reportPanel.add(createNumberLabel(production, "report.labour.potentialProduction.tooltip"), "cell " + PRODUCTION_COLUMN + " " + row);
+            reportJPanel.add(createNumberLabel(production, "report.labour.potentialProduction.tooltip"), "cell " + PRODUCTION_COLUMN + " " + row);
         }
     }
 
@@ -547,7 +547,7 @@ public final class CompactLabourReport extends ReportPanel {
         int row = 1;
 
         JButton allColonistsButton = createUnitNameButton(Messages.message("report.labour.allColonists"), labourData.getSummary());
-        reportPanel.add(allColonistsButton, "cell " + COLONY_COLUMN + " " + row + " 1 " + labourData.getSummary().getUnitSummaryRowCount());
+        reportJPanel.add(allColonistsButton, "cell " + COLONY_COLUMN + " " + row + " 1 " + labourData.getSummary().getUnitSummaryRowCount());
 
         row = addLocationData(labourData.getSummary().getTotal(), null, row);
 
@@ -556,7 +556,7 @@ public final class CompactLabourReport extends ReportPanel {
 
             JButton unitButton = createUnitNameButton(unitData.getUnitName(), unitData);
             int rows = unitData.getUnitSummaryRowCount();
-            reportPanel.add(unitButton, "cell " + COLONY_COLUMN + " " + row + " 1 " + rows);
+            reportJPanel.add(unitButton, "cell " + COLONY_COLUMN + " " + row + " 1 " + rows);
 
             if (unitData.hasDetails()) {
                 row = addLocationData(unitData.getTotal(), null, row);
@@ -565,7 +565,7 @@ public final class CompactLabourReport extends ReportPanel {
                 unitButton.setDisabledIcon(unitButton.getIcon());
                 unitButton.setForeground(Color.GRAY);
 
-                reportPanel.add(createEmptyLabel(), "cell " + UNIT_TYPE_COLUMN + " " + row + " " + (COLUMNS - 1) + " 1");
+                reportJPanel.add(createEmptyLabel(), "cell " + UNIT_TYPE_COLUMN + " " + row + " " + (COLUMNS - 1) + " 1");
                 row++;
             }
         }

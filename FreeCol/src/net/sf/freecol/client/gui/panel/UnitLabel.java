@@ -321,8 +321,6 @@ public final class UnitLabel extends JLabel
     public void updateIcon() {
         setDescriptionLabel(unit.getDescription(Unit.UnitLabelType.FULL));
         setSmall(isSmall);
-        // repaint(0, 0, getWidth(), getHeight());
-        // uc.refresh();
     }
 
     /**

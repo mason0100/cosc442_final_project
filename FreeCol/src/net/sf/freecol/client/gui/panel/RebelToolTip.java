@@ -57,7 +57,6 @@ public class RebelToolTip extends JToolTip {
         final int solPercent = colony.getSoL();
         final int rebels = Colony.calculateRebels(population, solPercent);
         final Turn turn = colony.getGame().getTurn();
-        StringTemplate t;
 
         setLayout(new MigLayout("fillx, wrap 3", "[][right][right]", ""));
         // TODO: Calculate this from the size of the components

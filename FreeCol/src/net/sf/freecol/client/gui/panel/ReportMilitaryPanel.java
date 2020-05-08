@@ -67,7 +67,7 @@ public final class ReportMilitaryPanel extends ReportUnitPanel {
         int count = getCount(roleId, unitType);
         if (count > 0) {
             AbstractUnit au = new AbstractUnit(unitType, roleId, count);
-            reportPanel.add(createUnitTypeLabel(au), "sg");
+            reportJPanel.add(createUnitTypeLabel(au), "sg");
         }
     }
 
@@ -94,14 +94,14 @@ public final class ReportMilitaryPanel extends ReportUnitPanel {
         final Specification spec = getSpecification();
         final Nation refNation = getMyPlayer().getNation().getREFNation();
 
-        reportPanel.add(Utility.localizedLabel(refNation), "span, split 2");
-        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
+        reportJPanel.add(Utility.localizedLabel(refNation), "span, split 2");
+        reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
 
         List<AbstractUnit> refUnits = igc().getREFUnits();
         if (refUnits != null) {
             for (AbstractUnit au : refUnits) {
                 if (!au.getType(spec).isNaval()) {
-                    reportPanel.add(createUnitTypeLabel(au), "sg");
+                    reportJPanel.add(createUnitTypeLabel(au), "sg");
                 }
             }
         }
@@ -116,9 +116,9 @@ public final class ReportMilitaryPanel extends ReportUnitPanel {
         final Player player = getMyPlayer();
         final UnitType defaultType = spec.getDefaultUnitType(player);
 
-        reportPanel.add(Utility.localizedLabel(player.getForcesLabel()),
+        reportJPanel.add(Utility.localizedLabel(player.getForcesLabel()),
             "newline, span, split 2");
-        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
+        reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
 
         // Report unit types that are inherently reportable, and units
         // with military roles.

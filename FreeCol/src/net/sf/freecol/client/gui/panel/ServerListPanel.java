@@ -48,7 +48,8 @@ public final class ServerListPanel extends FreeColPanel {
 
     private static final Logger logger = Logger.getLogger(ServerListPanel.class.getName());
 
-    private static final int CONNECT = 0, CANCEL = 1;
+    private static final int CONNECT = 0;
+    private static final int CANCEL = 1;
 
     private final ConnectController connectController;
 

@@ -22,7 +22,6 @@ package net.sf.freecol.client.gui.panel;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
-import java.util.Comparator;
 import java.util.logging.Logger;
 
 import javax.swing.ImageIcon;
@@ -51,7 +50,7 @@ public class ReportPanel extends FreeColPanel {
 
     protected static final Logger logger = Logger.getLogger(ReportPanel.class.getName());
 
-    protected final JPanel reportPanel;
+    protected final JPanel reportJPanel;
 
     protected final JLabel header;
 
@@ -71,11 +70,11 @@ public class ReportPanel extends FreeColPanel {
         header = Utility.localizedHeader(Messages.nameKey(key), false);
         add(header, "cell 0 0, align center");
 
-        reportPanel = new MigPanel("ReportPanelUI");
-        reportPanel.setOpaque(true);
-        reportPanel.setBorder(createBorder());
+        reportJPanel = new MigPanel("ReportPanelUI");
+        reportJPanel.setOpaque(true);
+        reportJPanel.setBorder(createBorder());
 
-        scrollPane = new JScrollPane(reportPanel,
+        scrollPane = new JScrollPane(reportJPanel,
             JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
             JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         scrollPane.getVerticalScrollBar().setUnitIncrement( 16 );
@@ -91,8 +90,8 @@ public class ReportPanel extends FreeColPanel {
      * Prepares this panel to be displayed.
      */
     public void initialize() {
-        reportPanel.removeAll();
-        reportPanel.doLayout();
+        reportJPanel.removeAll();
+        reportJPanel.doLayout();
     }
 
     private Border createBorder() {

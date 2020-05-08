@@ -205,7 +205,8 @@ public final class NegotiationDialog extends FreeColDialog<DiplomaticTrade> {
                             .removeTradeItems(ColonyTradeItem.class);
                     break;
                 default:
-                    logger.warning("Bad command: " + command);
+				String loggerWarningCommand = "Bad command: " + command;
+				logger.warning(loggerWarningCommand);
                     break;
             }
         }
@@ -285,7 +286,8 @@ public final class NegotiationDialog extends FreeColDialog<DiplomaticTrade> {
                             .removeTradeItems(GoldTradeItem.class);
                     break;
                 default:
-                    logger.warning("Bad command: " + command);
+				String loggerWarningCommand = "Bad command: " + command;
+				logger.warning(loggerWarningCommand);
                     break;
             }
         }
@@ -412,7 +414,8 @@ public final class NegotiationDialog extends FreeColDialog<DiplomaticTrade> {
                             .removeTradeItems(GoodsTradeItem.class);
                     break;
                 default:
-                    logger.warning("Bad command: " + command);
+				String loggerWarningCommand = "Bad command: " + command;
+				logger.warning(loggerWarningCommand);
                     break;
             }
         }
@@ -533,7 +536,8 @@ public final class NegotiationDialog extends FreeColDialog<DiplomaticTrade> {
                             .removeTradeItems(InciteTradeItem.class);
                     break;
                 default:
-                    logger.warning("Bad command: " + command);
+				String loggerWarningCommand = "Bad command: " + command;
+				logger.warning(loggerWarningCommand);
                     break;
             }
         }
@@ -653,7 +657,8 @@ public final class NegotiationDialog extends FreeColDialog<DiplomaticTrade> {
                             .removeTradeItems(StanceTradeItem.class);
                     break;
                 default:
-                    logger.warning("Bad command: " + command);
+				String loggerWarningCommand = "Bad command: " + command;
+				logger.warning(loggerWarningCommand);
                     break;
             }
         }
@@ -773,7 +778,8 @@ public final class NegotiationDialog extends FreeColDialog<DiplomaticTrade> {
                             .removeTradeItems(UnitTradeItem.class);
                     break;
                 default:
-                    logger.warning("Bad command: " + command);
+				String loggerWarningCommand = "Bad command: " + command;
+				logger.warning(loggerWarningCommand);
                     break;
             }
         }
@@ -791,21 +797,28 @@ public final class NegotiationDialog extends FreeColDialog<DiplomaticTrade> {
 
     /** The panels for various negotiable data. */
     private StanceTradeItemPanel stancePanel;
-    private GoldTradeItemPanel goldOfferPanel, goldDemandPanel;
-    private ColonyTradeItemPanel colonyOfferPanel, colonyDemandPanel;
-    private GoodsTradeItemPanel goodsOfferPanel, goodsDemandPanel;
-    private InciteTradeItemPanel inciteOfferPanel, inciteDemandPanel;
-    private UnitTradeItemPanel unitOfferPanel, unitDemandPanel;
+    private GoldTradeItemPanel goldOfferPanel;
+    private GoldTradeItemPanel goldDemandPanel;
+    private ColonyTradeItemPanel colonyOfferPanel;
+    private ColonyTradeItemPanel colonyDemandPanel;
+    private GoodsTradeItemPanel goodsOfferPanel;
+    private GoodsTradeItemPanel goodsDemandPanel;
+    private InciteTradeItemPanel inciteOfferPanel;
+    private InciteTradeItemPanel inciteDemandPanel;
+    private UnitTradeItemPanel unitOfferPanel;
+    private UnitTradeItemPanel unitDemandPanel;
 
     /** A panel showing a summary of the current agreement. */
     private JPanel summary;
 
     /** Useful internal messages. */
-    private StringTemplate demand, offer;
+    private StringTemplate demand;
+    private StringTemplate offer;
     private String exchangeMessage;
 
     /** Responses. */
-    private ChoiceItem<DiplomaticTrade> send = null, accept = null;
+    private ChoiceItem<DiplomaticTrade> send = null;
+    private ChoiceItem<DiplomaticTrade> accept = null;
 
 
     /**
@@ -836,8 +849,8 @@ public final class NegotiationDialog extends FreeColDialog<DiplomaticTrade> {
         this.agreement = agreement;
         this.comment = comment;
 
-        StringTemplate nation = player.getNationLabel(),
-            otherNation = otherPlayer.getNationLabel();
+        StringTemplate nation = player.getNationLabel();
+        StringTemplate otherNation = otherPlayer.getNationLabel();
         this.demand = StringTemplate.template("negotiationDialog.demand")
             .addStringTemplate("%nation%", nation)
             .addStringTemplate("%otherNation%", otherNation);

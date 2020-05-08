@@ -43,14 +43,14 @@ public final class ReportHistoryPanel extends ReportPanel {
         List<HistoryEvent> history = getMyPlayer().getHistory();
 
         // Display Panel
-        reportPanel.removeAll();
+        reportJPanel.removeAll();
         if (history.isEmpty()) return;
 
-        reportPanel.setLayout(new MigLayout("wrap 2", "[]20[fill]", ""));
+        reportJPanel.setLayout(new MigLayout("wrap 2", "[]20[fill]", ""));
 
         for (HistoryEvent event : history) {
-            reportPanel.add(Utility.localizedLabel(event.getTurn().getLabel()));
-            reportPanel.add(Utility.localizedTextArea(event, 40));
+            reportJPanel.add(Utility.localizedLabel(event.getTurn().getLabel()));
+            reportJPanel.add(Utility.localizedTextArea(event, 40));
         }
     }
 }

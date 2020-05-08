@@ -316,9 +316,10 @@ public final class QuickActionMenu extends JPopupMenu {
         JMenuItem expertOwned = null;
         JMenuItem expertUnowned = null;
         for (GoodsType type : spec.getGoodsTypeList()) {
-            int bestOwnedProd = bonus + bonusChange,
-                bestUnownedProd = bonus + bonusChange;
-            WorkLocation bestOwned = null, bestUnowned = null;
+            int bestOwnedProd = bonus + bonusChange;
+            int bestUnownedProd = bonus + bonusChange;
+            WorkLocation bestOwned = null;
+            WorkLocation bestUnowned = null;
             for (WorkLocation wl : colony.getAllWorkLocations()) {
                 int prod = 0;
                 switch (wl.getNoAddReason(unit)) {

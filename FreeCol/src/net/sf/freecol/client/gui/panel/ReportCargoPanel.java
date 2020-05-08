@@ -50,9 +50,9 @@ public final class ReportCargoPanel extends ReportUnitPanel {
     @Override
     protected void addOwnUnits() {
         final Player player = getMyPlayer();
-        reportPanel.add(Utility.localizedLabel(player.getForcesLabel()),
+        reportJPanel.add(Utility.localizedLabel(player.getForcesLabel()),
             "newline, span, split 2");
-        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
+        reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
         
         for (UnitType unitType : getSpecification().getUnitTypeList()) {
             if (unitType.isAvailableTo(player)
@@ -60,7 +60,7 @@ public final class ReportCargoPanel extends ReportUnitPanel {
                 AbstractUnit unit = new AbstractUnit(unitType,
                     Specification.DEFAULT_ROLE_ID,
                     getCount("carriers", unitType));
-                reportPanel.add(createUnitTypeLabel(unit), "sg");
+                reportJPanel.add(createUnitTypeLabel(unit), "sg");
             }
         }
     }

@@ -111,9 +111,11 @@ public class WorkProductionPanel extends FreeColPanel {
         output(attendedModifiers, unitType);
 
         result = wl.getPotentialProduction(workType, unitType);
-        if (result < 0.0f) {
-            add(Utility.localizedLabel("workProductionPanel.zeroThreshold"), "newline");
-            add(new JLabel(ModifierFormat.format(-result)), "wrap 30");
+        String newLine = "newline";
+		String wrapThirty = "wrap 30";
+		if (result < 0.0f) {
+            add(Utility.localizedLabel("workProductionPanel.zeroThreshold"), newLine);
+            add(new JLabel(ModifierFormat.format(-result)), wrapThirty);
             result = 0.0f;
         }
 
@@ -121,18 +123,18 @@ public class WorkProductionPanel extends FreeColPanel {
             FontLibrary.FontSize.SMALLER, Font.BOLD, lib.getScaleFactor());
         JLabel finalLabel = Utility.localizedLabel("finalResult");
         finalLabel.setFont(bigFont);
-        add(finalLabel, "newline");
+        add(finalLabel, newLine);
 
         JLabel finalResult = new JLabel(ModifierFormat.format(result));
         finalResult.setFont(bigFont);
         finalResult.setBorder(Utility.PRODUCTION_BORDER);
-        add(finalResult, "wrap 30");
+        add(finalResult, wrapThirty);
 
         if (wl instanceof Building) { // Unattended production also applies.
             result = wl.getBaseProduction(null, workType, null);
             if (result > 0) {
                 add(Utility.localizedLabel(wl.getLabel()));
-                add(new JLabel(ModifierFormat.format(result)), "wrap 30");
+                add(new JLabel(ModifierFormat.format(result)), wrapThirty);
                 Collections.sort(unattendedModifiers);
                 output(unattendedModifiers, unitType);
             }

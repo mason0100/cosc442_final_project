@@ -65,7 +65,7 @@ public final class NewPanel extends FreeColPanel
     private static final Logger logger = Logger.getLogger(NewPanel.class.getName());
 
     /** The actions for this panel. */
-    private static enum NewPanelAction {
+    private enum NewPanelAction {
         OK,
         CANCEL,
         SINGLE,
@@ -73,7 +73,7 @@ public final class NewPanel extends FreeColPanel
         START,
         META_SERVER,
         SHOW_DIFFICULTY
-    };
+    }
 
     /**
      * A particular specification to use for the new game.  If not
@@ -177,14 +177,13 @@ public final class NewPanel extends FreeColPanel
 
         // Create the components
         this.buttonGroup = new ButtonGroup();
-        JRadioButton
-            single = new JRadioButton(Messages.message("newPanel.singlePlayerGame"),
-                                      true),
-            join = new JRadioButton(Messages.message("newPanel.joinMultiPlayerGame"),
-                                    false),
-            start = new JRadioButton(Messages.message("newPanel.startMultiplayerGame"),
-                                     false),
-            meta = new JRadioButton(Messages.message("newPanel.getServerList")
+        JRadioButton single = new JRadioButton(Messages.message("newPanel.singlePlayerGame"),
+                                      true);
+        JRadioButton join = new JRadioButton(Messages.message("newPanel.joinMultiPlayerGame"),
+                                    false);
+        JRadioButton start = new JRadioButton(Messages.message("newPanel.startMultiplayerGame"),
+                                     false);
+        JRadioButton meta = new JRadioButton(Messages.message("newPanel.getServerList")
                 + " (" + FreeCol.META_SERVER_ADDRESS + ")", false);
         this.buttonGroup.add(single);
         single.setActionCommand(String.valueOf(NewPanelAction.SINGLE));
@@ -274,23 +273,25 @@ public final class NewPanel extends FreeColPanel
 
         // Add all the components
         add(Utility.localizedHeader("newPanel.newGamePanel", false), "span 6, center");
-        add(single, "newline, span 3");
+        String newlineSpan = "newline, span 3";
+		add(single, newlineSpan);
         add(new JSeparator(JSeparator.VERTICAL), "spany 7, grow");
         add(Utility.localizedLabel("name"), "span, split 2");
-        add(this.nameBox, "growx");
-        add(start, "newline, span 3");
+        String growx = "growx";
+		add(this.nameBox, growx);
+        add(start, newlineSpan);
         add(this.advantagesLabel);
-        add(this.advantagesBox, "growx");
+        add(this.advantagesBox, growx);
         add(this.serverPortLabel, "newline, skip");
         add(this.serverPortField, "width 60:");
         add(this.rulesLabel);
-        add(this.rulesBox, "growx");
+        add(this.rulesBox, growx);
         add(this.publicServer, "newline, skip, span 2");
         add(this.difficultyLabel);
-        add(this.difficultyBox, "growx");
-        add(meta, "newline, span 3");
+        add(this.difficultyBox, growx);
+        add(meta, newlineSpan);
         add(this.difficultyButton, "skip 2, growx");
-        add(join, "newline, span 3");
+        add(join, newlineSpan);
         add(this.joinNameLabel, "newline, skip, split 2");
         add(this.joinNameField, "width 80:");
         add(this.joinPortLabel, "split 2");
@@ -516,13 +517,13 @@ public final class NewPanel extends FreeColPanel
             case SINGLE:
                 this.specification.prepare(getSelectedAdvantages(),
                                            this.difficulty);
-                if (cc.startSinglePlayerGame(this.specification, false)) return;
+                if (cc.startSinglePlayerGame(this.specification, false))
                 break;
             case JOIN:
                 int joinPort = getSelectedPort(this.joinPortField);
                 if (joinPort < 0) break;
                 if (cc.joinMultiplayerGame(this.joinNameField.getText(),
-                                           joinPort)) return;
+                                           joinPort))
                 break;
             case START:
                 int serverPort = getSelectedPort(this.serverPortField);
@@ -530,7 +531,7 @@ public final class NewPanel extends FreeColPanel
                 this.specification.prepare(getSelectedAdvantages(),
                                            this.difficulty);
                 if (cc.startMultiplayerGame(this.specification,
-                        this.publicServer.isSelected(), serverPort)) return;
+                        this.publicServer.isSelected(), serverPort))
                 break;
             case META_SERVER:
                 List<ServerInfo> servers = cc.getServerList();

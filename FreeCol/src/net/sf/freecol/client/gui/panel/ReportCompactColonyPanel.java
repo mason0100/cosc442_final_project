@@ -82,7 +82,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
     private static class ColonySummary {
 
         /** Types of production for a given goods type. */
-        public static enum ProductionStatus {
+        public enum ProductionStatus {
             FAIL,        // Negative production and below low alarm level
             BAD,         // Negative production
             NONE,        // No production at all
@@ -93,7 +93,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
             OVERFLOW,    // Positive production and above capacity
             PRODUCTION,  // Positive production but could produce more
             CONSUMPTION, // Positive production but could consume more
-        };
+        }
 
         public static BinaryOperator<GoodsProduction> goodsProductionAccumulator
             = (g1, g2) -> {
@@ -121,7 +121,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
                 this.status = status;
                 this.extra = extra;
             }
-        };
+        }
 
 
         /** The colony being summarized. */
@@ -187,7 +187,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
                 
             final Specification spec = colony.getSpecification();
             final Player owner = colony.getOwner();
-            final GoodsType foodType = spec.getPrimaryFoodType();
+            //final GoodsType foodType = spec.getPrimaryFoodType();
 
             this.tileSuggestions.clear();
             this.tileSuggestions.addAll(colony.getTileImprovementSuggestions());
@@ -352,7 +352,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
                 suggestions.put(expert, suggestion);
             }
         }
-    };
+    }
 
     private static final String BUILDQUEUE = "buildQueue.";
     private static final String cAlarmKey = "color.report.colony.alarm";
@@ -481,13 +481,13 @@ public final class ReportCompactColonyPanel extends ReportPanel
 
     private void addTogether(List<? extends JComponent> components) {
         if (components.isEmpty()) {
-            reportPanel.add(new JLabel());
+            reportJPanel.add(new JLabel());
             return;
         }
         String layout = (components.size() > 1) ? "split " + components.size()
             : null;
         for (JComponent jc : components) {
-            reportPanel.add(jc, layout);
+            reportJPanel.add(jc, layout);
             layout = null;
         }
     }
@@ -516,7 +516,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
             : cGood;
         b = newButton(cac, s.colony.getName(), null, c, null);
         if (s.famine) b.setFont(b.getFont().deriveFont(Font.BOLD));
-        reportPanel.add(b, "newline");
+        reportJPanel.add(b, "newline");
 
         // Field: The number of colonists that can be added to a
         // colony without damaging the production bonus, unless
@@ -538,7 +538,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
         } else {
             b = null;
         }
-        reportPanel.add((b == null) ? new JLabel() : b);
+        reportJPanel.add((b == null) ? new JLabel() : b);
 
         // Field: The number of potential colony tiles that need
         // exploring.
@@ -555,7 +555,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
         } else {
             b = null;
         }
-        reportPanel.add((b == null) ? new JLabel() : b);
+        reportJPanel.add((b == null) ? new JLabel() : b);
 
         // Fields: The number of existing colony tiles that would
         // benefit from improvements.
@@ -599,7 +599,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
             } else {
                 b = null;
             }
-            reportPanel.add((b == null) ? new JLabel() : b);
+            reportJPanel.add((b == null) ? new JLabel() : b);
         }
 
         // Fields: The net production of each storable+non-trade-goods
@@ -687,7 +687,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
             default:
                 throw new IllegalStateException("Bogus status: " + gp.status);
             }
-            reportPanel.add((c == null) ? new JLabel()
+            reportJPanel.add((c == null) ? new JLabel()
                 : newButton(cac, Integer.toString(gp.amount), null, c, t));
         }
 
@@ -712,7 +712,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
         } else {
             b = null;
         }
-        reportPanel.add((b == null) ? new JLabel() : b);
+        reportJPanel.add((b == null) ? new JLabel() : b);
 
         // Field: What is currently being built (clickable if on the
         // buildqueue) and the turns until it completes, including
@@ -797,7 +797,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
         // Field: The units that could be upgraded, followed by the units
         // that could be added.
         if (s.improve.isEmpty() && s.want.isEmpty()) {
-            reportPanel.add(new JLabel());
+            reportJPanel.add(new JLabel());
         } else {
             buttons.clear();
             buttons.addAll(unitButtons(s.improve, s.couldWork, s.colony));
@@ -865,14 +865,17 @@ public final class ReportCompactColonyPanel extends ReportPanel
         Color c;
         StringTemplate t;
 
-        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL),
+        reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL),
                         "newline, span, growx");
 
         // Accumulate all the summaries
         Map<Region, Integer> rRegionMap = new HashMap<>();
         List<TileImprovementSuggestion> rTileSuggestions = new ArrayList<>();
-        int rFamine = 0, rBonus = 0, rSizeChange = 0,
-            teacherLen = 0, improveLen = 0;
+        int rFamine = 0;
+        int rBonus = 0;
+        int rSizeChange = 0;
+        int teacherLen = 0;
+        int improveLen = 0;
         double rNewColonist = 0.0;
         Map<GoodsType, ColonySummary.GoodsProduction> rProduction
             = new HashMap<>();
@@ -916,13 +919,13 @@ public final class ReportCompactColonyPanel extends ReportPanel
         // Colour: Plain
         t = mapEntriesByValue(rRegionMap, descendingIntegerComparator)
             .get(0).getKey().getLabel();
-        reportPanel.add(newLabel(Messages.message(t), null, cPlain,
+        reportJPanel.add(newLabel(Messages.message(t), null, cPlain,
                                  stpld("report.colony.name.summary")),
                         "newline");
 
         // Field: The total of the size change field.
         // Colour: cGood if efficient/cAlarm if inefficient.
-        reportPanel.add(newLabel(Integer.toString(rSizeChange), null,
+        reportJPanel.add(newLabel(Integer.toString(rSizeChange), null,
                                  (rSizeChange < 0) ? cAlarm : cGood,
                                  stpld("report.colony.growing.summary")));
 
@@ -935,7 +938,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
                 tiles.add(tis.tile);
             }
         }
-        reportPanel.add((tiles.isEmpty()) ? new JLabel()
+        reportJPanel.add((tiles.isEmpty()) ? new JLabel()
             : newLabel(Integer.toString(tiles.size()), null, cAlarm,
                        stpld("report.colony.exploring.summary")));
 
@@ -951,7 +954,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
                     tiles.add(tis.tile);
                 }
             }
-            reportPanel.add((tiles.isEmpty()) ? new JLabel()
+            reportJPanel.add((tiles.isEmpty()) ? new JLabel()
                 : newLabel(Integer.toString(tiles.size()), null, cAlarm,
                            stpld("report.colony.tile." + ti.getSuffix()
                                + ".summary")));
@@ -979,7 +982,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
             default:
                 throw new IllegalStateException("Bogus status: " + gp.status);
             }
-            reportPanel.add((c == null) ? new JLabel()
+            reportJPanel.add((c == null) ? new JLabel()
                 : newLabel(Integer.toString(gp.amount), null, c,
                     stpld("report.colony.production.summary")
                         .addNamed("%goods%", gt)));
@@ -987,7 +990,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
 
         // Field: New colonist arrival or famine warning.
         // Colour: cWarn if negative, else cGood
-        reportPanel.add(newLabel(Integer.toString((int)rNewColonist), null,
+        reportJPanel.add(newLabel(Integer.toString((int)rNewColonist), null,
                                  (rNewColonist < 0) ? cWarn : cGood,
                                  stpld("report.colony.arriving.summary")));
 
@@ -1039,20 +1042,20 @@ public final class ReportCompactColonyPanel extends ReportPanel
      *     status with.
      */
     private void conciseHeaders(Market market) {
-        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL),
+        reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL),
                         "newline, span, growx");
 
-        reportPanel.add(newLabel("report.colony.name.header", null, null,
+        reportJPanel.add(newLabel("report.colony.name.header", null, null,
                                  stpld("report.colony.name")),
                         "newline");
-        reportPanel.add(newLabel("report.colony.grow.header", null, null,
+        reportJPanel.add(newLabel("report.colony.grow.header", null, null,
                                  stpld("report.colony.grow")));
-        reportPanel.add(newLabel("report.colony.explore.header", null, null,
+        reportJPanel.add(newLabel("report.colony.explore.header", null, null,
                                  stpld("report.colony.explore")));
         for (TileImprovementType ti : this.spec.getTileImprovementTypeList()) {
             if (ti.isNatural()) continue;
             String key = "report.colony.tile." + ti.getSuffix() + ".header";
-            reportPanel.add(newLabel(key, null, null, stpld(key)));
+            reportJPanel.add(newLabel(key, null, null, stpld(key)));
         }
         for (GoodsType gt : this.goodsTypes) {
             ImageIcon icon = new ImageIcon(this.lib.getSmallIconImage(gt));
@@ -1060,20 +1063,20 @@ public final class ReportCompactColonyPanel extends ReportPanel
                                 stpl("report.colony.production.header")
                                     .addNamed("%goods%", gt));
             l.setEnabled(market == null || market.getArrears(gt) <= 0);
-            reportPanel.add(l);
+            reportJPanel.add(l);
         }
 
         final UnitType type = spec.getDefaultUnitType(market.getOwner());
         ImageIcon colonistIcon
             = new ImageIcon(this.lib.getTinyUnitImage(type, false));
-        reportPanel.add(newLabel(null, colonistIcon, null,
+        reportJPanel.add(newLabel(null, colonistIcon, null,
                                  stpld("report.colony.birth")));
-        reportPanel.add(newLabel("report.colony.making.header", null, null,
+        reportJPanel.add(newLabel("report.colony.making.header", null, null,
                                  stpld("report.colony.making")));
-        reportPanel.add(newLabel("report.colony.improve.header", null, null,
+        reportJPanel.add(newLabel("report.colony.improve.header", null, null,
                                  stpld("report.colony.improve")));
 
-        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL),
+        reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL),
                         "newline, span, growx");
     }
 
@@ -1081,13 +1084,13 @@ public final class ReportCompactColonyPanel extends ReportPanel
      * Update the panel.
      */
     private void update() {
-        reportPanel.removeAll();
+        reportJPanel.removeAll();
 
         // Define the layout, with a column for each goods type.
         String cols = "[l][c][c][c]";
         for (int i = 0; i < this.goodsTypes.size(); i++) cols += "[c]";
         cols += "[c][c][l][l][l]";
-        reportPanel.setLayout(new MigLayout("fillx, insets 0, gap 0 0",
+        reportJPanel.setLayout(new MigLayout("fillx, insets 0, gap 0 0",
                                             cols, ""));
 
         conciseHeaders(this.market);

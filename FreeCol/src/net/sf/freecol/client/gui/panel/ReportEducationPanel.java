@@ -46,17 +46,17 @@ public final class ReportEducationPanel extends ReportPanel {
     public ReportEducationPanel(FreeColClient freeColClient) {
         super(freeColClient, "reportEducationAction");
 
-        reportPanel.setLayout(new MigLayout("wrap 2, fill",
+        reportJPanel.setLayout(new MigLayout("wrap 2, fill",
                                             "[]20[fill, growprio 200]"));
         List<Colony> colonies = freeColClient.getMySortedColonies();
         for (Colony colony : colonies) {
             for (Building building : colony.getBuildings()) {
                 if (building.canTeach()) {
                     int maxSkill = Unit.UNDEFINED;
-                    reportPanel.add(createColonyButton(colony), "newline, split 2, flowy");
+                    reportJPanel.add(createColonyButton(colony), "newline, split 2, flowy");
                     BuildingPanel bp = new BuildingPanel(getFreeColClient(), building);
                     bp.initialize();
-                    reportPanel.add(bp);
+                    reportJPanel.add(bp);
                     JPanel teacherPanel = getPanel("report.education.teachers");
                     for (Unit unit : colony.getUnitList()) {
                         if (building.canAdd(unit)) {
@@ -64,14 +64,14 @@ public final class ReportEducationPanel extends ReportPanel {
                             maxSkill = Math.max(maxSkill, unit.getType().getSkill());
                         }
                     }
-                    reportPanel.add(teacherPanel, "split 2, flowy, grow");
+                    reportJPanel.add(teacherPanel, "split 2, flowy, grow");
                     JPanel studentPanel = getPanel("report.education.students");
                     for (Unit unit : colony.getUnitList()) {
                         if (unit.getType().getEducationUnit(maxSkill) != null) {
                             studentPanel.add(new UnitLabel(getFreeColClient(), unit, true, true));
                         }
                     }
-                    reportPanel.add(studentPanel, "grow");
+                    reportJPanel.add(studentPanel, "grow");
                 }
             }
         }

@@ -77,17 +77,17 @@ public final class ReportClassicColonyPanel extends ReportPanel
         final Specification spec = getSpecification();
         final ImageLibrary lib = getImageLibrary();
         
-        reportPanel.removeAll();
+        reportJPanel.removeAll();
         
-        reportPanel.setLayout(new MigLayout("fill")); // Set the layout
+        reportJPanel.setLayout(new MigLayout("fill")); // Set the layout
         
         for (Colony colony : this.colonies) {
             // Name
             JButton button = Utility.getLinkButton(colony.getName(), null,
                 colony.getId());
             button.addActionListener(this);
-            reportPanel.add(button, "newline, split 2");
-            reportPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
+            reportJPanel.add(button, "newline, split 2");
+            reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
             
             // Currently building
             BuildableType currentType = colony.getCurrentlyBuilding();
@@ -120,8 +120,9 @@ public final class ReportClassicColonyPanel extends ReportPanel
                 && spec.getUnitTypeList().contains(currentType)) {
                 unitsPanel.add(buildableLabel);
             }
-            reportPanel.add(colonistsPanel, "newline, growx");
-            reportPanel.add(unitsPanel, "newline, growx");
+            String newlineGrowx = "newline, growx";
+			reportJPanel.add(colonistsPanel, newlineGrowx);
+            reportJPanel.add(unitsPanel, newlineGrowx);
             
             // Production
             List<GoodsType> goodsTypes
@@ -139,10 +140,10 @@ public final class ReportClassicColonyPanel extends ReportPanel
                             new AbstractGoods(gt, newValue),
                             maxProduction, stockValue);
                     if (count % GOODS_PER_ROW == 0) {
-                        reportPanel.add(productionLabel,
+                        reportJPanel.add(productionLabel,
                             "newline, split " + GOODS_PER_ROW);
                     } else {
-                        reportPanel.add(productionLabel);
+                        reportJPanel.add(productionLabel);
                     }
                     count++;
                 }
@@ -165,7 +166,7 @@ public final class ReportClassicColonyPanel extends ReportPanel
                 && spec.getBuildingTypeList().contains(currentType)) {
                 buildingsPanel.add(buildableLabel);
             }
-            reportPanel.add(buildingsPanel, "newline, growx");
+            reportJPanel.add(buildingsPanel, newlineGrowx);
         }
     }
 }
