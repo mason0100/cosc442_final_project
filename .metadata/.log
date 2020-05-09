@@ -1579,3 +1579,6 @@ Binding(CTRL+J,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.instantiations.eclipse 1 0 2020-05-09 00:03:17.982
+!MESSAGE StartupPlugin: could not remove workbench property change listener (1) ... workbench might already be shut down.
