@@ -74,16 +74,22 @@ public class StringTemplate extends FreeColObject {
 
     /**
      * Deliberately empty constructor.
+     * Visibilty was changed for testing, should be returned to original values for build
+     * FIXME: visibility
      */
-    protected StringTemplate() {}
+    //protected StringTemplate() {}.
+    public StringTemplate() {}
 
     /**
      * Copy an existing template, but with a new identifier.
      *
      * @param id The object identifier.
      * @param template A <code>StringTemplate</code> to copy.
+     * Visibilty was changed for testing, should be returned to original values for build
+     * FIXME: visibility
      */
-    protected StringTemplate(String id, StringTemplate template) {
+    //protected StringTemplate(String id, StringTemplate template) {
+    public StringTemplate(String id, StringTemplate template) {
         setId(id);
         this.templateType = template.templateType;
         this.defaultId = template.defaultId;
@@ -97,9 +103,14 @@ public class StringTemplate extends FreeColObject {
      * @param id The object identifier.
      * @param defaultId The default identifier.
      * @param templateType The <code>TemplateType</code> for this template.
+     * Visibilty was changed for testing, should be returned to original values for build
+     * FIXME: visibility
+     * 
      */
-    protected StringTemplate(String id, String defaultId,
-                             TemplateType templateType) {
+    //protected StringTemplate(String id, String defaultId,
+    //                         TemplateType templateType) {
+    public StringTemplate(String id, String defaultId,
+            TemplateType templateType) {
         setId(id);
         this.defaultId = defaultId;
         this.templateType = templateType;

@@ -21,10 +21,14 @@ import net.sf.freecol.common.io.FreeColTcFile;
 import net.sf.freecol.common.model.NationOptions.Advantages;
 import net.sf.freecol.common.model.Specification;
 import net.sf.freecol.common.model.StringTemplate;
+import net.sf.freecol.common.option.Option;
 import net.sf.freecol.common.option.OptionGroup;
 
 @Generated(value = "org.junit-tools-1.1.0")
 public class FreeColTest {
+	
+	//constants 
+	int N = 0;
 	
 	
 	
@@ -66,6 +70,7 @@ public class FreeColTest {
 
 	@After
 	public void tearDown() throws Exception {
+		Runtime.getRuntime().gc();
 
 	}
 
@@ -92,7 +97,7 @@ public class FreeColTest {
 	@MethodRef(name = "main", signature = "([QString;)V")
 	@Test
 	public void mainTest() throws Exception {
-		String[] args = new String[] { "" };
+		String[] args = new String[] { "help" };
 
 		// default test
 		FreeCol.main(args);
@@ -140,12 +145,14 @@ public class FreeColTest {
 	@MethodRef(name = "fatal", signature = "(QStringTemplate;)V")
 	@Test
 	public void fatalTest() throws Exception {
-		StringTemplate template = "";
+		StringTemplate temp = new StringTemplate();
+		StringTemplate template = new StringTemplate("TestID", temp);
 
 		// default test
 		FreeCol.fatal(template);
 
 		Assert.fail();
+		//an assertion must be made with a dependency
 	}
 
 	@MethodRef(name = "fatal", signature = "(QString;)V")
@@ -213,11 +220,13 @@ public class FreeColTest {
 	@MethodRef(name = "printUsage", signature = "(QOptions;I)V")
 	@Test
 	public void printUsageTest() throws Exception {
-		Options options = null;
+		Option options = null;
 		int status = 0;
 
 		// default test
-		Whitebox.invokeMethod(FreeCol.class, "printUsage", new Object[] { Options.class, status });
+	
+		
+		Whitebox.invokeMethod(test, "printUsage", options, status);
 
 		Assert.fail();
 	}
@@ -265,9 +274,11 @@ public class FreeColTest {
 		Advantages result;
 
 		// default test
+		FreeCol test = Whitebox.invokeConstructor(FreeCol.class);
 		result = Whitebox.invokeMethod(FreeCol.class, "selectAdvantages", new Object[] { advantages });
-
+		System.out.println(result);
 		Assert.fail();
+		//****************************************************************************************STAR HERE
 	}
 
 	@MethodRef(name = "setAdvantages", signature = "(QAdvantages;)V")
@@ -295,12 +306,14 @@ public class FreeColTest {
 	@MethodRef(name = "getDifficulty", signature = "()QString;")
 	@Test
 	public void getDifficultyTest() throws Exception {
-		String result;
+		String actualResult;
+		String expectedResult;
 
 		// default test
-		result = FreeCol.getDifficulty();
-
-		Assert.fail();
+		actualResult = FreeCol.getDifficulty();
+		expectedResult = "model.difficulty.medium";
+		assertEquals(expectedResult,actualResult);
+	
 	}
 
 	@MethodRef(name = "selectDifficulty", signature = "(QString;)QString;")
@@ -329,45 +342,57 @@ public class FreeColTest {
 	@MethodRef(name = "setDifficulty", signature = "(QString;)V")
 	@Test
 	public void setDifficultyTest_1() throws Exception {
-		String difficulty = "";
-
-		// default test
+		String expectedResult;
+		String actualResult;
+		String difficulty;
+		
+		//Case 1: handles null case
+		difficulty = null;
+		actualResult = "model.difficulty.medium";
 		FreeCol.setDifficulty(difficulty);
-
-		Assert.fail();
+		expectedResult = FreeCol.getDifficulty();
+		assertEquals(expectedResult,actualResult);
+		
+		//needs more cases
 	}
 
 	@MethodRef(name = "getValidDifficulties", signature = "()QString;")
 	@Test
 	public void getValidDifficultiesTest() throws Exception {
-		String result;
+		String actualResult;
+		String expectedResult;
+		
+		expectedResult = "model.difficulty.veryEasy.name,model.difficulty.easy.name,model.difficulty.medium.name,model.difficulty.hard.name,model.difficulty.veryHard.name";
+		actualResult = FreeCol.getValidDifficulties();
 
-		// default test
-		result = FreeCol.getValidDifficulties();
-
-		Assert.fail();
+		assertEquals(expectedResult,actualResult);
 	}
 
 	@MethodRef(name = "getEuropeanCount", signature = "()I")
 	@Test
 	public void getEuropeanCountTest() throws Exception {
-		int result;
+		//FreeCol test = new FreeCol();
+		int expectedResult = N;
+		int actualResult;
 
 		// default test
-		result = FreeCol.getEuropeanCount();
-
-		Assert.fail();
+		actualResult = FreeCol.getEuropeanCount();
+		System.out.println(actualResult + "recd");
+		Assert.assertEquals(expectedResult, actualResult);
 	}
 
 	@MethodRef(name = "setEuropeanCount", signature = "(I)V")
 	@Test
 	public void setEuropeanCountTest() throws Exception {
-		int n = 0;
-
+		int n = N;
+		//FreeCol testObject = new FreeCol();
 		// default test
 		FreeCol.setEuropeanCount(n);
-
-		Assert.fail();
+		int actualResult = FreeCol.getEuropeanCount();
+		int expectedResult = n;
+		
+		Assert.assertEquals(expectedResult, actualResult);	
+		//void method
 	}
 
 	@MethodRef(name = "setGUIScale", signature = "(QString;)Z")
@@ -379,25 +404,42 @@ public class FreeColTest {
 		// test 1
 		arg = null;
 		result = FreeCol.setGUIScale(arg);
-		Assert.assertEquals(false, result);
+		Assert.assertEquals(true, result);
 
-		// test 2
-		arg = "";
+		// test 2: test a valid entry
+		arg = "400";
 		result = FreeCol.setGUIScale(arg);
 		Assert.assertEquals(false, result);
+		
+		// test 3: tests invalad entry greater than the GUI_SCALE_MAX_PCT
+		arg = "425";
+		result = FreeCol.setGUIScale(arg);
+		Assert.assertEquals(false, result);		
 
-		Assert.fail();
+		// test 4: tests invalad entry less than than the GUI_SCALE_MIN_PCT
+		arg = "75";
+		result = FreeCol.setGUIScale(arg);
+		Assert.assertEquals(false, result);		
+		
+		// test 5: that is not a multiple of the GUI_SCALE_STEP
+		arg = "425";
+		result = FreeCol.setGUIScale(arg);
+		Assert.assertEquals(false, result);			
+		
+	
 	}
 
 	@MethodRef(name = "getValidGUIScales", signature = "()QString;")
 	@Test
 	public void getValidGUIScalesTest() throws Exception {
-		String result;
+		String actualResult;
+		String expectedResult;
 
 		// default test
-		result = FreeCol.getValidGUIScales();
-
-		Assert.fail();
+		actualResult = FreeCol.getValidGUIScales();
+		expectedResult = "100,125,150,175,200";
+		assertEquals(expectedResult,actualResult);
+		
 	}
 
 	@MethodRef(name = "selectEuropeanCount", signature = "(QString;)I")
@@ -405,11 +447,13 @@ public class FreeColTest {
 	public void selectEuropeanCountTest() throws Exception {
 		String arg = "";
 		int result;
-
+		FreeCol testObject = new FreeCol();
 		// default test
-		result = FreeCol.selectEuropeanCount(arg);
+		FreeCol.selectEuropeanCount(arg);
+		System.out.println(FreeCol.getEuropeanCount());
 
 		Assert.fail();
+		//void method
 	}
 
 	@MethodRef(name = "setLogLevel", signature = "(QString;)V")
@@ -437,12 +481,19 @@ public class FreeColTest {
 	@MethodRef(name = "setName", signature = "(QString;)V")
 	@Test
 	public void setNameTest() throws Exception {
-		String name = "";
+		//this test method test both setName() and getName()
+		String actualResult;
+		String expectedResult;
+		String name;
 
-		// default test
+		// Case 1: name = null, uses systems user name if null
+		name = null;
 		FreeCol.setName(name);
-
-		Assert.fail();
+		actualResult = FreeCol.getName();
+		expectedResult = System.getProperty("user.name");
+		assertEquals(expectedResult,actualResult);
+		
+		//needs more cases
 	}
 
 	@MethodRef(name = "getLocale", signature = "()QLocale;")
@@ -583,16 +634,17 @@ public class FreeColTest {
 		//currently working on this method
 		//FIXME: figure out whitebox
 		String arg = "";
-		FreeCol temp = new FreeCol();
+		FreeCol test = new FreeCol();
 		// test 1
 		arg = null;
-		Whitebox.invokeMethod(temp, "setWindowSize", arg);
+		//FreeCol.setWindowSize(arg);
+		Whitebox.invokeMethod(test, "setWindowSize", arg);
 
 		// test 2
 		arg = "2z4";
-		Whitebox.invokeMethod(FreeCol.class, "setWindowSize", new Object[] { arg });
+		//Whitebox.invokeMethod(FreeCol.class, "setWindowSize", new Object[] { arg });
 
-		Assert.fail();
+		//Assert.fail();
 	}
 
 	@MethodRef(name = "badSave", signature = "(QFile;)QStringTemplate;")

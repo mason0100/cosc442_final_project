@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="C:/Users/Masonator/Desktop/cosc442/final_project/workspace/testbase/lib/junit-tools.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Masonator/Desktop/cosc442/final_project/workspace/testbase/lib/powermock-easymock-2.0.2-full.jar"/>
 	<classpathentry kind="src" path="/FreeCol"/>
+	<classpathentry kind="lib" path="C:/Users/Masonator/Desktop/cosc442/final_project/workspace/FreeCol/FreeCol.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -184,9 +184,10 @@ public final class FreeCol {
     /** How much gui elements get scaled. */
     private static float guiScale = GUI_SCALE_DEFAULT;
 
-   
-    private FreeCol() {} // Hide constructor
-
+    //FIXME: visibility
+    //changed visibilty for testing
+    //private FreeCol() {} // Hide constructor
+    public FreeCol() {} // Hide constructor
     /**
      * The entrypoint.
      *
