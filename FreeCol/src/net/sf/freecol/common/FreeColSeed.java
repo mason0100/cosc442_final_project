@@ -32,7 +32,7 @@ public class FreeColSeed {
 
     public static final long DEFAULT_SEED = 0L;
 
-    private static long freeColSeed = DEFAULT_SEED;
+    private static long freeColDefault = DEFAULT_SEED;
     
 
     /**
@@ -43,10 +43,11 @@ public class FreeColSeed {
      */
     public static long getFreeColSeed(boolean generate) {
         if (generate) {
-            freeColSeed = new SecureRandom().nextLong();
-            logger.info("Using seed: " + freeColSeed);
+            freeColDefault = new SecureRandom().nextLong();
+            String loggerInfo = "Using seed: " + freeColDefault;
+			logger.info(loggerInfo);
         }
-        return freeColSeed;
+        return freeColDefault;
     }
 
     /**
@@ -56,7 +57,7 @@ public class FreeColSeed {
      */
     public static void setFreeColSeed(String arg) {
         try {
-            FreeColSeed.freeColSeed = Long.parseLong(arg);
+            FreeColSeed.freeColDefault = Long.parseLong(arg);
         } catch (NumberFormatException nfe) {}
     }
 
@@ -64,7 +65,8 @@ public class FreeColSeed {
      * Increments the seed for the PRNG.
      */
     public static void incrementFreeColSeed() {
-        freeColSeed = getFreeColSeed(false) + 1;
-        logger.info("Reseeded with: " + freeColSeed);
+        freeColDefault = getFreeColSeed(false) + 1;
+        String loggerInfo = "Reseeded with: " + freeColDefault;
+		logger.info(loggerInfo);
     }
 }
