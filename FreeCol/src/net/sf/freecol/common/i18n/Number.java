@@ -32,7 +32,7 @@ import java.util.logging.Logger;
  */
 public abstract class Number implements Selector {
 
-    public enum Category { zero, one, two, few, many, other };
+    public enum Category { ZERO, ONE, TWO, FEW, MANY, OTHER };
 
     private static final Logger logger = Logger.getLogger(Number.class.getName());
 
@@ -53,7 +53,7 @@ public abstract class Number implements Selector {
             return getKey(Double.parseDouble(selector));
         } catch(NumberFormatException e) {
             logger.warning("Syntax error in string template '" + template + "'");
-            return Category.other.toString();
+            return Category.OTHER.toString();
         }
     }
 

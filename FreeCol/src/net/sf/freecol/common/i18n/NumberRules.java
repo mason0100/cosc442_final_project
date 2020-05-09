@@ -137,6 +137,7 @@ public class NumberRules {
                             readChild(xr);
                         }
                     }   break;
+                default: break;
             }
         }
     }
@@ -160,7 +161,7 @@ public class NumberRules {
                 number = OTHER_NUMBER_RULE;
                 break;
             case 1:
-                Rule rule = numberRule.getRule(Category.one);
+                Rule rule = numberRule.getRule(Category.ONE);
                 if (rule != null) {
                     if (null != rule.toString()) switch (rule.toString()) {
                     case "n is 1":
@@ -169,12 +170,13 @@ public class NumberRules {
                     case "n in 0..1":
                         number = ZERO_ONE_NUMBER_RULE;
                         break;
+                    default: break;
                 }
                 }
                 break;
             case 2:
-                Rule oneRule = numberRule.getRule(Category.one);
-                Rule twoRule = numberRule.getRule(Category.two);
+                Rule oneRule = numberRule.getRule(Category.ONE);
+                Rule twoRule = numberRule.getRule(Category.TWO);
                 if (oneRule != null
                     && "n is 1".equals(oneRule.toString())
                     && twoRule != null

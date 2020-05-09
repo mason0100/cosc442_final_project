@@ -28,7 +28,7 @@ public class OtherNumberRule extends Number {
 
     @Override
     public Category getCategory(double input) {
-        return Category.other;
+        return Category.OTHER;
     }
 
 }

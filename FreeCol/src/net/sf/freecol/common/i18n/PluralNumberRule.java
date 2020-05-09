@@ -29,9 +29,9 @@ public class PluralNumberRule extends Number {
     @Override
     public Category getCategory(double input) {
         if (input == 1) {
-            return Category.one;
+            return Category.ONE;
         } else {
-            return Category.other;
+            return Category.OTHER;
         }
     }
 

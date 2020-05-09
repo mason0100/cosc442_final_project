@@ -55,7 +55,7 @@ public class NameCache {
     private static final String[] DEFAULT_SEASON_IDS
         = { "model.season.spring.name", "model.season.autumn.name" };
     
-    private final static String CIBOLA_PREFIX
+    private static final String CIBOLA_PREFIX
         = "nameCache.lostCityRumour.cityName.";
 
     /** Cities of Cibola. */
@@ -266,8 +266,9 @@ public class NameCache {
                     }
                 }
                 settlementNames.put(player, names);
-                logger.fine("Loaded " + names.size() + " settlement names for "
-                    + player.getId());
+                String loggerFine = "Loaded " + names.size() + " settlement names for "
+                    + player.getId();
+				logger.fine(loggerFine);
             }
         }
     }
