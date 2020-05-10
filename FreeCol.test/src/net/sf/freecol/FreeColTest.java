@@ -4,6 +4,7 @@ package net.sf.freecol;
 
 import java.io.File;
 import java.io.InputStream;
+import java.net.InetAddress;
 import java.net.JarURLConnection;
 import java.util.Locale;
 
@@ -142,21 +143,21 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	@MethodRef(name = "fatal", signature = "(QStringTemplate;)V")
-	@Test
+	//@MethodRef(name = "fatal", signature = "(QStringTemplate;)V")
+	//@Test
 	public void fatalTest() throws Exception {
 		StringTemplate temp = new StringTemplate();
 		StringTemplate template = new StringTemplate("TestID", temp);
-
+		
 		// default test
 		FreeCol.fatal(template);
-
+		
 		Assert.fail();
 		//an assertion must be made with a dependency
 	}
 
-	@MethodRef(name = "fatal", signature = "(QString;)V")
-	@Test
+	//@MethodRef(name = "fatal", signature = "(QString;)V")
+	//@Test
 	public void fatalTest_1() throws Exception {
 		String err = "";
 
@@ -284,12 +285,18 @@ public class FreeColTest {
 	@MethodRef(name = "setAdvantages", signature = "(QAdvantages;)V")
 	@Test
 	public void setAdvantagesTest() throws Exception {
+		Advantages actualResult;
+		Advantages expectedResult;
 		Advantages advantages = null;
+		
+		expectedResult = Advantages.SELECTABLE;
 
-		// default test
+		// Case 1: null test, returns default option for getAdvantages()
 		FreeCol.setAdvantages(advantages);
-
-		Assert.fail();
+		actualResult = FreeCol.getAdvantages();
+		assertEquals(expectedResult,actualResult);
+		
+		//needs more cases
 	}
 
 	@MethodRef(name = "getValidAdvantages", signature = "()QString;")
@@ -377,7 +384,6 @@ public class FreeColTest {
 
 		// default test
 		actualResult = FreeCol.getEuropeanCount();
-		System.out.println(actualResult + "recd");
 		Assert.assertEquals(expectedResult, actualResult);
 	}
 
@@ -445,15 +451,36 @@ public class FreeColTest {
 	@MethodRef(name = "selectEuropeanCount", signature = "(QString;)I")
 	@Test
 	public void selectEuropeanCountTest() throws Exception {
-		String arg = "";
-		int result;
-		FreeCol testObject = new FreeCol();
-		// default test
-		FreeCol.selectEuropeanCount(arg);
-		System.out.println(FreeCol.getEuropeanCount());
+		String arg;
+		int actualResult;
+		int expectedResult;
+		
+		final int EUROPEANS_MIN = 1;//from FreeCol.java
+		
+		//Case 1: null 
+		arg = null;
+		actualResult = FreeCol.selectEuropeanCount(arg);;
+		expectedResult = -1;
+		assertEquals(expectedResult,actualResult);	
+		
+		//Case 2: below EUROPEANS_MIN 
+		arg = "0";
+		actualResult = FreeCol.selectEuropeanCount(arg);;
+		expectedResult = -1;
+		assertEquals(expectedResult,actualResult);
+		
+		//Case 3: equal to EUROPEANS_MIN 
+		arg = "1";
+		actualResult = FreeCol.selectEuropeanCount(arg);;
+		expectedResult = Integer.parseInt(arg);
+		assertEquals(expectedResult,actualResult);		
 
-		Assert.fail();
-		//void method
+		//Case 3: above EUROPEANS_MIN 
+		arg = "2";
+		actualResult = FreeCol.selectEuropeanCount(arg);;
+		expectedResult = Integer.parseInt(arg);
+		assertEquals(expectedResult,actualResult);
+		
 	}
 
 	@MethodRef(name = "setLogLevel", signature = "(QString;)V")
@@ -467,21 +494,22 @@ public class FreeColTest {
 		Assert.fail();
 	}
 
-	@MethodRef(name = "getName", signature = "()QString;")
-	@Test
+	//@MethodRef(name = "getName", signature = "()QString;")
+	//@Test
 	public void getNameTest() throws Exception {
-		String result;
-
-		// default test
-		result = FreeCol.getName();
-
+		//getName() is tested in the setNameTest() method
+		String actualResult;
+		String expectedResult;
+		String name;
+		
 		Assert.fail();
 	}
 
 	@MethodRef(name = "setName", signature = "(QString;)V")
 	@Test
 	public void setNameTest() throws Exception {
-		//this test method test both setName() and getName()
+		//this test method test both setName() and getName() (above)
+		
 		String actualResult;
 		String expectedResult;
 		String name;
@@ -521,42 +549,52 @@ public class FreeColTest {
 	@MethodRef(name = "getServerHost", signature = "()QString;")
 	@Test
 	public void getServerHostTest() throws Exception {
-		String result;
-
+		String actualResult;
+		String expectedResult;
 		// default test
-		result = FreeCol.getServerHost();
-
-		Assert.fail();
+		actualResult = FreeCol.getServerHost();
+		expectedResult = InetAddress.getLoopbackAddress().getHostAddress();
+		assertEquals(expectedResult, actualResult);
 	}
 
 	@MethodRef(name = "getServerPort", signature = "()I")
 	@Test
 	public void getServerPortTest() throws Exception {
-		int result;
-
-		// default test
-		result = FreeCol.getServerPort();
-
-		Assert.fail();
+		//also test setServerPort
+		int actualResult;
+		int expectedResult;
+		String arg;
+		
+		//Case 1: sets to 80 and returns to 80
+		arg = "80";
+		FreeCol.setServerPort(arg);
+		actualResult = FreeCol.getServerPort();
+		expectedResult = Integer.parseInt(arg);
+		assertEquals(expectedResult, actualResult);
 	}
 
 	@MethodRef(name = "setServerPort", signature = "(QString;)Z")
 	@Test
 	public void setServerPortTest() throws Exception {
-		String arg = "";
-		boolean result;
+		
+		
+		boolean actualResult;
+		boolean expectedResult;
+		String arg;
+		
 
-		// test 1
+		// Case 1: null case makes default 
 		arg = null;
-		result = FreeCol.setServerPort(arg);
-		Assert.assertEquals(false, result);
+		actualResult = FreeCol.setServerPort(arg);
+		expectedResult = false;
+		assertEquals(expectedResult, actualResult);
 
 		// test 2
-		arg = "";
-		result = FreeCol.setServerPort(arg);
-		Assert.assertEquals(false, result);
+		arg = "80";
+		actualResult = FreeCol.setServerPort(arg);
+		expectedResult = true;
+		assertEquals(expectedResult, actualResult);
 
-		Assert.fail();
 	}
 
 	@MethodRef(name = "getTC", signature = "()QString;")
@@ -574,7 +612,7 @@ public class FreeColTest {
 	@Test
 	public void setTCTest() throws Exception {
 		String tc = "";
-
+		  
 		// default test
 		FreeCol.setTC(tc);
 
@@ -595,25 +633,51 @@ public class FreeColTest {
 	@MethodRef(name = "getTimeout", signature = "(Z)I")
 	@Test
 	public void getTimeoutTest() throws Exception {
+		//test setTimeout() method also
+		
+		int actualResult;
+		int expectedResult;
 		boolean singlePlayer = false;
-		int result;
+		final int TIMEOUT_MIN = 10;//from FreeCol.java, this is the default timeout setting
+		String setValue = Integer.toString(TIMEOUT_MIN);
+		FreeCol.setTimeout(setValue);
+	
+		actualResult = FreeCol.getTimeout(singlePlayer);
+		expectedResult = TIMEOUT_MIN;
 
-		// default test
-		result = FreeCol.getTimeout(singlePlayer);
-
-		Assert.fail();
+		assertEquals(expectedResult,actualResult);
+		
 	}
 
 	@MethodRef(name = "setTimeout", signature = "(QString;)Z")
 	@Test
 	public void setTimeoutTest() throws Exception {
-		String timeout = "";
-		boolean result;
-
-		// default test
-		result = FreeCol.setTimeout(timeout);
-
-		Assert.fail();
+		boolean actualResult;
+		boolean expectedResult;
+		String timeout;
+		
+		// from FreeCol.java
+		//final int TIMEOUT_MIN = 10;
+		
+		
+		//Case 1: null should select default timeout setting
+		timeout = null;
+		expectedResult = false;
+		actualResult = FreeCol.setTimeout(timeout);
+		assertEquals(expectedResult,actualResult);
+		
+		//case 2: below TIMEOUT_MIN
+		timeout = "9";
+		expectedResult = false;
+		actualResult = FreeCol.setTimeout(timeout);
+		assertEquals(expectedResult,actualResult);
+		
+		//case 3: above TIMEOUT_MIN
+		timeout = "11";
+		expectedResult = true;
+		actualResult = FreeCol.setTimeout(timeout);
+		assertEquals(expectedResult,actualResult);
+	
 	}
 
 	@MethodRef(name = "getVersion", signature = "()QString;")

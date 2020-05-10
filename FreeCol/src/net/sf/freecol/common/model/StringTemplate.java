@@ -74,9 +74,10 @@ public class StringTemplate extends FreeColObject {
 
     /**
      * Deliberately empty constructor.
-     * Visibilty was changed for testing, should be returned to original values for build
+     * Visibility was changed for testing, should be returned to original values for build
      * FIXME: visibility
      */
+    //FIXME: visibility
     //protected StringTemplate() {}.
     public StringTemplate() {}
 
