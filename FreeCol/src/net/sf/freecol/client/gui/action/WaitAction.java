@@ -29,7 +29,11 @@ import net.sf.freecol.client.FreeColClient;
  */
 public class WaitAction extends UnitAction {
 
+<<<<<<< HEAD
     public static final String ID = "waitAction";
+=======
+    public static final String id = "waitAction";
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -38,7 +42,11 @@ public class WaitAction extends UnitAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public WaitAction(FreeColClient freeColClient) {
+<<<<<<< HEAD
         super(freeColClient, ID);
+=======
+        super(freeColClient, id);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         addImageIcons("wait");
     }

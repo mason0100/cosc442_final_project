@@ -68,15 +68,23 @@ public final class MiniMap extends JPanel implements MouseInputListener {
      * The top left tile on the mini map represents the tile.
      * (firstColumn, firstRow) in the world map
      */
+<<<<<<< HEAD
     private int firstColumn;
     private int firstRow;
+=======
+    private int firstColumn, firstRow;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     /**
      * Used for adjusting the position of the mapboard image.
      * @see #paintMap
      */
+<<<<<<< HEAD
     private int adjustX = 0;
     private int adjustY = 0;
+=======
+    private int adjustX = 0, adjustY = 0;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -393,8 +401,12 @@ public final class MiniMap extends JPanel implements MouseInputListener {
 
 
     private void focus(int x, int y) {
+<<<<<<< HEAD
         int tileX;
         int tileY;
+=======
+        int tileX, tileY;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         // When focusing out on the minimap, the last available focus out takes a larger jump than previous ones.
         // This if statement adjusts for the last larger jump in focus out.
@@ -417,7 +429,10 @@ public final class MiniMap extends JPanel implements MouseInputListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+<<<<<<< HEAD
     	//Ignore for now
+=======
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     /**
@@ -432,17 +447,26 @@ public final class MiniMap extends JPanel implements MouseInputListener {
 
     @Override
     public void mouseReleased(MouseEvent e) {
+<<<<<<< HEAD
     	//Ignore for now
+=======
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
+<<<<<<< HEAD
     	//Ignore for now
+=======
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
+<<<<<<< HEAD
     	//Ignore for now
+=======
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     @Override
@@ -452,7 +476,10 @@ public final class MiniMap extends JPanel implements MouseInputListener {
 
     @Override
     public void mouseMoved(MouseEvent e) {
+<<<<<<< HEAD
     	//Ignore for now
+=======
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
 }

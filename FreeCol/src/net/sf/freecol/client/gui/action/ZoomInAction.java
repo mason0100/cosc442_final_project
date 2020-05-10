@@ -29,7 +29,11 @@ import net.sf.freecol.client.FreeColClient;
  */
 public class ZoomInAction extends FreeColAction {
 
+<<<<<<< HEAD
     public static final String ID = "zoomInAction";
+=======
+    public static final String id = "zoomInAction";
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -38,7 +42,11 @@ public class ZoomInAction extends FreeColAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public ZoomInAction(FreeColClient freeColClient) {
+<<<<<<< HEAD
         super(freeColClient, ID);
+=======
+        super(freeColClient, id);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
 
@@ -66,6 +74,10 @@ public class ZoomInAction extends FreeColAction {
     public void actionPerformed(ActionEvent ae) {
         getGUI().zoomInMap();
         update();
+<<<<<<< HEAD
         getActionManager().getFreeColAction(ZoomOutAction.ID).update();
+=======
+        getActionManager().getFreeColAction(ZoomOutAction.id).update();
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 }

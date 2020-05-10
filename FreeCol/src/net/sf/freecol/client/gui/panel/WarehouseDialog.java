@@ -148,7 +148,11 @@ public final class WarehouseDialog extends FreeColConfirmDialog {
             add(goodsLabel, "span 1 2");
 
             // low level settings
+<<<<<<< HEAD
             //String str;
+=======
+            String str;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             SpinnerNumberModel lowLevelModel
                 = new SpinnerNumberModel(exportData.getLowLevel(), 0, 100, 1);
             lowLevel = new JSpinner(lowLevelModel);

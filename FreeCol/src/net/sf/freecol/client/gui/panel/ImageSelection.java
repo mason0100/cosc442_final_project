@@ -35,6 +35,11 @@ public final class ImageSelection implements Transferable {
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(ImageSelection.class.getName());
 
+<<<<<<< HEAD
+=======
+    //private static final DataFlavor[] flavors = {DataFlavor.imageFlavor};
+
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     private final JLabel label;
 
     /**

@@ -65,7 +65,11 @@ public final class NewPanel extends FreeColPanel
     private static final Logger logger = Logger.getLogger(NewPanel.class.getName());
 
     /** The actions for this panel. */
+<<<<<<< HEAD
     private enum NewPanelAction {
+=======
+    private static enum NewPanelAction {
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         OK,
         CANCEL,
         SINGLE,
@@ -73,7 +77,11 @@ public final class NewPanel extends FreeColPanel
         START,
         META_SERVER,
         SHOW_DIFFICULTY
+<<<<<<< HEAD
     }
+=======
+    };
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     /**
      * A particular specification to use for the new game.  If not
@@ -177,6 +185,7 @@ public final class NewPanel extends FreeColPanel
 
         // Create the components
         this.buttonGroup = new ButtonGroup();
+<<<<<<< HEAD
         JRadioButton single = new JRadioButton(Messages.message("newPanel.singlePlayerGame"),
                                       true);
         JRadioButton join = new JRadioButton(Messages.message("newPanel.joinMultiPlayerGame"),
@@ -184,6 +193,16 @@ public final class NewPanel extends FreeColPanel
         JRadioButton start = new JRadioButton(Messages.message("newPanel.startMultiplayerGame"),
                                      false);
         JRadioButton meta = new JRadioButton(Messages.message("newPanel.getServerList")
+=======
+        JRadioButton
+            single = new JRadioButton(Messages.message("newPanel.singlePlayerGame"),
+                                      true),
+            join = new JRadioButton(Messages.message("newPanel.joinMultiPlayerGame"),
+                                    false),
+            start = new JRadioButton(Messages.message("newPanel.startMultiplayerGame"),
+                                     false),
+            meta = new JRadioButton(Messages.message("newPanel.getServerList")
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 + " (" + FreeCol.META_SERVER_ADDRESS + ")", false);
         this.buttonGroup.add(single);
         single.setActionCommand(String.valueOf(NewPanelAction.SINGLE));
@@ -273,6 +292,7 @@ public final class NewPanel extends FreeColPanel
 
         // Add all the components
         add(Utility.localizedHeader("newPanel.newGamePanel", false), "span 6, center");
+<<<<<<< HEAD
         String newlineSpan = "newline, span 3";
 		add(single, newlineSpan);
         add(new JSeparator(JSeparator.VERTICAL), "spany 7, grow");
@@ -292,6 +312,25 @@ public final class NewPanel extends FreeColPanel
         add(meta, newlineSpan);
         add(this.difficultyButton, "skip 2, growx");
         add(join, newlineSpan);
+=======
+        add(single, "newline, span 3");
+        add(new JSeparator(JSeparator.VERTICAL), "spany 7, grow");
+        add(Utility.localizedLabel("name"), "span, split 2");
+        add(this.nameBox, "growx");
+        add(start, "newline, span 3");
+        add(this.advantagesLabel);
+        add(this.advantagesBox, "growx");
+        add(this.serverPortLabel, "newline, skip");
+        add(this.serverPortField, "width 60:");
+        add(this.rulesLabel);
+        add(this.rulesBox, "growx");
+        add(this.publicServer, "newline, skip, span 2");
+        add(this.difficultyLabel);
+        add(this.difficultyBox, "growx");
+        add(meta, "newline, span 3");
+        add(this.difficultyButton, "skip 2, growx");
+        add(join, "newline, span 3");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         add(this.joinNameLabel, "newline, skip, split 2");
         add(this.joinNameField, "width 80:");
         add(this.joinPortLabel, "split 2");
@@ -517,13 +556,21 @@ public final class NewPanel extends FreeColPanel
             case SINGLE:
                 this.specification.prepare(getSelectedAdvantages(),
                                            this.difficulty);
+<<<<<<< HEAD
                 if (cc.startSinglePlayerGame(this.specification, false))
+=======
+                if (cc.startSinglePlayerGame(this.specification, false)) return;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 break;
             case JOIN:
                 int joinPort = getSelectedPort(this.joinPortField);
                 if (joinPort < 0) break;
                 if (cc.joinMultiplayerGame(this.joinNameField.getText(),
+<<<<<<< HEAD
                                            joinPort))
+=======
+                                           joinPort)) return;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 break;
             case START:
                 int serverPort = getSelectedPort(this.serverPortField);
@@ -531,7 +578,11 @@ public final class NewPanel extends FreeColPanel
                 this.specification.prepare(getSelectedAdvantages(),
                                            this.difficulty);
                 if (cc.startMultiplayerGame(this.specification,
+<<<<<<< HEAD
                         this.publicServer.isSelected(), serverPort))
+=======
+                        this.publicServer.isSelected(), serverPort)) return;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 break;
             case META_SERVER:
                 List<ServerInfo> servers = cc.getServerList();

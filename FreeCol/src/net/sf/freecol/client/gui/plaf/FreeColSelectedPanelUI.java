@@ -52,6 +52,11 @@ public class FreeColSelectedPanelUI extends BasicPanelUI {
         g2d.fillRect(0, 0, c.getWidth(), c.getHeight());
         g2d.setComposite(oldComposite);
         g2d.setColor(oldColor);
+<<<<<<< HEAD
+=======
+
+        //super.paintComponent(g);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
 }

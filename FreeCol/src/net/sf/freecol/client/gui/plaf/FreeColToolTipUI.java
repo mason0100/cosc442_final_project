@@ -50,7 +50,11 @@ public class FreeColToolTipUI extends BasicToolTipUI {
     private static final FontRenderContext frc
         = new FontRenderContext(null, true, false);
 
+<<<<<<< HEAD
     private static final int MARGIN = 5;
+=======
+    private static final int margin = 5;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     private static int maximumWidth = 300;
     private static final int LEADING = 5;
 
@@ -78,8 +82,13 @@ public class FreeColToolTipUI extends BasicToolTipUI {
         g.setColor(Color.BLACK); // FIXME: find out why this is necessary
 
         Graphics2D graphics = (Graphics2D)g;
+<<<<<<< HEAD
         float x = MARGIN;
         float y = MARGIN;
+=======
+        float x = margin;
+        float y = margin;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         for (String line : lineBreak.split(((JToolTip) c).getTipText())) {
             if (line.isEmpty()) {
                 y += LEADING;
@@ -131,8 +140,13 @@ public class FreeColToolTipUI extends BasicToolTipUI {
 
             }
         }
+<<<<<<< HEAD
         return new Dimension((int) (x + 2 * MARGIN),
                              (int) (y + 2 * MARGIN));
+=======
+        return new Dimension((int) (x + 2 * margin),
+                             (int) (y + 2 * margin));
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     }
 

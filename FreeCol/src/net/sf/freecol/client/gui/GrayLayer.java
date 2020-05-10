@@ -112,7 +112,11 @@ public class GrayLayer extends Component {
         }
 
         Font nameFont = getFont();
+<<<<<<< HEAD
         FontMetrics nameFontMetrics;
+=======
+        FontMetrics nameFontMetrics = getFontMetrics(nameFont);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         Rectangle textBounds;
         int fontSize = DEFAULT_FONT_SIZE;
         int maxWidth = Math.min(MAX_TEXT_WIDTH, getSize().width);

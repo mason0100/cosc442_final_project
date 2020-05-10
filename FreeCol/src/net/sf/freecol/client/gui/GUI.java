@@ -85,7 +85,11 @@ public class GUI {
     protected static final Logger logger = Logger.getLogger(GUI.class.getName());
 
     /** Warning levels. */
+<<<<<<< HEAD
     protected static final String[] levels = {
+=======
+    protected static final String levels[] = {
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         "low", "normal", "high"
     };
 
@@ -1261,11 +1265,17 @@ public class GUI {
     }
 
     public void showLogFilePanel() {
+<<<<<<< HEAD
     	//Ignore for now
     }
 
     public void showMainPanel(String userMsg) {
     	//Ignore for now
+=======
+    }
+
+    public void showMainPanel(String userMsg) {
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     public OptionGroup showMapGeneratorOptionsDialog(boolean editable) {
@@ -1277,26 +1287,38 @@ public class GUI {
     }
 
     public void showModelMessages(List<ModelMessage> modelMessages) {
+<<<<<<< HEAD
     	//Ignore for now
+=======
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     public void showMonarchDialog(final MonarchAction action,
                                   StringTemplate template, String monarchKey,
                                   DialogHandler<Boolean> handler) {
+<<<<<<< HEAD
     	//Ignore for now
+=======
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     public void showNamingDialog(StringTemplate template,
                                  final String defaultName,
                                  final Unit unit,
                                  DialogHandler<String> handler) {
+<<<<<<< HEAD
     	//Ignore for now
+=======
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     public void showFirstContactDialog(final Player player, final Player other,
                                        final Tile tile, int settlementCount,
                                        DialogHandler<Boolean> handler) {
+<<<<<<< HEAD
     	//Ignore for now
+=======
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     public DiplomaticTrade showNegotiationDialog(FreeColGameObject our,
@@ -1325,6 +1347,7 @@ public class GUI {
     }
 
     public void showReportCargoPanel() {
+<<<<<<< HEAD
     	//Ignore for now
     }
 
@@ -1386,6 +1409,53 @@ public class GUI {
 
     public void showReportTurnPanel(List<ModelMessage> messages) {
     	//Ignore for now
+=======
+    }
+
+    public void showReportColonyPanel() {
+    }
+
+    public void showReportContinentalCongressPanel() {
+    }
+
+    public void showReportEducationPanel() {
+    }
+
+    public void showReportExplorationPanel() {
+    }
+
+    public void showReportForeignAffairPanel() {
+    }
+
+    public void showReportHistoryPanel() {
+    }
+
+    public void showReportIndianPanel() {
+    }
+
+    public void showReportLabourPanel() {
+    }
+
+    public void showReportMilitaryPanel() {
+    }
+
+    public void showReportNavalPanel() {
+    }
+
+    public void showReportProductionPanel() {
+    }
+
+    public void showReportReligiousPanel() {
+    }
+
+    public void showReportRequirementsPanel() {
+    }
+
+    public void showReportTradePanel() {
+    }
+
+    public void showReportTurnPanel(List<ModelMessage> messages) {
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     public File showSaveDialog(File directory, String defaultName) {
@@ -1412,6 +1482,7 @@ public class GUI {
 
     public void showStartGamePanel(Game game, Player player,
                                    boolean singlePlayerMode) {
+<<<<<<< HEAD
     	//Ignore for now
     }
 
@@ -1449,6 +1520,35 @@ public class GUI {
 
     public void changeViewMode(int newViewMode) {
     	//Ignore for now
+=======
+    }
+
+    public void showStatisticsPanel() {
+    }
+
+    public void showStatusPanel(String message) {
+    }
+
+    public void showTilePopUpAtSelectedTile() {
+    }
+
+    public void showTradeRoutePanel(Unit unit) {
+    }
+
+    public void showVictoryDialog(DialogHandler<Boolean> handler) {
+    }
+
+    public void updateGameOptions() {
+    }
+
+    public void updateMapGeneratorOptions() {
+    }
+
+    public void centerActiveUnit() {
+    }
+
+    public void changeViewMode(int newViewMode) {
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     public Unit getActiveUnit() {
@@ -1468,7 +1568,10 @@ public class GUI {
     }
 
     public void setFocus(Tile tileToFocus) {
+<<<<<<< HEAD
     	//Ignore for now
+=======
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     public boolean setSelectedTile(Tile newTileToSelect) {
@@ -1476,7 +1579,10 @@ public class GUI {
     }
 
     public void toggleViewMode() {
+<<<<<<< HEAD
     	//Ignore for now
+=======
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
 

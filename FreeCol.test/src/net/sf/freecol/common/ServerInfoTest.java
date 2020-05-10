@@ -1,6 +1,3 @@
-/*
- * 
- */
 package net.sf.freecol.common;
 
 import javax.annotation.Generated;
@@ -11,47 +8,23 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.tools.configuration.base.MethodRef;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Class ServerInfoTest.
- */
 @Generated(value = "org.junit-tools-1.1.0")
 public class ServerInfoTest {
 
-	/**
-	 * Sets the up.
-	 *
-	 * @throws Exception the exception
-	 */
 	@Before
 	public void setUp() throws Exception {
 
 	}
 
-	/**
-	 * Tear down.
-	 *
-	 * @throws Exception the exception
-	 */
 	@After
 	public void tearDown() throws Exception {
 
 	}
 
-	/**
-	 * Creates the test subject.
-	 *
-	 * @return the server info
-	 */
 	private ServerInfo createTestSubject() {
 		return new ServerInfo();
 	}
 
-	/**
-	 * Update test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "update", signature = "(QString;QString;IIIZQString;I)V")
 	@Test
 	public void updateTest() throws Exception {
@@ -72,11 +45,6 @@ public class ServerInfoTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Update test 1.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "update", signature = "(QElement;)V")
 	@Test
 	public void updateTest_1() throws Exception {
@@ -90,12 +58,6 @@ public class ServerInfoTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the name test.
-	 *
-	 * @return the name test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getName", signature = "()QString;")
 	@Test
 	public void getNameTest() throws Exception {
@@ -109,12 +71,6 @@ public class ServerInfoTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the address test.
-	 *
-	 * @return the address test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getAddress", signature = "()QString;")
 	@Test
 	public void getAddressTest() throws Exception {
@@ -128,12 +84,6 @@ public class ServerInfoTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the port test.
-	 *
-	 * @return the port test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getPort", signature = "()I")
 	@Test
 	public void getPortTest() throws Exception {
@@ -147,12 +97,6 @@ public class ServerInfoTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the currently playing test.
-	 *
-	 * @return the currently playing test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getCurrentlyPlaying", signature = "()I")
 	@Test
 	public void getCurrentlyPlayingTest() throws Exception {
@@ -166,12 +110,6 @@ public class ServerInfoTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the slots available test.
-	 *
-	 * @return the slots available test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getSlotsAvailable", signature = "()I")
 	@Test
 	public void getSlotsAvailableTest() throws Exception {
@@ -185,12 +123,6 @@ public class ServerInfoTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the version test.
-	 *
-	 * @return the version test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getVersion", signature = "()QString;")
 	@Test
 	public void getVersionTest() throws Exception {
@@ -204,12 +136,6 @@ public class ServerInfoTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the game state test.
-	 *
-	 * @return the game state test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getGameState", signature = "()I")
 	@Test
 	public void getGameStateTest() throws Exception {
@@ -223,11 +149,6 @@ public class ServerInfoTest {
 		Assert.fail();
 	}
 
-	/**
-	 * To XML element test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "toXMLElement", signature = "(QDocument;)QElement;")
 	@Test
 	public void toXMLElementTest() throws Exception {
@@ -242,11 +163,6 @@ public class ServerInfoTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Read from XML element test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "readFromXMLElement", signature = "(QElement;)V")
 	@Test
 	public void readFromXMLElementTest() throws Exception {
@@ -260,12 +176,6 @@ public class ServerInfoTest {
 		Assert.fail();
 	}
 
-	/**
-	 * Gets the XML element tag name test.
-	 *
-	 * @return the XML element tag name test
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "getXMLElementTagName", signature = "()QString;")
 	@Test
 	public void getXMLElementTagNameTest() throws Exception {
@@ -277,11 +187,6 @@ public class ServerInfoTest {
 		Assert.fail();
 	}
 
-	/**
-	 * To string test.
-	 *
-	 * @throws Exception the exception
-	 */
 	@MethodRef(name = "toString", signature = "()QString;")
 	@Test
 	public void toStringTest() throws Exception {

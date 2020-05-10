@@ -57,7 +57,11 @@ public class FreeColProgressBar extends JPanel {
 
     private int iconWidth;
 
+<<<<<<< HEAD
     private static final int ICONHEIGHT = ImageLibrary.ICON_SIZE.height / 2;
+=======
+    private final int iconHeight = ImageLibrary.ICON_SIZE.height / 2;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     /**
      * The type of goods this progress bar is for. The default value of null
@@ -108,7 +112,11 @@ public class FreeColProgressBar extends JPanel {
         setBorder(Utility.PROGRESS_BORDER);
         if (goodsType != null) {
             image = ImageLibrary.getMiscImage("image.icon." + goodsType.getId(),
+<<<<<<< HEAD
                 new Dimension(-1, ICONHEIGHT));
+=======
+                new Dimension(-1, iconHeight));
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             iconWidth = image.getWidth(this);
         }
         setPreferredSize(new Dimension(200, 20));
@@ -207,7 +215,11 @@ public class FreeColProgressBar extends JPanel {
 
         if (goodsType != null) {
             restWidth -= iconWidth;
+<<<<<<< HEAD
             g2d.drawImage(image, restWidth / 2, (getHeight() - ICONHEIGHT) / 2, null);
+=======
+            g2d.drawImage(image, restWidth / 2, (getHeight() - iconHeight) / 2, null);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
 
         g2d.setColor(Color.BLACK);

@@ -79,6 +79,10 @@ public class DefaultNumberRule extends Number {
     public Category getCategory(double input) {
         return find(Category.values(),
             category -> rules.containsKey(category)
+<<<<<<< HEAD
                 && rules.get(category).matches(input), Category.OTHER);
+=======
+                && rules.get(category).matches(input), Category.other);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 }

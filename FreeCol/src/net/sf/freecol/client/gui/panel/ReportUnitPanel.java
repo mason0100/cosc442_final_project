@@ -91,13 +91,21 @@ public abstract class ReportUnitPanel extends ReportPanel {
         super(freeColClient, key);
 
         this.showColonies = showColonies;
+<<<<<<< HEAD
         reportJPanel.setLayout(new MigLayout("fillx, wrap 12", "", ""));
+=======
+        reportPanel.setLayout(new MigLayout("fillx, wrap 12", "", ""));
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         gatherData();
         addREFUnits();
         addOwnUnits();
 
+<<<<<<< HEAD
         reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL),
+=======
+        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL),
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                         "newline, span, growx, wrap 40");
 
         // Colonies first, sorted according to user preferences
@@ -178,29 +186,52 @@ public abstract class ReportUnitPanel extends ReportPanel {
             button.addActionListener(this);
             component = button;
         }
+<<<<<<< HEAD
         reportJPanel.add(component, "newline, span, split 2");
 
         reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
 
         if (unitList == null || unitList.isEmpty()) {
             reportJPanel.add(Utility.localizedLabel("none"), "sg");
+=======
+        reportPanel.add(component, "newline, span, split 2");
+
+        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
+
+        if (unitList == null || unitList.isEmpty()) {
+            reportPanel.add(Utility.localizedLabel("none"), "sg");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         } else {
             for (Unit u : unitList.stream()
                      .sorted(Unit.typeRoleComparator).collect(Collectors.toList())) {
                 JButton unitButton = getUnitButton(u);
                 if (u.isCarrier()) {
+<<<<<<< HEAD
                     reportJPanel.add(unitButton, "newline, sg");
                     for (Goods goods : u.getGoodsList()) {
                         GoodsLabel goodsLabel = new GoodsLabel(getGUI(), goods);
                         reportJPanel.add(goodsLabel);
+=======
+                    reportPanel.add(unitButton, "newline, sg");
+                    for (Goods goods : u.getGoodsList()) {
+                        GoodsLabel goodsLabel = new GoodsLabel(getGUI(), goods);
+                        reportPanel.add(goodsLabel);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                     }
                     for (Unit unitLoaded : u.getUnitList()) {
                         UnitLabel unitLoadedLabel
                             = new UnitLabel(getFreeColClient(), unitLoaded, true);
+<<<<<<< HEAD
                         reportJPanel.add(unitLoadedLabel);
                     }
                 } else {
                     reportJPanel.add(unitButton, "sg");
+=======
+                        reportPanel.add(unitLoadedLabel);
+                    }
+                } else {
+                    reportPanel.add(unitButton, "sg");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 }
             }
         }

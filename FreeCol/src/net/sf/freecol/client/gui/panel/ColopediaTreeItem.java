@@ -28,8 +28,12 @@ import javax.swing.ImageIcon;
  */
 class ColopediaTreeItem {
 
+<<<<<<< HEAD
     @SuppressWarnings("rawtypes")
 	private final ColopediaDetailPanel detailPanel;
+=======
+    private final ColopediaDetailPanel detailPanel;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     private final String id;
     private final String text;
     private final ImageIcon icon;

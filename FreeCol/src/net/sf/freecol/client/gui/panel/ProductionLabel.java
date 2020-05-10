@@ -141,7 +141,18 @@ public final class ProductionLabel extends AbstractGoodsLabel {
                            int maximumProduction, int stockNumber) {
         super(lib, ag);
 
+<<<<<<< HEAD
         getTypeStatement(ag, stockNumber);
+=======
+        if (getType() == null) {
+            logger.warning("Bad production label (no type)\n"
+                + FreeColDebugger.stackTraceToString());
+        } else if (getAmount() == 0 && stockNumber < 0) {
+            logger.warning("Bad production label: " + ag
+                + " stock=" + stockNumber
+                + "\n" + FreeColDebugger.stackTraceToString());
+        }
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         this.maximumProduction = maximumProduction;
         this.stockNumber = stockNumber;
@@ -189,6 +200,7 @@ public final class ProductionLabel extends AbstractGoodsLabel {
         }
     }
 
+<<<<<<< HEAD
 	private void getTypeStatement(AbstractGoods ag, int stockNumber) {
 		if (getType() == null) {
             String loggerWarningBad = "Bad production label (no type)\n"
@@ -205,6 +217,8 @@ public final class ProductionLabel extends AbstractGoodsLabel {
 		    + "\n" + FreeColDebugger.stackTraceToString();
 	}
 
+=======
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     // Override JComponent
 

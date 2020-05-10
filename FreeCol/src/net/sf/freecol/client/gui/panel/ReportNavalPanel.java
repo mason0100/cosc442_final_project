@@ -81,15 +81,25 @@ public final class ReportNavalPanel extends ReportUnitPanel {
         final Specification spec = getSpecification();
         final Nation refNation = getMyPlayer().getNation().getREFNation();
 
+<<<<<<< HEAD
         reportJPanel.add(new JLabel(Messages.getName(refNation)),
                         "span, split 2");
         reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
+=======
+        reportPanel.add(new JLabel(Messages.getName(refNation)),
+                        "span, split 2");
+        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         List<AbstractUnit> refUnits = igc().getREFUnits();
         if (refUnits != null) {
             for (AbstractUnit au : refUnits) {
                 if (au.getType(spec).isNaval()) {
+<<<<<<< HEAD
                     reportJPanel.add(createUnitTypeLabel(au), "sg");
+=======
+                    reportPanel.add(createUnitTypeLabel(au), "sg");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 }
             }
         }
@@ -103,16 +113,26 @@ public final class ReportNavalPanel extends ReportUnitPanel {
         final Specification spec = getSpecification();
         final Player player = getMyPlayer();
 
+<<<<<<< HEAD
         reportJPanel.add(Utility.localizedLabel(player.getForcesLabel()),
             "newline, span, split 2");
         reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
+=======
+        reportPanel.add(Utility.localizedLabel(player.getForcesLabel()),
+            "newline, span, split 2");
+        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         for (UnitType unitType : getSpecification().getUnitTypeList()) {
             if (!reportable(unitType)) continue;
             AbstractUnit au = new AbstractUnit(unitType,
                                                Specification.DEFAULT_ROLE_ID,
                                                getCount("naval", unitType));
+<<<<<<< HEAD
             reportJPanel.add(createUnitTypeLabel(au), "sg");
+=======
+            reportPanel.add(createUnitTypeLabel(au), "sg");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
     }
 }

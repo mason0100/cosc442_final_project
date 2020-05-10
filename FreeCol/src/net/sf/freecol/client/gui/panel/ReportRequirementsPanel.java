@@ -110,9 +110,15 @@ public final class ReportRequirementsPanel extends ReportPanel {
             checkColony(colony, doc);
         }
         // text area
+<<<<<<< HEAD
         int width = reportJPanel.getParent().getWidth();
         reportJPanel.setLayout(new MigLayout("width " + width + "!"));
         reportJPanel.add(textPane);
+=======
+        int width = reportPanel.getParent().getWidth();
+        reportPanel.setLayout(new MigLayout("width " + width + "!"));
+        reportPanel.add(textPane);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         textPane.setCaretPosition(0);
     }
 

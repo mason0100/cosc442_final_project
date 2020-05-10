@@ -29,7 +29,11 @@ import net.sf.freecol.client.FreeColClient;
  */
 public class ExecuteGotoOrdersAction extends MapboardAction {
 
+<<<<<<< HEAD
     public static final String ID = "executeGotoOrdersAction";
+=======
+    public static final String id = "executeGotoOrdersAction";
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -38,7 +42,11 @@ public class ExecuteGotoOrdersAction extends MapboardAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public ExecuteGotoOrdersAction(FreeColClient freeColClient) {
+<<<<<<< HEAD
         super(freeColClient, ID);
+=======
+        super(freeColClient, id);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
 

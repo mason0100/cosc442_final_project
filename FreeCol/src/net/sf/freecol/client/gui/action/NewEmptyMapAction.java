@@ -33,7 +33,11 @@ import net.sf.freecol.common.model.Tile;
  */
 public class NewEmptyMapAction extends MapboardAction {
 
+<<<<<<< HEAD
     public static final String ID = "newEmptyMapAction";
+=======
+    public static final String id = "newEmptyMapAction";
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -42,7 +46,11 @@ public class NewEmptyMapAction extends MapboardAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public NewEmptyMapAction(FreeColClient freeColClient) {
+<<<<<<< HEAD
         super(freeColClient, ID);
+=======
+        super(freeColClient, id);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
 

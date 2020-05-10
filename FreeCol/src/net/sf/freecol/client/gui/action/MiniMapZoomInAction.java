@@ -29,7 +29,11 @@ import net.sf.freecol.client.FreeColClient;
  */
 public class MiniMapZoomInAction extends MapboardAction {
 
+<<<<<<< HEAD
     public static final String ID = "miniMapZoomInAction";
+=======
+    public static final String id = "miniMapZoomInAction";
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -38,7 +42,11 @@ public class MiniMapZoomInAction extends MapboardAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public MiniMapZoomInAction(FreeColClient freeColClient) {
+<<<<<<< HEAD
         super(freeColClient, ID);
+=======
+        super(freeColClient, id);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         addImageIcons("zoom_in");
     }
@@ -50,7 +58,11 @@ public class MiniMapZoomInAction extends MapboardAction {
      * @param b a <code>boolean</code> value
      */
     public MiniMapZoomInAction(FreeColClient freeColClient, boolean b) {
+<<<<<<< HEAD
         super(freeColClient, ID + ".secondary");
+=======
+        super(freeColClient, id + ".secondary");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
  
         addImageIcons("zoom_in");
     }
@@ -76,7 +88,12 @@ public class MiniMapZoomInAction extends MapboardAction {
     public void actionPerformed(ActionEvent ae) {
         getGUI().zoomInMapControls();
         update();
+<<<<<<< HEAD
         getActionManager().getFreeColAction(MiniMapZoomOutAction.ID).update();
         getActionManager().getFreeColAction(MiniMapZoomOutAction.ID + ".secondary").update();
+=======
+        getActionManager().getFreeColAction(MiniMapZoomOutAction.id).update();
+        getActionManager().getFreeColAction(MiniMapZoomOutAction.id + ".secondary").update();
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 }

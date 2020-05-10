@@ -77,17 +77,28 @@ public final class ReportClassicColonyPanel extends ReportPanel
         final Specification spec = getSpecification();
         final ImageLibrary lib = getImageLibrary();
         
+<<<<<<< HEAD
         reportJPanel.removeAll();
         
         reportJPanel.setLayout(new MigLayout("fill")); // Set the layout
+=======
+        reportPanel.removeAll();
+        
+        reportPanel.setLayout(new MigLayout("fill")); // Set the layout
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         
         for (Colony colony : this.colonies) {
             // Name
             JButton button = Utility.getLinkButton(colony.getName(), null,
                 colony.getId());
             button.addActionListener(this);
+<<<<<<< HEAD
             reportJPanel.add(button, "newline, split 2");
             reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
+=======
+            reportPanel.add(button, "newline, split 2");
+            reportPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             
             // Currently building
             BuildableType currentType = colony.getCurrentlyBuilding();
@@ -120,9 +131,14 @@ public final class ReportClassicColonyPanel extends ReportPanel
                 && spec.getUnitTypeList().contains(currentType)) {
                 unitsPanel.add(buildableLabel);
             }
+<<<<<<< HEAD
             String newlineGrowx = "newline, growx";
 			reportJPanel.add(colonistsPanel, newlineGrowx);
             reportJPanel.add(unitsPanel, newlineGrowx);
+=======
+            reportPanel.add(colonistsPanel, "newline, growx");
+            reportPanel.add(unitsPanel, "newline, growx");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             
             // Production
             List<GoodsType> goodsTypes
@@ -140,10 +156,17 @@ public final class ReportClassicColonyPanel extends ReportPanel
                             new AbstractGoods(gt, newValue),
                             maxProduction, stockValue);
                     if (count % GOODS_PER_ROW == 0) {
+<<<<<<< HEAD
                         reportJPanel.add(productionLabel,
                             "newline, split " + GOODS_PER_ROW);
                     } else {
                         reportJPanel.add(productionLabel);
+=======
+                        reportPanel.add(productionLabel,
+                            "newline, split " + GOODS_PER_ROW);
+                    } else {
+                        reportPanel.add(productionLabel);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                     }
                     count++;
                 }
@@ -166,7 +189,11 @@ public final class ReportClassicColonyPanel extends ReportPanel
                 && spec.getBuildingTypeList().contains(currentType)) {
                 buildingsPanel.add(buildableLabel);
             }
+<<<<<<< HEAD
             reportJPanel.add(buildingsPanel, newlineGrowx);
+=======
+            reportPanel.add(buildingsPanel, "newline, growx");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
     }
 }

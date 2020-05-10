@@ -47,7 +47,11 @@ import net.sf.freecol.common.i18n.Messages;
 public class ConceptDetailPanel extends FreeColPanel
     implements ColopediaDetailPanel<String> {
 
+<<<<<<< HEAD
     private static final String ID = "colopediaAction."
+=======
+    private static final String id = "colopediaAction."
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         + PanelType.CONCEPTS.getKey();
 
     private static final String[] concepts = {
@@ -82,7 +86,11 @@ public class ConceptDetailPanel extends FreeColPanel
 
     @Override
     public String getName() {
+<<<<<<< HEAD
         return Messages.getName(ID);
+=======
+        return Messages.getName(id);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     // Implement ColopediaDetailPanel
@@ -93,7 +101,11 @@ public class ConceptDetailPanel extends FreeColPanel
     @Override
     public void addSubTrees(DefaultMutableTreeNode root) {
         DefaultMutableTreeNode node
+<<<<<<< HEAD
             = new DefaultMutableTreeNode(new ColopediaTreeItem(this, ID,
+=======
+            = new DefaultMutableTreeNode(new ColopediaTreeItem(this, id,
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                     getName(), null));
         List<DefaultMutableTreeNode> nodes = new ArrayList<>();
         for (String concept : concepts) {
@@ -114,7 +126,11 @@ public class ConceptDetailPanel extends FreeColPanel
      */
     @Override
     public void buildDetail(String id, JPanel panel) {
+<<<<<<< HEAD
         if (this.ID.equals(id)) return;
+=======
+        if (this.id.equals(id)) return;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         panel.setLayout(new MigLayout("wrap 1, center"));
 
@@ -132,6 +148,10 @@ public class ConceptDetailPanel extends FreeColPanel
                                             RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
                 /*
                 graphics2d.setRenderingHint(RenderingHints.KEY_RENDERING,
+<<<<<<< HEAD
+=======
+                                            RenderingHints.VALUE_RENDER_QUALITY);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 graphics2d.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS,
                                             RenderingHints.VALUE_FRACTIONALMETRICS_ON);
                 */

@@ -33,7 +33,11 @@ import net.sf.freecol.common.debug.FreeColDebugger;
  */
 public class DebugAction extends FreeColAction {
 
+<<<<<<< HEAD
     public static final String ID = "debugAction";
+=======
+    public static final String id = "debugAction";
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -42,7 +46,11 @@ public class DebugAction extends FreeColAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public DebugAction(FreeColClient freeColClient) {
+<<<<<<< HEAD
         super(freeColClient, ID);
+=======
+        super(freeColClient, id);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D,
                 KeyEvent.SHIFT_MASK | KeyEvent.CTRL_MASK));

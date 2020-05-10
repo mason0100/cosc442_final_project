@@ -82,7 +82,11 @@ public final class MapViewer {
 
     private static final Logger logger = Logger.getLogger(MapViewer.class.getName());
 
+<<<<<<< HEAD
     private enum BorderType { COUNTRY, REGION }
+=======
+    private static enum BorderType { COUNTRY, REGION }
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     private static class TextSpecification {
 
@@ -124,6 +128,7 @@ public final class MapViewer {
     private boolean gotoStarted = false;
 
     // Helper variables for displaying the map.
+<<<<<<< HEAD
     private int tileHeight;
     private int tileWidth;
     private int halfHeight;
@@ -133,6 +138,10 @@ public final class MapViewer {
     private int bottomRows;
     private int leftSpace;
     private int rightSpace;
+=======
+    private int tileHeight, tileWidth, halfHeight, halfWidth,
+        topSpace, topRows, /*bottomSpace,*/ bottomRows, leftSpace, rightSpace;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     // The y-coordinate of the Tiles that will be drawn at the bottom
     private int bottomRow = -1;
@@ -159,10 +168,15 @@ public final class MapViewer {
     private int leftColumnX;
 
     // Whether the map is currently aligned with the edge.
+<<<<<<< HEAD
     private boolean alignedTop = false;
     private boolean alignedBottom = false;
     private boolean alignedLeft = false;
     private boolean	alignedRight = false;
+=======
+    private boolean alignedTop = false, alignedBottom = false,
+        alignedLeft = false, alignedRight = false;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     // How the map can be scaled
     private static final float MAP_SCALE_MIN = 0.25f;
@@ -2060,8 +2074,12 @@ public final class MapViewer {
                             // big corner
                             Direction previous = d.getPreviousDirection();
                             Direction previous2 = previous.getPreviousDirection();
+<<<<<<< HEAD
                             int ddx = 0;
                             int ddy = 0;
+=======
+                            int ddx = 0, ddy = 0;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                             switch(d) {
                             case NW: ddy = -tileHeight; break;
                             case NE: ddx = tileWidth; break;

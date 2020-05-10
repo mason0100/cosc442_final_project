@@ -30,7 +30,11 @@ import net.sf.freecol.common.model.Unit;
  */
 public class FortifyAction extends UnitAction {
 
+<<<<<<< HEAD
     public static final String ID = "fortifyAction";
+=======
+    public static final String id = "fortifyAction";
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -39,7 +43,11 @@ public class FortifyAction extends UnitAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public FortifyAction(FreeColClient freeColClient) {
+<<<<<<< HEAD
         super(freeColClient, ID);
+=======
+        super(freeColClient, id);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         addImageIcons("fortify");
     }

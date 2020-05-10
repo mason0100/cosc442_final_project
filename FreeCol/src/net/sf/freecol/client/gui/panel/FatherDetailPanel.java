@@ -166,10 +166,16 @@ public class FatherDetailPanel
         JTextArea description = Utility.localizedTextArea(template, 20);
         panel.add(description, "top, growx");
 
+<<<<<<< HEAD
         Dimension hSize = header.getPreferredSize();
         Dimension lSize = label.getPreferredSize();
         Dimension dSize = description.getPreferredSize();
         Dimension size = new Dimension();
+=======
+        Dimension hSize = header.getPreferredSize(),
+            lSize = label.getPreferredSize(),
+            dSize = description.getPreferredSize(), size = new Dimension();
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         size.setSize(lSize.getWidth() + dSize.getWidth() + 20,
             hSize.getHeight() + lSize.getHeight() + 10);
         panel.setPreferredSize(size);            

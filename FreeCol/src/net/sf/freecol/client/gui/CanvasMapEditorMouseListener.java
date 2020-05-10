@@ -200,6 +200,7 @@ public final class CanvasMapEditorMouseListener extends AbstractCanvasListener
         }
 
         // find the area to transform
+<<<<<<< HEAD
         int minX;
         int maxX;
         int minY;
@@ -217,12 +218,33 @@ public final class CanvasMapEditorMouseListener extends AbstractCanvasListener
         } else {
             minY = end.getY();
             maxY = start.getY();
+=======
+        int min_x, max_x, min_y, max_y;
+        if (start.getX() < end.getX()) {
+            min_x = start.getX();
+            max_x = end.getX();
+        } else {
+            min_x = end.getX();
+            max_x = start.getX();
+        }
+        if (start.getY() < end.getY()) {
+            min_y = start.getY();
+            max_y = end.getY();
+        } else {
+            min_y = end.getY();
+            max_y = start.getY();
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
 
         // apply transformation to all tiles in the area
         Tile t = null;
+<<<<<<< HEAD
         for (int x = minX; x <= maxX; x++) {
             for (int y = minY; y <= maxY; y++) {
+=======
+        for (int x = min_x; x <= max_x; x++) {
+            for (int y = min_y; y <= max_y; y++) {
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 t = getMap().getTile(x, y);
                 if (t != null) {
                     controller.transform(t);
@@ -230,8 +252,13 @@ public final class CanvasMapEditorMouseListener extends AbstractCanvasListener
             }
         }
         if (controller.getMapTransform() instanceof TileTypeTransform) {
+<<<<<<< HEAD
             for (int x = minX - 2; x <= maxX + 2; x++) {
                 for (int y = minY - 2; y <= maxY + 2; y++) {
+=======
+            for (int x = min_x - 2; x <= max_x + 2; x++) {
+                for (int y = min_y - 2; y <= max_y + 2; y++) {
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                     t = getMap().getTile(x, y);
                     if (t != null && t.getType().isWater()) {
                         TerrainGenerator.encodeStyle(t);
@@ -247,17 +274,25 @@ public final class CanvasMapEditorMouseListener extends AbstractCanvasListener
      * {@inheritDoc}
      */
     @Override
+<<<<<<< HEAD
     public void mouseEntered(MouseEvent e) {
     	// Ignore for now.
     }
+=======
+    public void mouseEntered(MouseEvent e) {} // Ignore for now.
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     /**
      * {@inheritDoc}
      */
     @Override
+<<<<<<< HEAD
     public void mouseExited(MouseEvent e) {
     	// Ignore for now.
     } 
+=======
+    public void mouseExited(MouseEvent e) {} // Ignore for now.
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     // Implement MouseMotionListener

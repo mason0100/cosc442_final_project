@@ -106,11 +106,18 @@ public class PreCombatDialog extends FreeColConfirmDialog {
             throw new IllegalStateException("Bogus attack");
         }
 
+<<<<<<< HEAD
         String alignCenter = "span 3, align center";
 		panel.add(new JLabel(attackerName), alignCenter);
         panel.add(new JLabel(defenderName), alignCenter);
         panel.add(attackerLabel, alignCenter);
         panel.add(defenderLabel, alignCenter);
+=======
+        panel.add(new JLabel(attackerName), "span 3, align center");
+        panel.add(new JLabel(defenderName), "span 3, align center");
+        panel.add(attackerLabel, "span 3, align center");
+        panel.add(defenderLabel, "span 3, align center");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         panel.add(new JSeparator(JSeparator.HORIZONTAL),
                   "newline, span 3, growx");
         panel.add(new JSeparator(JSeparator.HORIZONTAL),

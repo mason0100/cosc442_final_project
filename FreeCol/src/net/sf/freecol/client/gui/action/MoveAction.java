@@ -31,7 +31,11 @@ import net.sf.freecol.common.model.Direction;
  */
 public class MoveAction extends MapboardAction {
 
+<<<<<<< HEAD
     public static final String ID = "moveAction.";
+=======
+    public static final String id = "moveAction.";
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     private final Direction direction;
 
@@ -43,7 +47,11 @@ public class MoveAction extends MapboardAction {
      * @param direction The <code>Direction</code> to move.
      */
     public MoveAction(FreeColClient freeColClient, Direction direction) {
+<<<<<<< HEAD
         super(freeColClient, ID + direction);
+=======
+        super(freeColClient, id + direction);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         this.direction = direction;
     }
@@ -57,7 +65,11 @@ public class MoveAction extends MapboardAction {
      */
     public MoveAction(FreeColClient freeColClient, Direction direction,
                       boolean secondary) {
+<<<<<<< HEAD
         super(freeColClient, ID + direction + ".secondary");
+=======
+        super(freeColClient, id + direction + ".secondary");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         this.direction = direction;
     }

@@ -31,7 +31,11 @@ import net.sf.freecol.common.model.Map;
  */
 public class DetermineHighSeasAction extends FreeColAction {
 
+<<<<<<< HEAD
     public static final String ID = "determineHighSeasAction";
+=======
+    public static final String id = "determineHighSeasAction";
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -40,7 +44,11 @@ public class DetermineHighSeasAction extends FreeColAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public DetermineHighSeasAction(FreeColClient freeColClient) {
+<<<<<<< HEAD
         super(freeColClient, ID);
+=======
+        super(freeColClient, id);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
 

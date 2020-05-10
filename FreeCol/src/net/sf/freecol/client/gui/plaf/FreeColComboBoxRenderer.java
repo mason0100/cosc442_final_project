@@ -50,8 +50,13 @@ public class FreeColComboBoxRenderer<T>
 
     private static final Logger logger = Logger.getLogger(FreeColComboBoxRenderer.class.getName());
 
+<<<<<<< HEAD
     private final SelectedComponent selectedComponent = new SelectedComponent();
     private final NormalComponent normalComponent = new NormalComponent();
+=======
+    private final SelectedComponent SELECTED_COMPONENT = new SelectedComponent();
+    private final NormalComponent NORMAL_COMPONENT = new NormalComponent();
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     private final String prefix;
     private boolean localize = true;
@@ -105,7 +110,11 @@ public class FreeColComboBoxRenderer<T>
                                                   T value, int index,
                                                   boolean isSelected,
                                                   boolean hasFocus) {
+<<<<<<< HEAD
         JLabel c = isSelected ? selectedComponent : normalComponent;
+=======
+        JLabel c = isSelected ? SELECTED_COMPONENT : NORMAL_COMPONENT;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         c.setForeground(list.getForeground());
         c.setFont(list.getFont());
         setLabelValues(c, value);
@@ -151,9 +160,14 @@ public class FreeColComboBoxRenderer<T>
             c.setText(nd[0]);
             if (nd[1] != null) c.setToolTipText(nd[1]);
         } else {
+<<<<<<< HEAD
             String loggerWarning = "What is this?: " + value
                 + " (" + value.getClass() + ")";
 			logger.warning(loggerWarning);
+=======
+            logger.warning("What is this?: " + value
+                + " (" + value.getClass() + ")");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
     }
 

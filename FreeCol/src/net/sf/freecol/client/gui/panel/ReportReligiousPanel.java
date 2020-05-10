@@ -53,26 +53,46 @@ public final class ReportReligiousPanel extends ReportPanel {
         final Player player = getMyPlayer();
         final Specification spec = getSpecification();
 
+<<<<<<< HEAD
         reportJPanel.setLayout(new MigLayout("wrap 6, fill", "center"));
+=======
+        reportPanel.setLayout(new MigLayout("wrap 6, fill", "center"));
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         for (GoodsType gt : spec.getImmigrationGoodsTypeList()) {
             JLabel crosses = Utility.localizedLabel(gt);
             crosses.setFont(font);
+<<<<<<< HEAD
             reportJPanel.add(crosses, "span, split 2");
             FreeColProgressBar progressBar = new FreeColProgressBar(gt, 0,
                 player.getImmigrationRequired(), player.getImmigration(),
                 player.getTotalImmigrationProduction());
             reportJPanel.add(progressBar, "span");
+=======
+            reportPanel.add(crosses, "span, split 2");
+            FreeColProgressBar progressBar = new FreeColProgressBar(gt, 0,
+                player.getImmigrationRequired(), player.getImmigration(),
+                player.getTotalImmigrationProduction());
+            reportPanel.add(progressBar, "span");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
             for (Colony colony : freeColClient.getMySortedColonies()) {
                 Building building = colony.getBuildingForProducing(gt);
                 if (building != null) {
+<<<<<<< HEAD
                     reportJPanel.add(createColonyButton(colony),
+=======
+                    reportPanel.add(createColonyButton(colony),
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                         "split 2, flowy");
                     BuildingPanel bp = new BuildingPanel(getFreeColClient(),
                                                          building);
                     bp.initialize();
+<<<<<<< HEAD
                     reportJPanel.add(bp);
+=======
+                    reportPanel.add(bp);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 }
             }
         }

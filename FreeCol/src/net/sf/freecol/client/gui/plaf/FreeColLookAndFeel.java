@@ -45,7 +45,11 @@ public class FreeColLookAndFeel extends MetalLookAndFeel {
 
     private static final Logger logger = Logger.getLogger(FreeColLookAndFeel.class.getName());
 
+<<<<<<< HEAD
     private static final Class[] uiClasses = {
+=======
+    private static final Class uiClasses[] = {
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         FreeColButtonUI.class,
         FreeColCheckBoxUI.class,
         FreeColComboBoxUI.class,

@@ -544,7 +544,10 @@ public final class PlayersTable extends JTable {
                     return nation.getColor();
                 case PLAYER_COLUMN:
                     return players.get(nation);
+<<<<<<< HEAD
                 default: return null;
+=======
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 }
             }
             return null;
@@ -626,11 +629,19 @@ public final class PlayersTable extends JTable {
     }
 
 
+<<<<<<< HEAD
     public static final int NATION_COLUMN = 0;
     public static final int AVAILABILITY_COLUMN = 1;
     public static final int ADVANTAGE_COLUMN = 2;
     public static final int COLOR_COLUMN = 3;
     public static final int PLAYER_COLUMN = 4;
+=======
+    public static final int NATION_COLUMN = 0,
+        AVAILABILITY_COLUMN = 1,
+        ADVANTAGE_COLUMN = 2,
+        COLOR_COLUMN = 3,
+        PLAYER_COLUMN = 4;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     private static final String[] columnNames = {
         Messages.message("nation"),

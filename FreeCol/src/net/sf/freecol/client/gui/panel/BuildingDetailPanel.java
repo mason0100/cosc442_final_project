@@ -139,7 +139,30 @@ public class BuildingDetailPanel
         JTextPane textPane = Utility.getDefaultTextPane();
         StyledDocument doc = textPane.getStyledDocument();
 
+<<<<<<< HEAD
         buildingType(panel, buildingType, textPane, doc);
+=======
+        try {
+            if (buildingType.getUpgradesFrom() != null) {
+                StyleConstants.setComponent(doc.getStyle("button"), getButton(buildingType.getUpgradesFrom()));
+                doc.insertString(doc.getLength(), " ", doc.getStyle("button"));
+                doc.insertString(doc.getLength(), "\n", doc.getStyle("regular"));
+            }
+            if (buildingType.getRequiredPopulation() > 0) {
+                StringTemplate template = StringTemplate.template("colopedia.buildings.requiredPopulation")
+                    .addAmount("%number%", buildingType.getRequiredPopulation());
+                doc.insertString(doc.getLength(),
+                                 Messages.message(template) + "\n",
+                                 doc.getStyle("regular"));
+            }
+            appendRequiredAbilities(doc, buildingType);
+
+            panel.add(Utility.localizedLabel("colopedia.buildings.requires"), "top");
+            panel.add(textPane, "span, growx");
+        } catch (BadLocationException e) {
+            //logger.warning(e.toString());
+        }
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         // Costs to build - Hammers & Tools
         panel.add(Utility.localizedLabel("colopedia.buildings.cost"));
@@ -162,8 +185,12 @@ public class BuildingDetailPanel
         }
 
         // Production - Needs & Produces
+<<<<<<< HEAD
         String newLine = "newline";
 		if (buildingType.hasAbility(Ability.TEACH)) {
+=======
+        if (buildingType.hasAbility(Ability.TEACH)) {
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             panel.add(Utility.localizedLabel("colopedia.buildings.teaches"), "newline, top");
             int count = 0;
             for (UnitType unitType2 : getSpecification().getUnitTypeList()) {
@@ -182,7 +209,11 @@ public class BuildingDetailPanel
                      : buildingType.getAvailableProductionTypes(false)) {
                 List<AbstractGoods> inputs = pt.getInputs();
                 List<AbstractGoods> outputs = pt.getOutputs();
+<<<<<<< HEAD
                 panel.add(Utility.localizedLabel("colopedia.buildings.production"), newLine);
+=======
+                panel.add(Utility.localizedLabel("colopedia.buildings.production"), "newline");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 // for the moment, we assume only a single input
                 // and output type
                 if (!inputs.isEmpty()) {
@@ -199,12 +230,20 @@ public class BuildingDetailPanel
         }
 
         int workplaces = buildingType.getWorkPlaces();
+<<<<<<< HEAD
         panel.add(Utility.localizedLabel("colopedia.buildings.workplaces"), newLine);
+=======
+        panel.add(Utility.localizedLabel("colopedia.buildings.workplaces"), "newline");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         panel.add(new JLabel(Integer.toString(workplaces)), "span");
 
         // Specialist
         if (workplaces > 0) {
+<<<<<<< HEAD
             panel.add(Utility.localizedLabel("colopedia.buildings.specialist"), newLine);
+=======
+            panel.add(Utility.localizedLabel("colopedia.buildings.specialist"), "newline");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             final UnitType unitType = getSpecification()
                 .getExpertForProducing(buildingType.getProducedGoodsType());
             if (unitType == null) {
@@ -253,6 +292,7 @@ public class BuildingDetailPanel
         panel.add(Utility.localizedTextArea(Messages.descriptionKey(buildingType)),
                   "span, growx");
     }
+<<<<<<< HEAD
 
 
 	private void buildingType(JPanel panel, BuildingType buildingType, JTextPane textPane, StyledDocument doc) {
@@ -277,4 +317,6 @@ public class BuildingDetailPanel
         	//Ignore for now
         }
 	}
+=======
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 }

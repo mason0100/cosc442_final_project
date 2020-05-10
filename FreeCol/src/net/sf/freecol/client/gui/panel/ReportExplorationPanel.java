@@ -62,7 +62,11 @@ public final class ReportExplorationPanel extends ReportPanel {
         super(freeColClient, "reportExplorationAction");
 
         // Display Panel
+<<<<<<< HEAD
         reportJPanel.removeAll();
+=======
+        reportPanel.removeAll();
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         List<Region> regions = new ArrayList<>();
         for (Region region : getGame().getMap().getRegions()) {
@@ -72,7 +76,11 @@ public final class ReportExplorationPanel extends ReportPanel {
         }
         Collections.sort(regions, regionComparator);
 
+<<<<<<< HEAD
         reportJPanel.setLayout(new MigLayout("wrap 5, fillx", "", ""));
+=======
+        reportPanel.setLayout(new MigLayout("wrap 5, fillx", "", ""));
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         /**
          * Header Row
@@ -81,6 +89,7 @@ public final class ReportExplorationPanel extends ReportPanel {
             FontLibrary.FontSize.TINY, Font.BOLD, getImageLibrary().getScaleFactor());
         JLabel nameOfRegion = Utility.localizedLabel("report.exploration.nameOfRegion");
         nameOfRegion.setFont(font);
+<<<<<<< HEAD
         reportJPanel.add(nameOfRegion);
         JLabel typeOfRegion = Utility.localizedLabel("report.exploration.typeOfRegion");
         typeOfRegion.setFont(font);
@@ -94,6 +103,21 @@ public final class ReportExplorationPanel extends ReportPanel {
         JLabel valueOfRegion = Utility.localizedLabel("report.exploration.valueOfRegion");
         valueOfRegion.setFont(font);
         reportJPanel.add(valueOfRegion);
+=======
+        reportPanel.add(nameOfRegion);
+        JLabel typeOfRegion = Utility.localizedLabel("report.exploration.typeOfRegion");
+        typeOfRegion.setFont(font);
+        reportPanel.add(typeOfRegion);
+        JLabel discoveredIn = Utility.localizedLabel("report.exploration.discoveredIn");
+        discoveredIn.setFont(font);
+        reportPanel.add(discoveredIn);
+        JLabel discoveredBy = Utility.localizedLabel("report.exploration.discoveredBy");
+        discoveredBy.setFont(font);
+        reportPanel.add(discoveredBy);
+        JLabel valueOfRegion = Utility.localizedLabel("report.exploration.valueOfRegion");
+        valueOfRegion.setFont(font);
+        reportPanel.add(valueOfRegion);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         
         /**
          * Content Rows
@@ -101,6 +125,7 @@ public final class ReportExplorationPanel extends ReportPanel {
          * TODO: Display "None" if no contents, though this would be rare.
          */
         for (Region region : regions) {
+<<<<<<< HEAD
             reportJPanel.add(new JLabel(region.getName()));
             reportJPanel.add(Utility.localizedLabel(region.getType()));
             reportJPanel.add(Utility.localizedLabel(region.getDiscoveredIn()
@@ -108,6 +133,15 @@ public final class ReportExplorationPanel extends ReportPanel {
             reportJPanel.add(Utility.localizedLabel(region.getDiscoveredBy()
                     .getCountryLabel()));
             reportJPanel.add(new JLabel(String.valueOf(region.getScoreValue())));
+=======
+            reportPanel.add(new JLabel(region.getName()));
+            reportPanel.add(Utility.localizedLabel(region.getType()));
+            reportPanel.add(Utility.localizedLabel(region.getDiscoveredIn()
+                    .getLabel()));
+            reportPanel.add(Utility.localizedLabel(region.getDiscoveredBy()
+                    .getCountryLabel()));
+            reportPanel.add(new JLabel(String.valueOf(region.getScoreValue())));
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
     }
 }

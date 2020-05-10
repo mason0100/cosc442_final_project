@@ -32,11 +32,19 @@ public class DualNumberRule extends Number {
     @Override
     public Category getCategory(double input) {
         if (input == 1) {
+<<<<<<< HEAD
             return Category.ONE;
         } else if (input == 2) {
             return Category.TWO;
         } else {
             return Category.OTHER;
+=======
+            return Category.one;
+        } else if (input == 2) {
+            return Category.two;
+        } else {
+            return Category.other;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
     }
 

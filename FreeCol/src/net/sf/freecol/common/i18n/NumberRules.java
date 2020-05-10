@@ -137,7 +137,10 @@ public class NumberRules {
                             readChild(xr);
                         }
                     }   break;
+<<<<<<< HEAD
                 default: break;
+=======
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             }
         }
     }
@@ -161,7 +164,11 @@ public class NumberRules {
                 number = OTHER_NUMBER_RULE;
                 break;
             case 1:
+<<<<<<< HEAD
                 Rule rule = numberRule.getRule(Category.ONE);
+=======
+                Rule rule = numberRule.getRule(Category.one);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 if (rule != null) {
                     if (null != rule.toString()) switch (rule.toString()) {
                     case "n is 1":
@@ -170,13 +177,21 @@ public class NumberRules {
                     case "n in 0..1":
                         number = ZERO_ONE_NUMBER_RULE;
                         break;
+<<<<<<< HEAD
                     default: break;
+=======
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 }
                 }
                 break;
             case 2:
+<<<<<<< HEAD
                 Rule oneRule = numberRule.getRule(Category.ONE);
                 Rule twoRule = numberRule.getRule(Category.TWO);
+=======
+                Rule oneRule = numberRule.getRule(Category.one);
+                Rule twoRule = numberRule.getRule(Category.two);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 if (oneRule != null
                     && "n is 1".equals(oneRule.toString())
                     && twoRule != null

@@ -30,7 +30,11 @@ import net.sf.freecol.common.model.Unit;
  */
 public class SkipUnitAction extends UnitAction {
 
+<<<<<<< HEAD
     public static final String ID = "skipUnitAction";
+=======
+    public static final String id = "skipUnitAction";
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -39,7 +43,11 @@ public class SkipUnitAction extends UnitAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public SkipUnitAction(FreeColClient freeColClient) {
+<<<<<<< HEAD
         super(freeColClient, ID);
+=======
+        super(freeColClient, id);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         addImageIcons("done");
     }

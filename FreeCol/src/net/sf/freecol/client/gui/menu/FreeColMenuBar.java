@@ -223,10 +223,17 @@ public abstract class FreeColMenuBar extends JMenuBar {
         menu.setMnemonic(KeyEvent.VK_C);
 
         for (PanelType type : PanelType.values()) {
+<<<<<<< HEAD
             menu.add(getMenuItem(ColopediaAction.ID + type.getKey()));
         }
         menu.addSeparator();
         menu.add(getMenuItem(AboutAction.ID));
+=======
+            menu.add(getMenuItem(ColopediaAction.id + type.getKey()));
+        }
+        menu.addSeparator();
+        menu.add(getMenuItem(AboutAction.id));
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         add(menu);
     }

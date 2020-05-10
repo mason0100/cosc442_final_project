@@ -89,10 +89,17 @@ public abstract class MapControls {
 
         final Game game = freeColClient.getGame();
         if (game != null) {
+<<<<<<< HEAD
             unitButtons.add(new UnitButton(am, WaitAction.ID));
             unitButtons.add(new UnitButton(am, SkipUnitAction.ID));
             unitButtons.add(new UnitButton(am, SentryAction.ID));
             unitButtons.add(new UnitButton(am, FortifyAction.ID));
+=======
+            unitButtons.add(new UnitButton(am, WaitAction.id));
+            unitButtons.add(new UnitButton(am, SkipUnitAction.id));
+            unitButtons.add(new UnitButton(am, SentryAction.id));
+            unitButtons.add(new UnitButton(am, FortifyAction.id));
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             
             final Specification spec = game.getSpecification();
             if (spec != null) {
@@ -105,6 +112,7 @@ public abstract class MapControls {
                     }
                 }
             }
+<<<<<<< HEAD
             unitButtons.add(new UnitButton(am, BuildColonyAction.ID));
             unitButtons.add(new UnitButton(am, DisbandUnitAction.ID));
         }
@@ -112,6 +120,15 @@ public abstract class MapControls {
         miniMapToggleFogOfWarButton = new UnitButton(am, MiniMapToggleFogOfWarAction.ID);
         miniMapZoomOutButton = new UnitButton(am, MiniMapZoomOutAction.ID);
         miniMapZoomInButton = new UnitButton(am, MiniMapZoomInAction.ID);
+=======
+            unitButtons.add(new UnitButton(am, BuildColonyAction.id));
+            unitButtons.add(new UnitButton(am, DisbandUnitAction.id));
+        }
+        miniMapToggleBorders = new UnitButton(am, MiniMapToggleViewAction.id);
+        miniMapToggleFogOfWarButton = new UnitButton(am, MiniMapToggleFogOfWarAction.id);
+        miniMapZoomOutButton = new UnitButton(am, MiniMapZoomOutAction.id);
+        miniMapZoomInButton = new UnitButton(am, MiniMapZoomInAction.id);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         miniMapToggleBorders.setFocusable(false);
         miniMapToggleFogOfWarButton.setFocusable(false);

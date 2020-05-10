@@ -77,7 +77,11 @@ final class UnitMoveAnimation {
         if (srcP == null || dstP == null || movementSpeed <= 0) return;
 
         float scale = gui.getMapScale();
+<<<<<<< HEAD
         final int movementRatio = (int)(Math.pow(2, movementSpeed + 1.00) * scale);
+=======
+        final int movementRatio = (int)(Math.pow(2, movementSpeed + 1) * scale);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         final Rectangle r1 = gui.getTileBounds(sourceTile);
         final Rectangle r2 = gui.getTileBounds(destinationTile);
         final Rectangle bounds = r1.union(r2);

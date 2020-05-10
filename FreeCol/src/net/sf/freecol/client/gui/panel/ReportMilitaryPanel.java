@@ -67,7 +67,11 @@ public final class ReportMilitaryPanel extends ReportUnitPanel {
         int count = getCount(roleId, unitType);
         if (count > 0) {
             AbstractUnit au = new AbstractUnit(unitType, roleId, count);
+<<<<<<< HEAD
             reportJPanel.add(createUnitTypeLabel(au), "sg");
+=======
+            reportPanel.add(createUnitTypeLabel(au), "sg");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
     }
 
@@ -94,14 +98,23 @@ public final class ReportMilitaryPanel extends ReportUnitPanel {
         final Specification spec = getSpecification();
         final Nation refNation = getMyPlayer().getNation().getREFNation();
 
+<<<<<<< HEAD
         reportJPanel.add(Utility.localizedLabel(refNation), "span, split 2");
         reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
+=======
+        reportPanel.add(Utility.localizedLabel(refNation), "span, split 2");
+        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         List<AbstractUnit> refUnits = igc().getREFUnits();
         if (refUnits != null) {
             for (AbstractUnit au : refUnits) {
                 if (!au.getType(spec).isNaval()) {
+<<<<<<< HEAD
                     reportJPanel.add(createUnitTypeLabel(au), "sg");
+=======
+                    reportPanel.add(createUnitTypeLabel(au), "sg");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 }
             }
         }
@@ -116,9 +129,15 @@ public final class ReportMilitaryPanel extends ReportUnitPanel {
         final Player player = getMyPlayer();
         final UnitType defaultType = spec.getDefaultUnitType(player);
 
+<<<<<<< HEAD
         reportJPanel.add(Utility.localizedLabel(player.getForcesLabel()),
             "newline, span, split 2");
         reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
+=======
+        reportPanel.add(Utility.localizedLabel(player.getForcesLabel()),
+            "newline, span, split 2");
+        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL), "growx");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         // Report unit types that are inherently reportable, and units
         // with military roles.

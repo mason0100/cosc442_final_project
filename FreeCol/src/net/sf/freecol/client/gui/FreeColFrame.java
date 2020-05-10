@@ -119,8 +119,13 @@ public class FreeColFrame extends JFrame {
     }
 
     public void exitFullScreen() {
+<<<<<<< HEAD
         GraphicsConfiguration graphicsConf = getGraphicsConfiguration();
         GraphicsDevice gd = graphicsConf.getDevice();
+=======
+        GraphicsConfiguration GraphicsConf = getGraphicsConfiguration();
+        GraphicsDevice gd = GraphicsConf.getDevice();
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         gd.setFullScreenWindow(null);
     }
 

@@ -31,7 +31,11 @@ import net.sf.freecol.client.FreeColClient;
  */
 public class EndTurnAction extends MapboardAction {
 
+<<<<<<< HEAD
     public static final String ID = "endTurnAction";
+=======
+    public static final String id = "endTurnAction";
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -40,7 +44,11 @@ public class EndTurnAction extends MapboardAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public EndTurnAction(FreeColClient freeColClient) {
+<<<<<<< HEAD
         super(freeColClient, ID);
+=======
+        super(freeColClient, id);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
 

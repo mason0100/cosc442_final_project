@@ -72,12 +72,21 @@ public final class DragListener extends MouseAdapter {
     public void mousePressed(MouseEvent e) {
         JComponent comp = (JComponent)e.getSource();
         // Does not work on some platforms:
+<<<<<<< HEAD
 
         if (e.getButton() == MouseEvent.BUTTON3 || e.isPopupTrigger()) {
             if (!parentPanel.isEditable()) { // No panel when not editable
                 String loggerWarning = "Button3 disabled on non-editable panel: "
                     + parentPanel;
 				logger.warning(loggerWarning);
+=======
+        // if (e.isPopupTrigger() && (comp instanceof UnitLabel)) {
+
+        if (e.getButton() == MouseEvent.BUTTON3 || e.isPopupTrigger()) {
+            if (!parentPanel.isEditable()) { // No panel when not editable
+                logger.warning("Button3 disabled on non-editable panel: "
+                    + parentPanel);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 return;
             }
             QuickActionMenu menu

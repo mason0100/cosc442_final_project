@@ -32,7 +32,11 @@ import net.sf.freecol.common.io.FreeColDirectories;
  */
 public class ContinueAction extends FreeColAction {
 
+<<<<<<< HEAD
     public static final String ID = "continueAction";
+=======
+    public static final String id = "continueAction";
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -41,7 +45,11 @@ public class ContinueAction extends FreeColAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public ContinueAction(FreeColClient freeColClient) {
+<<<<<<< HEAD
         super(freeColClient, ID);
+=======
+        super(freeColClient, id);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         // interim solution to be replaced! redirect to identical NAME text
         putValue(NAME, Messages.message("victory.continue"));

@@ -30,7 +30,11 @@ import net.sf.freecol.client.FreeColClient;
  */
 public class MiniMapToggleViewAction extends MapboardAction {
     
+<<<<<<< HEAD
     public static final String ID = "miniMapToggleBordersAction";
+=======
+    public static final String id = "miniMapToggleBordersAction";
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     
     
     /**
@@ -38,11 +42,18 @@ public class MiniMapToggleViewAction extends MapboardAction {
      *
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
+<<<<<<< HEAD
     static String togglePolitics = "toggle_view_politics";
     public MiniMapToggleViewAction(FreeColClient freeColClient) {
         super(freeColClient, ID);
 
 		addImageIcons(togglePolitics);
+=======
+    public MiniMapToggleViewAction(FreeColClient freeColClient) {
+        super(freeColClient, id);
+
+        addImageIcons("toggle_view_politics");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     /**
@@ -52,9 +63,15 @@ public class MiniMapToggleViewAction extends MapboardAction {
      * @param b a <code>boolean</code> value
      */
     public MiniMapToggleViewAction(FreeColClient freeColClient, boolean b) {
+<<<<<<< HEAD
         super(freeColClient, ID + ".secondary");
  
         addImageIcons(togglePolitics);
+=======
+        super(freeColClient, id + ".secondary");
+ 
+        addImageIcons("toggle_view_politics");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     // Interface ActionListener
@@ -67,7 +84,11 @@ public class MiniMapToggleViewAction extends MapboardAction {
         getGUI().miniMapToggleViewControls();
 
         if (freeColClient.getClientOptions().getBoolean(ClientOptions.MINIMAP_TOGGLE_BORDERS)) {
+<<<<<<< HEAD
             addImageIcons(togglePolitics);
+=======
+            addImageIcons("toggle_view_politics");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         } else {
             addImageIcons("toggle_view_economic");
         }

@@ -53,9 +53,15 @@ public class FreeColTextAreaUI extends BasicTextAreaUI {
 
     @Override
     public void paintBackground(java.awt.Graphics g) {
+<<<<<<< HEAD
         JComponent cComponent = getComponent();
         if (cComponent.isOpaque()) {
             ImageLibrary.drawTiledImage("image.background.FreeColTextArea", g, cComponent, null);
+=======
+        JComponent c = getComponent();
+        if (c.isOpaque()) {
+            ImageLibrary.drawTiledImage("image.background.FreeColTextArea", g, c, null);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
     }
 

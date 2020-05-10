@@ -83,7 +83,11 @@ public final class FindSettlementPanel extends FreeColPanel
         }
     }
 
+<<<<<<< HEAD
     private enum DisplayListOption {
+=======
+    private static enum DisplayListOption {
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         ALL,
         ONLY_NATIVES,
         ONLY_EUROPEAN

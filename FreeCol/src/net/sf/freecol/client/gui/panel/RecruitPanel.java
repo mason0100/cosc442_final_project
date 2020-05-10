@@ -133,11 +133,16 @@ public final class RecruitPanel extends FreeColPanel {
                     if (!shouldEnable) getGUI().removeFromCanvas(this);
                     return;
                 }
+<<<<<<< HEAD
             } catch (NumberFormatException e) {
             	//Ignore for now
             }
             String loggerWarningInvalid = "Invalid action command: " + command;
 			logger.warning(loggerWarningInvalid);
+=======
+            } catch (NumberFormatException e) {}
+            logger.warning("Invalid action command: " + command);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
     }
 

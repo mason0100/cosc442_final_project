@@ -33,13 +33,21 @@ import net.sf.freecol.common.model.Modifier;
 import net.sf.freecol.common.model.Modifier.ModifierType;
 import net.sf.freecol.common.model.Nameable;
 import net.sf.freecol.common.model.Named;
+<<<<<<< HEAD
+=======
+import net.sf.freecol.common.model.Scope;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 import net.sf.freecol.common.model.Turn;
 
 
 public class ModifierFormat {
 
     /** The decimal format to use for Modifiers. */
+<<<<<<< HEAD
     private static final DecimalFormat MODIFIERFORMATVALUE
+=======
+    private static final DecimalFormat modifierFormat
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         = new DecimalFormat("0.00");
 
 
@@ -50,7 +58,11 @@ public class ModifierFormat {
     public static final String format(double value) {
         return (value == Modifier.UNKNOWN)
             ? getUnknownValue()
+<<<<<<< HEAD
             : MODIFIERFORMATVALUE.format(value);
+=======
+            : modifierFormat.format(value);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     public static final String[] getModifierStrings(Modifier modifier) {
@@ -59,7 +71,11 @@ public class ModifierFormat {
 
     public static final String[] getModifierStrings(float value,
                                                     ModifierType type) {
+<<<<<<< HEAD
         String bonus = MODIFIERFORMATVALUE.format(value);
+=======
+        String bonus = modifierFormat.format(value);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         if (value == Modifier.UNKNOWN) {
             return new String[] { " ", bonus, null };
         }

@@ -82,7 +82,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
     private static class ColonySummary {
 
         /** Types of production for a given goods type. */
+<<<<<<< HEAD
         public enum ProductionStatus {
+=======
+        public static enum ProductionStatus {
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             FAIL,        // Negative production and below low alarm level
             BAD,         // Negative production
             NONE,        // No production at all
@@ -93,7 +97,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
             OVERFLOW,    // Positive production and above capacity
             PRODUCTION,  // Positive production but could produce more
             CONSUMPTION, // Positive production but could consume more
+<<<<<<< HEAD
         }
+=======
+        };
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         public static BinaryOperator<GoodsProduction> goodsProductionAccumulator
             = (g1, g2) -> {
@@ -121,7 +129,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
                 this.status = status;
                 this.extra = extra;
             }
+<<<<<<< HEAD
         }
+=======
+        };
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
         /** The colony being summarized. */
@@ -187,7 +199,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
                 
             final Specification spec = colony.getSpecification();
             final Player owner = colony.getOwner();
+<<<<<<< HEAD
             //final GoodsType foodType = spec.getPrimaryFoodType();
+=======
+            final GoodsType foodType = spec.getPrimaryFoodType();
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
             this.tileSuggestions.clear();
             this.tileSuggestions.addAll(colony.getTileImprovementSuggestions());
@@ -352,7 +368,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
                 suggestions.put(expert, suggestion);
             }
         }
+<<<<<<< HEAD
     }
+=======
+    };
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     private static final String BUILDQUEUE = "buildQueue.";
     private static final String cAlarmKey = "color.report.colony.alarm";
@@ -481,13 +501,21 @@ public final class ReportCompactColonyPanel extends ReportPanel
 
     private void addTogether(List<? extends JComponent> components) {
         if (components.isEmpty()) {
+<<<<<<< HEAD
             reportJPanel.add(new JLabel());
+=======
+            reportPanel.add(new JLabel());
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             return;
         }
         String layout = (components.size() > 1) ? "split " + components.size()
             : null;
         for (JComponent jc : components) {
+<<<<<<< HEAD
             reportJPanel.add(jc, layout);
+=======
+            reportPanel.add(jc, layout);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             layout = null;
         }
     }
@@ -516,7 +544,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
             : cGood;
         b = newButton(cac, s.colony.getName(), null, c, null);
         if (s.famine) b.setFont(b.getFont().deriveFont(Font.BOLD));
+<<<<<<< HEAD
         reportJPanel.add(b, "newline");
+=======
+        reportPanel.add(b, "newline");
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         // Field: The number of colonists that can be added to a
         // colony without damaging the production bonus, unless
@@ -538,7 +570,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
         } else {
             b = null;
         }
+<<<<<<< HEAD
         reportJPanel.add((b == null) ? new JLabel() : b);
+=======
+        reportPanel.add((b == null) ? new JLabel() : b);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         // Field: The number of potential colony tiles that need
         // exploring.
@@ -555,7 +591,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
         } else {
             b = null;
         }
+<<<<<<< HEAD
         reportJPanel.add((b == null) ? new JLabel() : b);
+=======
+        reportPanel.add((b == null) ? new JLabel() : b);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         // Fields: The number of existing colony tiles that would
         // benefit from improvements.
@@ -599,7 +639,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
             } else {
                 b = null;
             }
+<<<<<<< HEAD
             reportJPanel.add((b == null) ? new JLabel() : b);
+=======
+            reportPanel.add((b == null) ? new JLabel() : b);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
 
         // Fields: The net production of each storable+non-trade-goods
@@ -687,7 +731,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
             default:
                 throw new IllegalStateException("Bogus status: " + gp.status);
             }
+<<<<<<< HEAD
             reportJPanel.add((c == null) ? new JLabel()
+=======
+            reportPanel.add((c == null) ? new JLabel()
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 : newButton(cac, Integer.toString(gp.amount), null, c, t));
         }
 
@@ -712,7 +760,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
         } else {
             b = null;
         }
+<<<<<<< HEAD
         reportJPanel.add((b == null) ? new JLabel() : b);
+=======
+        reportPanel.add((b == null) ? new JLabel() : b);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         // Field: What is currently being built (clickable if on the
         // buildqueue) and the turns until it completes, including
@@ -797,7 +849,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
         // Field: The units that could be upgraded, followed by the units
         // that could be added.
         if (s.improve.isEmpty() && s.want.isEmpty()) {
+<<<<<<< HEAD
             reportJPanel.add(new JLabel());
+=======
+            reportPanel.add(new JLabel());
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         } else {
             buttons.clear();
             buttons.addAll(unitButtons(s.improve, s.couldWork, s.colony));
@@ -865,17 +921,26 @@ public final class ReportCompactColonyPanel extends ReportPanel
         Color c;
         StringTemplate t;
 
+<<<<<<< HEAD
         reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL),
+=======
+        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL),
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                         "newline, span, growx");
 
         // Accumulate all the summaries
         Map<Region, Integer> rRegionMap = new HashMap<>();
         List<TileImprovementSuggestion> rTileSuggestions = new ArrayList<>();
+<<<<<<< HEAD
         int rFamine = 0;
         int rBonus = 0;
         int rSizeChange = 0;
         int teacherLen = 0;
         int improveLen = 0;
+=======
+        int rFamine = 0, rBonus = 0, rSizeChange = 0,
+            teacherLen = 0, improveLen = 0;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         double rNewColonist = 0.0;
         Map<GoodsType, ColonySummary.GoodsProduction> rProduction
             = new HashMap<>();
@@ -919,13 +984,21 @@ public final class ReportCompactColonyPanel extends ReportPanel
         // Colour: Plain
         t = mapEntriesByValue(rRegionMap, descendingIntegerComparator)
             .get(0).getKey().getLabel();
+<<<<<<< HEAD
         reportJPanel.add(newLabel(Messages.message(t), null, cPlain,
+=======
+        reportPanel.add(newLabel(Messages.message(t), null, cPlain,
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                                  stpld("report.colony.name.summary")),
                         "newline");
 
         // Field: The total of the size change field.
         // Colour: cGood if efficient/cAlarm if inefficient.
+<<<<<<< HEAD
         reportJPanel.add(newLabel(Integer.toString(rSizeChange), null,
+=======
+        reportPanel.add(newLabel(Integer.toString(rSizeChange), null,
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                                  (rSizeChange < 0) ? cAlarm : cGood,
                                  stpld("report.colony.growing.summary")));
 
@@ -938,7 +1011,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
                 tiles.add(tis.tile);
             }
         }
+<<<<<<< HEAD
         reportJPanel.add((tiles.isEmpty()) ? new JLabel()
+=======
+        reportPanel.add((tiles.isEmpty()) ? new JLabel()
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             : newLabel(Integer.toString(tiles.size()), null, cAlarm,
                        stpld("report.colony.exploring.summary")));
 
@@ -954,7 +1031,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
                     tiles.add(tis.tile);
                 }
             }
+<<<<<<< HEAD
             reportJPanel.add((tiles.isEmpty()) ? new JLabel()
+=======
+            reportPanel.add((tiles.isEmpty()) ? new JLabel()
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 : newLabel(Integer.toString(tiles.size()), null, cAlarm,
                            stpld("report.colony.tile." + ti.getSuffix()
                                + ".summary")));
@@ -982,7 +1063,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
             default:
                 throw new IllegalStateException("Bogus status: " + gp.status);
             }
+<<<<<<< HEAD
             reportJPanel.add((c == null) ? new JLabel()
+=======
+            reportPanel.add((c == null) ? new JLabel()
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 : newLabel(Integer.toString(gp.amount), null, c,
                     stpld("report.colony.production.summary")
                         .addNamed("%goods%", gt)));
@@ -990,7 +1075,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
 
         // Field: New colonist arrival or famine warning.
         // Colour: cWarn if negative, else cGood
+<<<<<<< HEAD
         reportJPanel.add(newLabel(Integer.toString((int)rNewColonist), null,
+=======
+        reportPanel.add(newLabel(Integer.toString((int)rNewColonist), null,
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                                  (rNewColonist < 0) ? cWarn : cGood,
                                  stpld("report.colony.arriving.summary")));
 
@@ -1042,6 +1131,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
      *     status with.
      */
     private void conciseHeaders(Market market) {
+<<<<<<< HEAD
         reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL),
                         "newline, span, growx");
 
@@ -1051,11 +1141,26 @@ public final class ReportCompactColonyPanel extends ReportPanel
         reportJPanel.add(newLabel("report.colony.grow.header", null, null,
                                  stpld("report.colony.grow")));
         reportJPanel.add(newLabel("report.colony.explore.header", null, null,
+=======
+        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL),
+                        "newline, span, growx");
+
+        reportPanel.add(newLabel("report.colony.name.header", null, null,
+                                 stpld("report.colony.name")),
+                        "newline");
+        reportPanel.add(newLabel("report.colony.grow.header", null, null,
+                                 stpld("report.colony.grow")));
+        reportPanel.add(newLabel("report.colony.explore.header", null, null,
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                                  stpld("report.colony.explore")));
         for (TileImprovementType ti : this.spec.getTileImprovementTypeList()) {
             if (ti.isNatural()) continue;
             String key = "report.colony.tile." + ti.getSuffix() + ".header";
+<<<<<<< HEAD
             reportJPanel.add(newLabel(key, null, null, stpld(key)));
+=======
+            reportPanel.add(newLabel(key, null, null, stpld(key)));
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
         for (GoodsType gt : this.goodsTypes) {
             ImageIcon icon = new ImageIcon(this.lib.getSmallIconImage(gt));
@@ -1063,12 +1168,17 @@ public final class ReportCompactColonyPanel extends ReportPanel
                                 stpl("report.colony.production.header")
                                     .addNamed("%goods%", gt));
             l.setEnabled(market == null || market.getArrears(gt) <= 0);
+<<<<<<< HEAD
             reportJPanel.add(l);
+=======
+            reportPanel.add(l);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
 
         final UnitType type = spec.getDefaultUnitType(market.getOwner());
         ImageIcon colonistIcon
             = new ImageIcon(this.lib.getTinyUnitImage(type, false));
+<<<<<<< HEAD
         reportJPanel.add(newLabel(null, colonistIcon, null,
                                  stpld("report.colony.birth")));
         reportJPanel.add(newLabel("report.colony.making.header", null, null,
@@ -1077,6 +1187,16 @@ public final class ReportCompactColonyPanel extends ReportPanel
                                  stpld("report.colony.improve")));
 
         reportJPanel.add(new JSeparator(JSeparator.HORIZONTAL),
+=======
+        reportPanel.add(newLabel(null, colonistIcon, null,
+                                 stpld("report.colony.birth")));
+        reportPanel.add(newLabel("report.colony.making.header", null, null,
+                                 stpld("report.colony.making")));
+        reportPanel.add(newLabel("report.colony.improve.header", null, null,
+                                 stpld("report.colony.improve")));
+
+        reportPanel.add(new JSeparator(JSeparator.HORIZONTAL),
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                         "newline, span, growx");
     }
 
@@ -1084,13 +1204,21 @@ public final class ReportCompactColonyPanel extends ReportPanel
      * Update the panel.
      */
     private void update() {
+<<<<<<< HEAD
         reportJPanel.removeAll();
+=======
+        reportPanel.removeAll();
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         // Define the layout, with a column for each goods type.
         String cols = "[l][c][c][c]";
         for (int i = 0; i < this.goodsTypes.size(); i++) cols += "[c]";
         cols += "[c][c][l][l][l]";
+<<<<<<< HEAD
         reportJPanel.setLayout(new MigLayout("fillx, insets 0, gap 0 0",
+=======
+        reportPanel.setLayout(new MigLayout("fillx, insets 0, gap 0 0",
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                                             cols, ""));
 
         conciseHeaders(this.market);

@@ -38,7 +38,11 @@ import net.sf.freecol.common.model.Unit;
  */
 public class ChangeAction extends UnitAction {
 
+<<<<<<< HEAD
     public static final String ID = "changeAction";
+=======
+    public static final String id = "changeAction";
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -47,7 +51,11 @@ public class ChangeAction extends UnitAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public ChangeAction(FreeColClient freeColClient) {
+<<<<<<< HEAD
         super(freeColClient, ID);
+=======
+        super(freeColClient, id);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         update();
     }

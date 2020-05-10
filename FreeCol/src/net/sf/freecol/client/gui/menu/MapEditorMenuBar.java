@@ -93,6 +93,7 @@ public class MapEditorMenuBar extends FreeColMenuBar {
         menu.setOpaque(false);
         menu.setMnemonic(KeyEvent.VK_G);
 
+<<<<<<< HEAD
         menu.add(getMenuItem(NewAction.ID));
         menu.add(getMenuItem(NewEmptyMapAction.ID));
 
@@ -100,6 +101,15 @@ public class MapEditorMenuBar extends FreeColMenuBar {
 
         menu.add(getMenuItem(OpenAction.ID));
         menu.add(getMenuItem(SaveAction.ID));
+=======
+        menu.add(getMenuItem(NewAction.id));
+        menu.add(getMenuItem(NewEmptyMapAction.id));
+
+        menu.addSeparator();
+
+        menu.add(getMenuItem(OpenAction.id));
+        menu.add(getMenuItem(SaveAction.id));
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         JMenuItem playItem = Utility.localizedMenuItem("startGame");
         playItem.addActionListener((ActionEvent ae) -> {
                 File startFile = FreeColDirectories.getStartMapFile();
@@ -113,20 +123,33 @@ public class MapEditorMenuBar extends FreeColMenuBar {
                     .getOptionsFile(FreeColDirectories.MAP_GENERATOR_OPTIONS_FILE_NAME);
                 try {
                     options.save(mapOptionsFile);
+<<<<<<< HEAD
                 } catch (FileNotFoundException fnfe) {
                 	//Ignore for now
                 }
+=======
+                } catch (FileNotFoundException fnfe) {}
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 freeColClient.newGame(true);
             });
         menu.add(playItem);
         menu.addSeparator();
 
+<<<<<<< HEAD
         menu.add(getMenuItem(PreferencesAction.ID));
 
         menu.addSeparator();
 
         menu.add(getMenuItem(ShowMainAction.ID));
         menu.add(getMenuItem(QuitAction.ID));
+=======
+        menu.add(getMenuItem(PreferencesAction.id));
+
+        menu.addSeparator();
+
+        menu.add(getMenuItem(ShowMainAction.id));
+        menu.add(getMenuItem(QuitAction.id));
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         add(menu);
     }
@@ -137,20 +160,34 @@ public class MapEditorMenuBar extends FreeColMenuBar {
         menu.setOpaque(false);
         menu.setMnemonic(KeyEvent.VK_V);
 
+<<<<<<< HEAD
         menu.add(getCheckBoxMenuItem(MapControlsAction.ID));
         menu.add(getCheckBoxMenuItem(DisplayGridAction.ID));
+=======
+        menu.add(getCheckBoxMenuItem(MapControlsAction.id));
+        menu.add(getCheckBoxMenuItem(DisplayGridAction.id));
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         menu.add(getCheckBoxMenuItem(ChangeWindowedModeAction.id));
 
         menu.addSeparator();
         ButtonGroup tileTextGroup = new ButtonGroup();
         for (DisplayText type : DisplayText.values()) {
+<<<<<<< HEAD
             menu.add(getRadioButtonMenuItem(DisplayTileTextAction.ID + type.getKey(),
+=======
+            menu.add(getRadioButtonMenuItem(DisplayTileTextAction.id + type.getKey(),
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                                             tileTextGroup));
         }
 
         menu.addSeparator();
+<<<<<<< HEAD
         menu.add(getMenuItem(ZoomInAction.ID));
         menu.add(getMenuItem(ZoomOutAction.ID));
+=======
+        menu.add(getMenuItem(ZoomInAction.id));
+        menu.add(getMenuItem(ZoomOutAction.id));
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         add(menu);
     }
@@ -161,8 +198,13 @@ public class MapEditorMenuBar extends FreeColMenuBar {
         menu.setOpaque(false);
         menu.setMnemonic(KeyEvent.VK_T);
 
+<<<<<<< HEAD
         menu.add(getMenuItem(ScaleMapAction.ID));
         menu.add(getMenuItem(DetermineHighSeasAction.ID));
+=======
+        menu.add(getMenuItem(ScaleMapAction.id));
+        menu.add(getMenuItem(DetermineHighSeasAction.id));
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         add(menu);
     }

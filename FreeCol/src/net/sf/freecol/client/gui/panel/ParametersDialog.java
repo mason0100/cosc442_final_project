@@ -43,9 +43,15 @@ public class ParametersDialog extends FreeColDialog<Parameters> {
     
     private static final int COLUMNS = 5;
 
+<<<<<<< HEAD
     private static final int DEFAULT_DISTTOLANDFROMHIGHSEAS = 4;
 
     private static final int DEFAULT_MAXDISTANCETOEDGE = 12;
+=======
+    private static final int DEFAULT_distToLandFromHighSeas = 4;
+
+    private static final int DEFAULT_maxDistanceToEdge = 12;
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     private final JTextField inputD;
 
@@ -73,9 +79,15 @@ public class ParametersDialog extends FreeColDialog<Parameters> {
         JPanel heightPanel = new JPanel(new FlowLayout());
         String str;
         
+<<<<<<< HEAD
         str = Integer.toString(DEFAULT_DISTTOLANDFROMHIGHSEAS);
         inputD = new JTextField(str, COLUMNS);
         str = Integer.toString(DEFAULT_MAXDISTANCETOEDGE);
+=======
+        str = Integer.toString(DEFAULT_distToLandFromHighSeas);
+        inputD = new JTextField(str, COLUMNS);
+        str = Integer.toString(DEFAULT_maxDistanceToEdge);
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         inputM = new JTextField(str, COLUMNS);
 
         str = Messages.message("parametersDialog.determineHighSeas.distToLandFromHighSeas");
@@ -119,13 +131,21 @@ public class ParametersDialog extends FreeColDialog<Parameters> {
             int d = Integer.parseInt(inputD.getText());
             if (d <= 0) throw new NumberFormatException();
         } catch (NumberFormatException nfe) {
+<<<<<<< HEAD
             inputD.setText(Integer.toString(DEFAULT_DISTTOLANDFROMHIGHSEAS));
+=======
+            inputD.setText(Integer.toString(DEFAULT_distToLandFromHighSeas));
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
         try {
             int m = Integer.parseInt(inputM.getText());
             if (m <= 0) throw new NumberFormatException();
         } catch (NumberFormatException nfe) {
+<<<<<<< HEAD
             inputM.setText(Integer.toString(DEFAULT_MAXDISTANCETOEDGE));
+=======
+            inputM.setText(Integer.toString(DEFAULT_maxDistanceToEdge));
+>>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
     }
 
