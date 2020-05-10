@@ -3806,3 +3806,793 @@ java.lang.IllegalArgumentException
 
 !ENTRY com.instantiations.eclipse 1 0 2020-05-09 23:14:48.822
 !MESSAGE StartupPlugin: could not remove workbench property change listener (1) ... workbench might already be shut down.
+!SESSION 2020-05-10 13:57:58.367 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-05-10 13:58:34.568
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Masonator'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.instantiations.eclipse 1 0 2020-05-10 13:58:37.651
+!MESSAGE StartupPlugin: could not add workbench property change listener (1) ... compatibility layer might not be installed.
+
+!ENTRY org.eclipse.jface 2 0 2020-05-10 14:17:31.234
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-05-10 14:17:31.234
+!MESSAGE A conflict occurred for CTRL+J:
+Binding(CTRL+J,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findIncremental,Incremental Find,
+		Incremental find,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4072bc3e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+J,
+	ParameterizedCommand(Command(org.moreunit.core.commands.jumpCommand,Jump to Test/Source,
+		Jump to the test or source associated to the current file.,
+		Category(org.moreunit.core.commands.category,MoreUnit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3fbb2b42,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+J,
+	ParameterizedCommand(Command(org.moreunit.core.commands.jumpCommand,Jump to Test/Source,
+		Jump to the test or source associated to the current file.,
+		Category(org.moreunit.core.commands.category,MoreUnit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3fbb2b42,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 14:25:28.845
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 14:44:37.998
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 14:51:44.560
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 15:00:42.758
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 15:01:55.326
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 15:10:32.534
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 15:24:43.873
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 15:37:24.432
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 15:50:54.110
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 15:51:27.509
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 15:54:42.513
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 15:57:25.936
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 16:02:43.352
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY org.eclipse.ui.workbench.texteditor 4 0 2020-05-10 16:37:58.650
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.isDirty(AbstractTextEditor.java:7196)
+	at org.eclipse.ui.internal.Workbench.getFilteredSaveables(Workbench.java:3511)
+	at org.eclipse.ui.internal.Workbench.saveAll(Workbench.java:3484)
+	at org.eclipse.ui.ide.IDE$1.run(IDE.java:1495)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.ide.IDE.saveAllEditors(IDE.java:1483)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.doSave(SaveScopeResourcesHandler.java:228)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.handleStatus(SaveScopeResourcesHandler.java:182)
+	at org.eclipse.debug.internal.ui.sourcelookup.Prompter.lambda$0(Prompter.java:73)
+	at org.eclipse.ui.internal.PendingSyncExec.run(PendingSyncExec.java:68)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:171)
+	at org.eclipse.ui.internal.UISynchronizer.lambda$0(UISynchronizer.java:152)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 16:38:03.427
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY org.eclipse.ui.workbench.texteditor 4 0 2020-05-10 16:39:36.172
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.isDirty(AbstractTextEditor.java:7196)
+	at org.eclipse.ui.internal.Workbench.getFilteredSaveables(Workbench.java:3511)
+	at org.eclipse.ui.internal.Workbench.saveAll(Workbench.java:3484)
+	at org.eclipse.ui.ide.IDE$1.run(IDE.java:1495)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.ide.IDE.saveAllEditors(IDE.java:1483)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.doSave(SaveScopeResourcesHandler.java:228)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.handleStatus(SaveScopeResourcesHandler.java:182)
+	at org.eclipse.debug.internal.ui.sourcelookup.Prompter.lambda$0(Prompter.java:73)
+	at org.eclipse.ui.internal.PendingSyncExec.run(PendingSyncExec.java:68)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:171)
+	at org.eclipse.ui.internal.UISynchronizer.lambda$0(UISynchronizer.java:152)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 16:39:40.190
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY org.eclipse.ui.workbench.texteditor 4 0 2020-05-10 16:41:18.329
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.isDirty(AbstractTextEditor.java:7196)
+	at org.eclipse.ui.internal.Workbench.getFilteredSaveables(Workbench.java:3511)
+	at org.eclipse.ui.internal.Workbench.saveAll(Workbench.java:3484)
+	at org.eclipse.ui.ide.IDE$1.run(IDE.java:1495)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.ide.IDE.saveAllEditors(IDE.java:1483)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.doSave(SaveScopeResourcesHandler.java:228)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.handleStatus(SaveScopeResourcesHandler.java:182)
+	at org.eclipse.debug.internal.ui.sourcelookup.Prompter.lambda$0(Prompter.java:73)
+	at org.eclipse.ui.internal.PendingSyncExec.run(PendingSyncExec.java:68)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:171)
+	at org.eclipse.ui.internal.UISynchronizer.lambda$0(UISynchronizer.java:152)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 16:41:22.520
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 1 0 2020-05-10 16:51:51.828
+!MESSAGE StartupPlugin: could not remove workbench property change listener (1) ... workbench might already be shut down.
+!SESSION 2020-05-10 17:21:28.943 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-05-10 17:21:46.021
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Masonator'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.instantiations.eclipse 1 0 2020-05-10 17:21:46.382
+!MESSAGE StartupPlugin: could not add workbench property change listener (1) ... compatibility layer might not be installed.
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 17:29:14.885
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 17:39:43.014
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY org.eclipse.ui.workbench.texteditor 4 0 2020-05-10 17:47:38.783
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.isDirty(AbstractTextEditor.java:7196)
+	at org.eclipse.ui.internal.Workbench.getFilteredSaveables(Workbench.java:3511)
+	at org.eclipse.ui.internal.Workbench.saveAll(Workbench.java:3484)
+	at org.eclipse.ui.ide.IDE$1.run(IDE.java:1495)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.ide.IDE.saveAllEditors(IDE.java:1483)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.doSave(SaveScopeResourcesHandler.java:228)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.handleStatus(SaveScopeResourcesHandler.java:182)
+	at org.eclipse.debug.internal.ui.sourcelookup.Prompter.lambda$0(Prompter.java:73)
+	at org.eclipse.ui.internal.PendingSyncExec.run(PendingSyncExec.java:68)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:171)
+	at org.eclipse.ui.internal.UISynchronizer.lambda$0(UISynchronizer.java:152)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 17:47:42.873
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY org.eclipse.ui.workbench.texteditor 4 0 2020-05-10 17:48:17.583
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.isDirty(AbstractTextEditor.java:7196)
+	at org.eclipse.ui.internal.Workbench.getFilteredSaveables(Workbench.java:3511)
+	at org.eclipse.ui.internal.Workbench.saveAll(Workbench.java:3484)
+	at org.eclipse.ui.ide.IDE$1.run(IDE.java:1495)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.ide.IDE.saveAllEditors(IDE.java:1483)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.doSave(SaveScopeResourcesHandler.java:228)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.handleStatus(SaveScopeResourcesHandler.java:182)
+	at org.eclipse.debug.internal.ui.sourcelookup.Prompter.lambda$0(Prompter.java:73)
+	at org.eclipse.ui.internal.PendingSyncExec.run(PendingSyncExec.java:68)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:171)
+	at org.eclipse.ui.internal.UISynchronizer.lambda$0(UISynchronizer.java:152)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.ui.workbench.texteditor 4 0 2020-05-10 17:50:17.751
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.isDirty(AbstractTextEditor.java:7196)
+	at org.eclipse.ui.internal.Workbench.getFilteredSaveables(Workbench.java:3511)
+	at org.eclipse.ui.internal.Workbench.saveAll(Workbench.java:3484)
+	at org.eclipse.ui.ide.IDE$1.run(IDE.java:1495)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.ide.IDE.saveAllEditors(IDE.java:1483)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.doSave(SaveScopeResourcesHandler.java:228)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.handleStatus(SaveScopeResourcesHandler.java:182)
+	at org.eclipse.debug.internal.ui.sourcelookup.Prompter.lambda$0(Prompter.java:73)
+	at org.eclipse.ui.internal.PendingSyncExec.run(PendingSyncExec.java:68)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:171)
+	at org.eclipse.ui.internal.UISynchronizer.lambda$0(UISynchronizer.java:152)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 17:50:21.244
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY org.eclipse.ui.workbench.texteditor 4 0 2020-05-10 17:55:23.896
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.ui.texteditor.AbstractTextEditor$TextEditorSavable.isDirty(AbstractTextEditor.java:7196)
+	at org.eclipse.ui.internal.Workbench.getFilteredSaveables(Workbench.java:3511)
+	at org.eclipse.ui.internal.Workbench.saveAll(Workbench.java:3484)
+	at org.eclipse.ui.ide.IDE$1.run(IDE.java:1495)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.ide.IDE.saveAllEditors(IDE.java:1483)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.doSave(SaveScopeResourcesHandler.java:228)
+	at org.eclipse.debug.internal.ui.launchConfigurations.SaveScopeResourcesHandler.handleStatus(SaveScopeResourcesHandler.java:182)
+	at org.eclipse.debug.internal.ui.sourcelookup.Prompter.lambda$0(Prompter.java:73)
+	at org.eclipse.ui.internal.PendingSyncExec.run(PendingSyncExec.java:68)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:171)
+	at org.eclipse.ui.internal.UISynchronizer.lambda$0(UISynchronizer.java:152)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 17:55:28.288
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 1 0 2020-05-10 17:56:23.452
+!MESSAGE StartupPlugin: could not remove workbench property change listener (1) ... workbench might already be shut down.
+!SESSION 2020-05-10 18:51:48.599 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY com.instantiations.eclipse 1 0 2020-05-10 18:52:02.003
+!MESSAGE StartupPlugin: could not add workbench property change listener (1) ... compatibility layer might not be installed.
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-05-10 18:52:12.376
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Masonator'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 18:59:01.638
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 18:59:20.512
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 18:59:20.951
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 19:04:05.323
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 19:24:33.332
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 19:26:06.270
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 19:27:37.374
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.IllegalArgumentException
+	at com.instantiations.assist.eclipse.junit.editor.graph.JUnitStatusBarGraphData.setRatios(JUnitStatusBarGraphData.java:39)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.getFileGraphData(TestsEditorController.java:1383)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.refreshFileBarGraph(CodeProTestsEditorTab.java:622)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.junitExecutionRun(CodeProTestsEditorTab.java:858)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.fireJUnitExecutionEvent(JUnitRunResultCollection.java:206)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitRunResultCollection.updateRowResult(JUnitRunResultCollection.java:138)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitExecutable.execute(JUnitExecutable.java:64)
+	at com.instantiations.assist.eclipse.junit.model.exec.JUnitJobQueue$1.run(JUnitJobQueue.java:401)
+
+!ENTRY com.instantiations.eclipse 4 0 2020-05-10 19:28:06.849
+!MESSAGE CodePro Test Editor internal error
+!STACK 0
+java.lang.NullPointerException
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.createDesignator(ExistingUnitTestAssertion.java:820)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestAssertion.getDesignator(ExistingUnitTestAssertion.java:606)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.initializeAssertionMatrix(AssertionMatrix.java:326)
+	at com.instantiations.assist.eclipse.junit.model.existing.AssertionMatrix.<init>(AssertionMatrix.java:190)
+	at com.instantiations.assist.eclipse.junit.model.existing.ExistingUnitTestGroup.createAssertionMatrix(ExistingUnitTestGroup.java:373)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsDisplayGrid.drawWithCurrentTestGroup(TestsDisplayGrid.java:306)
+	at com.instantiations.assist.eclipse.junit.editor.view.TestsEditGrid.drawWithCurrentTestGroup(TestsEditGrid.java:196)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.drawGrid(CodeProTestsEditorTab.java:516)
+	at com.instantiations.assist.eclipse.junit.editor.view.CodeProTestsEditorTab.compilationUnitChanged(CodeProTestsEditorTab.java:460)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.fireChangedCompilationUnitEvent(TestsEditorController.java:492)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.requestSelectedTestGroup(TestsEditorController.java:262)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController.reParse(TestsEditorController.java:883)
+	at com.instantiations.assist.eclipse.junit.editor.controller.TestsEditorController$5.run(TestsEditorController.java:777)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3963)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3590)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1160)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY com.instantiations.eclipse 1 0 2020-05-10 19:40:23.940
+!MESSAGE StartupPlugin: could not remove workbench property change listener (1) ... workbench might already be shut down.

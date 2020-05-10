@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="getRevision"/>
+		<item key="selection" value="gripe"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="gripe"/>
+			<item value="getCon"/>
 			<item value="getRevision"/>
-			<item value="selectEuropean"/>
-			<item value="setTimeout"/>
-			<item value="setTime"/>
-			<item value="getName"/>
-			<item value="host"/>
-			<item value="set"/>
-			<item value="meta.freecol.org"/>
-			<item value="META_SERVER_PORT"/>
-			<item value="setServer"/>
-			<item value="getServer"/>
-			<item value="serverPort"/>
-			<item value="advantages"/>
-			<item value="setAdvantages"/>
-			<item value="setName"/>
+			<item value="loadSpecification"/>
+			<item value="loadSpec"/>
+			<item value="loadFile"/>
+			<item value="load"/>
+			<item value="selectDiff"/>
+			<item value="selectDifficulty"/>
+			<item value="difficulty"/>
+			<item value="getLocale"/>
+			<item value="setLocale"/>
+			<item value="selectAdvantages"/>
+			<item value="getAdvantages"/>
+			<item value="badSave"/>
 		</list>
 		<list key="replacehistory">
 		</list>
