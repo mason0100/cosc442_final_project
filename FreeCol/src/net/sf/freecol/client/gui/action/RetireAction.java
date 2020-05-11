@@ -30,11 +30,7 @@ import net.sf.freecol.common.model.Player;
  */
 public class RetireAction extends FreeColAction {
 
-<<<<<<< HEAD
     public static final String ID = "retireAction";
-=======
-    public static final String id = "retireAction";
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -43,11 +39,7 @@ public class RetireAction extends FreeColAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public RetireAction(FreeColClient freeColClient) {
-<<<<<<< HEAD
         super(freeColClient, ID);
-=======
-        super(freeColClient, id);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
 

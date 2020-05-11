@@ -110,66 +110,38 @@ public final class AboutPanel extends FreeColPanel {
         JLabel apRevision = new JLabel(FreeCol.getRevision());
         apRevision.setFont(fontNormal);
         add(apVersion, "newline 20");
-<<<<<<< HEAD
         String newLine = "newline";
 		add(apRevision, newLine);
-=======
-        add(apRevision, "newline");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
-
         // Official Site Link
         JLabel apOfficialSite = new JLabel();
         apOfficialSite = Utility.localizedLabel("aboutPanel.officialSite");
         apOfficialSite.setFont(fontBold);
-<<<<<<< HEAD
         String newlineTen = "newline 10";
 		add(apOfficialSite, newlineTen);
         JButton apSiteURL = Utility.getLinkButton(SITE_URL, null, SITE_URL);
         apSiteURL.addActionListener(this);
         apSiteURL.setFont(fontNormal);
         add(apSiteURL, newLine);
-=======
-        add(apOfficialSite, "newline 10");
-        JButton apSiteURL = Utility.getLinkButton(SITE_URL, null, SITE_URL);
-        apSiteURL.addActionListener(this);
-        apSiteURL.setFont(fontNormal);
-        add(apSiteURL, "newline");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         // SourceForge Project Site Link
         JLabel apSFProject = new JLabel();
         apSFProject = Utility.localizedLabel("aboutPanel.sfProject");      
         apSFProject.setFont(fontBold);
-<<<<<<< HEAD
+
         add(apSFProject, newlineTen);
         JButton apProjectURL = Utility.getLinkButton(PROJECT_URL, null, PROJECT_URL);
         apProjectURL.addActionListener(this);
         apProjectURL.setFont(fontNormal);
         add(apProjectURL, newLine);
-=======
-        add(apSFProject, "newline 10");
-        JButton apProjectURL = Utility.getLinkButton(PROJECT_URL, null, PROJECT_URL);
-        apProjectURL.addActionListener(this);
-        apProjectURL.setFont(fontNormal);
-        add(apProjectURL, "newline");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         // Manual
         JLabel apManual = Utility.localizedLabel("aboutPanel.manual");
         apManual.setFont(fontBold);
-<<<<<<< HEAD
         add(apManual, newlineTen);
         JButton apManualURL = Utility.getLinkButton(MANUAL_URL, null,
                                                     MANUAL_URL);
         apManualURL.addActionListener(this);
         add(apManualURL, newLine);
-=======
-        add(apManual, "newline 10");
-        JButton apManualURL = Utility.getLinkButton(MANUAL_URL, null,
-                                                    MANUAL_URL);
-        apManualURL.addActionListener(this);
-        add(apManualURL, "newline");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         
         // License Disclaimer
         JTextArea apLegal
@@ -180,11 +152,7 @@ public final class AboutPanel extends FreeColPanel {
         // Copyright
         JLabel apCopyright = Utility.localizedLabel("aboutPanel.copyright");
         apCopyright.setFont(fontNormal);
-<<<<<<< HEAD
         add(apCopyright, newlineTen);
-=======
-        add(apCopyright, "newline 10");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         add(okButton, "newline 20, tag ok");
     }

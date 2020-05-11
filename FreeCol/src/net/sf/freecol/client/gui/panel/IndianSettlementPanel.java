@@ -87,12 +87,8 @@ public final class IndianSettlementPanel extends FreeColPanel {
                 JLabel.CENTER));
         }
 
-<<<<<<< HEAD
         String newLine = "newline";
 		add(Utility.localizedLabel("indianSettlementPanel.learnableSkill"), newLine);
-=======
-        add(Utility.localizedLabel("indianSettlementPanel.learnableSkill"), "newline");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         final UnitType skillType = settlement.getLearnableSkill();
         add(Utility.localizedLabel(settlement.getLearnableSkillLabel(visited),
                 ((visited && skillType != null)
@@ -100,11 +96,7 @@ public final class IndianSettlementPanel extends FreeColPanel {
                     : null),
                 JLabel.CENTER));
 
-<<<<<<< HEAD
         add(Utility.localizedLabel("indianSettlementPanel.mostHated"), newLine);
-=======
-        add(Utility.localizedLabel("indianSettlementPanel.mostHated"), "newline");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         final Player mostHated = settlement.getMostHated();
         add(Utility.localizedLabel(settlement.getMostHatedLabel(contacted),
                 ((contacted && mostHated != null)
@@ -114,21 +106,13 @@ public final class IndianSettlementPanel extends FreeColPanel {
 
         GoodsType[] wantedGoods = settlement.getWantedGoods();
         final int n = (visited) ? settlement.getWantedGoodsAmount() : 2;
-<<<<<<< HEAD
         add(Utility.localizedLabel("indianSettlementPanel.highlyWanted"), newLine);
-=======
-        add(Utility.localizedLabel("indianSettlementPanel.highlyWanted"), "newline");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         add(Utility.localizedLabel(settlement.getWantedGoodsLabel(0, player),
                 ((visited && wantedGoods[0] != null)
                     ? new ImageIcon(lib.getIconImage(wantedGoods[0]))
                     : null),
                 JLabel.CENTER));
-<<<<<<< HEAD
         add(Utility.localizedLabel("indianSettlementPanel.otherWanted"), newLine);
-=======
-        add(Utility.localizedLabel("indianSettlementPanel.otherWanted"), "newline");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         String x = "split " + Integer.toString(n-1);
         for (int i = 1; i < n; i++) {
             add(Utility.localizedLabel(settlement.getWantedGoodsLabel(i, player),

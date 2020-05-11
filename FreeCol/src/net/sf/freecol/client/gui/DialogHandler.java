@@ -27,8 +27,4 @@ public interface DialogHandler<T> {
 
     void handle(T response);
 
-<<<<<<< HEAD
 }
-=======
-};
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6

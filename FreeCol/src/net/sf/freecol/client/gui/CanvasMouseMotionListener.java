@@ -36,11 +36,7 @@ import net.sf.freecol.common.model.Unit;
 public final class CanvasMouseMotionListener extends AbstractCanvasListener
     implements MouseMotionListener {
 
-<<<<<<< HEAD
     //private static final Logger logger = Logger.getLogger(CanvasMouseMotionListener.class.getName());
-=======
-    private static final Logger logger = Logger.getLogger(CanvasMouseMotionListener.class.getName());
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     /** Number of pixels that must be moved before a goto is enabled. */
     private static final int DRAG_THRESHOLD = 16;

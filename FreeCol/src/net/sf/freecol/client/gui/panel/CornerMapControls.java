@@ -199,12 +199,8 @@ public final class CornerMapControls extends MapControls {
         }
         if (!unitButtons.isEmpty()) {
             final int SPACE = 5;
-<<<<<<< HEAD
             int width = -SPACE;
             int height = 0;
-=======
-            int width = -SPACE, height = 0;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             for (UnitButton ub : unitButtons) {
                 height = Math.max(height, ub.getHeight());
                 width += SPACE + ub.getWidth();

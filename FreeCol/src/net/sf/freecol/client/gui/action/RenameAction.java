@@ -29,11 +29,7 @@ import net.sf.freecol.client.FreeColClient;
  */
 public class RenameAction extends UnitAction {
 
-<<<<<<< HEAD
     public static final String ID = "renameAction";
-=======
-    public static final String id = "renameAction";
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -42,11 +38,7 @@ public class RenameAction extends UnitAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public RenameAction(FreeColClient freeColClient) {
-<<<<<<< HEAD
         super(freeColClient, ID);
-=======
-        super(freeColClient, id);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
 

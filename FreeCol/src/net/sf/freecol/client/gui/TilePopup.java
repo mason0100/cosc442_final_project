@@ -23,10 +23,6 @@ import java.awt.Component;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
-<<<<<<< HEAD
-=======
-import java.util.Collections;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -39,10 +35,6 @@ import javax.swing.JSeparator;
 import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.client.control.InGameController;
 import net.sf.freecol.client.gui.action.UnloadAction;
-<<<<<<< HEAD
-=======
-import net.sf.freecol.client.gui.panel.ReportPanel;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 import net.sf.freecol.client.gui.panel.Utility;
 import net.sf.freecol.common.debug.DebugUtils;
 import net.sf.freecol.common.debug.FreeColDebugger;
@@ -100,7 +92,6 @@ public final class TilePopup extends JPopupMenu {
         final Unit activeUnit = gui.getActiveUnit();
         final boolean owned = player != null && activeUnit != null
             && player.owns(activeUnit);
-<<<<<<< HEAD
         activeUnit(freeColClient, canvas, tile, player, activeUnit, owned);
 
         Settlement settlement = tile.getSettlement();
@@ -176,10 +167,6 @@ public final class TilePopup extends JPopupMenu {
 			final Player player, final Unit activeUnit, final boolean owned) {
 		Tile unitTile;
 		if (activeUnit != null && owned
-=======
-        Tile unitTile;
-        if (activeUnit != null && owned
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             && (unitTile = activeUnit.getTile()) != null) {
             JMenuItem gotoMenuItem = null;
             if (activeUnit.isOffensiveUnit()
@@ -267,70 +254,8 @@ public final class TilePopup extends JPopupMenu {
             }
             if (hasAnItem) addSeparator();
         }
-<<<<<<< HEAD
 	}
-=======
 
-        Settlement settlement = tile.getSettlement();
-        if (settlement != null) {
-            if (settlement.getOwner() == player) {
-                addColony(((Colony) settlement));
-            } else if (settlement instanceof IndianSettlement) {
-                addIndianSettlement((IndianSettlement) settlement);
-            }
-            if (hasAnItem) addSeparator();
-        }
-
-        if (tile.isExplored()) addTile(tile);
-        addSeparator();
-
-        int lineCount = 0;
-        int maxUnits = UNIT_LINES_IN_FIRST_MENU;
-        Container currentMenu = this;
-        boolean moreUnits = false;
-        Unit firstUnit = tile.getFirstUnit();
-        for (Unit u : tile.getUnitList().stream()
-                 .sorted(Unit.typeRoleComparator)
-                 .collect(Collectors.toList())) {
-            if (lineCount > maxUnits) {
-                JMenu more = Utility.localizedMenu("more");
-                more.setFont(more.getFont().deriveFont(Font.ITALIC));
-                more.setOpaque(false);
-                currentMenu.add(more);
-                currentMenu = more;
-                moreUnits = true;
-                lineCount = 0;
-                maxUnits = UNIT_LINES_IN_OTHER_MENUS;
-            }
-            lineCount += addUnit(currentMenu, u, !u.isDamaged(), false);
-        }
-
-        if (tile.getUnitCount() > 1 && player.owns(firstUnit)) {
-            if (moreUnits) addSeparator();
-            JMenuItem activateAllItem = Utility.localizedMenuItem(StringTemplate
-                .template("activateAllUnits"));
-            activateAllItem.addActionListener((ActionEvent ae) -> {
-                    Unit lastUnit = null;
-                    for (Unit unit : tile.getUnitList()) {
-                        freeColClient.getInGameController().clearOrders(unit);
-                        lastUnit = unit;
-                    }
-                    gui.setActiveUnit(lastUnit);
-                });
-            add(activateAllItem);
-        }
-
-        if (FreeColDebugger.isInDebugMode(FreeColDebugger.DebugMode.MENUS)
-            && freeColClient.getFreeColServer() != null) {
-            addDebugItems(freeColClient, tile);
-        }
-
-        Component lastComponent = getComponent(getComponentCount() - 1);
-        if (lastComponent instanceof JSeparator) {
-            remove(lastComponent);
-        }
-    }
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     /**
      * Build the debug entries for the TilePopup.
@@ -591,10 +516,6 @@ public final class TilePopup extends JPopupMenu {
          * Don't set hasAnItem to true, we want the tile panel to open
          * automatically whenever there is no other item on the list.
          */
-<<<<<<< HEAD
-=======
-        // hasAnItem = true;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     /**

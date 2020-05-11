@@ -40,12 +40,6 @@ public class VideoComponent extends JPanel {
 
     private static final Logger logger = Logger.getLogger(VideoComponent.class.getName());
 
-<<<<<<< HEAD
-=======
-    //private List<VideoListener> videoListeners
-    //    = new LinkedList<VideoListener>();
-
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     private final Cortado applet;
 
 
@@ -78,19 +72,6 @@ public class VideoComponent extends JPanel {
         applet.setParam("debug", "0");
         applet.init();
 
-<<<<<<< HEAD
-=======
-        // Disable the feature that seems to be missing from the stock Cortado
-        //applet.setStopListener(new StopListener() {
-        //    public void stopped() {
-        //        SwingUtilities.invokeLater(() -> {
-        //            for (VideoListener sl : videoListeners) {
-        //                sl.stopped();
-        //            }
-        //        });
-        //    }
-        //});
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         setLayout(null);
         add(applet);
@@ -105,28 +86,6 @@ public class VideoComponent extends JPanel {
         return FreeColImageBorder.imageBorder;
     }
 
-<<<<<<< HEAD
-=======
-    ///**
-    // * Adds a listener for video playback events.
-    // *
-    // * @param videoListener A listener for video playback events.
-    // */
-    //public void addVideoListener(VideoListener videoListener) {
-    //    videoListeners.add(videoListener);
-    //}
-    //
-    ///**
-    // * Removes the given listener.
-    // *
-    // * @param videoListener The listener to be removed from this
-    // *     <code>VideoComponent</code>.
-    // */
-    //public void removeVideoListener(VideoListener videoListener) {
-    //    videoListeners.remove(videoListener);
-    //}
-
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     @Override
     public void addMouseListener(MouseListener l) {
         super.addMouseListener(l);

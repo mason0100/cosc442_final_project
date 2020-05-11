@@ -187,12 +187,8 @@ public final class ColopediaPanel extends FreeColPanel
     private void select(String id) {
         DefaultMutableTreeNode node = nodeMap.get(id);
         if (node == null) {
-<<<<<<< HEAD
             String loggerWarning = "Unable to find node with id '" + id + "'.";
 			logger.warning(loggerWarning);
-=======
-            logger.warning("Unable to find node with id '" + id + "'.");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         } else {
             TreePath oldPath = tree.getSelectionPath();
             if (oldPath != null && oldPath.getParentPath() != null) {

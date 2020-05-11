@@ -30,11 +30,7 @@ import net.sf.freecol.client.FreeColClient;
  */
 public class MiniMapToggleFogOfWarAction extends MapboardAction {
 
-<<<<<<< HEAD
     public static final String ID = "miniMapToggleFogOfWarAction";
-=======
-    public static final String id = "miniMapToggleFogOfWarAction";
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -42,18 +38,10 @@ public class MiniMapToggleFogOfWarAction extends MapboardAction {
      *
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
-<<<<<<< HEAD
     static String toggleFog = "toggle_fog_of_war";
     public MiniMapToggleFogOfWarAction(FreeColClient freeColClient) {
         super(freeColClient, ID);
         
-		addImageIcons(toggleFog);
-=======
-    public MiniMapToggleFogOfWarAction(FreeColClient freeColClient) {
-        super(freeColClient, id);
-        
-        addImageIcons("toggle_fog_of_war");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     /**
@@ -63,15 +51,9 @@ public class MiniMapToggleFogOfWarAction extends MapboardAction {
      * @param b a <code>boolean</code> value
      */
     public MiniMapToggleFogOfWarAction(FreeColClient freeColClient, boolean b) {
-<<<<<<< HEAD
         super(freeColClient, ID + ".secondary");
 
         addImageIcons(toggleFog);
-=======
-        super(freeColClient, id + ".secondary");
-
-        addImageIcons("toggle_fog_of_war");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
     
     // Interface ActionListener
@@ -84,11 +66,7 @@ public class MiniMapToggleFogOfWarAction extends MapboardAction {
         getGUI().miniMapToggleFogOfWarControls();
 
         if (freeColClient.getClientOptions().getBoolean(ClientOptions.MINIMAP_TOGGLE_FOG_OF_WAR)) {
-<<<<<<< HEAD
             addImageIcons(toggleFog);
-=======
-            addImageIcons("toggle_fog_of_war");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         } else {
             addImageIcons("toggle_fog_of_war_no");
         }

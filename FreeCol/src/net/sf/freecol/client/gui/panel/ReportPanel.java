@@ -22,10 +22,6 @@ package net.sf.freecol.client.gui.panel;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
-<<<<<<< HEAD
-=======
-import java.util.Comparator;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 import java.util.logging.Logger;
 
 import javax.swing.ImageIcon;
@@ -54,11 +50,7 @@ public class ReportPanel extends FreeColPanel {
 
     protected static final Logger logger = Logger.getLogger(ReportPanel.class.getName());
 
-<<<<<<< HEAD
     protected final JPanel reportJPanel;
-=======
-    protected final JPanel reportPanel;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     protected final JLabel header;
 
@@ -78,19 +70,11 @@ public class ReportPanel extends FreeColPanel {
         header = Utility.localizedHeader(Messages.nameKey(key), false);
         add(header, "cell 0 0, align center");
 
-<<<<<<< HEAD
         reportJPanel = new MigPanel("ReportPanelUI");
         reportJPanel.setOpaque(true);
         reportJPanel.setBorder(createBorder());
 
         scrollPane = new JScrollPane(reportJPanel,
-=======
-        reportPanel = new MigPanel("ReportPanelUI");
-        reportPanel.setOpaque(true);
-        reportPanel.setBorder(createBorder());
-
-        scrollPane = new JScrollPane(reportPanel,
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
             JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         scrollPane.getVerticalScrollBar().setUnitIncrement( 16 );
@@ -106,13 +90,8 @@ public class ReportPanel extends FreeColPanel {
      * Prepares this panel to be displayed.
      */
     public void initialize() {
-<<<<<<< HEAD
         reportJPanel.removeAll();
         reportJPanel.doLayout();
-=======
-        reportPanel.removeAll();
-        reportPanel.doLayout();
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     private Border createBorder() {

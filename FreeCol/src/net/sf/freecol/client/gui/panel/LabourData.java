@@ -484,10 +484,6 @@ public class LabourData {
 
     private void incrementOutsideWorker(UnitData unitData, Unit unit,
                                         LocationData.Getter getter) {
-<<<<<<< HEAD
-=======
-        String roleId = unit.getRole().getId();
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         UnitData workingAs = null;
         if (unit.isArmed()) {
             workingAs = soldier;
@@ -542,11 +538,7 @@ public class LabourData {
 
         UnitData workingAs = experts.get(currentlyWorking);
         if (workingAs == null) {
-<<<<<<< HEAD
         	//Ignore for now
-=======
-            ; // pass
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         } else if (workingAs.getUnitType() == unit.getType()) {
             colonyData.getWorkingProfessionals().addProduction(production);
         } else {

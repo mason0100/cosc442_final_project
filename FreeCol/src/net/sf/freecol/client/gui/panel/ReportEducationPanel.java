@@ -46,28 +46,17 @@ public final class ReportEducationPanel extends ReportPanel {
     public ReportEducationPanel(FreeColClient freeColClient) {
         super(freeColClient, "reportEducationAction");
 
-<<<<<<< HEAD
         reportJPanel.setLayout(new MigLayout("wrap 2, fill",
-=======
-        reportPanel.setLayout(new MigLayout("wrap 2, fill",
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                                             "[]20[fill, growprio 200]"));
         List<Colony> colonies = freeColClient.getMySortedColonies();
         for (Colony colony : colonies) {
             for (Building building : colony.getBuildings()) {
                 if (building.canTeach()) {
                     int maxSkill = Unit.UNDEFINED;
-<<<<<<< HEAD
                     reportJPanel.add(createColonyButton(colony), "newline, split 2, flowy");
                     BuildingPanel bp = new BuildingPanel(getFreeColClient(), building);
                     bp.initialize();
                     reportJPanel.add(bp);
-=======
-                    reportPanel.add(createColonyButton(colony), "newline, split 2, flowy");
-                    BuildingPanel bp = new BuildingPanel(getFreeColClient(), building);
-                    bp.initialize();
-                    reportPanel.add(bp);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                     JPanel teacherPanel = getPanel("report.education.teachers");
                     for (Unit unit : colony.getUnitList()) {
                         if (building.canAdd(unit)) {
@@ -75,22 +64,14 @@ public final class ReportEducationPanel extends ReportPanel {
                             maxSkill = Math.max(maxSkill, unit.getType().getSkill());
                         }
                     }
-<<<<<<< HEAD
                     reportJPanel.add(teacherPanel, "split 2, flowy, grow");
-=======
-                    reportPanel.add(teacherPanel, "split 2, flowy, grow");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                     JPanel studentPanel = getPanel("report.education.students");
                     for (Unit unit : colony.getUnitList()) {
                         if (unit.getType().getEducationUnit(maxSkill) != null) {
                             studentPanel.add(new UnitLabel(getFreeColClient(), unit, true, true));
                         }
                     }
-<<<<<<< HEAD
                     reportJPanel.add(studentPanel, "grow");
-=======
-                    reportPanel.add(studentPanel, "grow");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 }
             }
         }

@@ -37,10 +37,6 @@ import java.awt.dnd.DragSourceListener;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
-<<<<<<< HEAD
-=======
-import java.util.Arrays;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -134,10 +130,6 @@ public final class DefaultTransferHandler extends TransferHandler {
                         } catch (RuntimeException re) {
                             cursor = null;
                         }
-<<<<<<< HEAD
-=======
-                        // Point point = new Point(0, 0);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                         dge.startDrag(cursor, t, this);
                     } else {
                         dge.startDrag(null, t, this);
@@ -158,37 +150,25 @@ public final class DefaultTransferHandler extends TransferHandler {
          * As the hotspot enters a platform dependent drop site.
          */
         @Override
-<<<<<<< HEAD
         public void dragEnter(DragSourceDragEvent dsde) {
         	//Ignore for now
         }
-=======
-        public void dragEnter(DragSourceDragEvent dsde) {}
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         /**
          * As the hotspot moves over a platform dependent drop site.
          */
         @Override
-<<<<<<< HEAD
         public void dragOver(DragSourceDragEvent dsde) {
         	//Ignore for now
         }
-=======
-        public void dragOver(DragSourceDragEvent dsde) {}
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         /**
          * As the hotspot exits a platform dependent drop site.
          */
         @Override
-<<<<<<< HEAD
         public void dragExit(DragSourceEvent dsde) {
         	//Ignore for now
         }
-=======
-        public void dragExit(DragSourceEvent dsde) {}
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         /**
          * As the operation completes.
@@ -250,13 +230,9 @@ public final class DefaultTransferHandler extends TransferHandler {
          * subclasses must override this method
          */
         @Override
-<<<<<<< HEAD
         protected void unregisterListeners() {
         	//Ignore for now
         }
-=======
-        protected void unregisterListeners() {}
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
 
@@ -351,12 +327,8 @@ public final class DefaultTransferHandler extends TransferHandler {
             if (t.isDataFlavorSupported(DefaultTransferHandler.flavor)) {
                 data = (JLabel)t.getTransferData(DefaultTransferHandler.flavor);
             } else {
-<<<<<<< HEAD
                 String loggerWarningData = "Data flavor is not supported for " + t;
 				logger.warning(loggerWarningData);
-=======
-                logger.warning("Data flavor is not supported for " + t);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 return false;
             }
 
@@ -397,12 +369,8 @@ public final class DefaultTransferHandler extends TransferHandler {
             // Ignore if data is already in comp.
             if (data.getParent() == comp) return false;
 
-<<<<<<< HEAD
             String loggerWarningFailed = "Failed to handle: " + comp;
 			if (data instanceof GoodsLabel) {
-=======
-            if (data instanceof GoodsLabel) {
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 // Check if the goods can be dragged to comp.
                 GoodsLabel label = (GoodsLabel)data;
                 Goods goods = label.getGoods();
@@ -430,10 +398,7 @@ public final class DefaultTransferHandler extends TransferHandler {
                     if (amount <= 0) return false;
                     goods.setAmount(amount);
                 } else if (label.isFullChosen()) {
-<<<<<<< HEAD
                 	//Ignore for now
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 } else if (goods.getAmount() > GoodsContainer.CARGO_SIZE) {
                     goods.setAmount(GoodsContainer.CARGO_SIZE);
                 }
@@ -450,11 +415,8 @@ public final class DefaultTransferHandler extends TransferHandler {
                     return true;
 
                 } else if (comp instanceof JLabel) {
-<<<<<<< HEAD
                     logger.warning(loggerWarningFailed);
-=======
-                    logger.warning("Failed to handle: " + comp);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
+
                 }
 
             } else if (data instanceof MarketLabel) {
@@ -480,20 +442,12 @@ public final class DefaultTransferHandler extends TransferHandler {
                     comp.revalidate();
                     return true;
                 } else if (comp instanceof JLabel) {
-<<<<<<< HEAD
                     logger.warning(loggerWarningFailed);
                     return true;
                 } else {
                     String loggerWarningInvaild = "Invalid type for receiving component: "
                                    + comp;
 					logger.warning(loggerWarningInvaild);
-=======
-                    logger.warning("Failed to handle: " + comp);
-                    return true;
-                } else {
-                    logger.warning("Invalid type for receiving component: "
-                                   + comp);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 }
 
             } else if (data instanceof UnitLabel) {
@@ -513,12 +467,8 @@ public final class DefaultTransferHandler extends TransferHandler {
                 return true;
 
             } else {
-<<<<<<< HEAD
                 String loggerWarningInvaild = "Invalid type for dragged component: " + data;
 				logger.warning(loggerWarningInvaild);
-=======
-                logger.warning("Invalid type for dragged component: " + data);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             }
         } catch (Exception e) { // FIXME: Suggest a reconnect?
             logger.log(Level.WARNING, "Import data fail", e);

@@ -111,17 +111,11 @@ public class WorkProductionPanel extends FreeColPanel {
         output(attendedModifiers, unitType);
 
         result = wl.getPotentialProduction(workType, unitType);
-<<<<<<< HEAD
         String newLine = "newline";
 		String wrapThirty = "wrap 30";
 		if (result < 0.0f) {
             add(Utility.localizedLabel("workProductionPanel.zeroThreshold"), newLine);
             add(new JLabel(ModifierFormat.format(-result)), wrapThirty);
-=======
-        if (result < 0.0f) {
-            add(Utility.localizedLabel("workProductionPanel.zeroThreshold"), "newline");
-            add(new JLabel(ModifierFormat.format(-result)), "wrap 30");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             result = 0.0f;
         }
 
@@ -129,30 +123,18 @@ public class WorkProductionPanel extends FreeColPanel {
             FontLibrary.FontSize.SMALLER, Font.BOLD, lib.getScaleFactor());
         JLabel finalLabel = Utility.localizedLabel("finalResult");
         finalLabel.setFont(bigFont);
-<<<<<<< HEAD
         add(finalLabel, newLine);
-=======
-        add(finalLabel, "newline");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         JLabel finalResult = new JLabel(ModifierFormat.format(result));
         finalResult.setFont(bigFont);
         finalResult.setBorder(Utility.PRODUCTION_BORDER);
-<<<<<<< HEAD
         add(finalResult, wrapThirty);
-=======
-        add(finalResult, "wrap 30");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         if (wl instanceof Building) { // Unattended production also applies.
             result = wl.getBaseProduction(null, workType, null);
             if (result > 0) {
                 add(Utility.localizedLabel(wl.getLabel()));
-<<<<<<< HEAD
                 add(new JLabel(ModifierFormat.format(result)), wrapThirty);
-=======
-                add(new JLabel(ModifierFormat.format(result)), "wrap 30");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 Collections.sort(unattendedModifiers);
                 output(unattendedModifiers, unitType);
             }

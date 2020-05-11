@@ -31,12 +31,7 @@ import net.sf.freecol.client.FreeColClient;
  * An action for displaying the map controls.
  */
 public class MapControlsAction extends SelectableAction {
-
-<<<<<<< HEAD
     public static final String ID = "mapControlsAction";
-=======
-    public static final String id = "mapControlsAction";
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -45,11 +40,7 @@ public class MapControlsAction extends SelectableAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public MapControlsAction(FreeColClient freeColClient) {
-<<<<<<< HEAD
         super(freeColClient, ID, ClientOptions.DISPLAY_MAP_CONTROLS);
-=======
-        super(freeColClient, id, ClientOptions.DISPLAY_MAP_CONTROLS);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
 

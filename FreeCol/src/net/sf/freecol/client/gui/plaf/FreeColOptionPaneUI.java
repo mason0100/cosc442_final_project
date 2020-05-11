@@ -52,12 +52,8 @@ public class FreeColOptionPaneUI extends BasicOptionPaneUI {
 
     private Component initialFocusComponent = null;
 
-<<<<<<< HEAD
     private int okIndex = -1;
     private int cancelIndex = -1;
-=======
-    private int okIndex = -1, cancelIndex = -1;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     private JButton[] newButtons = null;
 
@@ -99,12 +95,8 @@ public class FreeColOptionPaneUI extends BasicOptionPaneUI {
         final String cancelLabel = Messages.message("cancel");
         this.newButtons = new JButton[buttons.length];
 
-<<<<<<< HEAD
         int maxWidth = 0;
         int maxHeight = 0;
-=======
-        int maxWidth = 0, maxHeight = 0;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         for (int i = 0; i < buttons.length; i++) {
             JButton b;
             if (buttons[i] instanceof ChoiceItem) {

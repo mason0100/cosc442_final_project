@@ -26,10 +26,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-<<<<<<< HEAD
 import java.nio.charset.StandardCharsets;
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
@@ -190,19 +187,11 @@ public class Messages {
                         NumberRules.load(in);
                     }
                 } catch (IOException e) {
-<<<<<<< HEAD
                     logger.warning("Failed to read CLDR rules: "
                         + e.getMessage());
                 }
             } else {
                 logger.warning("Could not find CLDR rules: "
-=======
-                    System.err.println("Failed to read CLDR rules: "
-                        + e.getMessage());
-                }
-            } else {
-                System.err.println("Could not find CLDR rules: "
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                     + cldr.getPath());
             }
         }
@@ -217,11 +206,7 @@ public class Messages {
             try {
                 loadMessages(new FileInputStream(file));
             } catch (IOException e) {
-<<<<<<< HEAD
                 logger.warning("Failed to load messages from " + name
-=======
-                System.err.println("Failed to load messages from " + name
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                     + ": " + e.getMessage());
             }
         }
@@ -237,15 +222,7 @@ public class Messages {
      */
     public static void loadMessages(InputStream is) throws IOException {
         InputStreamReader inputReader;
-<<<<<<< HEAD
         inputReader = new InputStreamReader(is, StandardCharsets.UTF_8);
-=======
-        try {
-            inputReader = new InputStreamReader(is, "UTF-8");
-        } catch (UnsupportedEncodingException uee) {
-            return; // We have big problems if UTF-8 is not supported.
-        }
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         BufferedReader in = new BufferedReader(inputReader);
 
         String line = null;
@@ -288,13 +265,9 @@ public class Messages {
             for (String name : filenames) {
                 try {
                     loadMessages(fcmf.getInputStream(name));
-<<<<<<< HEAD
                 } catch (IOException e) {
                 	// Failures expected
                 } 
-=======
-                } catch (IOException e) {} // Failures expected
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             }
         }
     }
@@ -313,13 +286,9 @@ public class Messages {
             for (String name : getModMessageFileNames(locale)) {
                 try {
                     loadMessages(fcmf.getInputStream(name));
-<<<<<<< HEAD
                 } catch (IOException e) {
                 	// Failures expected
                 } 
-=======
-                } catch (IOException e) {} // Failures expected
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             }
         }
     }
@@ -334,13 +303,9 @@ public class Messages {
      * @return The <code>Locale</code> for the specified language.
      */
     public static Locale getLocale(String languageID) {
-<<<<<<< HEAD
         String language;
         String country = "";
         String variant = "";
-=======
-        String language, country = "", variant = "";
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         StringTokenizer st = new StringTokenizer(languageID, "_", true);
         language = st.nextToken();
         if (st.hasMoreTokens()) {
@@ -753,12 +718,8 @@ public class Messages {
                 if (result.length() >= template.getId().length()) {
                     result = result.substring(template.getId().length());
                 } else {
-<<<<<<< HEAD
                     String loggerWarningIncorrect = "incorrect use of template " + template;
 					logger.warning(loggerWarningIncorrect);
-=======
-                    logger.warning("incorrect use of template " + template);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 }
             }
             break;
@@ -814,34 +775,22 @@ public class Messages {
             closeChoice = findMatchingBracket(input, openChoice + 2);
             if (closeChoice < 0) {
                 // no closing brackets found
-<<<<<<< HEAD
                 String loggerWarningMismatch = "Mismatched brackets: " + input;
 				logger.warning(loggerWarningMismatch);
-=======
-                logger.warning("Mismatched brackets: " + input);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 return result.toString();
             }
             highWaterMark = closeChoice + 2;
             int colonIndex = input.indexOf(':', openChoice + 2);
             if (colonIndex < 0 || colonIndex > closeChoice) {
-<<<<<<< HEAD
                 String loggerWarningNoTag = "No tag found: " + input;
 				logger.warning(loggerWarningNoTag);
-=======
-                logger.warning("No tag found: " + input);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 continue;
             }
             String tag = input.substring(openChoice + 2, colonIndex);
             int pipeIndex = input.indexOf('|', colonIndex + 1);
             if (pipeIndex < 0 || pipeIndex > closeChoice) {
-<<<<<<< HEAD
                 String loggerWarningChoice = "No choices found: " + input;
 				logger.warning(loggerWarningChoice);
-=======
-                logger.warning("No choices found: " + input);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 continue;
             }
             String selector = input.substring(colonIndex + 1, pipeIndex);
@@ -853,12 +802,8 @@ public class Messages {
                 } else {
                     StringTemplate replacement = template.getReplacement(selector);
                     if (replacement == null) {
-<<<<<<< HEAD
                         String loggerWarningFailed = "Failed to find replacement for " + selector;
 						logger.warning(loggerWarningFailed);
-=======
-                        logger.warning("Failed to find replacement for " + selector);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                         continue;
                     } else {
                         selector = message(replacement);
@@ -882,14 +827,9 @@ public class Messages {
                     && template != null) {
                     StringTemplate replacement = template.getReplacement(otherKey);
                     if (replacement == null) {
-<<<<<<< HEAD
                         String loggerWarningFailed = "Failed to find replacement for " + otherKey;
 						logger.warning(loggerWarningFailed);
                      
-=======
-                        logger.warning("Failed to find replacement for " + otherKey);
-                        continue;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                     } else if (replacement.getTemplateType() == TemplateType.KEY) {
                         otherKey = messageBundle.get(replacement.getId());
                         keyIndex = otherKey.indexOf("{{");
@@ -899,16 +839,10 @@ public class Messages {
                         } else {
                             keyIndex = otherKey.indexOf(selector, keyIndex);
                             if (keyIndex < 0) {
-<<<<<<< HEAD
                                 String loggerWarning = "Failed to find key " + selector + " in replacement "
                                                + replacement.getId();
 								logger.warning(loggerWarning);
                                 
-=======
-                                logger.warning("Failed to find key " + selector + " in replacement "
-                                               + replacement.getId());
-                                continue;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                             } else {
                                 result.append(getChoice(otherKey, selector));
                             }
@@ -916,26 +850,15 @@ public class Messages {
                     } else {
                         logger.warning("Choice substitution attempted, but template type was "
                                        + replacement.getTemplateType());
-<<<<<<< HEAD
-                        
-=======
-                        continue;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                     }
                 } else if (containsKey(otherKey)) {
                     otherKey = getChoice(messageBundle.get(otherKey), selector);
                     result.append(otherKey);
                 } else {
-<<<<<<< HEAD
                     String loggerWarningUnkown = "Unknown key or untagged choice: '" + otherKey
                                    + "', selector was '" + selector
                                    + "', trying 'default' instead";
 					logger.warning(loggerWarningUnkown);
-=======
-                    logger.warning("Unknown key or untagged choice: '" + otherKey
-                                   + "', selector was '" + selector
-                                   + "', trying 'default' instead");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                     int defaultStart = otherKey.indexOf("default=");
                     if (defaultStart >= 0) {
                         defaultStart += 8;
@@ -949,11 +872,6 @@ public class Messages {
                         result.append(defaultChoice);
                     } else {
                         logger.warning("No default choice found.");
-<<<<<<< HEAD
-                        
-=======
-                        continue;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                     }
                 }
             } else {
@@ -997,14 +915,9 @@ public class Messages {
             if (end < 0) {
                 end = input.indexOf("}}", start);
                 if (end < 0) {
-<<<<<<< HEAD
                     String loggerWarningFailed = "Failed to find end of choice for key " + key
                                    + " in input " + input;
 					logger.warning(loggerWarningFailed);
-=======
-                    logger.warning("Failed to find end of choice for key " + key
-                                   + " in input " + input);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                     return null;
                 }
             }

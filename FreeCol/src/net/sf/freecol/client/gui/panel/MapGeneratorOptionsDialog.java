@@ -177,21 +177,7 @@ public final class MapGeneratorOptionsDialog extends OptionsDialog {
             Image thumbnail = ImageIO.read(savegame
                 .getInputStream(FreeColSavegameFile.THUMBNAIL_FILE));
             mapButton.setIcon(new ImageIcon(thumbnail));
-<<<<<<< HEAD
             propertiesLoad(mapButton, savegame);
-=======
-            try {
-                Properties properties = new Properties();
-                properties.load(savegame
-                    .getInputStream(FreeColSavegameFile.SAVEGAME_PROPERTIES));
-                mapButton.setToolTipText(properties.getProperty("map.width")
-                    + "\u00D7"
-                    + properties.getProperty("map.height"));
-            } catch (Exception e) {
-                logger.log(Level.WARNING, "Unable to load savegame.", e);
-                return null;
-            }
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             mapButton.setHorizontalTextPosition(JButton.CENTER);
             mapButton.setVerticalTextPosition(JButton.BOTTOM);
         } catch (Exception e) {
@@ -201,7 +187,6 @@ public final class MapGeneratorOptionsDialog extends OptionsDialog {
     }
 
 
-<<<<<<< HEAD
 	private void propertiesLoad(JButton mapButton, FreeColSavegameFile savegame) {
 		try {
 		    Properties properties = new Properties();
@@ -216,8 +201,6 @@ public final class MapGeneratorOptionsDialog extends OptionsDialog {
 	}
 
 
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     // Override OptionsDialog
 
     /**

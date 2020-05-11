@@ -36,27 +36,17 @@ import static net.sf.freecol.common.util.StringUtils.*;
  */
 public class DisplayTileTextAction extends SelectableAction {
 
-<<<<<<< HEAD
+
     public static final String ID = "displayTileTextAction.";
 
     // FIXME: make ClientOptions use enum
     public enum DisplayText {
-=======
-    public static final String id = "displayTileTextAction.";
-
-    // FIXME: make ClientOptions use enum
-    public static enum DisplayText {
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         EMPTY, NAMES, OWNERS, REGIONS;
 
         public String getKey() {
             return getEnumKey(this);
         }
-<<<<<<< HEAD
     }
-=======
-    };
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     private static final int[] accelerators = {
         KeyEvent.VK_E,
@@ -76,11 +66,7 @@ public class DisplayTileTextAction extends SelectableAction {
      */
     public DisplayTileTextAction(FreeColClient freeColClient,
                                  DisplayText type) {
-<<<<<<< HEAD
         super(freeColClient, ID + type.getKey(),
-=======
-        super(freeColClient, id + type.getKey(),
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
               ClientOptions.DISPLAY_TILE_TEXT);
         display = type;
         setAccelerator(KeyStroke.getKeyStroke(accelerators[type.ordinal()],

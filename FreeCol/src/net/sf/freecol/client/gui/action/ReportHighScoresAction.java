@@ -28,12 +28,7 @@ import net.sf.freecol.client.FreeColClient;
  * An action for displaying a High Score Report.
  */
 public class ReportHighScoresAction extends FreeColAction {
-
-<<<<<<< HEAD
     public static final String ID = "reportHighScoresAction";
-=======
-    public static final String id = "reportHighScoresAction";
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -42,11 +37,8 @@ public class ReportHighScoresAction extends FreeColAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public ReportHighScoresAction(FreeColClient freeColClient) {
-<<<<<<< HEAD
         super(freeColClient, ID);
-=======
-        super(freeColClient, id);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
+
     }
 
 

@@ -29,15 +29,9 @@ public class ZeroOneNumberRule extends Number {
     @Override
     public Category getCategory(double input) {
         if (input == 0 || input == 1) {
-<<<<<<< HEAD
             return Category.ONE;
         } else {
             return Category.OTHER;
-=======
-            return Category.one;
-        } else {
-            return Category.other;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
     }
 

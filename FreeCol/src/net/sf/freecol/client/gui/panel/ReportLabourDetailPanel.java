@@ -120,10 +120,6 @@ public final class ReportLabourDetailPanel extends ReportPanel
             detailPanel.add(Utility.localizedLabel("report.labour.canTrain"),
                             "newline 20, span");
         }
-<<<<<<< HEAD
         reportJPanel.add(detailPanel);
-=======
-        reportPanel.add(detailPanel);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 }

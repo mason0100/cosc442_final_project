@@ -238,12 +238,8 @@ public abstract class FreeColPanel extends MigPanel implements ActionListener {
         if (OK.equals(command)) {
             getGUI().removeFromCanvas(this);
         } else {
-<<<<<<< HEAD
             String loggerWarning = "Bad event: " + command;
 			logger.warning(loggerWarning);
-=======
-            logger.warning("Bad event: " + command);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
     }
 

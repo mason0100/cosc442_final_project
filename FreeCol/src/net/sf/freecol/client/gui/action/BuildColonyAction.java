@@ -30,11 +30,7 @@ import net.sf.freecol.common.model.Unit;
  */
 public class BuildColonyAction extends UnitAction {
 
-<<<<<<< HEAD
     public static final String ID = "buildColonyAction";
-=======
-    public static final String id = "buildColonyAction";
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -43,11 +39,7 @@ public class BuildColonyAction extends UnitAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public BuildColonyAction(FreeColClient freeColClient) {
-<<<<<<< HEAD
         super(freeColClient, ID);
-=======
-        super(freeColClient, id);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         addImageIcons("build");
     }

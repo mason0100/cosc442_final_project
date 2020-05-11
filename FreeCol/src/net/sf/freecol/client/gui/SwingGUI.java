@@ -271,19 +271,13 @@ public class SwingGUI extends GUI {
 
             @Override
             public void keyReleased(KeyEvent e1) {
-<<<<<<< HEAD
             	//Ignore for now
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 execute();
             }
 
             @Override
             public void keyTyped(KeyEvent e2) {
-<<<<<<< HEAD
             	//Ignore for now
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             }
 
             @Override
@@ -293,34 +287,22 @@ public class SwingGUI extends GUI {
 
             @Override
             public void mouseEntered(MouseEvent e4) {
-<<<<<<< HEAD
             	//Ignore for now
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             }
 
             @Override
             public void mouseExited(MouseEvent e5) {
-<<<<<<< HEAD
             	//Ignore for now
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             }
 
             @Override
             public void mousePressed(MouseEvent e6) {
-<<<<<<< HEAD
             	//Ignore for now
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             }
 
             @Override
             public void mouseReleased(MouseEvent e7) {
-<<<<<<< HEAD
             	//Ignore for now
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             }
 
             @Override
@@ -341,10 +323,6 @@ public class SwingGUI extends GUI {
                 canvas.removeKeyListener(this);
                 canvas.removeMouseListener(this);
                 vp.removeMouseListener(this);
-<<<<<<< HEAD
-=======
-                //vp.removeVideoListener(this);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 vp.stop();
                 canvas.remove(vp);
                 if (t != null) {
@@ -356,10 +334,6 @@ public class SwingGUI extends GUI {
         }
         AbortListener l = new AbortListener();
         vp.addMouseListener(l);
-<<<<<<< HEAD
-=======
-        //vp.addVideoListener(l);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         canvas.showVideoComponent(vp, l, l);
         vp.play();
         // Cortado applet is failing to quit when finished, make sure it
@@ -380,25 +354,17 @@ public class SwingGUI extends GUI {
     private static GraphicsDevice getGoodGraphicsDevice() {
         try {
             return MouseInfo.getPointerInfo().getDevice();
-<<<<<<< HEAD
         } catch (HeadlessException he) {
         	//Ignore for now
         }
-=======
-        } catch (HeadlessException he) {}
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         try {
             final GraphicsEnvironment lge
                 = GraphicsEnvironment.getLocalGraphicsEnvironment();
             return lge.getDefaultScreenDevice();
-<<<<<<< HEAD
         } catch (HeadlessException he) {
         	//Ignore for now
         }
-=======
-        } catch (HeadlessException he) {}
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         FreeColClient.fatal("Could not find a GraphicsDevice!");
         return null;
@@ -646,10 +612,7 @@ public class SwingGUI extends GUI {
      * @param tile The <code>Tile</code> to check.
      * @return True if the focus was set.
      */
-<<<<<<< HEAD
     @Override
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     public boolean requireFocus(Tile tile) {
         // Account for the ALWAYS_CENTER client option.
         boolean required = freeColClient.getClientOptions()

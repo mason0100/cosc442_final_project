@@ -161,13 +161,9 @@ public class FreeColDebugger {
             default:
                 return false;
             }
-<<<<<<< HEAD
         } catch (NumberFormatException nfe) {
         	//Ignore for now
         }
-=======
-        } catch (NumberFormatException nfe) {}
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         // end @compat
 
         for (String s : optionValue.split(",")) {
@@ -274,13 +270,9 @@ public class FreeColDebugger {
                 try {
                     fcs.saveGame(new File(".", getDebugRunSave()),
                                  freeColClient.getClientOptions());
-<<<<<<< HEAD
                 } catch (IOException e) {
                 	//Ignore for now
                 }
-=======
-                } catch (IOException e) {}
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             }
             freeColClient.quit();
         }

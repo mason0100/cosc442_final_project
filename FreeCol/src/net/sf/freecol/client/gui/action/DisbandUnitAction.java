@@ -29,11 +29,7 @@ import net.sf.freecol.client.FreeColClient;
  */
 public class DisbandUnitAction extends UnitAction {
 
-<<<<<<< HEAD
     public static final String ID = "disbandUnitAction";
-=======
-    public static final String id = "disbandUnitAction";
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -42,11 +38,8 @@ public class DisbandUnitAction extends UnitAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public DisbandUnitAction(FreeColClient freeColClient) {
-<<<<<<< HEAD
         super(freeColClient, ID);
-=======
-        super(freeColClient, id);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
+
 
         addImageIcons("disband");
     }

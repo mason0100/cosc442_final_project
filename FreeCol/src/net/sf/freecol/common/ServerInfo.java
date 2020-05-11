@@ -111,20 +111,12 @@ public class ServerInfo {
      * @param element The <code>Element</code> to update from.
      */
     public final void update(Element element) {
-<<<<<<< HEAD
         String slotsAvailableElement = "slotsAvailable";
 		update(element.getAttribute("name"), element.getAttribute("address"),
                Integer.parseInt(element.getAttribute("port")),
                Integer.parseInt(element.getAttribute(slotsAvailableElement)),
                Integer.parseInt(element.getAttribute("currentlyPlaying")),
                Boolean.parseBoolean(element.getAttribute(slotsAvailableElement)),
-=======
-        update(element.getAttribute("name"), element.getAttribute("address"),
-               Integer.parseInt(element.getAttribute("port")),
-               Integer.parseInt(element.getAttribute("slotsAvailable")),
-               Integer.parseInt(element.getAttribute("currentlyPlaying")),
-               Boolean.parseBoolean(element.getAttribute("slotsAvailable")),
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                element.getAttribute("version"),
                Integer.parseInt(element.getAttribute("gameState")));
     }

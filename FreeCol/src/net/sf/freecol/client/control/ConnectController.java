@@ -39,10 +39,7 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.client.gui.ChoiceItem;
 import net.sf.freecol.client.gui.GUI;
 import net.sf.freecol.client.gui.LoadingSavegameInfo;
-<<<<<<< HEAD
 import net.sf.freecol.common.FreeColException;
-=======
->>>>>>> 5d3ebbce631ace7baec29e4a6b7172bac873fd07
 import net.sf.freecol.common.ServerInfo;
 import net.sf.freecol.common.debug.FreeColDebugger;
 import net.sf.freecol.common.i18n.Messages;

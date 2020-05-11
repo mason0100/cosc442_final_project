@@ -45,14 +45,10 @@ import net.sf.freecol.common.resources.ResourceManager;
  */
 public final class RoadPainter {
     // Helper variables for displaying the map.
-<<<<<<< HEAD
     private int tileHeight;
     private int tileWidth;
     private int halfHeight;
     private int halfWidth;
-=======
-    private int tileHeight, tileWidth, halfHeight, halfWidth;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     // roads
     private final EnumMap<Direction, Point2D.Float> corners =
@@ -138,28 +134,10 @@ public final class RoadPainter {
             path.quadTo(halfWidth, halfHeight, points.get(1).getX(), points.get(1).getY());
             break;
         case 3:
-<<<<<<< HEAD
         case 4: 
             directionPen(path, directions);
             break;
         
-=======
-        case 4: {
-            Direction pen = directions.get(directions.size() - 1);
-            Point2D p = corners.get(pen);
-            path.moveTo(p.getX(), p.getY());
-            for (Direction d : directions) {
-                p = corners.get(d);
-                if(prohibitedRoads.get(pen).contains(d)) {
-                    path.moveTo(p.getX(), p.getY());
-                } else {
-                    path.quadTo(halfWidth, halfHeight, p.getX(), p.getY());
-                }
-                pen = d;
-            }
-            break;
-        }
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         default:
             for (Point2D p : points) {
                 path.moveTo(halfWidth, halfHeight);
@@ -171,7 +149,6 @@ public final class RoadPainter {
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
     }
 
-<<<<<<< HEAD
 	private void directionPen(GeneralPath path, List<Direction> directions) {
 		Direction pen = directions.get(directions.size() - 1);
 		Point2D p = corners.get(pen);
@@ -187,6 +164,4 @@ public final class RoadPainter {
 		}
 	}
 
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 }

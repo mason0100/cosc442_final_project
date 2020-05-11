@@ -88,13 +88,8 @@ public final class ReportTurnPanel extends ReportPanel {
         super(freeColClient, "reportTurnAction");
 
         // Display Panel
-<<<<<<< HEAD
         reportJPanel.removeAll();
         reportJPanel.setLayout(new MigLayout("wrap 4", "[center][550!]:push[][]", ""));
-=======
-        reportPanel.removeAll();
-        reportPanel.setLayout(new MigLayout("wrap 4", "[center][550!]:push[][]", ""));
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         setMessages(messages);
     }
 
@@ -128,11 +123,7 @@ public final class ReportTurnPanel extends ReportPanel {
                 FreeColGameObject messageSource = game.getMessageSource(message);
                 if (messageSource != source) {
                     source = messageSource;
-<<<<<<< HEAD
                     reportJPanel.add(getHeadline(messageSource), "newline 20, skip");
-=======
-                    reportPanel.add(getHeadline(messageSource), "newline 20, skip");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 }
                 break;
             case ClientOptions.MESSAGES_GROUP_BY_TYPE:
@@ -140,11 +131,7 @@ public final class ReportTurnPanel extends ReportPanel {
                     type = message.getMessageType();
                     JLabel headline = Utility.localizedHeaderLabel(
                         message.getMessageType(), FontLibrary.FontSize.SMALL);
-<<<<<<< HEAD
                     reportJPanel.add(headline, "newline 20, skip, span");
-=======
-                    reportPanel.add(headline, "newline 20, skip, span");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 }
                 break;
             default:
@@ -172,12 +159,7 @@ public final class ReportTurnPanel extends ReportPanel {
                     component = new JLabel(icon);
                 }
             }
-
-<<<<<<< HEAD
             reportJPanel.add(component, "newline");
-=======
-            reportPanel.add(component, "newline");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             
             final JTextPane textPane = Utility.getDefaultTextPane();
             try {
@@ -186,11 +168,7 @@ public final class ReportTurnPanel extends ReportPanel {
             } catch (BadLocationException ble) {
                 logger.log(Level.WARNING, "message insert fail", ble);
             }
-<<<<<<< HEAD
             reportJPanel.add(textPane);
-=======
-            reportPanel.add(textPane);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
             boolean ignore = false;
             final JComponent label = component;
@@ -206,11 +184,7 @@ public final class ReportTurnPanel extends ReportPanel {
                         textPane.setEnabled(!flag);
                         label.setEnabled(!flag);
                     });
-<<<<<<< HEAD
                 reportJPanel.add(ignoreButton);
-=======
-                reportPanel.add(ignoreButton);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 ignore = true;
                 break;
             default:
@@ -246,15 +220,9 @@ public final class ReportTurnPanel extends ReportPanel {
                         setEnabledByType(m.getMessageType(), !flag);
                     });
                 if (ignore) {
-<<<<<<< HEAD
                     reportJPanel.add(filterButton);
                 } else {
                     reportJPanel.add(filterButton, "skip");
-=======
-                    reportPanel.add(filterButton);
-                } else {
-                    reportPanel.add(filterButton, "skip");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 }
             }
         }

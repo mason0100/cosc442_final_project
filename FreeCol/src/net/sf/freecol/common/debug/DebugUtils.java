@@ -327,12 +327,8 @@ public class DebugUtils {
                 .sorted().collect(Collectors.toList()));
         if (unitChoice == null) return;
 
-<<<<<<< HEAD
         //Unit carrier = null;
         Unit sCarrier = null;
-=======
-        Unit carrier = null, sCarrier = null;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         if (!sTile.isLand() && !unitChoice.isNaval()) {
             sCarrier = find(sTile.getUnitList(), u -> u.isNaval()
                 && u.getSpaceLeft() >= unitChoice.getSpaceTaken());
@@ -597,13 +593,9 @@ public class DebugUtils {
                         lb.add("  Client: ", map.getTile(u.getTile().getX(),
                                u.getTile().getY()).getFirstUnit().getId(),
                                "\n");
-<<<<<<< HEAD
                     } catch (NullPointerException npe) {
                     	//Ignore for nows
                     }
-=======
-                    } catch (NullPointerException npe) {}
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                     problemDetected = true;
                 } else {
                     Unit cUnit = game.getFreeColGameObject(u.getId(),
@@ -626,11 +618,7 @@ public class DebugUtils {
             Settlement cSettlement = ct.getSettlement();
             if (sSettlement == null) {
                 if (cSettlement == null) {
-<<<<<<< HEAD
                     //Ignore for now
-=======
-                    ;// OK
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 } else {
                     lb.add("Settlement still present in client: ", cSettlement);
                     problemDetected = true;
@@ -640,11 +628,7 @@ public class DebugUtils {
                     lb.add("Settlement not present in client: ", sSettlement);
                     problemDetected = true;
                 } else if (sSettlement.getId().equals(cSettlement.getId())) {
-<<<<<<< HEAD
                     //Ignore for now
-=======
-                    ;// OK
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 } else {
                     lb.add("Settlements differ.\n  Server: ",
                         sSettlement.toString(), "\n  Client: ", 
@@ -828,12 +812,8 @@ public class DebugUtils {
         LogBuilder lb = new LogBuilder(256);
         lb.add("\nActive units:\n");
 
-<<<<<<< HEAD
         Unit u;
         Unit first = player.getNextActiveUnit();
-=======
-        Unit u, first = player.getNextActiveUnit();
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         if (first != null) {
             lb.add(first.toString(), "\nat ", first.getLocation(), "\n");
             all.remove(first);
@@ -878,7 +858,6 @@ public class DebugUtils {
         final Game sGame = server.getGame();
         final Player player = freeColClient.getMyPlayer();
 
-<<<<<<< HEAD
         logger.warning("\nClient (" + player.getId() + "):");
         tile.save(System.err, WriteScope.toClient(player), true);
         logger.warning("\n\nServer:");
@@ -887,16 +866,6 @@ public class DebugUtils {
         logger.warning("\n\nSave:");
         sTile.save(System.err, WriteScope.toSave(), true);
         logger.warning("\n");
-=======
-        System.err.println("\nClient (" + player.getId() + "):");
-        tile.save(System.err, WriteScope.toClient(player), true);
-        System.err.println("\n\nServer:");
-        Tile sTile = sGame.getFreeColGameObject(tile.getId(), Tile.class);
-        sTile.save(System.err, WriteScope.toServer(), true);
-        System.err.println("\n\nSave:");
-        sTile.save(System.err, WriteScope.toSave(), true);
-        System.err.println("\n");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     /**

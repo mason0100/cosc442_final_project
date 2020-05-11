@@ -48,10 +48,7 @@ public final class WindowedFrameListener implements WindowListener {
      */
     @Override
     public void windowActivated(WindowEvent event) {
-<<<<<<< HEAD
     	//Ignore for now
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
     
     /**
@@ -61,10 +58,7 @@ public final class WindowedFrameListener implements WindowListener {
      */
     @Override
     public void windowClosed(WindowEvent event) {
-<<<<<<< HEAD
     	//Ignore for now
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
     
     /**
@@ -88,10 +82,7 @@ public final class WindowedFrameListener implements WindowListener {
      */
     @Override
     public void windowDeactivated(WindowEvent event) {
-<<<<<<< HEAD
     	//Ignore for now
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
     
     /**
@@ -101,10 +92,7 @@ public final class WindowedFrameListener implements WindowListener {
      */
     @Override
     public void windowDeiconified(WindowEvent event) {
-<<<<<<< HEAD
     	//Ignore for now
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
     
     /**
@@ -114,10 +102,7 @@ public final class WindowedFrameListener implements WindowListener {
      */
     @Override
     public void windowIconified(WindowEvent event) {
-<<<<<<< HEAD
     	//Ignore for now
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
     
     /**
@@ -127,9 +112,6 @@ public final class WindowedFrameListener implements WindowListener {
      */
     @Override
     public void windowOpened(WindowEvent event) {
-<<<<<<< HEAD
     	//Ignore for now
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 }

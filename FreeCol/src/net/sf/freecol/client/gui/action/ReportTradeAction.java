@@ -29,11 +29,7 @@ import net.sf.freecol.client.FreeColClient;
  */
 public class ReportTradeAction extends FreeColAction {
 
-<<<<<<< HEAD
     public static final String ID = "reportTradeAction";
-=======
-    public static final String id = "reportTradeAction";
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -42,11 +38,7 @@ public class ReportTradeAction extends FreeColAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public ReportTradeAction(FreeColClient freeColClient) {
-<<<<<<< HEAD
         super(freeColClient, ID);
-=======
-        super(freeColClient, id);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
 

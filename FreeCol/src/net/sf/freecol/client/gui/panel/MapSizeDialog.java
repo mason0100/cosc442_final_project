@@ -76,12 +76,8 @@ public final class MapSizeDialog extends FreeColInputDialog<Dimension> {
      */
     @Override
     protected Dimension getInputValue() {
-<<<<<<< HEAD
         int width;
         int height;
-=======
-        int width, height;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         try {
             width = Integer.parseInt(inputWidth.getText());
             height = Integer.parseInt(inputHeight.getText());

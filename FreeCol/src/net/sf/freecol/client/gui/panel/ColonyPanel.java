@@ -107,7 +107,6 @@ public final class ColonyPanel extends PortPanel
 
     private static final Logger logger = Logger.getLogger(ColonyPanel.class.getName());
 
-<<<<<<< HEAD
     private static final int EXIT = 0;
     private static final int BUILDQUEUE = 1;
     private static final int UNLOAD = 2;
@@ -116,16 +115,6 @@ public final class ColonyPanel extends PortPanel
     private static final int COLONY_UNITS = 6;
     private static final int  SETGOODS = 7;
     private static final int  OCCUPATION = 8;
-=======
-    private static final int EXIT = 0,
-        BUILDQUEUE = 1,
-        UNLOAD = 2,
-        WAREHOUSE = 4,
-        FILL = 5,
-        COLONY_UNITS = 6,
-        SETGOODS = 7,
-        OCCUPATION = 8;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     /** The height of the area in which autoscrolling should happen. */
     public static final int SCROLL_AREA_HEIGHT = 40;
@@ -572,12 +561,8 @@ public final class ColonyPanel extends PortPanel
 
         // Check for non-producing locations that can now produce.
         for (WorkLocation wl : colony.getCurrentWorkLocations()) {
-<<<<<<< HEAD
             boolean change = false;
             boolean check = wl.getProductionType() == null;
-=======
-            boolean change = false, check = wl.getProductionType() == null;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             for (Unit u : wl.getUnitList()) {
                 if (check || !wl.produces(u.getWorkType())) {
                     GoodsType workType = wl.getWorkFor(u);

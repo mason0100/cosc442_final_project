@@ -32,10 +32,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.ArrayList;
-<<<<<<< HEAD
-=======
-import java.util.Arrays;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -173,10 +169,6 @@ public class BuildQueuePanel extends FreeColPanel implements ItemListener {
         }
 
         private JList<? extends BuildableType> source = null;
-<<<<<<< HEAD
-=======
-        //private int[] indices = null;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         private int numberOfItems = 0; // number of items to be added
 
         
@@ -267,20 +259,12 @@ public class BuildQueuePanel extends FreeColPanel implements ItemListener {
 
                 // Suppress dropping the selection onto itself.
                 if (preferredIndex != -1 && prevPos == preferredIndex) {
-<<<<<<< HEAD
-=======
-                    //indices = null;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                     return false;
                 }
 
                 // Insist drop is within bounds.
                 int maximumIndex = getMaximumIndex(queue.get(0));
                 if (preferredIndex > maximumIndex) {
-<<<<<<< HEAD
-=======
-                    //indices = null;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                     return false;
                 }
 
@@ -338,10 +322,6 @@ public class BuildQueuePanel extends FreeColPanel implements ItemListener {
         @Override
         protected void exportDone(JComponent source, Transferable data, 
                                   int action) {
-<<<<<<< HEAD
-=======
-            //this.indices = null;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             this.numberOfItems = 0;
             updateAllLists();
         }
@@ -363,10 +343,6 @@ public class BuildQueuePanel extends FreeColPanel implements ItemListener {
             
             this.source = BuildQueuePanel.this.convertJComp(comp);
             if (this.source == null) return null;
-<<<<<<< HEAD
-=======
-            //this.indices = this.source.getSelectedIndices();
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             return new BuildablesTransferable(this.source.getSelectedValuesList());
         }
 
@@ -617,16 +593,10 @@ public class BuildQueuePanel extends FreeColPanel implements ItemListener {
 
         this.constructionPanel
             = new ConstructionPanel(freeColClient, this.colony, false);
-<<<<<<< HEAD
         String buildable = "%buildable%";
 		this.constructionPanel.setDefaultLabel(StringTemplate
             .template("buildQueuePanel.currentlyBuilding")
             .add(buildable, "nothing"));
-=======
-        this.constructionPanel.setDefaultLabel(StringTemplate
-            .template("buildQueuePanel.currentlyBuilding")
-            .add("%buildable%", "nothing"));
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         this.buildQueueList = new JList<>(current);
         this.buildQueueList.setTransferHandler(buildQueueHandler);
@@ -680,18 +650,11 @@ public class BuildQueuePanel extends FreeColPanel implements ItemListener {
         updateAllLists();
 
         // Add all the components
-<<<<<<< HEAD
         String alignCenter = "align center";
         add(header, "span 3, align center, wrap 40");
 		add(bqpUnits, alignCenter);
         add(bpqBuildQueue, alignCenter);
         add(bqpBuildings, alignCenter);
-=======
-        add(header, "span 3, align center, wrap 40");
-        add(bqpUnits, "align center");
-        add(bpqBuildQueue, "align center");
-        add(bqpBuildings, "align center");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         add(new JScrollPane(this.unitList), "grow");
         add(this.constructionPanel, "split 2, flowy");
         add(new JScrollPane(this.buildQueueList), "grow");

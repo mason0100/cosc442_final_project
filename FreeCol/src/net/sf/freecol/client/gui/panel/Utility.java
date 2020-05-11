@@ -136,17 +136,12 @@ public final class Utility {
     public static final Insets EMPTY_MARGIN = new Insets(0, 0, 0, 0);
 
     /** A style context to use for panels and dialogs. */
-<<<<<<< HEAD
     public static StyleContext styleContent = null;
-=======
-    public static StyleContext STYLE_CONTEXT = null;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     public static void initStyleContext(Font font) {
         Style defaultStyle = StyleContext.getDefaultStyleContext()
             .getStyle(StyleContext.DEFAULT_STYLE);
 
-<<<<<<< HEAD
         styleContent = new StyleContext();
         Style regular = styleContent.addStyle("regular", defaultStyle);
         StyleConstants.setFontFamily(regular, font.getFamily());
@@ -156,17 +151,6 @@ public final class Utility {
         StyleConstants.setForeground(buttonStyle, LINK_COLOR);
 
         Style right = styleContent.addStyle("right", regular);
-=======
-        STYLE_CONTEXT = new StyleContext();
-        Style regular = STYLE_CONTEXT.addStyle("regular", defaultStyle);
-        StyleConstants.setFontFamily(regular, font.getFamily());
-        StyleConstants.setFontSize(regular, font.getSize());
-
-        Style buttonStyle = STYLE_CONTEXT.addStyle("button", regular);
-        StyleConstants.setForeground(buttonStyle, LINK_COLOR);
-
-        Style right = STYLE_CONTEXT.addStyle("right", regular);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         StyleConstants.setAlignment(right, StyleConstants.ALIGN_RIGHT);
     }
 
@@ -292,20 +276,12 @@ public final class Utility {
      */
     public static JTextPane getDefaultTextPane() {
         DefaultStyledDocument document
-<<<<<<< HEAD
             = new DefaultStyledDocument(styleContent);
-=======
-            = new DefaultStyledDocument(STYLE_CONTEXT);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         JTextPane textPane = new JTextPane(document);
         textPane.setOpaque(false);
         textPane.setEditable(false);
-<<<<<<< HEAD
         textPane.setLogicalStyle(styleContent.getStyle("regular"));
-=======
-        textPane.setLogicalStyle(STYLE_CONTEXT.getStyle("regular"));
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         return textPane;
     }
 

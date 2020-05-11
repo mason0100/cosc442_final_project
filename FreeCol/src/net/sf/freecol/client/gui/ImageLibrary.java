@@ -87,7 +87,6 @@ public final class ImageLibrary {
      * Most other images are currently still shown in a size of image size
      * times scaling factor times requested size.
      */
-<<<<<<< HEAD
     public static final Dimension ICON_SIZE = new Dimension(32, 32);
     public static final Dimension BUILDING_SIZE = new Dimension(128, 96);
     public static final Dimension TILE_SIZE = new Dimension(128, 64);
@@ -106,26 +105,6 @@ public final class ImageLibrary {
     public static final String BELLS = "image.icon.model.goods.bells";
 
     public enum PathType {
-=======
-    public static final Dimension ICON_SIZE = new Dimension(32, 32),
-                                  BUILDING_SIZE = new Dimension(128, 96),
-                                  TILE_SIZE = new Dimension(128, 64),
-                                  TILE_OVERLAY_SIZE = new Dimension(128, 96),
-                                  TILE_FOREST_SIZE = new Dimension(128, 84);
-
-    public static final String DELETE = "image.miscicon.delete",
-                               PLOWED = "image.tile.model.improvement.plow",
-                               UNIT_SELECT = "image.tile.unitSelect",
-                               TILE_TAKEN = "image.tile.tileTaken",
-                               TILE_OWNED_BY_INDIANS = "image.tileitem.nativeLand",
-                               LOST_CITY_RUMOUR = "image.tileitem.lostCityRumour",
-                               DARKNESS = "image.halo.dark",
-                               ICON_LOCK = "image.icon.lock",
-                               ICON_COIN = "image.icon.coin",
-                               BELLS = "image.icon.model.goods.bells";
-
-    public static enum PathType {
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         NAVAL,
         WAGON,
         HORSE,
@@ -161,11 +140,7 @@ public final class ImageLibrary {
                 : (u.isPerson()) ? PathType.FOOT
                 : PathType.WAGON;
         }
-<<<<<<< HEAD
     }
-=======
-    };
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -174,14 +149,9 @@ public final class ImageLibrary {
      * this object is not a result of a scaling operation.
      */
     private final float scaleFactor;
-
-<<<<<<< HEAD
     final Dimension tileSize;
     final Dimension tileOverlaySize;
     final Dimension tileForestSize;
-=======
-    final Dimension tileSize, tileOverlaySize, tileForestSize;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     private final HashMap<String,BufferedImage> stringImageCache;
 
@@ -334,20 +304,14 @@ public final class ImageLibrary {
      * @param type The type of the terrain-image to return.
      * @return The image at the given index.
      */
-<<<<<<< HEAD
+
     static String tileForest = "image.tileforest.";
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     public BufferedImage getForestImage(TileType type) {
         return getForestImage(type, tileForestSize);
     }
 
     public static BufferedImage getForestImage(TileType type, Dimension size) {
-<<<<<<< HEAD
 		return ResourceManager.getImage(tileForest + type.getId(),
-=======
-        return ResourceManager.getImage("image.tileforest." + type.getId(),
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                                         size);
     }
 
@@ -360,11 +324,7 @@ public final class ImageLibrary {
                                                TileImprovementStyle riverStyle,
                                                Dimension size) {
         if (riverStyle != null) {
-<<<<<<< HEAD
             String key = tileForest + type.getId() + ".s" + riverStyle.getMask();
-=======
-            String key = "image.tileforest." + type.getId() + ".s" + riverStyle.getMask();
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             // @compat 0.10.6
             // Workaround for BR#3599586.  America_large used to contain
             // tiles with an isolated river (old river style="0"!).
@@ -376,11 +336,7 @@ public final class ImageLibrary {
             // end @compat
                 return ResourceManager.getImage(key, size);
         }
-<<<<<<< HEAD
         return ResourceManager.getImage(tileForest + type.getId(), size);
-=======
-        return ResourceManager.getImage("image.tileforest." + type.getId(), size);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
     /**
@@ -423,7 +379,6 @@ public final class ImageLibrary {
         return getBuildingImage(building.getType(), building.getOwner(),
             scaleFactor);
     }
-<<<<<<< HEAD
     static String buildingIcon = "image.buildingicon.";
     static String icon = "image.icon.";
     public static BufferedImage getBuildingImage(BuildingType buildingType,
@@ -432,63 +387,37 @@ public final class ImageLibrary {
             + "." + player.getNationResourceKey();
         if (!ResourceManager.hasImageResource(key)) {
             key = buildingIcon + buildingType.getId();
-=======
-
-    public static BufferedImage getBuildingImage(BuildingType buildingType,
-                                                 Player player, float scale) {
-        String key = "image.buildingicon." + buildingType.getId()
-            + "." + player.getNationResourceKey();
-        if (!ResourceManager.hasImageResource(key)) {
-            key = "image.buildingicon." + buildingType.getId();
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
         return ResourceManager.getImage(key, scale);
     }
 
     public static BufferedImage getBuildingImage(BuildingType buildingType,
                                                  float scale) {
-<<<<<<< HEAD
         return ResourceManager.getImage(buildingIcon
-=======
-        return ResourceManager.getImage("image.buildingicon."
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             + buildingType.getId(), scale);
     }
 
     public static BufferedImage getBuildingImage(BuildingType buildingType,
                                                  Dimension size) {
-<<<<<<< HEAD
         return ResourceManager.getImage(buildingIcon
-=======
-        return ResourceManager.getImage("image.buildingicon."
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
+
             + buildingType.getId(), size);
     }
 
     public BufferedImage getSmallerIconImage(FreeColGameObjectType type) {
-<<<<<<< HEAD
 		return getMiscImage(icon + type.getId(),
-=======
-        return getMiscImage("image.icon." + type.getId(),
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             scaleDimension(ICON_SIZE, scaleFactor * 0.5f));
     }
 
     public BufferedImage getSmallIconImage(FreeColGameObjectType type) {
-<<<<<<< HEAD
         return getMiscImage(icon + type.getId(),
-=======
-        return getMiscImage("image.icon." + type.getId(),
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             scaleDimension(ICON_SIZE, scaleFactor * 0.75f));
     }
 
     public BufferedImage getIconImage(FreeColGameObjectType type) {
-<<<<<<< HEAD
+
         return getMiscImage(icon + type.getId(),
-=======
-        return getMiscImage("image.icon." + type.getId(),
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
+
             scaleDimension(ICON_SIZE, scaleFactor));
     }
 
@@ -619,25 +548,13 @@ public final class ImageLibrary {
     public static BufferedImage getOverlayImage(TileType type, String id,
                                                 Dimension size) {
 		String prefix = tileOverlay + type.getId();
-=======
-     * @param id A string used to get a random image.
-     * @param size The size of the image to return.
-     * @return The terrain-image at the given index.
-     */
-    public static BufferedImage getOverlayImage(TileType type, String id,
-                                                Dimension size) {
-        String prefix = "image.tileoverlay." + type.getId();
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         List<String> keys = ResourceManager.getImageKeys(prefix);
         return getRandomizedImage(keys, id, size);
     }
 
     public static Set<String> createOverlayCache() {
-<<<<<<< HEAD
         return ResourceManager.getImageKeySet(tileOverlay);
-=======
-        return ResourceManager.getImageKeySet("image.tileoverlay.");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
+
     }
 
     public BufferedImage getOverlayImage(Tile tile, Set<String> overlayCache) {
@@ -648,11 +565,7 @@ public final class ImageLibrary {
     public static BufferedImage getOverlayImage(TileType type, String id,
                                                 Dimension size,
                                                 Set<String> overlayCache) {
-<<<<<<< HEAD
         final String prefix = tileOverlay + type.getId() + ".r";
-=======
-        final String prefix = "image.tileoverlay." + type.getId() + ".r";
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         final List<String> keys = overlayCache.stream()
             .filter(k -> k.startsWith(prefix))
             .collect(Collectors.toList());
@@ -906,10 +819,7 @@ public final class ImageLibrary {
      * @param scale How much the image is scaled.
      * @return A suitable <code>BufferedImage</code>.
      */
-<<<<<<< HEAD
     static String unitImage = "image.unit.";
-=======
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     public static BufferedImage getUnitImage(UnitType unitType, String roleId,
                                              boolean nativeEthnicity,
                                              boolean grayscale, float scale) {
@@ -921,17 +831,10 @@ public final class ImageLibrary {
         // try to get an image matching the key
         String roleQual = (Role.isDefaultRoleId(roleId)) ? ""
             : "." + Role.getRoleSuffix(roleId);
-<<<<<<< HEAD
 		String key = unitImage + unitType.getId() + roleQual
             + ((nativeEthnicity) ? ".native" : "");
         if (!ResourceManager.hasImageResource(key) && nativeEthnicity) {
             key = unitImage + unitType.getId() + roleQual;
-=======
-        String key = "image.unit." + unitType.getId() + roleQual
-            + ((nativeEthnicity) ? ".native" : "");
-        if (!ResourceManager.hasImageResource(key) && nativeEthnicity) {
-            key = "image.unit." + unitType.getId() + roleQual;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
         BufferedImage image = (grayscale)
             ? ResourceManager.getGrayscaleImage(key, scale)
@@ -948,11 +851,7 @@ public final class ImageLibrary {
         String roleId = unitType.getDisplayRoleId();
         String roleQual = (Role.isDefaultRoleId(roleId)) ? ""
             : "." + Role.getRoleSuffix(roleId);
-<<<<<<< HEAD
         String key = unitImage + unitType.getId() + roleQual;
-=======
-        String key = "image.unit." + unitType.getId() + roleQual;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         return ResourceManager.getImage(key, size);
     }
 
@@ -967,17 +866,11 @@ public final class ImageLibrary {
         // try to get an image matching the key
         String roleQual = (Role.isDefaultRoleId(roleId)) ? ""
             : "." + Role.getRoleSuffix(roleId);
-<<<<<<< HEAD
+
         String key = unitImage + unitType.getId() + roleQual
             + ((nativeEthnicity) ? ".native" : "");
         if (!ResourceManager.hasImageResource(key) && nativeEthnicity) {
             key = unitImage + unitType.getId() + roleQual;
-=======
-        String key = "image.unit." + unitType.getId() + roleQual
-            + ((nativeEthnicity) ? ".native" : "");
-        if (!ResourceManager.hasImageResource(key) && nativeEthnicity) {
-            key = "image.unit." + unitType.getId() + roleQual;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
         BufferedImage image = ResourceManager.getImage(key, size);
         return image;
@@ -1001,12 +894,8 @@ public final class ImageLibrary {
                                       JComponent c, Insets insets) {
         int width = c.getWidth();
         int height = c.getHeight();
-<<<<<<< HEAD
         int xmin;
         int ymin;
-=======
-        int xmin, ymin;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         if (insets == null) {
             xmin = 0;
             ymin = 0;
@@ -1333,13 +1222,9 @@ public final class ImageLibrary {
         // draw the border around letters
         int borderWidth = 1;
         int borderColor = getStringBorderColor(color).getRGB();
-<<<<<<< HEAD
         int srcRGB; 
         int dstRGB; 
         int srcA;
-=======
-        int srcRGB, dstRGB, srcA;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         for (int biY = 0; biY < height; biY++) {
             for (int biX = borderWidth; biX < width - borderWidth; biX++) {
                 int biXI = width - biX - 1;

@@ -51,10 +51,6 @@ import net.sf.freecol.common.model.Specification;
 import net.sf.freecol.common.model.StringTemplate;
 import net.sf.freecol.common.model.UnitType;
 import static net.sf.freecol.common.util.CollectionUtils.*;
-<<<<<<< HEAD
-=======
-import net.sf.freecol.common.util.RandomChoice;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
 /**
@@ -104,7 +100,6 @@ public class UnitDetailPanel extends ColopediaGameObjectTypePanel<UnitType> {
         panel.add(name, "span, align center, wrap 40");
 
         panel.add(Utility.localizedLabel("colopedia.unit.offensivePower"));
-<<<<<<< HEAD
         String right = "right";
 		panel.add(new JLabel(Integer.toString((int)type.getOffence())), right);
 
@@ -117,19 +112,6 @@ public class UnitDetailPanel extends ColopediaGameObjectTypePanel<UnitType> {
         if (type.canCarryGoods() || type.canCarryUnits()) {
             panel.add(Utility.localizedLabel("colopedia.unit.capacity"));
             panel.add(new JLabel(Integer.toString(type.getSpace())), right);
-=======
-        panel.add(new JLabel(Integer.toString((int)type.getOffence())), "right");
-
-        panel.add(Utility.localizedLabel("colopedia.unit.defensivePower"));
-        panel.add(new JLabel(Integer.toString((int)type.getDefence())), "right");
-
-        panel.add(Utility.localizedLabel("colopedia.unit.movement"));
-        panel.add(new JLabel(String.valueOf(type.getMovement()/3)), "right");
-
-        if (type.canCarryGoods() || type.canCarryUnits()) {
-            panel.add(Utility.localizedLabel("colopedia.unit.capacity"));
-            panel.add(new JLabel(Integer.toString(type.getSpace())), "right");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
 
         Player player = getMyPlayer();
@@ -144,21 +126,13 @@ public class UnitDetailPanel extends ColopediaGameObjectTypePanel<UnitType> {
         }
         if (price != null) {
             panel.add(Utility.localizedLabel("colopedia.unit.price"));
-<<<<<<< HEAD
             panel.add(new JLabel(price), right);
-=======
-            panel.add(new JLabel(price), "right");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
 
 
         if (type.hasSkill()) {
             panel.add(Utility.localizedLabel("colopedia.unit.skill"));
-<<<<<<< HEAD
             panel.add(new JLabel(Integer.toString(type.getSkill())), right);
-=======
-            panel.add(new JLabel(Integer.toString(type.getSkill())), "right");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
             List<BuildingType> schools = new ArrayList<>();
             for (BuildingType buildingType : spec.getBuildingTypeList()) {
@@ -211,11 +185,8 @@ public class UnitDetailPanel extends ColopediaGameObjectTypePanel<UnitType> {
                 appendRequiredAbilities(doc, type);
                 panel.add(textPane, "span, width 60%");
             } catch (BadLocationException e) {
-<<<<<<< HEAD
             	//Ignore for now
-=======
-                //logger.warning(e.toString());
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
+
             }
         }
 

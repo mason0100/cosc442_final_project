@@ -27,13 +27,10 @@ import java.util.List;
  */
 public class Relation {
 
-<<<<<<< HEAD
     int low;
     int high;
     int mod = 1;
-=======
-    int low, high, mod = 1;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
+
     boolean negated = false;
     boolean integer = true;
 

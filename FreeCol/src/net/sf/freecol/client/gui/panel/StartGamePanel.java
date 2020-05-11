@@ -55,23 +55,17 @@ public final class StartGamePanel extends FreeColPanel {
 
     private static final Logger logger = Logger.getLogger(StartGamePanel.class.getName());
 
-<<<<<<< HEAD
     private static final int START = 0;
     private static final int CANCEL = 1;
     private static final int READY = 3;
     private static final int CHAT = 4;
     private static final int GAME_OPTIONS = 5;
     private static final int MAP_GENERATOR_OPTIONS = 6;
-=======
-    private static final int START = 0, CANCEL = 1,
-        READY = 3, CHAT = 4, GAME_OPTIONS = 5, MAP_GENERATOR_OPTIONS = 6;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     private boolean singlePlayerGame;
 
     private JCheckBox readyBox;
 
-<<<<<<< HEAD
     private JTextField buttonChat;
 
     private JTextArea chatArea;
@@ -80,13 +74,6 @@ public final class StartGamePanel extends FreeColPanel {
     private JButton buttonCancel;
     private JButton gameOptions;
     private JButton mapGeneratorOptions;
-=======
-    private JTextField chat;
-
-    private JTextArea chatArea;
-
-    private JButton start, cancel, gameOptions, mapGeneratorOptions;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
     private PlayersTable table;
 
@@ -129,27 +116,17 @@ public final class StartGamePanel extends FreeColPanel {
 
         NationOptions nationOptions = getGame().getNationOptions();
 
-<<<<<<< HEAD
+
         buttonCancel = Utility.localizedButton("cancel");
         setCancelComponent(buttonCancel);
 
         JScrollPane chatScroll = null;
         JScrollPane tableScroll;
-=======
-        cancel = Utility.localizedButton("cancel");
-        setCancelComponent(cancel);
-
-        JScrollPane chatScroll = null, tableScroll;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         table = new PlayersTable(getFreeColClient(), nationOptions,
                                  getMyPlayer());
 
-<<<<<<< HEAD
         buttonStart = Utility.localizedButton("startGame");
-=======
-        start = Utility.localizedButton("startGame");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         gameOptions = Utility.localizedButton(Messages
             .nameKey(GameOptions.getXMLElementTagName()));
@@ -167,11 +144,7 @@ public final class StartGamePanel extends FreeColPanel {
             readyBox.setSelected(true);
         } else {
             readyBox.setSelected(getMyPlayer().isReady());
-<<<<<<< HEAD
             buttonChat = new JTextField();
-=======
-            chat = new JTextField();
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
             chatArea = new JTextArea();
             chatScroll = new JScrollPane(chatArea, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS,
                                          ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -189,7 +162,7 @@ public final class StartGamePanel extends FreeColPanel {
         add(mapGeneratorOptions, "newline, split 2, growx, top, sg");
         add(gameOptions, "growx, top, sg");
         if (!singlePlayerGame) {
-<<<<<<< HEAD
+
             add(buttonChat, "grow, top");
         }
         add(readyBox, "newline");
@@ -198,41 +171,25 @@ public final class StartGamePanel extends FreeColPanel {
 
         buttonStart.setActionCommand(String.valueOf(START));
         buttonCancel.setActionCommand(String.valueOf(CANCEL));
-=======
-            add(chat, "grow, top");
-        }
-        add(readyBox, "newline");
-        add(start, "newline, span, split 2, tag ok");
-        add(cancel, "tag cancel");
 
-        start.setActionCommand(String.valueOf(START));
-        cancel.setActionCommand(String.valueOf(CANCEL));
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         readyBox.setActionCommand(String.valueOf(READY));
         gameOptions.setActionCommand(String.valueOf(GAME_OPTIONS));
         mapGeneratorOptions.setActionCommand(String.valueOf(MAP_GENERATOR_OPTIONS));
 
         if (!singlePlayerGame) {
-<<<<<<< HEAD
+
             buttonChat.setActionCommand(String.valueOf(CHAT));
             buttonChat.addActionListener(this);
-=======
-            chat.setActionCommand(String.valueOf(CHAT));
-            chat.addActionListener(this);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
+
             chatArea.setEditable(false);
             chatArea.setLineWrap(true);
             chatArea.setWrapStyleWord(true);
             chatArea.setText("");
         }
 
-<<<<<<< HEAD
         buttonStart.addActionListener(this);
         buttonCancel.addActionListener(this);
-=======
-        start.addActionListener(this);
-        cancel.addActionListener(this);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
+
         readyBox.addActionListener(this);
         gameOptions.addActionListener(this);
         mapGeneratorOptions.addActionListener(this);
@@ -242,11 +199,8 @@ public final class StartGamePanel extends FreeColPanel {
 
     @Override
     public void requestFocus() {
-<<<<<<< HEAD
         buttonStart.requestFocus();
-=======
-        start.requestFocus();
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
+
     }
 
     /**
@@ -287,11 +241,8 @@ public final class StartGamePanel extends FreeColPanel {
         }
 
         if (enabled) {
-<<<<<<< HEAD
             buttonStart.setEnabled(getFreeColClient().isAdmin());
-=======
-            start.setEnabled(getFreeColClient().isAdmin());
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
+
         }
 
         gameOptions.setEnabled(enabled);
@@ -391,19 +342,11 @@ public final class StartGamePanel extends FreeColPanel {
                 refreshPlayersTable();
                 break;
             case CHAT:
-<<<<<<< HEAD
                 if (!buttonChat.getText().isEmpty()) {
                     fcc.getPreGameController().chat(buttonChat.getText());
                     displayChat(getMyPlayer().getName(), buttonChat.getText(),
                                 false);
                     buttonChat.setText("");
-=======
-                if (!chat.getText().isEmpty()) {
-                    fcc.getPreGameController().chat(chat.getText());
-                    displayChat(getMyPlayer().getName(), chat.getText(),
-                                false);
-                    chat.setText("");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
                 }
                 break;
             case GAME_OPTIONS:
@@ -439,20 +382,11 @@ public final class StartGamePanel extends FreeColPanel {
         // Do not propagate to superclass.  This panel is reused so
         // avoid the destructive cleanups in FreeColPanel.removeNotify.
 
-<<<<<<< HEAD
         buttonStart.removeActionListener(this);
         buttonCancel.removeActionListener(this);
         readyBox.removeActionListener(this);
         gameOptions.removeActionListener(this);
         mapGeneratorOptions.removeActionListener(this);
         if (buttonChat != null) buttonChat.removeActionListener(this);
-=======
-        start.removeActionListener(this);
-        cancel.removeActionListener(this);
-        readyBox.removeActionListener(this);
-        gameOptions.removeActionListener(this);
-        mapGeneratorOptions.removeActionListener(this);
-        if (chat != null) chat.removeActionListener(this);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 }

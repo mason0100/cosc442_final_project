@@ -29,11 +29,7 @@ import net.sf.freecol.client.FreeColClient;
  */
 public class SaveAndQuitAction extends FreeColAction {
 
-<<<<<<< HEAD
     public static final String ID = "saveAndQuitAction";
-=======
-    public static final String id = "saveAndQuitAction";
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -42,11 +38,7 @@ public class SaveAndQuitAction extends FreeColAction {
      * @param freeColClient The main controller object for the client.
      */
     public SaveAndQuitAction(FreeColClient freeColClient) {
-<<<<<<< HEAD
         super(freeColClient, ID);
-=======
-        super(freeColClient, id);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
 

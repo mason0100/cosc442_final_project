@@ -18,11 +18,8 @@
  */
 
 package net.sf.freecol.client.gui.panel;
-<<<<<<< HEAD
-=======
 
-import java.util.ArrayList;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
+
 import java.util.stream.Collectors;
 
 import javax.swing.JButton;
@@ -36,20 +33,10 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.client.gui.FontLibrary;
 import net.sf.freecol.client.gui.action.ColopediaAction.PanelType;
 import net.sf.freecol.common.i18n.Messages;
-<<<<<<< HEAD
 import net.sf.freecol.common.model.GoodsType;
 import net.sf.freecol.common.model.Modifier;
 import net.sf.freecol.common.model.ResourceType;
 import net.sf.freecol.common.model.Specification;
-=======
-import net.sf.freecol.common.model.FreeColGameObjectType;
-import net.sf.freecol.common.model.GoodsType;
-import net.sf.freecol.common.model.Modifier;
-import net.sf.freecol.common.model.ResourceType;
-import net.sf.freecol.common.model.Scope;
-import net.sf.freecol.common.model.Specification;
-import static net.sf.freecol.common.util.StringUtils.*;
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
 /**

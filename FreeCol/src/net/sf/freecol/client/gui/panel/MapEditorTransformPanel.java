@@ -209,11 +209,7 @@ public final class MapEditorTransformPanel extends FreeColPanel {
          * Applies this transformation to the given tile.
          * @param t The <code>Tile</code> to be transformed,
          */
-<<<<<<< HEAD
         //public abstract void transform(Tile t);
-=======
-        public abstract void transform(Tile t);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
         /**
          * A panel with information about this transformation.
@@ -361,14 +357,9 @@ public final class MapEditorTransformPanel extends FreeColPanel {
             nativePlayer.addSettlement(settlement);
             settlement.placeSettlement(true);
             settlement.addUnits(null);
-<<<<<<< HEAD
             String loggerWarning = "Add settlement " + settlement.getName()
                 + " to tile " + t;
 			logger.info(loggerWarning);
-=======
-            logger.info("Add settlement " + settlement.getName()
-                + " to tile " + t);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         }
     }
 }

@@ -180,11 +180,7 @@ public final class SelectDestinationDialog extends FreeColDialog<Location>
 
             } else if (loc instanceof Settlement
                 && owner.owns((Settlement)loc)) {
-<<<<<<< HEAD
                  // Do nothing
-=======
-                ; // Do nothing
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
             } else if (loc instanceof Settlement
                 && ((Settlement)loc).getOwner().atWarWith(owner)) {

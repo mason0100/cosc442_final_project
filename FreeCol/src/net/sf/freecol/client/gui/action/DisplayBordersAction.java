@@ -32,11 +32,7 @@ import net.sf.freecol.client.FreeColClient;
  */
 public class DisplayBordersAction extends SelectableAction {
 
-<<<<<<< HEAD
     public static final String ID = "displayBordersAction";
-=======
-    public static final String id = "displayBordersAction";
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
 
 
     /**
@@ -45,11 +41,7 @@ public class DisplayBordersAction extends SelectableAction {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     public DisplayBordersAction(FreeColClient freeColClient) {
-<<<<<<< HEAD
         super(freeColClient, ID, ClientOptions.DISPLAY_BORDERS);
-=======
-        super(freeColClient, id, ClientOptions.DISPLAY_BORDERS);
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
     }
 
 

@@ -49,11 +49,7 @@ import net.sf.freecol.common.model.Turn;
  */
 public final class ReportContinentalCongressPanel extends ReportPanel {
 
-<<<<<<< HEAD
     private static final String NONE
-=======
-    private static final String none
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         = Messages.message("report.continentalCongress.none");
 
 
@@ -74,11 +70,7 @@ public final class ReportContinentalCongressPanel extends ReportPanel {
         JPanel recruitingPanel = new MigPanel();
         recruitingPanel.setLayout(new MigLayout("center, wrap 1", "center"));
         if (currentFather == null) {
-<<<<<<< HEAD
             recruitingPanel.add(new JLabel(NONE), "wrap 20");
-=======
-            recruitingPanel.add(new JLabel(none), "wrap 20");
->>>>>>> 07fe25ba89baa3ce1f5d697c2eeb98b11cbb2dc6
         } else {
             String name = Messages.getName(currentFather);
             JButton button = Utility.getLinkButton(name, null,
