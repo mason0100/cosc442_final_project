@@ -88,7 +88,7 @@ public class FreeColSavegameFile extends FreeColDataFile {
             xr.nextTag();
             return xr.getAttribute(VERSION_TAG, -1);
         } catch (Exception e) {
-            ; // Just fail
+            // Just fail
         }
         return -1;
     }

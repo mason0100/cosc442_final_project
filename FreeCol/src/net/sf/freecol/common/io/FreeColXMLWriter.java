@@ -26,7 +26,7 @@ import java.io.OutputStreamWriter;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
-
+import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 import java.util.Locale;
 import java.util.logging.Level;
@@ -139,7 +139,7 @@ public class FreeColXMLWriter implements Closeable, XMLStreamWriter {
      */
     public FreeColXMLWriter(OutputStream outputStream, WriteScope scope,
                             boolean indent) throws IOException {
-        this(new OutputStreamWriter(outputStream, "UTF-8"), scope, indent);
+        this(new OutputStreamWriter(outputStream, StandardCharsets.UTF_8), scope, indent);
     }
 
     /**
@@ -375,9 +375,6 @@ public class FreeColXMLWriter implements Closeable, XMLStreamWriter {
         return writeScope.getClient();
     }
 
-    //public boolean isValid() {
-    //    return (this == WriteScope.CLIENT) == (player != null);
-    //}
 
     public boolean validForSave() {
         return writeScope.validForSave();

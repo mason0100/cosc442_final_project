@@ -19,8 +19,6 @@
 package net.sf.freecol.common.io;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
@@ -43,13 +41,13 @@ public class FreeColDirectories {
     private static final String BASE_DIRECTORY = "base";
 
     private static final String CLASSIC_DIRECTORY = "classic";
+    
+    private static final String FREECOL_DIRECTORY = "freecol";
 
     private static final String[] CONFIG_DIRS
-        = { "classic", "freecol" };
+        = { CLASSIC_DIRECTORY, FREECOL_DIRECTORY };
 
     private static final String DATA_DIRECTORY = "data";
-
-    private static final String FREECOL_DIRECTORY = "freecol";
 
     private static final String HIGH_SCORE_FILE = "HighScores.xml";
 

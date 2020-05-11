@@ -60,7 +60,7 @@ public class FreeColXMLReader extends StreamReaderDelegate
 
     private static final Logger logger = Logger.getLogger(FreeColXMLReader.class.getName());
 
-    public static enum ReadScope {
+    public enum ReadScope {
         SERVER,     // Loading the game in the server
         NORMAL,     // Normal interning read
         NOINTERN,   // Do not intern any object that are read
@@ -474,7 +474,8 @@ public class FreeColXMLReader extends StreamReaderDelegate
                 }
             }
             if (fco instanceof Location) return (Location)fco;
-                logger.warning("Not a location: " + attrib);
+                String loggerWarning = "Not a location: " + attrib;
+				logger.warning(loggerWarning);
         }
         return null;
     }
@@ -540,7 +541,10 @@ public class FreeColXMLReader extends StreamReaderDelegate
         List<T> list = new ArrayList<>(length);
         for (int x = 0; x < length; x++) {
             T value = getType(spec, "x" + x, type, (T)null); 
-            if (value == null) logger.warning("Null list value(" + x + ")");
+            if (value == null) {
+				String loggerWarningNull = "Null list value(" + x + ")";
+				logger.warning(loggerWarningNull);
+			}
             list.add(value);
         }
 

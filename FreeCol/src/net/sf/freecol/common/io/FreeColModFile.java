@@ -74,7 +74,7 @@ public class FreeColModFile extends FreeColDataFile implements ObjectWithId {
         try {
             return getInputStream(SPECIFICATION_FILE);
         } catch (FileNotFoundException fnfe) {
-            ; // Normal for graphic-only mods.
+             // Normal for graphic-only mods.
         }
         return null;
     }

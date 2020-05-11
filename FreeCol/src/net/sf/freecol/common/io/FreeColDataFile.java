@@ -29,7 +29,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.Locale;
@@ -60,7 +59,7 @@ public class FreeColDataFile {
     private static final String RESOURCE_FILE_SUFFIX = ".properties";
 
     /** A fake URI scheme for resources delegating to other resources. */
-    private static final String resourceScheme = "resource:";
+    private static final String RESOURCESCHEME = "resource:";
 
     /** The file this object represents. */
     private final File file;
@@ -234,7 +233,7 @@ public class FreeColDataFile {
         while (pn.hasMoreElements()) {
             final String key = (String) pn.nextElement();
             final String value = properties.getProperty(key);
-            if (value.startsWith(resourceScheme)) {
+            if (value.startsWith(RESOURCESCHEME)) {
                 todo.add(key);
             } else {
                 URI uri = getURI(value);
@@ -252,7 +251,7 @@ public class FreeColDataFile {
             while (!todo.isEmpty()) {
                 final String key = todo.remove(0);
                 final String value = properties.getProperty(key)
-                    .substring(resourceScheme.length());
+                    .substring(RESOURCESCHEME.length());
                 if (!rc.duplicateResource(value, key)) {
                     miss.add(key);
                 } else {
