@@ -29,6 +29,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -96,7 +97,7 @@ public final class SimpleZippedAnimation implements Iterable<AnimationEvent> {
             ZipEntry entry;
             while ((entry = zipStream.getNextEntry()) != null) {
                 if (ANIMATION_DESCRIPTOR_FILE.equals(entry.getName())) {
-                    final BufferedReader in = new BufferedReader(new InputStreamReader(zipStream, "UTF-8"));
+                    final BufferedReader in = new BufferedReader(new InputStreamReader(zipStream, StandardCharsets.UTF_8));
                     String line;
                     while ((line = in.readLine()) != null) {
                         loadingDescriptor.add(line);
@@ -109,7 +110,9 @@ public final class SimpleZippedAnimation implements Iterable<AnimationEvent> {
         } finally {
             try {
                 zipStream.close();
-            } catch (IOException e) {}
+            } catch (IOException e) {
+            	//Ignore for now
+            }
         }
         
         if (loadingDescriptor.isEmpty()) {
@@ -191,7 +194,7 @@ public final class SimpleZippedAnimation implements Iterable<AnimationEvent> {
     }
     
     private static final class ImageAnimationEventImpl implements ImageAnimationEvent {
-        private static final Component _c = new Component() {};
+        //private static final Component _c = new Component() {};
         
         private final Image image;
         private final int durationInMs;
