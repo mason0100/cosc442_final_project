@@ -32,7 +32,7 @@ import java.util.logging.Logger;
  */
 public abstract class Number implements Selector {
 
-    public enum Category { ZERO, ONE, TWO, FEW, MANY, OTHER };
+    public enum Category {ONE, TWO, FEW, MANY, OTHER };
 
     private static final Logger logger = Logger.getLogger(Number.class.getName());
 
