@@ -1,0 +1,864 @@
+package net.sf.freecol;
+
+
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.InputStream;
+import java.net.InetAddress;
+import java.net.JarURLConnection;
+import java.util.Locale;
+
+import javax.annotation.Generated;
+
+import static net.sf.freecol.common.util.CollectionUtils.find;
+import static net.sf.freecol.common.util.CollectionUtils.map;
+import static org.junit.Assert.assertEquals;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.tools.configuration.base.MethodRef;
+import org.powermock.reflect.Whitebox;
+
+import net.sf.freecol.common.i18n.Messages;
+import net.sf.freecol.common.io.FreeColTcFile;
+import net.sf.freecol.common.model.NationOptions.Advantages;
+import net.sf.freecol.common.model.StringTemplate.TemplateType;
+import net.sf.freecol.common.model.Specification;
+import net.sf.freecol.common.model.StringTemplate;
+import net.sf.freecol.common.option.Option;
+import net.sf.freecol.common.option.OptionGroup;
+
+@Generated(value = "org.junit-tools-1.1.0")
+public class FreeColTest {
+	
+	//constants 
+	int N = 0;
+	
+	
+	
+
+	private FreeCol createTestSubject() {
+		return new FreeCol();
+	}
+	
+	
+
+	@MethodRef(name = "badLoad", signature = "(QFile;)QStringTemplate;")
+	@Test
+	public void badLoadTest() throws Exception {
+		//tests a random string as the name of a file that does not exist
+		//This method uses StringTemplate
+		//If StringTemplate does not work correctly this test will most likely
+		//work incorrectly. 
+		String fileName = "does not exist";
+		File file = new File(fileName);
+		StringTemplate result;
+		result = FreeCol.badLoad(file);
+		String actualResult = result.toString();
+		
+		String expectedResult = "TEMPLATE: error.couldNotLoad [[%name%: NAME: " + fileName + "]]";
+		
+		assertEquals(expectedResult,actualResult);
+		
+	}
+
+	@Before
+	public void setUp() throws Exception {
+
+	}
+
+	@Before
+	public void setUp_1() throws Exception {
+
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		Runtime.getRuntime().gc();
+
+	}
+
+	@Before
+	public void setUp_2() throws Exception {
+
+	}
+
+	@After
+	public void tearDown_1() throws Exception {
+
+	}
+
+	@Before
+	public void setUp_3() throws Exception {
+
+	}
+
+	@After
+	public void tearDown_2() throws Exception {
+
+	}
+
+	@MethodRef(name = "main", signature = "([QString;)V")
+	@Test
+	public void mainTest() throws Exception {
+		String[] args = new String[] { "help" };
+
+		// default test
+		FreeCol.main(args);
+
+		Assert.fail();
+	}
+
+	@MethodRef(name = "getJarURLConnection", signature = "(QClass;)QJarURLConnection;")
+	@Test
+	public void getJarURLConnectionTest() throws Exception {
+		Class c = null;
+		JarURLConnection result;
+
+		// default test
+		result = Whitebox.invokeMethod(FreeCol.class, "getJarURLConnection", new Object[] { Class.class });
+		
+		Assert.fail();
+	}
+
+	@MethodRef(name = "readVersion", signature = "(QJarURLConnection;)QString;")
+	@Test
+	public void readVersionTest() throws Exception {
+		JarURLConnection juc = null;
+		String result;
+
+		// default test
+		result = Whitebox.invokeMethod(FreeCol.class, "readVersion", new Object[] { JarURLConnection.class });
+
+		Assert.fail();
+	}
+
+	@MethodRef(name = "getDefaultSplashStream", signature = "(QJarURLConnection;)QInputStream;")
+	@Test
+	public void getDefaultSplashStreamTest() throws Exception {
+		JarURLConnection juc = null;
+		InputStream result;
+
+		// default test
+		result = Whitebox.invokeMethod(FreeCol.class, "getDefaultSplashStream",
+				new Object[] { JarURLConnection.class });
+
+		Assert.fail();
+	}
+
+	//@MethodRef(name = "fatal", signature = "(QStringTemplate;)V")
+	//@Test
+	public void fatalTest() throws Exception {
+		StringTemplate temp = new StringTemplate();
+		StringTemplate template = new StringTemplate("TestID", temp);
+		
+		// default test
+		FreeCol.fatal(template);
+		
+		Assert.fail();
+		//an assertion must be made with a dependency
+	}
+
+	//@MethodRef(name = "fatal", signature = "(QString;)V")
+	//@Test
+	public void fatalTest_1() throws Exception {
+		String err = "";
+
+		// test 1
+		err = null;
+		FreeCol.fatal(err);
+
+		// test 2
+		err = "";
+		FreeCol.fatal(err);
+
+		Assert.fail();
+	}
+
+	@MethodRef(name = "gripe", signature = "(QStringTemplate;)V")
+	@Test
+	public void gripeTest() throws Exception {
+		StringTemplate template = "";
+
+		// default test
+		FreeCol.gripe(template);
+
+		Assert.fail();
+	}
+
+	@MethodRef(name = "gripe", signature = "(QString;)V")
+	@Test
+	public void gripeTest_1() throws Exception {
+		String key = "";
+
+		// default test
+		FreeCol.gripe(key);
+
+		Assert.fail();
+	}
+
+	@MethodRef(name = "findArg", signature = "(QString;[QString;)QString;")
+	@Test
+	public void findArgTest() throws Exception {
+		String option = "";
+		String[] args = new String[] { "" };
+		String result;
+
+		// default test
+		result = Whitebox.invokeMethod(FreeCol.class, "findArg", new Object[] { option, args });
+
+		Assert.fail();
+	}
+
+	@MethodRef(name = "handleArgs", signature = "([QString;)V")
+	@Test
+	public void handleArgsTest() throws Exception {
+		String[] args = new String[] { "" };
+
+		// default test
+		Whitebox.invokeMethod(FreeCol.class, "handleArgs", new Object[] { args });
+
+		Assert.fail();
+	}
+
+	@MethodRef(name = "printUsage", signature = "(QOptions;I)V")
+	@Test
+	public void printUsageTest() throws Exception {
+		Option options = null;
+		int status = 0;
+
+		// default test
+	
+		
+		Whitebox.invokeMethod(test, "printUsage", options, status);
+
+		Assert.fail();
+	}
+
+	@MethodRef(name = "loadSpecification", signature = "(QFreeColTcFile;QAdvantages;QString;)QSpecification;")
+	@Test
+	public void loadSpecificationTest() throws Exception {
+		Specification actualResult;
+		Specification expectedResult;
+		FreeColTcFile tcf = null;
+		Advantages advantages = null;
+		String difficulty = "";
+	
+
+		// default test
+		actualResult = FreeCol.loadSpecification(tcf, advantages, difficulty);
+		//System.out.println(actualResult);
+
+		Assert.fail();
+	}
+
+	@MethodRef(name = "getTCSpecification", signature = "()QSpecification;")
+	@Test
+	public void getTCSpecificationTest() throws Exception {
+		Specification result;
+
+		// default test
+		result = Whitebox.invokeMethod(FreeCol.class, "getTCSpecification");
+
+		Assert.fail();
+	}
+
+	@MethodRef(name = "getAdvantages", signature = "()QAdvantages;")
+	@Test
+	public void getAdvantagesTest() throws Exception {
+		Advantages actualResult;
+		Advantages expectedResult;
+		final Advantages ADVANTAGES_DEFAULT = Advantages.SELECTABLE;
+		Advantages advantages;
+
+		// default test
+		actualResult = FreeCol.getAdvantages();
+		expectedResult = ADVANTAGES_DEFAULT;
+		assertEquals(expectedResult,actualResult);
+	}
+
+	@MethodRef(name = "selectAdvantages", signature = "(QString;)QAdvantages;")
+	@Test
+	public void selectAdvantagesTest() throws Exception {
+		String advantages = "";
+		Advantages result;
+
+		// default test
+		FreeCol test = Whitebox.invokeConstructor(FreeCol.class);
+		result = Whitebox.invokeMethod(FreeCol.class, "selectAdvantages", new Object[] { advantages });
+		System.out.println(result);
+		Assert.fail();
+		//****************************************************************************************STAR HERE
+	}
+
+	@MethodRef(name = "setAdvantages", signature = "(QAdvantages;)V")
+	@Test
+	public void setAdvantagesTest() throws Exception {
+		Advantages actualResult;
+		Advantages expectedResult;
+		final Advantages ADVANTAGES_DEFAULT = Advantages.SELECTABLE;
+		Advantages advantages;
+		
+		expectedResult = Advantages.SELECTABLE;
+
+		// Case 1: null test, returns default option for getAdvantages()
+		advantages = null;
+		FreeCol.setAdvantages(advantages);
+		actualResult = FreeCol.getAdvantages();
+		assertEquals(expectedResult,actualResult);
+		
+		// Case 2: sets back to the original default
+		advantages = ADVANTAGES_DEFAULT;
+		FreeCol.setAdvantages(advantages);
+		actualResult = FreeCol.getAdvantages();
+		assertEquals(expectedResult,actualResult);
+		
+		//needs more cases
+	}
+
+	@MethodRef(name = "getValidAdvantages", signature = "()QString;")
+	@Test
+	public void getValidAdvantagesTest() throws Exception {
+		String result;
+
+		// default test
+		result = Whitebox.invokeMethod(FreeCol.class, "getValidAdvantages");
+
+		Assert.fail();
+	}
+
+	@MethodRef(name = "getDifficulty", signature = "()QString;")
+	@Test
+	public void getDifficultyTest() throws Exception {
+		String actualResult;
+		String expectedResult;
+		final String DIFFICULTY_DEFAULT = "model.difficulty.medium";
+		
+		// default test
+		actualResult = FreeCol.getDifficulty();
+		expectedResult = DIFFICULTY_DEFAULT;
+		assertEquals(expectedResult,actualResult);
+	
+	}
+
+	//@MethodRef(name = "selectDifficulty", signature = "(QString;)QString;")
+	//@Test
+	public void selectDifficultyTest() throws Exception {
+		String expectedResult;
+		String actualResult;
+		String arg;
+		// "veryEasy", "easy", "medium", "hard", "veryHard"
+		
+		//not sure what the inputs are supposed to be for args string
+		//Case 1: null 
+		arg = null;
+		actualResult = FreeCol.selectDifficulty(arg);
+		expectedResult = arg;
+		assertEquals(expectedResult,actualResult);
+		
+		//Case 1: veryEasy 
+		arg = "veryEasy";
+		actualResult = FreeCol.selectDifficulty(arg);
+		expectedResult = arg;
+		System.out.println(actualResult);
+		//assertEquals(expectedResult,actualResult);
+		
+		//Case 1: easy 
+		arg = "easy";
+		actualResult = FreeCol.selectDifficulty(arg);
+		System.out.println(actualResult);
+		expectedResult = arg;
+		//assertEquals(expectedResult,actualResult);
+		
+		//Case 1: hard 
+		arg = "hard";
+		actualResult = FreeCol.selectDifficulty(arg);
+		expectedResult = arg;
+		assertEquals(expectedResult,actualResult);
+		
+		//Case 1: veryHard 
+		arg = "veryHard";
+		actualResult = FreeCol.selectDifficulty(arg);
+		expectedResult = arg;
+		assertEquals(expectedResult,actualResult);
+		
+		//Case 1: medium 
+		arg = "medium";
+		actualResult = FreeCol.selectDifficulty(arg);
+		expectedResult = arg;
+		assertEquals(expectedResult,actualResult);
+		
+	}
+
+	@MethodRef(name = "setDifficulty", signature = "(QOptionGroup;)V")
+	@Test
+	public void setDifficultyTest() throws Exception {
+		OptionGroup difficulty = null;
+
+		// default test
+		FreeCol.setDifficulty(difficulty);
+
+		Assert.fail();
+	}
+
+	@MethodRef(name = "setDifficulty", signature = "(QString;)V")
+	@Test
+	public void setDifficultyTest_1() throws Exception {
+		String expectedResult;
+		String actualResult;
+		String difficulty;
+		
+		//Case 1: handles null case
+		difficulty = null;
+		actualResult = "model.difficulty.medium";
+		FreeCol.setDifficulty(difficulty);
+		expectedResult = FreeCol.getDifficulty();
+		assertEquals(expectedResult,actualResult);
+		
+		//needs more cases
+	}
+
+	@MethodRef(name = "getValidDifficulties", signature = "()QString;")
+	@Test
+	public void getValidDifficultiesTest() throws Exception {
+		String actualResult;
+		String expectedResult;
+		
+		expectedResult = "model.difficulty.veryEasy.name,model.difficulty.easy.name,model.difficulty.medium.name,model.difficulty.hard.name,model.difficulty.veryHard.name";
+		actualResult = FreeCol.getValidDifficulties();
+
+		assertEquals(expectedResult,actualResult);
+	}
+
+	@MethodRef(name = "getEuropeanCount", signature = "()I")
+	@Test
+	public void getEuropeanCountTest() throws Exception {
+		//FreeCol test = new FreeCol();
+		int expectedResult = N;
+		int actualResult;
+
+		// default test
+		actualResult = FreeCol.getEuropeanCount();
+		Assert.assertEquals(expectedResult, actualResult);
+	}
+
+	@MethodRef(name = "setEuropeanCount", signature = "(I)V")
+	@Test
+	public void setEuropeanCountTest() throws Exception {
+		int n = N;
+		//FreeCol testObject = new FreeCol();
+		// default test
+		FreeCol.setEuropeanCount(n);
+		int actualResult = FreeCol.getEuropeanCount();
+		int expectedResult = n;
+		
+		Assert.assertEquals(expectedResult, actualResult);	
+		//void method
+	}
+
+	@MethodRef(name = "setGUIScale", signature = "(QString;)Z")
+	@Test
+	public void setGUIScaleTest() throws Exception {
+		String arg = "";
+		boolean result;
+
+		// test 1
+		arg = null;
+		result = FreeCol.setGUIScale(arg);
+		Assert.assertEquals(true, result);
+
+		// test 2: test a valid entry
+		arg = "400";
+		result = FreeCol.setGUIScale(arg);
+		Assert.assertEquals(false, result);
+		
+		// test 3: tests invalad entry greater than the GUI_SCALE_MAX_PCT
+		arg = "425";
+		result = FreeCol.setGUIScale(arg);
+		Assert.assertEquals(false, result);		
+
+		// test 4: tests invalad entry less than than the GUI_SCALE_MIN_PCT
+		arg = "75";
+		result = FreeCol.setGUIScale(arg);
+		Assert.assertEquals(false, result);		
+		
+		// test 5: that is not a multiple of the GUI_SCALE_STEP
+		arg = "425";
+		result = FreeCol.setGUIScale(arg);
+		Assert.assertEquals(false, result);			
+		
+	
+	}
+
+	@MethodRef(name = "getValidGUIScales", signature = "()QString;")
+	@Test
+	public void getValidGUIScalesTest() throws Exception {
+		String actualResult;
+		String expectedResult;
+
+		// default test
+		actualResult = FreeCol.getValidGUIScales();
+		expectedResult = "100,125,150,175,200";
+		assertEquals(expectedResult,actualResult);
+		
+	}
+
+	@MethodRef(name = "selectEuropeanCount", signature = "(QString;)I")
+	@Test
+	public void selectEuropeanCountTest() throws Exception {
+		String arg;
+		int actualResult;
+		int expectedResult;
+		
+		final int EUROPEANS_MIN = 1;//from FreeCol.java
+		
+		//Case 1: null 
+		arg = null;
+		actualResult = FreeCol.selectEuropeanCount(arg);;
+		expectedResult = -1;
+		assertEquals(expectedResult,actualResult);	
+		
+		//Case 2: below EUROPEANS_MIN 
+		arg = "0";
+		actualResult = FreeCol.selectEuropeanCount(arg);;
+		expectedResult = -1;
+		assertEquals(expectedResult,actualResult);
+		
+		//Case 3: equal to EUROPEANS_MIN 
+		arg = "1";
+		actualResult = FreeCol.selectEuropeanCount(arg);;
+		expectedResult = Integer.parseInt(arg);
+		assertEquals(expectedResult,actualResult);		
+
+		//Case 3: above EUROPEANS_MIN 
+		arg = "2";
+		actualResult = FreeCol.selectEuropeanCount(arg);;
+		expectedResult = Integer.parseInt(arg);
+		assertEquals(expectedResult,actualResult);
+		
+	}
+
+	@MethodRef(name = "setLogLevel", signature = "(QString;)V")
+	@Test
+	public void setLogLevelTest() throws Exception {
+		String arg = "";
+
+		// default test
+		Whitebox.invokeMethod(FreeCol.class, "setLogLevel", new Object[] { arg });
+
+		Assert.fail();
+	}
+
+	//@MethodRef(name = "getName", signature = "()QString;")
+	//@Test
+	public void getNameTest() throws Exception {
+		//getName() is tested in the setNameTest() method
+		String actualResult;
+		String expectedResult;
+		String name;
+		
+		Assert.fail();
+	}
+
+	@MethodRef(name = "setName", signature = "(QString;)V")
+	@Test
+	public void setNameTest() throws Exception {
+		//this test method test both setName() and getName() (above)
+		
+		String actualResult;
+		String expectedResult;
+		String name;
+
+		// Case 1: name = null, uses systems user name if null
+		name = null;
+		FreeCol.setName(name);
+		actualResult = FreeCol.getName();
+		expectedResult = System.getProperty("user.name");
+		assertEquals(expectedResult,actualResult);
+		
+		//needs more cases
+	}
+
+	@MethodRef(name = "getLocale", signature = "()QLocale;")
+	@Test
+	public void getLocaleTest() throws Exception {
+		Locale actualResult;
+		Locale expectedResult;
+		
+		//the locale for FreeCol is declared after main. 
+		//the locale state prior to main is null
+
+		// default test
+		actualResult = FreeCol.getLocale();
+		//expectedResult = Locale.getDefault();
+		expectedResult = null;
+		assertEquals(expectedResult,actualResult);
+	}
+
+	@MethodRef(name = "getRevision", signature = "()QString;")
+	@Test
+	public void getRevisionTest() throws Exception {
+		String actualResult;
+		String expectedResult;
+		final String FREECOL_VERSION = "0.11.6";
+		
+		actualResult = FreeCol.getRevision();
+		expectedResult = FREECOL_VERSION;
+
+		assertEquals(expectedResult, actualResult);
+	}
+
+	@MethodRef(name = "getServerHost", signature = "()QString;")
+	@Test
+	public void getServerHostTest() throws Exception {
+		String actualResult;
+		String expectedResult;
+		
+		actualResult = FreeCol.getServerHost();
+		expectedResult = InetAddress.getLoopbackAddress().getHostAddress();
+		
+		assertEquals(expectedResult, actualResult);
+	}
+
+	@MethodRef(name = "getServerPort", signature = "()I")
+	@Test
+	public void getServerPortTest() throws Exception {
+		//also test setServerPort
+		int actualResult;
+		int expectedResult;
+		String arg;
+		
+		//Case 1: sets to 80 and returns to 80
+		arg = "80";
+		FreeCol.setServerPort(arg);
+		actualResult = FreeCol.getServerPort();
+		expectedResult = Integer.parseInt(arg);
+		assertEquals(expectedResult, actualResult);
+	}
+
+	@MethodRef(name = "setServerPort", signature = "(QString;)Z")
+	@Test
+	public void setServerPortTest() throws Exception {
+		
+		
+		boolean actualResult;
+		boolean expectedResult;
+		String arg;
+		
+
+		// Case 1: null case makes default 
+		arg = null;
+		actualResult = FreeCol.setServerPort(arg);
+		expectedResult = false;
+		assertEquals(expectedResult, actualResult);
+
+		// test 2
+		arg = "80";
+		actualResult = FreeCol.setServerPort(arg);
+		expectedResult = true;
+		assertEquals(expectedResult, actualResult);
+
+	}
+
+	@MethodRef(name = "getTC", signature = "()QString;")
+	@Test
+	public void getTCTest() throws Exception {
+		String actualResult;
+		String expectedResult;
+		final String TC_DEFAULT = "freecol";
+
+		actualResult = FreeCol.getTC();
+		expectedResult = TC_DEFAULT;
+		System.out.println(actualResult);
+		assertEquals(expectedResult, actualResult);
+	}
+
+	@MethodRef(name = "setTC", signature = "(QString;)V")
+	@Test
+	public void setTCTest() throws Exception {
+		//tests bot setTC() and getTC()
+		String actualResult;
+		String expectedResult;
+		final String TC_DEFAULT = "freecol";
+		String tc;
+		  
+		//Case 1: new TC
+		tc = "new";
+		FreeCol.setTC(tc);
+		actualResult = FreeCol.getTC();
+		expectedResult = tc;
+		assertEquals(expectedResult, actualResult);
+
+		//Case2 : old TC
+		tc = TC_DEFAULT;
+		FreeCol.setTC(tc);
+		actualResult = FreeCol.getTC();
+		expectedResult = tc;
+		assertEquals(expectedResult, actualResult);
+	}
+
+	@MethodRef(name = "getTCFile", signature = "()QFreeColTcFile;")
+	@Test
+	public void getTCFileTest() throws Exception {
+		FreeColTcFile result;
+
+		// default test
+		result = FreeCol.getTCFile();
+
+		Assert.fail();
+	}
+
+	@MethodRef(name = "getTimeout", signature = "(Z)I")
+	@Test
+	public void getTimeoutTest() throws Exception {
+		//test setTimeout() method also
+		
+		int actualResult;
+		int expectedResult;
+		boolean singlePlayer = false;
+		final int TIMEOUT_MIN = 10;//from FreeCol.java, this is the default timeout setting
+		String setValue = Integer.toString(TIMEOUT_MIN);
+		FreeCol.setTimeout(setValue);
+	
+		actualResult = FreeCol.getTimeout(singlePlayer);
+		expectedResult = TIMEOUT_MIN;
+
+		assertEquals(expectedResult,actualResult);
+		
+	}
+
+	@MethodRef(name = "setTimeout", signature = "(QString;)Z")
+	@Test
+	public void setTimeoutTest() throws Exception {
+		boolean actualResult;
+		boolean expectedResult;
+		String timeout;
+		
+		// from FreeCol.java
+		//final int TIMEOUT_MIN = 10;
+		
+		
+		//Case 1: null should select default timeout setting
+		timeout = null;
+		expectedResult = false;
+		actualResult = FreeCol.setTimeout(timeout);
+		assertEquals(expectedResult,actualResult);
+		
+		//case 2: below TIMEOUT_MIN
+		timeout = "9";
+		expectedResult = false;
+		actualResult = FreeCol.setTimeout(timeout);
+		assertEquals(expectedResult,actualResult);
+		
+		//case 3: above TIMEOUT_MIN
+		timeout = "11";
+		expectedResult = true;
+		actualResult = FreeCol.setTimeout(timeout);
+		assertEquals(expectedResult,actualResult);
+	
+	}
+
+	@MethodRef(name = "getVersion", signature = "()QString;")
+	@Test
+	public void getVersionTest() throws Exception {
+		String actualResult;
+		String expectedResult;
+		final String FREECOL_VERSION = "0.11.6";
+		// default test
+		actualResult = FreeCol.getVersion();
+		expectedResult = FREECOL_VERSION;
+
+		assertEquals(expectedResult,actualResult);
+	}
+
+	@MethodRef(name = "setWindowSize", signature = "(QString;)V")
+	@Test
+	public void setWindowSizeTest() throws Exception {
+		//currently working on this method
+		//FIXME: figure out whitebox
+		String arg = "";
+		FreeCol test = new FreeCol();
+		// test 1
+		arg = null;
+		//FreeCol.setWindowSize(arg);
+		Whitebox.invokeMethod(test, "setWindowSize", arg);
+
+		// test 2
+		arg = "2z4";
+		//Whitebox.invokeMethod(FreeCol.class, "setWindowSize", new Object[] { arg });
+
+		//Assert.fail();
+	}
+
+	@MethodRef(name = "badSave", signature = "(QFile;)QStringTemplate;")
+	@Test
+	public void badSaveTest() throws Exception {
+		
+		StringTemplate actualResult;
+		StringTemplate expectedResult;// = new StringTemplate("TestID", temp);
+		File file;
+		String valueS; 
+		StringTemplate valueST;
+		String userDirectory = System.getProperty("user.dir");
+		
+		StringTemplate temp = new StringTemplate();
+		
+
+		// Case 1: null, needs fixed, program cannot handle null file
+		//this may be removed from testing after the possibility for null file is determined to be nil
+		file = null;
+		actualResult = FreeCol.badSave(file);
+		
+		//Case 2: file exists
+		file = new File(userDirectory + "/docs/test.txt");
+
+		actualResult = FreeCol.badSave(file);
+		
+		valueS = "error.couldNotSave";
+		valueST = new StringTemplate(valueS, temp);
+		valueST = new StringTemplate(valueS, null, TemplateType.TEMPLATE);
+		valueST.addName("%name%", file.getPath());
+		expectedResult = valueST;
+		
+		assertEquals(expectedResult,actualResult);
+
+		//Case 3: file does not exist, needs written
+		
+		
+	}
+
+	@MethodRef(name = "getConfiguration", signature = "()QStringBuilder;")
+	@Test
+	public void getConfigurationTest() throws Exception {
+		StringBuilder result;
+
+		// default test
+		result = FreeCol.getConfiguration();
+
+		Assert.fail();
+	}
+
+	@MethodRef(name = "startClient", signature = "(QString;)V")
+	@Test
+	public void startClientTest() throws Exception {
+		String userMsg = "";
+
+		// default test
+		Whitebox.invokeMethod(FreeCol.class, "startClient", new Object[] { userMsg });
+
+		Assert.fail();
+	}
+
+	@MethodRef(name = "startServer", signature = "()V")
+	@Test
+	public void startServerTest() throws Exception {
+
+		// default test
+		Whitebox.invokeMethod(FreeCol.class, "startServer");
+
+		Assert.fail();
+	}
+}
