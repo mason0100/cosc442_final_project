@@ -27,6 +27,7 @@ import net.sf.freecol.client.gui.AbstractCanvasListener;
 import net.sf.freecol.client.gui.Canvas;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class is meant to make the autoscrolling work better, so that
  * you don't have to hover the mouse exactly one pixel below the menu
@@ -38,6 +39,8 @@ import net.sf.freecol.client.gui.Canvas;
  * bottom of the menu bar, because the performAutoScrollIfActive will
  * compare the Y coordinate to the size of the entire canvas (which
  * should always be bigger).
+ *
+ * @see MenuMouseMotionEvent
  */
 public class MenuMouseMotionListener extends AbstractCanvasListener
     implements MouseMotionListener {
@@ -46,6 +49,7 @@ public class MenuMouseMotionListener extends AbstractCanvasListener
      * Trivial constructor.
      *
      * @param freeColClient The enclosing <code>FreeColClient</code>.
+     * @param canvas the canvas
      */
     public MenuMouseMotionListener(FreeColClient freeColClient, Canvas canvas) {
         super(freeColClient, canvas);

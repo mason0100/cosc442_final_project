@@ -40,18 +40,29 @@ import net.sf.freecol.server.model.ServerPlayer;
 import net.sf.freecol.server.model.ServerRegion;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Load a map.
  */
 public class FreeColMapLoader implements MapLoader {
 
+    /** The import game. */
     private final ServerGame importGame;
 
+    /**
+     * Instantiates a new free col map loader.
+     *
+     * @param file the file
+     * @throws Exception the exception
+     */
     public FreeColMapLoader(File file) throws Exception {
         importGame = FreeColServer.readGame(new FreeColSavegameFile(file), null, null);
     }
 
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.generator.MapLoader#loadMap(net.sf.freecol.common.model.Game, net.sf.freecol.common.model.Map.Layer)
+     */
     @Override
     public Layer loadMap(Game game, Layer layer) {
         Map importMap = importGame.getMap();
@@ -132,6 +143,9 @@ public class FreeColMapLoader implements MapLoader {
     }
 
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.generator.MapLoader#getHighestLayer()
+     */
     @Override
     public Layer getHighestLayer() {
         return Layer.NATIVES;

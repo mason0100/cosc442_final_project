@@ -24,11 +24,13 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for editing user preferences.
  */
 public class PreferencesAction extends FreeColAction {
 
+    /** The Constant ID. */
     public static final String ID = "preferencesAction";
 
 

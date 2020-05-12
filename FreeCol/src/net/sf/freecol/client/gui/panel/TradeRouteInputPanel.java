@@ -72,14 +72,17 @@ import net.sf.freecol.common.model.TradeRouteStop;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Allows the user to edit trade routes.
  */
 public final class TradeRouteInputPanel extends FreeColPanel 
     implements ListSelectionListener {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(TradeRouteInputPanel.class.getName());
 
+    /** The Constant STOP_FLAVOR. */
     public static final DataFlavor STOP_FLAVOR
         = new DataFlavor(TradeRouteStop.class, "Stop");
 
@@ -88,9 +91,15 @@ public final class TradeRouteInputPanel extends FreeColPanel
      */
     private class CargoLabel extends JLabel {
 
+        /** The goods type. */
         private final GoodsType goodsType;
 
 
+        /**
+         * Instantiates a new cargo label.
+         *
+         * @param type the type
+         */
         public CargoLabel(GoodsType type) {
             super(new ImageIcon(getImageLibrary().getIconImage(type)));
 
@@ -100,6 +109,11 @@ public final class TradeRouteInputPanel extends FreeColPanel
             addMouseListener(TradeRouteInputPanel.this.dragListener);
         }
 
+        /**
+         * Gets the type.
+         *
+         * @return the type
+         */
         public GoodsType getType() {
             return this.goodsType;
         }
@@ -114,6 +128,9 @@ public final class TradeRouteInputPanel extends FreeColPanel
      */
     private class CargoPanel extends JPanel {
 
+        /**
+         * Instantiates a new cargo panel.
+         */
         public CargoPanel() {
             super();
 
@@ -122,6 +139,11 @@ public final class TradeRouteInputPanel extends FreeColPanel
             addMouseListener(TradeRouteInputPanel.this.dropListener);
         }
 
+        /**
+         * Initialize.
+         *
+         * @param newStop the new stop
+         */
         public void initialize(TradeRouteStop newStop) {
             removeAll();
             if (newStop != null) {
@@ -223,15 +245,24 @@ public final class TradeRouteInputPanel extends FreeColPanel
             }
         }
 
+        /* (non-Javadoc)
+         * @see javax.swing.TransferHandler#canImport(javax.swing.JComponent, java.awt.datatransfer.DataFlavor[])
+         */
         @Override
         public boolean canImport(JComponent c, DataFlavor[] flavors) {
             return any(flavors, f -> f.equals(DefaultTransferHandler.flavor));
         }
     }
 
+    /**
+     * The Class DestinationCellRenderer.
+     */
     private class DestinationCellRenderer extends JLabel
         implements ListCellRenderer<String> {
 
+        /**
+         * Instantiates a new destination cell renderer.
+         */
         public DestinationCellRenderer() {
             setOpaque(true);
         }
@@ -264,6 +295,9 @@ public final class TradeRouteInputPanel extends FreeColPanel
      */
     private class GoodsPanel extends JPanel {
 
+        /**
+         * Instantiates a new goods panel.
+         */
         public GoodsPanel() {
             super(new GridLayout(0, 4, MARGIN, MARGIN));
 
@@ -292,15 +326,29 @@ public final class TradeRouteInputPanel extends FreeColPanel
         }
     }
 
+    /**
+     * The Class StopListTransferable.
+     */
     private static class StopListTransferable implements Transferable {
 
+        /** The stops. */
         private final List<TradeRouteStop> stops;
 
 
+        /**
+         * Instantiates a new stop list transferable.
+         *
+         * @param stops the stops
+         */
         public StopListTransferable(List<TradeRouteStop> stops) {
             this.stops = stops;
         }
 
+        /**
+         * Gets the stops.
+         *
+         * @return the stops
+         */
         public List<TradeRouteStop> getStops() {
             return stops;
         }
@@ -416,11 +464,20 @@ public final class TradeRouteInputPanel extends FreeColPanel
         }
     }
 
+    /**
+     * The Class StopRenderer.
+     */
     private class StopRenderer implements ListCellRenderer<TradeRouteStop> {
 
+        /** The selected component. */
         private final JPanel SELECTED_COMPONENT = new JPanel();
+        
+        /** The normal component. */
         private final JPanel NORMAL_COMPONENT = new JPanel();
 
+        /**
+         * Instantiates a new stop renderer.
+         */
         public StopRenderer() {
             NORMAL_COMPONENT.setLayout(new MigLayout("", "[80, center][]"));
             NORMAL_COMPONENT.setOpaque(false);
@@ -485,6 +542,8 @@ public final class TradeRouteInputPanel extends FreeColPanel
     /** Mouse listeners to use throughout. */
 
     private MouseListener dragListener; 
+    
+    /** The drop listener. */
     private MouseListener dropListener;
 
     /** Model to contain the current stops. */

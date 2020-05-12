@@ -46,6 +46,7 @@ import net.sf.freecol.common.model.ResourceType;
 import net.sf.freecol.common.model.TileType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays details of terrain types in the Colopedia.
  */
@@ -145,6 +146,12 @@ public class TerrainDetailPanel
                   "span, growx");
     }
 
+    /**
+     * Adds the production.
+     *
+     * @param panel the panel
+     * @param production the production
+     */
     private void addProduction(JPanel panel, List<AbstractGoods> production) {
         if (production.isEmpty()) {
             panel.add(new JLabel(), "wrap");

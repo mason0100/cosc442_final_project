@@ -54,6 +54,7 @@ import net.sf.freecol.common.model.Unit;
 import net.sf.freecol.common.model.UnitType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the Labour Report.
  */
@@ -62,10 +63,19 @@ public final class ReportLabourPanel extends ReportPanel {
     /** An individual unit type panel. */
     private class LabourUnitPanel extends JPanel {
 
+        /** The selected. */
         public boolean selected;
+        
+        /** The unit type. */
         public final UnitType unitType;
 
 
+        /**
+         * Instantiates a new labour unit panel.
+         *
+         * @param unitType the unit type
+         * @param count the count
+         */
         public LabourUnitPanel(UnitType unitType, int count) {
             this.unitType = unitType;
             setOpaque(false);
@@ -78,6 +88,9 @@ public final class ReportLabourPanel extends ReportPanel {
         }
 
 
+        /* (non-Javadoc)
+         * @see javax.swing.JComponent#paint(java.awt.Graphics)
+         */
         @Override
         public void paint(Graphics g) {
             if (selected) {
@@ -128,6 +141,8 @@ public final class ReportLabourPanel extends ReportPanel {
 
     /**
      * The constructor that will add the items to this panel.
+     *
+     * @param freeColClient the free col client
      */
     public ReportLabourPanel(FreeColClient freeColClient) {
         super(freeColClient, "reportLabourAction");
@@ -209,6 +224,9 @@ public final class ReportLabourPanel extends ReportPanel {
         this.scrollPane.setViewportView(this.panelList);
     }
 
+    /**
+     * Show details.
+     */
     private void showDetails() {
         UnitType unitType = panelList.getSelectedValue()
             .unitType;

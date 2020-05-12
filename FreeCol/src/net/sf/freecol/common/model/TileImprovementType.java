@@ -36,12 +36,13 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import net.sf.freecol.common.util.RandomChoice;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An improvement to make to a tile.
  */
 public final class TileImprovementType extends FreeColGameObjectType {
 
-    /** Is this improvement natural or man-made? */
+    /**  Is this improvement natural or man-made?. */
     private boolean natural;
 
     /** The magnitude of the improvement. */
@@ -112,7 +113,7 @@ public final class TileImprovementType extends FreeColGameObjectType {
 
 
     /**
-     * Is this tile improvement type natural?
+     * Is this tile improvement type natural?.
      *
      * @return True if this is a natural tile improvement type.
      */
@@ -250,7 +251,7 @@ public final class TileImprovementType extends FreeColGameObjectType {
     }
 
     /**
-     * Is a particular unit type allowed to build this improvement?
+     * Is a particular unit type allowed to build this improvement?.
      *
      * @param unitType The <code>UnitType</code> to check.
      * @return True if the <code>UnitType</code> can build this improvement.
@@ -288,6 +289,12 @@ public final class TileImprovementType extends FreeColGameObjectType {
         return all(getScopes(), s -> s.appliesTo(tileType));
     }
 
+    /**
+     * Gets the bonus.
+     *
+     * @param goodsType the goods type
+     * @return the bonus
+     */
     public int getBonus(GoodsType goodsType) {
         Modifier result = getProductionModifier(goodsType);
         if (result == null) {
@@ -297,6 +304,12 @@ public final class TileImprovementType extends FreeColGameObjectType {
         }
     }
 
+    /**
+     * Gets the production modifier.
+     *
+     * @param goodsType the goods type
+     * @return the production modifier
+     */
     public Modifier getProductionModifier(GoodsType goodsType) {
         Set<Modifier> modifierSet = getModifiers(goodsType.getId());
         if (modifierSet == null || modifierSet.isEmpty()) {
@@ -419,26 +432,62 @@ public final class TileImprovementType extends FreeColGameObjectType {
 
     // Serialization
 
+    /** The Constant ADD_WORK_TURNS_TAG. */
     private static final String ADD_WORK_TURNS_TAG = "add-work-turns";
+    
+    /** The Constant CHANGE_TAG. */
     private static final String CHANGE_TAG = "change";
+    
+    /** The Constant DELIVER_AMOUNT_TAG. */
     private static final String DELIVER_AMOUNT_TAG = "deliver-amount";
+    
+    /** The Constant DELIVER_GOODS_TYPE_TAG. */
     private static final String DELIVER_GOODS_TYPE_TAG = "deliver-goods-type";
+    
+    /** The Constant DISASTER_TAG. */
     private static final String DISASTER_TAG = "disaster";
+    
+    /** The Constant EXPENDED_AMOUNT_TAG. */
     private static final String EXPENDED_AMOUNT_TAG = "expended-amount";
+    
+    /** The Constant EXPOSE_RESOURCE_PERCENT_TAG. */
     private static final String EXPOSE_RESOURCE_PERCENT_TAG = "expose-resource-percent";
+    
+    /** The Constant FROM_TAG. */
     private static final String FROM_TAG = "from";
+    
+    /** The Constant MAGNITUDE_TAG. */
     private static final String MAGNITUDE_TAG = "magnitude";
+    
+    /** The Constant MOVEMENT_COST_TAG. */
     private static final String MOVEMENT_COST_TAG = "movement-cost";
+    
+    /** The Constant NATURAL_TAG. */
     private static final String NATURAL_TAG = "natural";
+    
+    /** The Constant PROBABILITY_TAG. */
     private static final String PROBABILITY_TAG = "probability";
+    
+    /** The Constant REQUIRED_IMPROVEMENT_TAG. */
     private static final String REQUIRED_IMPROVEMENT_TAG = "required-improvement";
+    
+    /** The Constant REQUIRED_ROLE_TAG. */
     private static final String REQUIRED_ROLE_TAG = "required-role";
+    
+    /** The Constant TO_TAG. */
     private static final String TO_TAG = "to";
+    
+    /** The Constant WORKER_TAG. */
     private static final String WORKER_TAG = "worker";
+    
+    /** The Constant ZINDEX_TAG. */
     private static final String ZINDEX_TAG = "zIndex";
+    
+    /** The Constant EXPENDED_EQUIPMENT_TYPE_TAG. */
     // @compat 0.10.x
     private static final String EXPENDED_EQUIPMENT_TYPE_TAG = "expended-equipment-type";
     // end @compat 0.10.x
+    /** The Constant OLD_EXPOSE_RESOURCE_PERCENT_TAG. */
     // @compat 0.11.3
     private static final String OLD_EXPOSE_RESOURCE_PERCENT_TAG = "exposeResourcePercent";
 

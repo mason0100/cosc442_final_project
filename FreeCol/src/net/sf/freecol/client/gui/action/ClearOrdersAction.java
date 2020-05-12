@@ -24,11 +24,13 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for clearing the active unit's orders.
  */
 public class ClearOrdersAction extends UnitAction {
 
+    /** The Constant ID. */
     public static final String ID = "clearOrdersAction";
 
 

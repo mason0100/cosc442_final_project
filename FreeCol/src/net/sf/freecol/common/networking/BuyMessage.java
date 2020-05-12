@@ -31,6 +31,7 @@ import net.sf.freecol.server.model.ServerPlayer;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The message sent when purchasing at an IndianSettlement.
  */
@@ -88,7 +89,7 @@ public class BuyMessage extends DOMMessage {
     // Public interface
 
     /**
-     * What is the price currently negotiated for this transaction?
+     * What is the price currently negotiated for this transaction?.
      *
      * @return The current price.
      */

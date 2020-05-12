@@ -31,14 +31,17 @@ import net.sf.freecol.common.networking.DOMMessage;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The <code>MetaRegister</code> stores information about running servers.
  * Each server has it's own {@link MetaItem} object.
  */
 public final class MetaRegister {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(MetaRegister.class.getName());
 
+    /** The items. */
     private final ArrayList<MetaItem> items = new ArrayList<>();
     
     
@@ -106,6 +109,7 @@ public final class MetaRegister {
      * @param isGameStarted <i>true</i> if the game has started.
      * @param version The version of the server.
      * @param gameState The current state of the game.
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     public synchronized void addServer(String name, String address, int port, int slotsAvailable,
                 int currentlyPlaying, boolean isGameStarted, String version, int gameState)
@@ -143,6 +147,7 @@ public final class MetaRegister {
      * @param isGameStarted <i>true</i> if the game has started.
      * @param version The version of the server.
      * @param gameState The current state of the game.
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     public synchronized void updateServer(String name, String address, int port, int slotsAvailable,
             int currentlyPlaying, boolean isGameStarted, String version, int gameState)

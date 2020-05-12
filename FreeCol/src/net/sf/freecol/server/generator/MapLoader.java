@@ -23,6 +23,10 @@ import net.sf.freecol.common.model.Game;
 import net.sf.freecol.common.model.Map.Layer;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface MapLoader.
+ */
 public interface MapLoader {
 
     /**

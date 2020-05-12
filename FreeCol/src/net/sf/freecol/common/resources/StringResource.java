@@ -22,12 +22,14 @@ package net.sf.freecol.common.resources;
 import java.net.URI;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A <code>Resource</code> wrapping an <code>String</code>.
  * @see Resource
  */
 public class StringResource extends Resource {
 
+    /** The data. */
     private String data;
 
     /**

@@ -34,6 +34,7 @@ import net.sf.freecol.server.model.ServerPlayer;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The control object that is responsible for setting parameters
  * and starting a new game. {@link PreGameInputHandler} is used
@@ -47,6 +48,7 @@ import org.w3c.dom.Element;
  */
 public final class PreGameController extends Controller {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(PreGameController.class.getName());
 
     /**

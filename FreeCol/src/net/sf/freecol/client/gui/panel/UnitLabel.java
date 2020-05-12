@@ -53,6 +53,7 @@ import net.sf.freecol.common.model.WorkLocation;
 import static net.sf.freecol.common.util.StringUtils.lastPart;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This label holds Unit data in addition to the JLabel data, which makes it
  * ideal to use for drag and drop purposes.
@@ -60,37 +61,74 @@ import static net.sf.freecol.common.util.StringUtils.lastPart;
 public final class UnitLabel extends JLabel
     implements ActionListener, Draggable {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(UnitLabel.class.getName());
 
+    /**
+     * The Enum UnitAction.
+     */
     public static enum UnitAction {
+        
+        /** The assign. */
         ASSIGN,
+        
+        /** The clear speciality. */
         CLEAR_SPECIALITY,
+        
+        /** The activate unit. */
         ACTIVATE_UNIT,
+        
+        /** The fortify. */
         FORTIFY,
+        
+        /** The sentry. */
         SENTRY,
+        
+        /** The colopedia. */
         COLOPEDIA,
+        
+        /** The leave town. */
         LEAVE_TOWN,
-        WORK_COLONYTILE, // Must match the WorkLocation actual type
-        WORK_BUILDING,   // Must match the WorkLocation actual type
+        
+        /** The work colonytile. */
+        WORK_COLONYTILE, 
+ /** The work building. */
+ // Must match the WorkLocation actual type
+        WORK_BUILDING,   
+   /** The clear orders. */
+   // Must match the WorkLocation actual type
         CLEAR_ORDERS,
+        
+        /** The assign trade route. */
         ASSIGN_TRADE_ROUTE,
+        
+        /** The leave ship. */
         LEAVE_SHIP,
+        
+        /** The unload. */
         UNLOAD,
     }
 
+    /** The free col client. */
     private final FreeColClient freeColClient;
 
+    /** The gui. */
     private final SwingGUI gui;
 
+    /** The unit. */
     private final Unit unit;
 
+    /** The selected. */
     private boolean selected;
 
+    /** The is small. */
     private boolean isSmall = false;
 
+    /** The ignore location. */
     private boolean ignoreLocation;
     
+    /** The use tile image library. */
     private boolean useTileImageLibrary;
 
 

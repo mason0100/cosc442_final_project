@@ -41,22 +41,31 @@ import net.sf.freecol.common.i18n.Messages;
 import net.sf.freecol.common.ServerInfo;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel is used to display the information received from the meta-server.
  */
 public final class ServerListPanel extends FreeColPanel {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ServerListPanel.class.getName());
 
+    /** The Constant CONNECT. */
     private static final int CONNECT = 0;
+    
+    /** The Constant CANCEL. */
     private static final int CANCEL = 1;
 
+    /** The connect controller. */
     private final ConnectController connectController;
 
+    /** The table. */
     private final JTable table;
 
+    /** The table model. */
     private final ServerListTableModel tableModel;
 
+    /** The connect. */
     private final JButton connect;
 
     
@@ -121,6 +130,9 @@ public final class ServerListPanel extends FreeColPanel {
     }
 
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.client.gui.panel.FreeColPanel#requestFocus()
+     */
     @Override
     public void requestFocus() {
         connect.requestFocus();

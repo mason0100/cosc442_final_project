@@ -46,16 +46,23 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Support for reading a FreeCol data file. The data file
  * is either a ZIP-file or a directory containing certain files.
  */
 public class FreeColDataFile {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FreeColDataFile.class.getName());
 
+    /** The Constant ZIP_FILE_EXTENSION. */
     protected static final String ZIP_FILE_EXTENSION = "zip";
+    
+    /** The Constant RESOURCE_FILE_PREFIX. */
     private static final String RESOURCE_FILE_PREFIX = "resources";
+    
+    /** The Constant RESOURCE_FILE_SUFFIX. */
     private static final String RESOURCE_FILE_SUFFIX = ".properties";
 
     /** A fake URI scheme for resources delegating to other resources. */

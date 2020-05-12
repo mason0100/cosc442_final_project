@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Set;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Objects implementing the Consumer interface consume Goods. Examples
  * include units that eat food, buildings that convert Goods into

@@ -27,6 +27,7 @@ import net.sf.freecol.common.model.TileImprovementType;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for using the active unit to add a tile improvement to
  * the unit's tile, possibly changing the tile type in the process. In
@@ -35,6 +36,7 @@ import net.sf.freecol.common.model.Unit;
  */
 public class ImprovementAction extends UnitAction {
 
+    /** The improvement. */
     private final TileImprovementType improvement;
 
 

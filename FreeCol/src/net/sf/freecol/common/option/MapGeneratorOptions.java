@@ -22,6 +22,7 @@ package net.sf.freecol.common.option;
 import net.sf.freecol.server.generator.MapGenerator;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Keeps track of the available map generator options.
  * More of a handy place to organize the names than an actual option type.
@@ -76,6 +77,8 @@ public class MapGeneratorOptions {
     /** Option for setting the type of land generator to be used. */
     public static final String LAND_GENERATOR_TYPE 
         = "model.option.landGeneratorType";
+    
+    /** The Constant LAND_GENERATOR_ISLANDS. */
     public static final int LAND_GENERATOR_CLASSIC     = 0,
                             LAND_GENERATOR_CONTINENT   = 1,
                             LAND_GENERATOR_ARCHIPELAGO = 2,

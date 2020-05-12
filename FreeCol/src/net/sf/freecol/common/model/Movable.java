@@ -20,6 +20,7 @@
 
 package net.sf.freecol.common.model;
 
+// TODO: Auto-generated Javadoc
 /**
  * An object that can move from one Location to another under its own
  * power.

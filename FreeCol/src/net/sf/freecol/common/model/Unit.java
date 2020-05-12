@@ -50,6 +50,7 @@ import static net.sf.freecol.common.util.StringUtils.*;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents all pieces that can be moved on the map-board. This includes:
  * colonists, ships, wagon trains e.t.c.
@@ -60,6 +61,7 @@ import org.w3c.dom.Element;
 public class Unit extends GoodsLocation
     implements Consumer, Locatable, Movable, Nameable, Ownable {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Unit.class.getName());
 
     /**
@@ -68,8 +70,13 @@ public class Unit extends GoodsLocation
      */
     public static final int MANY_TURNS = 10000;
 
+    /** The Constant CARGO_CHANGE. */
     public static final String CARGO_CHANGE = "CARGO_CHANGE";
+    
+    /** The Constant MOVE_CHANGE. */
     public static final String MOVE_CHANGE = "MOVE_CHANGE";
+    
+    /** The Constant ROLE_CHANGE. */
     public static final String ROLE_CHANGE = "ROLE_CHANGE";
 
     /**
@@ -86,16 +93,34 @@ public class Unit extends GoodsLocation
     
     /** A state a Unit can have. */
     public static enum UnitState {
+        
+        /** The active. */
         ACTIVE,
+        
+        /** The fortified. */
         FORTIFIED,
+        
+        /** The sentry. */
         SENTRY,
+        
+        /** The in colony. */
         IN_COLONY,
+        
+        /** The improving. */
         IMPROVING,
+        
+        /** The to europe. */
         // @compat 0.10.0
         TO_EUROPE,
+        
+        /** The to america. */
         TO_AMERICA,
+        
+        /** The fortifying. */
         // end @compat
         FORTIFYING,
+        
+        /** The skipped. */
         SKIPPED;
 
         /**
@@ -189,7 +214,7 @@ public class Unit extends GoodsLocation
     /** Which stop in a trade route the unit is going to. */
     protected int currentStop = -1;
 
-    /** To be used only for type == TREASURE_TRAIN */
+    /**  To be used only for type == TREASURE_TRAIN. */
     protected int treasureAmount;
 
     /**
@@ -274,10 +299,18 @@ public class Unit extends GoodsLocation
         return own.getNationLabel();
     }
 
-    /** What type of unit label do we want? */
+    /**
+     *  What type of unit label do we want?.
+     */
     public static enum UnitLabelType {
-        PLAIN,      // Just the basics
-        NATIONAL,   // Add the nation
+        
+        /** The plain. */
+        PLAIN,      
+      /** The national. */
+      // Just the basics
+        NATIONAL,   
+   /** The full. */
+   // Add the nation
         FULL        // Add the equipment and extras
     }
 
@@ -511,7 +544,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Can this unit carry treasure (like a treasure train)?
+     * Can this unit carry treasure (like a treasure train)?.
      *
      * @return True if this <code>Unit</code> can carry treasure.
      */
@@ -520,7 +553,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Can this unit capture enemy goods?
+     * Can this unit capture enemy goods?.
      *
      * @return True if this <code>Unit</code> is capable of capturing goods.
      */
@@ -794,7 +827,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Does this unit have the default role?
+     * Does this unit have the default role?.
      *
      * @return True if the unit has the default <code>Role</code>.
      */
@@ -841,7 +874,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Is a role available to this unit?
+     * Is a role available to this unit?.
      *
      * @param role The <code>Role</code> to test.
      * @return True if the role is available to this unit.
@@ -901,7 +934,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Verifies if the unit is aboard a carrier
+     * Verifies if the unit is aboard a carrier.
      *
      * @return True if the unit is aboard a carrier.
      */
@@ -954,7 +987,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Is this unit on a tile?
+     * Is this unit on a tile?.
      *
      * @return True if this unit is on a tile.
      */
@@ -1348,7 +1381,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Can this unit be a student?
+     * Can this unit be a student?.
      *
      * @param teacher The teacher <code>Unit</code> which is trying to
      *     teach it.
@@ -1359,7 +1392,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Can a unit be a student?
+     * Can a unit be a student?.
      *
      * @param typeStudent The student <code>UnitType</code>.
      * @param typeTeacher The teacher <code>UnitType</code>.
@@ -1495,7 +1528,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Get how many turns left to be repaired
+     * Get how many turns left to be repaired.
      *
      * @return The number of turns left to be repaired.
      */
@@ -1721,7 +1754,7 @@ public class Unit extends GoodsLocation
 
     /**
      * After winning a battle, can this unit capture the loser's role
-     * equipment?
+     * equipment?.
      *
      * @param role The loser unit <code>Role</code>.
      * @return The <code>Role</code> available to this unit as a result
@@ -1741,7 +1774,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Does losing a piece of equipment mean the death of this unit?
+     * Does losing a piece of equipment mean the death of this unit?.
      *
      * @return True if the unit is doomed.
      */
@@ -1751,7 +1784,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Does losing equipment mean the demotion of this unit?
+     * Does losing equipment mean the demotion of this unit?.
      *
      * @return True if the unit is to be demoted.
      */
@@ -1761,7 +1794,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Does the unit have arms?
+     * Does the unit have arms?.
      *
      * @return True if the unit has arms.
      */
@@ -1770,7 +1803,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Does the unit have a mount?
+     * Does the unit have a mount?.
      *
      * @return True if the unit have a mount.
      */
@@ -1779,7 +1812,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Is the unit a beached ship?
+     * Is the unit a beached ship?.
      *
      * @return True if the unit is a beached ship.
      */
@@ -1788,7 +1821,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Would this unit be beached if it was on a particular tile?
+     * Would this unit be beached if it was on a particular tile?.
      *
      * @param tile The <code>Tile</code> to check.
      * @return True if the unit is a beached ship.
@@ -1885,35 +1918,95 @@ public class Unit extends GoodsLocation
      * @see Unit#getMoveType(Direction)
      */
     public static enum MoveType {
+        
+        /** The move. */
         MOVE(null, true),
+        
+        /** The move high seas. */
         MOVE_HIGH_SEAS(null, true),
+        
+        /** The explore lost city rumour. */
         EXPLORE_LOST_CITY_RUMOUR(null, true),
+        
+        /** The attack unit. */
         ATTACK_UNIT(null, false),
+        
+        /** The attack settlement. */
         ATTACK_SETTLEMENT(null, false),
+        
+        /** The embark. */
         EMBARK(null, false),
+        
+        /** The enter indian settlement with free colonist. */
         ENTER_INDIAN_SETTLEMENT_WITH_FREE_COLONIST(null, false),
+        
+        /** The enter indian settlement with scout. */
         ENTER_INDIAN_SETTLEMENT_WITH_SCOUT(null, false),
+        
+        /** The enter indian settlement with missionary. */
         ENTER_INDIAN_SETTLEMENT_WITH_MISSIONARY(null, false),
+        
+        /** The enter foreign colony with scout. */
         ENTER_FOREIGN_COLONY_WITH_SCOUT(null, false),
+        
+        /** The enter settlement with carrier and goods. */
         ENTER_SETTLEMENT_WITH_CARRIER_AND_GOODS(null, false),
+        
+        /** The move no moves. */
         MOVE_NO_MOVES("Attempt to move without moves left"),
+        
+        /** The move no access land. */
         MOVE_NO_ACCESS_LAND("Attempt to move a naval unit onto land"),
+        
+        /** The move no access beached. */
         MOVE_NO_ACCESS_BEACHED("Attempt to move onto foreign beached ship"),
+        
+        /** The move no access embark. */
         MOVE_NO_ACCESS_EMBARK("Attempt to embark onto absent or foreign carrier"),
+        
+        /** The move no access full. */
         MOVE_NO_ACCESS_FULL("Attempt to embark onto full carrier"),
+        
+        /** The move no access goods. */
         MOVE_NO_ACCESS_GOODS("Attempt to trade without goods"),
+        
+        /** The move no access contact. */
         MOVE_NO_ACCESS_CONTACT("Attempt to interact with natives before contact"),
+        
+        /** The move no access mission ban. */
         MOVE_NO_ACCESS_MISSION_BAN("Attempt to use missionary at banned settlement"),
+        
+        /** The move no access settlement. */
         MOVE_NO_ACCESS_SETTLEMENT("Attempt to move into foreign settlement"),
+        
+        /** The move no access skill. */
         MOVE_NO_ACCESS_SKILL("Attempt to learn skill with incapable unit"),
+        
+        /** The move no access trade. */
         MOVE_NO_ACCESS_TRADE("Attempt to trade without authority"),
+        
+        /** The move no access war. */
         MOVE_NO_ACCESS_WAR("Attempt to trade while at war"),
+        
+        /** The move no access water. */
         MOVE_NO_ACCESS_WATER("Attempt to move into a settlement by water"),
+        
+        /** The move no attack civilian. */
         MOVE_NO_ATTACK_CIVILIAN("Attempt to attack with civilian unit"),
+        
+        /** The move no attack marine. */
         MOVE_NO_ATTACK_MARINE("Attempt to attack from on board ship"),
+        
+        /** The move no europe. */
         MOVE_NO_EUROPE("Attempt to move to Europe by incapable unit"),
+        
+        /** The move no repair. */
         MOVE_NO_REPAIR("Attempt to move a unit that is under repair"),
+        
+        /** The move no tile. */
         MOVE_NO_TILE("Attempt to move when not on a tile"),
+        
+        /** The move illegal. */
         MOVE_ILLEGAL("Unspecified illegal move");
 
         /**
@@ -1926,28 +2019,59 @@ public class Unit extends GoodsLocation
          */
         private final boolean progress;
 
+        /**
+         * Instantiates a new move type.
+         *
+         * @param reason the reason
+         */
         MoveType(String reason) {
             this.reason = reason;
             this.progress = false;
         }
 
+        /**
+         * Instantiates a new move type.
+         *
+         * @param reason the reason
+         * @param progress the progress
+         */
         MoveType(String reason, boolean progress) {
             this.reason = reason;
             this.progress = progress;
         }
 
+        /**
+         * Checks if is legal.
+         *
+         * @return true, if is legal
+         */
         public boolean isLegal() {
             return this.reason == null;
         }
 
+        /**
+         * Why illegal.
+         *
+         * @return the string
+         */
         public String whyIllegal() {
             return (reason == null) ? "(none)" : reason;
         }
 
+        /**
+         * Checks if is progress.
+         *
+         * @return true, if is progress
+         */
         public boolean isProgress() {
             return progress;
         }
 
+        /**
+         * Checks if is attack.
+         *
+         * @return true, if is attack
+         */
         public boolean isAttack() {
             return this == ATTACK_UNIT || this == ATTACK_SETTLEMENT;
         }
@@ -2314,7 +2438,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Is this unit allowed to contact a settlement?
+     * Is this unit allowed to contact a settlement?.
      *
      * @param settlement The <code>Settlement</code> to consider.
      * @return True if the contact is allowed.
@@ -2412,9 +2536,9 @@ public class Unit extends GoodsLocation
     /**
      * Check if this unit can build a colony.  Does not consider whether
      * the tile where the unit is located is suitable,
-     * @see Player#canClaimToFoundSettlement(Tile)
      *
      * @return <code>true</code> if this unit can build a colony.
+     * @see Player#canClaimToFoundSettlement(Tile)
      */
     public boolean canBuildColony() {
         final Specification spec = getSpecification();
@@ -2424,7 +2548,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Is this unit at a specified location?
+     * Is this unit at a specified location?.
      *
      * @param loc The <code>Location</code> to test.
      * @return True if the locations are the same, or on the same tile.
@@ -2471,7 +2595,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Set movesLeft to 0 if has some spent moves and it's in a colony
+     * Set movesLeft to 0 if has some spent moves and it's in a colony.
      *
      * @see #add(Locatable)
      * @see #remove(Locatable)
@@ -2588,13 +2712,13 @@ public class Unit extends GoodsLocation
 
     /**
      * Should the unit use transport to get to a specified tile?
-     *
+     * 
      * True if:
      * - The location is not null
      * - The unit is not naval
      * - The unit is not there already
      * AND
-     *   - there is no path OR the path uses an existing carrier
+     *   - there is no path OR the path uses an existing carrier.
      *
      * @param loc The <code>Location</code> to go to.
      * @return True if the unit should use transport.
@@ -3132,7 +3256,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Can this unit carry other units?
+     * Can this unit carry other units?.
      *
      * @return True if the unit can carry units.
      */
@@ -3183,7 +3307,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Is there free space left on this unit?
+     * Is there free space left on this unit?.
      *
      * @return True if there is free space.
      */
@@ -3234,7 +3358,7 @@ public class Unit extends GoodsLocation
     }
 
     /**
-     * Is this unit carrying any goods cargo?
+     * Is this unit carrying any goods cargo?.
      *
      * @return True if the unit is carrying any goods cargo.
      */
@@ -3543,10 +3667,15 @@ public class Unit extends GoodsLocation
     // @compat 0.11.0
     /**
      * Get modifiers required for combat.
-     *
+     * 
      * This can be replaced with just getModifiers() when accepted
      * specifications have all combat modifiers with correct index
      * values.
+     *
+     * @param id the id
+     * @param fcgot the fcgot
+     * @param turn the turn
+     * @return the combat modifiers
      */
     public Set<Modifier> getCombatModifiers(String id,
         FreeColGameObjectType fcgot, Turn turn) {
@@ -4147,43 +4276,102 @@ public class Unit extends GoodsLocation
 
     // Serialization
 
+    /** The Constant ATTRITION_TAG. */
     private static final String ATTRITION_TAG = "attrition";
+    
+    /** The Constant COUNT_TAG. */
     private static final String COUNT_TAG = "count";
+    
+    /** The Constant CURRENT_STOP_TAG. */
     private static final String CURRENT_STOP_TAG = "currentStop";
+    
+    /** The Constant DESTINATION_TAG. */
     private static final String DESTINATION_TAG = "destination";
+    
+    /** The Constant ENTRY_LOCATION_TAG. */
     private static final String ENTRY_LOCATION_TAG = "entryLocation";
+    
+    /** The Constant ETHNICITY_TAG. */
     private static final String ETHNICITY_TAG = "ethnicity";
+    
+    /** The Constant EXPERIENCE_TAG. */
     private static final String EXPERIENCE_TAG = "experience";
+    
+    /** The Constant EXPERIENCE_TYPE_TAG. */
     private static final String EXPERIENCE_TYPE_TAG = "experienceType";
+    
+    /** The Constant HIT_POINTS_TAG. */
     private static final String HIT_POINTS_TAG = "hitPoints";
+    
+    /** The Constant INDIAN_SETTLEMENT_TAG. */
     private static final String INDIAN_SETTLEMENT_TAG = "indianSettlement";
+    
+    /** The Constant LOCATION_TAG. */
     private static final String LOCATION_TAG = "location";
+    
+    /** The Constant MOVES_LEFT_TAG. */
     private static final String MOVES_LEFT_TAG = "movesLeft";
+    
+    /** The Constant NAME_TAG. */
     private static final String NAME_TAG = "name";
+    
+    /** The Constant NATIONALITY_TAG. */
     private static final String NATIONALITY_TAG = "nationality";
+    
+    /** The Constant OWNER_TAG. */
     private static final String OWNER_TAG = "owner";
+    
+    /** The Constant ROLE_TAG. */
     private static final String ROLE_TAG = "role";
+    
+    /** The Constant ROLE_COUNT_TAG. */
     private static final String ROLE_COUNT_TAG = "roleCount";
+    
+    /** The Constant STATE_TAG. */
     private static final String STATE_TAG = "state";
+    
+    /** The Constant STUDENT_TAG. */
     private static final String STUDENT_TAG = "student";
+    
+    /** The Constant TRADE_ROUTE_TAG. */
     private static final String TRADE_ROUTE_TAG = "tradeRoute";
+    
+    /** The Constant TEACHER_TAG. */
     private static final String TEACHER_TAG = "teacher";
+    
+    /** The Constant TREASURE_AMOUNT_TAG. */
     private static final String TREASURE_AMOUNT_TAG = "treasureAmount";
+    
+    /** The Constant TURNS_OF_TRAINING_TAG. */
     private static final String TURNS_OF_TRAINING_TAG = "turnsOfTraining";
+    
+    /** The Constant UNIT_TYPE_TAG. */
     private static final String UNIT_TYPE_TAG = "unitType";
+    
+    /** The Constant VISIBLE_GOODS_COUNT_TAG. */
     private static final String VISIBLE_GOODS_COUNT_TAG = "visibleGoodsCount";
+    
+    /** The Constant WORK_LEFT_TAG. */
     private static final String WORK_LEFT_TAG = "workLeft";
+    
+    /** The Constant WORK_TYPE_TAG. */
     private static final String WORK_TYPE_TAG = "workType";
+    
+    /** The Constant OLD_UNITS_TAG. */
     // @compat 0.10.5
     private static final String OLD_UNITS_TAG = "units";
     // end @compat
+    /** The Constant OLD_HIT_POINTS_TAG. */
     // @compat 0.10.7
     private static final String OLD_HIT_POINTS_TAG = "hitpoints";
+    
+    /** The Constant EQUIPMENT_TAG. */
     private static final String EQUIPMENT_TAG = "equipment";
     /** The equipment this Unit carries.  Now subsumed into roles. */
     private final TypeCountMap<EquipmentType> equipment
         = new TypeCountMap<>();
     // end @compat 0.10.x
+    /** The Constant OLD_TILE_IMPROVEMENT_TAG. */
     // @compat 0.11.3
     private static final String OLD_TILE_IMPROVEMENT_TAG = "tileimprovement";
     // end @compat 0.11.3

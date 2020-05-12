@@ -33,6 +33,7 @@ import net.sf.freecol.common.model.UnitTypeChange.ChangeType;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The various types of units in FreeCol.
  */
@@ -56,7 +57,7 @@ public final class UnitType extends BuildableType implements Consumer {
     /** The capacity of this UnitType. */
     private int space = 0;
 
-    /** Is this the default unit type? */
+    /**  Is this the default unit type?. */
     private boolean defaultUnit = false;
 
     /**
@@ -138,7 +139,7 @@ public final class UnitType extends BuildableType implements Consumer {
     }
 
     /**
-     * Can this unit type carry units?
+     * Can this unit type carry units?.
      *
      * @return True if units can be carried.
      */
@@ -147,7 +148,7 @@ public final class UnitType extends BuildableType implements Consumer {
     }
 
     /**
-     * Can this unit type carry goods?
+     * Can this unit type carry goods?.
      *
      * @return True if goods can be carried.
      */
@@ -183,7 +184,7 @@ public final class UnitType extends BuildableType implements Consumer {
     }
 
     /**
-     * Is this an offensive unit type?
+     * Is this an offensive unit type?.
      *
      * @return True if base offensive ability is greater than the default.
      */
@@ -223,7 +224,7 @@ public final class UnitType extends BuildableType implements Consumer {
     }
 
     /**
-     * Is this the default unit type?
+     * Is this the default unit type?.
      *
      * @return True if this is the default unit type.
      */
@@ -288,7 +289,7 @@ public final class UnitType extends BuildableType implements Consumer {
     }
 
     /**
-     * Is this UnitType recruitable in Europe?
+     * Is this UnitType recruitable in Europe?.
      *
      * @return True if European-recruitable.
      */
@@ -543,7 +544,7 @@ public final class UnitType extends BuildableType implements Consumer {
     }
 
     /**
-     * Is this a naval unit type?
+     * Is this a naval unit type?.
      *
      * @return True if this is a naval unit type.
      */
@@ -552,7 +553,7 @@ public final class UnitType extends BuildableType implements Consumer {
     }
 
     /**
-     * Is this a person, not a ship or wagon?
+     * Is this a person, not a ship or wagon?.
      *
      * @return True if this unit type represents a person
      */
@@ -573,7 +574,7 @@ public final class UnitType extends BuildableType implements Consumer {
     }
 
     /**
-     * Does this UnitType have a skill?
+     * Does this UnitType have a skill?.
      *
      * @return True if this unit type has a skill.
      */
@@ -582,7 +583,7 @@ public final class UnitType extends BuildableType implements Consumer {
     }
 
     /**
-     * Does this UnitType have a price?
+     * Does this UnitType have a price?.
      *
      * @return True if the unit type has a price.
      */
@@ -594,6 +595,7 @@ public final class UnitType extends BuildableType implements Consumer {
      * Gets the number of units of the given GoodsType this UnitType
      * consumes per turn (when in a settlement).
      *
+     * @param goodsType the goods type
      * @return The amount of goods consumed per turn.
      */
     public int getConsumptionOf(GoodsType goodsType) {
@@ -663,7 +665,7 @@ public final class UnitType extends BuildableType implements Consumer {
     }
 
     /**
-     * Is this unit type able to build a colony?
+     * Is this unit type able to build a colony?.
      *
      * @return True if this unit type can build colonies.
      */
@@ -674,40 +676,103 @@ public final class UnitType extends BuildableType implements Consumer {
 
     // Serialization
 
+    /** The Constant CONSUMES_TAG. */
     private static final String CONSUMES_TAG = "consumes";
+    
+    /** The Constant DEFAULT_EQUIPMENT_TAG. */
     // @compat 0.10.7
     private static final String DEFAULT_EQUIPMENT_TAG = "default-equipment";
+    
+    /** The Constant DEFAULT_ROLE_TAG. */
     // end @compat
     private static final String DEFAULT_ROLE_TAG = "default-role";
+    
+    /** The Constant DEFAULT_UNIT_TAG. */
     private static final String DEFAULT_UNIT_TAG = "default-unit";
+    
+    /** The Constant DEFENCE_TAG. */
     private static final String DEFENCE_TAG = "defence";
+    
+    /** The Constant EXPERT_PRODUCTION_TAG. */
     private static final String EXPERT_PRODUCTION_TAG = "expert-production";
+    
+    /** The Constant HIT_POINTS_TAG. */
     private static final String HIT_POINTS_TAG = "hit-points";
+    
+    /** The Constant LINE_OF_SIGHT_TAG. */
     private static final String LINE_OF_SIGHT_TAG = "line-of-sight";
+    
+    /** The Constant MOVEMENT_TAG. */
     private static final String MOVEMENT_TAG = "movement";
+    
+    /** The Constant MAXIMUM_EXPERIENCE_TAG. */
     private static final String MAXIMUM_EXPERIENCE_TAG = "maximum-experience";
+    
+    /** The Constant MAXIMUM_ATTRITION_TAG. */
     private static final String MAXIMUM_ATTRITION_TAG = "maximum-attrition";
+    
+    /** The Constant OFFENCE_TAG. */
     private static final String OFFENCE_TAG = "offence";
+    
+    /** The Constant PRICE_TAG. */
     private static final String PRICE_TAG = "price";
+    
+    /** The Constant PRIORITY_TAG. */
     private static final String PRIORITY_TAG = "priority";
+    
+    /** The Constant RECRUIT_PROBABILITY_TAG. */
     private static final String RECRUIT_PROBABILITY_TAG = "recruit-probability";
+    
+    /** The Constant SCORE_VALUE_TAG. */
     private static final String SCORE_VALUE_TAG = "score-value";
+    
+    /** The Constant SKILL_TAG. */
     private static final String SKILL_TAG = "skill";
+    
+    /** The Constant SKILL_TAUGHT_TAG. */
     private static final String SKILL_TAUGHT_TAG = "skill-taught";
+    
+    /** The Constant SPACE_TAG. */
     private static final String SPACE_TAG = "space";
+    
+    /** The Constant SPACE_TAKEN_TAG. */
     private static final String SPACE_TAKEN_TAG = "space-taken";
+    
+    /** The Constant DOWNGRADE_TAG. */
     private static final String DOWNGRADE_TAG = "downgrade";
+    
+    /** The Constant UNIT_TAG. */
     private static final String UNIT_TAG = "unit";
+    
+    /** The Constant UPGRADE_TAG. */
     private static final String UPGRADE_TAG = "upgrade";
+    
+    /** The Constant OLD_DEFAULT_UNIT_TAG. */
     // @compat 0.11.3
     private static final String OLD_DEFAULT_UNIT_TAG = "defaultUnit";
+    
+    /** The Constant OLD_HIT_POINTS_TAG. */
     private static final String OLD_HIT_POINTS_TAG = "hitPoints";
+    
+    /** The Constant OLD_LINE_OF_SIGHT_TAG. */
     private static final String OLD_LINE_OF_SIGHT_TAG = "lineOfSight";
+    
+    /** The Constant OLD_MAXIMUM_EXPERIENCE_TAG. */
     private static final String OLD_MAXIMUM_EXPERIENCE_TAG = "maximumExperience";
+    
+    /** The Constant OLD_MAXIMUM_ATTRITION_TAG. */
     private static final String OLD_MAXIMUM_ATTRITION_TAG = "maximumAttrition";
+    
+    /** The Constant OLD_RECRUIT_PROBABILITY_TAG. */
     private static final String OLD_RECRUIT_PROBABILITY_TAG = "recruitProbability";
+    
+    /** The Constant OLD_SCORE_VALUE_TAG. */
     private static final String OLD_SCORE_VALUE_TAG = "scoreValue";
+    
+    /** The Constant OLD_SKILL_TAUGHT_TAG. */
     private static final String OLD_SKILL_TAUGHT_TAG = "skillTaught";
+    
+    /** The Constant OLD_SPACE_TAKEN_TAG. */
     private static final String OLD_SPACE_TAKEN_TAG = "spaceTaken";
     // end @compat 0.11.3
 

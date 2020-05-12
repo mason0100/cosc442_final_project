@@ -38,15 +38,23 @@ import net.sf.freecol.common.model.TypeCountMap;
 import net.sf.freecol.common.model.UnitType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the Labour Report.
  */
 public final class ReportLabourDetailPanel extends ReportPanel
     implements ActionListener {
     
+    /** The data. */
     private final Map<UnitType, Map<Location, Integer>> data;
+    
+    /** The unit count. */
     private final TypeCountMap<UnitType> unitCount;
+    
+    /** The colonies. */
     private final List<Colony> colonies;
+    
+    /** The unit type. */
     private final UnitType unitType;
 
     
@@ -73,6 +81,9 @@ public final class ReportLabourDetailPanel extends ReportPanel
     }
 
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.client.gui.panel.ReportPanel#initialize()
+     */
     @Override
     public void initialize() {
         JPanel detailPanel = new MigPanel();

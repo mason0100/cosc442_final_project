@@ -33,6 +33,7 @@ import java.util.logging.Logger;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A container to hold abilities and modifiers for some FreeColObject-subclass.
  *
@@ -47,10 +48,13 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
  */
 public final class FeatureContainer {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FeatureContainer.class.getName());
 
     /** Lock variables. */
     private final Object abilitiesLock = new Object();
+    
+    /** The modifiers lock. */
     private final Object modifiersLock = new Object();
 
     /** The abilities in the container. */
@@ -61,7 +65,7 @@ public final class FeatureContainer {
 
 
     /**
-     * Have the abilities map been created?
+     * Have the abilities map been created?.
      *
      * @return True if the abilities are present.
      */
@@ -81,7 +85,7 @@ public final class FeatureContainer {
     }
 
     /**
-     * Have the modifiers map been created?
+     * Have the modifiers map been created?.
      *
      * @return True if the modifiers are present.
      */
@@ -103,8 +107,9 @@ public final class FeatureContainer {
 
     /**
      * Is the given set of abilities non-empty and contains no
-     * false-valued members?
+     * false-valued members?.
      *
+     * @param abilitySet the ability set
      * @return True if the ability set is `satisfied'.
      */
     public static boolean hasAbility(Set<Ability> abilitySet) {
@@ -115,7 +120,7 @@ public final class FeatureContainer {
 
     /**
      * Is the given set of abilities non-empty and contains no
-     * false-valued members?
+     * false-valued members?.
      *
      * @param id The object identifier.
      * @param fcgot An optional <code>FreeColGameObjectType</code> the

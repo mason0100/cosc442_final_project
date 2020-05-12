@@ -26,19 +26,30 @@ import javax.swing.plaf.basic.BasicMenuBarUI;
 import net.sf.freecol.client.gui.ImageLibrary;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Use the "image.background.FreeColMenuBar" resource as a tiled background
  * image on FreeColMenuBar, such as that at the top of the window.
  */
 public class FreeColMenuBarUI extends BasicMenuBarUI {
 
+    /** The Constant sharedInstance. */
     private static final FreeColMenuBarUI sharedInstance = new FreeColMenuBarUI();
 
 
+    /**
+     * Creates the UI.
+     *
+     * @param c the c
+     * @return the component UI
+     */
     public static ComponentUI createUI(@SuppressWarnings("unused") JComponent c) {
         return sharedInstance;
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.plaf.ComponentUI#paint(java.awt.Graphics, javax.swing.JComponent)
+     */
     @Override
     public void paint(java.awt.Graphics g, javax.swing.JComponent c) {
         if (c.isOpaque()) {

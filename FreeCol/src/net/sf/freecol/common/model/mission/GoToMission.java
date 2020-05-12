@@ -30,6 +30,7 @@ import net.sf.freecol.common.model.Unit;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The GoToMission causes a Unit to move towards its destination.
  */
@@ -162,7 +163,10 @@ public class GoToMission extends AbstractMission {
 
     // Serialization
 
+    /** The Constant BLOCKED_COUNT_TAG. */
     private static final String BLOCKED_COUNT_TAG = "blockedCount";
+    
+    /** The Constant DESTINATION_TAG. */
     private static final String DESTINATION_TAG = "destination";
 
 

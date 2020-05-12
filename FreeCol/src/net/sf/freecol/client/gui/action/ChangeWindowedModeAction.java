@@ -25,11 +25,13 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.client.gui.GUI;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for toggling between full-screen and windowed mode.
  */
 public class ChangeWindowedModeAction extends SelectableAction {
 
+    /** The Constant id. */
     public static final String id = "changeWindowedModeAction";
 
 

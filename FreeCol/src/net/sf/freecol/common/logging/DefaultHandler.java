@@ -33,21 +33,25 @@ import net.sf.freecol.common.networking.DOMMessage;
 import net.sf.freecol.common.util.Utils;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The default handler for FreeCol's log records. It currently only
  * logs to a file in the format offered by TextFormatter.
  */
 public final class DefaultHandler extends Handler {
 
+    /** The writer. */
     private final Writer writer;
 
+    /** The console logging. */
     private final boolean consoleLogging;
 
 
     /**
      * The constructor to use.
-     * 
+     *
      * @param consoleLogging The flag to log to the console as well.
+     * @param fileName the file name
      * @exception FreeColException In case the log file could not be
      *     created/written to.
      */

@@ -22,11 +22,13 @@ package net.sf.freecol.common.resources;
 import java.net.URL;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents a video.
  */
 public class Video {
 
+    /** The url. */
     private final URL url;
     
     /**
@@ -39,6 +41,11 @@ public class Video {
     }
     
 
+    /**
+     * Gets the url.
+     *
+     * @return the url
+     */
     public URL getURL() {
         return this.url;
     }

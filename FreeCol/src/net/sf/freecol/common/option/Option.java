@@ -27,9 +27,11 @@ import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An option describes something which can be customized by the user.
  *
+ * @param <T> the generic type
  * @see net.sf.freecol.common.model.GameOptions
  */
 public interface Option<T> extends Cloneable, ObjectWithId {
@@ -38,6 +40,7 @@ public interface Option<T> extends Cloneable, ObjectWithId {
      * Clone this option.
      *
      * @return A clone of this option.
+     * @throws CloneNotSupportedException the clone not supported exception
      */
     public Option<T> clone() throws CloneNotSupportedException;
 

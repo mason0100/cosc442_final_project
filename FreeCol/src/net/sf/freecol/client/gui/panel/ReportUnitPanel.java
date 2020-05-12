@@ -48,6 +48,7 @@ import net.sf.freecol.common.model.UnitType;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays a unit Report.
  */
@@ -123,11 +124,25 @@ public abstract class ReportUnitPanel extends ReportPanel {
     }
 
 
+    /**
+     * Gets the count.
+     *
+     * @param key the key
+     * @param type the type
+     * @return the count
+     */
     protected int getCount(String key, UnitType type) {
         TypeCountMap<UnitType> map = units.get(key);
         return (map == null) ? 0 : map.getCount(type);
     }
 
+    /**
+     * Increment count.
+     *
+     * @param key the key
+     * @param type the type
+     * @param number the number
+     */
     protected void incrementCount(String key, UnitType type, int number) {
         TypeCountMap<UnitType> map = units.get(key);
         if (map == null) {
@@ -137,6 +152,12 @@ public abstract class ReportUnitPanel extends ReportPanel {
         map.incrementCount(type, number);
     }
 
+    /**
+     * Adds the unit.
+     *
+     * @param unit the unit
+     * @param key the key
+     */
     protected void addUnit(Unit unit, String key) {
         if (unit.getLocation() == null) {
             return; // Can not happen.
@@ -164,6 +185,13 @@ public abstract class ReportUnitPanel extends ReportPanel {
         incrementCount(key, unit.getType(), 1);
     }
 
+    /**
+     * Handle location.
+     *
+     * @param location the location
+     * @param locationName the location name
+     * @param unitList the unit list
+     */
     protected void handleLocation(Location location, String locationName,
                                   List<Unit> unitList) {
         if ((unitList == null || unitList.isEmpty()) && !showColonies) {
@@ -206,6 +234,12 @@ public abstract class ReportUnitPanel extends ReportPanel {
         }
     }
 
+    /**
+     * Gets the unit button.
+     *
+     * @param unit the unit
+     * @return the unit button
+     */
     protected JButton getUnitButton(Unit unit) {
         ImageIcon icon = new ImageIcon(getImageLibrary().getUnitImage(unit));
         JButton button = Utility.getLinkButton("", icon, unit.getLocation().getId());

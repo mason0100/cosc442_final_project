@@ -48,34 +48,64 @@ import net.sf.freecol.common.model.UnitType;
 import net.sf.freecol.common.model.WorkLocation;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the Labour Report.
  */
 public final class CompactLabourReport extends ReportPanel {
 	
+    /** The Constant COLONY_COLUMN. */
     private static final int COLONY_COLUMN = 0;
+    
+    /** The Constant UNIT_TYPE_COLUMN. */
     private static final int UNIT_TYPE_COLUMN = 1;
+    
+    /** The Constant WORKING_COLUMN. */
     private static final int WORKING_COLUMN = 2;
+    
+    /** The Constant BUILDING_COLUMN. */
     private static final int BUILDING_COLUMN = 3;
+    
+    /** The Constant COLONIST_COLUMN. */
     private static final int COLONIST_COLUMN = 4;
+    
+    /** The Constant COLONIST_SUMMARY_COLUMN. */
     private static final int COLONIST_SUMMARY_COLUMN = 5;
+    
+    /** The Constant PRODUCTION_SYMBOL_COLUMN. */
     private static final int PRODUCTION_SYMBOL_COLUMN = 6;
+    
+    /** The Constant PRODUCTION_COLUMN. */
     private static final int PRODUCTION_COLUMN = 7;
+    
+    /** The Constant PRODUCTION_SUMMARY_COLUMN. */
     private static final int PRODUCTION_SUMMARY_COLUMN = 8;
+    
+    /** The Constant NETPRODUCTION_SUMMARY_COLUMN. */
     private static final int NETPRODUCTION_SUMMARY_COLUMN = 9;
 
+    /** The Constant COLUMNS. */
     private static final int COLUMNS = 10;
 
+    /** The labour data. */
     private LabourData labourData;
 
+    /** The unit data. */
     private final LabourData.UnitData unitData;
 
+    /** The show production. */
     private boolean showProduction;
+    
+    /** The show net production. */
     private boolean showNetProduction;
+    
+    /** The show production symbols. */
     private boolean showProductionSymbols;
 
+    /** The show buildings. */
     private boolean showBuildings;
 
+    /** The header row. */
     private final JPanel headerRow = new MigPanel("ReportPanelUI");
 
 
@@ -109,6 +139,9 @@ public final class CompactLabourReport extends ReportPanel {
     }
 
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.client.gui.panel.FreeColPanel#createColonyButton(net.sf.freecol.common.model.Colony)
+     */
     @Override
     public JButton createColonyButton(final Colony colony) {
         String text = colony.getName();
@@ -137,6 +170,9 @@ public final class CompactLabourReport extends ReportPanel {
     }
 
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.client.gui.panel.ReportPanel#initialize()
+     */
     @Override
     public void initialize() {
         if (isOverview()) {
@@ -179,12 +215,17 @@ public final class CompactLabourReport extends ReportPanel {
         }
     }
 
+    /**
+     * Creates the empty boarder.
+     *
+     * @return the border
+     */
     protected Border createEmptyBoarder() {
         return new EmptyBorder(0, 20, 20, 20);
     }
 
     /**
-     * adds the header rows
+     * adds the header rows.
      */
     private void addHeader() {
 
@@ -243,9 +284,10 @@ public final class CompactLabourReport extends ReportPanel {
     }
 
     /**
-     * add unit data for a given location
+     * add unit data for a given location.
      *
-     * @param data
+     * @param data the data
+     * @param colony the colony
      * @param row  starting row
      * @return next row to use
      */
@@ -394,6 +436,9 @@ public final class CompactLabourReport extends ReportPanel {
         return row;
     }
 
+    /**
+     * Adds the locations.
+     */
     private void addLocations() {
         LabourData.LocationData unitTotal = unitData.getTotal();
 
@@ -434,6 +479,12 @@ public final class CompactLabourReport extends ReportPanel {
     }
 
 
+    /**
+     * Adds the location summary.
+     *
+     * @param data the data
+     * @param row the row
+     */
     private void addLocationSummary(LabourData.LocationData data, int row) {
         int rows = data.getRowCount();
 
@@ -490,6 +541,14 @@ public final class CompactLabourReport extends ReportPanel {
         }
     }
 
+    /**
+     * Adds the non linked location.
+     *
+     * @param data the data
+     * @param messageKey the message key
+     * @param row the row
+     * @return the int
+     */
     private int addNonLinkedLocation(LabourData.LocationData data, String messageKey, int row) {
         int rows = data.getRowCount();
         if (rows > 0) {
@@ -502,6 +561,17 @@ public final class CompactLabourReport extends ReportPanel {
         return row;
     }
 
+    /**
+     * Adds the row.
+     *
+     * @param data the data
+     * @param typeName the type name
+     * @param activity the activity
+     * @param colonists the colonists
+     * @param production the production
+     * @param row the row
+     * @return the int
+     */
     private int addRow(LabourData.LocationData data, String typeName, String activity, int colonists, int production, int row) {
         if (colonists > 0) {
             addRow(data, typeName, activity, createNumberLabel(colonists, null), production, row);
@@ -510,6 +580,16 @@ public final class CompactLabourReport extends ReportPanel {
         return row;
     }
 
+    /**
+     * Adds the row.
+     *
+     * @param data the data
+     * @param typeName the type name
+     * @param activity the activity
+     * @param colonistLabel the colonist label
+     * @param production the production
+     * @param row the row
+     */
     private void addRow(LabourData.LocationData data, String typeName, String activity, JLabel colonistLabel, int production, int row) {
         if (!data.getUnitData().isSummary()) {
             JLabel typeLabel = new JLabel(typeName);
@@ -529,6 +609,9 @@ public final class CompactLabourReport extends ReportPanel {
         }
     }
 
+    /**
+     * Adds the unit types.
+     */
     private void addUnitTypes() {
         int row = 1;
 
@@ -557,6 +640,13 @@ public final class CompactLabourReport extends ReportPanel {
         }
     }
 
+    /**
+     * Creates the button.
+     *
+     * @param name the name
+     * @param listener the listener
+     * @return the j button
+     */
     private JButton createButton(String name, ActionListener listener) {
         JButton button = new JButton(name);
         button.setMargin(new Insets(0, 0, 0, 0));
@@ -568,12 +658,23 @@ public final class CompactLabourReport extends ReportPanel {
         return button;
     }
 
+    /**
+     * Creates the empty label.
+     *
+     * @return the j label
+     */
     private JLabel createEmptyLabel() {
         JLabel empty = new JLabel();
         empty.setBorder(Utility.CELLBORDER);
         return empty;
     }
 
+    /**
+     * Creates the non counted label.
+     *
+     * @param otherAmateurs the other amateurs
+     * @return the j label
+     */
     private JLabel createNonCountedLabel(int otherAmateurs) {
         JLabel label = createNumberLabel(otherAmateurs,
                                          "report.labour.notCounted.tooltip");
@@ -581,6 +682,13 @@ public final class CompactLabourReport extends ReportPanel {
         return label;
     }
 
+    /**
+     * Creates the number label.
+     *
+     * @param number the number
+     * @param toolTipKey the tool tip key
+     * @return the j label
+     */
     private JLabel createNumberLabel(int number, String toolTipKey) {
         JLabel label = new JLabel(String.valueOf(number));
         label.setHorizontalAlignment(SwingConstants.TRAILING);
@@ -589,6 +697,13 @@ public final class CompactLabourReport extends ReportPanel {
         return label;
     }
 
+    /**
+     * Creates the unit name button.
+     *
+     * @param name the name
+     * @param unitData the unit data
+     * @return the j button
+     */
     private JButton createUnitNameButton(String name,
                                          LabourData.UnitData unitData) {
         JButton button = createButton(name, (ActionEvent ae) -> {
@@ -603,13 +718,18 @@ public final class CompactLabourReport extends ReportPanel {
         return button;
     }
 
+    /**
+     * Gets the goods type.
+     *
+     * @return the goods type
+     */
     private GoodsType getGoodsType() {
         return (isSummary()) ? null
             : unitData.getUnitType().getExpertProduction();
     }
 
     /**
-     * Is this an overview/location summary?
+     * Is this an overview/location summary?.
      *
      * @return True if this is the location summary.
      */
@@ -618,7 +738,7 @@ public final class CompactLabourReport extends ReportPanel {
     }
 
     /**
-     * Is this a summary?
+     * Is this a summary?.
      *
      * @return True if this is any sort of summary.
      */

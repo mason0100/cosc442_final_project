@@ -26,6 +26,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.model.Operand.OperandType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The <code>Limit</code> class encapsulates a limit on the
  * availability of FreeColObjects.  It consists of a left hand side,
@@ -37,8 +38,18 @@ import net.sf.freecol.common.model.Operand.OperandType;
 public final class Limit extends FreeColGameObjectType {
 
     /** The basic operation used in evaluating this limit. */
-    public static enum Operator {
-        EQ, LT, GT, LE, GE
+    public enum Operator {
+        
+        /** The eq. */
+        EQ, 
+ /** The lt. */
+ LT, 
+ /** The gt. */
+ GT, 
+ /** The le. */
+ LE, 
+ /** The ge. */
+ GE
     }
 
     /** The operator to apply when evaluating the limit expression. */
@@ -98,6 +109,11 @@ public final class Limit extends FreeColGameObjectType {
         return operator;
     }
 
+    /**
+     * Sets the operator.
+     *
+     * @param newOperator the new operator
+     */
     public void setOperator(final Operator newOperator) {
         this.operator = newOperator;
     }
@@ -139,7 +155,7 @@ public final class Limit extends FreeColGameObjectType {
     }
 
     /**
-     * Does this limit apply to an object?
+     * Does this limit apply to an object?.
      *
      * @param object The object to test.
      * @return True if the limit is applicable.
@@ -277,7 +293,7 @@ public final class Limit extends FreeColGameObjectType {
     private boolean evaluate(Integer lhs, Integer rhs) {
         if (lhs == null || rhs == null) return true;
         switch (operator) {
-        case EQ: return lhs == rhs;
+        case EQ: return lhs.equals(rhs);
         case LT: return lhs <  rhs;
         case GT: return lhs >  rhs;
         case LE: return lhs <= rhs;
@@ -290,11 +306,20 @@ public final class Limit extends FreeColGameObjectType {
 
     // Serialization
 
+    /** The Constant LEFT_HAND_SIDE_TAG. */
     private static final String LEFT_HAND_SIDE_TAG = "left-hand-side";
+    
+    /** The Constant OPERATOR_TAG. */
     private static final String OPERATOR_TAG = "operator";
+    
+    /** The Constant RIGHT_HAND_SIDE_TAG. */
     private static final String RIGHT_HAND_SIDE_TAG = "right-hand-side";
+    
+    /** The Constant OLD_LEFT_HAND_SIDE_TAG. */
     // @compat 0.11.3
     private static final String OLD_LEFT_HAND_SIDE_TAG = "leftHandSide";
+    
+    /** The Constant OLD_RIGHT_HAND_SIDE_TAG. */
     private static final String OLD_RIGHT_HAND_SIDE_TAG = "rightHandSide";
     // end @compat 0.11.3
 
@@ -380,7 +405,14 @@ public final class Limit extends FreeColGameObjectType {
      *
      * @return "limit".
      */
+    static String limitTag = "limit";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
-        return "limit";
+		return limitTag;
     }
 }

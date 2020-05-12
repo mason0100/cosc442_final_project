@@ -34,11 +34,15 @@ import net.sf.freecol.common.model.Specification;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents a list of Options.
+ *
+ * @param <T> the generic type
  */
 public abstract class ListOption<T> extends AbstractOption<List<AbstractOption<T>>> {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ListOption.class.getName());
 
     /** The AbstractOption used to generate new values. */
@@ -118,7 +122,7 @@ public abstract class ListOption<T> extends AbstractOption<List<AbstractOption<T
     }
 
     /**
-     * Does this list allow duplicates?
+     * Does this list allow duplicates?.
      *
      * @return True if duplicates are allowed.
      */
@@ -136,7 +140,7 @@ public abstract class ListOption<T> extends AbstractOption<List<AbstractOption<T
     }
 
     /**
-     * Can an option be added to this list?
+     * Can an option be added to this list?.
      *
      * @param ao The option to check.
      * @return True if the option can be added.
@@ -193,8 +197,13 @@ public abstract class ListOption<T> extends AbstractOption<List<AbstractOption<T
 
     // Serialization
 
+    /** The Constant MAXIMUM_NUMBER_TAG. */
     private static final String MAXIMUM_NUMBER_TAG = "maximumNumber";
+    
+    /** The Constant OPTION_VALUE_TAG. */
     private static final String OPTION_VALUE_TAG = "optionValue";
+    
+    /** The Constant TEMPLATE_TAG. */
     private static final String TEMPLATE_TAG = "template";
 
 

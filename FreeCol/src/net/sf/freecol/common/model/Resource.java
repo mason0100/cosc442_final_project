@@ -31,6 +31,7 @@ import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents a production resource, such as prime tobacco, or an ore
  * vein, located on a Tile. A resource may be exhausted. In the
@@ -38,6 +39,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
  */
 public class Resource extends TileItem {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Resource.class.getName());
 
     /** Some resources are unlimited. */
@@ -104,7 +106,7 @@ public class Resource extends TileItem {
     }
 
     /**
-     * Is this an unlimited resource?
+     * Is this an unlimited resource?.
      *
      * @return True if this is an unlimited resource.
      */
@@ -270,8 +272,13 @@ public class Resource extends TileItem {
 
     // Serialization
 
+    /** The Constant QUANTITY_TAG. */
     private static final String QUANTITY_TAG = "quantity";
+    
+    /** The Constant TILE_TAG. */
     private static final String TILE_TAG = "tile";
+    
+    /** The Constant TYPE_TAG. */
     private static final String TYPE_TAG = "type";
 
 

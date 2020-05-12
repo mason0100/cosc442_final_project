@@ -33,6 +33,7 @@ import net.sf.freecol.FreeCol;
 import net.sf.freecol.common.networking.Connection;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The entry point and main controller object for the meta server.
  * 
@@ -43,10 +44,13 @@ import net.sf.freecol.common.networking.Connection;
  */
 public final class MetaServer extends Thread {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(MetaServer.class.getName());
 
+    /** The Constant REMOVE_DEAD_SERVERS_INTERVAL. */
     private static final int REMOVE_DEAD_SERVERS_INTERVAL = 120000;
 
+    /** The Constant REMOVE_OLDER_THAN. */
     public static final int REMOVE_OLDER_THAN = 90000;
 
     /** The public "well-known" socket to which clients may connect. */
@@ -64,6 +68,7 @@ public final class MetaServer extends Thread {
     /** The TCP port that is beeing used for the public socket. */
     private final int port;
 
+    /** The network handler. */
     private final NetworkHandler networkHandler;
 
 

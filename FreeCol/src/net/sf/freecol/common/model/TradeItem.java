@@ -27,6 +27,7 @@ import net.sf.freecol.common.model.Stance;
 import net.sf.freecol.common.util.Utils;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * One of the items a DiplomaticTrade consists of.
  */
@@ -260,7 +261,10 @@ public abstract class TradeItem extends FreeColObject {
 
     // Serialization
 
+    /** The Constant DESTINATION_TAG. */
     private static final String DESTINATION_TAG = "destination";
+    
+    /** The Constant SOURCE_TAG. */
     private static final String SOURCE_TAG = "source";
 
 

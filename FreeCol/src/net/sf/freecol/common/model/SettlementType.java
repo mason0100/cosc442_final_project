@@ -29,6 +29,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The various types of settlements in the game.
  */
@@ -106,7 +107,7 @@ public class SettlementType extends FreeColGameObjectType {
 
 
     /**
-     * Is this a capital settlement type?
+     * Is this a capital settlement type?.
      *
      * @return True if this is a capital.
      */
@@ -261,29 +262,74 @@ public class SettlementType extends FreeColGameObjectType {
 
     // Serialization
 
+    /** The Constant CAPITAL_TAG. */
     private static final String CAPITAL_TAG = "capital";
+    
+    /** The Constant CLAIMABLE_RADIUS_TAG. */
     private static final String CLAIMABLE_RADIUS_TAG = "claimable-radius";
+    
+    /** The Constant CONVERT_THRESHOLD_TAG. */
     private static final String CONVERT_THRESHOLD_TAG = "convert-threshold";
+    
+    /** The Constant EXTRA_CLAIMABLE_RADIUS_TAG. */
     private static final String EXTRA_CLAIMABLE_RADIUS_TAG = "extra-claimable-radius";
+    
+    /** The Constant GIFTS_TAG. */
     private static final String GIFTS_TAG = "gifts";
+    
+    /** The Constant MAXIMUM_GROWTH_TAG. */
     private static final String MAXIMUM_GROWTH_TAG = "maximum-growth";
+    
+    /** The Constant MAXIMUM_SIZE_TAG. */
     private static final String MAXIMUM_SIZE_TAG = "maximum-size";
+    
+    /** The Constant MINIMUM_GROWTH_TAG. */
     private static final String MINIMUM_GROWTH_TAG = "minimum-growth";
+    
+    /** The Constant MINIMUM_SIZE_TAG. */
     private static final String MINIMUM_SIZE_TAG = "minimum-size";
+    
+    /** The Constant PLUNDER_TAG. */
     private static final String PLUNDER_TAG = "plunder";
+    
+    /** The Constant TRADE_BONUS_TAG. */
     private static final String TRADE_BONUS_TAG = "trade-bonus";
+    
+    /** The Constant VISIBLE_RADIUS_TAG. */
     private static final String VISIBLE_RADIUS_TAG = "visible-radius";
+    
+    /** The Constant WANDERING_RADIUS_TAG. */
     private static final String WANDERING_RADIUS_TAG = "wandering-radius";
+    
+    /** The Constant OLD_CLAIMABLE_RADIUS_TAG. */
     // @compat 0.11.3
     private static final String OLD_CLAIMABLE_RADIUS_TAG = "claimableRadius";
+    
+    /** The Constant OLD_CONVERT_THRESHOLD_TAG. */
     private static final String OLD_CONVERT_THRESHOLD_TAG = "convertThreshold";
+    
+    /** The Constant OLD_EXTRA_CLAIMABLE_RADIUS_TAG. */
     private static final String OLD_EXTRA_CLAIMABLE_RADIUS_TAG = "extraClaimableRadius";
+    
+    /** The Constant OLD_MAXIMUM_GROWTH_TAG. */
     private static final String OLD_MAXIMUM_GROWTH_TAG = "maximumGrowth";
+    
+    /** The Constant OLD_MAXIMUM_SIZE_TAG. */
     private static final String OLD_MAXIMUM_SIZE_TAG = "maximumSize";
+    
+    /** The Constant OLD_MINIMUM_GROWTH_TAG. */
     private static final String OLD_MINIMUM_GROWTH_TAG = "minimumGrowth";
+    
+    /** The Constant OLD_MINIMUM_SIZE_TAG. */
     private static final String OLD_MINIMUM_SIZE_TAG = "minimumSize";
+    
+    /** The Constant OLD_TRADE_BONUS_TAG. */
     private static final String OLD_TRADE_BONUS_TAG = "tradeBonus";
+    
+    /** The Constant OLD_VISIBLE_RADIUS_TAG. */
     private static final String OLD_VISIBLE_RADIUS_TAG = "visibleRadius";
+    
+    /** The Constant OLD_WANDERING_RADIUS_TAG. */
     private static final String OLD_WANDERING_RADIUS_TAG = "wanderingRadius";
     // end @compat 0.11.3
 

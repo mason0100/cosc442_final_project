@@ -29,11 +29,13 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.model.Specification;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents an option where the valid choice is an integer.
  */
 public class IntegerOption extends AbstractOption<Integer> {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(IntegerOption.class.getName());
 
     /** The value of this option. */
@@ -167,7 +169,10 @@ public class IntegerOption extends AbstractOption<Integer> {
 
     // Serialization
 
+    /** The Constant MAXIMUM_VALUE_TAG. */
     private static final String MAXIMUM_VALUE_TAG = "maximumValue";
+    
+    /** The Constant MINIMUM_VALUE_TAG. */
     private static final String MINIMUM_VALUE_TAG = "minimumValue";
 
 

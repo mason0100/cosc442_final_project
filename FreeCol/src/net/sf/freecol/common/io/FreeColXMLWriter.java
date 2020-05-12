@@ -48,6 +48,7 @@ import net.sf.freecol.common.model.Location;
 import net.sf.freecol.common.model.Player;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A wrapper for <code>XMLStreamWriter</code> and potentially an
  * underlying stream.  Adds on many useful utilities for writing
@@ -62,6 +63,7 @@ import net.sf.freecol.common.model.Player;
  */
 public class FreeColXMLWriter implements Closeable, XMLStreamWriter {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FreeColXMLWriter.class.getName());
 
     /** Magic properties to indent files if supported. */
@@ -72,13 +74,26 @@ public class FreeColXMLWriter implements Closeable, XMLStreamWriter {
 
     /** The scope of a FreeCol object write. */
     public static enum WriteScope {
-        CLIENT,  // Only the client-visible information
-        SERVER,  // Full server-visible information
+        
+        /** The client. */
+        CLIENT,  
+  /** The server. */
+  // Only the client-visible information
+        SERVER,  
+  /** The save. */
+  // Full server-visible information
         SAVE;    // Absolutely everything needed to save the game state
 
-        private Player player = null; // The player to write to.
+        /** The player. */
+    private Player player = null; // The player to write to.
 
 
+        /**
+         * To client.
+         *
+         * @param player the player
+         * @return the write scope
+         */
         public static WriteScope toClient(Player player) {
             if (player == null) {
                 throw new IllegalArgumentException("Null player.");
@@ -88,26 +103,57 @@ public class FreeColXMLWriter implements Closeable, XMLStreamWriter {
             return ret;
         }            
 
+        /**
+         * To server.
+         *
+         * @return the write scope
+         */
         public static WriteScope toServer() {
             return WriteScope.SERVER;
         }
 
+        /**
+         * To save.
+         *
+         * @return the write scope
+         */
         public static WriteScope toSave() {
             return WriteScope.SAVE;
         }
 
+        /**
+         * Checks if is valid.
+         *
+         * @return true, if is valid
+         */
         public boolean isValid() {
             return (this == WriteScope.CLIENT) == (player != null);
         }
 
+        /**
+         * Valid for save.
+         *
+         * @return true, if successful
+         */
         public boolean validForSave() {
             return this == WriteScope.SAVE;
         }
 
+        /**
+         * Valid for.
+         *
+         * @param player the player
+         * @return true, if successful
+         */
         public boolean validFor(Player player) {
             return this != WriteScope.CLIENT || this.player == player;
         }
 
+        /**
+         * Gets the client.
+         *
+         * @return the client
+         */
         public Player getClient() {
             return this.player;
         }
@@ -159,6 +205,7 @@ public class FreeColXMLWriter implements Closeable, XMLStreamWriter {
     /**
      * Creates a new <code>FreeColXMLWriter</code>.
      *
+     * @param writer the writer
      * @param scope The <code>WriteScope</code> to use for FreeCol
      *     object writes.
      * @param indent If true, produce indented output if supported.
@@ -349,6 +396,7 @@ public class FreeColXMLWriter implements Closeable, XMLStreamWriter {
     /**
      * Writes an XML-representation of a collection object to the given stream.
      *
+     * @param <T> the generic type
      * @param tag The tag for the array <code>Element</code>.
      * @param members The members of the array.
      * @exception XMLStreamException if a problem was encountered
@@ -371,15 +419,31 @@ public class FreeColXMLWriter implements Closeable, XMLStreamWriter {
 
     // Delegations to the WriteScope.
 
+    /**
+     * Gets the client player.
+     *
+     * @return the client player
+     */
     public Player getClientPlayer() {
         return writeScope.getClient();
     }
 
 
+    /**
+     * Valid for save.
+     *
+     * @return true, if successful
+     */
     public boolean validForSave() {
         return writeScope.validForSave();
     }
 
+    /**
+     * Valid for.
+     *
+     * @param player the player
+     * @return true, if successful
+     */
     public boolean validFor(Player player) {
         return writeScope.validFor(player);
     }
@@ -387,156 +451,249 @@ public class FreeColXMLWriter implements Closeable, XMLStreamWriter {
     // Simple delegations to the XMLStreamWriter.  All should be
     // present here except close which is supplied above.
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#flush()
+     */
     @Override
     public void flush() throws XMLStreamException {
         xmlStreamWriter.flush();
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#getNamespaceContext()
+     */
     @Override
     public NamespaceContext getNamespaceContext() {
         return xmlStreamWriter.getNamespaceContext();
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#getPrefix(java.lang.String)
+     */
     @Override
     public String getPrefix(String uri) throws XMLStreamException {
         return xmlStreamWriter.getPrefix(uri);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#getProperty(java.lang.String)
+     */
     @Override
     public Object getProperty(String name) {
         return xmlStreamWriter.getProperty(name);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#setDefaultNamespace(java.lang.String)
+     */
     @Override
     public void setDefaultNamespace(String uri) throws XMLStreamException {
         xmlStreamWriter.setDefaultNamespace(uri);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#setNamespaceContext(javax.xml.namespace.NamespaceContext)
+     */
     @Override
     public void setNamespaceContext(NamespaceContext context) throws XMLStreamException {
         xmlStreamWriter.setNamespaceContext(context);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#setPrefix(java.lang.String, java.lang.String)
+     */
     @Override
     public void setPrefix(String prefix, String uri) throws XMLStreamException {
         xmlStreamWriter.setPrefix(prefix, uri);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeAttribute(java.lang.String, java.lang.String)
+     */
     @Override
     public void writeAttribute(String localName, String value) throws XMLStreamException {
         xmlStreamWriter.writeAttribute(localName, value);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeAttribute(java.lang.String, java.lang.String, java.lang.String)
+     */
     @Override
     public void writeAttribute(String namespaceURI, String localName, String value) throws XMLStreamException {
         xmlStreamWriter.writeAttribute(namespaceURI, localName, value);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeAttribute(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+     */
     @Override
     public void writeAttribute(String prefix, String namespaceURI, String localName, String value) throws XMLStreamException {
         xmlStreamWriter.writeAttribute(prefix, namespaceURI, localName, value);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeCData(java.lang.String)
+     */
     @Override
     public void writeCData(String data) throws XMLStreamException {
         xmlStreamWriter.writeCData(data);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeCharacters(char[], int, int)
+     */
     @Override
     public void writeCharacters(char[] text, int start, int len) throws XMLStreamException {
         xmlStreamWriter.writeCharacters(text, start, len);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeCharacters(java.lang.String)
+     */
     @Override
     public void writeCharacters(String text) throws XMLStreamException {
         xmlStreamWriter.writeCharacters(text);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeComment(java.lang.String)
+     */
     @Override
     public void writeComment(String data) throws XMLStreamException {
         xmlStreamWriter.writeComment(data);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeDefaultNamespace(java.lang.String)
+     */
     @Override
     public void writeDefaultNamespace(String namespaceURI) throws XMLStreamException {
         xmlStreamWriter.writeDefaultNamespace(namespaceURI);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeDTD(java.lang.String)
+     */
     @Override
     public void writeDTD(String dtd) throws XMLStreamException {
         xmlStreamWriter.writeDTD(dtd);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeEmptyElement(java.lang.String)
+     */
     @Override
     public void writeEmptyElement(String localName) throws XMLStreamException {
         xmlStreamWriter.writeEmptyElement(localName);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeEmptyElement(java.lang.String, java.lang.String)
+     */
     @Override
     public void writeEmptyElement(String namespaceURI, String localName) throws XMLStreamException {
         xmlStreamWriter.writeEmptyElement(namespaceURI, localName);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeEmptyElement(java.lang.String, java.lang.String, java.lang.String)
+     */
     @Override
     public void writeEmptyElement(String prefix, String localName, String namespaceURI) throws XMLStreamException {
         xmlStreamWriter.writeEmptyElement(prefix, localName, namespaceURI);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeEndDocument()
+     */
     @Override
     public void writeEndDocument() throws XMLStreamException {
         xmlStreamWriter.writeEndDocument();
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeEndElement()
+     */
     @Override
     public void writeEndElement() throws XMLStreamException {
         xmlStreamWriter.writeEndElement();
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeEntityRef(java.lang.String)
+     */
     @Override
     public void writeEntityRef(String name) throws XMLStreamException {
         xmlStreamWriter.writeEntityRef(name);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeNamespace(java.lang.String, java.lang.String)
+     */
     @Override
     public void writeNamespace(String prefix, String namespaceURI) throws XMLStreamException {
         xmlStreamWriter.writeNamespace(prefix, namespaceURI);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeProcessingInstruction(java.lang.String)
+     */
     @Override
     public void writeProcessingInstruction(String target) throws XMLStreamException {
         xmlStreamWriter.writeProcessingInstruction(target);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeProcessingInstruction(java.lang.String, java.lang.String)
+     */
     @Override
     public void writeProcessingInstruction(String target, String data) throws XMLStreamException {
         xmlStreamWriter.writeProcessingInstruction(target, data);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeStartDocument()
+     */
     @Override
     public void writeStartDocument() throws XMLStreamException {
         xmlStreamWriter.writeStartDocument();
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeStartDocument(java.lang.String)
+     */
     @Override
     public void writeStartDocument(String version) throws XMLStreamException {
         xmlStreamWriter.writeStartDocument(version);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeStartDocument(java.lang.String, java.lang.String)
+     */
     @Override
     public void writeStartDocument(String encoding, String version) throws XMLStreamException {
         xmlStreamWriter.writeStartDocument(encoding, version);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeStartElement(java.lang.String)
+     */
     @Override
     public void writeStartElement(String localName) throws XMLStreamException {
         xmlStreamWriter.writeStartElement(localName);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeStartElement(java.lang.String, java.lang.String)
+     */
     @Override
     public void writeStartElement(String namespaceURI, String localName) throws XMLStreamException {
         xmlStreamWriter.writeStartElement(namespaceURI, localName);
     }
 
+    /* (non-Javadoc)
+     * @see javax.xml.stream.XMLStreamWriter#writeStartElement(java.lang.String, java.lang.String, java.lang.String)
+     */
     @Override
     public void writeStartElement(String prefix, String localName, String namespaceURI) throws XMLStreamException {
         xmlStreamWriter.writeStartElement(prefix, localName, namespaceURI);

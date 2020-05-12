@@ -94,6 +94,7 @@ import net.sf.freecol.server.networking.Server;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The main control class for the FreeCol server.  This class both
  * starts and keeps references to all of the server objects and the
@@ -104,17 +105,34 @@ import org.w3c.dom.Element;
  */
 public final class FreeColServer {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FreeColServer.class.getName());
 
+    /** The Constant ACTIVE_UNIT_TAG. */
     public static final String ACTIVE_UNIT_TAG = "activeUnit";
+    
+    /** The Constant DEBUG_TAG. */
     public static final String DEBUG_TAG = "debug";
+    
+    /** The Constant RANDOM_STATE_TAG. */
     public static final String RANDOM_STATE_TAG = "randomState";
+    
+    /** The Constant OWNER_TAG. */
     public static final String OWNER_TAG = "owner";
+    
+    /** The Constant PUBLIC_SERVER_TAG. */
     public static final String PUBLIC_SERVER_TAG = "publicServer";
+    
+    /** The Constant SAVED_GAME_TAG. */
     public static final String SAVED_GAME_TAG = "savedGame";
+    
+    /** The Constant SERVER_OBJECTS_TAG. */
     public static final String SERVER_OBJECTS_TAG = "serverObjects";
+    
+    /** The Constant SINGLE_PLAYER_TAG. */
     public static final String SINGLE_PLAYER_TAG = "singleplayer";
 
+    /** The Constant META_SERVER_UPDATE_INTERVAL. */
     private static final int META_SERVER_UPDATE_INTERVAL = 60000;
 
     /**
@@ -146,15 +164,21 @@ public final class FreeColServer {
     public static final String DEFAULT_SPEC = "freecol";
 
     /** Games are either starting, ending or being played. */
-    public static enum GameState { STARTING_GAME, IN_GAME, ENDING_GAME }
+    public static enum GameState { 
+ /** The starting game. */
+ STARTING_GAME, 
+ /** The in game. */
+ IN_GAME, 
+ /** The ending game. */
+ ENDING_GAME }
 
 
     // Instantiation-time parameters.
 
-    /** Is this a single player game? */
+    /**  Is this a single player game?. */
     private boolean singlePlayer;
 
-    /** Should this game be listed on the meta-server? */
+    /**  Should this game be listed on the meta-server?. */
     private boolean publicServer = false;
 
     /** The name of this server. */
@@ -163,18 +187,24 @@ public final class FreeColServer {
     /** The current state of the game. */
     private GameState gameState = GameState.STARTING_GAME;
 
+    /** The server. */
     // Networking:
     private Server server;
 
+    /** The user connection handler. */
     // Controllers
     private final UserConnectionHandler userConnectionHandler;
 
+    /** The pre game controller. */
     private final PreGameController preGameController;
 
+    /** The pre game input handler. */
     private final PreGameInputHandler preGameInputHandler;
 
+    /** The in game input handler. */
     private final InGameInputHandler inGameInputHandler;
 
+    /** The in game controller. */
     private final InGameController inGameController;
 
     /** The AI controller. */
@@ -233,7 +263,7 @@ public final class FreeColServer {
 
     /**
      * Starts a new networked server, initializing from a saved game.
-     *
+     * 
      * The specification is usually null, which means it will be
      * initialized by extracting it from the saved game.  However
      * MapConverter does call this with an overriding specification.
@@ -242,8 +272,9 @@ public final class FreeColServer {
      * @param specification An optional <code>Specification</code> to use.
      * @param port The TCP port to use for the public socket.
      * @param name An optional name for the server.
-     * @exception IOException If save game can not be found.
      * @exception FreeColException If the savegame could not be loaded.
+     * @exception IOException If save game can not be found.
+     * @throws XMLStreamException the XML stream exception
      */
     public FreeColServer(final FreeColSavegameFile savegame, 
                          Specification specification, int port, String name)
@@ -277,7 +308,7 @@ public final class FreeColServer {
 
 
     /**
-     * Is the user playing in single player mode?
+     * Is the user playing in single player mode?.
      *
      * @return True if this is a single player game.
      */
@@ -724,6 +755,7 @@ public final class FreeColServer {
      * Saves a game.
      *
      * @param file The file where the data will be written.
+     * @param options the options
      * @exception IOException If a problem was encountered while trying
      *     to open, write or close the file.
      */
@@ -843,8 +875,8 @@ public final class FreeColServer {
      *
      * @param fis The file where the game data is located.
      * @return The game found in the stream.
-     * @exception FreeColException if the savegame contains incompatible data.
      * @exception IOException if the stream can not be created.
+     * @exception FreeColException if the savegame contains incompatible data.
      * @exception XMLStreamException if there is a problem reading the stream.
      */
     public ServerGame loadGame(final FreeColSavegameFile fis)
@@ -886,7 +918,7 @@ public final class FreeColServer {
 
     /**
      * Reads just the game part from a save game from a stream.
-     *
+     * 
      * When the specification is not supplied, the one found in the saved
      * game will be used.
      *
@@ -894,8 +926,8 @@ public final class FreeColServer {
      * @param specification An optional <code>Specification</code> to use.
      * @param server Use this (optional) server to load into.
      * @return The game found in the stream.
-     * @exception FreeColException if the format is incompatible.
      * @exception IOException if the stream can not be created.
+     * @exception FreeColException if the format is incompatible.
      * @exception XMLStreamException if there is a problem reading the stream.
      */
     public static ServerGame readGame(final FreeColSavegameFile fis,
@@ -1215,6 +1247,8 @@ public final class FreeColServer {
      * Removes automatically created save games.
      * Call this function to delete the automatically created save games from
      * a previous game.
+     *
+     * @param prefix the prefix
      */
     public static void removeAutosaves(final String prefix) {
         for (File autosaveFile : FreeColDirectories.getAutosaveDirectory().listFiles()) {

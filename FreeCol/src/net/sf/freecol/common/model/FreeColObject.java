@@ -65,6 +65,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The FreeCol root class.  Maintains an identifier, and an optional link
  * to the specification this object uses.
@@ -72,9 +73,13 @@ import org.xml.sax.SAXException;
 public abstract class FreeColObject
     implements Comparable<FreeColObject>, ObjectWithId {
 
+    /** The Constant logger. */
     protected static final Logger logger = Logger.getLogger(FreeColObject.class.getName());
 
+    /** The Constant INFINITY. */
     public static final int INFINITY = Integer.MAX_VALUE;
+    
+    /** The Constant UNDEFINED. */
     public static final int UNDEFINED = Integer.MIN_VALUE;
 
 
@@ -169,6 +174,7 @@ public abstract class FreeColObject
     /**
      * Get the type part of the identifier.
      *
+     * @param id the id
      * @return The type part of the identifier, or null on error.
      */
     public static String getIdType(String id) {
@@ -247,6 +253,7 @@ public abstract class FreeColObject
     /**
      * Sort a collection of <code>FreeColObject</code>s.
      *
+     * @param <T> the generic type
      * @param c The <code>Collection</code> to sort.
      * @return A sorted copy of the collection.
      */
@@ -257,6 +264,7 @@ public abstract class FreeColObject
     /**
      * Log a collection of <code>FreeColObject</code>s.
      *
+     * @param <T> the generic type
      * @param c The <code>Collection</code> to log.
      * @param lb A <code>LogBuilder</code> to log to.
      */
@@ -270,6 +278,7 @@ public abstract class FreeColObject
     /**
      * Invoke a method for this object.
      *
+     * @param <T> the generic type
      * @param methodName The name of the method.
      * @param returnClass The class of the return value.
      * @param defaultValue The default value.
@@ -294,6 +303,11 @@ public abstract class FreeColObject
     
     // Property change support
 
+    /**
+     * Adds the property change listener.
+     *
+     * @param listener the listener
+     */
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         if (pcs == null) {
             pcs = new PropertyChangeSupport(this);
@@ -301,6 +315,12 @@ public abstract class FreeColObject
         pcs.addPropertyChangeListener(listener);
     }
 
+    /**
+     * Adds the property change listener.
+     *
+     * @param propertyName the property name
+     * @param listener the listener
+     */
     public void addPropertyChangeListener(String propertyName, PropertyChangeListener listener) {
         if (pcs == null) {
             pcs = new PropertyChangeSupport(this);
@@ -308,48 +328,103 @@ public abstract class FreeColObject
         pcs.addPropertyChangeListener(propertyName, listener);
     }
 
+    /**
+     * Fire indexed property change.
+     *
+     * @param propertyName the property name
+     * @param index the index
+     * @param oldValue the old value
+     * @param newValue the new value
+     */
     public void fireIndexedPropertyChange(String propertyName, int index, boolean oldValue, boolean newValue) {
         if (pcs != null) {
             pcs.fireIndexedPropertyChange(propertyName, index, oldValue, newValue);
         }
     }
 
+    /**
+     * Fire indexed property change.
+     *
+     * @param propertyName the property name
+     * @param index the index
+     * @param oldValue the old value
+     * @param newValue the new value
+     */
     public void fireIndexedPropertyChange(String propertyName, int index, int oldValue, int newValue) {
         if (pcs != null) {
             pcs.fireIndexedPropertyChange(propertyName, index, oldValue, newValue);
         }
     }
 
+    /**
+     * Fire indexed property change.
+     *
+     * @param propertyName the property name
+     * @param index the index
+     * @param oldValue the old value
+     * @param newValue the new value
+     */
     public void fireIndexedPropertyChange(String propertyName, int index, Object oldValue, Object newValue) {
         if (pcs != null) {
             pcs.fireIndexedPropertyChange(propertyName, index, oldValue, newValue);
         }
     }
 
+    /**
+     * Fire property change.
+     *
+     * @param event the event
+     */
     public void firePropertyChange(PropertyChangeEvent event) {
         if (pcs != null) {
             pcs.firePropertyChange(event);
         }
     }
 
+    /**
+     * Fire property change.
+     *
+     * @param propertyName the property name
+     * @param oldValue the old value
+     * @param newValue the new value
+     */
     public void firePropertyChange(String propertyName, boolean oldValue, boolean newValue) {
         if (pcs != null) {
             pcs.firePropertyChange(propertyName, oldValue, newValue);
         }
     }
 
+    /**
+     * Fire property change.
+     *
+     * @param propertyName the property name
+     * @param oldValue the old value
+     * @param newValue the new value
+     */
     public void firePropertyChange(String propertyName, int oldValue, int newValue) {
         if (pcs != null) {
             pcs.firePropertyChange(propertyName, oldValue, newValue);
         }
     }
 
+    /**
+     * Fire property change.
+     *
+     * @param propertyName the property name
+     * @param oldValue the old value
+     * @param newValue the new value
+     */
     public void firePropertyChange(String propertyName, Object oldValue, Object newValue) {
         if (pcs != null) {
             pcs.firePropertyChange(propertyName, oldValue, newValue);
         }
     }
 
+    /**
+     * Gets the property change listeners.
+     *
+     * @return the property change listeners
+     */
     public PropertyChangeListener[] getPropertyChangeListeners() {
         if (pcs == null) {
             return new PropertyChangeListener[0];
@@ -358,6 +433,12 @@ public abstract class FreeColObject
         }
     }
 
+    /**
+     * Gets the property change listeners.
+     *
+     * @param propertyName the property name
+     * @return the property change listeners
+     */
     public PropertyChangeListener[] getPropertyChangeListeners(String propertyName) {
         if (pcs == null) {
             return new PropertyChangeListener[0];
@@ -366,6 +447,12 @@ public abstract class FreeColObject
         }
     }
 
+    /**
+     * Checks for listeners.
+     *
+     * @param propertyName the property name
+     * @return true, if successful
+     */
     public boolean hasListeners(String propertyName) {
         if (pcs == null) {
             return false;
@@ -374,12 +461,23 @@ public abstract class FreeColObject
         }
     }
 
+    /**
+     * Removes the property change listener.
+     *
+     * @param listener the listener
+     */
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         if (pcs != null) {
             pcs.removePropertyChangeListener(listener);
         }
     }
 
+    /**
+     * Removes the property change listener.
+     *
+     * @param propertyName the property name
+     * @param listener the listener
+     */
     public void removePropertyChangeListener(String propertyName, PropertyChangeListener listener) {
         if (pcs != null) {
             pcs.removePropertyChangeListener(propertyName, listener);
@@ -400,7 +498,7 @@ public abstract class FreeColObject
     }
 
     /**
-     * Is an ability present in this object?
+     * Is an ability present in this object?.
      *
      * @param id The object identifier.
      * @return True if the ability is present.
@@ -410,7 +508,7 @@ public abstract class FreeColObject
     }
 
     /**
-     * Is an ability present in this object?
+     * Is an ability present in this object?.
      *
      * @param id The object identifier.
      * @param fcgot An optional <code>FreeColGameObjectType</code> the
@@ -422,7 +520,7 @@ public abstract class FreeColObject
     }
 
     /**
-     * Is an ability present in this object?
+     * Is an ability present in this object?.
      *
      * @param id The object identifier.
      * @param fcgot An optional <code>FreeColGameObjectType</code> the
@@ -542,7 +640,7 @@ public abstract class FreeColObject
 
 
     /**
-     * Is an modifier present in this object?
+     * Is an modifier present in this object?.
      *
      * @param id The object identifier.
      * @return True if the modifier is present.
@@ -552,7 +650,7 @@ public abstract class FreeColObject
     }
 
     /**
-     * Is an modifier present in this object?
+     * Is an modifier present in this object?.
      *
      * @param id The object identifier.
      * @param fcgot An optional <code>FreeColGameObjectType</code> the
@@ -564,7 +662,7 @@ public abstract class FreeColObject
     }
 
     /**
-     * Is an modifier present in this object?
+     * Is an modifier present in this object?.
      *
      * @param id The object identifier.
      * @param fcgot An optional <code>FreeColGameObjectType</code> the
@@ -955,6 +1053,8 @@ public abstract class FreeColObject
 
     /** XML attribute tag to denote partial updates. */
     private static final String PARTIAL_ATTRIBUTE_TAG = "partial";
+    
+    /** The Constant OLD_PARTIAL_ATTRIBUTE_TAG. */
     // @compat 0.10.x
     private static final String OLD_PARTIAL_ATTRIBUTE_TAG = "PARTIAL";
     // end @compat
@@ -972,6 +1072,9 @@ public abstract class FreeColObject
 
     /**
      * Debugging tool, dump collection XML to System.err.
+     *
+     * @param <T> the generic type
+     * @param items the items
      */
     public static <T extends FreeColObject> void dumpCollection(Collection<T> items) {
         System.err.println("[Collection begin ");
@@ -984,7 +1087,7 @@ public abstract class FreeColObject
      *
      * @param file The <code>File</code> to write to.
      * @return True if the save proceeded without error.
-     * @exception FileNotFoundException
+     * @exception FileNotFoundException the file not found exception
      */
     public boolean save(File file) throws FileNotFoundException {
         return save(file, WriteScope.toSave());
@@ -996,7 +1099,7 @@ public abstract class FreeColObject
      * @param file The <code>File</code> to write to.
      * @param scope The <code>WriteScope</code> to use.
      * @return True if the save proceeded without error.
-     * @exception FileNotFoundException
+     * @exception FileNotFoundException the file not found exception
      */
     public boolean save(File file, WriteScope scope) throws FileNotFoundException {
         return save(file, scope, false);
@@ -1009,7 +1112,7 @@ public abstract class FreeColObject
      * @param scope The <code>WriteScope</code> to use.
      * @param pretty Attempt to indent the output nicely.
      * @return True if the save proceeded without error.
-     * @exception FileNotFoundException
+     * @exception FileNotFoundException the file not found exception
      */
     public boolean save(File file, WriteScope scope, boolean pretty) throws FileNotFoundException {
         try (
@@ -1023,7 +1126,7 @@ public abstract class FreeColObject
     }
 
     /**
-     * Writes the object to the given output stream
+     * Writes the object to the given output stream.
      *
      * @param out The <code>OutputStream</code> to write to.
      * @param scope The <code>WriteScope</code> to use.
@@ -1089,7 +1192,7 @@ public abstract class FreeColObject
 
     /**
      * Copy a FreeColObject.
-     *
+     * 
      * The copied object and its internal descendents will be
      * identical to the original objects, but not present in the game.
      * Newly created objects will prefer to refer to other newly
@@ -1098,6 +1201,7 @@ public abstract class FreeColObject
      * to the copied colony and the copied colony refer to the copied
      * tile, but both will refer to the original uncopied owning player. 
      *
+     * @param <T> the generic type
      * @param game The <code>Game</code> to add the object to.
      * @param returnClass The required object class.
      * @return The copied object, or null on error.
@@ -1117,13 +1221,13 @@ public abstract class FreeColObject
     /**
      * This method writes an XML-representation of this object to
      * the given stream.
-     *
+     * 
      * All attributes will be made visible.
      *
      * @param xw The <code>FreeColXMLWriter</code> to write to.
+     * @see #toXML(FreeColXMLWriter)
      * @exception XMLStreamException if there are any problems writing
      *      to the stream.
-     * @see #toXML(FreeColXMLWriter)
      */
     public void toXML(FreeColXMLWriter xw) throws XMLStreamException {
         toXML(xw, getXMLTagName());

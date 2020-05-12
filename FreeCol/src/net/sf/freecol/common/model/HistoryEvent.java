@@ -24,39 +24,82 @@ import javax.xml.stream.XMLStreamException;
 import net.sf.freecol.common.i18n.Messages;
 import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
-import net.sf.freecol.common.model.Stance;
 import net.sf.freecol.common.util.Utils;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A notable event in the history of a game.
  */
 public class HistoryEvent extends StringTemplate {
 
-    public static enum HistoryEventType implements Named {
+    /**
+     * The Enum HistoryEventType.
+     */
+    public enum HistoryEventType implements Named {
+        
+        /** The discover new world. */
         DISCOVER_NEW_WORLD,
+        
+        /** The discover region. */
         DISCOVER_REGION,
+        
+        /** The meet nation. */
         MEET_NATION,
+        
+        /** The city of gold. */
         CITY_OF_GOLD,
+        
+        /** The found colony. */
         FOUND_COLONY,
+        
+        /** The abandon colony. */
         ABANDON_COLONY,
+        
+        /** The conquer colony. */
         CONQUER_COLONY,
+        
+        /** The colony destroyed. */
         COLONY_DESTROYED,
+        
+        /** The colony conquered. */
         COLONY_CONQUERED,
+        
+        /** The destroy settlement. */
         DESTROY_SETTLEMENT,
+        
+        /** The destroy nation. */
         // FIXME: when exactly is a European nation destroyed?
         DESTROY_NATION,
+        
+        /** The nation destroyed. */
         NATION_DESTROYED,
+        
+        /** The founding father. */
         FOUNDING_FATHER,
+        
+        /** The declare independence. */
         DECLARE_INDEPENDENCE,
+        
+        /** The independence. */
         INDEPENDENCE,
+        
+        /** The spanish succession. */
         SPANISH_SUCCESSION,
+        
+        /** The declare war. */
         DECLARE_WAR,
+        
+        /** The cease fire. */
         CEASE_FIRE,
+        
+        /** The make peace. */
         MAKE_PEACE,
+        
+        /** The form alliance. */
         FORM_ALLIANCE;
 
         /**
@@ -68,6 +111,11 @@ public class HistoryEvent extends StringTemplate {
             return "historyEventType." + getEnumKey(this);
         }
 
+        /**
+         * Gets the description key.
+         *
+         * @return the description key
+         */
         public String getDescriptionKey() {
             return Messages.descriptionKey("model." + getKey());
         }
@@ -83,7 +131,7 @@ public class HistoryEvent extends StringTemplate {
     }
 
 
-    /** The turn in which the event took place */
+    /**  The turn in which the event took place. */
     private Turn turn;
 
     /** The type of event. */
@@ -272,9 +320,16 @@ public class HistoryEvent extends StringTemplate {
 
     // Serialization
 
+    /** The Constant EVENT_TYPE_TAG. */
     private static final String EVENT_TYPE_TAG = "eventType";
+    
+    /** The Constant PLAYER_ID_TAG. */
     private static final String PLAYER_ID_TAG = "playerId";
+    
+    /** The Constant SCORE_TAG. */
     private static final String SCORE_TAG = "score";
+    
+    /** The Constant TURN_TAG. */
     private static final String TURN_TAG = "turn";
 
 
@@ -339,7 +394,14 @@ public class HistoryEvent extends StringTemplate {
      *
      * @return "historyEvent".
      */
+    static String historyEventTag = "historyEvent";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
-        return "historyEvent";
+		return historyEventTag;
     }
 }

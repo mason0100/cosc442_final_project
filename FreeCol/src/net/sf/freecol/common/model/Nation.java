@@ -35,6 +35,7 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import static net.sf.freecol.common.util.RandomUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents one of the nations present in the game.
  */
@@ -95,7 +96,7 @@ public class Nation extends FreeColGameObjectType {
     /** The nation type, European, native, etc. */
     private NationType type;
 
-    /** Can this nation be selected? */
+    /**  Can this nation be selected?. */
     private boolean selectable;
 
     /** The REF nation to oppose this nation. */
@@ -123,7 +124,7 @@ public class Nation extends FreeColGameObjectType {
 
 
     /**
-     * Is this the unknown enemy nation?
+     * Is this the unknown enemy nation?.
      *
      * @return True if this is the unknown enemy.
      */
@@ -150,7 +151,7 @@ public class Nation extends FreeColGameObjectType {
     }
 
     /**
-     * Is this nation selectable?
+     * Is this nation selectable?.
      *
      * @return True if the nation is selectable.
      */
@@ -187,7 +188,7 @@ public class Nation extends FreeColGameObjectType {
     }
 
     /**
-     * Does this nation start on the east coast by default?
+     * Does this nation start on the east coast by default?.
      *
      * @return True if the nation starts on the east coast.
      */
@@ -269,14 +270,29 @@ public class Nation extends FreeColGameObjectType {
 
     // Serialization
 
+    /** The Constant COLOR_TAG. */
     private static final String COLOR_TAG = "color";
+    
+    /** The Constant NATION_TYPE_TAG. */
     private static final String NATION_TYPE_TAG = "nation-type";
+    
+    /** The Constant PREFERRED_LATITUDE_TAG. */
     private static final String PREFERRED_LATITUDE_TAG = "preferred-latitude";
+    
+    /** The Constant REF_TAG. */
     private static final String REF_TAG = "ref";
+    
+    /** The Constant SELECTABLE_TAG. */
     private static final String SELECTABLE_TAG = "selectable";
+    
+    /** The Constant STARTS_ON_EAST_COAST_TAG. */
     private static final String STARTS_ON_EAST_COAST_TAG = "starts-on-east-coast";
+    
+    /** The Constant OLD_PREFERRED_LATITUDE_TAG. */
     // @compat 0.11.3
     private static final String OLD_PREFERRED_LATITUDE_TAG = "preferredLatitude";
+    
+    /** The Constant OLD_STARTS_ON_EAST_COAST_TAG. */
     private static final String OLD_STARTS_ON_EAST_COAST_TAG = "startsOnEastCoast";
     // end @compat 0.11.3
 

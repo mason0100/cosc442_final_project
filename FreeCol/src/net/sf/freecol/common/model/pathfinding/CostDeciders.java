@@ -29,6 +29,7 @@ import net.sf.freecol.common.model.Tile;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Cost deciders to be used while finding paths.
  */
@@ -89,6 +90,10 @@ public final class CostDeciders {
      * a player has explored to limit searches.
      */
     private static class ServerBaseCostDecider extends BaseCostDecider {
+        
+        /* (non-Javadoc)
+         * @see net.sf.freecol.common.model.pathfinding.BaseCostDecider#getCost(net.sf.freecol.common.model.Unit, net.sf.freecol.common.model.Location, net.sf.freecol.common.model.Location, int)
+         */
         @Override
         public int getCost(Unit unit, Location oldLocation,
                            Location newLocation, int movesLeft) {
@@ -115,6 +120,10 @@ public final class CostDeciders {
      * avoiding other player settlements.
      */
     private static class AvoidSettlementsCostDecider extends BaseCostDecider {
+        
+        /* (non-Javadoc)
+         * @see net.sf.freecol.common.model.pathfinding.BaseCostDecider#getCost(net.sf.freecol.common.model.Unit, net.sf.freecol.common.model.Location, net.sf.freecol.common.model.Location, int)
+         */
         @Override
         public int getCost(Unit unit, Location oldLocation,
                            Location newLocation, int movesLeft) {
@@ -143,6 +152,10 @@ public final class CostDeciders {
      */
     private static class AvoidSettlementsAndBlockingUnitsCostDecider
         extends AvoidSettlementsCostDecider {
+        
+        /* (non-Javadoc)
+         * @see net.sf.freecol.common.model.pathfinding.CostDeciders.AvoidSettlementsCostDecider#getCost(net.sf.freecol.common.model.Unit, net.sf.freecol.common.model.Location, net.sf.freecol.common.model.Location, int)
+         */
         @Override
         public int getCost(Unit unit, Location oldLocation,
                            Location newLocation, int movesLeft) {
@@ -177,6 +190,9 @@ public final class CostDeciders {
     private static class AvoidNavalDangerCostDecider
         extends AvoidSettlementsAndBlockingUnitsCostDecider {
 
+        /* (non-Javadoc)
+         * @see net.sf.freecol.common.model.pathfinding.CostDeciders.AvoidSettlementsAndBlockingUnitsCostDecider#getCost(net.sf.freecol.common.model.Unit, net.sf.freecol.common.model.Location, net.sf.freecol.common.model.Location, int)
+         */
         @Override
         public int getCost(Unit unit, Location oldLocation,
                            Location newLocation, int movesLeft) {

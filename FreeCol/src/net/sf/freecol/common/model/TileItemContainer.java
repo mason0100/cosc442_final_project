@@ -34,12 +34,14 @@ import net.sf.freecol.common.model.Map.Layer;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Contains <code>TileItem</code>s and can be used by a {@link Tile}
  * to make certain tasks easier.
  */
 public class TileItemContainer extends FreeColGameObject {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(TileItemContainer.class.getName());
 
     /** A comparator to sort by ascending zIndex. */
@@ -340,6 +342,7 @@ public class TileItemContainer extends FreeColGameObject {
     /**
      * Removes a <code>TileItem</code> from this container.
      *
+     * @param <T> the generic type
      * @param item The <code>TileItem</code> to remove from this container.
      * @return The <code>TileItem</code> that has been removed from
      *     this container (if any).
@@ -357,6 +360,7 @@ public class TileItemContainer extends FreeColGameObject {
     /**
      * Removes all tile items of a given class.
      *
+     * @param <T> the generic type
      * @param c The <code>Class</code> to remove.
      */
     public final <T extends TileItem> void removeAll(Class<T> c) {
@@ -412,7 +416,7 @@ public class TileItemContainer extends FreeColGameObject {
 
     /**
      * Does this container contain an item that allows the tile to 
-     * produce a goods type?
+     * produce a goods type?.
      *
      * @param goodsType The <code>GoodsType</code> to produce.
      * @param unitType The optional <code>unitType</code> to produce with.
@@ -570,7 +574,10 @@ public class TileItemContainer extends FreeColGameObject {
 
     // Serialization
 
+    /** The Constant TILE_TAG. */
     private static final String TILE_TAG = "tile";
+    
+    /** The Constant OLD_TILE_IMPROVEMENT_TAG. */
     // @compat 0.11.3
     private static final String OLD_TILE_IMPROVEMENT_TAG = "tileimprovement";
     // end @compat 0.11.3

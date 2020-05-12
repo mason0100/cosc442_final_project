@@ -41,6 +41,7 @@ import net.sf.freecol.client.gui.action.FreeColAction;
 import net.sf.freecol.client.gui.panel.Utility;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * User interface for displaying/changing a keyboard accelerator for a
  * <code>FreeColAction</code>.
@@ -48,11 +49,22 @@ import net.sf.freecol.client.gui.panel.Utility;
 public final class FreeColActionUI extends OptionUI<FreeColAction>
     implements ActionListener {
 
+    /** The option group UI. */
     private OptionGroupUI optionGroupUI;
+    
+    /** The key stroke. */
     private KeyStroke keyStroke;
+    
+    /** The record button. */
     private final JButton recordButton;
+    
+    /** The remove button. */
     private final JButton removeButton;
+    
+    /** The bl. */
     private final BlinkingLabel bl;
+    
+    /** The panel. */
     private final JPanel panel = new JPanel();
 
 
@@ -156,6 +168,11 @@ public final class FreeColActionUI extends OptionUI<FreeColAction>
         }
     }
 
+    /**
+     * Sets the option group UI.
+     *
+     * @param ui the new option group UI
+     */
     public void setOptionGroupUI(OptionGroupUI ui) {
         this.optionGroupUI = ui;
     }
@@ -184,9 +201,15 @@ public final class FreeColActionUI extends OptionUI<FreeColAction>
      */
     class BlinkingLabel extends JLabel implements ActionListener, KeyListener, MouseListener {
 
+        /** The blinking timer. */
         private final Timer blinkingTimer = new Timer(500, this);
+        
+        /** The blink on. */
         private boolean blinkOn = false;
 
+        /**
+         * Instantiates a new blinking label.
+         */
         BlinkingLabel() {
             super(getHumanKeyStrokeText(keyStroke), JLabel.CENTER);
 
@@ -196,6 +219,9 @@ public final class FreeColActionUI extends OptionUI<FreeColAction>
             addMouseListener(this);
         }
 
+        /* (non-Javadoc)
+         * @see java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)
+         */
         @Override
         public void mouseClicked(MouseEvent e) {
             if (e.getClickCount() > 1) {
@@ -205,44 +231,80 @@ public final class FreeColActionUI extends OptionUI<FreeColAction>
         }
 
 
+        /* (non-Javadoc)
+         * @see java.awt.event.MouseListener#mouseEntered(java.awt.event.MouseEvent)
+         */
         @Override
         public void mouseEntered(MouseEvent e) { /* No such event */ }
+        
+        /* (non-Javadoc)
+         * @see java.awt.event.MouseListener#mouseExited(java.awt.event.MouseEvent)
+         */
         @Override
         public void mouseExited(MouseEvent e) { /* No such event */ }
+        
+        /* (non-Javadoc)
+         * @see java.awt.event.MouseListener#mousePressed(java.awt.event.MouseEvent)
+         */
         @Override
         public void mousePressed(MouseEvent e) { /* No such event */ }
+        
+        /* (non-Javadoc)
+         * @see java.awt.event.MouseListener#mouseReleased(java.awt.event.MouseEvent)
+         */
         @Override
         public void mouseReleased(MouseEvent e) { /* No such event */ }
 
 
+        /* (non-Javadoc)
+         * @see javax.swing.JComponent#getMinimumSize()
+         */
         @Override
         public Dimension getMinimumSize() {
             return new Dimension(80, super.getMinimumSize().height);
         }
 
+        /* (non-Javadoc)
+         * @see javax.swing.JComponent#getPreferredSize()
+         */
         @Override
         public Dimension getPreferredSize() {
             return getMinimumSize();
         }
 
 
+        /**
+         * Start blinking.
+         */
         public void startBlinking() {
             blinkingTimer.start();
         }
 
 
+        /**
+         * Stop blinking.
+         */
         public void stopBlinking() {
             blinkingTimer.stop();
             setOpaque(false);
             repaint();
         }
 
+        /* (non-Javadoc)
+         * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
+         */
         @Override
         public void keyPressed(KeyEvent e) { /* No such event */ }
 
+        /* (non-Javadoc)
+         * @see java.awt.event.KeyListener#keyTyped(java.awt.event.KeyEvent)
+         */
         @Override
         public void keyTyped(KeyEvent e) { /* No such event */ }
 
+        /* (non-Javadoc)
+         * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
+         */
         @Override
         public void keyReleased(KeyEvent e) {
             KeyStroke ks = KeyStroke.getKeyStroke(e.getKeyCode(), e.getModifiers());

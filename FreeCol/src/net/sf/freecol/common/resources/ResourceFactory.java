@@ -27,12 +27,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A factory class for creating <code>Resource</code> instances.
  * @see Resource
  */
 public class ResourceFactory {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ResourceFactory.class.getName());
 
     /**
@@ -40,13 +42,60 @@ public class ResourceFactory {
      */
     public interface ResourceSink {
 
+        /**
+         * Adds the.
+         *
+         * @param r the r
+         */
         void add(ColorResource r);
+        
+        /**
+         * Adds the.
+         *
+         * @param r the r
+         */
         void add(FontResource r);
+        
+        /**
+         * Adds the.
+         *
+         * @param r the r
+         */
         void add(StringResource r);
+        
+        /**
+         * Adds the.
+         *
+         * @param r the r
+         */
         void add(FAFileResource r);
+        
+        /**
+         * Adds the.
+         *
+         * @param r the r
+         */
         void add(SZAResource r);
+        
+        /**
+         * Adds the.
+         *
+         * @param r the r
+         */
         void add(AudioResource r);
+        
+        /**
+         * Adds the.
+         *
+         * @param r the r
+         */
         void add(VideoResource r);
+        
+        /**
+         * Adds the.
+         *
+         * @param r the r
+         */
         void add(ImageResource r);
 
     }
@@ -58,18 +107,32 @@ public class ResourceFactory {
      */
     private static final Map<URI, WeakReference<ColorResource>> colorResources
         = new WeakHashMap<>();
+    
+    /** The Constant fontResources. */
     private static final Map<URI, WeakReference<FontResource>> fontResources
         = new WeakHashMap<>();
+    
+    /** The Constant stringResources. */
     private static final Map<URI, WeakReference<StringResource>> stringResources
         = new WeakHashMap<>();
+    
+    /** The Constant fafResources. */
     private static final Map<URI, WeakReference<FAFileResource>> fafResources
         = new WeakHashMap<>();
+    
+    /** The Constant szaResources. */
     private static final Map<URI, WeakReference<SZAResource>> szaResources
         = new WeakHashMap<>();
+    
+    /** The Constant audioResources. */
     private static final Map<URI, WeakReference<AudioResource>> audioResources
         = new WeakHashMap<>();
+    
+    /** The Constant videoResources. */
     private static final Map<URI, WeakReference<VideoResource>> videoResources
         = new WeakHashMap<>();
+    
+    /** The Constant imageResources. */
     private static final Map<URI, WeakReference<ImageResource>> imageResources
         = new WeakHashMap<>();
 

@@ -26,11 +26,15 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A map of goods types and their production.
  */
 public class ProductionMap {
 
+    /**
+     * The Class ProductionTree.
+     */
     public static class ProductionTree {
 
         /**
@@ -45,6 +49,12 @@ public class ProductionMap {
         private List<AbstractGoods> leafs;
 
 
+        /**
+         * Instantiates a new production tree.
+         *
+         * @param root the root
+         * @param leafs the leafs
+         */
         public ProductionTree(AbstractGoods root, AbstractGoods... leafs) {
             if (leafs.length > 0) {
                 this.leafs = new ArrayList<>();
@@ -60,22 +70,47 @@ public class ProductionMap {
         }
 
 
+        /**
+         * Gets the root.
+         *
+         * @return the root
+         */
         public final AbstractGoods getRoot() {
             return root;
         }
 
+        /**
+         * Sets the root.
+         *
+         * @param newRoot the new root
+         */
         public final void setRoot(final AbstractGoods newRoot) {
             this.root = newRoot;
         }
 
+        /**
+         * Gets the leafs.
+         *
+         * @return the leafs
+         */
         public final List<AbstractGoods> getLeafs() {
             return leafs;
         }
 
+        /**
+         * Sets the leafs.
+         *
+         * @param newLeafs the new leafs
+         */
         public final void setLeafs(final List<AbstractGoods> newLeafs) {
             this.leafs = newLeafs;
         }
 
+        /**
+         * Adds the.
+         *
+         * @param goods the goods
+         */
         public void add(AbstractGoods goods) {
             if (goods.getType().getStoredAs() != root.getType()) {
                 throw new IllegalArgumentException(goods.getType().getId() + " is not stored as "
@@ -92,6 +127,12 @@ public class ProductionMap {
             }
         }
 
+        /**
+         * Removes the.
+         *
+         * @param goods the goods
+         * @return the int
+         */
         public int remove(AbstractGoods goods) {
             int consumed = goods.getAmount();
             if (goods.getType() == root.getType()) {
@@ -109,6 +150,12 @@ public class ProductionMap {
             return consumed;
         }
 
+        /**
+         * Gets the.
+         *
+         * @param type the type
+         * @return the abstract goods
+         */
         public AbstractGoods get(GoodsType type) {
             if (root.getType() == type) {
                 return root;
@@ -137,9 +184,16 @@ public class ProductionMap {
     }
 
 
+    /** The cache. */
     private final Map<GoodsType, Object> cache = new HashMap<>();
 
 
+    /**
+     * Gets the.
+     *
+     * @param type the type
+     * @return the abstract goods
+     */
     public AbstractGoods get(GoodsType type) {
         Object value = cache.get(type);
         if (value == null) {
@@ -151,6 +205,11 @@ public class ProductionMap {
         }
     }
 
+    /**
+     * Adds the.
+     *
+     * @param goods the goods
+     */
     public void add(AbstractGoods goods) {
         GoodsType goodsType = goods.getType();
         Object value = cache.get(goodsType);
@@ -181,6 +240,11 @@ public class ProductionMap {
         }
     }
 
+    /**
+     * Removes the.
+     *
+     * @param goods the goods
+     */
     public void remove(AbstractGoods goods) {
         Object value = cache.get(goods.getType());
         if (value instanceof ProductionTree) {
@@ -191,12 +255,22 @@ public class ProductionMap {
     }
 
 
+    /**
+     * Adds the.
+     *
+     * @param goods the goods
+     */
     public void add(List<AbstractGoods> goods) {
         for (AbstractGoods g : goods) {
             add(g);
         }
     }
 
+    /**
+     * Removes the.
+     *
+     * @param goods the goods
+     */
     public void remove(List<AbstractGoods> goods) {
         for (AbstractGoods g : goods) {
             remove(g);

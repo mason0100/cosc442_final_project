@@ -26,6 +26,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Collection of small static helper routines for logged pseudo-random
  * number generation.
@@ -111,6 +112,7 @@ public class RandomUtils {
     /**
      * Gets a random member of a list.
      *
+     * @param <T> the generic type
      * @param logger The <code>Logger</code> to log to.
      * @param logMe A string to log with the result.
      * @param list The list.

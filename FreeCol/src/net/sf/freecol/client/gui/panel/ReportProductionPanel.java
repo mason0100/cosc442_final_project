@@ -39,6 +39,7 @@ import net.sf.freecol.common.model.GoodsType;
 import net.sf.freecol.common.model.TypeCountMap;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the ContinentalCongress Report.
  */
@@ -86,6 +87,9 @@ public final class ReportProductionPanel extends ReportPanel {
     }
 
 
+    /**
+     * Update.
+     */
     private void update() {
         reportJPanel.removeAll();
         JLabel selectLabel = Utility.localizedLabel("report.production.selectGoods");

@@ -27,6 +27,7 @@ import net.sf.freecol.common.option.LanguageOption;
 import net.sf.freecol.common.option.LanguageOption.Language;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides visualization for a
  * {@link net.sf.freecol.common.option.LanguageOption} in order to enable
@@ -34,6 +35,7 @@ import net.sf.freecol.common.option.LanguageOption.Language;
  */
 public final class LanguageOptionUI extends OptionUI<LanguageOption>  {
 
+    /** The box. */
     private final JComboBox<Language> box = new JComboBox<>();
 
 

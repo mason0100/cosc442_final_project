@@ -29,12 +29,14 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Objects of this class hold the market data for a particular type of
  * goods.
  */
 public class MarketData extends FreeColGameObject {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(MarketData.class.getName());
 
     /** Inclusive lower bound on goods price. */
@@ -76,13 +78,14 @@ public class MarketData extends FreeColGameObject {
      */
     private int oldPrice;
 
-    /** Has this good been traded? */
+    /**  Has this good been traded?. */
     private boolean traded;
 
 
     /**
      * Creates a new <code>MarketData</code> instance.
      *
+     * @param game the game
      * @param goodsType The <code>GoodsType</code> this market data describes.
      */
     public MarketData(Game game, GoodsType goodsType) {
@@ -287,10 +290,10 @@ public class MarketData extends FreeColGameObject {
     }
 
     /**
-     * Has there been trading in this <code>MarketData</code>?
+     * Has there been trading in this <code>MarketData</code>?.
      *
      * @return True if trading has occurred.
-     **/
+     */
     public final boolean getTraded() {
         return traded;
     }
@@ -392,13 +395,28 @@ public class MarketData extends FreeColGameObject {
 
     // Serialization
 
+    /** The Constant AMOUNT_TAG. */
     private static final String AMOUNT_TAG = "amount";
+    
+    /** The Constant ARREARS_TAG. */
     private static final String ARREARS_TAG = "arrears";
+    
+    /** The Constant GOODS_TYPE_TAG. */
     private static final String GOODS_TYPE_TAG = "goods-type";
+    
+    /** The Constant INCOME_AFTER_TAXES_TAG. */
     private static final String INCOME_AFTER_TAXES_TAG = "incomeAfterTaxes";
+    
+    /** The Constant INCOME_BEFORE_TAXES_TAG. */
     private static final String INCOME_BEFORE_TAXES_TAG = "incomeBeforeTaxes";
+    
+    /** The Constant INITIAL_PRICE_TAG. */
     private static final String INITIAL_PRICE_TAG = "initialPrice";
+    
+    /** The Constant SALES_TAG. */
     private static final String SALES_TAG = "sales";
+    
+    /** The Constant TRADED_TAG. */
     private static final String TRADED_TAG = "traded";
 
 

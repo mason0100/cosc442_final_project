@@ -26,16 +26,26 @@ import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicTableUI;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * UI-class for tables.
  */
 public class FreeColTableUI extends BasicTableUI {
 
+    /**
+     * Creates the UI.
+     *
+     * @param c the c
+     * @return the component UI
+     */
     public static ComponentUI createUI(@SuppressWarnings("unused") JComponent c) {
         return new FreeColTableUI();
     }
 
 
+    /* (non-Javadoc)
+     * @see javax.swing.plaf.basic.BasicTableUI#installUI(javax.swing.JComponent)
+     */
     @Override
     public void installUI(JComponent c) {
         super.installUI(c);
@@ -43,6 +53,9 @@ public class FreeColTableUI extends BasicTableUI {
         c.setOpaque(false);
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.plaf.basic.BasicTableUI#paint(java.awt.Graphics, javax.swing.JComponent)
+     */
     @Override
     public void paint(Graphics g, JComponent c) {
         LAFUtilities.setProperties(g, c);

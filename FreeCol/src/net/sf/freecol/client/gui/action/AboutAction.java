@@ -25,11 +25,13 @@ import net.sf.freecol.FreeCol;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for displaying an about box with version numbers.
  */
 public class AboutAction extends FreeColAction {
 
+    /** The Constant ID. */
     public static final String ID = "aboutAction";
 
 

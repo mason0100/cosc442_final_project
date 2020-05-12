@@ -39,21 +39,28 @@ import net.sf.freecol.client.gui.LoadingSavegameInfo;
 import net.sf.freecol.common.i18n.Messages;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Dialog for setting some options when loading a game.
  */
 public final class LoadingSavegameDialog extends FreeColConfirmDialog {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(LoadingSavegameDialog.class.getName());
 
+    /** The single player. */
     private final JRadioButton singlePlayer;
 
+    /** The private multiplayer. */
     private final JRadioButton privateMultiplayer;
 
+    /** The public multiplayer. */
     private final JRadioButton publicMultiplayer;
 
+    /** The server name field. */
     private final JTextField serverNameField;
 
+    /** The port field. */
     private final JSpinner portField;
 
 
@@ -112,7 +119,7 @@ public final class LoadingSavegameDialog extends FreeColConfirmDialog {
 
 
     /**
-     * Is a single player game selected?
+     * Is a single player game selected?.
      *
      * @return True if single player is selected.
      */
@@ -121,7 +128,7 @@ public final class LoadingSavegameDialog extends FreeColConfirmDialog {
     }
 
     /**
-     * Is a public server game selected?
+     * Is a public server game selected?.
      *
      * @return True if public server is selected.
      */

@@ -81,11 +81,13 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Wrapper class for AI message handling.
  */
 public class AIMessage {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(AIMessage.class.getName());
 
 
@@ -157,6 +159,7 @@ public class AIMessage {
      * @param conn The <code>Connection</code> to use when
      *     communicating with the server.
      * @param request The <code>Element</code> to send.
+     * @param expect the expect
      * @return The reply <code>Element</code> if not an error, otherwise null.
      */
     private static Element askExpecting(Connection conn, Element request,

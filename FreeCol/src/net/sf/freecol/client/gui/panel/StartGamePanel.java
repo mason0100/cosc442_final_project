@@ -47,34 +47,59 @@ import net.sf.freecol.common.option.MapGeneratorOptions;
 import net.sf.freecol.common.option.OptionGroup;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The panel where you choose your nation and color and connected players are
  * shown.
  */
 public final class StartGamePanel extends FreeColPanel {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(StartGamePanel.class.getName());
 
+    /** The Constant START. */
     private static final int START = 0;
+    
+    /** The Constant CANCEL. */
     private static final int CANCEL = 1;
+    
+    /** The Constant READY. */
     private static final int READY = 3;
+    
+    /** The Constant CHAT. */
     private static final int CHAT = 4;
+    
+    /** The Constant GAME_OPTIONS. */
     private static final int GAME_OPTIONS = 5;
+    
+    /** The Constant MAP_GENERATOR_OPTIONS. */
     private static final int MAP_GENERATOR_OPTIONS = 6;
 
+    /** The single player game. */
     private boolean singlePlayerGame;
 
+    /** The ready box. */
     private JCheckBox readyBox;
 
+    /** The button chat. */
     private JTextField buttonChat;
 
+    /** The chat area. */
     private JTextArea chatArea;
 
+    /** The button start. */
     private JButton buttonStart;
+    
+    /** The button cancel. */
     private JButton buttonCancel;
+    
+    /** The game options. */
     private JButton gameOptions;
+    
+    /** The map generator options. */
     private JButton mapGeneratorOptions;
 
+    /** The table. */
     private PlayersTable table;
 
 
@@ -88,6 +113,11 @@ public final class StartGamePanel extends FreeColPanel {
     }
 
 
+    /**
+     * Initialize.
+     *
+     * @param singlePlayer the single player
+     */
     public void initialize(boolean singlePlayer) {
         removeAll();
         this.singlePlayerGame = singlePlayer;
@@ -197,6 +227,9 @@ public final class StartGamePanel extends FreeColPanel {
         setEnabled(true);
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.client.gui.panel.FreeColPanel#requestFocus()
+     */
     @Override
     public void requestFocus() {
         buttonStart.requestFocus();

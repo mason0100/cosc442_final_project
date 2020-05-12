@@ -97,6 +97,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Handles the network messages that arrives while
  * {@link net.sf.freecol.server.FreeColServer.GameState#IN_GAME in game}.
@@ -104,6 +105,7 @@ import org.w3c.dom.NodeList;
 public final class InGameInputHandler extends InputHandler
     implements NetworkConstants {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(InGameInputHandler.class.getName());
 
 

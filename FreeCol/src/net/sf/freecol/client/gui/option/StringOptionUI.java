@@ -28,6 +28,7 @@ import net.sf.freecol.client.gui.plaf.FreeColComboBoxRenderer;
 import net.sf.freecol.common.option.StringOption;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides visualization for a
  * {@link net.sf.freecol.common.option.StringOption} in order to enable
@@ -35,6 +36,7 @@ import net.sf.freecol.common.option.StringOption;
  */
 public final class StringOptionUI extends OptionUI<StringOption>  {
 
+    /** The box. */
     private final JComboBox<String> box = new JComboBox<>();
 
 

@@ -24,11 +24,13 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for ordering the active unit to wait for further orders.
  */
 public class WaitAction extends UnitAction {
 
+    /** The Constant ID. */
     public static final String ID = "waitAction";
 
 

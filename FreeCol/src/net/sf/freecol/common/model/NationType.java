@@ -31,13 +31,23 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents the type of one of the nations present in the game.
  */
 public abstract class NationType extends FreeColGameObjectType {
 
+    /**
+     * The Enum SettlementNumber.
+     */
     public static enum SettlementNumber {
-        LOW, AVERAGE, HIGH;
+        
+        /** The low. */
+        LOW, 
+ /** The average. */
+ AVERAGE, 
+ /** The high. */
+ HIGH;
 
         /**
          * Get a message key for this settlement number.
@@ -49,8 +59,17 @@ public abstract class NationType extends FreeColGameObjectType {
         }
     }
 
+    /**
+     * The Enum AggressionLevel.
+     */
     public static enum AggressionLevel {
-        LOW, AVERAGE, HIGH;
+        
+        /** The low. */
+        LOW, 
+ /** The average. */
+ AVERAGE, 
+ /** The high. */
+ HIGH;
 
         /**
          * Get a message key for this aggression level.
@@ -186,8 +205,13 @@ public abstract class NationType extends FreeColGameObjectType {
 
     // Serialization
 
+    /** The Constant AGGRESSION_TAG. */
     private static final String AGGRESSION_TAG = "aggression";
+    
+    /** The Constant NUMBER_OF_SETTLEMENTS_TAG. */
     private static final String NUMBER_OF_SETTLEMENTS_TAG = "number-of-settlements";
+    
+    /** The Constant SETTLEMENT_TAG. */
     private static final String SETTLEMENT_TAG = "settlement";
 
 

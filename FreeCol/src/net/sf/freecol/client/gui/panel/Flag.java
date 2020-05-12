@@ -31,6 +31,7 @@ import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
 
+// TODO: Auto-generated Javadoc
 /**
  * This class generates the most common types of flags from a small
  * number of parameters, biased towards flags similar to that of the
@@ -50,8 +51,14 @@ public class Flag {
      * (Friesland, for example).
      */
     public enum Alignment {
+        
+        /** The none. */
         NONE,
+        
+        /** The horizontal. */
         HORIZONTAL,
+        
+        /** The vertical. */
         VERTICAL
     }
 
@@ -76,8 +83,14 @@ public class Flag {
             /** Quartered diagonally. */
         PER_SALTIRE(Alignment.NONE);
 
+        /** The alignment. */
         public final Alignment alignment;
 
+        /**
+         * Instantiates a new background.
+         *
+         * @param alignment the alignment
+         */
         Background(Alignment alignment) {
             this.alignment = alignment;
         }
@@ -89,21 +102,49 @@ public class Flag {
      * and possible positions of the "union".
      */
     public enum Decoration {
+        
+        /** The none. */
         NONE(),
+        
+        /** The cross. */
         CROSS(UnionPosition.CANTON),
+        
+        /** The greek cross. */
         GREEK_CROSS(UnionPosition.CANTON),
+        
+        /** The scandinavian cross. */
         SCANDINAVIAN_CROSS(UnionPosition.CANTON),
+        
+        /** The chevron. */
         CHEVRON(UnionShape.CHEVRON, UnionPosition.LEFT),
+        
+        /** The pall. */
         PALL(UnionShape.CHEVRON, UnionPosition.LEFT),
+        
+        /** The bend. */
         BEND(UnionShape.BEND, UnionPosition.TOP, UnionPosition.BOTTOM),
+        
+        /** The bend sinister. */
         BEND_SINISTER(UnionShape.BEND, UnionPosition.TOP, UnionPosition.BOTTOM),
+        
+        /** The saltire. */
         SALTIRE(UnionShape.CHEVRON, UnionPosition.TOP, UnionPosition.BOTTOM,
                 UnionPosition.LEFT, UnionPosition.RIGHT),
+        
+        /** The saltire and cross. */
         SALTIRE_AND_CROSS(UnionPosition.CANTON);
 
+        /** The union shape. */
         public UnionShape unionShape = UnionShape.RECTANGLE;
+        
+        /** The union positions. */
         public Set<UnionPosition> unionPositions = EnumSet.allOf(UnionPosition.class);
 
+        /**
+         * Instantiates a new decoration.
+         *
+         * @param positions the positions
+         */
         Decoration(UnionPosition... positions) {
             this.unionPositions = EnumSet.of(UnionPosition.NONE);
             for (UnionPosition position : positions) {
@@ -111,6 +152,12 @@ public class Flag {
             }
         }
 
+        /**
+         * Instantiates a new decoration.
+         *
+         * @param shape the shape
+         * @param positions the positions
+         */
         Decoration(UnionShape shape, UnionPosition... positions) {
             this(positions);
             this.unionShape = shape;
@@ -123,10 +170,20 @@ public class Flag {
      * decoration or background of the flag.
      */
     public enum UnionShape {
+        
+        /** The rectangle. */
         RECTANGLE,
+        
+        /** The triangle. */
         TRIANGLE,
+        
+        /** The chevron. */
         CHEVRON,
+        
+        /** The bend. */
         BEND,
+        
+        /** The rhombus. */
         RHOMBUS
     }
 
@@ -136,18 +193,43 @@ public class Flag {
      * flag. Other quarters might be added.
      */
     public enum UnionPosition {
+        
+        /** The left. */
         LEFT(Alignment.VERTICAL, 0),
+        
+        /** The center. */
         CENTER(Alignment.VERTICAL, 1),
+        
+        /** The right. */
         RIGHT(Alignment.VERTICAL, 2),
+        
+        /** The top. */
         TOP(Alignment.HORIZONTAL, 0),
+        
+        /** The middle. */
         MIDDLE(Alignment.HORIZONTAL, 1),
+        
+        /** The bottom. */
         BOTTOM(Alignment.HORIZONTAL, 2),
+        
+        /** The canton. */
         CANTON(Alignment.NONE, 0),
+        
+        /** The none. */
         NONE(null, 0);
 
+        /** The alignment. */
         public final Alignment alignment;
+        
+        /** The index. */
         public final int index;
 
+        /**
+         * Instantiates a new union position.
+         *
+         * @param alignment the alignment
+         * @param index the index
+         */
         UnionPosition(Alignment alignment, int index) {
             this.alignment = alignment;
             this.index = index;
@@ -160,12 +242,18 @@ public class Flag {
      * vexillological sense.
      */
     public static final int WIDTH = 150;
+    
+    /** The Constant HEIGHT. */
     public static final int HEIGHT = 100;
+    
+    /** The Constant SQRT_3. */
     public static final double SQRT_3 = Math.sqrt(3);
     /**
      * MAGIC NUMBER: the width of decoration elements.
      */
     public static final double DECORATION_SIZE = (double) HEIGHT / 7;
+    
+    /** The Constant CHEVRON_X. */
     public static final double CHEVRON_X = SQRT_3 * HEIGHT / 2;
     /**
      * MAGIC NUMBER: the size of the stars in the union.
@@ -176,9 +264,14 @@ public class Flag {
      * Scandinavian cross.
      */
     public static final double CROSS_OFFSET = 2 * DECORATION_SIZE;
+    
+    /** The Constant BEND_X. */
     public static final double BEND_X = DECORATION_SIZE;
+    
+    /** The Constant BEND_Y. */
     public static final double BEND_Y = DECORATION_SIZE / SQRT_3;
 
+    /** The Constant star. */
     private static final GeneralPath star = getStar();
 
     /**
@@ -217,13 +310,25 @@ public class Flag {
      */
     private List<Color> backgroundColors = new ArrayList<>();
 
+    /** The union color. */
     private Color unionColor = Color.BLUE;
+    
+    /** The star color. */
     private Color starColor = Color.WHITE;
+    
+    /** The decoration color. */
     private Color decorationColor = Color.WHITE;
 
+    /** The background. */
     private Background background = Background.FESSES;
+    
+    /** The decoration. */
     private Decoration decoration = Decoration.NONE;
+    
+    /** The union shape. */
     private UnionShape unionShape = UnionShape.RECTANGLE;
+    
+    /** The union position. */
     private UnionPosition unionPosition = UnionPosition.CANTON;
 
     /**
@@ -240,11 +345,26 @@ public class Flag {
     private int stripes = 13;
 
 
+    /**
+     * Instantiates a new flag.
+     *
+     * @param background the background
+     * @param decoration the decoration
+     * @param unionPosition the union position
+     */
     public Flag(Background background, Decoration decoration,
                 UnionPosition unionPosition) {
         this(background, decoration, unionPosition, UnionShape.RECTANGLE);
     }
 
+    /**
+     * Instantiates a new flag.
+     *
+     * @param background the background
+     * @param decoration the decoration
+     * @param unionPosition the union position
+     * @param unionShape the union shape
+     */
     public Flag(Background background, Decoration decoration,
                 UnionPosition unionPosition, UnionShape unionShape) {
         this.background = background;
@@ -634,6 +754,12 @@ public class Flag {
         return unionPath;
     }
 
+    /**
+     * Gets the union triangle.
+     *
+     * @param isosceles the isosceles
+     * @return the union triangle
+     */
     private GeneralPath getUnionTriangle(boolean isosceles) {
         boolean small = (decoration == Decoration.PALL
                          || decoration == Decoration.BEND
@@ -791,6 +917,11 @@ public class Flag {
         return triangle;
     }
 
+    /**
+     * Gets the union rhombus.
+     *
+     * @return the union rhombus
+     */
     private GeneralPath getUnionRhombus() {
         GeneralPath unionPath = new GeneralPath();
 
@@ -861,11 +992,23 @@ public class Flag {
             ? HEIGHT : (double) HEIGHT / stripes;
     }
 
+    /**
+     * Draw background.
+     *
+     * @param g the g
+     */
     private void drawBackground(Graphics2D g) {
         g.setColor(backgroundColors.get(0));
         g.fillRect(0, 0, WIDTH, HEIGHT);
     }
 
+    /**
+     * Draw stripes.
+     *
+     * @param g the g
+     * @param alignment the alignment
+     * @param stripes the stripes
+     */
     private void drawStripes(Graphics2D g, Alignment alignment, int stripes) {
         int colors = backgroundColors.size();
         double stripeWidth = getStripeWidth(alignment);
@@ -882,6 +1025,11 @@ public class Flag {
         }
     }
 
+    /**
+     * Draw quarters.
+     *
+     * @param g the g
+     */
     private void drawQuarters(Graphics2D g) {
         int colors = backgroundColors.size();
         int[] x = { 0, 1, 1, 0 };
@@ -899,6 +1047,12 @@ public class Flag {
         }
     }
 
+    /**
+     * Draw per bend.
+     *
+     * @param g the g
+     * @param sinister the sinister
+     */
     private void drawPerBend(Graphics2D g, boolean sinister) {
         drawBackground(g);
         int colors = backgroundColors.size();
@@ -910,6 +1064,11 @@ public class Flag {
         g.fill(path);
     }
 
+    /**
+     * Draw per saltire.
+     *
+     * @param g the g
+     */
     private void drawPerSaltire(Graphics2D g) {
         int colors = backgroundColors.size();
         GeneralPath path = new GeneralPath();
@@ -928,6 +1087,12 @@ public class Flag {
         }
     }
 
+    /**
+     * Gets the cross.
+     *
+     * @param decoration the decoration
+     * @return the cross
+     */
     private GeneralPath getCross(Decoration decoration) {
         double quarterWidth = (WIDTH - DECORATION_SIZE) / 2;
         double quarterHeight = (HEIGHT - DECORATION_SIZE) / 2;
@@ -952,6 +1117,12 @@ public class Flag {
         return cross;
     }
 
+    /**
+     * Gets the bend.
+     *
+     * @param sinister the sinister
+     * @return the bend
+     */
     private GeneralPath getBend(boolean sinister) {
         GeneralPath path = new GeneralPath();
         if (sinister) {
@@ -972,6 +1143,11 @@ public class Flag {
         return path;
     }
 
+    /**
+     * Gets the pall.
+     *
+     * @return the pall
+     */
     private GeneralPath getPall() {
         double y1 = (HEIGHT - DECORATION_SIZE) / 2;
         double y2 = (HEIGHT + DECORATION_SIZE) / 2;
@@ -995,6 +1171,7 @@ public class Flag {
      *
      * @param unionShape The shape of the union.
      * @param small Whether the shape is limited by decorations.
+     * @return the triangle
      */
     private GeneralPath getTriangle(UnionShape unionShape, boolean small) {
         GeneralPath path = new GeneralPath();
@@ -1033,6 +1210,11 @@ public class Flag {
         return path;
     }
 
+    /**
+     * Gets the rhombus.
+     *
+     * @return the rhombus
+     */
     private GeneralPath getRhombus() {
         GeneralPath rhombus = new GeneralPath();
         rhombus.moveTo(WIDTH / 2.00, BEND_Y);
@@ -1042,6 +1224,11 @@ public class Flag {
         return rhombus;
     }
 
+    /**
+     * Gets the rectangle.
+     *
+     * @return the rectangle
+     */
     private Rectangle2D.Double getRectangle() {
         if (unionPosition == null || unionPosition == UnionPosition.NONE) {
             return null;
@@ -1126,6 +1313,7 @@ public class Flag {
      *
      * @param x The x coordinate of the star.
      * @param y The y coordinate of the star.
+     * @return the star
      */
     public GeneralPath getStar(double x, double y) {
         return getStar(-1, x, y);
@@ -1137,6 +1325,7 @@ public class Flag {
      * @param scale The scale of the star.
      * @param x The x coordinate of the star.
      * @param y The y coordinate of the star.
+     * @return the star
      */
     public GeneralPath getStar(double scale, double x, double y) {
         GeneralPath newStar = new GeneralPath(star);
@@ -1191,6 +1380,12 @@ public class Flag {
     }
 
 
+    /**
+     * Gets the grid of stars.
+     *
+     * @param union the union
+     * @return the grid of stars
+     */
     public GeneralPath getGridOfStars(Rectangle2D.Double union) {
         int[] bars = new int[2];
         for (int count = stars; count < 51; count++) {

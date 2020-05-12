@@ -49,17 +49,25 @@ import net.sf.freecol.common.util.Utils;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The main component of the game model.
  */
 public class Game extends FreeColGameObject {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Game.class.getName());
 
     /** State for the FCGO iterator, out here because it has to be static. */
     private enum FcgoState {
+        
+        /** The invalid. */
         INVALID,
+        
+        /** The valid. */
         VALID,
+        
+        /** The consumed. */
         CONSUMED,
     }
 
@@ -122,7 +130,7 @@ public class Game extends FreeColGameObject {
      */
     protected int nextId = 1;
 
-    /** Game UUID, persistent in savegame files */
+    /**  Game UUID, persistent in savegame files. */
     private UUID uuid = UUID.randomUUID();
 
     /** The client player name, null in the server. */
@@ -280,7 +288,6 @@ public class Game extends FreeColGameObject {
      * Stub for routine only meaningful in the server.
      *
      * @return Nothing.
-     * @exception IllegalStateException, unimplemented in the client.
      */
     public String getNextId() {
         throw new IllegalStateException("game.getNextId not implemented");
@@ -308,6 +315,7 @@ public class Game extends FreeColGameObject {
      * Gets the <code>FreeColGameObject</code> with the specified
      * identifier and class.
      *
+     * @param <T> the generic type
      * @param id The object identifier.
      * @param returnClass The expected class of the object.
      * @return The game object, or null if not found.
@@ -693,7 +701,7 @@ public class Game extends FreeColGameObject {
     }
 
     /**
-     * Are we executing in a client?
+     * Are we executing in a client?.
      *
      * @return True in a client.
      */
@@ -702,7 +710,7 @@ public class Game extends FreeColGameObject {
     }
 
     /**
-     * Are we executing in the server?
+     * Are we executing in the server?.
      *
      * @return True in the server.
      */
@@ -711,7 +719,7 @@ public class Game extends FreeColGameObject {
     }
 
     /**
-     * Is this game in revenge mode?
+     * Is this game in revenge mode?.
      *
      * @return True if an undead player is present.
      */
@@ -810,7 +818,7 @@ public class Game extends FreeColGameObject {
     }
 
     /**
-     * Can a new player be added to this game?
+     * Can a new player be added to this game?.
      *
      * @return True if a new player can be added.
      */
@@ -864,7 +872,7 @@ public class Game extends FreeColGameObject {
     }
 
     /**
-     * Has the Spanish Succession event occured?
+     * Has the Spanish Succession event occured?.
      *
      * @return True if the Spanish Succession has occurred.
      */
@@ -1052,6 +1060,7 @@ public class Game extends FreeColGameObject {
      * Get a location class from an identifier.
      *
      * @param id The identifier to dissect.
+     * @return the location class
      */
     public static Class<? extends FreeColGameObject> getLocationClass(String id) {
         String tag = FreeColObject.getIdType(id);
@@ -1062,6 +1071,7 @@ public class Game extends FreeColGameObject {
     /**
      * Get the equivalent server class to the given class.
      *
+     * @param <T> the generic type
      * @param c The class to look up.
      * @return The corresponding server class, or the original class
      *     if none found.
@@ -1075,6 +1085,7 @@ public class Game extends FreeColGameObject {
     /**
      * Instantiate an uninitialized FreeColGameObject class within this game.
      *
+     * @param <T> the generic type
      * @param returnClass The required FreeColObject class.
      * @param server Create a server object if possible.
      * @return The new uninitialized object, or null on error.
@@ -1097,6 +1108,7 @@ public class Game extends FreeColGameObject {
     /**
      * Unserialize from XML to a FreeColObject in this game.
      *
+     * @param <T> the generic type
      * @param xml The xml serialized version of an object.
      * @param returnClass The required object class.
      * @return The unserialized object.
@@ -1189,12 +1201,25 @@ public class Game extends FreeColGameObject {
 
     // Serialization
 
+    /** The Constant CIBOLA_TAG. */
     private static final String CIBOLA_TAG = "cibola";
+    
+    /** The Constant CURRENT_PLAYER_TAG. */
     private static final String CURRENT_PLAYER_TAG = "currentPlayer";
+    
+    /** The Constant NEXT_ID_TAG. */
     private static final String NEXT_ID_TAG = "nextId";
+    
+    /** The Constant SPANISH_SUCCESSION_TAG. */
     private static final String SPANISH_SUCCESSION_TAG = "spanishSuccession";
+    
+    /** The Constant TURN_TAG. */
     private static final String TURN_TAG = "turn";
+    
+    /** The Constant UUID_TAG. */
     private static final String UUID_TAG = "UUID";
+    
+    /** The Constant OLD_NEXT_ID_TAG. */
     // @compat 0.10.x
     private static final String OLD_NEXT_ID_TAG = "nextID";
     // end @compat
@@ -1362,6 +1387,12 @@ public class Game extends FreeColGameObject {
      * @return "game".
      */
     static String gameGet = "game";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
 		return gameGet;
     }

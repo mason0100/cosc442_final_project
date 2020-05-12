@@ -20,11 +20,19 @@
 package net.sf.freecol.client.gui;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The interface for non-modal dialog handlers.
+ *
+ * @param <T> the generic type
  */
 public interface DialogHandler<T> {
 
+    /**
+     * Handle.
+     *
+     * @param response the response
+     */
     void handle(T response);
 
 }

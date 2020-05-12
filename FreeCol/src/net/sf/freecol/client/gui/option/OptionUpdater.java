@@ -20,6 +20,7 @@
 
 package net.sf.freecol.client.gui.option;
 
+// TODO: Auto-generated Javadoc
 /**
  * Interface for classes which temporarily stores changes for an
  * <code>Option</code>. Calling {@link #updateOption} should update

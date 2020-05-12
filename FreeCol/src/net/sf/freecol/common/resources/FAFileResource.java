@@ -23,6 +23,7 @@ import java.net.URI;
 import java.net.URL;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A <code>Resource</code> wrapping a <code>FAFile</code>.
  *
@@ -31,9 +32,15 @@ import java.net.URL;
  */
 public class FAFileResource extends Resource {
 
+    /** The FA file. */
     private final FAFile FAFile;
 
 
+    /**
+     * Instantiates a new FA file resource.
+     *
+     * @param FAFile the FA file
+     */
     public FAFileResource(FAFile FAFile) {
         this.FAFile = FAFile;
     }
@@ -44,6 +51,7 @@ public class FAFileResource extends Resource {
      *
      * @param resourceLocator The <code>URI</code> used when loading this
      *      resource.
+     * @throws Exception the exception
      */
     public FAFileResource(URI resourceLocator) throws Exception {
         super(resourceLocator);

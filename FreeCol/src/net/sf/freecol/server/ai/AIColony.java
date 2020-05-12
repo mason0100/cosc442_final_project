@@ -80,13 +80,16 @@ import net.sf.freecol.server.ai.mission.WishRealizationMission;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Objects of this class contains AI-information for a single {@link Colony}.
  */
 public class AIColony extends AIObject implements PropertyChangeListener {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(AIColony.class.getName());
 
+    /** The Constant LIST_ELEMENT. */
     private static final String LIST_ELEMENT = "ListElement";
 
     /**
@@ -114,7 +117,7 @@ public class AIColony extends AIObject implements PropertyChangeListener {
     private final List<TileImprovementPlan> tileImprovementPlans
         = new ArrayList<>();
 
-    /** When should the workers in this Colony be rearranged? */
+    /**  When should the workers in this Colony be rearranged?. */
     private Turn rearrangeTurn = new Turn(0);
 
     /**
@@ -122,6 +125,8 @@ public class AIColony extends AIObject implements PropertyChangeListener {
      * prevent the warehouse filling.
      */
     private static final Set<GoodsType> fullExport = new HashSet<>();
+    
+    /** The Constant partExport. */
     private static final Set<GoodsType> partExport = new HashSet<>();
 
     /**
@@ -230,16 +235,27 @@ public class AIColony extends AIObject implements PropertyChangeListener {
         return colony;
     }
 
+    /**
+     * Gets the AI unit.
+     *
+     * @param unit the unit
+     * @return the AI unit
+     */
     protected AIUnit getAIUnit(Unit unit) {
         return getAIMain().getAIUnit(unit);
     }
 
+    /**
+     * Gets the AI owner.
+     *
+     * @return the AI owner
+     */
     protected AIPlayer getAIOwner() {
         return getAIMain().getAIPlayer(colony.getOwner());
     }
 
     /**
-     * Is this AI colony badly defended?
+     * Is this AI colony badly defended?.
      *
      * @return True if this colony needs more defenders.
      */
@@ -252,7 +268,7 @@ public class AIColony extends AIObject implements PropertyChangeListener {
      *   - export state
      *   - disposition of export goods in this colony
      *   - tile improvements (might ignore freshly grabbed tiles)
-     *   - wishes
+     *   - wishes.
      *
      * @param lb A <code>LogBuilder</code> to log to.
      */
@@ -1320,8 +1336,9 @@ public class AIColony extends AIObject implements PropertyChangeListener {
     }
 
     /**
-     * Removes a <code>TileImprovementPlan</code> from the list
+     * Removes a <code>TileImprovementPlan</code> from the list.
      *
+     * @param plan the plan
      * @return True if it was successfully deleted, false otherwise
      */
     public boolean removeTileImprovementPlan(TileImprovementPlan plan) {
@@ -1345,8 +1362,8 @@ public class AIColony extends AIObject implements PropertyChangeListener {
      * Creates a list of the <code>Tile</code>-improvements which will
      * increase the production by this <code>Colony</code>.
      *
-     * @see TileImprovementPlan
      * @param lb A <code>LogBuilder</code> to log to.
+     * @see TileImprovementPlan
      */
     public void updateTileImprovementPlans(LogBuilder lb) {
         List<TileImprovementPlan> newPlans = new ArrayList<>();
@@ -1513,7 +1530,7 @@ public class AIColony extends AIObject implements PropertyChangeListener {
     }
 
     /**
-     * Checks the integrity of a this AIColony
+     * Checks the integrity of a this AIColony.
      *
      * @param fix Fix problems if possible.
      * @return Negative if there are problems remaining, zero if
@@ -1529,19 +1546,32 @@ public class AIColony extends AIObject implements PropertyChangeListener {
 
     // Serialization
 
+    /** The Constant AI_GOODS_LIST_TAG. */
     private static final String AI_GOODS_LIST_TAG
         = AIGoods.getXMLElementTagName() + LIST_ELEMENT;
+    
+    /** The Constant GOODS_WISH_LIST_TAG. */
     private static final String GOODS_WISH_LIST_TAG
         = GoodsWish.getXMLElementTagName() + LIST_ELEMENT;
+    
+    /** The Constant TILE_IMPROVEMENT_PLAN_LIST_TAG. */
     private static final String TILE_IMPROVEMENT_PLAN_LIST_TAG
         = TileImprovementPlan.getXMLElementTagName() + LIST_ELEMENT;
+    
+    /** The Constant WORKER_WISH_LIST_TAG. */
     private static final String WORKER_WISH_LIST_TAG
         = WorkerWish.getXMLElementTagName() + LIST_ELEMENT;
+    
+    /** The Constant OLD_GOODS_WISH_TAG. */
     // @compat 0.10.3
     private static final String OLD_GOODS_WISH_TAG
         = GoodsWish.getXMLElementTagName() + "Wish" + LIST_ELEMENT;
+    
+    /** The Constant OLD_TILE_IMPROVEMENT_PLAN_LIST_TAG. */
     private static final String OLD_TILE_IMPROVEMENT_PLAN_LIST_TAG
         = "tileimprovementplan" + LIST_ELEMENT;
+    
+    /** The Constant OLD_WORKER_WISH_TAG. */
     private static final String OLD_WORKER_WISH_TAG
         = WorkerWish.getXMLElementTagName() + "Wish" + LIST_ELEMENT;
     // end @compat

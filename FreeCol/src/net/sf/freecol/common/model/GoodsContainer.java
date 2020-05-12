@@ -37,12 +37,14 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Contains goods and can be used by a {@link Location} to make certain
  * tasks easier.
  */
 public class GoodsContainer extends FreeColGameObject implements Ownable {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(Location.class.getName());
 
@@ -432,7 +434,7 @@ public class GoodsContainer extends FreeColGameObject implements Ownable {
 
     /**
      * Has this goods containers contents changed from what was recorded
-     * last time the state was saved?
+     * last time the state was saved?.
      *
      * @return True if the contents have changed.
      */
@@ -493,9 +495,16 @@ public class GoodsContainer extends FreeColGameObject implements Ownable {
 
     // Serialization
 
+    /** The Constant AMOUNT_TAG. */
     public static final String AMOUNT_TAG = "amount";
+    
+    /** The Constant OLD_STORED_GOODS_TAG. */
     public static final String OLD_STORED_GOODS_TAG = "oldStoredGoods";
+    
+    /** The Constant STORED_GOODS_TAG. */
     public static final String STORED_GOODS_TAG = "storedGoods";
+    
+    /** The Constant TYPE_TAG. */
     public static final String TYPE_TAG = "type";
 
 
@@ -637,7 +646,14 @@ public class GoodsContainer extends FreeColGameObject implements Ownable {
      *
      * @return "goodsContainer".
      */
+    static String goodsContainerTag = "goodsContainer";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
-        return "goodsContainer";
+		return goodsContainerTag;
     }
 }

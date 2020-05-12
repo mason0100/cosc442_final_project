@@ -27,6 +27,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A <code>Resource</code> wrapping a <code>Font</code>.
  *
@@ -35,13 +36,21 @@ import java.util.logging.Logger;
  */
 public class FontResource extends Resource {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FontResource.class.getName());
 
+    /** The Constant SCHEME. */
     public static final String SCHEME = "font:";
 
+    /** The font. */
     private Font font;
 
 
+    /**
+     * Instantiates a new font resource.
+     *
+     * @param font the font
+     */
     public FontResource(Font font) {
         this.font = font;
     }
@@ -51,6 +60,7 @@ public class FontResource extends Resource {
      *
      * @param resourceLocator The <code>URI</code> used when loading this
      *      resource.
+     * @throws Exception the exception
      */
     public FontResource(URI resourceLocator) throws Exception {
         super(resourceLocator);

@@ -27,6 +27,7 @@ import net.sf.freecol.common.i18n.Messages;
 import net.sf.freecol.common.option.SelectOption;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides visualization for a
  * {@link net.sf.freecol.common.option.SelectOption} in order to enable
@@ -34,6 +35,7 @@ import net.sf.freecol.common.option.SelectOption;
  */
 public final class SelectOptionUI extends OptionUI<SelectOption> {
 
+    /** The box. */
     private final JComboBox<String> box = new JComboBox<>();
 
 

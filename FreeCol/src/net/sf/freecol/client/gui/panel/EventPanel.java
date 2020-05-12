@@ -31,11 +31,13 @@ import net.sf.freecol.client.gui.FontLibrary;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel is displayed when an imporantant event in the game has happened.
  */
 public final class EventPanel extends FreeColPanel {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(EventPanel.class.getName());
 
 

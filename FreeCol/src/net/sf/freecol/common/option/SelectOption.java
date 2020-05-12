@@ -31,6 +31,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.model.Specification;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents an option where the valid choice is an integer and the
  * choices are represented by strings.  In general, these strings are
@@ -45,10 +46,11 @@ import net.sf.freecol.common.model.Specification;
  */
 public class SelectOption extends IntegerOption {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(SelectOption.class.getName());
 
-    /** Use localized labels? */
+    /**  Use localized labels?. */
     protected boolean localizedLabels = false;
 
     /** A map of the valid values. */
@@ -140,7 +142,10 @@ public class SelectOption extends IntegerOption {
 
     // Serialization
 
+    /** The Constant LABEL_TAG. */
     private static final String LABEL_TAG = "label";
+    
+    /** The Constant LOCALIZED_LABELS_TAG. */
     private static final String LOCALIZED_LABELS_TAG = "localizedLabels";
 
 

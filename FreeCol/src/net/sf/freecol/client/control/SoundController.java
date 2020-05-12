@@ -34,14 +34,17 @@ import net.sf.freecol.common.option.PercentageOption;
 import net.sf.freecol.common.resources.ResourceManager;
 import net.sf.freecol.common.sound.SoundPlayer;
 
+// TODO: Auto-generated Javadoc
 /**
  * Controls the SoundPlayer.
  */
 public class SoundController {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(SoundController.class.getName());
 
 
+    /** The sound player. */
     private SoundPlayer soundPlayer;
 
 
@@ -81,7 +84,7 @@ public class SoundController {
     }
 
     /**
-     * Can this client play sounds?
+     * Can this client play sounds?.
      *
      * @return True if there is a sound player present.
      */

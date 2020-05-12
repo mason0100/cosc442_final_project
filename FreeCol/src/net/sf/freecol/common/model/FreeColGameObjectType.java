@@ -26,6 +26,7 @@ import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The base class for all types defined by the specification. It can
  * be instantiated in order to provide a source for modifiers and
@@ -149,7 +150,7 @@ public abstract class FreeColGameObjectType extends FreeColObject
     }
 
     /**
-     * Is this an abstract type?
+     * Is this an abstract type?.
      *
      * @return True if this is an abstract game object type.
      */
@@ -173,12 +174,19 @@ public abstract class FreeColGameObjectType extends FreeColObject
 
     // We do not serialize index, so no INDEX_TAG.
     // We do not need to write the abstractType attribute, as once
+    /** The Constant ABSTRACT_TAG. */
     // the spec is read, all cases of abstractType==true are removed.
     private static final String ABSTRACT_TAG = "abstract";
+    
+    /** The Constant DELETE_TAG. */
     // Denotes deletion of a child element.
     protected static final String DELETE_TAG = "delete";
+    
+    /** The Constant EXTENDS_TAG. */
     // Denotes that this type extends another.
     public static final String EXTENDS_TAG = "extends";
+    
+    /** The Constant PRESERVE_TAG. */
     // Denotes preservation of attributes and children.
     public static final String PRESERVE_TAG = "preserve";
 

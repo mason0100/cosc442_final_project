@@ -46,11 +46,13 @@ import net.sf.freecol.common.model.UnitType;
 import net.sf.freecol.common.model.WorkLocation;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Display the production of a unit.
  */
 public class WorkProductionPanel extends FreeColPanel {
 
+    /** The turn. */
     private final Turn turn = getGame().getTurn();
 
 
@@ -144,6 +146,12 @@ public class WorkProductionPanel extends FreeColPanel {
         setSize(getPreferredSize());
     }
 
+    /**
+     * Output.
+     *
+     * @param modifiers the modifiers
+     * @param unitType the unit type
+     */
     private void output(List<Modifier> modifiers, UnitType unitType) {
         for (Modifier m : modifiers) {
             JLabel[] mLabels

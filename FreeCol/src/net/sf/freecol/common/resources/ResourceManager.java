@@ -35,11 +35,13 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.common.io.sza.SimpleZippedAnimation;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Class for getting resources (images, audio etc).
  */
 public class ResourceManager {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ResourceManager.class.getName());
 
     // TODO: There are no obvious flaws currently, but this could still
@@ -49,7 +51,10 @@ public class ResourceManager {
     // It is currently assumed changing of mappings can happen on any thread,
     // but Resources are only retrieved or cleaned from the AWT thread.
 
+    /** The Constant REPLACEMENT_IMAGE. */
     public static final String REPLACEMENT_IMAGE = "image.miscicon.delete";
+    
+    /** The Constant REPLACEMENT_STRING. */
     public static final String REPLACEMENT_STRING = "X";
 
     /**
@@ -58,8 +63,14 @@ public class ResourceManager {
      * See the comment on each field's setter for more information:
      */
     private static ResourceMapping baseMapping;
+    
+    /** The tc mapping. */
     private static ResourceMapping tcMapping;
+    
+    /** The scenario mapping. */
     private static ResourceMapping scenarioMapping;
+    
+    /** The mod mapping. */
     private static ResourceMapping modMapping;
 
     /**
@@ -68,6 +79,7 @@ public class ResourceManager {
      */
     private static ResourceMapping mergedContainer;
 
+    /** The preload thread. */
     private static volatile Thread preloadThread = null;
 
 
@@ -237,21 +249,43 @@ public class ResourceManager {
         return mergedContainer.containsKey(key);
     }
 
+    /**
+     * Checks for image resource.
+     *
+     * @param key the key
+     * @return true, if successful
+     */
     public static synchronized boolean hasImageResource(final String key) {
         //logger.finest("hasImageResource(" + key + ")");
         return mergedContainer.containsImageKey(key);
     }
 
+    /**
+     * Checks for color resource.
+     *
+     * @param key the key
+     * @return true, if successful
+     */
     public static synchronized boolean hasColorResource(final String key) {
         //logger.finest("hasColorResource(" + key + ")");
         return mergedContainer.containsColorKey(key);
     }
 
+    /**
+     * Gets the resources.
+     *
+     * @return the resources
+     */
     public static synchronized Map<String, Resource> getResources() {
         logger.finest("getResources");
         return mergedContainer.getResources();
     }
 
+    /**
+     * Gets the image resources.
+     *
+     * @return the image resources
+     */
     public static synchronized Map<String, ImageResource> getImageResources() {
         logger.finest("getImageResources");
         return mergedContainer.getImageResources();
@@ -308,6 +342,12 @@ public class ResourceManager {
         return r;
     }
 
+    /**
+     * Gets the font resource.
+     *
+     * @param key the key
+     * @return the font resource
+     */
     private static synchronized FontResource getFontResource(final String key) {
         final FontResource r = mergedContainer.getFontResource(key);
         if (r == null) {
@@ -316,6 +356,12 @@ public class ResourceManager {
         return r;
     }
 
+    /**
+     * Gets the string resource.
+     *
+     * @param key the key
+     * @return the string resource
+     */
     private static synchronized StringResource getStringResource(final String key) {
         final StringResource r = mergedContainer.getStringResource(key);
         if (r == null) {
@@ -324,6 +370,12 @@ public class ResourceManager {
         return r;
     }
 
+    /**
+     * Gets the FA file resource.
+     *
+     * @param key the key
+     * @return the FA file resource
+     */
     private static synchronized FAFileResource getFAFileResource(final String key) {
         final FAFileResource r = mergedContainer.getFAFileResource(key);
         if (r == null) {
@@ -332,6 +384,12 @@ public class ResourceManager {
         return r;
     }
 
+    /**
+     * Gets the SZA resource.
+     *
+     * @param key the key
+     * @return the SZA resource
+     */
     private static synchronized SZAResource getSZAResource(final String key) {
         final SZAResource r = mergedContainer.getSZAResource(key);
         if (r == null) {
@@ -340,6 +398,12 @@ public class ResourceManager {
         return r;
     }
 
+    /**
+     * Gets the audio resource.
+     *
+     * @param key the key
+     * @return the audio resource
+     */
     private static synchronized AudioResource getAudioResource(final String key) {
         final AudioResource r = mergedContainer.getAudioResource(key);
         if (r == null) {
@@ -348,6 +412,12 @@ public class ResourceManager {
         return r;
     }
 
+    /**
+     * Gets the video resource.
+     *
+     * @param key the key
+     * @return the video resource
+     */
     private static synchronized VideoResource getVideoResource(final String key) {
         final VideoResource r = mergedContainer.getVideoResource(key);
         if (r == null) {
@@ -356,6 +426,12 @@ public class ResourceManager {
         return r;
     }
 
+    /**
+     * Gets the image resource.
+     *
+     * @param key the key
+     * @return the image resource
+     */
     private static synchronized ImageResource getImageResource(final String key) {
         ImageResource r = mergedContainer.getImageResource(key);
         if (r == null) {

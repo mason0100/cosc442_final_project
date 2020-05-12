@@ -20,6 +20,7 @@
 package net.sf.freecol.common.i18n;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Number optimized for languages that distinguish the categories one,
  * two and other.

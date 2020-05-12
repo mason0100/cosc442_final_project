@@ -28,6 +28,7 @@ import net.sf.freecol.common.model.Tile;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for changing the view. This action will:
  *
@@ -38,6 +39,7 @@ import net.sf.freecol.common.model.Unit;
  */
 public class ChangeAction extends UnitAction {
 
+    /** The Constant ID. */
     public static final String ID = "changeAction";
 
 

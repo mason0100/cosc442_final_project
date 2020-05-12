@@ -28,11 +28,13 @@ import net.sf.freecol.client.gui.option.OptionUI;
 import net.sf.freecol.common.option.Option;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Dialog to edit options with.
  */
 public class EditOptionDialog extends FreeColConfirmDialog {
 
+    /** The ui. */
     private final OptionUI ui;
 
 

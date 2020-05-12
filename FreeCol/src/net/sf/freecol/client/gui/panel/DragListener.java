@@ -33,18 +33,24 @@ import net.sf.freecol.client.gui.SwingGUI;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A DragListener should be attached to Swing components that have a
  * TransferHandler attached.  The DragListener will make sure that the
  * Swing component to which it is attached is draggable (moveable to
  * be precise).
+ *
+ * @see DragEvent
  */
 public final class DragListener extends MouseAdapter {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(DragListener.class.getName());
 
+    /** The parent panel. */
     private final FreeColPanel parentPanel;
 
+    /** The free col client. */
     private final FreeColClient freeColClient;
 
 

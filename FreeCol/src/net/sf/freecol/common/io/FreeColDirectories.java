@@ -28,6 +28,7 @@ import javax.swing.filechooser.FileSystemView;
 import net.sf.freecol.FreeCol;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Simple container for the freecol file and directory structure model.
  */
@@ -36,56 +37,88 @@ public class FreeColDirectories {
     // No logger!  Many of these routines are called before logging is
     // initialized.
 
+    /** The Constant AUTOSAVE_DIRECTORY. */
     private static final String AUTOSAVE_DIRECTORY = "autosave";
 
+    /** The Constant BASE_DIRECTORY. */
     private static final String BASE_DIRECTORY = "base";
 
+    /** The Constant CLASSIC_DIRECTORY. */
     private static final String CLASSIC_DIRECTORY = "classic";
     
+    /** The Constant FREECOL_DIRECTORY. */
     private static final String FREECOL_DIRECTORY = "freecol";
 
+    /** The Constant CONFIG_DIRS. */
     private static final String[] CONFIG_DIRS
         = { CLASSIC_DIRECTORY, FREECOL_DIRECTORY };
 
+    /** The Constant DATA_DIRECTORY. */
     private static final String DATA_DIRECTORY = "data";
 
+    /** The Constant HIGH_SCORE_FILE. */
     private static final String HIGH_SCORE_FILE = "HighScores.xml";
 
+    /** The Constant I18N_DIRECTORY. */
     private static final String I18N_DIRECTORY = "strings";
 
+    /** The Constant LOG_FILE. */
     private static final String LOG_FILE = "FreeCol.log";
 
+    /** The Constant MAPS_DIRECTORY. */
     private static final String MAPS_DIRECTORY = "maps";
 
+    /** The Constant MODS_DIRECTORY. */
     private static final String MODS_DIRECTORY = "mods";
 
+    /** The Constant RULES_DIRECTORY. */
     private static final String RULES_DIRECTORY = "rules";
 
+    /** The Constant SAVE_DIRECTORY. */
     private static final String SAVE_DIRECTORY = "save";
 
+    /** The Constant START_MAP_NAME. */
     private static final String START_MAP_NAME = "startMap.fsg";
 
+    /** The Constant SEPARATOR. */
     private static final String SEPARATOR = System.getProperty("file.separator");
 
+    /** The Constant XDG_CONFIG_HOME_ENV. */
     private static final String XDG_CONFIG_HOME_ENV = "XDG_CONFIG_HOME";
+    
+    /** The Constant XDG_CONFIG_HOME_DEFAULT. */
     private static final String XDG_CONFIG_HOME_DEFAULT = ".config";
+    
+    /** The Constant XDG_DATA_HOME_ENV. */
     private static final String XDG_DATA_HOME_ENV = "XDG_DATA_HOME";
+    
+    /** The Constant XDG_DATA_HOME_DEFAULT. */
     private static final String XDG_DATA_HOME_DEFAULT = ".local/share";
+    
+    /** The Constant XDG_CACHE_HOME_ENV. */
     private static final String XDG_CACHE_HOME_ENV = "XDG_CACHE_HOME";
+    
+    /** The Constant XDG_CACHE_HOME_DEFAULT. */
     private static final String XDG_CACHE_HOME_DEFAULT = ".cache";
 
     // Public names, used by the respective dialogs
 
+    /** The Constant BASE_CLIENT_OPTIONS_FILE_NAME. */
     public static final String BASE_CLIENT_OPTIONS_FILE_NAME = "client-options.xml";
 
+    /** The Constant CLIENT_OPTIONS_FILE_NAME. */
     public static final String CLIENT_OPTIONS_FILE_NAME = "options.xml";
 
+    /** The Constant CUSTOM_DIFFICULTY_FILE_NAME. */
     public static final String CUSTOM_DIFFICULTY_FILE_NAME = "custom.xml";
 
+    /** The Constant GAME_OPTIONS_FILE_NAME. */
     public static final String GAME_OPTIONS_FILE_NAME = "game_options.xml";
 
+    /** The Constant MAP_FILE_NAME. */
     public static final String MAP_FILE_NAME = "my_map.fsg";
 
+    /** The Constant MAP_GENERATOR_OPTIONS_FILE_NAME. */
     public static final String MAP_GENERATOR_OPTIONS_FILE_NAME
         = "map_generator_options.xml";
 
@@ -166,7 +199,7 @@ public class FreeColDirectories {
 
 
     /**
-     * Does the OS look like Mac OS X?
+     * Does the OS look like Mac OS X?.
      *
      * @return True if Mac OS X appears to be present.
      */
@@ -175,7 +208,7 @@ public class FreeColDirectories {
     }
 
     /**
-     * Does the OS look like some sort of unix?
+     * Does the OS look like some sort of unix?.
      *
      * @return True we hope.
      */
@@ -184,7 +217,7 @@ public class FreeColDirectories {
     }
 
     /**
-     * Does the OS look like some sort of Windows?
+     * Does the OS look like some sort of Windows?.
      *
      * @return True if Windows appears to be present.
      */
@@ -290,7 +323,7 @@ public class FreeColDirectories {
     }
 
     /**
-     * Is the specified file a writable directory?
+     * Is the specified file a writable directory?.
      *
      * @param f The <code>File</code> to check.
      * @return True if the file is a writable directory.

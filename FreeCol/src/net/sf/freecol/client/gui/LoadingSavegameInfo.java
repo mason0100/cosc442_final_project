@@ -19,15 +19,28 @@
 
 package net.sf.freecol.client.gui;
 
+// TODO: Auto-generated Javadoc
 /**
  * Used for transferring data for the savegame to be loaded.
 */
 public class LoadingSavegameInfo {
 
+    /** The single player. */
     private final boolean singlePlayer;
+    
+    /** The port. */
     private final int port;
+    
+    /** The server name. */
     private final String serverName;
 
+    /**
+     * Instantiates a new loading savegame info.
+     *
+     * @param singlePlayer the single player
+     * @param port the port
+     * @param serverName the server name
+     */
     public LoadingSavegameInfo(boolean singlePlayer, int port, String serverName) {
         this.singlePlayer=singlePlayer;
         this.port=port;
@@ -35,7 +48,7 @@ public class LoadingSavegameInfo {
     }
 
     /**
-     * Is a single player game selected?
+     * Is a single player game selected?.
      *
      * @return True if single player is selected.
      */

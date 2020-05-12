@@ -27,6 +27,7 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents a mapping between identifiers and resources.
  *
@@ -34,16 +35,31 @@ import java.util.stream.Collectors;
  */
 public final class ResourceMapping {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ResourceMapping.class.getName());
 
     /** Mappings between an object identifier and a resource. */
     private final HashMap<String, ColorResource> colorResources;
+    
+    /** The font resources. */
     private final HashMap<String, FontResource> fontResources;
+    
+    /** The string resources. */
     private final HashMap<String, StringResource> stringResources;
+    
+    /** The faf resources. */
     private final HashMap<String, FAFileResource> fafResources;
+    
+    /** The sza resources. */
     private final HashMap<String, SZAResource> szaResources;
+    
+    /** The audio resources. */
     private final HashMap<String, AudioResource> audioResources;
+    
+    /** The video resources. */
     private final HashMap<String, VideoResource> videoResources;
+    
+    /** The image resources. */
     private final HashMap<String, ImageResource> imageResources;
 
 
@@ -83,6 +99,13 @@ public final class ResourceMapping {
         return true;
     }
 
+    /**
+     * Adds the.
+     *
+     * @param key the key
+     * @param value the value
+     * @return true, if successful
+     */
     public boolean add(String key, FontResource value) {
         if(!key.startsWith("font.")) {
             logger.warning("Rejecting malformed resource key: " + key);
@@ -92,11 +115,25 @@ public final class ResourceMapping {
         return true;
     }
 
+    /**
+     * Adds the.
+     *
+     * @param key the key
+     * @param value the value
+     * @return true, if successful
+     */
     public boolean add(String key, StringResource value) {
         stringResources.put(key, value);
         return true;
     }
 
+    /**
+     * Adds the.
+     *
+     * @param key the key
+     * @param value the value
+     * @return true, if successful
+     */
     public boolean add(String key, FAFileResource value) {
         if(!key.startsWith("animatedfont.")) {
             logger.warning("Rejecting malformed resource key: " + key);
@@ -106,6 +143,13 @@ public final class ResourceMapping {
         return true;
     }
 
+    /**
+     * Adds the.
+     *
+     * @param key the key
+     * @param value the value
+     * @return true, if successful
+     */
     public boolean add(String key, SZAResource value) {
         if(!key.startsWith("animation.")) {
             logger.warning("Rejecting malformed resource key: " + key);
@@ -115,6 +159,13 @@ public final class ResourceMapping {
         return true;
     }
 
+    /**
+     * Adds the.
+     *
+     * @param key the key
+     * @param value the value
+     * @return true, if successful
+     */
     public boolean add(String key, AudioResource value) {
         if(!key.startsWith("sound.")) {
             logger.warning("Rejecting malformed resource key: " + key);
@@ -124,6 +175,13 @@ public final class ResourceMapping {
         return true;
     }
 
+    /**
+     * Adds the.
+     *
+     * @param key the key
+     * @param value the value
+     * @return true, if successful
+     */
     public boolean add(String key, VideoResource value) {
         if(!key.startsWith("video.")) {
             logger.warning("Rejecting malformed resource key: " + key);
@@ -133,6 +191,13 @@ public final class ResourceMapping {
         return true;
     }
 
+    /**
+     * Adds the.
+     *
+     * @param key the key
+     * @param value the value
+     * @return true, if successful
+     */
     public boolean add(String key, ImageResource value) {
         if(!key.startsWith("image.")) {
             logger.warning("Rejecting malformed resource key: " + key);
@@ -223,10 +288,21 @@ public final class ResourceMapping {
         return result;
     }
 
+    /**
+     * Gets the image resources.
+     *
+     * @return the image resources
+     */
     public Map<String, ImageResource> getImageResources() {
         return new HashMap<>(imageResources);
     }
 
+    /**
+     * Contains key.
+     *
+     * @param key the key
+     * @return true, if successful
+     */
     public boolean containsKey(String key) {
         return colorResources.containsKey(key)
             || fontResources.containsKey(key)
@@ -238,10 +314,22 @@ public final class ResourceMapping {
             || imageResources.containsKey(key);
     }
 
+    /**
+     * Contains color key.
+     *
+     * @param key the key
+     * @return true, if successful
+     */
     public boolean containsColorKey(String key) {
         return colorResources.containsKey(key);
     }
 
+    /**
+     * Contains image key.
+     *
+     * @param key the key
+     * @return true, if successful
+     */
     public boolean containsImageKey(String key) {
         return imageResources.containsKey(key);
     }
@@ -256,30 +344,72 @@ public final class ResourceMapping {
         return colorResources.get(key);
     }
 
+    /**
+     * Gets the font resource.
+     *
+     * @param key the key
+     * @return the font resource
+     */
     public FontResource getFontResource(String key) {
         return fontResources.get(key);
     }
 
+    /**
+     * Gets the string resource.
+     *
+     * @param key the key
+     * @return the string resource
+     */
     public StringResource getStringResource(String key) {
         return stringResources.get(key);
     }
 
+    /**
+     * Gets the FA file resource.
+     *
+     * @param key the key
+     * @return the FA file resource
+     */
     public FAFileResource getFAFileResource(String key) {
         return fafResources.get(key);
     }
 
+    /**
+     * Gets the SZA resource.
+     *
+     * @param key the key
+     * @return the SZA resource
+     */
     public SZAResource getSZAResource(String key) {
         return szaResources.get(key);
     }
 
+    /**
+     * Gets the audio resource.
+     *
+     * @param key the key
+     * @return the audio resource
+     */
     public AudioResource getAudioResource(String key) {
         return audioResources.get(key);
     }
 
+    /**
+     * Gets the video resource.
+     *
+     * @param key the key
+     * @return the video resource
+     */
     public VideoResource getVideoResource(String key) {
         return videoResources.get(key);
     }
 
+    /**
+     * Gets the image resource.
+     *
+     * @param key the key
+     * @return the image resource
+     */
     public ImageResource getImageResource(String key) {
         return imageResources.get(key);
     }

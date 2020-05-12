@@ -40,20 +40,30 @@ import net.sf.freecol.common.model.Named;
 import net.sf.freecol.common.option.LanguageOption.Language;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A <code>ListCellRenderer</code> to be used by
  * <code>FreeColListUI</code> and <code>JComboBox</code>es that
  * display <code>ObjectWithId</code> values.
+ *
+ * @param <T> the generic type
  */
 public class FreeColComboBoxRenderer<T>
     implements ListCellRenderer<T>, UIResource {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FreeColComboBoxRenderer.class.getName());
 
+    /** The selected component. */
     private final SelectedComponent selectedComponent = new SelectedComponent();
+    
+    /** The normal component. */
     private final NormalComponent normalComponent = new NormalComponent();
 
+    /** The prefix. */
     private final String prefix;
+    
+    /** The localize. */
     private boolean localize = true;
 
     /**
@@ -157,12 +167,21 @@ public class FreeColComboBoxRenderer<T>
         }
     }
 
+    /**
+     * The Class SelectedComponent.
+     */
     private static class SelectedComponent extends JLabel {
 
+        /**
+         * Instantiates a new selected component.
+         */
         public SelectedComponent() {
             setOpaque(false);
         }
 
+        /* (non-Javadoc)
+         * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+         */
         @Override
         public void paintComponent(Graphics g) {
             Graphics2D g2d = (Graphics2D) g;
@@ -179,8 +198,14 @@ public class FreeColComboBoxRenderer<T>
     }
 
 
+    /**
+     * The Class NormalComponent.
+     */
     private static class NormalComponent extends JLabel {
 
+        /**
+         * Instantiates a new normal component.
+         */
         public NormalComponent() {
             setOpaque(false);
         }

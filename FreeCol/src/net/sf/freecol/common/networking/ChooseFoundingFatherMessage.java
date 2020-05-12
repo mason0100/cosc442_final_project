@@ -33,6 +33,7 @@ import net.sf.freecol.server.model.ServerPlayer;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The message sent to choose a founding father.
  */
@@ -100,6 +101,7 @@ public class ChooseFoundingFatherMessage extends DOMMessage {
      * Sets the chosen father.
      *
      * @param ff The <code>FoundingFather</code> to choose.
+     * @return the choose founding father message
      */
     public final ChooseFoundingFatherMessage setFather(FoundingFather ff) {
         this.foundingFatherId = (ff == null) ? null : ff.getId();

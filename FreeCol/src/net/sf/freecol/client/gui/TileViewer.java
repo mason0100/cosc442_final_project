@@ -59,6 +59,7 @@ import net.sf.freecol.common.util.Utils;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * TileViewer is a private helper class of MapViewer and SwingGUI.
  * 
@@ -67,14 +68,27 @@ import static net.sf.freecol.common.util.StringUtils.*;
  */
 public final class TileViewer {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(TileViewer.class.getName());
 
 
+    /**
+     * The Class SortableImage.
+     */
     private static class SortableImage implements Comparable<SortableImage> {
 
+        /** The image. */
         public final BufferedImage image;
+        
+        /** The index. */
         public final int index;
 
+        /**
+         * Instantiates a new sortable image.
+         *
+         * @param image the image
+         * @param index the index
+         */
         public SortableImage(BufferedImage image, int index) {
             this.image = image;
             this.index = index;
@@ -82,6 +96,9 @@ public final class TileViewer {
 
         // Implement Comparable<SortableImage>
 
+        /* (non-Javadoc)
+         * @see java.lang.Comparable#compareTo(java.lang.Object)
+         */
         @Override
         public int compareTo(SortableImage other) {
             return other.index - this.index;
@@ -111,22 +128,36 @@ public final class TileViewer {
         }
     }
 
+    /** The free col client. */
     private final FreeColClient freeColClient;
 
+    /** The lib. */
     private ImageLibrary lib;
 
+    /** The rp. */
     private RoadPainter rp;
 
+    /** The tile height. */
     // Helper variables for displaying.
     private int tileHeight;
+    
+    /** The tile width. */
     private int tileWidth;
+    
+    /** The half height. */
     private int halfHeight;
+    
+    /** The half width. */
     private int halfWidth;
 
+    /** The Constant STATE_OFFSET_X. */
     // The height offset to paint at (in pixels).
     static final int STATE_OFFSET_X = 25;
+    
+    /** The Constant STATE_OFFSET_Y. */
     static final int STATE_OFFSET_Y = 10;
 
+    /** The fog. */
     private final GeneralPath fog = new GeneralPath();
 
 
@@ -459,6 +490,18 @@ public final class TileViewer {
     }
 
 
+	/**
+	 * Boardingtile type.
+	 *
+	 * @param tile the tile
+	 * @param tileType the tile type
+	 * @param x the x
+	 * @param y the y
+	 * @param imageBorders the image borders
+	 * @param direction the direction
+	 * @param borderingTile the bordering tile
+	 * @param borderingTileType the bordering tile type
+	 */
 	private void boardingtileType(Tile tile, TileType tileType, int x, int y, List<SortableImage> imageBorders,
 			Direction direction, Tile borderingTile, TileType borderingTileType) {
 		SortableImage si;
@@ -493,6 +536,14 @@ public final class TileViewer {
 	}
 
 
+	/**
+	 * Tileis land.
+	 *
+	 * @param g the g
+	 * @param tile the tile
+	 * @param x the x
+	 * @param y the y
+	 */
 	private void tileisLand(Graphics2D g, Tile tile, int x, int y) {
 		if (!tile.isLand() && tile.getStyle() > 0) {
 		    int edgeStyle = tile.getStyle() >> 4;
@@ -508,6 +559,12 @@ public final class TileViewer {
 		}
 	}
 
+    /**
+     * Display unknown tile border.
+     *
+     * @param g the g
+     * @param tile the tile
+     */
     void displayUnknownTileBorder(Graphics2D g, Tile tile) {
         for (Direction direction : Direction.values()) {
             Tile borderingTile = tile.getNeighbourOrNull(direction);
@@ -755,6 +812,10 @@ public final class TileViewer {
 
     /**
      * Draws the given TileItem on the given Tile.
+     *
+     * @param g the g
+     * @param tile the tile
+     * @param item the item
      */
     private void displayTileItem(Graphics2D g, Tile tile, TileItem item) {
         if (item instanceof TileImprovement) {
@@ -766,17 +827,35 @@ public final class TileViewer {
         }
     }
 
+    /**
+     * Display resource tile item.
+     *
+     * @param g the g
+     * @param item the item
+     */
     private void displayResourceTileItem(Graphics2D g, Resource item) {
         BufferedImage bonusImage = lib.getMiscImage(
             "image.tileitem." + item.getType().getId());
         displayCenteredImage(g, bonusImage);
     }
 
+    /**
+     * Display lost city rumour.
+     *
+     * @param g the g
+     */
     private void displayLostCityRumour(Graphics2D g) {
         displayCenteredImage(g,
             lib.getMiscImage(ImageLibrary.LOST_CITY_RUMOUR));
     }
 
+    /**
+     * Display tile improvement.
+     *
+     * @param g the g
+     * @param tile the tile
+     * @param ti the ti
+     */
     private void displayTileImprovement(Graphics2D g,
                                         Tile tile, TileImprovement  ti) {
         if (ti.isComplete()) {

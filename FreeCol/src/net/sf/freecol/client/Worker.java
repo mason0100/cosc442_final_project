@@ -26,6 +26,7 @@ import java.util.logging.Logger;
 import net.sf.freecol.FreeCol;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The Worker Thread executes jobs one after another.  The thread
  * manages a queue where new jobs can be enqueued.  The jobs are
@@ -33,18 +34,27 @@ import net.sf.freecol.FreeCol;
  */
 public final class Worker extends Thread {
 
+    /** The job list. */
     private final LinkedBlockingQueue<Runnable> jobList;
 
+    /** The stop running. */
     private volatile boolean stopRunning;
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Worker.class.getName());
     
+    /**
+     * Instantiates a new worker.
+     */
     public Worker() {
         super(FreeCol.CLIENT_THREAD+"Worker");
         jobList = new LinkedBlockingQueue<>();
         stopRunning = false;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Thread#run()
+     */
     @Override
     public void run() {
         while (!stopRunning) {
@@ -63,8 +73,8 @@ public final class Worker extends Thread {
     }
 
     /**
-     * Adds a new job to the queue
-     * 
+     * Adds a new job to the queue.
+     *
      * @param job the job to add to the queue.
      */
     public void schedule(Runnable job) {

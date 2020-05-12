@@ -22,6 +22,7 @@ package net.sf.freecol.common.resources;
 import java.net.URI;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents a resource that either has been or can be loaded using a
  * <code>URI</code>.  There can only be one instance of
@@ -63,6 +64,9 @@ public abstract class Resource {
     private final URI resourceLocator;
 
 
+    /**
+     * Instantiates a new resource.
+     */
     protected Resource() {
         // empty constructor
         resourceLocator = null;

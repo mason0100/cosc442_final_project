@@ -44,6 +44,7 @@ import net.sf.freecol.common.option.StringOption;
 import net.sf.freecol.common.option.UnitTypeOption;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides visualization for an
  * {@link net.sf.freecol.common.option.AbstractUnitOption} in order to enable
@@ -52,28 +53,49 @@ import net.sf.freecol.common.option.UnitTypeOption;
 public final class AbstractUnitOptionUI extends OptionUI<AbstractUnitOption>
     implements ItemListener {
 
+    /**
+     * The Class AbstractUnitRenderer.
+     */
     private class AbstractUnitRenderer
         extends FreeColComboBoxRenderer<AbstractUnitOption> {
 
+        /* (non-Javadoc)
+         * @see net.sf.freecol.client.gui.plaf.FreeColComboBoxRenderer#setLabelValues(javax.swing.JLabel, java.lang.Object)
+         */
         @Override
         public void setLabelValues(JLabel label, AbstractUnitOption value) {
             label.setText(Messages.message(value.getValue().getLabel()));
         }
     }
 
+    /**
+     * The Class RoleRenderer.
+     */
     private class RoleRenderer
         extends FreeColComboBoxRenderer<String> {
 
+        /* (non-Javadoc)
+         * @see net.sf.freecol.client.gui.plaf.FreeColComboBoxRenderer#setLabelValues(javax.swing.JLabel, java.lang.Object)
+         */
         @Override
         public void setLabelValues(JLabel label, String value) {
             label.setText(Messages.getName(value));
         }
     }
 
+    /** The panel. */
     private final JPanel panel;
+    
+    /** The number UI. */
     private final IntegerOptionUI numberUI;
+    
+    /** The type UI. */
     private final UnitTypeOptionUI typeUI;
+    
+    /** The role UI. */
     private final StringOptionUI roleUI;
+    
+    /** The role editable. */
     private final boolean roleEditable;
 
 
@@ -120,6 +142,9 @@ public final class AbstractUnitOptionUI extends OptionUI<AbstractUnitOption>
     }
 
 
+    /* (non-Javadoc)
+     * @see java.awt.event.ItemListener#itemStateChanged(java.awt.event.ItemEvent)
+     */
     @Override
     public void itemStateChanged(ItemEvent e) {
         JComboBox<String> box = roleUI.getComponent();

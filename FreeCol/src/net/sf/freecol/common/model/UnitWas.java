@@ -27,23 +27,44 @@ import net.sf.freecol.common.model.Colony.ColonyChangeEvent;
 import net.sf.freecol.common.util.Utils;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Helper container to remember a unit state prior to some change,
  * and fire off any consequent property changes.
  */
 public class UnitWas implements Comparable<UnitWas> {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(UnitWas.class.getName());
 
+    /** The unit. */
     private final Unit unit;
+    
+    /** The type. */
     private final UnitType type;
+    
+    /** The role. */
     private final Role role;
+    
+    /** The role count. */
     private final int roleCount;
+    
+    /** The loc. */
     private final Location loc;
+    
+    /** The work. */
     private final GoodsType work;
+    
+    /** The work amount. */
     private final int workAmount;
+    
+    /** The moves left. */
     private final int movesLeft;
+    
+    /** The units. */
     private final List<Unit> units;
+    
+    /** The colony. */
     private final Colony colony;
 
 
@@ -69,14 +90,29 @@ public class UnitWas implements Comparable<UnitWas> {
     }
 
 
+    /**
+     * Gets the unit.
+     *
+     * @return the unit
+     */
     public Unit getUnit() {
         return unit;
     }
 
+    /**
+     * Gets the location.
+     *
+     * @return the location
+     */
     public Location getLocation() {
         return loc;
     }
 
+    /**
+     * Gets the work type.
+     *
+     * @return the work type
+     */
     public GoodsType getWorkType() {
         return work;
     }
@@ -164,6 +200,12 @@ public class UnitWas implements Comparable<UnitWas> {
         return ret;
     }
 
+    /**
+     * Change.
+     *
+     * @param fcgo the fcgo
+     * @return the string
+     */
     // FIXME: fix this non-OO nastiness
     private String change(FreeColGameObject fcgo) {
         return (fcgo instanceof Tile) ? Tile.UNIT_CHANGE
@@ -174,6 +216,13 @@ public class UnitWas implements Comparable<UnitWas> {
             : null;
     }
 
+    /**
+     * Gets the amount.
+     *
+     * @param location the location
+     * @param goodsType the goods type
+     * @return the amount
+     */
     // FIXME: fix this non-OO nastiness
     private int getAmount(Location location, GoodsType goodsType) {
         if (goodsType == null) return 0;

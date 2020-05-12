@@ -30,6 +30,7 @@ import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A special game event.
  */
@@ -138,7 +139,10 @@ public class Event extends FreeColGameObjectType {
 
     // Serialization
 
+    /** The Constant SCORE_VALUE_TAG. */
     private static final String SCORE_VALUE_TAG = "score-value";
+    
+    /** The Constant OLD_SCORE_VALUE_TAG. */
     // @compat 0.11.3
     private static final String OLD_SCORE_VALUE_TAG = "scoreValue";
     // end @compat 0.11.3
@@ -235,6 +239,12 @@ public class Event extends FreeColGameObjectType {
      * @return "event".
      */
     static String eventTag = "event";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
 		return eventTag;
     }

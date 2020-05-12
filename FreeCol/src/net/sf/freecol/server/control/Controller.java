@@ -25,12 +25,14 @@ import net.sf.freecol.server.FreeColServer;
 import net.sf.freecol.server.networking.Server;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The control object that is responsible for making changes to the internal
  * model and for communicating with the clients.
  */
 public abstract class Controller extends FreeColServerHolder {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Controller.class.getName());
 
 

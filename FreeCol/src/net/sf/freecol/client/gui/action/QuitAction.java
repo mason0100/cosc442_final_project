@@ -24,11 +24,13 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for quitting the game.
  */
 public class QuitAction extends FreeColAction {
 
+    /** The Constant ID. */
     public static final String ID = "quitAction";
 
 

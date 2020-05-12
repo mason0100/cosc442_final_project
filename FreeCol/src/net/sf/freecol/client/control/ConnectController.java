@@ -60,6 +60,7 @@ import net.sf.freecol.server.FreeColServer;
 import net.sf.freecol.server.FreeColServer.GameState;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The controller responsible for starting a server and connecting to it.
  * {@link PreGameInputHandler} will be set as the input handler when a
@@ -67,10 +68,13 @@ import net.sf.freecol.server.FreeColServer.GameState;
  */
 public final class ConnectController {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ConnectController.class.getName());
 
+    /** The free col client. */
     private final FreeColClient freeColClient;
 
+    /** The gui. */
     private final GUI gui;
 
 

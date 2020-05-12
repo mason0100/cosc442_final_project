@@ -30,6 +30,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.util.Utils;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The <code>Operand</code> class implements Operands to be used in
  * relations, such as the Limit class. The OperandType specifies which
@@ -46,14 +47,43 @@ import net.sf.freecol.common.util.Utils;
  */
 public class Operand extends Scope {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Operand.class.getName());
 
+    /**
+     * The Enum OperandType.
+     */
     public static enum OperandType {
-        UNITS, BUILDINGS, SETTLEMENTS, FOUNDING_FATHERS, YEAR, OPTION, NONE
+        
+        /** The units. */
+        UNITS, 
+ /** The buildings. */
+ BUILDINGS, 
+ /** The settlements. */
+ SETTLEMENTS, 
+ /** The founding fathers. */
+ FOUNDING_FATHERS, 
+ /** The year. */
+ YEAR, 
+ /** The option. */
+ OPTION, 
+ /** The none. */
+ NONE
     }
 
+    /**
+     * The Enum ScopeLevel.
+     */
     public static enum ScopeLevel {
-        SETTLEMENT, PLAYER, GAME, NONE
+        
+        /** The settlement. */
+        SETTLEMENT, 
+ /** The player. */
+ PLAYER, 
+ /** The game. */
+ GAME, 
+ /** The none. */
+ NONE
     }
 
     /** The type of object the operand really represents. */
@@ -330,10 +360,17 @@ public class Operand extends Scope {
 
     // Serialization
 
+    /** The Constant OPERAND_TYPE_TAG. */
     private static final String OPERAND_TYPE_TAG = "operand-type";
+    
+    /** The Constant SCOPE_LEVEL_TAG. */
     private static final String SCOPE_LEVEL_TAG = "scope-level";
+    
+    /** The Constant OLD_OPERAND_TYPE_TAG. */
     // @compat 0.11.3
     private static final String OLD_OPERAND_TYPE_TAG = "operandType";
+    
+    /** The Constant OLD_SCOPE_LEVEL_TAG. */
     private static final String OLD_SCOPE_LEVEL_TAG = "scopeLevel";
     // end @compat 0.11.3
 

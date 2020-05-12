@@ -30,18 +30,29 @@ import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.basic.BasicPanelUI;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Draws with partial transparency.  Used in Europe.
  */
 public class FreeColSelectedPanelUI extends BasicPanelUI {
 
+    /** The Constant sharedInstance. */
     private static final FreeColSelectedPanelUI sharedInstance = new FreeColSelectedPanelUI();
 
 
+    /**
+     * Creates the UI.
+     *
+     * @param c the c
+     * @return the component UI
+     */
     public static ComponentUI createUI(@SuppressWarnings("unused") JComponent c) {
         return sharedInstance;
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.plaf.ComponentUI#paint(java.awt.Graphics, javax.swing.JComponent)
+     */
     @Override
     public void paint(Graphics g, JComponent c) {
         Graphics2D g2d = (Graphics2D) g;

@@ -33,6 +33,7 @@ import net.sf.freecol.server.model.ServerPlayer;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The message sent when a missionary establishes/denounces a mission.
  */
@@ -44,7 +45,7 @@ public class MissionaryMessage extends DOMMessage {
     /** The direction to the settlement. */
     private final String directionString;
 
-    /** Is this a denunciation? */
+    /**  Is this a denunciation?. */
     private final boolean denounce;
 
 

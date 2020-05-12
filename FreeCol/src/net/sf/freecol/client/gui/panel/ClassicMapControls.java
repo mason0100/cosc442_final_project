@@ -33,6 +33,7 @@ import net.sf.freecol.client.gui.action.ActionManager;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A collection of panels and buttons that are used to provide
  * the user with a more detailed view of certain elements on the
@@ -44,8 +45,13 @@ import net.sf.freecol.common.resources.ResourceManager;
  */
 public final class ClassicMapControls extends MapControls {
 
+    /** The panel. */
     private final JPanel panel;
+    
+    /** The arrow font. */
     private final Font arrowFont;
+    
+    /** The am. */
     private final ActionManager am;
 
 
@@ -105,6 +111,9 @@ public final class ClassicMapControls extends MapControls {
         component.add(panel, CONTROLS_LAYER);
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.client.gui.panel.MapControls#isShowing()
+     */
     @Override
     public boolean isShowing() {
         return panel.getParent() != null;
@@ -121,13 +130,20 @@ public final class ClassicMapControls extends MapControls {
     }
 
     /**
-     * Repaint
+     * Repaint.
      */
     @Override
     public void repaint() {
         panel.repaint();
     }
 
+    /**
+     * Make button.
+     *
+     * @param direction the direction
+     * @param arrow the arrow
+     * @return the j button
+     */
     private JButton makeButton(String direction, String arrow) {
         JButton button
             = new JButton(am.getFreeColAction("moveAction." + direction));

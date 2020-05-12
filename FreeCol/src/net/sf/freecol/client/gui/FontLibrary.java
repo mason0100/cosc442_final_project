@@ -24,6 +24,7 @@ import java.util.logging.Logger;
 
 import net.sf.freecol.common.resources.ResourceManager;
 
+// TODO: Auto-generated Javadoc
 /**
  * Wraps anything <code>Font</code> related and contains a scale factor.
  * 
@@ -31,6 +32,7 @@ import net.sf.freecol.common.resources.ResourceManager;
  */
 public class FontLibrary {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FontLibrary.class.getName());
 
     /**
@@ -44,8 +46,14 @@ public class FontLibrary {
      * </ul>
      */
     public enum FontType {
+        
+        /** The normal. */
         NORMAL,
+        
+        /** The simple. */
         SIMPLE,
+        
+        /** The header. */
         HEADER
     }
 
@@ -62,16 +70,24 @@ public class FontLibrary {
      * </ul>
      */
     public enum FontSize {
+        
+        /** The tiny. */
         TINY,
+        
+        /** The smaller. */
         SMALLER,
+        
+        /** The small. */
         SMALL,
+        
+        /** The medium. */
         MEDIUM,
+        
+        /** The big. */
         BIG
     }
 
-    /**
-     * The optional custom main Font
-     */
+    /** The optional custom main Font. */
     private static Font mainFont = null;
 
     /**
@@ -100,11 +116,12 @@ public class FontLibrary {
 
     /**
      * Create a default <code>Font</code> set on initialization of the GUI.
-     * 
+     *
      * @param fontName Can be used to choose a different font from a
      *                 user-provided name.
      * @param scaleFactor  The applied scale factor.
-    */
+     * @return the font
+     */
     static Font createMainFont(String fontName, float scaleFactor) {
         final float defaultSize = 12f * scaleFactor;
         mainFont = null;
@@ -120,6 +137,13 @@ public class FontLibrary {
         return ResourceManager.getFont("font.normal").deriveFont(defaultSize);
     }
 
+    /**
+     * Creates the scaled font.
+     *
+     * @param fontType the font type
+     * @param fontSize the font size
+     * @return the font
+     */
     public Font createScaledFont(FontType fontType, FontSize fontSize) {
         return createFont(fontType, fontSize, Font.PLAIN, scaleFactor);
     }
@@ -137,18 +161,42 @@ public class FontLibrary {
         return createFont(fontType, fontSize, style, scaleFactor);
     }
 
+    /**
+     * Creates the compatible scaled font.
+     *
+     * @param string the string
+     * @param fontType the font type
+     * @param fontSize the font size
+     * @return the font
+     */
     public Font createCompatibleScaledFont(String string, FontType fontType,
                                            FontSize fontSize) {
         return createCompatibleFont(string, fontType, fontSize, Font.PLAIN,
                                     scaleFactor);
     }
 
+    /**
+     * Creates the compatible scaled font.
+     *
+     * @param string the string
+     * @param fontType the font type
+     * @param fontSize the font size
+     * @param style the style
+     * @return the font
+     */
     public Font createCompatibleScaledFont(String string, FontType fontType,
                                            FontSize fontSize, int style) {
         return createCompatibleFont(string, fontType, fontSize, style,
                                     scaleFactor);
     }
 
+    /**
+     * Creates the font.
+     *
+     * @param fontType the font type
+     * @param fontSize the font size
+     * @return the font
+     */
     public static Font createFont(FontType fontType, FontSize fontSize) {
         return createFont(fontType, fontSize, Font.PLAIN, 1f);
     }
@@ -170,21 +218,55 @@ public class FontLibrary {
         return createFont(fontType, fontSize, style, 1f);
     }
 
+    /**
+     * Creates the font.
+     *
+     * @param fontType the font type
+     * @param fontSize the font size
+     * @param scaleFactor the scale factor
+     * @return the font
+     */
     public static Font createFont(FontType fontType, FontSize fontSize,
                                   float scaleFactor) {
         return createFont(fontType, fontSize, Font.PLAIN, scaleFactor);
     }
 
+    /**
+     * Creates the compatible font.
+     *
+     * @param string the string
+     * @param fontType the font type
+     * @param fontSize the font size
+     * @return the font
+     */
     public static Font createCompatibleFont(String string, FontType fontType,
                                             FontSize fontSize) {
         return createCompatibleFont(string, fontType, fontSize, Font.PLAIN, 1f);
     }
 
+    /**
+     * Creates the compatible font.
+     *
+     * @param string the string
+     * @param fontType the font type
+     * @param fontSize the font size
+     * @param style the style
+     * @return the font
+     */
     public static Font createCompatibleFont(String string, FontType fontType,
                                             FontSize fontSize, int style) {
         return createCompatibleFont(string, fontType, fontSize, style, 1f);
     }
 
+    /**
+     * Creates the compatible font.
+     *
+     * @param string the string
+     * @param fontType the font type
+     * @param fontSize the font size
+     * @param scaleFactor the scale factor
+     * @return the font
+     */
     public static Font createCompatibleFont(String string, FontType fontType,
                                             FontSize fontSize,
                                             float scaleFactor) {
@@ -255,6 +337,13 @@ public class FontLibrary {
         return font;
     }
 
+    /**
+     * Calc scaled size.
+     *
+     * @param fontSize the font size
+     * @param scaleFactor the scale factor
+     * @return the float
+     */
     private static float calcScaledSize(FontSize fontSize, float scaleFactor) {
         float pixelSize;
         switch(fontSize) {
@@ -278,6 +367,12 @@ public class FontLibrary {
         return pixelSize * scaleFactor;
     }
 
+    /**
+     * Gets the font key.
+     *
+     * @param fontType the font type
+     * @return the font key
+     */
     private static String getFontKey(FontType fontType) {
         String fontName;
         switch(fontType) {

@@ -48,6 +48,7 @@ import net.sf.freecol.common.model.TileImprovementType;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A collection of panels and buttons that are used to provide the
  * user with a more detailed view of certain elements on the map and
@@ -59,18 +60,40 @@ import net.sf.freecol.common.model.Unit;
  */
 public abstract class MapControls {
 
+    /** The Constant MAP_WIDTH. */
     public static final int MAP_WIDTH = 220;
+    
+    /** The Constant MAP_HEIGHT. */
     public static final int MAP_HEIGHT = 128;
+    
+    /** The Constant GAP. */
     public static final int GAP = 4;
+    
+    /** The Constant CONTROLS_LAYER. */
     public static final int CONTROLS_LAYER = JLayeredPane.MODAL_LAYER;
 
+    /** The free col client. */
     protected final FreeColClient freeColClient;
+    
+    /** The info panel. */
     protected final InfoPanel infoPanel;
+    
+    /** The mini map. */
     protected final MiniMap miniMap;
+    
+    /** The mini map toggle borders. */
     protected final UnitButton miniMapToggleBorders;
+    
+    /** The mini map toggle fog of war button. */
     protected final UnitButton miniMapToggleFogOfWarButton;
+    
+    /** The mini map zoom out button. */
     protected final UnitButton miniMapZoomOutButton;
+    
+    /** The mini map zoom in button. */
     protected final UnitButton miniMapZoomInButton;
+    
+    /** The unit buttons. */
     protected final List<UnitButton> unitButtons;
 
 
@@ -78,6 +101,7 @@ public abstract class MapControls {
      * The basic constructor.
      *
      * @param freeColClient The <code>FreeColClient</code> for the game.
+     * @param useSkin the use skin
      */
     public MapControls(final FreeColClient freeColClient, boolean useSkin) {
         this.freeColClient = freeColClient;
@@ -136,14 +160,29 @@ public abstract class MapControls {
      */
     public abstract void addToComponent(Canvas component);
 
+    /**
+     * Can zoom in map controls.
+     *
+     * @return true, if successful
+     */
     public boolean canZoomInMapControls() {
         return miniMap != null && miniMap.canZoomIn();
     }
 
+    /**
+     * Can zoom out map controls.
+     *
+     * @return true, if successful
+     */
     public boolean canZoomOutMapControls() {
         return miniMap != null && miniMap.canZoomOut();
     }
 
+    /**
+     * Checks if is showing.
+     *
+     * @return true, if is showing
+     */
     public abstract boolean isShowing();
 
     /**
@@ -153,14 +192,23 @@ public abstract class MapControls {
      */
     public abstract void removeFromComponent(Canvas canvas);
 
+    /**
+     * Repaint.
+     */
     public abstract void repaint();
     
+    /**
+     * Toggle view.
+     */
     public void toggleView() {
         miniMap.setToggleBordersOption(!freeColClient.getClientOptions()
             .getBoolean(ClientOptions.MINIMAP_TOGGLE_BORDERS));
         repaint();
     }
     
+    /**
+     * Toggle fog of war.
+     */
     public void toggleFogOfWar() {
         miniMap.setToggleFogOfWarOption(!freeColClient.getClientOptions()
             .getBoolean(ClientOptions.MINIMAP_TOGGLE_FOG_OF_WAR));
@@ -200,11 +248,17 @@ public abstract class MapControls {
         }
     }
     
+    /**
+     * Zoom in.
+     */
     public void zoomIn() {
         miniMap.zoomIn();
         repaint();
     }
 
+    /**
+     * Zoom out.
+     */
     public void zoomOut() {
         miniMap.zoomOut();
         repaint();

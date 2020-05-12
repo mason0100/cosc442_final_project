@@ -107,70 +107,118 @@ import net.sf.freecol.server.FreeColServer;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The controller that will be used while the game is played.
  */
 public final class InGameController implements NetworkConstants {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(InGameController.class.getName());
 
     /** Actions when an armed unit contacts a settlement. */
     public static enum ArmedUnitSettlementAction {
+        
+        /** The settlement attack. */
         SETTLEMENT_ATTACK,
+        
+        /** The settlement tribute. */
         SETTLEMENT_TRIBUTE,
     }
 
     /** Actions when dealing with a boycott. */
 
     public static enum BoycottAction {
+        
+        /** The pay arrears. */
         PAY_ARREARS,
+        
+        /** The dump cargo. */
         DUMP_CARGO
     }
 
     /** Actions when buying from the natives. */
     public static enum BuyAction {
+        
+        /** The buy. */
         BUY,
+        
+        /** The haggle. */
         HAGGLE
     }
 
     /** Actions when claiming land. */
     public static enum ClaimAction {
+        
+        /** The accept. */
         ACCEPT,
+        
+        /** The steal. */
         STEAL
     }
 
     /** Actions with a missionary at a native settlement. */
     public static enum MissionaryAction {
+        
+        /** The establish mission. */
         ESTABLISH_MISSION,
+        
+        /** The denounce heresy. */
         DENOUNCE_HERESY,
+        
+        /** The incite indians. */
         INCITE_INDIANS
     }
 
     /** Actions in scouting a colony. */
     public static enum ScoutColonyAction {
+        
+        /** The foreign colony negotiate. */
         FOREIGN_COLONY_NEGOTIATE,
+        
+        /** The foreign colony spy. */
         FOREIGN_COLONY_SPY,
+        
+        /** The foreign colony attack. */
         FOREIGN_COLONY_ATTACK
     }
 
     /** Actions in scouting a native settlement. */
     public static enum ScoutIndianSettlementAction {
+        
+        /** The indian settlement speak. */
         INDIAN_SETTLEMENT_SPEAK,
+        
+        /** The indian settlement tribute. */
         INDIAN_SETTLEMENT_TRIBUTE,
+        
+        /** The indian settlement attack. */
         INDIAN_SETTLEMENT_ATTACK
     }
 
     /** Actions when selling to the natives. */
     public static enum SellAction {
+        
+        /** The sell. */
         SELL,
+        
+        /** The haggle. */
         HAGGLE,
+        
+        /** The gift. */
         GIFT
     }
 
     /** Choice of sales action at a native settlement. */
     public static enum TradeAction {
+        
+        /** The buy. */
         BUY,
+        
+        /** The sell. */
         SELL,
+        
+        /** The gift. */
         GIFT
     }
 
@@ -179,15 +227,28 @@ public final class InGameController implements NetworkConstants {
      * from the going-to list, or flush going-to and end the turn.
      */
     private static enum MoveMode {
+        
+        /** The next active unit. */
         NEXT_ACTIVE_UNIT,
+        
+        /** The execute goto orders. */
         EXECUTE_GOTO_ORDERS,
+        
+        /** The end turn. */
         END_TURN;
 
+        /**
+         * Maximize.
+         *
+         * @param m the m
+         * @return the move mode
+         */
         public MoveMode maximize(MoveMode m) {
             return (this.ordinal() < m.ordinal()) ? m : this;
         }
     }
 
+    /** The Constant UNIT_LAST_MOVE_DELAY. */
     private static final short UNIT_LAST_MOVE_DELAY = 300;
 
     /** A template to use as a magic cookie for aborted trades. */
@@ -1803,8 +1864,8 @@ public final class InGameController implements NetworkConstants {
      * @param unit The <code>Unit</code> that is a carrier containing goods.
      * @param direction The direction the unit could move in order to enter a
      *            <code>Settlement</code>.
-     * @see Settlement
      * @return True if the unit can move further.
+     * @see Settlement
      */
     private boolean moveTradeIndianSettlement(Unit unit, Direction direction) {
         Settlement settlement = getSettlementAt(unit.getTile(), direction);
@@ -3716,11 +3777,12 @@ public final class InGameController implements NetworkConstants {
 
     /**
      * Loads a cargo onto a carrier.
-     *
+     * 
      * Called from CargoPanel, ColonyPanel, LoadAction, TilePopup.
      *
      * @param goods The <code>Goods</code> which are going aboard the carrier.
      * @param carrier The <code>Unit</code> acting as carrier.
+     * @return true, if successful
      */
     public boolean loadCargo(Goods goods, Unit carrier) {
         if (!requireOurTurn() || goods == null || goods.getAmount() <= 0
@@ -4280,10 +4342,11 @@ public final class InGameController implements NetworkConstants {
 
     /**
      * Remove game objects.
-     *
+     * 
      * Called from IGIH.remove().
      *
      * @param objects A list of <code>FreeColGameObject</code>s to remove.
+     * @param divert the divert
      */
     public void remove(List<FreeColGameObject> objects,
                        FreeColGameObject divert) {

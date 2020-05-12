@@ -40,6 +40,7 @@ import net.sf.freecol.common.model.Unit;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This label holds Goods data in addition to the JLabel data, which
  * makes it ideal to use for drag and drop purposes.
@@ -47,11 +48,13 @@ import net.sf.freecol.common.resources.ResourceManager;
 public final class GoodsLabel extends AbstractGoodsLabel
     implements Draggable {
 
+    /** The gui. */
     GUI gui;
  
     /**
      * Initializes this JLabel with the given goods data.
      *
+     * @param gui the gui
      * @param goods The Goods that this JLabel will visually represent.
      */
     public GoodsLabel(GUI gui, Goods goods) {

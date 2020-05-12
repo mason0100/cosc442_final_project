@@ -27,6 +27,7 @@ import java.io.BufferedInputStream;
 import net.sf.freecol.FreeCol;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents a FreeCol savegame.
  */
@@ -71,6 +72,7 @@ public class FreeColSavegameFile extends FreeColDataFile {
      * Create a new save game file from a given file.
      *
      * @param file The base <code>File</code>.
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     public FreeColSavegameFile(File file) throws IOException {
         super(file);

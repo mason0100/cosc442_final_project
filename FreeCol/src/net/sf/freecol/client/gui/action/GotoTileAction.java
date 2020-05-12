@@ -24,11 +24,13 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action to make a unit go to a specific tile.
  */
 public class GotoTileAction extends UnitAction {
 
+    /** The Constant ID. */
     public static final String ID = "gotoTileAction";
 
 

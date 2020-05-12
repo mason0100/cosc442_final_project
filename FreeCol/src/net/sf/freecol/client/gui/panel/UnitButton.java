@@ -33,6 +33,7 @@ import net.sf.freecol.client.gui.action.FreeColAction;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A button with a set of images which is used to give commands
  * to a unit with the mouse instead of the keyboard. The UnitButton
@@ -43,7 +44,10 @@ import net.sf.freecol.common.resources.ResourceManager;
  */
 public final class UnitButton extends JButton {
 
+    /** The action id. */
     private final String actionId;
+    
+    /** The am. */
     private final ActionManager am;
 
     /**
@@ -68,6 +72,9 @@ public final class UnitButton extends JButton {
     }
 
 
+    /* (non-Javadoc)
+     * @see javax.swing.AbstractButton#configurePropertiesFromAction(javax.swing.Action)
+     */
     @Override
     protected void configurePropertiesFromAction(Action a) {
         super.configurePropertiesFromAction(a);
@@ -93,18 +100,42 @@ public final class UnitButton extends JButton {
         }
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.AbstractButton#createActionPropertyChangeListener(javax.swing.Action)
+     */
     @Override
     protected PropertyChangeListener createActionPropertyChangeListener(Action a) {
         return new UnitButtonActionPropertyChangeListener(this);
     }
 
+    /**
+     * The listener interface for receiving unitButtonActionPropertyChange events.
+     * The class that is interested in processing a unitButtonActionPropertyChange
+     * event implements this interface, and the object created
+     * with that class is registered with a component using the
+     * component's <code>addUnitButtonActionPropertyChangeListener<code> method. When
+     * the unitButtonActionPropertyChange event occurs, that object's appropriate
+     * method is invoked.
+     *
+     * @see UnitButtonActionPropertyChangeEvent
+     */
     private static class UnitButtonActionPropertyChangeListener implements PropertyChangeListener {
+        
+        /** The button. */
         private final AbstractButton button;
 
+        /**
+         * Instantiates a new unit button action property change listener.
+         *
+         * @param button the button
+         */
         UnitButtonActionPropertyChangeListener(AbstractButton button) {
             this.button = button;
         }
 
+        /* (non-Javadoc)
+         * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
+         */
         @Override
         public void propertyChange(PropertyChangeEvent e) {
             String propertyName = e.getPropertyName();

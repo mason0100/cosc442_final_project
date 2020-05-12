@@ -30,11 +30,15 @@ import net.sf.freecol.client.gui.ChoiceItem;
 import net.sf.freecol.common.i18n.Messages;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A FreeColDialog with input field/s.
+ *
+ * @param <T> the generic type
  */
 public abstract class FreeColInputDialog<T> extends FreeColDialog<T> {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FreeColInputDialog.class.getName());
 
 

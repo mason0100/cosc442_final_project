@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Container for information about production in a colony.
  */
@@ -41,42 +42,92 @@ public class ProductionInfo {
     private List<AbstractGoods> consumption = new ArrayList<>();
 
 
+    /**
+     * Gets the consumption.
+     *
+     * @return the consumption
+     */
     public final List<AbstractGoods> getConsumption() {
         return consumption;
     }
 
+    /**
+     * Sets the consumption.
+     *
+     * @param newConsumption the new consumption
+     */
     public final void setConsumption(final List<AbstractGoods> newConsumption) {
         this.consumption = newConsumption;
     }
 
+    /**
+     * Adds the consumption.
+     *
+     * @param goods the goods
+     */
     public void addConsumption(AbstractGoods goods) {
         consumption.add(goods);
     }
 
+    /**
+     * Gets the production.
+     *
+     * @return the production
+     */
     public final List<AbstractGoods> getProduction() {
         return production;
     }
 
+    /**
+     * Sets the production.
+     *
+     * @param newProduction the new production
+     */
     public final void setProduction(final List<AbstractGoods> newProduction) {
         this.production = newProduction;
     }
 
+    /**
+     * Adds the production.
+     *
+     * @param goods the goods
+     */
     public void addProduction(AbstractGoods goods) {
         production.add(goods);
     }
 
+    /**
+     * Adds the production.
+     *
+     * @param goods the goods
+     */
     public void addProduction(List<AbstractGoods> goods) {
         production.addAll(goods);
     }
 
+    /**
+     * Gets the maximum production.
+     *
+     * @return the maximum production
+     */
     public final List<AbstractGoods> getMaximumProduction() {
         return maximumProduction;
     }
 
+    /**
+     * Sets the maximum production.
+     *
+     * @param newMaximumProduction the new maximum production
+     */
     public final void setMaximumProduction(final List<AbstractGoods> newMaximumProduction) {
         this.maximumProduction = newMaximumProduction;
     }
 
+    /**
+     * Adds the maximum production.
+     *
+     * @param goods the goods
+     */
     public void addMaximumProduction(AbstractGoods goods) {
         maximumProduction.add(goods);
     }
@@ -128,7 +179,7 @@ public class ProductionInfo {
     }
 
     /**
-     * Does production equal maximum production?
+     * Does production equal maximum production?.
      *
      * @return True if at maximum production.
      */
@@ -144,18 +195,40 @@ public class ProductionInfo {
         return true;
     }
 
+    /**
+     * Gets the maximum consumption.
+     *
+     * @return the maximum consumption
+     */
     public final List<AbstractGoods> getMaximumConsumption() {
         return maximumConsumption;
     }
 
+    /**
+     * Sets the maximum consumption.
+     *
+     * @param newMaximumConsumption the new maximum consumption
+     */
     public final void setMaximumConsumption(final List<AbstractGoods> newMaximumConsumption) {
         this.maximumConsumption = newMaximumConsumption;
     }
 
+    /**
+     * Adds the maximum consumption.
+     *
+     * @param goods the goods
+     */
     public void addMaximumConsumption(AbstractGoods goods) {
         maximumConsumption.add(goods);
     }
 
+    /**
+     * Append.
+     *
+     * @param result the result
+     * @param key the key
+     * @param list the list
+     */
     private void append(StringBuilder result, String key,
                         List<AbstractGoods> list) {
         if (list.isEmpty()) return;

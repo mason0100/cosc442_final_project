@@ -56,11 +56,13 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Handles the network messages that arrives while in the game.
  */
 public final class AIInGameInputHandler implements MessageHandler {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(AIInGameInputHandler.class.getName());
 
     /** The player for whom I work. */

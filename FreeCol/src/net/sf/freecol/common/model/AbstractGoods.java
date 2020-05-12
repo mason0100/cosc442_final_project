@@ -30,6 +30,7 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import net.sf.freecol.common.util.Utils;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents a certain amount of a GoodsType.  This does not
  * correspond to actual cargo present in a Location, but is intended
@@ -202,10 +203,10 @@ public class AbstractGoods extends FreeColObject implements Named {
     }
 
     /**
-     * Does a goods collection contain an element with a given type?
+     * Does a goods collection contain an element with a given type?.
      *
-     * @param goods The <code>Goods<code> collection to search.
      * @param type The <code>GoodsType</code> to search for.
+     * @param goods The <code>Goods<code> collection to search.
      * @return True if the goods type was found.
      */
     public static boolean containsType(GoodsType type,
@@ -266,7 +267,10 @@ public class AbstractGoods extends FreeColObject implements Named {
 
     // Serialization
 
+    /** The Constant AMOUNT_TAG. */
     private static final String AMOUNT_TAG = "amount";
+    
+    /** The Constant TYPE_TAG. */
     private static final String TYPE_TAG = "type";
 
 

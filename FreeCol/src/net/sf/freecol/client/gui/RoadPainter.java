@@ -40,23 +40,42 @@ import net.sf.freecol.common.model.TileImprovement;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class is responsible for drawing the Roads on a tile.
  */
 public final class RoadPainter {
+    
+    /** The tile height. */
     // Helper variables for displaying the map.
     private int tileHeight;
+    
+    /** The tile width. */
     private int tileWidth;
+    
+    /** The half height. */
     private int halfHeight;
+    
+    /** The half width. */
     private int halfWidth;
 
+    /** The corners. */
     // roads
     private final EnumMap<Direction, Point2D.Float> corners =
         new EnumMap<>(Direction.class);
+    
+    /** The prohibited roads. */
     private final EnumMap<Direction, List<Direction>> prohibitedRoads =
         new EnumMap<>(Direction.class);
+    
+    /** The road stroke. */
     private Stroke roadStroke = new BasicStroke(2);
 
+    /**
+     * Instantiates a new road painter.
+     *
+     * @param tileSize the tile size
+     */
     public RoadPainter(Dimension tileSize) {
         tileHeight = tileSize.height;
         tileWidth = tileSize.width;
@@ -149,6 +168,12 @@ public final class RoadPainter {
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
     }
 
+	/**
+	 * Direction pen.
+	 *
+	 * @param path the path
+	 * @param directions the directions
+	 */
 	private void directionPen(GeneralPath path, List<Direction> directions) {
 		Direction pen = directions.get(directions.size() - 1);
 		Point2D p = corners.get(pen);

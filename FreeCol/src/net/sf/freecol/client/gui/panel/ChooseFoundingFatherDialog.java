@@ -35,6 +35,7 @@ import net.sf.freecol.common.i18n.Messages;
 import net.sf.freecol.common.model.FoundingFather;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the different Founding Fathers the player can work
  * towards recruiting.
@@ -44,11 +45,14 @@ import net.sf.freecol.common.model.FoundingFather;
 public final class ChooseFoundingFatherDialog
     extends FreeColDialog<FoundingFather> {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(ChooseFoundingFatherDialog.class.getName());
 
+    /** The tb. */
     private final JTabbedPane tb;
 
+    /** The possible fathers. */
     private final List<FoundingFather> possibleFathers;
 
 

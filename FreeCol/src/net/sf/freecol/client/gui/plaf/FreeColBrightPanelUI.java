@@ -26,6 +26,7 @@ import javax.swing.plaf.basic.BasicPanelUI;
 import net.sf.freecol.client.gui.ImageLibrary;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Draw the "image.background.FreeColBrightPanel" resource as a tiled
  * background image.  BrightPanel is intended to provide a lighter
@@ -35,12 +36,22 @@ import net.sf.freecol.client.gui.ImageLibrary;
  */
 public class FreeColBrightPanelUI extends BasicPanelUI {
 
+    /** The Constant sharedInstance. */
     private static final FreeColBrightPanelUI sharedInstance = new FreeColBrightPanelUI();
 
+    /**
+     * Creates the UI.
+     *
+     * @param c the c
+     * @return the component UI
+     */
     public static ComponentUI createUI(@SuppressWarnings("unused") JComponent c) {
         return sharedInstance;
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.plaf.ComponentUI#paint(java.awt.Graphics, javax.swing.JComponent)
+     */
     @Override
     public void paint(java.awt.Graphics g, javax.swing.JComponent c) {
         if (c.isOpaque()) {

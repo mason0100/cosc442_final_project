@@ -47,6 +47,7 @@ import net.sf.freecol.common.model.Turn;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays details of founding fathers in the Colopedia.
  */

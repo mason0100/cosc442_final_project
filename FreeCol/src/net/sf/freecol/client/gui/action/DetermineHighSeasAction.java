@@ -26,11 +26,13 @@ import net.sf.freecol.client.gui.panel.Parameters;
 import net.sf.freecol.common.model.Map;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for determining the high seas tiles.
  */
 public class DetermineHighSeasAction extends FreeColAction {
 
+    /** The Constant ID. */
     public static final String ID = "determineHighSeasAction";
 
 

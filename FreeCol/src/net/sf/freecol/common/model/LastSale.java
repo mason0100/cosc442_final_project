@@ -27,6 +27,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class contains the last sale a player has made, by Settlement
  * and GoodsType.
@@ -136,7 +137,10 @@ public final class LastSale extends FreeColObject {
 
     // Serialization
 
+    /** The Constant PRICE_TAG. */
     private static final String PRICE_TAG = "price";
+    
+    /** The Constant WHEN_TAG. */
     private static final String WHEN_TAG = "when";
 
 
@@ -188,7 +192,14 @@ public final class LastSale extends FreeColObject {
      *
      * @return "lastSale"
      */
+    static String lastSaleTag = "lastSale";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
-        return "lastSale";
+		return lastSaleTag;
     }
 }

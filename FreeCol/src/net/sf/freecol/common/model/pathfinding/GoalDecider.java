@@ -24,6 +24,7 @@ import net.sf.freecol.common.model.PathNode;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Used by {@link net.sf.freecol.common.model.Map#search} in order to
  * determine a goal.

@@ -27,6 +27,7 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.common.model.HistoryEvent;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the History Report.
  */

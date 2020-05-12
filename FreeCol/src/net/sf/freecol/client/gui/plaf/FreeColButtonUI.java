@@ -37,19 +37,30 @@ import javax.swing.plaf.metal.MetalButtonUI;
 import net.sf.freecol.client.gui.ImageLibrary;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Sets the default opaque attribute to <i>false</i> and
  * uses a 10% black shading on the {@link #paintButtonPressed}.
  */
 public class FreeColButtonUI extends MetalButtonUI {
 
+    /** The Constant sharedInstance. */
     private static final FreeColButtonUI sharedInstance = new FreeColButtonUI();
 
 
+    /**
+     * Creates the UI.
+     *
+     * @param c the c
+     * @return the component UI
+     */
     public static ComponentUI createUI(@SuppressWarnings("unused") JComponent c) {
         return sharedInstance;
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.plaf.basic.BasicButtonUI#installUI(javax.swing.JComponent)
+     */
     @Override
     public void installUI(JComponent c) {
         super.installUI(c);
@@ -57,6 +68,9 @@ public class FreeColButtonUI extends MetalButtonUI {
         c.setOpaque(false);
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.plaf.basic.BasicButtonUI#paint(java.awt.Graphics, javax.swing.JComponent)
+     */
     @Override
     public void paint(Graphics g, JComponent c) {
         LAFUtilities.setProperties(g, c);
@@ -77,6 +91,9 @@ public class FreeColButtonUI extends MetalButtonUI {
         }
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.plaf.metal.MetalButtonUI#paintButtonPressed(java.awt.Graphics, javax.swing.AbstractButton)
+     */
     @Override
     protected void paintButtonPressed(Graphics g, AbstractButton c) {
         if (c.isContentAreaFilled()) {

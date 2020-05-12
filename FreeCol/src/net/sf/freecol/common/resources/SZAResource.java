@@ -28,6 +28,7 @@ import java.util.logging.Logger;
 import net.sf.freecol.common.io.sza.SimpleZippedAnimation;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A <code>Resource</code> wrapping a <code>SimpleZippedAnimation</code>.
  * 
@@ -35,11 +36,18 @@ import net.sf.freecol.common.io.sza.SimpleZippedAnimation;
  * @see SimpleZippedAnimation
  */
 public class SZAResource extends Resource implements Resource.Preloadable {
+    
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(SZAResource.class.getName());
 
+    /** The scaled sz animations. */
     private final HashMap<Float, SimpleZippedAnimation> scaledSzAnimations
         = new HashMap<>();
+    
+    /** The sz animation. */
     private volatile SimpleZippedAnimation szAnimation = null;
+    
+    /** The loading lock. */
     private final Object loadingLock = new Object();
 
 

@@ -21,6 +21,7 @@ package net.sf.freecol.common.io.sza;
 
 import java.awt.Image;
 
+// TODO: Auto-generated Javadoc
 /**
  * An event describing that the given image should
  * be displayed.

@@ -25,11 +25,13 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for fortifying the active unit.
  */
 public class FortifyAction extends UnitAction {
 
+    /** The Constant ID. */
     public static final String ID = "fortifyAction";
 
 

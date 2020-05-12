@@ -53,29 +53,47 @@ import net.sf.freecol.common.model.Player;
 import net.sf.freecol.common.model.StringTemplate;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A dialog used to confirm the declaration of independence.
  */
 public class ConfirmDeclarationDialog extends FreeColDialog<List<String>>
     implements ActionListener, ItemListener {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(ConfirmDeclarationDialog.class.getName());
 
     /** A button for a colour.  Public for FlagTest. */
     public static class ColorButton extends JButton {
 
+        /** The color. */
         private Color color = null;
 
 
+        /**
+         * Instantiates a new color button.
+         *
+         * @param color the color
+         */
         public ColorButton(Color color) {
             setColor(color);
         }
 
+        /**
+         * Gets the color.
+         *
+         * @return the color
+         */
         public final Color getColor() {
             return color;
         }
 
+        /**
+         * Sets the color.
+         *
+         * @param color the new color
+         */
         public final void setColor(Color color) {
             this.color = color;
             setBackground(color);
@@ -92,12 +110,22 @@ public class ConfirmDeclarationDialog extends FreeColDialog<List<String>>
         }
     }
 
-    /** Simple renderer for Messages with a prefix. */
+    /**
+     *  Simple renderer for Messages with a prefix.
+     *
+     * @param <T> the generic type
+     */
     private static class EnumRenderer<T> extends FreeColComboBoxRenderer<T> {
 
+        /** The prefix. */
         private final String prefix;
 
 
+        /**
+         * Instantiates a new enum renderer.
+         *
+         * @param prefix the prefix
+         */
         public EnumRenderer(String prefix) {
             this.prefix = prefix;
         }
@@ -114,6 +142,7 @@ public class ConfirmDeclarationDialog extends FreeColDialog<List<String>>
 
 
     // based on the flag of Venezuela (Colombia and Ecuador are
+    /** The Constant SPANISH_FLAG. */
     // similar)
     public static final Flag SPANISH_FLAG
         = new Flag(Background.FESSES, Decoration.NONE, UnionPosition.MIDDLE)
@@ -125,6 +154,7 @@ public class ConfirmDeclarationDialog extends FreeColDialog<List<String>>
 
     // based on the flag of Brazil, particularly the Provisional
     // Flag of Republic of the United States of Brazil (November
+    /** The Constant PORTUGUESE_FLAG. */
     // 15–19, 1889)
     public static final Flag PORTUGUESE_FLAG
         = new Flag(Background.FESSES, Decoration.NONE, UnionPosition.CANTON)
@@ -133,6 +163,7 @@ public class ConfirmDeclarationDialog extends FreeColDialog<List<String>>
                              new Color(255, 204, 41));
 
     // based on the current flag of the United States and its
+    /** The Constant ENGLISH_FLAG. */
     // various predecessors
     public static final Flag ENGLISH_FLAG
         = new Flag(Background.FESSES, Decoration.NONE, UnionPosition.CANTON)
@@ -141,6 +172,7 @@ public class ConfirmDeclarationDialog extends FreeColDialog<List<String>>
                              Color.WHITE);
 
     // based on the flag of Louisiana in 1861 and other similar
+    /** The Constant FRENCH_FLAG. */
     // French colonial flags
     public static final Flag FRENCH_FLAG
         = new Flag(Background.PALES, Decoration.NONE, UnionPosition.LEFT)
@@ -150,6 +182,7 @@ public class ConfirmDeclarationDialog extends FreeColDialog<List<String>>
                              Color.WHITE,
                              new Color(0xed, 0x29, 0x39));
 
+    /** The Constant DUTCH_FLAG. */
     // Dutch flag
     public static final Flag DUTCH_FLAG
         = new Flag(Background.FESSES, Decoration.NONE, UnionPosition.TOP)
@@ -159,6 +192,7 @@ public class ConfirmDeclarationDialog extends FreeColDialog<List<String>>
                              Color.WHITE,
                              new Color(0x21, 0x46, 0x6b));
 
+    /** The Constant SWEDISH_FLAG. */
     // Swedish flag
     public static final Flag SWEDISH_FLAG
         = new Flag(Background.QUARTERLY, Decoration.SCANDINAVIAN_CROSS, UnionPosition.CANTON)
@@ -166,6 +200,7 @@ public class ConfirmDeclarationDialog extends FreeColDialog<List<String>>
         .setDecorationColor(new Color(0xFE, 0xCB, 0))
         .setBackgroundColors(new Color(0, 0x52, 0x93));
 
+    /** The Constant DANISH_FLAG. */
     // Danish flag
     public static final Flag DANISH_FLAG
         = new Flag(Background.QUARTERLY, Decoration.SCANDINAVIAN_CROSS, UnionPosition.CANTON)
@@ -173,6 +208,7 @@ public class ConfirmDeclarationDialog extends FreeColDialog<List<String>>
         .setDecorationColor(Color.WHITE)
         .setBackgroundColors(new Color(0xC6, 0x0C, 0x30));
 
+    /** The Constant RUSSIAN_FLAG. */
     // Russian flag
     public static final Flag RUSSIAN_FLAG
         = new Flag(Background.FESSES, Decoration.NONE, UnionPosition.MIDDLE)
@@ -354,6 +390,15 @@ public class ConfirmDeclarationDialog extends FreeColDialog<List<String>>
     }
 
 
+    /**
+     * Adds the combo box.
+     *
+     * @param <T> the generic type
+     * @param panel the panel
+     * @param box the box
+     * @param prefix the prefix
+     * @param value the value
+     */
     private <T> void addComboBox(JPanel panel, JComboBox<T> box,
                                  String prefix, T value) {
         box.setRenderer(new EnumRenderer<T>(prefix));
@@ -363,6 +408,9 @@ public class ConfirmDeclarationDialog extends FreeColDialog<List<String>>
         panel.add(box);
     }
 
+    /**
+     * Sets the colors.
+     */
     private void setColors() {
         this.flag.setUnionColor(this.unionColor.getColor());
         this.flag.setStarColor(this.starColor.getColor());
@@ -377,6 +425,12 @@ public class ConfirmDeclarationDialog extends FreeColDialog<List<String>>
         }
     }
 
+    /**
+     * Gets the numbers.
+     *
+     * @param count the count
+     * @return the numbers
+     */
     private String[] getNumbers(int count) {
         String[] result = new String[count];
         for (int index = 0; index < count; index++) {

@@ -26,6 +26,7 @@ import java.io.IOException;
 import net.sf.freecol.common.resources.ResourceMapping;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A Total Conversion (TC).  Rules are TCs.
  */

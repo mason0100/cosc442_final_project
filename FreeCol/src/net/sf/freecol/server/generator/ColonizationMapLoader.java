@@ -32,6 +32,7 @@ import net.sf.freecol.common.model.Map.Layer;
 import net.sf.freecol.common.model.Specification;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Just pass the name of a Colonization map file (with extension ".MP").
  *
@@ -65,11 +66,19 @@ import net.sf.freecol.common.model.Specification;
  */
 public class ColonizationMapLoader implements MapLoader {
 
+    /** The Constant WIDTH. */
     public static final int WIDTH = 0;
+    
+    /** The Constant HEIGHT. */
     public static final int HEIGHT = 2;
+    
+    /** The Constant OCEAN. */
     public static final int OCEAN = 25;
+    
+    /** The Constant HIGH_SEAS. */
     public static final int HIGH_SEAS = 26;
 
+    /** The Constant tiletypes. */
     private static final String[] tiletypes = {
         "tundra",
         "desert",
@@ -101,11 +110,20 @@ public class ColonizationMapLoader implements MapLoader {
     };
 
 
+    /** The Constant header. */
     private static final byte[] header = {
         58, 0, 72, 0, 4, 0
     };
+    
+    /** The layer 1. */
     private static byte[] layer1;
 
+    /**
+     * Instantiates a new colonization map loader.
+     *
+     * @param file the file
+     * @throws Exception the exception
+     */
     public ColonizationMapLoader(File file) throws Exception {
 
         RandomAccessFile reader = new RandomAccessFile(file, "r");
@@ -117,6 +135,9 @@ public class ColonizationMapLoader implements MapLoader {
 
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.generator.MapLoader#loadMap(net.sf.freecol.common.model.Game, net.sf.freecol.common.model.Map.Layer)
+     */
     @Override
     public Layer loadMap(Game game, Layer layer) {
         Specification spec = game.getSpecification();
@@ -168,6 +189,9 @@ public class ColonizationMapLoader implements MapLoader {
         return highestLayer;
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.generator.MapLoader#getHighestLayer()
+     */
     @Override
     public Layer getHighestLayer() {
         return Layer.RIVERS;

@@ -28,6 +28,7 @@ import net.sf.freecol.common.model.Stance;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A summary of an enemy nation.
  */
@@ -104,39 +105,84 @@ public class NationSummary extends FreeColObject {
     }
 
 
+    /**
+     * Gets the stance.
+     *
+     * @return the stance
+     */
     // Trivial accessors
     public Stance getStance() {
         return stance;
     }
 
+    /**
+     * Gets the number of settlements.
+     *
+     * @return the number of settlements
+     */
     public int getNumberOfSettlements() {
         return numberOfSettlements;
     }
 
+    /**
+     * Gets the number of units.
+     *
+     * @return the number of units
+     */
     public int getNumberOfUnits() {
         return numberOfUnits;
     }
 
+    /**
+     * Gets the military strength.
+     *
+     * @return the military strength
+     */
     public int getMilitaryStrength() {
         return militaryStrength;
     }
 
+    /**
+     * Gets the naval strength.
+     *
+     * @return the naval strength
+     */
     public int getNavalStrength() {
         return navalStrength;
     }
 
+    /**
+     * Gets the gold.
+     *
+     * @return the gold
+     */
     public int getGold() {
         return gold;
     }
 
+    /**
+     * Gets the founding fathers.
+     *
+     * @return the founding fathers
+     */
     public int getFoundingFathers() {
         return foundingFathers;
     }
 
+    /**
+     * Gets the so L.
+     *
+     * @return the so L
+     */
     public int getSoL() {
         return soL;
     }
 
+    /**
+     * Gets the tax.
+     *
+     * @return the tax
+     */
     public int getTax() {
         return tax;
     }
@@ -144,14 +190,31 @@ public class NationSummary extends FreeColObject {
 
     // Serialization
 
+    /** The Constant FOUNDING_FATHERS_TAG. */
     private static final String FOUNDING_FATHERS_TAG = "foundingFathers";
+    
+    /** The Constant GOLD_TAG. */
     private static final String GOLD_TAG = "gold";
+    
+    /** The Constant MILITARY_STRENGTH_TAG. */
     private static final String MILITARY_STRENGTH_TAG = "militaryStrength";
+    
+    /** The Constant NAVAL_STRENGTH_TAG. */
     private static final String NAVAL_STRENGTH_TAG = "navalStrength";
+    
+    /** The Constant NUMBER_OF_SETTLEMENTS_TAG. */
     private static final String NUMBER_OF_SETTLEMENTS_TAG = "numberOfSettlements";
+    
+    /** The Constant NUMBER_OF_UNITS_TAG. */
     private static final String NUMBER_OF_UNITS_TAG = "numberOfUnits";
+    
+    /** The Constant SOL_TAG. */
     private static final String SOL_TAG = "SoL";
+    
+    /** The Constant STANCE_TAG. */
     private static final String STANCE_TAG = "stance";
+    
+    /** The Constant TAX_TAG. */
     private static final String TAX_TAG = "tax";
 
 

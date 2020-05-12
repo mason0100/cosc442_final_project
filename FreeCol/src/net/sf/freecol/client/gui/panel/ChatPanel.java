@@ -29,6 +29,7 @@ import javax.swing.JTextField;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This is the panel that pops up when the user wants to send a
  * message to the other players. There is no close button because it
@@ -36,10 +37,13 @@ import net.sf.freecol.client.FreeColClient;
  */
 public final class ChatPanel extends FreeColPanel {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ChatPanel.class.getName());
 
+    /** The Constant CHAT. */
     public static final int CHAT = 1;
 
+    /** The field. */
     private final JTextField field;
 
 

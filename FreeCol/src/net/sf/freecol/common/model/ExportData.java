@@ -27,14 +27,20 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Objects of this class hold the export data for a particular type of
  * goods.
  */
 public class ExportData extends FreeColObject {
 
+    /** The Constant HIGH_LEVEL_DEFAULT. */
     private static final int HIGH_LEVEL_DEFAULT = 90;
+    
+    /** The Constant LOW_LEVEL_DEFAULT. */
     private static final int LOW_LEVEL_DEFAULT = 10;
+    
+    /** The Constant EXPORT_LEVEL_DEFAULT. */
     private static final int EXPORT_LEVEL_DEFAULT = 50;
 
     /** The high water mark for the goods type. */
@@ -140,7 +146,7 @@ public class ExportData extends FreeColObject {
     }
 
     /**
-     * Is the goods type of this export data to be exported?
+     * Is the goods type of this export data to be exported?.
      *
      * @return True if this goods type is to be exported.
      */
@@ -148,6 +154,11 @@ public class ExportData extends FreeColObject {
         return exported;
     }
 
+    /**
+     * Sets the exported.
+     *
+     * @param newExport the new exported
+     */
     public final void setExported(final boolean newExport) {
         this.exported = newExport;
     }
@@ -155,9 +166,16 @@ public class ExportData extends FreeColObject {
 
     // Serialization
 
+    /** The Constant EXPORTED_TAG. */
     private static final String EXPORTED_TAG = "exported";
+    
+    /** The Constant EXPORT_LEVEL_TAG. */
     private static final String EXPORT_LEVEL_TAG = "exportLevel";
+    
+    /** The Constant HIGH_LEVEL_TAG. */
     private static final String HIGH_LEVEL_TAG = "highLevel";
+    
+    /** The Constant LOW_LEVEL_TAG. */
     private static final String LOW_LEVEL_TAG = "lowLevel";
 
 
@@ -205,6 +223,12 @@ public class ExportData extends FreeColObject {
      * @return "exportData".
      */
     static String exportDataTag = "exportData";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
 		return exportDataTag;
     }

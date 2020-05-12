@@ -23,6 +23,7 @@ import net.sf.freecol.common.model.Map;
 import net.sf.freecol.common.util.LogBuilder;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Creates maps and sets the starting locations for the players.
  */
@@ -33,13 +34,15 @@ public interface MapGenerator {
      *
      * @param width The map width.
      * @param height The map height.
+     * @param lb the lb
      * @return A new empty <code>Map</code>.
      */
     public abstract Map createEmptyMap(int width, int height, LogBuilder lb);
 
     /**
-     * Creates the map with the current set options
+     * Creates the map with the current set options.
      *
+     * @param lb the lb
      * @return The new <code>Map</code>.
      */
     public abstract Map createMap(LogBuilder lb);

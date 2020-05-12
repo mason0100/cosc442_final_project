@@ -29,11 +29,13 @@ import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An object representing the high seas between continents.
  */
 public class HighSeas extends UnitLocation {
 
+    /** The Constant logger. */
     private static final Logger logger =  Logger.getLogger(HighSeas.class.getName());
 
     /** The destinations this HighSeas object connects. */
@@ -173,6 +175,7 @@ public class HighSeas extends UnitLocation {
 
     // Serialization
 
+    /** The Constant DESTINATION_TAG. */
     private static final String DESTINATION_TAG = "destination";
 
 
@@ -243,7 +246,14 @@ public class HighSeas extends UnitLocation {
      *
      * @return "highSeas"
      */
+    static String highSeasTag = "highSeas";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
-        return "highSeas";
+		return highSeasTag;
     }
 }

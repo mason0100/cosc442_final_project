@@ -42,24 +42,36 @@ import net.sf.freecol.common.i18n.Messages;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Display the current game statistics.
  */
 public final class StatisticsPanel extends FreeColPanel {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(StatisticsPanel.class.getName());
 
+    /** The Constant memoryKeys. */
     private static final String[] memoryKeys = {
         "freeMemory", "totalMemory", "maxMemory"
     };
 
+    /**
+     * The Class StatisticsModel.
+     */
     private static class StatisticsModel extends AbstractTableModel {
 
+        /** The Constant NAME_COLUMN. */
         private static final int NAME_COLUMN = 0;
+        
+        /** The Constant VALUE_COLUMN. */
         private static final int VALUE_COLUMN = 1;
+        
+        /** The column names. */
         private final String[] columnNames = { "name", "value" };
 
+        /** The data. */
         private Object[][] data = null;
 
 
@@ -73,6 +85,8 @@ public final class StatisticsPanel extends FreeColPanel {
          * table. This method should only be called to initialize the
          * data set. To modify or extend the data set use other
          * methods.
+         *
+         * @param statsData the stats data
          */
         public void setData(java.util.Map<String, String> statsData) {
             this.data = new Object[2][statsData.size()];
@@ -177,6 +191,13 @@ public final class StatisticsPanel extends FreeColPanel {
     }
 
 
+    /**
+     * Display stats message.
+     *
+     * @param title the title
+     * @param stats the stats
+     * @return the j panel
+     */
     private JPanel displayStatsMessage(String title,
                                        Map<String, String> stats) {
         JPanel panel = new JPanel();
@@ -204,6 +225,13 @@ public final class StatisticsPanel extends FreeColPanel {
         return panel;
     }
 
+    /**
+     * Creates the stats table.
+     *
+     * @param title the title
+     * @param data the data
+     * @return the j panel
+     */
     private JPanel createStatsTable(String title, Map<String, String> data) {
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());

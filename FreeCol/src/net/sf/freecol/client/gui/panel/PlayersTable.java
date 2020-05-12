@@ -65,6 +65,7 @@ import net.sf.freecol.common.model.Specification;
 import net.sf.freecol.common.model.StringTemplate;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The table of players.
  */
@@ -75,6 +76,7 @@ public final class PlayersTable extends JTable {
      */
     private class AdvantageCellEditor extends DefaultCellEditor {
 
+        /** The box. */
         private final JComboBox<EuropeanNationType> box;
 
         /**
@@ -112,6 +114,9 @@ public final class PlayersTable extends JTable {
         }
     }
 
+    /**
+     * The Class AdvantageCellRenderer.
+     */
     private class AdvantageCellRenderer extends JLabel
         implements TableCellRenderer {
 
@@ -166,9 +171,13 @@ public final class PlayersTable extends JTable {
         }
     }
 
+    /**
+     * The Class AvailableCellRenderer.
+     */
     private static class AvailableCellRenderer extends JLabel
         implements TableCellRenderer {
 
+        /** The box. */
         private final JComboBox<NationState> box
             = new JComboBox<>(NationState.values());
 
@@ -198,23 +207,35 @@ public final class PlayersTable extends JTable {
         }
     }
 
+    /**
+     * The Class AvailableCellEditor.
+     */
     private final class AvailableCellEditor extends AbstractCellEditor
         implements TableCellEditor {
 
+        /** The ai state box. */
         private final JComboBox<NationState> aiStateBox
             = new JComboBox<>(new NationState[] {
                     NationState.AI_ONLY,
                     NationState.NOT_AVAILABLE
                 });
+        
+        /** The all state box. */
         private final JComboBox<NationState> allStateBox
             = new JComboBox<>(NationState.values());
+        
+        /** The active box. */
         private JComboBox activeBox;
 
+        /** The listener. */
         private final ActionListener listener = (ActionEvent ae) -> {
             stopCellEditing();
         };
 
 
+        /**
+         * Instantiates a new available cell editor.
+         */
         public AvailableCellEditor() {
             aiStateBox.setRenderer(new NationStateRenderer());
             aiStateBox.addActionListener(listener);
@@ -239,24 +260,49 @@ public final class PlayersTable extends JTable {
             return activeBox;
         }
 
+        /* (non-Javadoc)
+         * @see javax.swing.CellEditor#getCellEditorValue()
+         */
         @Override
         public Object getCellEditorValue() {
             return activeBox.getSelectedItem();
         }
     }
 
+    /**
+     * The listener interface for receiving header events.
+     * The class that is interested in processing a header
+     * event implements this interface, and the object created
+     * with that class is registered with a component using the
+     * component's <code>addHeaderListener<code> method. When
+     * the header event occurs, that object's appropriate
+     * method is invoked.
+     *
+     * @see HeaderEvent
+     */
     private static class HeaderListener extends MouseAdapter {
 
+        /** The header. */
         private final JTableHeader header;
 
+        /** The renderer. */
         private final HeaderRenderer renderer;
 
 
+        /**
+         * Instantiates a new header listener.
+         *
+         * @param header the header
+         * @param renderer the renderer
+         */
         public HeaderListener(JTableHeader header, HeaderRenderer renderer) {
             this.header = header;
             this.renderer = renderer;
         }
 
+        /* (non-Javadoc)
+         * @see java.awt.event.MouseAdapter#mousePressed(java.awt.event.MouseEvent)
+         */
         @Override
         public void mousePressed(MouseEvent e) {
             int col = header.columnAtPoint(e.getPoint());
@@ -264,6 +310,9 @@ public final class PlayersTable extends JTable {
             header.repaint();
         }
 
+        /* (non-Javadoc)
+         * @see java.awt.event.MouseAdapter#mouseReleased(java.awt.event.MouseEvent)
+         */
         @Override
         public void mouseReleased(MouseEvent e) {
             renderer.setPressedColumn(HeaderRenderer.NO_COLUMN);
@@ -271,12 +320,25 @@ public final class PlayersTable extends JTable {
         }
     }
 
+    /**
+     * The Class HeaderRenderer.
+     */
     private static class HeaderRenderer implements TableCellRenderer {
 
+        /** The Constant NO_COLUMN. */
         private static final int NO_COLUMN = -1;
+        
+        /** The pressed column. */
         private int pressedColumn = NO_COLUMN;
+        
+        /** The components. */
         private final Component[] components;
 
+        /**
+         * Instantiates a new header renderer.
+         *
+         * @param components the components
+         */
         public HeaderRenderer(Component... components) {
             this.components = components;
         }
@@ -299,11 +361,19 @@ public final class PlayersTable extends JTable {
             return components[column];
         }
 
+        /**
+         * Sets the pressed column.
+         *
+         * @param column the new pressed column
+         */
         public void setPressedColumn(int column) {
             pressedColumn = column;
         }
     }
 
+    /**
+     * The Class NationCellRenderer.
+     */
     private class NationCellRenderer extends JLabel
         implements TableCellRenderer {
 
@@ -325,6 +395,9 @@ public final class PlayersTable extends JTable {
         }
     }
 
+    /**
+     * The Class NationStateRenderer.
+     */
     private static class NationStateRenderer extends JLabel
         implements ListCellRenderer<NationState> {
 
@@ -344,12 +417,21 @@ public final class PlayersTable extends JTable {
         }
     }
 
+    /**
+     * The Class PlayerCellRenderer.
+     */
     private static class PlayerCellRenderer implements TableCellRenderer {
 
+        /** The label. */
         private final JLabel label = new JLabel();
+        
+        /** The button. */
         private final JButton button = Utility.localizedButton("select");
 
 
+        /**
+         * Instantiates a new player cell renderer.
+         */
         public PlayerCellRenderer() {
             label.setHorizontalAlignment(JLabel.CENTER);
             Utility.padBorder(button, 5, 10, 5, 10);
@@ -385,12 +467,19 @@ public final class PlayersTable extends JTable {
         }
     }
 
+    /**
+     * The Class PlayerCellEditor.
+     */
     private final class PlayerCellEditor extends AbstractCellEditor
         implements TableCellEditor {
 
+        /** The button. */
         private final JButton button = Utility.localizedButton("select");
 
 
+        /**
+         * Instantiates a new player cell editor.
+         */
         public PlayerCellEditor() {
             button.addActionListener((ActionEvent ae) -> {
                     fireEditingStopped();
@@ -407,6 +496,9 @@ public final class PlayersTable extends JTable {
             return button;
         }
 
+        /* (non-Javadoc)
+         * @see javax.swing.CellEditor#getCellEditorValue()
+         */
         @Override
         public Object getCellEditorValue() {
             return Boolean.TRUE;
@@ -418,14 +510,19 @@ public final class PlayersTable extends JTable {
      */
     private static class PlayersTableModel extends AbstractTableModel {
 
+        /** The pre game controller. */
         private final PreGameController preGameController;
 
+        /** The nation options. */
         private final NationOptions nationOptions;
 
+        /** The this player. */
         private final Player thisPlayer;
 
+        /** The nations. */
         private final List<Nation> nations;
 
+        /** The players. */
         private final Map<Nation, Player> players;
 
 
@@ -456,6 +553,9 @@ public final class PlayersTable extends JTable {
             players.put(thisPlayer.getNation(), thisPlayer);
         }
 
+        /**
+         * Update.
+         */
         public void update() {
             for (Nation nation : nations) {
                 players.put(nation, null);
@@ -551,7 +651,7 @@ public final class PlayersTable extends JTable {
         }
 
         /**
-         * Is a cell editable?
+         * Is a cell editable?.
          *
          * @param row The specified row.
          * @param column The specified column.
@@ -626,12 +726,22 @@ public final class PlayersTable extends JTable {
     }
 
 
+    /** The Constant NATION_COLUMN. */
     public static final int NATION_COLUMN = 0;
+    
+    /** The Constant AVAILABILITY_COLUMN. */
     public static final int AVAILABILITY_COLUMN = 1;
+    
+    /** The Constant ADVANTAGE_COLUMN. */
     public static final int ADVANTAGE_COLUMN = 2;
+    
+    /** The Constant COLOR_COLUMN. */
     public static final int COLOR_COLUMN = 3;
+    
+    /** The Constant PLAYER_COLUMN. */
     public static final int PLAYER_COLUMN = 4;
 
+    /** The Constant columnNames. */
     private static final String[] columnNames = {
         Messages.message("nation"),
         Messages.message("playersTable.availability"),
@@ -722,6 +832,9 @@ public final class PlayersTable extends JTable {
         playerColumn.setCellRenderer(new PlayerCellRenderer());
     }
 
+    /**
+     * Update.
+     */
     public void update() {
         ((PlayersTableModel)getModel()).update();
     }

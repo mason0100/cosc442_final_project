@@ -20,12 +20,16 @@
 package net.sf.freecol.common.i18n;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Number optimized for languages that distinguish the categories one
  * and other.
  */
 public class PluralNumberRule extends Number {
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.common.i18n.Number#getCategory(double)
+     */
     @Override
     public Category getCategory(double input) {
         if (input == 1) {

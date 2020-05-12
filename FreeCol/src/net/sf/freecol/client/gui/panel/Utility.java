@@ -58,6 +58,7 @@ import net.sf.freecol.common.model.Unit;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Static utilities for panels and dialogs.
  */
@@ -81,48 +82,59 @@ public final class Utility {
     public static final Border TRIVIAL_LINE_BORDER
         = BorderFactory.createLineBorder(BORDER_COLOR);
 
+    /** The Constant BEVEL_BORDER. */
     public static final Border BEVEL_BORDER
         = BorderFactory.createBevelBorder(BevelBorder.LOWERED);
 
+    /** The Constant COLOR_CELL_BORDER. */
     public static final Border COLOR_CELL_BORDER = BorderFactory
         .createCompoundBorder(
             BorderFactory.createMatteBorder(5, 10, 5, 10,
                 new ImageIcon(ResourceManager.getImage("image.background.ColorCellRenderer"))),
             BorderFactory.createLineBorder(BORDER_COLOR));
 
+    /** The Constant DIALOG_BORDER. */
     public static final Border DIALOG_BORDER = BorderFactory
         .createCompoundBorder(TRIVIAL_LINE_BORDER, blankBorder(10, 20, 10, 20));
 
+    /** The Constant ETCHED_BORDER. */
     public static final Border ETCHED_BORDER
         = BorderFactory.createEtchedBorder();
 
+    /** The Constant PRODUCTION_BORDER. */
     public static final Border PRODUCTION_BORDER = BorderFactory
         .createCompoundBorder(BorderFactory.createMatteBorder(1, 0, 0, 0,
                                                               BORDER_COLOR),
                               blankBorder(2, 2, 2, 2));
 
+    /** The Constant PROGRESS_BORDER. */
     public static final Border PROGRESS_BORDER = BorderFactory
         .createLineBorder(new Color(122, 109, 82));
 
+    /** The Constant SIMPLE_LINE_BORDER. */
     public static final Border SIMPLE_LINE_BORDER = BorderFactory
         .createCompoundBorder(TRIVIAL_LINE_BORDER, blankBorder(5, 5, 5, 5));
 
+    /** The Constant TOPCELLBORDER. */
     // The borders to use for table cells
     public static final Border TOPCELLBORDER
         = BorderFactory.createCompoundBorder(
             BorderFactory.createMatteBorder(1, 0, 1, 1, BORDER_COLOR),
             BorderFactory.createEmptyBorder(2, 2, 2, 2));
 
+    /** The Constant CELLBORDER. */
     public static final Border CELLBORDER
         = BorderFactory.createCompoundBorder(
             BorderFactory.createMatteBorder(0, 0, 1, 1, BORDER_COLOR),
             BorderFactory.createEmptyBorder(2, 2, 2, 2));
 
+    /** The Constant LEFTCELLBORDER. */
     public static final Border LEFTCELLBORDER
         = BorderFactory.createCompoundBorder(
             BorderFactory.createMatteBorder(0, 1, 1, 1, BORDER_COLOR),
             BorderFactory.createEmptyBorder(2, 2, 2, 2));
 
+    /** The Constant TOPLEFTCELLBORDER. */
     public static final Border TOPLEFTCELLBORDER
         = BorderFactory.createCompoundBorder(
             BorderFactory.createMatteBorder(1, 1, 1, 1, BORDER_COLOR),
@@ -138,6 +150,11 @@ public final class Utility {
     /** A style context to use for panels and dialogs. */
     public static StyleContext styleContent = null;
 
+    /**
+     * Inits the style context.
+     *
+     * @param font the font
+     */
     public static void initStyleContext(Font font) {
         Style defaultStyle = StyleContext.getDefaultStyleContext()
             .getStyle(StyleContext.DEFAULT_STYLE);
@@ -310,6 +327,15 @@ public final class Utility {
         return BorderFactory.createEmptyBorder(top, left, bottom, right);
     }
 
+    /**
+     * Pad border.
+     *
+     * @param component the component
+     * @param top the top
+     * @param left the left
+     * @param bottom the bottom
+     * @param right the right
+     */
     public static void padBorder(JComponent component, int top, int left,
                                  int bottom, int right) {
         component.setBorder(BorderFactory.createCompoundBorder(
@@ -427,6 +453,14 @@ public final class Utility {
         return header;
     }
 
+    /**
+     * Localized header label.
+     *
+     * @param template the template
+     * @param alignment the alignment
+     * @param size the size
+     * @return the j label
+     */
     public static JLabel localizedHeaderLabel(StringTemplate template,
                                               int alignment,
                                               FontLibrary.FontSize size) {
@@ -438,6 +472,13 @@ public final class Utility {
         return header;
     }
 
+    /**
+     * Localized header label.
+     *
+     * @param named the named
+     * @param size the size
+     * @return the j label
+     */
     public static JLabel localizedHeaderLabel(Named named,
                                               FontLibrary.FontSize size) {
         return localizedHeaderLabel(named.getNameKey(),

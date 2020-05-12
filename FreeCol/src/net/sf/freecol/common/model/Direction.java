@@ -29,41 +29,68 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import static net.sf.freecol.common.util.RandomUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The directions a Unit can move to. Includes deltas for moving
  * to adjacent squares, which are required due to the isometric
  * map. Starting north and going clockwise.
 */
 public enum Direction implements Named {
+    
+    /** The n. */
     N  ( 0, -2,  0, -2),
+    
+    /** The ne. */
     NE ( 1, -1,  0, -1),
+    
+    /** The e. */
     E  ( 1,  0,  1,  0),
+    
+    /** The se. */
     SE ( 1,  1,  0,  1),
+    
+    /** The s. */
     S  ( 0,  2,  0,  2),
+    
+    /** The sw. */
     SW ( 0,  1, -1,  1),
+    
+    /** The w. */
     W  (-1,  0, -1,  0),
+    
+    /** The nw. */
     NW ( 0, -1, -1, -1);
 
+    /** The Constant NUMBER_OF_DIRECTIONS. */
     public static final int NUMBER_OF_DIRECTIONS = values().length;
 
-    protected static final List<Direction> allDirections
+    /** The Constant allDirections. */
+    public static final List<Direction> allDirections
         = makeUnmodifiableList(Direction.N, Direction.NE,
                                Direction.E, Direction.SE,
                                Direction.S, Direction.SW,
                                Direction.W, Direction.NW);
 
-    protected static final List<Direction> longSides
+    /** The Constant longSides. */
+    public static final List<Direction> longSides
         = makeUnmodifiableList(Direction.NE, Direction.SE,
                                Direction.SW, Direction.NW);
 
-    protected static final List<Direction> corners
+    /** The Constant corners. */
+    public static final List<Direction> corners
         = makeUnmodifiableList(Direction.N, Direction.E,
                                Direction.S, Direction.W);
     
     /** The direction increments. */
     private final int oddDX;
+    
+    /** The odd DY. */
     private final int oddDY;
+    
+    /** The even DX. */
     private final int evenDX;
+    
+    /** The even DY. */
     private final int evenDY;
 
 

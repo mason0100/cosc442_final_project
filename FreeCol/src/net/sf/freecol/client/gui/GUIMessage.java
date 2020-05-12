@@ -24,17 +24,24 @@ import java.util.Date;
 import java.util.logging.Logger;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents a message that can be displayed in the GUI.  It has
  * message data and a Color.
  */
 public final class GUIMessage {
     
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(GUIMessage.class.getName());
     
+    /** The message. */
     private final String    message;
+    
+    /** The color. */
     private final Color     color;
+    
+    /** The creation time. */
     private final Date      creationTime;
     
 

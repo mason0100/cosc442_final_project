@@ -49,6 +49,7 @@ import net.sf.freecol.common.model.StringTemplate.TemplateType;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents a collection of messages in a particular locale.
  *
@@ -88,17 +89,31 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
  */
 public class Messages {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Messages.class.getName());
 
+    /** The Constant MESSAGE_FILE_PREFIX. */
     public static final String MESSAGE_FILE_PREFIX = "FreeColMessages";
+    
+    /** The Constant MOD_MESSAGE_FILE_PREFIX. */
     public static final String MOD_MESSAGE_FILE_PREFIX = "ModMessages";
+    
+    /** The Constant MESSAGE_FILE_SUFFIX. */
     public static final String MESSAGE_FILE_SUFFIX = ".properties";
 
+    /** The Constant DESCRIPTION_SUFFIX. */
     public static final String DESCRIPTION_SUFFIX = ".description";
+    
+    /** The Constant SHORT_DESCRIPTION_SUFFIX. */
     public static final String SHORT_DESCRIPTION_SUFFIX = ".shortDescription";
+    
+    /** The Constant NAME_SUFFIX. */
     public static final String NAME_SUFFIX = ".name";
+    
+    /** The Constant RULER_SUFFIX. */
     public static final String RULER_SUFFIX = ".ruler";
 
+    /** The Constant DESCRIPTION_KEYS. */
     private static final String[] DESCRIPTION_KEYS = {
         DESCRIPTION_SUFFIX, SHORT_DESCRIPTION_SUFFIX, NAME_SUFFIX
     };
@@ -214,11 +229,11 @@ public class Messages {
 
     /**
      * Loads messages from a resource file into the current message bundle.
-     *
+     * 
      * Public for the test suite.
      *
      * @param is The <code>InputStream</code> to read from.
-     * @throws IOException
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     public static void loadMessages(InputStream is) throws IOException {
         InputStreamReader inputReader;
@@ -333,62 +348,140 @@ public class Messages {
 
     // Shortcut message accessors
 
+    /**
+     * Name key.
+     *
+     * @param id the id
+     * @return the string
+     */
     public static String nameKey(String id) {
         return id + NAME_SUFFIX;
     }
 
+    /**
+     * Name key.
+     *
+     * @param object the object
+     * @return the string
+     */
     public static String nameKey(ObjectWithId object) {
         return nameKey(object.getId());
     }
 
+    /**
+     * Gets the name.
+     *
+     * @param id the id
+     * @return the name
+     */
     public static String getName(String id) {
         return message(nameKey(id));
     }
 
+    /**
+     * Gets the name.
+     *
+     * @param named the named
+     * @return the name
+     */
     public static String getName(Named named) {
         return message(named.getNameKey());
     }
 
+    /**
+     * Description key.
+     *
+     * @param id the id
+     * @return the string
+     */
     public static String descriptionKey(String id) {
         return id + DESCRIPTION_SUFFIX;
     }
 
+    /**
+     * Description key.
+     *
+     * @param object the object
+     * @return the string
+     */
     public static String descriptionKey(ObjectWithId object) {
         return descriptionKey(object.getId());
     }
 
+    /**
+     * Gets the description.
+     *
+     * @param id the id
+     * @return the description
+     */
     public static String getDescription(String id) {
         return message(descriptionKey(id));
     }
 
+    /**
+     * Gets the description.
+     *
+     * @param object the object
+     * @return the description
+     */
     public static String getDescription(ObjectWithId object) {
         return message(descriptionKey(object));
     }
 
 
+    /**
+     * Short description key.
+     *
+     * @param id the id
+     * @return the string
+     */
     public static String shortDescriptionKey(String id) {
         return id + SHORT_DESCRIPTION_SUFFIX;
     }
 
+    /**
+     * Gets the short description.
+     *
+     * @param id the id
+     * @return the short description
+     */
     public static String getShortDescription(String id) {
         return message(shortDescriptionKey(id));
     }
 
+    /**
+     * Gets the short description.
+     *
+     * @param object the object
+     * @return the short description
+     */
     public static String getShortDescription(ObjectWithId object) {
         return getShortDescription(object.getId());
     }
 
 
+    /**
+     * Ruler key.
+     *
+     * @param id the id
+     * @return the string
+     */
     public static String rulerKey(String id) {
         return id + RULER_SUFFIX;
     }
 
+    /**
+     * Gets the ruler name.
+     *
+     * @param id the id
+     * @return the ruler name
+     */
     public static String getRulerName(String id) {
         return message(rulerKey(id));
     }
 
     /**
-     * Does the message bundle contain the given key?
+     * Does the message bundle contain the given key?.
      *
      * @param key The key <code>String</code> to check.
      * @return True if there is a message present with the given key.
@@ -414,10 +507,22 @@ public class Messages {
         }
     }
 
+    /**
+     * Gets the best description.
+     *
+     * @param object the object
+     * @return the best description
+     */
     public static String getBestDescription(ObjectWithId object) {
         return getBestDescription(object.getId());
     }
 
+    /**
+     * Gets the best description.
+     *
+     * @param id the id
+     * @return the best description
+     */
     public static String getBestDescription(String id) {
         String key = find(map(DESCRIPTION_KEYS, s -> id + s),
             k -> containsKey(k), null);

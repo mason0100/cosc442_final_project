@@ -81,6 +81,7 @@ import net.sf.freecol.server.model.ServerPlayer;
 import net.sf.freecol.server.model.ServerUnit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Utilities for in game debug support.
  *
@@ -98,6 +99,7 @@ import net.sf.freecol.server.model.ServerUnit;
  */
 public class DebugUtils {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(DebugUtils.class.getName());
 
 

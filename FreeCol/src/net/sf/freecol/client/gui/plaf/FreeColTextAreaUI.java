@@ -28,29 +28,48 @@ import javax.swing.plaf.basic.BasicTextAreaUI;
 import net.sf.freecol.client.gui.ImageLibrary;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Provides a tiled background image "image.background.FreeColTextArea" to
  * text areas.
  */
 public class FreeColTextAreaUI extends BasicTextAreaUI {
 
+    /** The c. */
     private final JComponent c;
 
 
+    /**
+     * Instantiates a new free col text area UI.
+     *
+     * @param c the c
+     */
     public FreeColTextAreaUI(JComponent c) {
         this.c = c;
     }
 
+    /**
+     * Creates the UI.
+     *
+     * @param c the c
+     * @return the component UI
+     */
     public static ComponentUI createUI(JComponent c) {
         return new FreeColTextAreaUI(c);
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.plaf.basic.BasicTextUI#paintSafely(java.awt.Graphics)
+     */
     @Override
     public void paintSafely(Graphics g) {
         LAFUtilities.setProperties(g, c);
         super.paintSafely(g);
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.plaf.basic.BasicTextUI#paintBackground(java.awt.Graphics)
+     */
     @Override
     public void paintBackground(java.awt.Graphics g) {
         JComponent cComponent = getComponent();

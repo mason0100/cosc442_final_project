@@ -49,11 +49,13 @@ import net.sf.freecol.common.model.ProductionInfo;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel represents a single building in a Colony.
  */
 public class BuildingPanel extends MigPanel implements PropertyChangeListener {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(BuildingPanel.class.getName());
 
     /** The enclosing client. */

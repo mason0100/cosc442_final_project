@@ -28,17 +28,31 @@ import net.sf.freecol.common.model.Unit;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Class for the animation of units attacks.
  */
 final class UnitAttackAnimation {
 
+    /** The free col client. */
     private final FreeColClient freeColClient;
+    
+    /** The attacker. */
     private final Unit attacker;
+    
+    /** The defender. */
     private final Unit defender;
+    
+    /** The attacker tile. */
     private final Tile attackerTile;
+    
+    /** The defender tile. */
     private final Tile defenderTile;
+    
+    /** The success. */
     private final boolean success;
+    
+    /** The mirror. */
     private boolean mirror = false;
 
     /**
@@ -63,6 +77,14 @@ final class UnitAttackAnimation {
         this.success = success;
     }
 
+    /**
+     * Gets the animation.
+     *
+     * @param startStr the start str
+     * @param scale the scale
+     * @param direction the direction
+     * @return the animation
+     */
     private SimpleZippedAnimation getAnimation(String startStr,
                                                float scale,
                                                Direction direction) {

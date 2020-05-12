@@ -32,11 +32,13 @@ import net.sf.freecol.common.model.Specification;
 import net.sf.freecol.common.util.Utils;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents an option that can be an arbitrary string.
  */
 public class ModOption extends AbstractOption<FreeColModFile> {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(ModOption.class.getName());
 

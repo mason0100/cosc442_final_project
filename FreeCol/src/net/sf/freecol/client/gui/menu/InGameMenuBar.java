@@ -40,6 +40,7 @@ import net.sf.freecol.common.model.StringTemplate;
 import net.sf.freecol.common.model.TileImprovementType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This is the menu bar used in-game.
  *
@@ -52,6 +53,7 @@ import net.sf.freecol.common.model.TileImprovementType;
  */
 public class InGameMenuBar extends FreeColMenuBar {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(InGameMenuBar.class.getName());
     
@@ -109,6 +111,9 @@ public class InGameMenuBar extends FreeColMenuBar {
         update();
     }
 
+    /**
+     * Builds the game menu.
+     */
     private void buildGameMenu() {
         // --> Game
         JMenu menu = Utility.localizedMenu("menuBar.game");
@@ -140,6 +145,9 @@ public class InGameMenuBar extends FreeColMenuBar {
         add(menu);
     }
 
+    /**
+     * Builds the view menu.
+     */
     private void buildViewMenu() {
         // --> View
         JMenu menu = Utility.localizedMenu("menuBar.view");
@@ -174,6 +182,9 @@ public class InGameMenuBar extends FreeColMenuBar {
         add(menu);
     }
 
+    /**
+     * Builds the orders menu.
+     */
     private void buildOrdersMenu() {
         // --> Orders
         JMenu menu = Utility.localizedMenu("menuBar.orders");
@@ -220,6 +231,9 @@ public class InGameMenuBar extends FreeColMenuBar {
         add(menu);
     }
 
+    /**
+     * Builds the report menu.
+     */
     private void buildReportMenu() {
         // --> Report
 
@@ -254,6 +268,8 @@ public class InGameMenuBar extends FreeColMenuBar {
 
     /**
      * Paints information about gold, tax and year.
+     *
+     * @param g the g
      */
     @Override
     public void paintComponent(Graphics g) {

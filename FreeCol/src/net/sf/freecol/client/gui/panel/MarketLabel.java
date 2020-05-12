@@ -33,6 +33,7 @@ import net.sf.freecol.common.model.Market;
 import net.sf.freecol.common.model.Player;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This label represents a cargo type on the European market.
  */
@@ -46,6 +47,7 @@ public final class MarketLabel extends AbstractGoodsLabel
     /**
      * Initializes this JLabel with the given goods type.
      *
+     * @param lib the lib
      * @param type The <code>GoodsType</code> to represent.
      * @param market The <code>Market</code> in which to trade the goods.
      */
@@ -113,7 +115,7 @@ public final class MarketLabel extends AbstractGoodsLabel
     // Implement Draggable
 
     /**
-     * Is this label on a carrier?  No, it is in a market!
+     * Is this label on a carrier?  No, it is in a market!.
      *
      * @return False.
      */

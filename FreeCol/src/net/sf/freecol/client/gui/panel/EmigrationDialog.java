@@ -37,6 +37,7 @@ import net.sf.freecol.common.model.LostCityRumour;
 import net.sf.freecol.common.model.UnitType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The panel that allows a user to choose which unit will emigrate from Europe.
  */

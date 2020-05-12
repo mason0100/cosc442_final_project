@@ -35,28 +35,39 @@ import net.sf.freecol.common.util.LogBuilder;
 import net.sf.freecol.server.FreeColServer;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * High-level debug handling.
  */
 public class FreeColDebugger {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FreeColDebugger.class.getName());
 
     /** The debug modes, any of which may be active. */
     public static enum DebugMode {
+        
+        /** The comms. */
         COMMS, // Trace print full c-s communications, and verbose
-               // (non-i18n) server errors.
-        DESYNC,// Check frequently for desynchronization
+               /** The desync. */
+ // (non-i18n) server errors.
+        DESYNC,
+/** The menus. */
+// Check frequently for desynchronization
         MENUS, // Enable the Debug menu, the extra commands in
                // ColonyPanel and TilePopup, the goods-in-market
                // tooltip in MarketLabel, the extra modifiers on the
                // BuildingToolTip, the region and Mission
                // displays in MapViewer, taking over AI players,
-               // and turn skipping.
+               /** The init. */
+ // and turn skipping.
         INIT,  // An initial colony is made, and goods added to all
-               // native settlements.
+               /** The paths. */
+  // native settlements.
         PATHS  // Display more information on goto paths
     }
+    
+    /** The debug mode. */
     private static int debugMode = 0;
 
     /**
@@ -69,27 +80,24 @@ public class FreeColDebugger {
      */
     private static String debugRunSave = null;
 
-    /**
-     * Stores the standard fog of war setting when revealing all the map
-     * Allows restore to previous state when re-enabling normal vision
-     */
+    /** Stores the standard fog of war setting when revealing all the map Allows restore to previous state when re-enabling normal vision. */
     private static boolean normalGameFogOfWar = false;
 
-    /** Display map coordinates? */
+    /**  Display map coordinates?. */
     private static boolean displayCoordinates = false;
 
-    /** Display tile values as a colony site for this player? */
+    /**  Display tile values as a colony site for this player?. */
     private static Player displayColonyValuePlayer = null;
 
-    /** Show the mission for an AI unit? */
+    /**  Show the mission for an AI unit?. */
     private static boolean showMission = false;
 
-    /** Show full mission information? */
+    /**  Show full mission information?. */
     private static boolean showMissionInfo = false;
 
 
     /**
-     * Is a debug mode enabled in this game?
+     * Is a debug mode enabled in this game?.
      *
      * @return True if any debug mode is enabled.
      */
@@ -98,7 +106,7 @@ public class FreeColDebugger {
     }
 
     /**
-     * Is a particular debug mode enabled in this game?
+     * Is a particular debug mode enabled in this game?.
      *
      * @param mode The <code>DebugMode</code> to test.
      * @return True if the specified mode is enabled.
@@ -108,7 +116,7 @@ public class FreeColDebugger {
     }
 
     /**
-     * Sets the debug mode
+     * Sets the debug mode.
      *
      * @param mode The new debug mode.
      */
@@ -141,6 +149,7 @@ public class FreeColDebugger {
      * Configures the debug modes.
      *
      * @param optionValue The command line option.
+     * @return true, if successful
      */
     public static boolean setDebugModes(String optionValue) {
         if (optionValue == null) return false;
@@ -288,7 +297,7 @@ public class FreeColDebugger {
     }
 
     /**
-     * Should the map viewer display tile coordinates?
+     * Should the map viewer display tile coordinates?.
      *
      * @return True if the map viewer should display coordinates.
      */
@@ -306,7 +315,7 @@ public class FreeColDebugger {
     }
 
     /**
-     * Should the map viewer display colony values for a player?
+     * Should the map viewer display colony values for a player?.
      *
      * @return The <code>Player</code> to display colony values for,
      *     or null if not to display.
@@ -325,7 +334,7 @@ public class FreeColDebugger {
     }
 
     /**
-     * Should the map viewer show AI missions?
+     * Should the map viewer show AI missions?.
      *
      * @return True if the map viewer should show AI missions?
      */
@@ -343,7 +352,7 @@ public class FreeColDebugger {
     }
 
     /**
-     * Should the map viewer show full AI mission info?
+     * Should the map viewer show full AI mission info?.
      *
      * @return True if the map viewer should show full AI mission info.
      */

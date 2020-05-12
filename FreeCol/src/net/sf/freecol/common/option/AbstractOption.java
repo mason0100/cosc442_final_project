@@ -28,6 +28,7 @@ import net.sf.freecol.common.model.FreeColObject;
 import net.sf.freecol.common.model.Specification;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The super class of all options.  GUI components making use of this
  * class can refer to its name and shortDescription properties.  The
@@ -35,10 +36,13 @@ import net.sf.freecol.common.model.Specification;
  * option group (if any), followed by a "."  unless the option group
  * is null, followed by the identifier of the option object, followed
  * by a ".", followed by "name" or "shortDescription".
+ *
+ * @param <T> the generic type
  */
 public abstract class AbstractOption<T> extends FreeColObject
     implements Option<T> {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(AbstractOption.class.getName());
 
     /** The option group prefix. */
@@ -178,7 +182,10 @@ public abstract class AbstractOption<T> extends FreeColObject
 
     // Serialization
 
+    /** The Constant ACTION_TAG. */
     protected static final String ACTION_TAG = "action";
+    
+    /** The Constant DEFAULT_VALUE_TAG. */
     protected static final String DEFAULT_VALUE_TAG = "defaultValue";
 
 
@@ -212,6 +219,7 @@ public abstract class AbstractOption<T> extends FreeColObject
      *
      * @param xr The <code>FreeColXMLReader</code> to read from.
      * @return An option.
+     * @throws XMLStreamException the XML stream exception
      */
     protected AbstractOption readOption(FreeColXMLReader xr) throws XMLStreamException {
         final Specification spec = getSpecification();

@@ -20,12 +20,16 @@
 package net.sf.freecol.common.i18n;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Number optimized for languages that do not distinguish any number
  * categories. The category returned is always other.
  */
 public class OtherNumberRule extends Number {
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.common.i18n.Number#getCategory(double)
+     */
     @Override
     public Category getCategory(double input) {
         return Category.OTHER;

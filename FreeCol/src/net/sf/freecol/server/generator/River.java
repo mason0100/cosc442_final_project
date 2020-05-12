@@ -35,13 +35,16 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import static net.sf.freecol.common.util.RandomUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A river for the map generator.
  */
 public class River {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(SimpleMapGenerator.class.getName());
 
+    /** The river type. */
     private final TileImprovementType riverType;
 
     /**
@@ -49,10 +52,22 @@ public class River {
      * @see net.sf.freecol.common.model.Map
      */
     private static enum DirectionChange {
+        
+        /** The straight ahead. */
         STRAIGHT_AHEAD,
+        
+        /** The right turn. */
         RIGHT_TURN,
+        
+        /** The left turn. */
         LEFT_TURN;
 
+        /**
+         * Gets the new direction.
+         *
+         * @param oldDirection the old direction
+         * @return the new direction
+         */
         public Direction getNewDirection(Direction oldDirection) {
             switch(this) {
             case STRAIGHT_AHEAD:
@@ -150,6 +165,11 @@ public class River {
         logger.fine("Starting new river flowing " + direction);
     }
 
+    /**
+     * Gets the sections.
+     *
+     * @return the sections
+     */
     public List<RiverSection> getSections() {
         return sections;
     }
@@ -163,6 +183,11 @@ public class River {
         return this.sections.size();
     }
 
+    /**
+     * Gets the last section.
+     *
+     * @return the last section
+     */
     public RiverSection getLastSection() {
         return this.sections.get(sections.size() - 1);
     }
@@ -367,11 +392,26 @@ public class River {
         return false;
     }
 
+    /**
+     * Creates the delta.
+     *
+     * @param tile the tile
+     * @param direction the direction
+     * @param section the section
+     */
     private void createDelta(Tile tile, Direction direction, RiverSection section) {
         delta(tile, direction, section, DirectionChange.LEFT_TURN.getNewDirection(direction));
         delta(tile, direction, section, DirectionChange.RIGHT_TURN.getNewDirection(direction));
     }
 
+    /**
+     * Delta.
+     *
+     * @param tile the tile
+     * @param direction the direction
+     * @param section the section
+     * @param d the d
+     */
     private void delta(Tile tile, Direction direction, RiverSection section, Direction d) {
         Tile t = tile.getNeighbourOrNull(d);
         if (!t.isLand()) {
@@ -397,6 +437,8 @@ public class River {
 
     /**
      * Draws the completed river to the map.
+     *
+     * @param sections the sections
      */
     private void drawToMap(List<RiverSection> sections) {
         RiverSection oldSection = null;

@@ -51,6 +51,7 @@ import static net.sf.freecol.common.util.RandomUtils.*;
 import net.sf.freecol.server.model.ServerRegion;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Class for making a <code>Map</code> based upon a land map.
  *
@@ -58,10 +59,16 @@ import net.sf.freecol.server.model.ServerRegion;
  */
 public class TerrainGenerator {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(TerrainGenerator.class.getName());
 
+    /** The Constant LAND_REGIONS_SCORE_VALUE. */
     public static final int LAND_REGIONS_SCORE_VALUE = 1000;
+    
+    /** The Constant LAND_REGION_MIN_SCORE. */
     public static final int LAND_REGION_MIN_SCORE = 5;
+    
+    /** The Constant LAND_REGION_MAX_SIZE. */
     public static final int LAND_REGION_MAX_SIZE = 75;
 
     /** The Game to generate for. */
@@ -87,6 +94,8 @@ public class TerrainGenerator {
 
     /** The cached land and ocean tile types. */
     private List<TileType> landTileTypes = null;
+    
+    /** The ocean tile types. */
     private List<TileType> oceanTileTypes = null;
 
 
@@ -109,6 +118,14 @@ public class TerrainGenerator {
 
     // Utilities
 
+    /**
+     * Limit to range.
+     *
+     * @param value the value
+     * @param lower the lower
+     * @param upper the upper
+     * @return the int
+     */
     // FIXME: this might be useful elsewhere, too
     private int limitToRange(int value, int lower, int upper) {
         return Math.max(lower, Math.min(value, upper));

@@ -50,12 +50,14 @@ import net.sf.freecol.common.model.StringTemplate;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Centers the map on a known settlement or colony.  Pressing ENTER
  * opens a panel if appropriate.
  */
 public final class EndTurnDialog extends FreeColConfirmDialog {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(EndTurnDialog.class.getName());
 
@@ -67,11 +69,21 @@ public final class EndTurnDialog extends FreeColConfirmDialog {
      */
     private static class UnitWrapper {
 
+        /** The unit. */
         public final Unit unit;
+        
+        /** The name. */
         public final String name;
+        
+        /** The location. */
         public final String location;
 
 
+        /**
+         * Instantiates a new unit wrapper.
+         *
+         * @param unit the unit
+         */
         public UnitWrapper(Unit unit) {
             this.unit = unit;
             this.name = unit.getDescription(Unit.UnitLabelType.NATIONAL);
@@ -88,15 +100,30 @@ public final class EndTurnDialog extends FreeColConfirmDialog {
         }
     }
 
+    /**
+     * The Class UnitCellRenderer.
+     */
     private class UnitCellRenderer implements ListCellRenderer<UnitWrapper> {
 
+        /** The item panel. */
         private final JPanel itemPanel = new MigPanel();
+        
+        /** The selected panel. */
         private final JPanel selectedPanel = new MigPanel();
+        
+        /** The image label. */
         private final JLabel imageLabel = new JLabel();
+        
+        /** The name label. */
         private final JLabel nameLabel = new JLabel();
+        
+        /** The location label. */
         private final JLabel locationLabel = new JLabel();
 
 
+        /**
+         * Instantiates a new unit cell renderer.
+         */
         public UnitCellRenderer() {
             itemPanel.setOpaque(false);
             itemPanel.setLayout(new MigLayout("", "[60]"));

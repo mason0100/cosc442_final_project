@@ -55,12 +55,14 @@ import net.sf.freecol.common.util.RandomChoice;
 import net.sf.freecol.server.model.ServerUnit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This dialog is used to edit an Indian settlement (map editor only).
  */
 public final class EditSettlementDialog extends FreeColDialog<IndianSettlement>
     implements ItemListener {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(EditSettlementDialog.class.getName());
 
@@ -73,7 +75,7 @@ public final class EditSettlementDialog extends FreeColDialog<IndianSettlement>
     /** The selected settlement owner. */
     private final JComboBox<Nation> owner;
 
-    /** Is this settlement the capital? */
+    /**  Is this settlement the capital?. */
     private final JCheckBox capital;
 
     /** The skill to learn at the settlement. */
@@ -143,30 +145,60 @@ public final class EditSettlementDialog extends FreeColDialog<IndianSettlement>
             getImageLibrary().getSmallSettlementImage(settlement)), c);
     }
 
+    /**
+     * Gets the owner nation.
+     *
+     * @return the owner nation
+     */
     private Nation getOwnerNation() {
         return (Nation)this.owner.getSelectedItem();
     }
 
+    /**
+     * Gets the owner nation type.
+     *
+     * @return the owner nation type
+     */
     private IndianNationType getOwnerNationType() {
         Nation n = getOwnerNation();
         return (n == null) ? null : (IndianNationType)n.getType();
     }
 
+    /**
+     * Gets the owner player.
+     *
+     * @return the owner player
+     */
     private Player getOwnerPlayer() {
         final Nation n = getOwnerNation();
         return find(settlement.getGame().getLivePlayers(null),
             p -> p.getNationId().equals(n.getId()));
     }
 
+    /**
+     * Gets the settlement type.
+     *
+     * @return the settlement type
+     */
     private SettlementType getSettlementType() {
         return getOwnerNationType().getSettlementType(this.capital.isSelected());
     }
         
+    /**
+     * Gets the average size.
+     *
+     * @return the average size
+     */
     private int getAverageSize() {
         SettlementType t = getSettlementType();
         return (t.getMinimumSize() + t.getMaximumSize()) / 2;
     }
 
+    /**
+     * Gets the skill model.
+     *
+     * @return the skill model
+     */
     private DefaultComboBoxModel<UnitType> getSkillModel() {
         IndianNationType ownerType = getOwnerNationType();
         DefaultComboBoxModel<UnitType> skillModel

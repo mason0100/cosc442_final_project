@@ -40,6 +40,7 @@ import net.sf.freecol.common.model.Unit;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A collection of panels and buttons that are used to provide the
  * user with a more detailed view of certain elements on the map and
@@ -51,8 +52,12 @@ import net.sf.freecol.common.resources.ResourceManager;
  */
 public final class CornerMapControls extends MapControls {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(CornerMapControls.class.getName());
 
+    /**
+     * The Class MiniMapPanel.
+     */
     public class MiniMapPanel extends JPanel {
 
         /**
@@ -67,10 +72,13 @@ public final class CornerMapControls extends MapControls {
         }
     }
 
+    /** The compass rose. */
     private final JLabel compassRose;
 
+    /** The mini map panel. */
     private final MiniMapPanel miniMapPanel;
 
+    /** The mini map skin. */
     private final Image miniMapSkin;
 
 
@@ -229,7 +237,7 @@ public final class CornerMapControls extends MapControls {
     }
 
     /**
-     * Are these map controls showing?
+     * Are these map controls showing?.
      *
      * @return True if the map controls are showing.
      */
@@ -254,6 +262,9 @@ public final class CornerMapControls extends MapControls {
         }
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.client.gui.panel.MapControls#repaint()
+     */
     @Override
     public void repaint() {
         miniMapPanel.repaint();

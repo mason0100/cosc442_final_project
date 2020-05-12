@@ -20,6 +20,7 @@
 package net.sf.freecol.common;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The Exception thrown by the FreeCol application.
  */

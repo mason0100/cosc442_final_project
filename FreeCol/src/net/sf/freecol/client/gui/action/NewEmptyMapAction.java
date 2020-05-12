@@ -28,16 +28,18 @@ import net.sf.freecol.common.model.Map;
 import net.sf.freecol.common.model.Tile;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Creates a new empty map.
  */
 public class NewEmptyMapAction extends MapboardAction {
 
+    /** The Constant ID. */
     public static final String ID = "newEmptyMapAction";
 
 
     /**
-     * Creates this action
+     * Creates this action.
      *
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */

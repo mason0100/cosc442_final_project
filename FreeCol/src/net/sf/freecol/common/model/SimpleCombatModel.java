@@ -35,6 +35,7 @@ import net.sf.freecol.common.util.LogBuilder;
 import static net.sf.freecol.common.util.RandomUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class implements the original Colonization combat model.
  *
@@ -44,6 +45,7 @@ import static net.sf.freecol.common.util.RandomUtils.*;
  */
 public class SimpleCombatModel extends CombatModel {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(SimpleCombatModel.class.getName());
 
     /**
@@ -55,6 +57,7 @@ public class SimpleCombatModel extends CombatModel {
     /** A defence percentage bonus that disables the fortification bonus. */
     public static final int STRONG_DEFENCE_THRESHOLD = 150; // percent
 
+    /** The Constant UNKNOWN_DEFENCE_MODIFIER. */
     public static final Modifier UNKNOWN_DEFENCE_MODIFIER
         = new Modifier("bogus", Modifier.UNKNOWN, ModifierType.ADDITIVE);
 
@@ -503,7 +506,7 @@ public class SimpleCombatModel extends CombatModel {
     }
 
     /**
-     * Does a given object provide a strong defence bonus?
+     * Does a given object provide a strong defence bonus?.
      *
      * @param fco The <code>FreeColObject</code> to check.
      * @return True if a strong defence bonus is present.
@@ -877,7 +880,7 @@ public class SimpleCombatModel extends CombatModel {
     }
 
     /**
-     * Could this attack be an ambush?
+     * Could this attack be an ambush?.
      *
      * @param attacker The attacker.
      * @param defender The defender.

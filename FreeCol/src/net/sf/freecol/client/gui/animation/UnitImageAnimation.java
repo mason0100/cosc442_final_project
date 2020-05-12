@@ -34,24 +34,35 @@ import net.sf.freecol.common.model.Tile;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Class for in-place animation of units.
  */
 public final class UnitImageAnimation {
     
+    /** The gui. */
     private final SwingGUI gui;
+    
+    /** The unit. */
     private final Unit unit;
+    
+    /** The tile. */
     private final Tile tile;
+    
+    /** The animation. */
     private final SimpleZippedAnimation animation;
+    
+    /** The mirror. */
     private final boolean mirror;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param gui The gui.
-     * @param unit The <code>Unit</code> to be animated. 
+     * @param unit The <code>Unit</code> to be animated.
      * @param tile The <code>Tile</code> where the animation occurs.
      * @param animation The animation to show.
+     * @param mirror the mirror
      */
     public UnitImageAnimation(SwingGUI gui, Unit unit, Tile tile,
                               SimpleZippedAnimation animation, boolean mirror) {
@@ -98,6 +109,11 @@ public final class UnitImageAnimation {
             });
     }
 
+    /**
+     * Gets the dirty animation area.
+     *
+     * @return the dirty animation area
+     */
     protected Rectangle getDirtyAnimationArea() {
         return gui.getTileBounds(tile);
     }

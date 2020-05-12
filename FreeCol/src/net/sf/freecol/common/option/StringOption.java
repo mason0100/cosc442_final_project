@@ -31,12 +31,14 @@ import net.sf.freecol.common.util.Utils;
 import net.sf.freecol.common.model.Specification;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents an option that can be a string selected from a list of
  * possible values (choices).
  */
 public class StringOption extends AbstractOption<String> {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(StringOption.class.getName());
 
@@ -136,6 +138,7 @@ public class StringOption extends AbstractOption<String> {
 
     // Serialization
 
+    /** The Constant CHOICE_TAG. */
     private static final String CHOICE_TAG = "choice";
 
 

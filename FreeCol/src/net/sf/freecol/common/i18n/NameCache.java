@@ -38,6 +38,7 @@ import static net.sf.freecol.common.util.RandomUtils.*;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A cache of proper names of various types.
  *
@@ -49,47 +50,69 @@ import static net.sf.freecol.common.util.StringUtils.*;
  */
 public class NameCache {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(NameCache.class.getName());
 
     /** Default season names to use if nameCache.season.* not found. */
     private static final String[] DEFAULT_SEASON_IDS
         = { "model.season.spring.name", "model.season.autumn.name" };
     
+    /** The Constant CIBOLA_PREFIX. */
     private static final String CIBOLA_PREFIX
         = "nameCache.lostCityRumour.cityName.";
 
     /** Cities of Cibola. */
     private static List<String> cibolaKeys = null;
+    
+    /** The Constant cibolaLock. */
     private static final Object cibolaLock = new Object();
 
     /** Mercenary leaders. */
     private static List<String> mercenaryLeaders = null;
+    
+    /** The Constant mercenaryLock. */
     private static final Object mercenaryLock = new Object();
 
     /** Region names and index. */
     private static final Map<String, List<String>> regionNames
         = new HashMap<>();
+    
+    /** The Constant regionNameLock. */
     private static final Object regionNameLock = new Object();
+    
+    /** The Constant regionIndex. */
     private static final Map<String, Integer> regionIndex = new HashMap<>();
 
     /** Extra river names. */
     private static List<String> riverNames = null;
+    
+    /** The Constant riverNameLock. */
     private static final Object riverNameLock = new Object();
 
     /** Season names. */
     private static List<String> seasonNames = null;
+    
+    /** The Constant seasonNamesLock. */
     private static final Object seasonNamesLock = new Object();
+    
+    /** The season number. */
     private static int seasonNumber = 0;
     
     /** Settlement names. */
     private static final Map<Player, String> capitalNames
         = new HashMap<>();
+    
+    /** The Constant settlementNames. */
     private static final Map<Player, List<String>> settlementNames
         = new HashMap<>();
+    
+    /** The Constant settlementNameLock. */
     private static final Object settlementNameLock = new Object();
 
     /** Ship names. */
     private static final Map<Player, List<String>> shipNames = new HashMap<>();
+    
+    /** The Constant shipNameLock. */
     private static final Object shipNameLock = new Object();
 
 

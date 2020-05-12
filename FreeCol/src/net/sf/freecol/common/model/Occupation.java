@@ -26,13 +26,19 @@ import java.util.List;
 import net.sf.freecol.common.util.LogBuilder;
 
 
+// TODO: Auto-generated Javadoc
 /** 
  * Simple container to define where and what a unit is working on.
  */
 public class Occupation {
 
+    /** The work location. */
     public WorkLocation workLocation;
+    
+    /** The production type. */
     public ProductionType productionType;
+    
+    /** The work type. */
     public GoodsType workType;
 
 

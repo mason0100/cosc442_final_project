@@ -22,22 +22,42 @@ package net.sf.freecol.common.i18n;
 import java.util.List;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A grammatical relationship.
  */
 public class Relation {
 
+    /** The low. */
     int low;
+    
+    /** The high. */
     int high;
+    
+    /** The mod. */
     int mod = 1;
 
+    /** The negated. */
     boolean negated = false;
+    
+    /** The integer. */
     boolean integer = true;
 
+    /**
+     * Instantiates a new relation.
+     *
+     * @param tokens the tokens
+     */
     public Relation(List<String> tokens) {
         parse(tokens);
     }
 
+    /**
+     * Instantiates a new relation.
+     *
+     * @param low the low
+     * @param high the high
+     */
     public Relation(int low, int high) {
         this.low = low;
         this.high = high;
@@ -85,6 +105,9 @@ public class Relation {
         return (low <= value && value <= high) != negated;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder(32);

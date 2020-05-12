@@ -40,6 +40,7 @@ import net.sf.freecol.common.model.Specification;
 import net.sf.freecol.common.option.OptionGroup;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Dialog for displaying and modifying the difficulty level.
  *
@@ -48,6 +49,7 @@ import net.sf.freecol.common.option.OptionGroup;
 public final class DifficultyDialog extends OptionsDialog
     implements TreeSelectionListener {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(DifficultyDialog.class.getName());
 
     /** File filters array to filter for XML files. */
@@ -181,6 +183,9 @@ public final class DifficultyDialog extends OptionsDialog
 
     // Implement TreeSelectionListener
 
+    /* (non-Javadoc)
+     * @see javax.swing.event.TreeSelectionListener#valueChanged(javax.swing.event.TreeSelectionEvent)
+     */
     @Override
     public void valueChanged(TreeSelectionEvent event) {
         TreePath path = event.getPath();

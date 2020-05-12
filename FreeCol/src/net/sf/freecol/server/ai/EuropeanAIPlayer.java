@@ -98,6 +98,7 @@ import net.sf.freecol.server.ai.mission.WorkInsideColonyMission;
 import net.sf.freecol.server.model.ServerPlayer;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Objects of this class contains AI-information for a single European
  * {@link Player} and is used for controlling this player.
@@ -107,6 +108,7 @@ import net.sf.freecol.server.model.ServerPlayer;
  */
 public class EuropeanAIPlayer extends AIPlayer {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(EuropeanAIPlayer.class.getName());
 
     /** Maximum number of turns to travel to a building site. */
@@ -208,11 +210,23 @@ public class EuropeanAIPlayer extends AIPlayer {
 
     /** Cheat chances. */
     private static int liftBoycottCheatPercent;
+    
+    /** The equip scout cheat percent. */
     private static int equipScoutCheatPercent;
+    
+    /** The equip pioneer cheat percent. */
     private static int equipPioneerCheatPercent;
+    
+    /** The land unit cheat percent. */
     private static int landUnitCheatPercent;
+    
+    /** The offensive land unit cheat percent. */
     private static int offensiveLandUnitCheatPercent;
+    
+    /** The offensive naval unit cheat percent. */
     private static int offensiveNavalUnitCheatPercent;
+    
+    /** The transport naval unit cheat percent. */
     private static int transportNavalUnitCheatPercent;
     /** The pioneer role. */
     private static Role pioneerRole = null;
@@ -903,6 +917,8 @@ public class EuropeanAIPlayer extends AIPlayer {
 
     /**
      * Remove a <code>TileImprovementPlan</code> from the relevant colony.
+     *
+     * @param plan the plan
      */
     public void removeTileImprovementPlan(TileImprovementPlan plan) {
         if (plan == null) return;
@@ -1508,10 +1524,11 @@ public class EuropeanAIPlayer extends AIPlayer {
     /**
      * Helper function for server communication - Ask the server
      * to train a unit in Europe on behalf of the AIGetPlayer().
-     *
+     * 
      * FIXME: Move this to a specialized Handler class (AIEurope?)
      * FIXME: Give protected access?
      *
+     * @param unitType the unit type
      * @return the new AIUnit created by this action. May be null.
      */
     public AIUnit trainAIUnitInEurope(UnitType unitType) {

@@ -36,6 +36,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The message sent when executing a diplomatic trade.
  */
@@ -185,6 +186,7 @@ public class DiplomacyMessage extends DOMMessage {
      * Set the agreement (a <code>DiplomaticTrade</code>) in this message.
      *
      * @param agreement The <code>DiplomaticTrade</code> to set.
+     * @return the diplomacy message
      */
     public DiplomacyMessage setAgreement(DiplomaticTrade agreement) {
         this.agreement = agreement;

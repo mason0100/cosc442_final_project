@@ -24,14 +24,17 @@ import java.util.logging.Logger;
 import net.sf.freecol.common.ServerInfo;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This object stores information about a single running server.
  */
 public class MetaItem extends ServerInfo {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(MetaItem.class.getName());
 
+    /** The last updated. */
     private long lastUpdated;
 
 
@@ -64,6 +67,8 @@ public class MetaItem extends ServerInfo {
      * @param slotsAvailable Number of players that may connect.
      * @param currentlyPlaying Number of players that are currently connected.
      * @param isGameStarted <i>true</i> if the game has started.
+     * @param version the version
+     * @param gameState the game state
      */
     @Override
     public void update(String name, String address, int port, int slotsAvailable,

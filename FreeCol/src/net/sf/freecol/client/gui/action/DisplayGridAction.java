@@ -27,11 +27,13 @@ import net.sf.freecol.client.ClientOptions;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action to toggle the display of the map grid.
  */
 public class DisplayGridAction extends SelectableAction {
 
+    /** The Constant ID. */
     public static final String ID = "displayGridAction";
 
 

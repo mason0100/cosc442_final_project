@@ -28,6 +28,7 @@ import net.sf.freecol.common.networking.MessageHandler;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A dummy connection, used for AI players.
  */
@@ -36,12 +37,14 @@ public final class DummyConnection extends Connection {
     /** The message handler to simulate using when receiving messages. */
     private MessageHandler outgoingMessageHandler;
 
+    /** The other connection. */
     private DummyConnection otherConnection;
 
 
     /**
      * Sets up a dummy connection using the specified {@link MessageHandler}s.
      *
+     * @param name the name
      * @param incomingMessageHandler The <code>MessageHandler</code>
      *     to call for each message received.
      */

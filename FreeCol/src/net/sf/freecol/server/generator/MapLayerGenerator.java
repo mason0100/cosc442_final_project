@@ -22,6 +22,7 @@ package net.sf.freecol.server.generator;
 import net.sf.freecol.common.model.Game;
 import net.sf.freecol.common.model.Map.Layer;
 
+// TODO: Auto-generated Javadoc
 /**
  * Generates a map layer.
  */

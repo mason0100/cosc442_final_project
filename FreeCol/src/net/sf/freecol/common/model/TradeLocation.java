@@ -20,6 +20,7 @@
 package net.sf.freecol.common.model;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A wrapper interface for a location that can be on a trade route.
  *

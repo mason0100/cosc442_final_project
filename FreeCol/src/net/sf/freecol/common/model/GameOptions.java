@@ -20,6 +20,7 @@
 package net.sf.freecol.common.model;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Keeps track of the available game options. New options must be
  * added to the {@link Specification} and each option should be given
@@ -87,8 +88,14 @@ public class GameOptions {
     /** How to determine the starting positions of European players. */
     public static final String STARTING_POSITIONS
         = "model.option.startingPositions";
+    
+    /** The Constant STARTING_POSITIONS_CLASSIC. */
     public static final int STARTING_POSITIONS_CLASSIC = 0;
+    
+    /** The Constant STARTING_POSITIONS_RANDOM. */
     public static final int STARTING_POSITIONS_RANDOM = 1;
+    
+    /** The Constant STARTING_POSITIONS_HISTORICAL. */
     public static final int STARTING_POSITIONS_HISTORICAL = 2;
 
     /** Percent chance peace will hold if there is a recent treaty. */
@@ -116,7 +123,7 @@ public class GameOptions {
     public static final String GAMEOPTIONS_COLONY
         = "gameOptions.colony";
 
-    /** Is bell accumulation capped when 100% rebels achieved? */
+    /**  Is bell accumulation capped when 100% rebels achieved?. */
     public static final String BELL_ACCUMULATION_CAPPED
         = "model.option.bellAccumulationCapped";
 
@@ -124,11 +131,11 @@ public class GameOptions {
     public static final String CAPTURE_UNITS_UNDER_REPAIR
         = "model.option.captureUnitsUnderRepair";
 
-    /** Does the Custom House sell boycotted goods? */
+    /**  Does the Custom House sell boycotted goods?. */
     public static final String CUSTOM_IGNORE_BOYCOTT
         = "model.option.customIgnoreBoycott";
 
-    /** Custom Houses only allowed in coastal colonies? */
+    /**  Custom Houses only allowed in coastal colonies?. */
     public static final String CUSTOMS_ON_COAST
         = "model.option.customsOnCoast";
 
@@ -143,21 +150,15 @@ public class GameOptions {
     public static final String EXPERTS_HAVE_CONNECTIONS
         = "model.option.expertsHaveConnections";
 
-    /** Can colonies be founded during the war of independence? */
+    /**  Can colonies be founded during the war of independence?. */
     public static final String FOUND_COLONY_DURING_REBELLION
         = "model.option.foundColonyDuringRebellion";
 
-    /**
-     * Can colony buildings be completed quickly by paying for the
-     * missing goods?
-     */
+    /** Can colony buildings be completed quickly by paying for the missing goods?. */
     public static final String PAY_FOR_BUILDING
         = "model.option.payForBuilding";
 
-    /**
-     * Does a hammer surplus after a build completes accumulate to
-     * the next build?
-     */
+    /** Does a hammer surplus after a build completes accumulate to the next build?. */
     public static final String SAVE_PRODUCTION_OVERFLOW
         = "model.option.saveProductionOverflow";
 
@@ -189,33 +190,22 @@ public class GameOptions {
     public static final String NATURAL_DISASTERS
         = "model.option.naturalDisasters";
 
-    ///** The cost of a single hammer when buying a building in a colony. */
-    //Unused at the moment
-    // public static final String HAMMER_PRICE = "hammerPrice";
+  
 
 
     /** Victory conditions game option group. */
     public static final String GAMEOPTIONS_VICTORY_CONDITIONS
         = "gameOptions.victoryConditions";
 
-    /**
-     * Victory condition: Should the <code>Player</code> who first
-     * defeats the Royal Expeditionary Force win the game?
-     */
+    /** Victory condition: Should the <code>Player</code> who first defeats the Royal Expeditionary Force win the game?. */
     public static final String VICTORY_DEFEAT_REF
         = "model.option.victoryDefeatREF";
 
-    /**
-     * Victory condition: Should a <code>Player</code> who
-     * defeats all other European players win the game?
-     */
+    /** Victory condition: Should a <code>Player</code> who defeats all other European players win the game?. */
     public static final String VICTORY_DEFEAT_EUROPEANS
         = "model.option.victoryDefeatEuropeans";
 
-    /**
-     * Victory condition: Should a <code>Player</code> who defeats all
-     * other human players win the game?
-     */
+    /** Victory condition: Should a <code>Player</code> who defeats all other human players win the game?. */
     public static final String VICTORY_DEFEAT_HUMANS
         = "model.option.victoryDefeatHumans";
 
@@ -354,12 +344,20 @@ public class GameOptions {
     /** The behaviour when building on native land. */
     public static final String BUILD_ON_NATIVE_LAND
         = "model.option.buildOnNativeLand";
+    
+    /** The Constant BUILD_ON_NATIVE_LAND_ALWAYS. */
     public static final String BUILD_ON_NATIVE_LAND_ALWAYS
         = "model.option.buildOnNativeLand.always";
+    
+    /** The Constant BUILD_ON_NATIVE_LAND_FIRST. */
     public static final String BUILD_ON_NATIVE_LAND_FIRST
         = "model.option.buildOnNativeLand.first";
+    
+    /** The Constant BUILD_ON_NATIVE_LAND_FIRST_AND_UNCONTACTED. */
     public static final String BUILD_ON_NATIVE_LAND_FIRST_AND_UNCONTACTED
         = "model.option.buildOnNativeLand.firstAndUncontacted";
+    
+    /** The Constant BUILD_ON_NATIVE_LAND_NEVER. */
     public static final String BUILD_ON_NATIVE_LAND_NEVER
         = "model.option.buildOnNativeLand.never";
 
@@ -488,18 +486,31 @@ public class GameOptions {
     public static final String DIFFICULTY_CHEAT
         = "model.difficulty.cheat";
 
+    /** The Constant LIFT_BOYCOTT_CHEAT. */
     public static final String LIFT_BOYCOTT_CHEAT
         = "model.option.liftBoycottCheat";
+    
+    /** The Constant EQUIP_SCOUT_CHEAT. */
     public static final String EQUIP_SCOUT_CHEAT
         = "model.option.equipScoutCheat";
+    
+    /** The Constant EQUIP_PIONEER_CHEAT. */
     public static final String EQUIP_PIONEER_CHEAT
         = "model.option.equipPioneerCheat";
+    
+    /** The Constant LAND_UNIT_CHEAT. */
     public static final String LAND_UNIT_CHEAT
         = "model.option.landUnitCheat";
+    
+    /** The Constant OFFENSIVE_LAND_UNIT_CHEAT. */
     public static final String OFFENSIVE_LAND_UNIT_CHEAT
         = "model.option.offensiveLandUnitCheat";
+    
+    /** The Constant OFFENSIVE_NAVAL_UNIT_CHEAT. */
     public static final String OFFENSIVE_NAVAL_UNIT_CHEAT
         = "model.option.offensiveNavalUnitCheat";
+    
+    /** The Constant TRANSPORT_NAVAL_UNIT_CHEAT. */
     public static final String TRANSPORT_NAVAL_UNIT_CHEAT
         = "model.option.transportNavalUnitCheat";
 
@@ -509,7 +520,14 @@ public class GameOptions {
      *
      * @return "gameOptions".
      */
+    static String gameOptionsTag = "gameOptions";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
-        return "gameOptions";
+		return gameOptionsTag;
     }
 }

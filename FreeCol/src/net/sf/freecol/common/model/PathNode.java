@@ -24,6 +24,7 @@ import net.sf.freecol.common.model.Direction;
 import net.sf.freecol.common.util.LogBuilder;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents a single <code>Location</code> in a path.
  *
@@ -305,7 +306,7 @@ public class PathNode {
     }
 
     /**
-     * Does this path us a carrier at any point?
+     * Does this path us a carrier at any point?.
      *
      * @return True if there is an onCarrier move in this path.
      */
@@ -314,7 +315,7 @@ public class PathNode {
     }
 
     /**
-     * Does this path include a non-carrier move within a given turn?
+     * Does this path include a non-carrier move within a given turn?.
      *
      * @param turns Paths with fewer turns than this are previous turns.
      * @return True if there was a non-carrier move in the last turn.

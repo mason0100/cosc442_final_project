@@ -79,6 +79,7 @@ import net.sf.freecol.server.model.ServerRegion;
 import net.sf.freecol.server.model.ServerUnit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Creates random maps and sets the starting locations for the players.
  *
@@ -87,6 +88,7 @@ import net.sf.freecol.server.model.ServerUnit;
  */
 public class SimpleMapGenerator implements MapGenerator {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(SimpleMapGenerator.class.getName());
 
     /**
@@ -97,22 +99,51 @@ public class SimpleMapGenerator implements MapGenerator {
     private static final float MIN_DISTANCE_FROM_POLE = 0.30f;
 
    
+    /**
+     * The Class Territory.
+     */
     private static class Territory {
+        
+        /** The region. */
         public ServerRegion region;
+        
+        /** The tile. */
         public Tile tile;
+        
+        /** The player. */
         public final Player player;
+        
+        /** The number of settlements. */
         public int numberOfSettlements;
 
+        /**
+         * Instantiates a new territory.
+         *
+         * @param player the player
+         * @param tile the tile
+         */
         public Territory(Player player, Tile tile) {
             this.player = player;
             this.tile = tile;
         }
 
+        /**
+         * Instantiates a new territory.
+         *
+         * @param player the player
+         * @param region the region
+         */
         public Territory(Player player, ServerRegion region) {
             this.player = player;
             this.region = region;
         }
 
+        /**
+         * Gets the center tile.
+         *
+         * @param map the map
+         * @return the center tile
+         */
         public Tile getCenterTile(Map map) {
             if (tile != null) return tile;
             int[] xy = region.getCenter();
@@ -145,7 +176,7 @@ public class SimpleMapGenerator implements MapGenerator {
 
 
     /**
-     * Creates a <code>MapGenerator</code>
+     * Creates a <code>MapGenerator</code>.
      *
      * @param game The <code>Game</code> to generate for.
      * @param random The <code>Random</code> number source to use.
@@ -248,6 +279,13 @@ public class SimpleMapGenerator implements MapGenerator {
             " lost city rumours of maximum ", number, ".\n");
     }
 
+    /**
+     * Import indian settlements.
+     *
+     * @param map the map
+     * @param lb the lb
+     * @return true, if successful
+     */
     private boolean importIndianSettlements(Map map, LogBuilder lb) {
         int nSettlements = 0;
         
@@ -630,6 +668,13 @@ public class SimpleMapGenerator implements MapGenerator {
         return good >= n / 2;
     }
 
+    /**
+     * Find free neighbouring tile.
+     *
+     * @param is the is
+     * @param tiles the tiles
+     * @return the tile
+     */
     private Tile findFreeNeighbouringTile(IndianSettlement is,
                                           List<Tile> tiles) {
         for (Tile tile : tiles) {
@@ -644,6 +689,14 @@ public class SimpleMapGenerator implements MapGenerator {
         return null;
     }
 
+    /**
+     * Gets the closest territory.
+     *
+     * @param map the map
+     * @param tile the tile
+     * @param territories the territories
+     * @return the closest territory
+     */
     private Territory getClosestTerritory(Map map, Tile tile,
                                           List<Territory> territories) {
         Territory result = null;
@@ -904,6 +957,16 @@ public class SimpleMapGenerator implements MapGenerator {
         }
     }
 
+    /**
+     * Find tile for.
+     *
+     * @param map the map
+     * @param row the row
+     * @param start the start
+     * @param startAtSea the start at sea
+     * @param lb the lb
+     * @return the tile
+     */
     private Tile findTileFor(Map map, int row, int start, boolean startAtSea,
                              LogBuilder lb) {
         Tile tile = null;
@@ -921,6 +984,14 @@ public class SimpleMapGenerator implements MapGenerator {
         return null;
     }
 
+    /**
+     * Creates the debug units.
+     *
+     * @param map the map
+     * @param player the player
+     * @param startTile the start tile
+     * @param lb the lb
+     */
     private void createDebugUnits(Map map, Player player, Tile startTile,
                                   LogBuilder lb) {
         // In debug mode give each player a few more units and a colony.
@@ -1036,6 +1107,13 @@ public class SimpleMapGenerator implements MapGenerator {
         ((ServerPlayer)player).exploreForSettlement(colony);
     }
 
+    /**
+     * Generate starting positions.
+     *
+     * @param map the map
+     * @param players the players
+     * @return the list
+     */
     private List<Position> generateStartingPositions(Map map,
                                                      List<Player> players) {
         int number = players.size();

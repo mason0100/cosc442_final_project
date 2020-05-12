@@ -30,6 +30,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.model.UnitLocation.NoAddReason;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Encapsulates data common to all instances of a particular kind of
  * {@link Building}, such as the number of workplaces, and the types
@@ -131,7 +132,7 @@ public final class BuildingType extends BuildableType {
     }
 
     /**
-     * Can a unit of a given type be added to a Building of this type?
+     * Can a unit of a given type be added to a Building of this type?.
      *
      * @param unitType The <code>UnitType</code> to check.
      * @return True if the unit type can be added.
@@ -182,7 +183,7 @@ public final class BuildingType extends BuildableType {
     }
 
     /**
-     * Is this building type automatically built in any colony?
+     * Is this building type automatically built in any colony?.
      *
      * @return True if this building type is automatically built.
      */
@@ -265,7 +266,7 @@ public final class BuildingType extends BuildableType {
     }
 
     /**
-     * Can a tile of this type produce a given goods type?
+     * Can a tile of this type produce a given goods type?.
      *
      * @param goodsType The <code>GoodsType</code> to produce.
      * @param unitType An optional <code>UnitType</code> that is to do
@@ -341,21 +342,45 @@ public final class BuildingType extends BuildableType {
 
     // Serialization
 
+    /** The Constant MAXIMUM_SKILL_TAG. */
     private static final String MAXIMUM_SKILL_TAG = "maximum-skill";
+    
+    /** The Constant MINIMUM_SKILL_TAG. */
     private static final String MINIMUM_SKILL_TAG = "minimum-skill";
+    
+    /** The Constant PRIORITY_TAG. */
     private static final String PRIORITY_TAG = "priority";
+    
+    /** The Constant PRODUCTION_TAG. */
     private static final String PRODUCTION_TAG = "production";
+    
+    /** The Constant UPGRADES_FROM_TAG. */
     private static final String UPGRADES_FROM_TAG = "upgrades-from";
+    
+    /** The Constant UPKEEP_TAG. */
     private static final String UPKEEP_TAG = "upkeep";
+    
+    /** The Constant WORKPLACES_TAG. */
     private static final String WORKPLACES_TAG = "workplaces";
+    
+    /** The Constant BASIC_PRODUCTION_TAG. */
     // @compat 0.10.6
     private static final String BASIC_PRODUCTION_TAG = "basicProduction";
+    
+    /** The Constant CONSUMES_TAG. */
     private static final String CONSUMES_TAG = "consumes";
+    
+    /** The Constant PRODUCES_TAG. */
     private static final String PRODUCES_TAG = "produces";
     // end @compat 0.10.6
+    /** The Constant OLD_MAX_SKILL_TAG. */
     // @compat 0.11.3
     private static final String OLD_MAX_SKILL_TAG = "maxSkill";
+    
+    /** The Constant OLD_MIN_SKILL_TAG. */
     private static final String OLD_MIN_SKILL_TAG = "minSkill";
+    
+    /** The Constant OLD_UPGRADES_FROM_TAG. */
     private static final String OLD_UPGRADES_FROM_TAG = "upgradesFrom";
     // end @compat 0.11.3
 
@@ -509,6 +534,12 @@ public final class BuildingType extends BuildableType {
      * @return "building-type".
      */
     static String buildingType = "building-type";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
 		return buildingType;
     }

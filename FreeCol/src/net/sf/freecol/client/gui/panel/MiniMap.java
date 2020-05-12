@@ -44,6 +44,7 @@ import net.sf.freecol.common.model.Unit;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This component draws a small version of the map.  It allows us to
  * see a larger part of the map and to relocate the viewport by
@@ -51,17 +52,26 @@ import net.sf.freecol.common.resources.ResourceManager;
  */
 public final class MiniMap extends JPanel implements MouseInputListener {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(MiniMap.class.getName());
 
+    /** The Constant MAX_TILE_SIZE. */
     public static final int MAX_TILE_SIZE = 24;
+    
+    /** The Constant MIN_TILE_SIZE. */
     public static final int MIN_TILE_SIZE = 4;
+    
+    /** The Constant SCALE_STEP. */
     public static final int SCALE_STEP = 4;
 
+    /** The free col client. */
     private final FreeColClient freeColClient;
 
+    /** The gui. */
     private final GUI gui;
 
+    /** The tile size. */
     private int tileSize; //tileSize is the size (in pixels) that each tile will take up on the mini map
 
     /**
@@ -69,6 +79,8 @@ public final class MiniMap extends JPanel implements MouseInputListener {
      * (firstColumn, firstRow) in the world map
      */
     private int firstColumn;
+    
+    /** The first row. */
     private int firstRow;
 
     /**
@@ -76,6 +88,8 @@ public final class MiniMap extends JPanel implements MouseInputListener {
      * @see #paintMap
      */
     private int adjustX = 0;
+    
+    /** The adjust Y. */
     private int adjustY = 0;
 
 
@@ -148,17 +162,32 @@ public final class MiniMap extends JPanel implements MouseInputListener {
                 && tileSize > MIN_TILE_SIZE);
     }
 
+    /**
+     * Sets the zoom option.
+     *
+     * @param tileSize the new zoom option
+     */
     private void setZoomOption(int tileSize) {
         int zoom = tileSize / 4 - 1;
         freeColClient.getClientOptions()
             .setInteger(ClientOptions.DEFAULT_MINIMAP_ZOOM, zoom);
     }
 
+    /**
+     * Sets the toggle borders option.
+     *
+     * @param toggle the new toggle borders option
+     */
     public void setToggleBordersOption(boolean toggle) {
         freeColClient.getClientOptions()
             .setBoolean(ClientOptions.MINIMAP_TOGGLE_BORDERS, toggle);
     }
     
+    /**
+     * Sets the toggle fog of war option.
+     *
+     * @param toggle the new toggle fog of war option
+     */
     public void setToggleFogOfWarOption(boolean toggle) {
         freeColClient.getClientOptions()
             .setBoolean(ClientOptions.MINIMAP_TOGGLE_FOG_OF_WAR, toggle);
@@ -180,10 +209,22 @@ public final class MiniMap extends JPanel implements MouseInputListener {
         paintMap(graphics);
      }
 
+    /**
+     * Gets the minimap economic color.
+     *
+     * @param type the type
+     * @return the minimap economic color
+     */
     private Color getMinimapEconomicColor(TileType type) {
         return ResourceManager.getColor("color.economic.MiniMap." + type.getId());
     }
 
+    /**
+     * Gets the minimap politics color.
+     *
+     * @param type the type
+     * @return the minimap politics color
+     */
     private Color getMinimapPoliticsColor(TileType type) {
         return ResourceManager.getColor("color.politics.MiniMap." + type.getId());
     }
@@ -392,6 +433,12 @@ public final class MiniMap extends JPanel implements MouseInputListener {
     }
 
 
+    /**
+     * Focus.
+     *
+     * @param x the x
+     * @param y the y
+     */
     private void focus(int x, int y) {
         int tileX;
         int tileY;
@@ -409,12 +456,20 @@ public final class MiniMap extends JPanel implements MouseInputListener {
         gui.setFocus(freeColClient.getGame().getMap().getTile(tileX,tileY));
     }
 
+    /**
+     * Focus.
+     *
+     * @param e the e
+     */
     private void focus(MouseEvent e) {
         if (e.getComponent().isEnabled()) {
             focus(e.getX(), e.getY());
         }
     }
 
+    /* (non-Javadoc)
+     * @see java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)
+     */
     @Override
     public void mouseClicked(MouseEvent e) {
     	//Ignore for now
@@ -422,7 +477,8 @@ public final class MiniMap extends JPanel implements MouseInputListener {
 
     /**
      * If the user clicks on the mini map, refocus the map
-     * to center on the tile that he clicked on
+     * to center on the tile that he clicked on.
+     *
      * @param e a <code>MouseEvent</code> value
      */
     @Override
@@ -430,26 +486,41 @@ public final class MiniMap extends JPanel implements MouseInputListener {
         focus(e);
     }
 
+    /* (non-Javadoc)
+     * @see java.awt.event.MouseListener#mouseReleased(java.awt.event.MouseEvent)
+     */
     @Override
     public void mouseReleased(MouseEvent e) {
     	//Ignore for now
     }
 
+    /* (non-Javadoc)
+     * @see java.awt.event.MouseListener#mouseEntered(java.awt.event.MouseEvent)
+     */
     @Override
     public void mouseEntered(MouseEvent e) {
     	//Ignore for now
     }
 
+    /* (non-Javadoc)
+     * @see java.awt.event.MouseListener#mouseExited(java.awt.event.MouseEvent)
+     */
     @Override
     public void mouseExited(MouseEvent e) {
     	//Ignore for now
     }
 
+    /* (non-Javadoc)
+     * @see java.awt.event.MouseMotionListener#mouseDragged(java.awt.event.MouseEvent)
+     */
     @Override
     public void mouseDragged(MouseEvent e) {
         focus(e);
     }
 
+    /* (non-Javadoc)
+     * @see java.awt.event.MouseMotionListener#mouseMoved(java.awt.event.MouseEvent)
+     */
     @Override
     public void mouseMoved(MouseEvent e) {
     	//Ignore for now

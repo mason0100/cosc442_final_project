@@ -29,14 +29,20 @@ import net.sf.freecol.common.networking.MessageHandler;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Handles all network messages being sent to the metaserver.
  */
 public final class NetworkHandler implements MessageHandler {
+    
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(NetworkHandler.class.getName());
 
 
+    /** The meta server. */
     private final MetaServer metaServer;
+    
+    /** The meta register. */
     private final MetaRegister metaRegister;
 
 
@@ -57,11 +63,12 @@ public final class NetworkHandler implements MessageHandler {
 
     
     /**
-    * Handles a network message.
-    *
-    * @param connection The <code>Connection</code> the message came from.
-    * @param element The message to be processed.
-    */
+     * Handles a network message.
+     *
+     * @param connection The <code>Connection</code> the message came from.
+     * @param element The message to be processed.
+     * @return the element
+     */
     @Override
     public synchronized Element handle(Connection connection, Element element) {
         Element reply = null;

@@ -36,6 +36,7 @@ import net.sf.freecol.server.FreeColServer;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The networking server in which new clients can connect and methods
  * like <code>sendToAll</code> are kept.
@@ -50,6 +51,7 @@ import org.w3c.dom.Element;
  */
 public final class Server extends Thread {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Server.class.getName());
 
     /** Backlog for socket. */

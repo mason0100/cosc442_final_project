@@ -43,16 +43,20 @@ import net.sf.freecol.client.gui.panel.FreeColImageBorder;
 import net.sf.freecol.client.gui.panel.Utility;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The menu bar that is displayed on the top left corner of the
  * <code>Canvas</code>.
  */
 public abstract class FreeColMenuBar extends JMenuBar {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FreeColMenuBar.class.getName());
 
+    /** The free col client. */
     protected final FreeColClient freeColClient;
 
+    /** The am. */
     protected final ActionManager am;
 
 
@@ -207,6 +211,8 @@ public abstract class FreeColMenuBar extends JMenuBar {
     /**
      * When a <code>FreeColMenuBar</code> is disabled, it does not show the
      * "in game options".
+     *
+     * @param enabled the new enabled
      */
     @Override
     public void setEnabled(boolean enabled) {
@@ -215,6 +221,9 @@ public abstract class FreeColMenuBar extends JMenuBar {
         update();
     }
 
+    /**
+     * Builds the colopedia menu.
+     */
     protected void buildColopediaMenu() {
         // --> Colopedia
 
@@ -233,6 +242,8 @@ public abstract class FreeColMenuBar extends JMenuBar {
 
     /**
      * Paints the background and borders of the menubar.
+     *
+     * @param g the g
      */
     @Override
     public void paintComponent(Graphics g) {

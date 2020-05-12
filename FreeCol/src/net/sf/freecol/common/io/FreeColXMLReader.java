@@ -50,6 +50,7 @@ import net.sf.freecol.server.ai.AIObject;
 import net.sf.freecol.server.ai.AIMain;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A wrapper for <code>XMLStreamReader</code> and potentially an
  * underlying stream.  Adds on many useful utilities for reading
@@ -58,11 +59,21 @@ import net.sf.freecol.server.ai.AIMain;
 public class FreeColXMLReader extends StreamReaderDelegate
     implements Closeable {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FreeColXMLReader.class.getName());
 
+    /**
+     * The Enum ReadScope.
+     */
     public enum ReadScope {
-        SERVER,     // Loading the game in the server
-        NORMAL,     // Normal interning read
+        
+        /** The server. */
+        SERVER,     
+     /** The normal. */
+     // Loading the game in the server
+        NORMAL,     
+     /** The nointern. */
+     // Normal interning read
         NOINTERN,   // Do not intern any object that are read
     }
 
@@ -121,7 +132,7 @@ public class FreeColXMLReader extends StreamReaderDelegate
 
     /**
      * Should reads from this stream intern their objects into the
-     * enclosing game?
+     * enclosing game?.
      *
      * @return True if this is an interning stream.
      */
@@ -211,7 +222,7 @@ public class FreeColXMLReader extends StreamReaderDelegate
     // end @compat 0.10.x
 
     /**
-     * Is the stream at the given tag?
+     * Is the stream at the given tag?.
      *
      * @param tag The tag to test.
      * @return True if at the given tag.
@@ -266,7 +277,7 @@ public class FreeColXMLReader extends StreamReaderDelegate
     }
 
     /**
-     * Is there an attribute present in the stream?
+     * Is there an attribute present in the stream?.
      *
      * @param attributeName An attribute name
      * @return True if the attribute is present.
@@ -369,6 +380,7 @@ public class FreeColXMLReader extends StreamReaderDelegate
     /**
      * Gets an enum from an attribute in a stream.
      *
+     * @param <T> the generic type
      * @param attributeName The attribute name.
      * @param returnClass The class of the return value.
      * @param defaultValue The default value.
@@ -395,6 +407,7 @@ public class FreeColXMLReader extends StreamReaderDelegate
     /**
      * Gets a FreeCol object from an attribute in a stream.
      *
+     * @param <T> the generic type
      * @param game The <code>Game</code> to look in.
      * @param attributeName The attribute name.
      * @param returnClass The <code>FreeColObject</code> type to expect.
@@ -425,6 +438,7 @@ public class FreeColXMLReader extends StreamReaderDelegate
     /**
      * Get a FreeCol AI object from an attribute in a stream.
      *
+     * @param <T> the generic type
      * @param aiMain The <code>AIMain</code> that contains the object.
      * @param attributeName The attribute name.
      * @param returnClass The <code>AIObject</code> type to expect.
@@ -451,6 +465,7 @@ public class FreeColXMLReader extends StreamReaderDelegate
      * @param attributeName The attribute to check.
      * @param make If true, try to make the location if it is not found.
      * @return The <code>Location</code> found.
+     * @throws XMLStreamException the XML stream exception
      */
     public Location getLocationAttribute(Game game, String attributeName,
         boolean make) throws XMLStreamException {
@@ -483,6 +498,7 @@ public class FreeColXMLReader extends StreamReaderDelegate
     /**
      * Reads an XML-representation of a list of some general type.
      *
+     * @param <T> the generic type
      * @param tag The tag for the list <code>Element</code>.
      * @param type The type of the items to be added.  This type
      *     needs to have a constructor accepting a single <code>String</code>.
@@ -522,8 +538,9 @@ public class FreeColXMLReader extends StreamReaderDelegate
      * Reads an XML-representation of a list of
      * <code>FreeColGameObjectType</code>s.
      *
-     * @param tag The tag for the list <code>Element</code>.
+     * @param <T> the generic type
      * @param spec The <code>Specification</code> to find items in.
+     * @param tag The tag for the list <code>Element</code>.
      * @param type The type of the items to be added.  The type must exist
      *     in the supplied specification.
      * @return The list.
@@ -555,10 +572,11 @@ public class FreeColXMLReader extends StreamReaderDelegate
     /**
      * Find a <code>FreeColGameObject</code> of a given class
      * from a stream attribute.
-     *
+     * 
      * Use this routine when the object is optionally already be
      * present in the game.
      *
+     * @param <T> the generic type
      * @param game The <code>Game<code> to look in.
      * @param attributeName The attribute name.
      * @param returnClass The class to expect.
@@ -587,16 +605,18 @@ public class FreeColXMLReader extends StreamReaderDelegate
     /**
      * Either get an existing <code>FreeColGameObject</code> from a stream
      * attribute or create it if it does not exist.
-     *
+     * 
      * Use this routine when the object may not necessarily already be
      * present in the game, but is expected to be defined eventually.
      *
+     * @param <T> the generic type
      * @param game The <code>Game</code> to look in.
      * @param attributeName The required attribute name.
      * @param returnClass The class of object.
      * @param required If true a null result should throw an exception.
      * @return The <code>FreeColGameObject</code> found or made, or null
      *     if the attribute was not present.
+     * @throws XMLStreamException the XML stream exception
      */
     public <T extends FreeColGameObject> T makeFreeColGameObject(Game game,
         String attributeName, Class<T> returnClass,
@@ -646,6 +666,7 @@ public class FreeColXMLReader extends StreamReaderDelegate
     /**
      * Do a normal interning read of a <code>FreeColGameObject</code>.
      *
+     * @param <T> the generic type
      * @param game The <code>Game</code> to look in.
      * @param returnClass The class to expect.
      * @return The <code>FreeColGameObject</code> found, or null there
@@ -664,6 +685,7 @@ public class FreeColXMLReader extends StreamReaderDelegate
     /**
      * Do a special non-interning read of a <code>FreeColObject</code>.
      *
+     * @param <T> the generic type
      * @param game The <code>Game</code> to look in.
      * @param returnClass The class to expect.
      * @return The <code>FreeColObject</code> found, or null there
@@ -691,11 +713,12 @@ public class FreeColXMLReader extends StreamReaderDelegate
     /**
      * Reads a <code>FreeColGameObject</code> from a stream.
      * Expects the object to be identified by the standard ID_ATTRIBUTE_TAG.
-     *
+     * 
      * Use this routine when the object may or may not have been
      * referenced and created-by-id in this game, but this is the
      * point where it is authoritatively defined.
      *
+     * @param <T> the generic type
      * @param game The <code>Game</code> to look in.
      * @param returnClass The class to expect.
      * @return The <code>FreeColGameObject</code> found, or null there
@@ -712,13 +735,14 @@ public class FreeColXMLReader extends StreamReaderDelegate
     /**
      * Find a FreeCol AI object from an attribute in a stream.
      *
+     * @param <T> the generic type
      * @param aiMain The <code>AIMain</code> that contains the object.
      * @param attributeName The attribute name.
      * @param returnClass The <code>AIObject</code> type to expect.
      * @param defaultValue The default value.
      * @param required If true a null result should throw an exception.
-     * @exception XMLStreamException if there is problem reading the stream.
      * @return The <code>AIObject</code> found, or the default value if not.
+     * @exception XMLStreamException if there is problem reading the stream.
      */
     public <T extends AIObject> T findAIObject(AIMain aiMain,
         String attributeName, Class<T> returnClass, T defaultValue,
@@ -739,15 +763,18 @@ public class FreeColXMLReader extends StreamReaderDelegate
     /**
      * Either get an existing <code>AIObject</code> from a stream
      * attribute or create it if it does not exist.
-     *
+     * 
      * Use this routine when the object may not necessarily already be
      * present in the game, but is expected to be defined eventually.
+     *
+     * @param <T> the generic type
      * @param aiMain The <code>AIMain</code> that contains the object.
      * @param attributeName The attribute name.
      * @param returnClass The <code>AIObject</code> type to expect.
      * @param defaultValue The default value.
-     * @exception XMLStreamException if there is problem reading the stream.
+     * @param required the required
      * @return The <code>AIObject</code> found, or the default value if not.
+     * @exception XMLStreamException if there is problem reading the stream.
      */
     public <T extends AIObject> T makeAIObject(AIMain aiMain,
         String attributeName, Class<T> returnClass, T defaultValue,
@@ -810,11 +837,12 @@ public class FreeColXMLReader extends StreamReaderDelegate
      * Get a FreeColGameObjectType by identifier from a stream from a
      * specification.
      *
+     * @param <T> the generic type
      * @param spec The <code>Specification</code> to look in.
      * @param attributeName the name of the attribute identifying the
      *     <code>FreeColGameObjectType</code>.
      * @param returnClass The expected class of the return value.
-     * @param defaultValue A default value to return if the attributeName 
+     * @param defaultValue A default value to return if the attributeName
      *     attribute is not present.
      * @return The <code>FreeColGameObjectType</code> found, or the
      *     <code>defaultValue</code>.
@@ -832,6 +860,16 @@ public class FreeColXMLReader extends StreamReaderDelegate
             : spec.getType(attrib, returnClass);
     }
 
+    /**
+     * Gets the role.
+     *
+     * @param <T> the generic type
+     * @param spec the spec
+     * @param attributeName the attribute name
+     * @param returnClass the return class
+     * @param defaultValue the default value
+     * @return the role
+     */
     // @compat 0.10.7
     public <T extends FreeColGameObjectType> T getRole(Specification spec,
         String attributeName, Class<T> returnClass, T defaultValue) {
@@ -852,6 +890,7 @@ public class FreeColXMLReader extends StreamReaderDelegate
      * Copy a FreeColObject by serializing it and reading back the result
      * with a non-interning stream.
      *
+     * @param <T> the generic type
      * @param game The <code>Game</code> to look in.
      * @param returnClass The class to expect.
      * @return The copied <code>FreeColObject</code> found, or null there

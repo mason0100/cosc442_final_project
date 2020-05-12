@@ -44,6 +44,7 @@ import net.sf.freecol.common.util.LogBuilder;
 import net.sf.freecol.common.util.RandomChoice;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents a colony. A colony contains {@link Building}s and
  * {@link ColonyTile}s. The latter represents the tiles around the
@@ -51,32 +52,69 @@ import net.sf.freecol.common.util.RandomChoice;
  */
 public class Colony extends Settlement implements Nameable, TradeLocation {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Colony.class.getName());
 
+    /** The Constant REARRANGE_WORKERS. */
     public static final String REARRANGE_WORKERS = "rearrangeWorkers";
+    
+    /** The Constant LIBERTY_PER_REBEL. */
     public static final int LIBERTY_PER_REBEL = 200;
     /** The number of turns of advanced warning of starvation. */
     public static final int FAMINE_TURNS = 3;
     
+    /**
+     * The Enum ColonyChangeEvent.
+     */
     public enum ColonyChangeEvent {
+        
+        /** The population change. */
         POPULATION_CHANGE,
+        
+        /** The production change. */
         PRODUCTION_CHANGE,
+        
+        /** The bonus change. */
         BONUS_CHANGE,
+        
+        /** The warehouse change. */
         WAREHOUSE_CHANGE,
+        
+        /** The build queue change. */
         BUILD_QUEUE_CHANGE,
+        
+        /** The unit type change. */
         UNIT_TYPE_CHANGE
     }
 
     /** Reasons for not building a buildable. */
     public enum NoBuildReason {
+        
+        /** The none. */
         NONE,
+        
+        /** The not building. */
         NOT_BUILDING,
+        
+        /** The not buildable. */
         NOT_BUILDABLE,
+        
+        /** The population too small. */
         POPULATION_TOO_SMALL,
+        
+        /** The missing build ability. */
         MISSING_BUILD_ABILITY,
+        
+        /** The missing ability. */
         MISSING_ABILITY,
+        
+        /** The wrong upgrade. */
         WRONG_UPGRADE,
+        
+        /** The coastal. */
         COASTAL,
+        
+        /** The limit exceeded. */
         LIMIT_EXCEEDED
     }
 
@@ -133,6 +171,7 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
             BuildQueue.CompletionAction.SHUFFLE,
             Consumer.POPULATION_PRIORITY);
 
+    /** The display unit count. */
     // Will only be used on enemy colonies:
     protected int displayUnitCount = -1;
 
@@ -339,6 +378,13 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
         return ret;
     }
 
+    /**
+     * Accumulate choices.
+     *
+     * @param workTypes the work types
+     * @param tried the tried
+     * @param result the result
+     */
     private void accumulateChoices(Collection<GoodsType> workTypes,
                                    Collection<GoodsType> tried,
                                    List<Collection<GoodsType>> result) {
@@ -349,6 +395,13 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
         }
     }
 
+    /**
+     * Accumulate choice.
+     *
+     * @param workType the work type
+     * @param tried the tried
+     * @param result the result
+     */
     private void accumulateChoice(GoodsType workType,
                                   Collection<GoodsType> tried,
                                   List<Collection<GoodsType>> result) {
@@ -613,6 +666,7 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
     /**
      * Gets a work location of a specific class with a given ability.
      *
+     * @param <T> the generic type
      * @param ability An ability key.
      * @param returnClass The expected subclass.
      * @return A <code>WorkLocation</code> with the required
@@ -644,6 +698,7 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
     /**
      * Gets a work location of a specific class with a given modifier.
      *
+     * @param <T> the generic type
      * @param modifier A modifier key.
      * @param returnClass The expected subclass.
      * @return A <code>WorkLocation</code> with the required
@@ -725,7 +780,7 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
     }
 
     /**
-     * Is a tile actually in use by this colony?
+     * Is a tile actually in use by this colony?.
      *
      * @param tile The <code>Tile</code> to test.
      * @return True if this tile is actively in use by this colony.
@@ -746,7 +801,7 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
     }
 
     /**
-     * Does this colony have a stockade?
+     * Does this colony have a stockade?.
      *
      * @return True if the colony has a stockade.
      */
@@ -921,6 +976,11 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
         buildQueue.setCurrentlyBuilding(buildable);
     }
 
+    /**
+     * Can build.
+     *
+     * @return true, if successful
+     */
     public boolean canBuild() {
         return canBuild(getCurrentlyBuilding());
     }
@@ -1091,9 +1151,10 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
      * Check if the owner can buy the remaining hammers and tools for
      * the {@link Building} that is currently being built.
      *
+     * @return true, if successful
+     * @see #getPriceForBuilding
      * @exception IllegalStateException If the owner of this <code>Colony</code>
      *                has an insufficient amount of gold.
-     * @see #getPriceForBuilding
      */
     public boolean canPayToFinishBuilding() {
         return canPayToFinishBuilding(getCurrentlyBuilding());
@@ -1105,9 +1166,9 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
      *
      * @param buildableType a <code>BuildableType</code> value
      * @return a <code>boolean</code> value
+     * @see #getPriceForBuilding
      * @exception IllegalStateException If the owner of this <code>Colony</code>
      *                has an insufficient amount of gold.
-     * @see #getPriceForBuilding
      */
     public boolean canPayToFinishBuilding(BuildableType buildableType) {
         return buildableType != null
@@ -1209,6 +1270,7 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
      *
      * @param uc The number of units in the colony.
      * @param solPercent The percentage of SoLs.
+     * @return the int
      */
     public static int calculateRebels(int uc, int solPercent) {
         return (int)Math.floor(0.01 * solPercent * uc);
@@ -1413,6 +1475,11 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
         return result;
     }
 
+    /**
+     * Check for gov mgt change message.
+     *
+     * @return the model message
+     */
     public ModelMessage checkForGovMgtChangeMessage() {
         final Specification spec = getSpecification();
         final int veryBadGovernment
@@ -1548,7 +1615,7 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
     }
 
     /**
-     * Does this colony have undead units?
+     * Does this colony have undead units?.
      *
      * @return True if this colony has undead units.
      */
@@ -1962,7 +2029,7 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
     }
 
     /**
-     * Is a work location productive?
+     * Is a work location productive?.
      *
      * @param workLocation The <code>WorkLocation</code> to check.
      * @return True if something is being produced at the
@@ -2023,7 +2090,7 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
     }
 
     /**
-     * Can this colony produce certain goods?
+     * Can this colony produce certain goods?.
      *
      * @param goodsType The <code>GoodsType</code> to check production of.
      * @return True if the goods can be produced.
@@ -2071,6 +2138,13 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
         /** The expected improvement.  INFINITY for LCRs. */
         public int amount;
         
+        /**
+         * Instantiates a new tile improvement suggestion.
+         *
+         * @param tile the tile
+         * @param t the t
+         * @param amount the amount
+         */
         public TileImprovementSuggestion(Tile tile, TileImprovementType t,
                                          int amount) {
             this.tile = tile;
@@ -2078,6 +2152,11 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
             this.amount = amount;
         }
 
+        /**
+         * Checks if is exploration.
+         *
+         * @return true, if is exploration
+         */
         public boolean isExploration() {
             return this.tileImprovementType == null;
         }
@@ -2265,7 +2344,7 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
     }
 
     /**
-     * Get a message about insufficient production for a building
+     * Get a message about insufficient production for a building.
      *
      * @param info The <code>ProductionInfo</code> for the work location.
      * @param deficit The <code>AbstractGoods</code> in deficit.
@@ -2289,13 +2368,14 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
 
     /**
      * Check if a goods type is still useful to this colony.
-     *
+     * 
      * In general, all goods are useful.  However post-independence there is
      * no need for more liberty once Sol% reaches 100, nor immigration.
      * Note the latter may change when we implement sailing to other European
      * ports.
      *
      * @param goodsType The <code>GoodsType</code> to check.
+     * @return true, if successful
      */
     public boolean goodsUseful(GoodsType goodsType) {
         if (getOwner().getPlayerType() == Player.PlayerType.INDEPENDENT) {
@@ -2367,6 +2447,7 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
     /**
      * Finds the corresponding FreeColObject from another copy of this colony.
      *
+     * @param <T> the generic type
      * @param fco The <code>FreeColObject</code> in the other colony.
      * @return The corresponding <code>FreeColObject</code> in this
      *     colony, or null if not found.
@@ -2837,17 +2918,40 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
 
     // Serialization
 
+    /** The Constant BUILD_QUEUE_TAG. */
     private static final String BUILD_QUEUE_TAG = "buildQueueItem";
+    
+    /** The Constant ESTABLISHED_TAG. */
     private static final String ESTABLISHED_TAG = "established";
+    
+    /** The Constant IMMIGRATION_TAG. */
     private static final String IMMIGRATION_TAG = "immigration";
+    
+    /** The Constant LIBERTY_TAG. */
     private static final String LIBERTY_TAG = "liberty";
+    
+    /** The Constant PRODUCTION_BONUS_TAG. */
     private static final String PRODUCTION_BONUS_TAG = "productionBonus";
+    
+    /** The Constant NAME_TAG. */
     private static final String NAME_TAG = "name";
+    
+    /** The Constant OLD_SONS_OF_LIBERTY_TAG. */
     private static final String OLD_SONS_OF_LIBERTY_TAG = "oldSonsOfLiberty";
+    
+    /** The Constant OLD_TORIES_TAG. */
     private static final String OLD_TORIES_TAG = "oldTories";
+    
+    /** The Constant POPULATION_QUEUE_TAG. */
     private static final String POPULATION_QUEUE_TAG = "populationQueueItem";
+    
+    /** The Constant SONS_OF_LIBERTY_TAG. */
     private static final String SONS_OF_LIBERTY_TAG = "sonsOfLiberty";
+    
+    /** The Constant TORIES_TAG. */
     private static final String TORIES_TAG = "tories";
+    
+    /** The Constant UNIT_COUNT_TAG. */
     private static final String UNIT_COUNT_TAG = "unitCount";
 
 
@@ -3038,6 +3142,12 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
      * @return "colony".
      */
     static String colonyTagName = "colony";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
 		return colonyTagName;
     }

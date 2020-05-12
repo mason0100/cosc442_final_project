@@ -27,6 +27,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.util.Utils;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A trade item consisting of a unit.
  */
@@ -145,6 +146,7 @@ public class UnitTradeItem extends TradeItem {
 
     // Serialization
 
+    /** The Constant UNIT_TAG. */
     private static final String UNIT_TAG = "unit";
 
 

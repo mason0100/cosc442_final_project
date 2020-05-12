@@ -25,6 +25,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A class to allow access to the methods "fooType getFoo()" and
  * "void setFoo(fooType)" conventionally seen in objects.

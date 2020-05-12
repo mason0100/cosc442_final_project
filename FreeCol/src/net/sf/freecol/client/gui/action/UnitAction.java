@@ -22,6 +22,7 @@ package net.sf.freecol.client.gui.action;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Super class for all actions that should be disabled when no unit is
  * selected.

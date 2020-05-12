@@ -60,6 +60,7 @@ import net.sf.freecol.common.resources.ResourceManager;
 import static net.sf.freecol.common.util.StringUtils.splitText;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The InfoPanel is really a wrapper for a collection of useful panels
  * that share the lower right corner.
@@ -74,9 +75,11 @@ import static net.sf.freecol.common.util.StringUtils.splitText;
  */
 public final class InfoPanel extends FreeColPanel {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(InfoPanel.class.getName());
 
+    /** The Constant SLACK. */
     private static final int SLACK = 5; // Small gap
 
     /**
@@ -84,6 +87,9 @@ public final class InfoPanel extends FreeColPanel {
      */
     public class EndTurnPanel extends MigPanel {
 
+        /**
+         * Instantiates a new end turn panel.
+         */
         public EndTurnPanel() {
             super(new MigLayout("wrap 1, center", "[center]", ""));
 
@@ -113,8 +119,10 @@ public final class InfoPanel extends FreeColPanel {
      */
     public class TileInfoPanel extends MigPanel {
 
+        /** The Constant PRODUCTION. */
         private static final int PRODUCTION = 4;
         
+        /** The tile. */
         private Tile tile;
 
         // TODO: Find a way of removing the need for an extremely tiny font.
@@ -238,7 +246,7 @@ public final class InfoPanel extends FreeColPanel {
 
 
         /**
-         * Does this panel have a unit to display?
+         * Does this panel have a unit to display?.
          *
          * @return True if this panel has a non-null unit.
          */
@@ -353,24 +361,45 @@ public final class InfoPanel extends FreeColPanel {
         }
     }
 
+    /**
+     * The Enum InfoPanelMode.
+     */
     private enum InfoPanelMode {
-        NONE, END, MAP, TILE, UNIT;
+        
+        /** The none. */
+        NONE, 
+ /** The end. */
+ END, 
+ /** The map. */
+ MAP, 
+ /** The tile. */
+ TILE, 
+ /** The unit. */
+ UNIT;
     }
 
+    /** The Constant PANEL_WIDTH. */
     private static final int PANEL_WIDTH = 260;
 
+    /** The Constant PANEL_HEIGHT. */
     public static final int PANEL_HEIGHT = 130;
 
+    /** The mode. */
     private InfoPanelMode mode = InfoPanelMode.NONE;
 
+    /** The end turn panel. */
     private final EndTurnPanel endTurnPanel;
 
+    /** The map editor panel. */
     private final JPanel mapEditorPanel;
 
+    /** The tile info panel. */
     private final TileInfoPanel tileInfoPanel;
 
+    /** The unit info panel. */
     private final UnitInfoPanel unitInfoPanel;
 
+    /** The skin. */
     private final Image skin;
 
 
@@ -431,7 +460,11 @@ public final class InfoPanel extends FreeColPanel {
     }
 
     /**
-     * Adds a panel to show information
+     * Adds a panel to show information.
+     *
+     * @param panel the panel
+     * @param internalTop the internal top
+     * @param internalHeight the internal height
      */
     private void add(JPanel panel, int internalTop, int internalHeight) {
         panel.setVisible(false);

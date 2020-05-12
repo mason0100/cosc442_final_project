@@ -44,11 +44,13 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Handles the network messages that arrives before the game starts.
  */
 public final class PreGameInputHandler extends InputHandler {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(PreGameInputHandler.class.getName());
 
 

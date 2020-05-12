@@ -33,17 +33,25 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The options specific to a nation.
  */
 public class NationOptions extends FreeColObject {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(NationOptions.class.getName());
 
     /** Type of national advantages for European players. */
     public static enum Advantages implements Named {
+        
+        /** The none. */
         NONE,
+        
+        /** The fixed. */
         FIXED,
+        
+        /** The selectable. */
         SELECTABLE;
 
         /**
@@ -55,6 +63,11 @@ public class NationOptions extends FreeColObject {
             return "advantages." + getEnumKey(this);
         }
 
+        /**
+         * Gets the short description key.
+         *
+         * @return the short description key
+         */
         public final String getShortDescriptionKey() {
             return Messages.shortDescriptionKey("model." + getKey());
         }
@@ -75,8 +88,14 @@ public class NationOptions extends FreeColObject {
      * to no players.
      */
     public static enum NationState implements Named {
+        
+        /** The available. */
         AVAILABLE,
+        
+        /** The ai only. */
         AI_ONLY,
+        
+        /** The not available. */
         NOT_AVAILABLE;
 
         /**
@@ -88,6 +107,11 @@ public class NationOptions extends FreeColObject {
             return "nationState." + getEnumKey(this);
         }
 
+        /**
+         * Gets the short description key.
+         *
+         * @return the short description key
+         */
         public final String getShortDescriptionKey() {
             return Messages.shortDescriptionKey("model." + getKey());
         }
@@ -199,11 +223,20 @@ public class NationOptions extends FreeColObject {
     // Serialization
     // Note: NATION/S_TAG is capitalized to avoid collision with Nation.java.
 
+    /** The Constant NATIONAL_ADVANTAGES_TAG. */
     private static final String NATIONAL_ADVANTAGES_TAG = "nationalAdvantages";
+    
+    /** The Constant NATION_OPTION_TAG. */
     private static final String NATION_OPTION_TAG = "nationOption";
+    
+    /** The Constant STATE_TAG. */
     private static final String STATE_TAG = "state";
+    
+    /** The Constant OLD_NATION_TAG. */
     // @compat 0.11.3
     private static final String OLD_NATION_TAG = "Nation";
+    
+    /** The Constant OLD_NATIONS_TAG. */
     private static final String OLD_NATIONS_TAG = "Nations";
     // end @compat 0.11.3
 

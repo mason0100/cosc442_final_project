@@ -36,6 +36,10 @@ import net.sf.freecol.common.model.Named;
 import net.sf.freecol.common.model.Turn;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ModifierFormat.
+ */
 public class ModifierFormat {
 
     /** The decimal format to use for Modifiers. */
@@ -43,20 +47,44 @@ public class ModifierFormat {
         = new DecimalFormat("0.00");
 
 
+    /**
+     * Gets the unknown value.
+     *
+     * @return the unknown value
+     */
     public static final String getUnknownValue() {
         return Messages.message("modifierFormat.unknown");
     }
 
+    /**
+     * Format.
+     *
+     * @param value the value
+     * @return the string
+     */
     public static final String format(double value) {
         return (value == Modifier.UNKNOWN)
             ? getUnknownValue()
             : MODIFIERFORMATVALUE.format(value);
     }
 
+    /**
+     * Gets the modifier strings.
+     *
+     * @param modifier the modifier
+     * @return the modifier strings
+     */
     public static final String[] getModifierStrings(Modifier modifier) {
         return getModifierStrings(modifier.getValue(), modifier.getType());
     }
 
+    /**
+     * Gets the modifier strings.
+     *
+     * @param value the value
+     * @param type the type
+     * @return the modifier strings
+     */
     public static final String[] getModifierStrings(float value,
                                                     ModifierType type) {
         String bonus = MODIFIERFORMATVALUE.format(value);
@@ -80,6 +108,12 @@ public class ModifierFormat {
         return result;
     }
 
+    /**
+     * Gets the source name.
+     *
+     * @param source the source
+     * @return the source name
+     */
     private static String getSourceName(FreeColObject source) {
         if (source == null) return getUnknownValue();
 
@@ -96,6 +130,14 @@ public class ModifierFormat {
         return result;
     }
 
+    /**
+     * Gets the modifier labels.
+     *
+     * @param modifier the modifier
+     * @param fcgot the fcgot
+     * @param turn the turn
+     * @return the modifier labels
+     */
     public static JLabel[] getModifierLabels(Modifier modifier,
                                              FreeColGameObjectType fcgot,
                                              Turn turn) {
@@ -112,6 +154,12 @@ public class ModifierFormat {
         return result;
     }
 
+    /**
+     * Gets the feature as string.
+     *
+     * @param feature the feature
+     * @return the feature as string
+     */
     public static String getFeatureAsString(Feature feature) {
         return Messages.getName(feature) + ":"
             + ((!feature.hasScope()) ? ""
@@ -127,6 +175,12 @@ public class ModifierFormat {
                     }).collect(Collectors.joining()));
     }
 
+    /**
+     * Gets the modifier as string.
+     *
+     * @param modifier the modifier
+     * @return the modifier as string
+     */
     public static String getModifierAsString(Modifier modifier) {
         return Arrays.stream(getModifierStrings(modifier))
             .filter(s -> s != null).collect(Collectors.joining());

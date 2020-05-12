@@ -33,13 +33,16 @@ import net.sf.freecol.common.model.Role;
 import net.sf.freecol.common.option.UnitTypeOption.TypeSelector;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents an option where the valid choice is an AbstractUnit.
  */
 public class AbstractUnitOption extends AbstractOption<AbstractUnit> {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(AbstractUnitOption.class.getName());
 
+    /** The Constant DEFAULT_SELECTOR. */
     private static final TypeSelector DEFAULT_SELECTOR = TypeSelector.UNITS;
 
     /** The value of this option. */
@@ -75,16 +78,25 @@ public class AbstractUnitOption extends AbstractOption<AbstractUnit> {
     }
 
 
+    /**
+     * Require unit type.
+     */
     private void requireUnitType() {
         this.unitType = new UnitTypeOption(getId() + ".unitType",
                                            getSpecification());
     }
 
+    /**
+     * Require role.
+     */
     private void requireRole() {
         this.role = new StringOption(getId() + ".role",
                                      getSpecification());
     }
 
+    /**
+     * Require number.
+     */
     private void requireNumber() {
         this.number = new IntegerOption(getId() + ".number",
                                         getSpecification());
@@ -202,8 +214,13 @@ public class AbstractUnitOption extends AbstractOption<AbstractUnit> {
 
     // Serialization
 
+    /** The Constant NUMBER_TAG. */
     private static final String NUMBER_TAG = "number";
+    
+    /** The Constant ROLE_TAG. */
     private static final String ROLE_TAG = "role";
+    
+    /** The Constant UNIT_TYPE_TAG. */
     private static final String UNIT_TYPE_TAG = "unitType";
 
 

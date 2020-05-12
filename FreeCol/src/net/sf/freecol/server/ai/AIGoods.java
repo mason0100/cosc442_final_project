@@ -43,11 +43,13 @@ import net.sf.freecol.server.ai.mission.Mission;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Objects of this class contains AI-information for a single {@link Goods}.
  */
 public class AIGoods extends TransportableAIObject {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(AIGoods.class.getName());
 
     /** The underlying goods. */
@@ -397,6 +399,7 @@ public class AIGoods extends TransportableAIObject {
 
     // Serialization
 
+    /** The Constant DESTINATION_TAG. */
     private static final String DESTINATION_TAG = "destination";
 
 

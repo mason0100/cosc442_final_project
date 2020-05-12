@@ -28,6 +28,7 @@ import net.sf.freecol.common.model.GameOptions;
 import net.sf.freecol.common.option.OptionGroup;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Dialog for changing the {@link net.sf.freecol.common.model.GameOptions}.
  */

@@ -31,13 +31,19 @@ import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A type of goods, derived from the specification.
  */
 public final class GoodsType extends FreeColGameObjectType {
 
+    /** The Constant DEFAULT_PRODUCTION_WEIGHT. */
     private static final float DEFAULT_PRODUCTION_WEIGHT = 1.0f;
+    
+    /** The Constant DEFAULT_LOW_PRODUCTION_THRESHOLD. */
     private static final float DEFAULT_LOW_PRODUCTION_THRESHOLD = 0.0f;
+    
+    /** The Constant DEFAULT_ZERO_PRODUCTION_FACTOR. */
     private static final float DEFAULT_ZERO_PRODUCTION_FACTOR = 1.0f;
 
     /** A comparator to impose a useful order on goods types. */
@@ -155,7 +161,7 @@ public final class GoodsType extends FreeColGameObjectType {
 
 
     /**
-     * Is this a farmed goods type?
+     * Is this a farmed goods type?.
      *
      * @return True if this is a farmed goods type.
      */
@@ -164,7 +170,7 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     /**
-     * Is this an edible goods type?
+     * Is this an edible goods type?.
      *
      * @return True if this is a food type.
      */
@@ -173,7 +179,7 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     /**
-     * Is this goods type a military goods type?
+     * Is this goods type a military goods type?.
      *
      * @return True if this is a military goods type.
      */
@@ -182,6 +188,9 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     // @compat 0.10.x
+    /**
+     * Sets the military.
+     */
     // Needed by Specification fixup010x()
     public void setMilitary() {
         this.isMilitary = true;
@@ -189,7 +198,7 @@ public final class GoodsType extends FreeColGameObjectType {
     // end @compat 0.10.x
 
     /**
-     * Do warehouse storage limits not apply to this goods type?
+     * Do warehouse storage limits not apply to this goods type?.
      *
      * @return True if unlimited amounts of this goods type can be stored.
      */
@@ -198,7 +207,7 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     /**
-     * Is this a goods type native to the New World?
+     * Is this a goods type native to the New World?.
      *
      * @return True if this goods type is native to the New World.
      */
@@ -207,7 +216,7 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     /**
-     * Is this goods type made from a New World goods type?
+     * Is this goods type made from a New World goods type?.
      *
      * @return True if this goods type is made from New World goods.
      */
@@ -216,7 +225,7 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     /**
-     * Is this type of goods is required for building a BuildableType?
+     * Is this type of goods is required for building a BuildableType?.
      *
      * @return True if this is a simple building material.
      * @see BuildableType
@@ -226,7 +235,7 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     /**
-     * Is this a trade goods type?
+     * Is this a trade goods type?.
      *
      * @return True if this goods type is trade goods.
      */
@@ -235,7 +244,7 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     /**
-     * Does this type of goods produce liberty?
+     * Does this type of goods produce liberty?.
      *
      * @return True if this goods type produces liberty.
      */
@@ -244,7 +253,7 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     /**
-     * Does this type of goods produce immigration?
+     * Does this type of goods produce immigration?.
      *
      * @return True if this goods type produces immigration.
      */
@@ -253,7 +262,7 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     /**
-     * Is this goods type storable?
+     * Is this goods type storable?.
      *
      * @return True if this goods type is storable.
      */
@@ -262,7 +271,7 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     /**
-     * Is this type of goods stored as something else?
+     * Is this type of goods stored as something else?.
      *
      * @return True if this type of goods is stored as another type.
      */
@@ -271,7 +280,7 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     /**
-     * What type of goods is this goods type stored as?
+     * What type of goods is this goods type stored as?.
      *
      * @return The <code>GoodsType</code> this is stored as, usually itself.
      */
@@ -280,7 +289,7 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     /**
-     * Can this goods type be made into somthing?
+     * Can this goods type be made into somthing?.
      *
      * @return True if this <code>GoodsType</code> can be made into something.
      */
@@ -289,7 +298,7 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     /**
-     * Is this goods type made from somthing?
+     * Is this goods type made from somthing?.
      *
      * @return True if this <code>GoodsType</code> is made from something.
      */
@@ -298,7 +307,7 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     /**
-     * What is this goods made into?
+     * What is this goods made into?.
      *
      * @return The <code>GoodsType</code> this is made into, if anything.
      */
@@ -307,7 +316,7 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     /**
-     * What is this goods type made from?
+     * What is this goods type made from?.
      *
      * @return The <code>GoodsType</code> this is made from, if anything.
      */
@@ -366,7 +375,7 @@ public final class GoodsType extends FreeColGameObjectType {
     }
 
     /**
-     * Is this type of goods breedable?
+     * Is this type of goods breedable?.
      *
      * @return True if this <code>GoodsType</code> is breedable.
      */
@@ -383,6 +392,11 @@ public final class GoodsType extends FreeColGameObjectType {
         return price;
     }
 
+    /**
+     * Sets the price.
+     *
+     * @param newPrice the new price
+     */
     public void setPrice(final int newPrice) {
         this.price = newPrice;
     }
@@ -534,23 +548,58 @@ public final class GoodsType extends FreeColGameObjectType {
 
     // Serialization
 
+    /** The Constant BREEDING_NUMBER_TAG. */
     private static final String BREEDING_NUMBER_TAG = "breeding-number";
+    
+    /** The Constant IGNORE_LIMIT_TAG. */
     private static final String IGNORE_LIMIT_TAG = "ignore-limit";
+    
+    /** The Constant INITIAL_AMOUNT_TAG. */
     private static final String INITIAL_AMOUNT_TAG = "initial-amount";
+    
+    /** The Constant INITIAL_PRICE_TAG. */
     private static final String INITIAL_PRICE_TAG = "initial-price";
+    
+    /** The Constant IS_FARMED_TAG. */
     private static final String IS_FARMED_TAG = "is-farmed";
+    
+    /** The Constant IS_FOOD_TAG. */
     private static final String IS_FOOD_TAG = "is-food";
+    
+    /** The Constant IS_MILITARY_TAG. */
     private static final String IS_MILITARY_TAG = "is-military";
+    
+    /** The Constant LOW_PRODUCTION_THRESHOLD_TAG. */
     private static final String LOW_PRODUCTION_THRESHOLD_TAG = "low-production-threshold";
+    
+    /** The Constant MADE_FROM_TAG. */
     private static final String MADE_FROM_TAG = "made-from";
+    
+    /** The Constant MARKET_TAG. */
     private static final String MARKET_TAG = "market";
+    
+    /** The Constant NEW_WORLD_GOODS_TAG. */
     private static final String NEW_WORLD_GOODS_TAG = "new-world-goods";
+    
+    /** The Constant PRICE_TAG. */
     private static final String PRICE_TAG = "price";
+    
+    /** The Constant PRICE_DIFFERENCE_TAG. */
     private static final String PRICE_DIFFERENCE_TAG = "price-difference";
+    
+    /** The Constant PRODUCTION_WEIGHT_TAG. */
     private static final String PRODUCTION_WEIGHT_TAG = "production-weight";
+    
+    /** The Constant STORABLE_TAG. */
     private static final String STORABLE_TAG = "storable";
+    
+    /** The Constant STORED_AS_TAG. */
     private static final String STORED_AS_TAG = "stored-as";
+    
+    /** The Constant TRADE_GOODS_TAG. */
     private static final String TRADE_GOODS_TAG = "trade-goods";
+    
+    /** The Constant ZERO_PRODUCTION_FACTOR_TAG. */
     private static final String ZERO_PRODUCTION_FACTOR_TAG = "zero-production-factor";
 
 
@@ -705,7 +754,14 @@ public final class GoodsType extends FreeColGameObjectType {
      *
      * @return "goods-type".
      */
+    static String goodsTypeTag = "goods-type";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
-        return "goods-type";
+		return goodsTypeTag;
     }
 }

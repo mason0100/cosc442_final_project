@@ -30,8 +30,11 @@ import net.sf.freecol.common.model.Tile;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Listens to the mouse being moved at the level of the Canvas.
+ *
+ * @see CanvasMouseMotionEvent
  */
 public final class CanvasMouseMotionListener extends AbstractCanvasListener
     implements MouseMotionListener {
@@ -52,6 +55,7 @@ public final class CanvasMouseMotionListener extends AbstractCanvasListener
      * Creates a new listener for mouse movement.
      *
      * @param freeColClient The <code>FreeColClient</code> for the game.
+     * @param canvas the canvas
      */
     public CanvasMouseMotionListener(FreeColClient freeColClient, Canvas canvas) {
         super(freeColClient, canvas);

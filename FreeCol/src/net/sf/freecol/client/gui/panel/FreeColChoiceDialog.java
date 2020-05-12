@@ -29,8 +29,11 @@ import net.sf.freecol.client.gui.ChoiceItem;
 import net.sf.freecol.common.i18n.Messages;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A simple modal choice dialog.
+ *
+ * @param <T> the generic type
  */
 public class FreeColChoiceDialog<T> extends FreeColDialog<T> {
 
@@ -66,6 +69,8 @@ public class FreeColChoiceDialog<T> extends FreeColDialog<T> {
 
 
     /**
+     * Initialize choice dialog.
+     *
      * @param frame The owner frame.
      * @param modal True if this dialog should be modal.
      * @param obj An object that explains the choice for the user.

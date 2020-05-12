@@ -24,12 +24,14 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for displaying the
  * {@link net.sf.freecol.client.gui.panel.EuropePanel}.
  */
 public class EuropeAction extends MapboardAction {
 
+    /** The Constant ID. */
     public static final String ID = "europeAction";
 
 

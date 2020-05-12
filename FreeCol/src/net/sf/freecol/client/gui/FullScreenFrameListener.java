@@ -27,12 +27,18 @@ import javax.swing.JFrame;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The WindowListener for the FullScreenFrame class.
+ *
+ * @see FullScreenFrameEvent
  */
 public final class FullScreenFrameListener implements WindowListener {
 
+    /** The free col client. */
     private final FreeColClient freeColClient;
+    
+    /** The frame. */
     private final FreeColFrame frame;
 
     /**

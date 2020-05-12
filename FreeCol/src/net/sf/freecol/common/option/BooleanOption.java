@@ -27,12 +27,14 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.model.Specification;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents an option that can be either <i>true</i>
  * or <i>false</i>.
  */
 public class BooleanOption extends AbstractOption<Boolean> {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(BooleanOption.class.getName());
 

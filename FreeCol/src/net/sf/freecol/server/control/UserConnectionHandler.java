@@ -38,6 +38,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Handles a new client connection.  {@link PreGameInputHandler} is
  * set as the message handler when the client has successfully logged
@@ -46,6 +47,7 @@ import org.w3c.dom.Element;
 public final class UserConnectionHandler extends FreeColServerHolder
     implements MessageHandler {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(UserConnectionHandler.class.getName());
 
 

@@ -39,6 +39,7 @@ import static net.sf.freecol.common.util.RandomUtils.*;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class implements the player's monarch, whose functions prior
  * to the revolution include raising taxes, declaring war on other
@@ -46,6 +47,7 @@ import static net.sf.freecol.common.util.StringUtils.*;
  */
 public final class Monarch extends FreeColGameObject implements Named {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Monarch.class.getName());
 
     /**
@@ -99,10 +101,20 @@ public final class Monarch extends FreeColGameObject implements Named {
         }
 
 
+        /**
+         * Gets the space required.
+         *
+         * @return the space required
+         */
         public final int getSpaceRequired() {
             return spaceRequired;
         }
 
+        /**
+         * Gets the capacity.
+         *
+         * @return the capacity
+         */
         public final int getCapacity() {
             return capacity;
         }
@@ -151,7 +163,7 @@ public final class Monarch extends FreeColGameObject implements Named {
         }
 
         /**
-         * Is this Force empty?
+         * Is this Force empty?.
          *
          * @return True if there are no land or naval units.
          */
@@ -208,6 +220,9 @@ public final class Monarch extends FreeColGameObject implements Named {
                 (naval) ? navalUnits : landUnits);
         }
 
+        /**
+         * Fix old REF roles.
+         */
         // @compat 0.10.x
         public void fixOldREFRoles() {
             Iterator<AbstractUnit> aui = landUnits.iterator();
@@ -233,13 +248,23 @@ public final class Monarch extends FreeColGameObject implements Named {
                     
         // Serialization
 
+        /** The Constant LAND_UNITS_TAG. */
         public static final String LAND_UNITS_TAG = "landUnits";
+        
+        /** The Constant NAVAL_UNITS_TAG. */
         public static final String NAVAL_UNITS_TAG = "navalUnits";
         // @compat 0.10.5
         // public for now, revert to private
         // end @compat
 
 
+        /**
+         * To XML.
+         *
+         * @param xw the xw
+         * @param tag the tag
+         * @throws XMLStreamException the XML stream exception
+         */
         public void toXML(FreeColXMLWriter xw, String tag) throws XMLStreamException {
             xw.writeStartElement(tag);
 
@@ -258,6 +283,12 @@ public final class Monarch extends FreeColGameObject implements Named {
             xw.writeEndElement();
         }
 
+        /**
+         * Read from XML.
+         *
+         * @param xr the xr
+         * @throws XMLStreamException the XML stream exception
+         */
         public void readFromXML(FreeColXMLReader xr) throws XMLStreamException {
             // Clear containers.
             navalUnits.clear();
@@ -304,20 +335,50 @@ public final class Monarch extends FreeColGameObject implements Named {
 
     /** Constants describing monarch actions. */
     public static enum MonarchAction {
+        
+        /** The no action. */
         NO_ACTION,
+        
+        /** The raise tax act. */
         RAISE_TAX_ACT,
+        
+        /** The raise tax war. */
         RAISE_TAX_WAR,
+        
+        /** The force tax. */
         FORCE_TAX,
+        
+        /** The lower tax war. */
         LOWER_TAX_WAR,
+        
+        /** The lower tax other. */
         LOWER_TAX_OTHER,
+        
+        /** The waive tax. */
         WAIVE_TAX,
+        
+        /** The add to ref. */
         ADD_TO_REF,
+        
+        /** The declare peace. */
         DECLARE_PEACE,
+        
+        /** The declare war. */
         DECLARE_WAR,
+        
+        /** The support land. */
         SUPPORT_LAND,
+        
+        /** The support sea. */
         SUPPORT_SEA,
+        
+        /** The monarch mercenaries. */
         MONARCH_MERCENARIES, 
+        
+        /** The hessian mercenaries. */
         HESSIAN_MERCENARIES,
+        
+        /** The displeasure. */
         DISPLEASURE;
 
         /**
@@ -329,18 +390,38 @@ public final class Monarch extends FreeColGameObject implements Named {
             return "monarch.action." + getEnumKey(this);
         }
 
+        /**
+         * Gets the text key.
+         *
+         * @return the text key
+         */
         public String getTextKey() {
             return "model." + getKey() + ".text";
         }
         
+        /**
+         * Gets the yes key.
+         *
+         * @return the yes key
+         */
         public String getYesKey() {
             return "model." + getKey() + ".yes";
         }
 
+        /**
+         * Gets the no key.
+         *
+         * @return the no key
+         */
         public String getNoKey() {
             return "model." + getKey() + ".no";
         }
 
+        /**
+         * Gets the header key.
+         *
+         * @return the header key
+         */
         public String getHeaderKey() {
             return "model." + getKey() + ".header";
         }
@@ -1046,14 +1127,26 @@ public final class Monarch extends FreeColGameObject implements Named {
 
     // Serialization
 
+    /** The Constant DISPLEASURE_TAG. */
     private static final String DISPLEASURE_TAG = "displeasure";
+    
+    /** The Constant EXPEDITIONARY_FORCE_TAG. */
     private static final String EXPEDITIONARY_FORCE_TAG = "expeditionaryForce";
+    
+    /** The Constant INTERVENTION_FORCE_TAG. */
     private static final String INTERVENTION_FORCE_TAG = "interventionForce";
+    
+    /** The Constant PLAYER_TAG. */
     private static final String PLAYER_TAG = "player";
+    
+    /** The Constant SUPPORT_SEA_TAG. */
     private static final String SUPPORT_SEA_TAG = "supportSea";
+    
+    /** The Constant NAME_TAG. */
     // @compat 0.11.1
     private static final String NAME_TAG = "name";
     // end @compat 0.11.1
+    /** The Constant MERCENARY_FORCE_TAG. */
     // @compat 0.11.5
     private static final String MERCENARY_FORCE_TAG = "mercenaryForce";
     // end @compat 0.11.5

@@ -33,6 +33,7 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The ImprovementMission causes a Unit to add a TileImprovement to a
  * particular Tile.
@@ -149,6 +150,7 @@ public class ImprovementMission extends AbstractMission {
 
     // Serialization.
 
+    /** The Constant IMPROVEMENT_TAG. */
     private static final String IMPROVEMENT_TAG = "improvement";
 
 

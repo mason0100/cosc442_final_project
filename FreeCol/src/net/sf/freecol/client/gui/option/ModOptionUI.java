@@ -30,6 +30,7 @@ import net.sf.freecol.common.io.FreeColModFile;
 import net.sf.freecol.common.option.ModOption;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides visualization for a
  * {@link net.sf.freecol.common.option.ModOption} in order to enable
@@ -38,6 +39,9 @@ import net.sf.freecol.common.option.ModOption;
 public final class ModOptionUI extends OptionUI<ModOption>  {
 
 
+    /**
+     * The Class BoxRenderer.
+     */
     private static class BoxRenderer
         extends FreeColComboBoxRenderer<FreeColModFile> {
 
@@ -52,6 +56,9 @@ public final class ModOptionUI extends OptionUI<ModOption>  {
         }
     }
 
+    /**
+     * The Class ModOptionRenderer.
+     */
     private static class ModOptionRenderer
         extends FreeColComboBoxRenderer<ModOption> {
 

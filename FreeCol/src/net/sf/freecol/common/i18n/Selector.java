@@ -19,6 +19,10 @@
 
 package net.sf.freecol.common.i18n;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface Selector.
+ */
 public interface Selector {
 
     /**

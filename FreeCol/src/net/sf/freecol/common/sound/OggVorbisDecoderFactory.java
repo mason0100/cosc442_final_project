@@ -38,6 +38,7 @@ import com.jcraft.jorbis.DspState;
 import com.jcraft.jorbis.Info;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Rewritten from the JCraft JOrbisPlayer example (GPLv2+), fixing a
  * bunch of bugs that prevent it from playing short files and recasting
@@ -52,38 +53,71 @@ public class OggVorbisDecoderFactory {
      */
     private static class OggStream extends InputStream {
 
+        /** The Constant EOS. */
         // End of stream marker.
         private static final String EOS = "End-of-stream";
 
+        /** The Constant BUFSIZ. */
         // Internal buffer size.
         private static final int BUFSIZ = 4096;
 
+        /** The ogg packet. */
         private final Packet oggPacket = new Packet();
+        
+        /** The ogg page. */
         private final Page oggPage = new Page();
+        
+        /** The ogg stream state. */
         private final StreamState oggStreamState = new StreamState();
+        
+        /** The ogg sync state. */
         private final SyncState oggSyncState = new SyncState();
+        
+        /** The orbis dsp state. */
         private final DspState orbisDspState = new DspState();
+        
+        /** The orbis block. */
         private final Block orbisBlock = new Block(orbisDspState);
+        
+        /** The orbis comment. */
         private final Comment orbisComment = new Comment();
+        
+        /** The orbis info. */
         private final Info orbisInfo = new Info();
 
+        /** The audio format. */
         private final AudioFormat audioFormat;
 
+        /** The conv buf. */
         // The buffer to convert into.
         private final byte[] convBuf = new byte[BUFSIZ];
+        
+        /** The buf count. */
         // The amount of data waiting in the buffer.
         private int bufCount = 0;
+        
+        /** The offset. */
         // The position in the buffer of the data.
         private int offset = 0;
         
+        /** The pcmi. */
         // PCM index and data.
         private int[] pcmi;
+        
+        /** The pcm data. */
         private float[][][] pcmData;
 
+        /** The input stream. */
         // The stream containing the data.
         private InputStream inputStream = null;
 
 
+        /**
+         * Instantiates a new ogg stream.
+         *
+         * @param inputStream the input stream
+         * @throws IOException Signals that an I/O exception has occurred.
+         */
         public OggStream(InputStream inputStream) throws IOException {
             super();
             this.inputStream = inputStream;
@@ -98,6 +132,9 @@ public class OggVorbisDecoderFactory {
             this.offset = 0;
         }
 
+        /* (non-Javadoc)
+         * @see java.io.InputStream#close()
+         */
         @Override
         public void close() {
             oggSyncState.clear();
@@ -106,6 +143,11 @@ public class OggVorbisDecoderFactory {
             orbisDspState.clear();
         }
 
+        /**
+         * Gets the format.
+         *
+         * @return the format
+         */
         public AudioFormat getFormat() {
             return audioFormat;
         }
@@ -120,12 +162,18 @@ public class OggVorbisDecoderFactory {
             return bufCount;
         }
 
+        /* (non-Javadoc)
+         * @see java.io.InputStream#read()
+         */
         @Override
         public int read() throws IOException {
             byte[] b = new byte[1];
             return (read(b) > 0) ? b[0] : -1;
         }
 
+        /* (non-Javadoc)
+         * @see java.io.InputStream#read(byte[])
+         */
         @Override
         public int read(byte[] buf) throws IOException {
             return read(buf, buf.length);
@@ -166,6 +214,7 @@ public class OggVorbisDecoderFactory {
          *
          * @param n The number of bytes to skip.
          * @return The actual number of bytes skipped.
+         * @throws IOException Signals that an I/O exception has occurred.
          */
         @Override
         public long skip(long n) throws IOException {
@@ -191,6 +240,9 @@ public class OggVorbisDecoderFactory {
         //public void mark(int readLimit) {}
         //public boolean markSupported() { return false; }
 
+        /* (non-Javadoc)
+         * @see java.io.InputStream#reset()
+         */
         @Override
         public void reset() {}
 
@@ -303,6 +355,7 @@ public class OggVorbisDecoderFactory {
         /**
          * Refills the conversion buffer.
          *
+         * @param is the is
          * @return The number of bytes waiting in the convBuf.
          */
         public int getBody(InputStream is) {
@@ -339,6 +392,7 @@ public class OggVorbisDecoderFactory {
         /**
          * Decode the PCM data.
          *
+         * @param samples the samples
          * @return The number of bytes waiting in the conversion buffer to
          *     be written.
          */
@@ -369,6 +423,7 @@ public class OggVorbisDecoderFactory {
      */
     private static class OggVorbisAudioInputStream extends AudioInputStream {
 
+        /** The os. */
         // Core JOgg and JOrbis magic.
         private OggStream os = null;
 
@@ -377,12 +432,16 @@ public class OggVorbisDecoderFactory {
          * Create a new player.
          *
          * @param os The <code>OggStream</code> to read from.
+         * @throws IOException Signals that an I/O exception has occurred.
          */
         public OggVorbisAudioInputStream(OggStream os) throws IOException {
             super(os, os.getFormat(), AudioSystem.NOT_SPECIFIED);
             this.os = os;
         }
 
+        /* (non-Javadoc)
+         * @see javax.sound.sampled.AudioInputStream#getFormat()
+         */
         @Override
         public AudioFormat getFormat() {
             return os.getFormat();
@@ -393,45 +452,77 @@ public class OggVorbisDecoderFactory {
         //    return frameLength;
         //}
 
+        /* (non-Javadoc)
+         * @see javax.sound.sampled.AudioInputStream#available()
+         */
         @Override
         public int available() {
             return os.available();
         }
 
+        /* (non-Javadoc)
+         * @see javax.sound.sampled.AudioInputStream#read()
+         */
         @Override
         public int read() throws IOException {
             return os.read();
         }
 
+        /* (non-Javadoc)
+         * @see javax.sound.sampled.AudioInputStream#read(byte[])
+         */
         @Override
         public int read(byte[] buf) throws IOException {
             return os.read(buf);
         }
 
+        /**
+         * Read.
+         *
+         * @param buf the buf
+         * @param n the n
+         * @return the int
+         * @throws IOException Signals that an I/O exception has occurred.
+         */
         public int read(byte[] buf, int n) throws IOException {
             return os.read(buf, n);
         }
 
+        /* (non-Javadoc)
+         * @see javax.sound.sampled.AudioInputStream#close()
+         */
         @Override
         public void close() {
             os.close();
         }
 
+        /* (non-Javadoc)
+         * @see javax.sound.sampled.AudioInputStream#skip(long)
+         */
         @Override
         public long skip(long n) throws IOException {
             return os.skip(n);
         }
 
+        /* (non-Javadoc)
+         * @see javax.sound.sampled.AudioInputStream#mark(int)
+         */
         @Override
         public void mark(int readLimit) {
             os.mark(readLimit);
         }
 
+        /* (non-Javadoc)
+         * @see javax.sound.sampled.AudioInputStream#markSupported()
+         */
         @Override
         public boolean markSupported() {
             return os.markSupported();
         }
 
+        /* (non-Javadoc)
+         * @see javax.sound.sampled.AudioInputStream#reset()
+         */
         @Override
         public void reset() {
             os.reset();
@@ -450,7 +541,7 @@ public class OggVorbisDecoderFactory {
      *
      * @param file The <code>File</code> containing the content.
      * @return A new <code>AudioInputStream</code> to decode the input.
-     * @throws java.io.IOException
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     public AudioInputStream getOggStream(File file) throws IOException {
         FileInputStream fis = new FileInputStream(file);

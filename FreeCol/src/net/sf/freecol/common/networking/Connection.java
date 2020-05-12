@@ -49,6 +49,7 @@ import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A network connection.
  * Responsible for both sending and receiving network messages.
@@ -59,33 +60,56 @@ import org.xml.sax.SAXException;
  */
 public class Connection implements Closeable {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Connection.class.getName());
 
+    /** The Constant DISCONNECT_TAG. */
     public static final String DISCONNECT_TAG = "disconnect";
+    
+    /** The Constant NETWORK_REPLY_ID_TAG. */
     public static final String NETWORK_REPLY_ID_TAG = "networkReplyId";
+    
+    /** The Constant QUESTION_TAG. */
     public static final String QUESTION_TAG = "question";
+    
+    /** The Constant REPLY_TAG. */
     public static final String REPLY_TAG = "reply";
+    
+    /** The Constant SEND_SUFFIX. */
     public static final String SEND_SUFFIX = "-send\n";
+    
+    /** The Constant REPLY_SUFFIX. */
     public static final String REPLY_SUFFIX = "-reply\n";
 
+    /** The Constant TIMEOUT. */
     private static final int TIMEOUT = 5000; // 5s
 
+    /** The in. */
     private InputStream in;
 
+    /** The socket. */
     private Socket socket;
 
+    /** The out. */
     private OutputStream out;
 
+    /** The xml transformer. */
     private final Transformer xmlTransformer;
 
+    /** The thread. */
     private ReceivingThread thread;
 
+    /** The message handler. */
     private MessageHandler messageHandler;
 
+    /** The name. */
     private String name;
 
+    /** The log result. */
     // Logging variables.
     private final StreamResult logResult;
+    
+    /** The log writer. */
     private final Writer logWriter;
 
 
@@ -128,7 +152,8 @@ public class Connection implements Closeable {
      * @param port The port to connect to.
      * @param messageHandler The MessageHandler to call for each message
      *     received.
-     * @exception IOException
+     * @param name the name
+     * @exception IOException Signals that an I/O exception has occurred.
      */
     public Connection(String host, int port, MessageHandler messageHandler,
                       String name) throws IOException {
@@ -142,7 +167,8 @@ public class Connection implements Closeable {
      * @param socket The socket to the client.
      * @param messageHandler The MessageHandler to call for each message
      *     received.
-     * @exception IOException
+     * @param name the name
+     * @exception IOException Signals that an I/O exception has occurred.
      */
     public Connection(Socket socket, MessageHandler messageHandler,
                       String name) throws IOException {
@@ -163,8 +189,8 @@ public class Connection implements Closeable {
      *
      * @param host The host to connect to.
      * @param port The port to connect to.
-     * @exception IOException on failure to create/connect the socket.
      * @return A new socket.
+     * @exception IOException on failure to create/connect the socket.
      */
     private static Socket createSocket(String host, int port)
         throws IOException {
@@ -175,7 +201,7 @@ public class Connection implements Closeable {
     }
 
     /**
-     * Is this connection alive?
+     * Is this connection alive?.
      *
      * @return True if the connection is alive.
      */
@@ -351,8 +377,8 @@ public class Connection implements Closeable {
      *
      * @param element The question for the other peer.
      * @return The reply from the other peer.
-     * @exception IOException if an error occur while sending the message.
      * @see #sendInternal(Element)
+     * @exception IOException if an error occur while sending the message.
      */
     private Element askInternal(Element element) throws IOException {
         int networkReplyId = thread.getNextNetworkReplyId();
@@ -385,9 +411,9 @@ public class Connection implements Closeable {
      *
      * @param element The <code>Element</code> (root element in a
      *     DOM-parsed XML tree) that holds all the information
-     * @exception IOException If an error occur while sending the message.
      * @see #sendAndWait(Element)
      * @see #ask(Element)
+     * @exception IOException If an error occur while sending the message.
      */
     public void send(Element element) throws IOException {
         sendInternal(element);
@@ -400,9 +426,9 @@ public class Connection implements Closeable {
      *
      * @param element The element (root element in a DOM-parsed XML
      *     tree) that holds all the information
-     * @exception IOException If an error occur while sending the message.
      * @see #send(Element)
      * @see #ask(Element)
+     * @exception IOException If an error occur while sending the message.
      */
     public void sendAndWait(Element element) throws IOException {
         askInternal(element);
@@ -414,9 +440,9 @@ public class Connection implements Closeable {
      *
      * @param element The question for the peer.
      * @return The reply from the peer.
-     * @exception IOException if an error occur while sending the message.
      * @see #send(Element)
      * @see #sendAndWait(Element)
+     * @exception IOException if an error occur while sending the message.
      */
     public Element ask(Element element) throws IOException {
         Element reply = askInternal(element);

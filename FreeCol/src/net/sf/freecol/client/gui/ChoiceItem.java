@@ -27,18 +27,34 @@ import net.sf.freecol.common.model.AbstractUnit;
 import net.sf.freecol.common.model.Player;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Can be used as a single choice for the
  * {@link net.sf.freecol.client.gui.panel.FreeColChoiceDialog}.
+ *
+ * @param <T> the generic type
  */
 public class ChoiceItem<T> implements Comparable<ChoiceItem<T>> {
 
+    /** The text. */
     private String text;
+    
+    /** The object. */
     private final T object;
+    
+    /** The icon. */
     private ImageIcon icon;
+    
+    /** The enabled. */
     private final boolean enabled;
+    
+    /** The option OK. */
     private boolean optionOK = false;
+    
+    /** The option cancel. */
     private boolean optionCancel = false;
+    
+    /** The option default. */
     private boolean optionDefault = false;
 
 
@@ -110,7 +126,7 @@ public class ChoiceItem<T> implements Comparable<ChoiceItem<T>> {
     }
     
     /**
-     * Should this item be enabled or not?
+     * Should this item be enabled or not?.
      *
      * @return The enable status.
      */
@@ -147,7 +163,7 @@ public class ChoiceItem<T> implements Comparable<ChoiceItem<T>> {
     }
 
     /**
-     * Is this choice the "OK" choice?
+     * Is this choice the "OK" choice?.
      *
      * @return True if this is the "OK" choice.
      */
@@ -166,7 +182,7 @@ public class ChoiceItem<T> implements Comparable<ChoiceItem<T>> {
     }
 
     /**
-     * Is this choice the "cancel" choice?
+     * Is this choice the "cancel" choice?.
      *
      * @return True if this is the "cancel" choice.
      */
@@ -185,7 +201,7 @@ public class ChoiceItem<T> implements Comparable<ChoiceItem<T>> {
     }
 
     /**
-     * Is this choice the default choice?
+     * Is this choice the default choice?.
      *
      * @return True if this is the default choice.
      */

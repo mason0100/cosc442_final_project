@@ -43,6 +43,7 @@ import net.sf.freecol.common.util.RandomChoice;
 import static net.sf.freecol.common.util.RandomUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents a single tile on the <code>Map</code>.
  *
@@ -50,6 +51,7 @@ import static net.sf.freecol.common.util.RandomUtils.*;
  */
 public final class Tile extends UnitLocation implements Named, Ownable {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Tile.class.getName());
 
     /** Comparator to sort tiles by increasing distance from the edge. */
@@ -126,9 +128,16 @@ public final class Tile extends UnitLocation implements Named, Ownable {
      */
     public static final int NEAR_RADIUS = 8;
 
+    /** The Constant OVERLAY_ZINDEX. */
     public static final int OVERLAY_ZINDEX = 100;
+    
+    /** The Constant FOREST_ZINDEX. */
     public static final int FOREST_ZINDEX = 200;
+    
+    /** The Constant RESOURCE_ZINDEX. */
     public static final int RESOURCE_ZINDEX = 400;
+    
+    /** The Constant RUMOUR_ZINDEX. */
     public static final int RUMOUR_ZINDEX = 500;
 
     /**
@@ -293,7 +302,7 @@ public final class Tile extends UnitLocation implements Named, Ownable {
     }
 
     /**
-     * Is this a land tile?
+     * Is this a land tile?.
      *
      * @return True if this a land <code>Tile</code>.
      */
@@ -302,7 +311,7 @@ public final class Tile extends UnitLocation implements Named, Ownable {
     }
 
     /**
-     * Is this a forested tile?
+     * Is this a forested tile?.
      *
      * @return True if this is a forested <code>Tile</code>.
      */
@@ -498,7 +507,7 @@ public final class Tile extends UnitLocation implements Named, Ownable {
     }
 
     /**
-     * Can a unit move to the high seas from this tile?
+     * Can a unit move to the high seas from this tile?.
      *
      * @return True if a unit can move to high seas from this tile.
      */
@@ -509,7 +518,7 @@ public final class Tile extends UnitLocation implements Named, Ownable {
     }
 
     /**
-     * Is this tile on a river corner?
+     * Is this tile on a river corner?.
      *
      * @return True if this is a river corner.
      */
@@ -583,7 +592,7 @@ public final class Tile extends UnitLocation implements Named, Ownable {
 
     /**
      * Is this tile connected to another across the same contiguous piece
-     * of land or water?
+     * of land or water?.
      *
      * @param other The other <code>Tile</code> to check.
      * @return True if the <code>Tile</code>s are connected.
@@ -690,7 +699,7 @@ public final class Tile extends UnitLocation implements Named, Ownable {
     }
 
     /**
-     * Does this tile contain a completed improvement of the given type?
+     * Does this tile contain a completed improvement of the given type?.
      *
      * @param type The <code>TileImprovementType</code> to look for.
      * @return True if there is a completed improvement present.
@@ -714,7 +723,7 @@ public final class Tile extends UnitLocation implements Named, Ownable {
     }
 
     /**
-     * Does this tile have a LCR?
+     * Does this tile have a LCR?.
      *
      * @return True if this <code>Tile</code> has a
      *     <code>LostCityRumour</code> on it.
@@ -736,7 +745,7 @@ public final class Tile extends UnitLocation implements Named, Ownable {
     }
 
     /**
-     * Does this tile have a resource?
+     * Does this tile have a resource?.
      *
      * @return True if this is a resource <code>Tile</code>.
      */
@@ -746,7 +755,7 @@ public final class Tile extends UnitLocation implements Named, Ownable {
     }
 
     /**
-     * Does this tile have a river?
+     * Does this tile have a river?.
      *
      * @return True if this is a river <code>Tile</code>.
      */
@@ -778,7 +787,7 @@ public final class Tile extends UnitLocation implements Named, Ownable {
     }
 
     /**
-     * Does this tile have a road?
+     * Does this tile have a road?.
      *
      * @return True if this <code>Tile</code> has a road.
      */
@@ -815,9 +824,10 @@ public final class Tile extends UnitLocation implements Named, Ownable {
 
     /**
      * Removes a tile item from this tile.
-     *
+     * 
      * -til: Changes appearance.
      *
+     * @param <T> the generic type
      * @param item The <code>TileItem</code> to remove.
      * @return The item removed, or null on failure.
      */
@@ -1190,7 +1200,7 @@ public final class Tile extends UnitLocation implements Named, Ownable {
     }
 
     /**
-     * Is this tile in the polar regions?
+     * Is this tile in the polar regions?.
      *
      * @return True if the <code>Tile</code> is polar.
      */
@@ -1199,7 +1209,7 @@ public final class Tile extends UnitLocation implements Named, Ownable {
     }
 
     /**
-     * Is this tile land locked?
+     * Is this tile land locked?.
      *
      * @return True if land locked.
      */
@@ -1470,7 +1480,7 @@ public final class Tile extends UnitLocation implements Named, Ownable {
     }
 
     /**
-     * Is this tile under active use?
+     * Is this tile under active use?.
      *
      * @return True if a <code>Colony</code> is using this <code>Tile</code>.
      */
@@ -1936,16 +1946,33 @@ public final class Tile extends UnitLocation implements Named, Ownable {
         }
     }
 
+    /**
+     * Removes the indian settlement internals.
+     *
+     * @param player the player
+     */
     public void removeIndianSettlementInternals(Player player) {
         if (playerIndianSettlements == null) return;
         playerIndianSettlements.remove(player);
     }
 
+    /**
+     * Gets the learnable skill.
+     *
+     * @param player the player
+     * @return the learnable skill
+     */
     public UnitType getLearnableSkill(Player player) {
         IndianSettlementInternals isi = getPlayerIndianSettlement(player);
         return (isi == null) ? null : isi.skill;
     }
 
+    /**
+     * Gets the wanted goods.
+     *
+     * @param player the player
+     * @return the wanted goods
+     */
     public GoodsType[] getWantedGoods(Player player) {
         IndianSettlementInternals isi = getPlayerIndianSettlement(player);
         return (isi == null) ? null : isi.wantedGoods;
@@ -2352,22 +2379,50 @@ public final class Tile extends UnitLocation implements Named, Ownable {
 
     // Serialization
 
+    /** The Constant CACHED_TILE_TAG. */
     private static final String CACHED_TILE_TAG = "cachedTile";
+    
+    /** The Constant CONNECTED_TAG. */
     private static final String CONNECTED_TAG = "connected";
+    
+    /** The Constant CONTIGUITY_TAG. */
     private static final String CONTIGUITY_TAG = "contiguity";
+    
+    /** The Constant COPIED_TAG. */
     private static final String COPIED_TAG = "copied";
+    
+    /** The Constant MOVE_TO_EUROPE_TAG. */
     private static final String MOVE_TO_EUROPE_TAG = "moveToEurope";
+    
+    /** The Constant OWNER_TAG. */
     private static final String OWNER_TAG = "owner";
+    
+    /** The Constant OWNING_SETTLEMENT_TAG. */
     private static final String OWNING_SETTLEMENT_TAG = "owningSettlement";
+    
+    /** The Constant PLAYER_TAG. */
     private static final String PLAYER_TAG = "player";
+    
+    /** The Constant REGION_TAG. */
     private static final String REGION_TAG = "region";
+    
+    /** The Constant STYLE_TAG. */
     private static final String STYLE_TAG = "style";
+    
+    /** The Constant TYPE_TAG. */
     private static final String TYPE_TAG = "type";
+    
+    /** The Constant X_TAG. */
     private static final String X_TAG = "x";
+    
+    /** The Constant Y_TAG. */
     private static final String Y_TAG = "y";
+    
+    /** The Constant OLD_UNITS_TAG. */
     // @compat 0.10.1
     public static final String OLD_UNITS_TAG = "units";
     // end @compat
+    /** The Constant OLD_TILE_ITEM_CONTAINER_TAG. */
     // @compat 0.11.3
     public static final String OLD_TILE_ITEM_CONTAINER_TAG = "tileitemcontainer";
     // end @compat 0.11.3

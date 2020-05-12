@@ -66,6 +66,7 @@ import net.sf.freecol.server.ai.mission.WorkInsideColonyMission;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Objects of this class contains AI-information for a single {@link Unit}.
  *
@@ -78,6 +79,7 @@ import org.w3c.dom.Element;
  */
 public class AIUnit extends TransportableAIObject {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(AIUnit.class.getName());
 
     /** The Unit this AIObject contains AI-information for. */
@@ -285,8 +287,9 @@ public class AIUnit extends TransportableAIObject {
     }
 
     /**
-     * Does this unit have a particular class of mission?
+     * Does this unit have a particular class of mission?.
      *
+     * @param <T> the generic type
      * @param returnClass The <code>Class</code> of mission to check.
      * @return True if the mission is of the given class.
      */
@@ -297,6 +300,7 @@ public class AIUnit extends TransportableAIObject {
     /**
      * Get the unit mission if it is of a given class.
      *
+     * @param <T> the generic type
      * @param returnClass The <code>Class</code> of the mission.
      * @return The <code>Mission</code>, or null if it is not of the
      *     given class.
@@ -673,9 +677,11 @@ public class AIUnit extends TransportableAIObject {
 
     // Serialization
 
+    /** The Constant TILE_IMPROVEMENT_PLAN_MISSION_TAG. */
     // @compat 0.10.3
     private static final String TILE_IMPROVEMENT_PLAN_MISSION_TAG = "tileImprovementPlanMission";
     // end @compat
+    /** The Constant IDLE_AT_COLONY_MISSION_TAG. */
     // @compat 0.10.5
     private static final String IDLE_AT_COLONY_MISSION_TAG = "idleAtColonyMission";
     // end @compat

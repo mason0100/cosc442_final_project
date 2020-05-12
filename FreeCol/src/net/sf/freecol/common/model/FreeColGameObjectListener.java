@@ -21,9 +21,12 @@
 package net.sf.freecol.common.model;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Interface for retriving information about
  * a the creation/deletion of {@link FreeColGameObject}s.
+ *
+ * @see FreeColGameObjectEvent
  */
 public interface FreeColGameObjectListener {
 

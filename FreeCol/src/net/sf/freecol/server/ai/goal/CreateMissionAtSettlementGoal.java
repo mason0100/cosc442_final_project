@@ -35,6 +35,7 @@ import net.sf.freecol.server.ai.AIPlayer;
 import net.sf.freecol.server.ai.AIUnit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This {@link Goal} deals with one missionary unit.
  * </p><p>
@@ -49,20 +50,35 @@ import net.sf.freecol.server.ai.AIUnit;
  */
 public class CreateMissionAtSettlementGoal extends Goal {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(CreateMissionAtSettlementGoal.class.getName());
 
+    /** The target. */
     //the settlement to build a mission at
     private final IndianSettlement target;
 
+    /** The goto sub goal. */
     //our only possible subgoal, a GoToAdjacentGoal
     private GotoAdjacentGoal gotoSubGoal;
 
+    /**
+     * Instantiates a new creates the mission at settlement goal.
+     *
+     * @param p the p
+     * @param g the g
+     * @param w the w
+     * @param u the u
+     * @param i the i
+     */
     public CreateMissionAtSettlementGoal(AIPlayer p, Goal g, float w, AIUnit u, IndianSettlement i) {
         super(p,g,w,u);
         target = i;
         gotoSubGoal = null;
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.ai.goal.Goal#getOwnedAIUnitsIterator()
+     */
     @Override
     protected Iterator<AIUnit> getOwnedAIUnitsIterator() {
         //we're using units by putting them to individual subgoals,
@@ -70,6 +86,9 @@ public class CreateMissionAtSettlementGoal extends Goal {
         return availableUnitsList.iterator();
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.ai.goal.Goal#getSubGoalIterator()
+     */
     @Override
     protected Iterator<Goal> getSubGoalIterator() {
         //For the moment, we only have one goal.
@@ -81,6 +100,9 @@ public class CreateMissionAtSettlementGoal extends Goal {
         return subGoalList.iterator();
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.ai.goal.Goal#removeUnit(net.sf.freecol.server.ai.AIUnit)
+     */
     @Override
     protected void removeUnit(AIUnit u) {
         Iterator<AIUnit> uit = availableUnitsList.iterator();
@@ -174,6 +196,9 @@ public class CreateMissionAtSettlementGoal extends Goal {
         }
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.ai.goal.Goal#getGoalDescription()
+     */
     @Override
     public String getGoalDescription() {
         String descr = super.getGoalDescription();
@@ -186,11 +211,17 @@ public class CreateMissionAtSettlementGoal extends Goal {
     }
 
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.common.model.FreeColObject#toXML(net.sf.freecol.common.io.FreeColXMLWriter)
+     */
     @Override
     public void toXML(FreeColXMLWriter xw) throws XMLStreamException {
         //FIXME
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.common.model.FreeColObject#readFromXML(net.sf.freecol.common.io.FreeColXMLReader)
+     */
     @Override
     public void readFromXML(FreeColXMLReader xr) throws XMLStreamException {
         //FIXME

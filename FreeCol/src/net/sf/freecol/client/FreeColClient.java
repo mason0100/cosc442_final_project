@@ -62,26 +62,35 @@ import net.sf.freecol.server.FreeColServer;
 import net.sf.freecol.server.FreeColServer.GameState;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The main control class for the FreeCol client.  This class both
  * starts and keeps references to the GUI and the control objects.
  */
 public final class FreeColClient {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FreeColClient.class.getName());
 
+    /** The connect controller. */
     private final ConnectController connectController;
 
+    /** The pre game controller. */
     private final PreGameController preGameController;
 
+    /** The pre game input handler. */
     private final PreGameInputHandler preGameInputHandler;
 
+    /** The in game controller. */
     private final InGameController inGameController;
 
+    /** The in game input handler. */
     private final InGameInputHandler inGameInputHandler;
 
+    /** The map editor controller. */
     private final MapEditorController mapEditorController;
 
+    /** The sound controller. */
     private SoundController soundController;
 
     /** The server that has been started from the client-GUI. */
@@ -115,10 +124,10 @@ public final class FreeColClient {
      */
     private boolean inGame = false;
 
-    /** Are we using the map editor? */
+    /**  Are we using the map editor?. */
     private boolean mapEditor;
 
-    /** Is this a single player game? */
+    /**  Is this a single player game?. */
     private boolean singlePlayer;
 
     /**
@@ -133,6 +142,12 @@ public final class FreeColClient {
     private final boolean headless;
 
 
+    /**
+     * Instantiates a new free col client.
+     *
+     * @param splashStream the splash stream
+     * @param fontName the font name
+     */
     public FreeColClient(final InputStream splashStream,
                          final String fontName) {
         this(splashStream, fontName, FreeCol.GUI_SCALE_DEFAULT, true);
@@ -553,7 +568,7 @@ public final class FreeColClient {
     }
 
     /**
-     * Has the game started?
+     * Has the game started?.
      *
      * @return <i>true</i> if the game has started.
      * @see #setInGame
@@ -572,7 +587,7 @@ public final class FreeColClient {
     }
 
     /**
-     * Are we using the map editor?
+     * Are we using the map editor?.
      *
      * @return True if the map editor is enabled.
      */
@@ -590,7 +605,7 @@ public final class FreeColClient {
     }
 
     /**
-     * Is the user playing in single player mode?
+     * Is the user playing in single player mode?.
      *
      * @return True if the user is playing in single player mode.
      * @see #setSinglePlayer
@@ -610,7 +625,7 @@ public final class FreeColClient {
     }
 
     /**
-     * Is this client logged in to a server?
+     * Is this client logged in to a server?.
      *
      * @return True if this client is logged in to a server.
      */
@@ -628,7 +643,7 @@ public final class FreeColClient {
     }
 
     /**
-     * Is the game in headless mode?
+     * Is the game in headless mode?.
      *
      * @return a <code>boolean</code> value
      */
@@ -668,10 +683,10 @@ public final class FreeColClient {
 
     /**
      * Verifies if this client can save the current game
-     *
+     * 
      * Clients that do not have the server running, or that have not
      * the required permissions cannot save and should have the menu
-     * entry disabled
+     * entry disabled.
      *
      * @return True if this client can save the game in progress.
      */
@@ -681,7 +696,7 @@ public final class FreeColClient {
     }
 
     /**
-     * Is the current player the client owner player?
+     * Is the current player the client owner player?.
      *
      * @return True if the current player is owned by this client.
      */

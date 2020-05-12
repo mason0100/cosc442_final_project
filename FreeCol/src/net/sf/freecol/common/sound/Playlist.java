@@ -23,6 +23,7 @@ import java.io.File;
 import java.util.Arrays;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represent a set of sounds that will be presented to a SoundPlayer in a
  * certain order as defined by the Playlists playmodes.
@@ -44,10 +45,19 @@ public final class Playlist {
                             BACKWARDS = 1,  // order of the sounds is determined by reverse order in Playlist
                             SHUFFLE = 2;    // order of the sounds is randomly determined (each sound has the same chance of being picked, but eventually all sounds will be played as much as any other sound)
 
+    /** The sound files. */
     private final File[] soundFiles;
+    
+    /** The num. */
     private int num; // '-1' means we haven't started yet, '-2' means this Playlist is exhausted
+    
+    /** The repeat mode. */
     private int repeatMode;
+    
+    /** The pick mode. */
     private int pickMode;
+    
+    /** The played sounds. */
     private final int[] playedSounds;
 
 

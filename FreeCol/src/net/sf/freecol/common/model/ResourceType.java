@@ -25,6 +25,7 @@ import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The types of resources (e.g. fish bonus) found on a tile.
  */
@@ -87,7 +88,10 @@ public final class ResourceType extends FreeColGameObjectType {
 
     // Serialization
 
+    /** The Constant MAXIMUM_VALUE_TAG. */
     private static final String MAXIMUM_VALUE_TAG = "maximum-value";
+    
+    /** The Constant MINIMUM_VALUE_TAG. */
     private static final String MINIMUM_VALUE_TAG = "minimum-value";
 
 

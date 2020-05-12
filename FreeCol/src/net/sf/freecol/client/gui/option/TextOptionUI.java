@@ -24,6 +24,7 @@ import javax.swing.JTextField;
 import net.sf.freecol.common.option.TextOption;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides visualization for a
  * {@link net.sf.freecol.common.option.TextOption} in order to enable
@@ -31,6 +32,7 @@ import net.sf.freecol.common.option.TextOption;
  */
 public final class TextOptionUI extends OptionUI<TextOption>  {
 
+    /** The box. */
     private final JTextField box = new JTextField(16);
 
 

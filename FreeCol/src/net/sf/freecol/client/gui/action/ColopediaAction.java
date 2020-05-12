@@ -26,24 +26,53 @@ import net.sf.freecol.client.FreeColClient;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Displays a section of the Colopedia.
  */
 public class ColopediaAction extends FreeColAction {
 
+    /** The Constant ID. */
     public static final String ID = "colopediaAction.";
 
+    /**
+     * The Enum PanelType.
+     */
     // Order of elements will influence ingame order of menu items.
     public enum PanelType {
-        TERRAIN, RESOURCES, GOODS, UNITS,
-        BUILDINGS, FATHERS, NATIONS,
-        NATION_TYPES, CONCEPTS;
+        
+        /** The terrain. */
+        TERRAIN, 
+ /** The resources. */
+ RESOURCES, 
+ /** The goods. */
+ GOODS, 
+ /** The units. */
+ UNITS,
+        
+        /** The buildings. */
+        BUILDINGS, 
+ /** The fathers. */
+ FATHERS, 
+ /** The nations. */
+ NATIONS,
+        
+        /** The nation types. */
+        NATION_TYPES, 
+ /** The concepts. */
+ CONCEPTS;
 
+        /**
+         * Gets the key.
+         *
+         * @return the key
+         */
         public String getKey() {
             return getEnumKey(this);
         }
     }
 
+    /** The Constant mnemonics. */
     private static final int[] mnemonics = {
         KeyEvent.VK_T,
         KeyEvent.VK_R,

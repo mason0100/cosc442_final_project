@@ -34,6 +34,7 @@ import net.sf.freecol.common.model.Unit;
 import net.sf.freecol.common.model.UnitType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the Naval Report.
  */
@@ -50,11 +51,23 @@ public final class ReportNavalPanel extends ReportUnitPanel {
     }
 
 
+    /**
+     * Reportable.
+     *
+     * @param unitType the unit type
+     * @return true, if successful
+     */
     private boolean reportable(UnitType unitType) {
         return unitType.isNaval()
             && unitType.isAvailableTo(getMyPlayer());
     }
 
+    /**
+     * Reportable.
+     *
+     * @param unit the unit
+     * @return true, if successful
+     */
     private boolean reportable(Unit unit) {
         return unit.isNaval();
     }

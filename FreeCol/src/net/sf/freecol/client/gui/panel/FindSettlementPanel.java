@@ -53,6 +53,7 @@ import net.sf.freecol.common.model.Settlement;
 import net.sf.freecol.common.model.StringTemplate;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Centers the map on a known settlement or colony.  Pressing ENTER
  * opens a panel if appropriate.
@@ -60,9 +61,13 @@ import net.sf.freecol.common.model.StringTemplate;
 public final class FindSettlementPanel extends FreeColPanel
     implements ListSelectionListener, ItemListener {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(FindSettlementPanel.class.getName());
 
+    /**
+     * The Class SettlementRenderer.
+     */
     private class SettlementRenderer
         extends FreeColComboBoxRenderer<Settlement> {
 
@@ -83,9 +88,18 @@ public final class FindSettlementPanel extends FreeColPanel
         }
     }
 
+    /**
+     * The Enum DisplayListOption.
+     */
     private enum DisplayListOption {
+        
+        /** The all. */
         ALL,
+        
+        /** The only natives. */
         ONLY_NATIVES,
+        
+        /** The only european. */
         ONLY_EUROPEAN
     }
 
@@ -155,6 +169,11 @@ public final class FindSettlementPanel extends FreeColPanel
         updateSearch(DisplayListOption.valueOf("ALL"));
     }
 
+    /**
+     * Update search.
+     *
+     * @param displayListOption the display list option
+     */
     private void updateSearch(DisplayListOption displayListOption) {
         DefaultListModel<Settlement> model
             = new DefaultListModel<>();
@@ -190,6 +209,9 @@ public final class FindSettlementPanel extends FreeColPanel
         }
     }
 
+    /**
+     * Select settlement.
+     */
     private void selectSettlement() {
         Settlement settlement = this.settlementList.getSelectedValue();
         if (settlement instanceof Colony
@@ -205,6 +227,9 @@ public final class FindSettlementPanel extends FreeColPanel
 
     // Interface ItemListener
 
+    /* (non-Javadoc)
+     * @see java.awt.event.ItemListener#itemStateChanged(java.awt.event.ItemEvent)
+     */
     @Override
     public void itemStateChanged(ItemEvent event) {
         switch (this.displayOptionBox.getSelectedIndex()) {

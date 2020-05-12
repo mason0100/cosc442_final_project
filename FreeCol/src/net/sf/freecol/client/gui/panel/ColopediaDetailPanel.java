@@ -23,8 +23,11 @@ import javax.swing.JPanel;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the Colopedia.
+ *
+ * @param <T> the generic type
  */
 public interface ColopediaDetailPanel<T> {
 

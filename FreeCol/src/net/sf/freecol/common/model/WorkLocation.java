@@ -37,6 +37,7 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import net.sf.freecol.common.util.Utils;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The <code>WorkLocation</code> is a place in a {@link Colony} where
  * <code>Units</code> can work.  The unit capacity of a WorkLocation
@@ -51,14 +52,17 @@ import net.sf.freecol.common.util.Utils;
 public abstract class WorkLocation extends UnitLocation
     implements Ownable {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(WorkLocation.class.getName());
 
+    /** The Constant EMPTY_LIST. */
     public static final List<AbstractGoods> EMPTY_LIST
         = Collections.<AbstractGoods>emptyList();
 
     /** Container class to suggest a better use of a unit. */
     public static class Suggestion {
 
+        /** The Constant descendingAmountComparator. */
         public static final Comparator<Suggestion> descendingAmountComparator
             = new Comparator<Suggestion>() {
                     @Override
@@ -75,10 +79,19 @@ public abstract class WorkLocation extends UnitLocation
                     }
                 };
                     
+        /** The work location. */
         public final WorkLocation workLocation;
+        
+        /** The old type. */
         public final UnitType oldType;
+        
+        /** The new type. */
         public final UnitType newType;
+        
+        /** The goods type. */
         public final GoodsType goodsType;
+        
+        /** The amount. */
         public final int amount;
 
 
@@ -307,7 +320,7 @@ public abstract class WorkLocation extends UnitLocation
 
     /**
      * Is it a good idea to produce a goods type at this work location
-     * using a better unit type?
+     * using a better unit type?.
      *
      * @param unit The <code>Unit</code> that is doing the job at
      *     present, which may be null if none is at work.
@@ -433,7 +446,7 @@ public abstract class WorkLocation extends UnitLocation
     }
 
     /**
-     * Does this work location produce a given type of goods?
+     * Does this work location produce a given type of goods?.
      *
      * @param goodsType The <code>GoodsType</code> to check.
      * @return True if this <code>WorkLocation</code> produces the
@@ -473,7 +486,7 @@ public abstract class WorkLocation extends UnitLocation
     }
 
     /**
-     * Does this work location have teaching capability?
+     * Does this work location have teaching capability?.
      *
      * @return True if this is a teaching location.
      * @see Ability#TEACH
@@ -565,10 +578,11 @@ public abstract class WorkLocation extends UnitLocation
      * Gets the productivity of a unit working in this work location,
      * considering *only* the contribution of the unit, exclusive of
      * that of the work location.
-     *
+     * 
      * Used below, only public for the test suite.
      *
      * @param unit The <code>Unit</code> to check.
+     * @param goodsType the goods type
      * @return The maximum return from this unit.
      */
     public int getUnitProduction(Unit unit, GoodsType goodsType) {
@@ -776,14 +790,14 @@ public abstract class WorkLocation extends UnitLocation
     public abstract StringTemplate getLabel();
 
     /**
-     * Is this work location available?
+     * Is this work location available?.
      *
      * @return True if the work location is either current or can be claimed.
      */
     public abstract boolean isAvailable();
 
     /**
-     * Is this a current work location of this colony?
+     * Is this a current work location of this colony?.
      *
      * @return True if the work location is current.
      */
@@ -798,7 +812,7 @@ public abstract class WorkLocation extends UnitLocation
     public abstract NoAddReason getNoWorkReason();
 
     /**
-     * Can this work location can produce goods without workers?
+     * Can this work location can produce goods without workers?.
      *
      * @return True if this work location can produce goods without
      *     workers.
@@ -910,6 +924,7 @@ public abstract class WorkLocation extends UnitLocation
 
     // Serialization
 
+    /** The Constant COLONY_TAG. */
     private static final String COLONY_TAG = "colony";
 
 

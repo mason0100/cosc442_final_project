@@ -35,14 +35,17 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.common.io.FreeColDirectories;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This is the panel that pops up when an error needs to be reported.
  */
 public final class ErrorPanel extends FreeColPanel {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(ErrorPanel.class.getName());
 
+    /** The Constant SHOW. */
     private static final String SHOW = "show";
 
 

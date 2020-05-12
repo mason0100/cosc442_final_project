@@ -25,20 +25,27 @@ import net.sf.freecol.client.ClientOptions;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Change view in on the minimap.
  */
 public class MiniMapToggleViewAction extends MapboardAction {
     
+    /** The Constant ID. */
     public static final String ID = "miniMapToggleBordersAction";
     
     
     /**
      * Creates a new <code>MiniMapToggleViewAction</code>.
      *
-     * @param freeColClient The <code>FreeColClient</code> for the game.
      */
     static String togglePolitics = "toggle_view_politics";
+    
+    /**
+     * Instantiates a new mini map toggle view action.
+     *
+     * @param freeColClient the free col client
+     */
     public MiniMapToggleViewAction(FreeColClient freeColClient) {
         super(freeColClient, ID);
 

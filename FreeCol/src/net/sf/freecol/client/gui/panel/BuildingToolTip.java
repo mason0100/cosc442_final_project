@@ -46,11 +46,13 @@ import net.sf.freecol.common.model.Unit;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A tooltip for a single building in a Colony.
  */
 public class BuildingToolTip extends JToolTip {
 
+    /** The arrow. */
     private static JLabel arrow = null;
 
 

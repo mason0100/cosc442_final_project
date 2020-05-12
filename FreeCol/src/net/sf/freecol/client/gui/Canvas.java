@@ -97,6 +97,7 @@ import net.sf.freecol.common.option.OptionGroup;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The main container for the other GUI components in FreeCol. This
  * container is where the panels, dialogs and menus are added. In
@@ -111,9 +112,14 @@ import net.sf.freecol.common.resources.ResourceManager;
  */
 public final class Canvas extends JDesktopPane {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Canvas.class.getName());
 
-    /** A wrapper class for non-modal dialogs. */
+    /**
+     *  A wrapper class for non-modal dialogs.
+     *
+     * @param <T> the generic type
+     */
     private class DialogCallback<T> implements Runnable {
         
         /** The dialog to show. */
@@ -128,6 +134,10 @@ public final class Canvas extends JDesktopPane {
 
         /**
          * Constructor.
+         *
+         * @param fcd the fcd
+         * @param tile the tile
+         * @param handler the handler
          */
         public DialogCallback(FreeColDialog<T> fcd, Tile tile,
                               DialogHandler<T> handler) {
@@ -139,6 +149,9 @@ public final class Canvas extends JDesktopPane {
 
         // Implement Runnable
 
+        /* (non-Javadoc)
+         * @see java.lang.Runnable#run()
+         */
         @Override
         public void run() {
             // Display the dialog...
@@ -159,10 +172,21 @@ public final class Canvas extends JDesktopPane {
         }
     };
 
+    /**
+     * The Enum PopupPosition.
+     */
     private static enum PopupPosition {
+        
+        /** The origin. */
         ORIGIN,
+        
+        /** The centered. */
         CENTERED,
+        
+        /** The centered left. */
         CENTERED_LEFT,
+        
+        /** The centered right. */
         CENTERED_RIGHT,
     }
 
@@ -178,36 +202,49 @@ public final class Canvas extends JDesktopPane {
     /** The parent GUI. */
     private final SwingGUI gui;
 
+    /** The graphics device. */
     private final GraphicsDevice graphicsDevice;
 
     /** The parent frame, either a window or the full screen. */
     private FreeColFrame frame;
 
+    /** The windowed. */
     private boolean windowed;
 
+    /** The main panel. */
     private MainPanel mainPanel;
 
+    /** The start game panel. */
     private final StartGamePanel startGamePanel;
 
+    /** The status panel. */
     private final StatusPanel statusPanel;
 
+    /** The chat panel. */
     private final ChatPanel chatPanel;
 
+    /** The chat display. */
     private final ChatDisplay chatDisplay;
 
+    /** The map viewer. */
     private final MapViewer mapViewer;
 
+    /** The goto drag point. */
     private Point gotoDragPoint;
 
+    /** The grey layer. */
     private GrayLayer greyLayer;
 
+    /** The server list panel. */
     private final ServerListPanel serverListPanel;
 
     /** Used to detect resizing. */
     private Dimension oldSize = null;
 
+    /** The client options dialog showing. */
     private boolean clientOptionsDialogShowing = false;
 
+    /** The loading savegame dialog. */
     private LoadingSavegameDialog loadingSavegameDialog;
 
     /** Filters for loadable game files. */
@@ -278,6 +315,11 @@ public final class Canvas extends JDesktopPane {
         logger.info("Canvas created.");
     }
 
+    /**
+     * Checks if is windowed.
+     *
+     * @return true, if is windowed
+     */
     boolean isWindowed() {
         return windowed;
     }
@@ -302,6 +344,12 @@ public final class Canvas extends JDesktopPane {
         createFrame(menuBar, windowBounds);
     }
 
+    /**
+     * Creates the frame.
+     *
+     * @param menuBar the menu bar
+     * @param windowBounds the window bounds
+     */
     private void createFrame(JMenuBar menuBar, Rectangle windowBounds) {
         // FIXME: Check this:
         // User might have moved window to new screen in a
@@ -332,6 +380,8 @@ public final class Canvas extends JDesktopPane {
 
     /**
      * Quit the GUI.  All that is required is to exit the full screen.
+     *
+     * @throws Exception the exception
      */
     void quit() throws Exception {
         if (frame != null && !windowed) {
@@ -669,6 +719,7 @@ public final class Canvas extends JDesktopPane {
      * @param y A starting y coordinate.
      * @param w The component width to use.
      * @param h The component height to use.
+     * @param tries the tries
      * @return A <code>Point</code> to place the component at or null
      *     on failure.
      */
@@ -980,6 +1031,7 @@ public final class Canvas extends JDesktopPane {
     /**
      * Displays the given dialog, optionally making sure a tile is visible.
      *
+     * @param <T> the generic type
      * @param freeColDialog The dialog to be displayed
      * @param tile An optional <code>Tile</code> to make visible (not
      *     under the dialog!)
@@ -1151,6 +1203,7 @@ public final class Canvas extends JDesktopPane {
     /**
      * Gets a currently displayed FreeColPanel of a given type.
      *
+     * @param <T> the generic type
      * @param type The type of <code>FreeColPanel</code> to look for.
      * @return A currently displayed <code>FreeColPanel</code> of the
      *     requested type, or null if none found.
@@ -1359,6 +1412,9 @@ public final class Canvas extends JDesktopPane {
         repaint();
     }
 
+    /**
+     * Setup mouse listeners.
+     */
     void setupMouseListeners() {
         addMouseListener(new CanvasMouseListener(freeColClient, this));
         addMouseMotionListener(new CanvasMouseMotionListener(freeColClient, this));
@@ -1508,6 +1564,7 @@ public final class Canvas extends JDesktopPane {
     /**
      * Displays a modal dialog with text and a choice of options.
      *
+     * @param <T> the generic type
      * @param tile An optional <code>Tile</code> to make visible (not
      *     under the dialog!)
      * @param obj An object that explains the choice for the user.
@@ -1569,6 +1626,7 @@ public final class Canvas extends JDesktopPane {
     /**
      * Displays the given dialog, optionally making sure a tile is visible.
      *
+     * @param <T> the generic type
      * @param freeColDialog The dialog to be displayed
      * @param tile An optional <code>Tile</code> to make visible (not
      *     under the dialog!)
@@ -1603,6 +1661,11 @@ public final class Canvas extends JDesktopPane {
 
     // Simple front ends to display each panel or dialog.
 
+    /**
+     * Removes the trade route panel.
+     *
+     * @param panel the panel
+     */
     void removeTradeRoutePanel(TradeRoutePanel panel) {
         remove(panel);
         TradeRouteInputPanel trip
@@ -2596,6 +2659,9 @@ public final class Canvas extends JDesktopPane {
 
     // Singleton specialist reports
 
+    /**
+     * Show report cargo panel.
+     */
     void showReportCargoPanel() {
         ReportCargoPanel r
             = getExistingFreeColPanel(ReportCargoPanel.class);
@@ -2604,6 +2670,9 @@ public final class Canvas extends JDesktopPane {
         }
     }
 
+    /**
+     * Show report colony panel.
+     */
     void showReportColonyPanel() {
         boolean compact;
         try {
@@ -2624,6 +2693,9 @@ public final class Canvas extends JDesktopPane {
         }
     }
 
+    /**
+     * Show report continental congress panel.
+     */
     void showReportContinentalCongressPanel() {
         ReportContinentalCongressPanel
             r = getExistingFreeColPanel(ReportContinentalCongressPanel.class);
@@ -2633,6 +2705,9 @@ public final class Canvas extends JDesktopPane {
         }
     }
 
+    /**
+     * Show report education panel.
+     */
     void showReportEducationPanel() {
         ReportEducationPanel r
             = getExistingFreeColPanel(ReportEducationPanel.class);
@@ -2641,6 +2716,9 @@ public final class Canvas extends JDesktopPane {
         }
     }
 
+    /**
+     * Show report exploration panel.
+     */
     void showReportExplorationPanel() {
         ReportExplorationPanel r
             = getExistingFreeColPanel(ReportExplorationPanel.class);
@@ -2649,6 +2727,9 @@ public final class Canvas extends JDesktopPane {
         }
     }
 
+    /**
+     * Show report foreign affair panel.
+     */
     void showReportForeignAffairPanel() {
         ReportForeignAffairPanel r
             = getExistingFreeColPanel(ReportForeignAffairPanel.class);
@@ -2657,6 +2738,9 @@ public final class Canvas extends JDesktopPane {
         }
     }
 
+    /**
+     * Show report history panel.
+     */
     void showReportHistoryPanel() {
         ReportHistoryPanel r
             = getExistingFreeColPanel(ReportHistoryPanel.class);
@@ -2665,6 +2749,9 @@ public final class Canvas extends JDesktopPane {
         }
     }
 
+    /**
+     * Show report indian panel.
+     */
     void showReportIndianPanel() {
         ReportIndianPanel r
             = getExistingFreeColPanel(ReportIndianPanel.class);
@@ -2673,6 +2760,9 @@ public final class Canvas extends JDesktopPane {
         }
     }
 
+    /**
+     * Show report labour panel.
+     */
     void showReportLabourPanel() {
         ReportLabourPanel r
             = getExistingFreeColPanel(ReportLabourPanel.class);
@@ -2681,6 +2771,9 @@ public final class Canvas extends JDesktopPane {
         }
     }
 
+    /**
+     * Show report military panel.
+     */
     void showReportMilitaryPanel() {
         ReportMilitaryPanel r
             = getExistingFreeColPanel(ReportMilitaryPanel.class);
@@ -2689,6 +2782,9 @@ public final class Canvas extends JDesktopPane {
         }
     }
 
+    /**
+     * Show report naval panel.
+     */
     void showReportNavalPanel() {
         ReportNavalPanel r
             = getExistingFreeColPanel(ReportNavalPanel.class);
@@ -2697,6 +2793,9 @@ public final class Canvas extends JDesktopPane {
         }
     }
 
+    /**
+     * Show report production panel.
+     */
     void showReportProductionPanel() {
         ReportProductionPanel r
             = getExistingFreeColPanel(ReportProductionPanel.class);
@@ -2705,6 +2804,9 @@ public final class Canvas extends JDesktopPane {
         }
     }
 
+    /**
+     * Show report religious panel.
+     */
     void showReportReligiousPanel() {
         ReportReligiousPanel r
             = getExistingFreeColPanel(ReportReligiousPanel.class);
@@ -2713,6 +2815,9 @@ public final class Canvas extends JDesktopPane {
         }
     }
 
+    /**
+     * Show report requirements panel.
+     */
     void showReportRequirementsPanel() {
         ReportRequirementsPanel r
             = getExistingFreeColPanel(ReportRequirementsPanel.class);
@@ -2721,6 +2826,9 @@ public final class Canvas extends JDesktopPane {
         }
     }
 
+    /**
+     * Show report trade panel.
+     */
     void showReportTradePanel() {
         ReportTradePanel r
             = getExistingFreeColPanel(ReportTradePanel.class);

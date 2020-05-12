@@ -143,11 +143,13 @@ import net.sf.freecol.server.model.TransactionSession;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The main server controller.
  */
 public final class InGameController extends Controller {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(InGameController.class.getName());
 
     /** The server random number source. */
@@ -155,7 +157,11 @@ public final class InGameController extends Controller {
 
     /** Debug helpers, do not serialize. */
     private int debugOnlyAITurns = 0;
+    
+    /** The debug monarch action. */
     private MonarchAction debugMonarchAction = null;
+    
+    /** The debug monarch player. */
     private ServerPlayer debugMonarchPlayer = null;
 
 
@@ -413,19 +419,47 @@ public final class InGameController extends Controller {
     // Client-server communication utilities
 
     // A handler interface to pass to askFuture().
+    /**
+     * The Interface DOMMessageHandler.
+     */
     // This will change from DOMMessage to Message when DOM goes away.
     private interface DOMMessageHandler {
+        
+        /**
+         * Handle.
+         *
+         * @param message the message
+         * @return the DOM message
+         */
         public DOMMessage handle(DOMMessage message);
     };
 
+    /**
+     * The Class DOMMessageCallable.
+     */
     private static class DOMMessageCallable implements Callable<DOMMessage> {
 
+        /** The connection. */
         private final Connection connection;
+        
+        /** The game. */
         private final Game game;
+        
+        /** The message. */
         private final DOMMessage message;
+        
+        /** The handler. */
         private final DOMMessageHandler handler;
 
 
+        /**
+         * Instantiates a new DOM message callable.
+         *
+         * @param connection the connection
+         * @param game the game
+         * @param message the message
+         * @param handler the handler
+         */
         public DOMMessageCallable(Connection connection, Game game,
                                   DOMMessage message,
                                   DOMMessageHandler handler) {
@@ -435,6 +469,9 @@ public final class InGameController extends Controller {
             this.handler = handler;
         }
 
+        /* (non-Javadoc)
+         * @see java.util.concurrent.Callable#call()
+         */
         @Override
         public DOMMessage call() {
             Element reply;
@@ -449,6 +486,7 @@ public final class InGameController extends Controller {
         }
     };
 
+    /** The executor. */
     // A service to run the futures.
     private final ExecutorService executor = Executors.newCachedThreadPool();
 
@@ -828,6 +866,13 @@ public final class InGameController extends Controller {
         cs.add(See.only(independent), independent.exploreMap(true));
     }
 
+    /**
+     * Unit template.
+     *
+     * @param base the base
+     * @param units the units
+     * @return the string template
+     */
     private StringTemplate unitTemplate(String base, List<Unit> units) {
         StringTemplate template = StringTemplate.label(base);
         for (Unit u : units) {
@@ -1032,6 +1077,14 @@ public final class InGameController extends Controller {
         }
     }
 
+    /**
+     * Monarch action.
+     *
+     * @param serverPlayer the server player
+     * @param action the action
+     * @param result the result
+     * @return the element
+     */
     public Element monarchAction(ServerPlayer serverPlayer,
                                  MonarchAction action, boolean result) {
         MonarchSession session = TransactionSession.lookup(MonarchSession.class,
@@ -2436,6 +2489,7 @@ public final class InGameController extends Controller {
      *
      * @param serverPlayer The <code>ServerPlayer</code> that owns the unit.
      * @param unit The <code>Unit</code> to set the destination for.
+     * @param index the index
      * @return An <code>Element</code> encapsulating this action.
      */
     public Element setCurrentStop(ServerPlayer serverPlayer, Unit unit,
@@ -2578,6 +2632,7 @@ public final class InGameController extends Controller {
      *
      * @param serverPlayer The <code>ServerPlayer</code> that is delivering.
      * @param unit The <code>Unit</code> that is delivering.
+     * @param settlement the settlement
      * @param goods The <code>Goods</code> to deliver.
      * @return An <code>Element</code> encapsulating this action.
      */
@@ -4168,6 +4223,7 @@ public final class InGameController extends Controller {
     /**
      * Get the current game statistics.
      *
+     * @param serverPlayer the server player
      * @return An <code>Element</code> encapsulating this action.
      */
     public Element getStatistics(ServerPlayer serverPlayer) {

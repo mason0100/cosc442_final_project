@@ -26,18 +26,28 @@ import net.sf.freecol.common.debug.FreeColDebugger;
 import net.sf.freecol.common.networking.ServerAPI;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Implementation of the ServerAPI.
  */
 public class UserServerAPI extends ServerAPI {
 
+    /** The gui. */
     private final GUI gui;
 
+    /**
+     * Instantiates a new user server API.
+     *
+     * @param gui the gui
+     */
     public UserServerAPI(GUI gui) {
         super();
         this.gui = gui;
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.common.networking.ServerAPI#doRaiseErrorMessage(java.lang.String)
+     */
     @Override
     protected void doRaiseErrorMessage(String complaint) {
         if (FreeColDebugger.isInDebugMode(FreeColDebugger.DebugMode.COMMS)) {
@@ -45,6 +55,9 @@ public class UserServerAPI extends ServerAPI {
         }
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.common.networking.ServerAPI#doClientProcessingFor(org.w3c.dom.Element)
+     */
     @Override
     protected void doClientProcessingFor(Element reply) {
         String sound = reply.getAttribute("sound");

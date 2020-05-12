@@ -19,13 +19,25 @@
 
 package net.sf.freecol.client.gui.panel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Parameters.
+ */
 public class Parameters {
 
+    /** The dist to land from high seas. */
     public final int distToLandFromHighSeas;
 
+    /** The max distance to edge. */
     public final int maxDistanceToEdge;
 
 
+    /**
+     * Instantiates a new parameters.
+     *
+     * @param distToLandFromHighSeas the dist to land from high seas
+     * @param maxDistanceToEdge the max distance to edge
+     */
     Parameters(int distToLandFromHighSeas, int maxDistanceToEdge) {
         this.distToLandFromHighSeas = distToLandFromHighSeas;
         this.maxDistanceToEdge = maxDistanceToEdge;

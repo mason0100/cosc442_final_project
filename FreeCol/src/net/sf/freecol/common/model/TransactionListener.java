@@ -21,13 +21,16 @@
 package net.sf.freecol.common.model;
 
 
+// TODO: Auto-generated Javadoc
 /**
- * Interface for classes which listen to transactions in market
+ * Interface for classes which listen to transactions in market.
+ *
+ * @see TransactionEvent
  */
 public interface TransactionListener {
 
     /**
-     * Logs a purchase
+     * Logs a purchase.
      *
      * @param goodsType The type of goods which have been purchased
      * @param amount The amount of goods which have been purchased
@@ -36,7 +39,7 @@ public interface TransactionListener {
     public void logPurchase(GoodsType goodsType, int amount, int price);
 
     /**
-     * Logs a sale
+     * Logs a sale.
      *
      * @param goodsType The type of goods which have been sold
      * @param amount The amount of goods which have been sold

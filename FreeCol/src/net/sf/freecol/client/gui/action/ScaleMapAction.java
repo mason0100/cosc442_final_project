@@ -28,11 +28,13 @@ import net.sf.freecol.common.model.Map;
 import net.sf.freecol.common.model.Tile;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for scaling a map. This action is a part of the map editor.
  */
 public class ScaleMapAction extends FreeColAction {
 
+    /** The Constant ID. */
     public static final String ID = "scaleMapAction";
 
 

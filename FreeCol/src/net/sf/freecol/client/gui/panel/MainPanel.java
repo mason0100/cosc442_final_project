@@ -43,11 +43,13 @@ import net.sf.freecol.common.io.FreeColDirectories;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The initial panel where the user chooses from the main modes of operation.
  */
 public final class MainPanel extends FreeColPanel {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(MainPanel.class.getName());
 
 

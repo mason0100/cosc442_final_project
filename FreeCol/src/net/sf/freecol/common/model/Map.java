@@ -47,6 +47,7 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import static net.sf.freecol.common.util.RandomUtils.*;
 // @compat 0.10.x
 import net.sf.freecol.server.generator.TerrainGenerator;
+// TODO: Auto-generated Javadoc
 // end @compat 0.10.x
 
 
@@ -60,34 +61,64 @@ import net.sf.freecol.server.generator.TerrainGenerator;
  */
 public class Map extends FreeColGameObject implements Location {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Map.class.getName());
 
     /**
      * Possible actions by the unit travelling along a path in consideration
      * of the next tile.
      */
-    private static enum MoveStep { FAIL, BYLAND, BYWATER, EMBARK, DISEMBARK };
+    private enum MoveStep { 
+ /** The fail. */
+ FAIL, 
+ /** The byland. */
+ BYLAND, 
+ /** The bywater. */
+ BYWATER, 
+ /** The embark. */
+ EMBARK, 
+ /** The disembark. */
+ DISEMBARK }
 
     /**
      * The number of tiles from the upper edge that are considered
      * polar by default.
      */
-    public final static int POLAR_HEIGHT = 2;
+    public static final int POLAR_HEIGHT = 2;
 
     /**
      * The layers included in the map. The RIVERS layer includes all
      * natural tile improvements that are not resources. The NATIVES
      * layer includes Lost City Rumours as well as settlements.
      */
-    public static enum Layer {
-        NONE, LAND, TERRAIN, REGIONS, RIVERS, RESOURCES, NATIVES, ALL;
-    };
+    public enum Layer {
+        
+        /** The none. */
+        NONE, 
+ /** The land. */
+ LAND, 
+ /** The terrain. */
+ TERRAIN, 
+ /** The regions. */
+ REGIONS, 
+ /** The rivers. */
+ RIVERS, 
+ /** The resources. */
+ RESOURCES, 
+ /** The natives. */
+ NATIVES, 
+ /** The all. */
+ ALL;
+    }
 
     /** A position on the Map. */
     public static final class Position {
         
         /** The coordinates of the position. */
-        public final int x, y;
+        public final int x;
+        
+        /** The y. */
+        public final int y;
 
 
         /**
@@ -374,9 +405,9 @@ public class Map extends FreeColGameObject implements Location {
     /**
      * Sets the tile at the given coordinates.
      *
+     * @param tile The <code>Tile</code> to set.
      * @param x The x-coordinate of the <code>Tile</code>.
      * @param y The y-coordinate of the <code>Tile</code>.
-     * @param tile The <code>Tile</code> to set.
      */
     public void setTile(Tile tile, int x, int y) {
         tiles[x][y] = tile;
@@ -400,10 +431,20 @@ public class Map extends FreeColGameObject implements Location {
         return tiles[0].length;
     }
 
+    /**
+     * Gets the layer.
+     *
+     * @return the layer
+     */
     public final Layer getLayer() {
         return layer;
     }
 
+    /**
+     * Sets the layer.
+     *
+     * @param newLayer the new layer
+     */
     public final void setLayer(final Layer newLayer) {
         this.layer = newLayer;
     }
@@ -417,6 +458,11 @@ public class Map extends FreeColGameObject implements Location {
         return minimumLatitude;
     }
 
+    /**
+     * Sets the minimum latitude.
+     *
+     * @param newMinimumLatitude the new minimum latitude
+     */
     public final void setMinimumLatitude(final int newMinimumLatitude) {
         this.minimumLatitude = newMinimumLatitude;
         calculateLatitudePerRow();
@@ -431,6 +477,11 @@ public class Map extends FreeColGameObject implements Location {
         return maximumLatitude;
     }
 
+    /**
+     * Sets the maximum latitude.
+     *
+     * @param newMaximumLatitude the new maximum latitude
+     */
     public final void setMaximumLatitude(final int newMaximumLatitude) {
         this.maximumLatitude = newMaximumLatitude;
         calculateLatitudePerRow();
@@ -445,6 +496,9 @@ public class Map extends FreeColGameObject implements Location {
         return latitudePerRow;
     }
 
+    /**
+     * Calculate latitude per row.
+     */
     private final void calculateLatitudePerRow() {
         this.latitudePerRow = 1f * (maximumLatitude - minimumLatitude) /
             (getHeight() - 1);
@@ -557,7 +611,7 @@ public class Map extends FreeColGameObject implements Location {
     }            
 
     /**
-     * Is a tile in the map in a polar region?
+     * Is a tile in the map in a polar region?.
      *
      * @param tile The <code>Tile</code> to examine.
      * @return True if the tile is in a polar region.
@@ -569,7 +623,7 @@ public class Map extends FreeColGameObject implements Location {
 
     /**
      * Gets the direction a unit needs to move in
-     * order to get from <code>t1</code> to <code>t2</code>
+     * order to get from <code>t1</code> to <code>t2</code>.
      *
      * @param t1 The tile to move from.
      * @param t2 The target tile if moving from <code>t1</code>
@@ -665,7 +719,10 @@ public class Map extends FreeColGameObject implements Location {
      */
     public Tile getRandomLandTile(Random random) {
         final int SLOSH = 10;
-        int x = 0, y = 0, width = getWidth(), height = getHeight();
+        int x = 0;
+        int y = 0;
+        int width = getWidth();
+        int height = getHeight();
         if (width >= SLOSH) {
             width -= SLOSH;
             x += SLOSH/2;
@@ -689,6 +746,13 @@ public class Map extends FreeColGameObject implements Location {
      * Simple interface to supply a heuristic to the A* routine.
      */
     private interface SearchHeuristic {
+        
+        /**
+         * Gets the value.
+         *
+         * @param tile the tile
+         * @return the value
+         */
         int getValue(Tile tile);
     }
 
@@ -729,40 +793,43 @@ public class Map extends FreeColGameObject implements Location {
         Location entry;
         if (start == null) {
             throw new IllegalArgumentException("Null start: " + unit);
-        } else if (start instanceof Unit) {
-            Location unitLoc = ((Unit)start).getLocation();
-            if (unitLoc == null) {
-                throw new IllegalArgumentException("Null on-carrier start: "
-                    + unit + "/" + start);
-            } else if (unitLoc instanceof HighSeas) {
-                if (carrier == null) {
-                    throw new IllegalArgumentException("Null carrier when"
-                        + " starting on high seas: " + unit);
-                } else if (carrier != start) {
-                    throw new IllegalArgumentException("Wrong carrier when"
-                        + " starting on high seas: " + unit
-                        + "/" + carrier + " != " + start);
-                }
-                entry = carrier.resolveDestination();
-            } else {
-                entry = unitLoc;
-            }
-            
-        } else if (start instanceof HighSeas) {
-            if (unit.isOnCarrier()) {
-                entry = unit.getCarrier().resolveDestination();
-            } else if (unit.isNaval()) {
-                entry = unit.resolveDestination();
-            } else {
-                throw new IllegalArgumentException("No carrier when"
-                    + " starting on high seas: " + unit
-                    + "/" + unit.getLocation());
-            }
-        } else if (start instanceof Europe || start.getTile() != null) {
-            entry = start; // OK
         } else {
-            throw new IllegalArgumentException("Invalid start: " + start);
-        }
+			String highSeas = " starting on high seas: ";
+			if (start instanceof Unit) {
+			    Location unitLoc = ((Unit)start).getLocation();
+			    if (unitLoc == null) {
+			        throw new IllegalArgumentException("Null on-carrier start: "
+			            + unit + "/" + start);
+			    } else if (unitLoc instanceof HighSeas) {
+			        if (carrier == null) {
+			            throw new IllegalArgumentException("Null carrier when"
+			                + highSeas + unit);
+			        } else if (carrier != start) {
+			            throw new IllegalArgumentException("Wrong carrier when"
+			                + highSeas + unit
+			                + "/" + carrier + " != " + start);
+			        }
+			        entry = carrier.resolveDestination();
+			    } else {
+			        entry = unitLoc;
+			    }
+			    
+			} else if (start instanceof HighSeas) {
+			    if (unit.isOnCarrier()) {
+			        entry = unit.getCarrier().resolveDestination();
+			    } else if (unit.isNaval()) {
+			        entry = unit.resolveDestination();
+			    } else {
+			        throw new IllegalArgumentException("No carrier when"
+			            + highSeas + unit
+			            + "/" + unit.getLocation());
+			    }
+			} else if (start instanceof Europe || start.getTile() != null) {
+			    entry = start; // OK
+			} else {
+			    throw new IllegalArgumentException("Invalid start: " + start);
+			}
+		}
         // Valid result, reduce to tile if possible.
         return (entry.getTile() != null) ? entry.getTile() : entry;
     }
@@ -960,7 +1027,8 @@ public class Map extends FreeColGameObject implements Location {
         // Get the unit that will be used for off-map travel.
         final Unit offMapUnit = (carrier != null) ? carrier : unit;
 
-        PathNode p, path;
+        PathNode p;
+        PathNode path;
         Tile tile;
         if (realEnd instanceof Tile && !((Tile)realEnd).isExplored()) {
             // Do not allow finding a path into unexplored territory,
@@ -1087,7 +1155,8 @@ public class Map extends FreeColGameObject implements Location {
         final Location realStart = findRealStart(unit, start, carrier);
         final Unit offMapUnit = (carrier != null) ? carrier : unit;
         
-        PathNode p, path;
+        PathNode p;
+        PathNode path;
         if (realStart instanceof Europe) {
             // Fail fast if Europe is unattainable.
             if (offMapUnit == null
@@ -1163,14 +1232,31 @@ public class Map extends FreeColGameObject implements Location {
      */
     private class MoveCandidate {
 
+        /** The unit. */
         private Unit unit;
+        
+        /** The current. */
         private final PathNode current;
+        
+        /** The dst. */
         private final Location dst;
+        
+        /** The moves left. */
         private int movesLeft;
+        
+        /** The turns. */
         private int turns;
+        
+        /** The on carrier. */
         private final boolean onCarrier;
+        
+        /** The decider. */
         private final CostDecider decider;
+        
+        /** The cost. */
         private int cost;
+        
+        /** The path. */
         private PathNode path;
 
 
@@ -1217,6 +1303,8 @@ public class Map extends FreeColGameObject implements Location {
 
         /**
          * Handles the change of unit as a result of an embark.
+         *
+         * @param unit the unit
          */
         public void embarkUnit(Unit unit) {
             this.unit = unit;
@@ -1272,6 +1360,7 @@ public class Map extends FreeColGameObject implements Location {
          * Does this move candidate improve on a specified move.
          *
          * @param best The <code>PathNode</code> to compare against.
+         * @return true, if successful
          */
         public boolean canImprove(PathNode best) {
             return cost != CostDecider.ILLEGAL_MOVE
@@ -1322,7 +1411,7 @@ public class Map extends FreeColGameObject implements Location {
                 .append("]");
             return sb.toString();
         }
-    };
+    }
 
     /**
      * Searches for a path to a goal determined by the given
@@ -1679,10 +1768,14 @@ public class Map extends FreeColGameObject implements Location {
         private final int radius;
         /** The current radius of the iteration. */
         private int currentRadius;
-        /** The current index in the circle with the current radius: */
+        
+        /**  The current index in the circle with the current radius:. */
         private int n;
         /** The current position in the circle. */
-        private int x, y;
+        private int x;
+        
+        /** The y. */
+        private int y;
 
 
         /**
@@ -1793,7 +1886,7 @@ public class Map extends FreeColGameObject implements Location {
          * {@inheritDoc}
          */
         @Override
-        public Tile next() throws NoSuchElementException {
+        public Tile next() {
             if (!hasNext()) {
                 throw new NoSuchElementException("CircleIterator exhausted");
             }
@@ -1850,7 +1943,10 @@ public class Map extends FreeColGameObject implements Location {
     private class WholeMapIterator implements Iterator<Tile> {
        
         /** The current coordinate position in the iteration. */
-        private int x, y;
+        private int x;
+        
+        /** The y. */
+        private int y;
 
 
         /**
@@ -1872,7 +1968,7 @@ public class Map extends FreeColGameObject implements Location {
          * {@inheritDoc}
          */
         @Override
-        public Tile next() throws NoSuchElementException {
+        public Tile next() {
             if (!hasNext()) {
                 throw new NoSuchElementException("WholeMapIterator exhausted");
             }
@@ -1975,7 +2071,7 @@ public class Map extends FreeColGameObject implements Location {
 
     /**
      * Flood fills from a given <code>Position</code> p, based on
-     * connectivity information encoded in boolmap
+     * connectivity information encoded in boolmap.
      *
      * @param boolmap The connectivity information for this floodfill.
      * @param x The starting x coordinate.
@@ -1989,7 +2085,7 @@ public class Map extends FreeColGameObject implements Location {
 
     /**
      * Flood fills from a given <code>Position</code> p, based on
-     * connectivity information encoded in boolmap
+     * connectivity information encoded in boolmap.
      *
      * @param boolmap The connectivity information for this floodfill.
      * @param x The starting x coordinate.
@@ -2128,9 +2224,15 @@ public class Map extends FreeColGameObject implements Location {
             if (t.getType() == highSeas) t.setType(ocean);
         }
 
-        final int width = getWidth(), height = getHeight();
-        Tile t, seaL = null, seaR = null;
-        int totalL = 0, totalR = 0, distanceL = -1, distanceR = -1;
+        final int width = getWidth();
+        final int height = getHeight();
+        Tile t;
+        Tile seaL = null;
+        Tile seaR = null;
+        int totalL = 0;
+        int totalR = 0;
+        int distanceL = -1;
+        int distanceR = -1;
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < maxDistanceToEdge && x < width
                      && isValid(x, y)
@@ -2174,12 +2276,13 @@ public class Map extends FreeColGameObject implements Location {
             totalR++;
         }
         if (totalL <= 0 || totalR <= 0) {
-            logger.warning("No high seas on "
+            String loggerWarning = "No high seas on "
                 + ((totalL <= 0 && totalR <= 0) ? "either"
                     : (totalL <= 0) ? "left"
                     : (totalR <= 0) ? "right"
                     : "BOGUS") + " side of the map."
-                + "  This can cause failures on small test maps.");
+                + "  This can cause failures on small test maps.";
+			logger.warning(loggerWarning);
         }
     }
 
@@ -2246,11 +2349,11 @@ public class Map extends FreeColGameObject implements Location {
      * Reset layer to reflect what is actually there.
      */
     public void resetLayers() {
-        boolean regions = false,
-            rivers = false,
-            lostCityRumours = false,
-            resources = false,
-            nativeSettlements = false;
+        boolean regions = false;
+        boolean rivers = false;
+        boolean lostCityRumours = false;
+        boolean resources = false;
+        boolean nativeSettlements = false;
         for (Tile t : getAllTiles()) {
             regions |= t.getRegion() != null;
             rivers |= t.hasRiver();
@@ -2457,14 +2560,26 @@ public class Map extends FreeColGameObject implements Location {
 
     // Serialization
 
+    /** The Constant HEIGHT_TAG. */
     private static final String HEIGHT_TAG = "height";
+    
+    /** The Constant LAYER_TAG. */
     private static final String LAYER_TAG = "layer";
+    
+    /** The Constant MAXIMUM_LATITUDE_TAG. */
     private static final String MAXIMUM_LATITUDE_TAG = "maximumLatitude";
+    
+    /** The Constant MINIMUM_LATITUDE_TAG. */
     private static final String MINIMUM_LATITUDE_TAG = "minimumLatitude";
+    
+    /** The Constant WIDTH_TAG. */
     private static final String WIDTH_TAG = "width";
+    
+    /** The missing regions. */
     // @compat 0.10.x, region remediation
     private final List<Tile> missingRegions = new ArrayList<>();
     // end @compat
+    /** The fixup high seas. */
     // @compat 0.10.5, nasty I/O hack
     private boolean fixupHighSeas = false;
     // end @compat
@@ -2618,7 +2733,14 @@ public class Map extends FreeColGameObject implements Location {
      *
      * @return "map".
      */
+    static String mapGet = "map";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
-        return "map";
+		return mapGet;
     }
 }

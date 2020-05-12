@@ -30,15 +30,18 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.common.model.StringTemplate;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The panel that allows a choice of tribute amount.
  */
 public final class SelectTributeAmountDialog
     extends FreeColInputDialog<Integer> {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(SelectTributeAmountDialog.class.getName());
 
+    /** The Constant COLUMNS. */
     private static final int COLUMNS = 5;
 
     /** The field to contain the input. */

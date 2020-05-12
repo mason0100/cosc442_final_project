@@ -24,6 +24,7 @@ import javax.swing.JCheckBox;
 import net.sf.freecol.common.option.BooleanOption;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides visualization for a
  * {@link net.sf.freecol.common.option.BooleanOption} in order to enable
@@ -31,6 +32,7 @@ import net.sf.freecol.common.option.BooleanOption;
  */
 public final class BooleanOptionUI extends OptionUI<BooleanOption>  {
 
+    /** The box. */
     private final JCheckBox box = new JCheckBox();
 
 
@@ -51,6 +53,8 @@ public final class BooleanOptionUI extends OptionUI<BooleanOption>  {
 
     /**
      * Sets the value of this UI's component.
+     *
+     * @param b the new value
      */
     public void setValue(boolean b) {
         box.setSelected(b);

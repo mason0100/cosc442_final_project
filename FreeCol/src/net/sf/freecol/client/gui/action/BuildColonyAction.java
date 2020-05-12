@@ -25,11 +25,13 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for using the active unit to build a colony.
  */
 public class BuildColonyAction extends UnitAction {
 
+    /** The Constant ID. */
     public static final String ID = "buildColonyAction";
 
 

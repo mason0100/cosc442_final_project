@@ -28,20 +28,35 @@ import javax.swing.plaf.ComponentUI;
 import javax.swing.plaf.metal.MetalFileChooserUI;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * UI for the file chooser.
  */
 public class FreeColFileChooserUI extends MetalFileChooserUI {
 
+    /**
+     * Creates the UI.
+     *
+     * @param c the c
+     * @return the component UI
+     */
     public static ComponentUI createUI(JComponent c) {
         return new FreeColFileChooserUI((JFileChooser) c);
     }
 
 
+    /**
+     * Instantiates a new free col file chooser UI.
+     *
+     * @param filechooser the filechooser
+     */
     public FreeColFileChooserUI(JFileChooser filechooser) {
         super(filechooser);
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.plaf.metal.MetalFileChooserUI#addControlButtons()
+     */
     @Override
     protected void addControlButtons() {
         JPanel buttonPanel = getButtonPanel();

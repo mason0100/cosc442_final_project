@@ -35,19 +35,29 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.client.gui.SwingGUI;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A table cell editor that can be used to edit colors.
  */
 public final class ColorCellEditor extends AbstractCellEditor
     implements TableCellEditor, ActionListener {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ColorCellEditor.class.getName());
 
+    /** The Constant EDIT. */
     private static final String EDIT = "EDIT";
 
+    /** The free col client. */
     private final FreeColClient        freeColClient;
+    
+    /** The color edit button. */
     private final JButton              colorEditButton;
+    
+    /** The color chooser panel. */
     private ColorChooserPanel          colorChooserPanel = null;
+    
+    /** The current color. */
     private Color                      currentColor;
 
 

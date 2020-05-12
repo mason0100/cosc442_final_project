@@ -54,6 +54,7 @@ import net.sf.freecol.common.model.Specification;
 import net.sf.freecol.common.option.OptionGroup;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This dialog allows the user to start a single player or multiplayer
  * game, to join a running game, and to fetch a list of games from the
@@ -62,16 +63,31 @@ import net.sf.freecol.common.option.OptionGroup;
 public final class NewPanel extends FreeColPanel
     implements ActionListener, ItemListener {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(NewPanel.class.getName());
 
     /** The actions for this panel. */
     private enum NewPanelAction {
+        
+        /** The ok. */
         OK,
+        
+        /** The cancel. */
         CANCEL,
+        
+        /** The single. */
         SINGLE,
+        
+        /** The join. */
         JOIN,
+        
+        /** The start. */
         START,
+        
+        /** The meta server. */
         META_SERVER,
+        
+        /** The show difficulty. */
         SHOW_DIFFICULTY
     }
 

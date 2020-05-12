@@ -34,11 +34,13 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import static net.sf.freecol.common.util.RandomUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A range of numbers, and support routines to make a random choice therefrom.
  */
 public class RandomRange {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(RandomRange.class.getName());
 
     /** Percentage probability that the result is not zero. */
@@ -149,7 +151,7 @@ public class RandomRange {
     }
 
     /**
-     * Does an object satisfy the scopes?
+     * Does an object satisfy the scopes?.
      *
      * @param fco The <code>FreeColObject</code> to test.
      * @return True if the scopes are satisfied.
@@ -190,10 +192,19 @@ public class RandomRange {
 
     // Serialization
 
+    /** The Constant FACTOR_TAG. */
     private static final String FACTOR_TAG = "factor";
+    
+    /** The Constant MAXIMUM_TAG. */
     private static final String MAXIMUM_TAG = "maximum";
+    
+    /** The Constant MINIMUM_TAG. */
     private static final String MINIMUM_TAG = "minimum";
+    
+    /** The Constant PROBABILITY_TAG. */
     private static final String PROBABILITY_TAG = "probability";
+    
+    /** The Constant SCOPE_TAG. */
     private static final String SCOPE_TAG = "scope";
 
 
@@ -202,6 +213,7 @@ public class RandomRange {
      * the given stream.
      *
      * @param xw The <code>FreeColXMLWriter</code> to write to.
+     * @param tag the tag
      * @exception XMLStreamException if there are any problems writing
      *     to the stream.
      */

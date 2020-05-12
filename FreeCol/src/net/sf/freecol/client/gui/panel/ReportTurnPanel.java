@@ -61,18 +61,23 @@ import net.sf.freecol.common.model.Unit;
 import net.sf.freecol.common.option.BooleanOption;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the Turn Report.
  */
 public final class ReportTurnPanel extends ReportPanel {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ReportTurnPanel.class.getName());
 
     /** The messages to display. */
     private List<ModelMessage> messages;
 
+    /** The text panes by message. */
     private final Hashtable<String, Vector<JComponent>> textPanesByMessage
         = new Hashtable<>();
+    
+    /** The labels by message. */
     private final Hashtable<String, Vector<JComponent>> labelsByMessage
         = new Hashtable<>();
 
@@ -104,6 +109,9 @@ public final class ReportTurnPanel extends ReportPanel {
         if (messages != null) displayMessages();
     }
         
+    /**
+     * Display messages.
+     */
     private void displayMessages() {
         final Game game = getFreeColClient().getGame();
         final ClientOptions options = getClientOptions();
@@ -228,6 +236,12 @@ public final class ReportTurnPanel extends ReportPanel {
         }
     }
 
+    /**
+     * Sets the enabled by type.
+     *
+     * @param type the type
+     * @param enabled the enabled
+     */
     private void setEnabledByType(ModelMessage.MessageType type,
                                   boolean enabled) {
         for (ModelMessage m : messages) {
@@ -242,6 +256,12 @@ public final class ReportTurnPanel extends ReportPanel {
         }
     }
 
+    /**
+     * Gets the headline.
+     *
+     * @param source the source
+     * @return the headline
+     */
     private JComponent getHeadline(FreeColGameObject source) {
         String text;
         String commandId = null;
@@ -300,6 +320,14 @@ public final class ReportTurnPanel extends ReportPanel {
         return headline;
     }
 
+    /**
+     * Insert message.
+     *
+     * @param document the document
+     * @param message the message
+     * @param player the player
+     * @throws BadLocationException the bad location exception
+     */
     private void insertMessage(StyledDocument document, ModelMessage message,
                                Player player) throws BadLocationException {
         for (Object o : message.splitLinks(player)) {

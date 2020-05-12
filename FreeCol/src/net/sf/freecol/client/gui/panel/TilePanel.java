@@ -51,14 +51,17 @@ import net.sf.freecol.common.model.TileType;
 import net.sf.freecol.common.model.UnitType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel is used to show information about a tile.
  */
 public final class TilePanel extends FreeColPanel {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(TilePanel.class.getName());
 
+    /** The Constant COLOPEDIA. */
     private static final String COLOPEDIA = "COLOPEDIA";
 
 

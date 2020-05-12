@@ -31,12 +31,16 @@ import net.sf.freecol.common.ObjectWithId;
 import net.sf.freecol.common.model.Specification;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A wrapped for a file containing a FreeCol modification (mod).
  */
 public class FreeColModFile extends FreeColDataFile implements ObjectWithId {
 
+    /** The Constant SPECIFICATION_FILE. */
     protected static final String SPECIFICATION_FILE = "specification.xml";
+    
+    /** The Constant MOD_DESCRIPTOR_FILE. */
     protected static final String MOD_DESCRIPTOR_FILE = "mod.xml";
 
     /** A file filter to select mods. */

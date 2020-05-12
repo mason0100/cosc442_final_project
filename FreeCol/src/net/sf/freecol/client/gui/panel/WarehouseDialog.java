@@ -42,13 +42,16 @@ import net.sf.freecol.common.model.Goods;
 import net.sf.freecol.common.model.GoodsType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A dialog to display a colony warehouse.
  */
 public final class WarehouseDialog extends FreeColConfirmDialog {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(WarehouseDialog.class.getName());
 
+    /** The warehouse panel. */
     private JPanel warehousePanel;
 
 
@@ -108,21 +111,37 @@ public final class WarehouseDialog extends FreeColConfirmDialog {
     }
 
 
+    /**
+     * The Class WarehouseGoodsPanel.
+     */
     private class WarehouseGoodsPanel extends MigPanel {
 
+        /** The colony. */
         private final Colony colony;
 
+        /** The goods type. */
         private final GoodsType goodsType;
 
+        /** The export. */
         private final JCheckBox export;
 
+        /** The low level. */
         private final JSpinner lowLevel;
 
+        /** The high level. */
         private final JSpinner highLevel;
 
+        /** The export level. */
         private final JSpinner exportLevel;
 
 
+        /**
+         * Instantiates a new warehouse goods panel.
+         *
+         * @param freeColClient the free col client
+         * @param colony the colony
+         * @param goodsType the goods type
+         */
         public WarehouseGoodsPanel(FreeColClient freeColClient, Colony colony,
                                    GoodsType goodsType) {
             super("WarehouseGoodsPanelUI");
@@ -186,6 +205,9 @@ public final class WarehouseDialog extends FreeColConfirmDialog {
             setSize(getPreferredSize());
         }
 
+        /**
+         * Save settings.
+         */
         public void saveSettings() {
             int lowLevelValue = ((SpinnerNumberModel)lowLevel.getModel())
                 .getNumber().intValue();

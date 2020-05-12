@@ -38,6 +38,7 @@ import net.sf.freecol.common.model.NationType;
 import net.sf.freecol.common.model.Player;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays details of nations in the Colopedia.
  */

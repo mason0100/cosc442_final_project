@@ -26,11 +26,13 @@ import java.awt.RenderingHints;
 import javax.swing.JComponent;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Utility methods for Look-and-Feel classes.
  */
 public final class LAFUtilities {
 
+    /** The Constant AA_TEXT_SIZE. */
     private static final int AA_TEXT_SIZE = 16;
 
     /**

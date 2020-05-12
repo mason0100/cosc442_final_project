@@ -43,8 +43,11 @@ import net.sf.freecol.common.option.TextOption;
 import net.sf.freecol.common.option.UnitListOption;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides common methods for various Option UIs.
+ *
+ * @param <T> the generic type
  */
 public abstract class OptionUI<T extends Option<?>> implements OptionUpdater {
 
@@ -85,18 +88,38 @@ public abstract class OptionUI<T extends Option<?>> implements OptionUpdater {
         component.setOpaque(false);
     }
 
+    /**
+     * Gets the option.
+     *
+     * @return the option
+     */
     public final T getOption() {
         return option;
     }
 
+    /**
+     * Sets the option.
+     *
+     * @param newOption the new option
+     */
     public final void setOption(final T newOption) {
         this.option = newOption;
     }
 
+    /**
+     * Checks if is editable.
+     *
+     * @return true, if is editable
+     */
     public final boolean isEditable() {
         return editable;
     }
 
+    /**
+     * Sets the editable.
+     *
+     * @param newEditable the new editable
+     */
     public final void setEditable(final boolean newEditable) {
         this.editable = newEditable;
     }
@@ -148,10 +171,20 @@ public abstract class OptionUI<T extends Option<?>> implements OptionUpdater {
 
     // Routines to be implemented/overridden
 
+    /**
+     * Gets the j label.
+     *
+     * @return the j label
+     */
     public JLabel getJLabel() {
         return label;
     }
 
+    /**
+     * Sets the label.
+     *
+     * @param label the new label
+     */
     protected void setLabel(JLabel label) {
         this.label = label;
     }

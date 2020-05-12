@@ -32,17 +32,26 @@ import net.sf.freecol.common.model.Player;
 import net.sf.freecol.common.model.TransactionListener;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Helper container to remember the Market state prior to some
  * change, and fire off any consequent property changes.
  */
 public class MarketWas {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(MarketWas.class.getName());
 
+    /** The market. */
     private final Market market;
+    
+    /** The tax. */
     private final int tax;
+    
+    /** The cost to buy. */
     private final Map<GoodsType, Integer> costToBuy = new HashMap<>();
+    
+    /** The paid for sale. */
     private final Map<GoodsType, Integer> paidForSale = new HashMap<>();
 
 

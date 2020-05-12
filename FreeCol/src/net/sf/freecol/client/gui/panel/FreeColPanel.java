@@ -47,24 +47,35 @@ import net.sf.freecol.common.model.Player;
 import net.sf.freecol.common.model.Specification;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Superclass for all panels in FreeCol.
  */
 public abstract class FreeColPanel extends MigPanel implements ActionListener {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FreeColPanel.class.getName());
 
+    /** The Constant CANCEL. */
     protected static final String CANCEL = "CANCEL";
+    
+    /** The Constant OK. */
     protected static final String OK = "OK";
+    
+    /** The Constant HELP. */
     protected static final String HELP = "HELP";
 
+    /** The Constant MARGIN. */
     // The margin to use.
     protected static final int MARGIN = 3;
 
+    /** The free col client. */
     private final FreeColClient freeColClient;
 
+    /** The editable. */
     protected boolean editable = true;
 
+    /** The ok button. */
     protected JButton okButton = Utility.localizedButton("ok");
 
 
@@ -106,7 +117,7 @@ public abstract class FreeColPanel extends MigPanel implements ActionListener {
     }
 
     /**
-     * Is this panel editable?
+     * Is this panel editable?.
      *
      * @return True if the panel is editable.
      */

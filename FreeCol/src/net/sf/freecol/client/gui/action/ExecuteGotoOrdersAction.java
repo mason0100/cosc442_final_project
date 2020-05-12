@@ -24,11 +24,13 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for executing goto orders immediately.
  */
 public class ExecuteGotoOrdersAction extends MapboardAction {
 
+    /** The Constant ID. */
     public static final String ID = "executeGotoOrdersAction";
 
 

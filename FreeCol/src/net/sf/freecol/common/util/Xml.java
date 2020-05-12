@@ -37,6 +37,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A class that makes it slightly tidier to create, parse and format XML
  * documents.
@@ -45,6 +46,11 @@ public final class Xml {
 
     // ------------------------------------------------------ class API methods
 
+    /**
+     * New document.
+     *
+     * @return the document
+     */
     public static Document newDocument() {
 
         try {
@@ -58,35 +64,75 @@ public final class Xml {
     }
 
 
+    /**
+     * Document from.
+     *
+     * @param string the string
+     * @return the document
+     */
     public static Document documentFrom( String string ) {
 
         return documentFrom( new InputSource(new StringReader(string)) );
     }
 
 
+    /**
+     * Document from.
+     *
+     * @param stream the stream
+     * @return the document
+     */
     public static Document documentFrom( InputStream stream ) {
 
         return documentFrom( new InputSource(stream) );
     }
 
 
+    /**
+     * To string.
+     *
+     * @param document the document
+     * @return the string
+     */
     public static String toString( Document document ) {
 
         return document.getDocumentElement().toString();
     }
 
 
+    /**
+     * Checks for attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @return true, if successful
+     */
     public static boolean hasAttribute( Node xmlElement, String attributeName ) {
 
         return xmlElement.getAttributes().getNamedItem(attributeName) != null;
     }
 
 
+    /**
+     * Attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @return the string
+     */
     public static String attribute( Node xmlElement, String attributeName ) {
 
         return xmlElement.getAttributes().getNamedItem(attributeName).getNodeValue();
     }
 
+    /**
+     * Attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @param otherwise the otherwise
+     * @return the string
+     */
     public static String attribute( Node xmlElement, String attributeName, String otherwise ) {
         if (hasAttribute(xmlElement, attributeName)) {
             return attribute(xmlElement, attributeName);
@@ -95,16 +141,39 @@ public final class Xml {
         }
     }
 
+    /**
+     * Array attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @param separator the separator
+     * @return the string[]
+     */
     public static String[] arrayAttribute( Node xmlElement, String attributeName, String separator ) {
 
         return attribute(xmlElement, attributeName).split(separator);
     }
 
+    /**
+     * Array attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @return the string[]
+     */
     public static String[] arrayAttribute( Node xmlElement, String attributeName ) {
 
         return arrayAttribute(xmlElement, attributeName, ",");
     }
 
+    /**
+     * Array attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @param otherwise the otherwise
+     * @return the string[]
+     */
     public static String[] arrayAttribute( Node xmlElement, String attributeName, String[] otherwise ) {
         if (hasAttribute(xmlElement, attributeName)) {
             return arrayAttribute(xmlElement, attributeName, ",");
@@ -113,11 +182,26 @@ public final class Xml {
         }
     }
 
+    /**
+     * Char attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @return the char
+     */
     public static char charAttribute( Node xmlElement, String attributeName ) {
 
         return attribute(xmlElement, attributeName).charAt(0);
     }
 
+    /**
+     * Char attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @param otherwise the otherwise
+     * @return the char
+     */
     public static char charAttribute( Node xmlElement, String attributeName, char otherwise ) {
         if (hasAttribute(xmlElement, attributeName)) {
             return charAttribute(xmlElement, attributeName);
@@ -133,11 +217,26 @@ public final class Xml {
     }
     */
 
+    /**
+     * Float attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @return the float
+     */
     public static float floatAttribute( Node xmlElement, String attributeName ) {
 
         return Float.parseFloat( attribute(xmlElement, attributeName) );
     }
 
+    /**
+     * Float attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @param otherwise the otherwise
+     * @return the float
+     */
     public static float floatAttribute( Node xmlElement, String attributeName, float otherwise ) {
         if (hasAttribute(xmlElement, attributeName)) {
             return floatAttribute(xmlElement, attributeName);
@@ -146,6 +245,14 @@ public final class Xml {
         }
     }
 
+    /**
+     * Float array attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @param separator the separator
+     * @return the float[]
+     */
     public static float[] floatArrayAttribute( Node xmlElement, String attributeName, String separator ) {
         String[] array = arrayAttribute(xmlElement, attributeName, separator);
         float[] output = new float[array.length];
@@ -155,11 +262,26 @@ public final class Xml {
         return output;
     }
     
+    /**
+     * Float array attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @return the float[]
+     */
     public static float[] floatArrayAttribute( Node xmlElement, String attributeName ) {
 
         return floatArrayAttribute(xmlElement, attributeName, ",");
     }
 
+    /**
+     * Float array attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @param otherwise the otherwise
+     * @return the float[]
+     */
     public static float[] floatArrayAttribute( Node xmlElement, String attributeName, float[] otherwise ) {
         if (hasAttribute(xmlElement, attributeName)) {
             return floatArrayAttribute(xmlElement, attributeName, ",");
@@ -169,11 +291,26 @@ public final class Xml {
     }
 
 
+    /**
+     * Int attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @return the int
+     */
     public static int intAttribute( Node xmlElement, String attributeName ) {
 
         return Integer.parseInt( attribute(xmlElement, attributeName) );
     }
 
+    /**
+     * Int attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @param otherwise the otherwise
+     * @return the int
+     */
     public static int intAttribute( Node xmlElement, String attributeName, int otherwise ) {
         if (hasAttribute(xmlElement, attributeName)) {
             return intAttribute(xmlElement, attributeName);
@@ -182,6 +319,14 @@ public final class Xml {
         }
     }
 
+    /**
+     * Int array attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @param separator the separator
+     * @return the int[]
+     */
     public static int[] intArrayAttribute( Node xmlElement, String attributeName, String separator ) {
         String[] array = arrayAttribute(xmlElement, attributeName, separator);
         /*  For testing
@@ -195,11 +340,26 @@ public final class Xml {
         return output;
     }
     
+    /**
+     * Int array attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @return the int[]
+     */
     public static int[] intArrayAttribute( Node xmlElement, String attributeName ) {
 
         return intArrayAttribute(xmlElement, attributeName, ",");
     }
 
+    /**
+     * Int array attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @param otherwise the otherwise
+     * @return the int[]
+     */
     public static int[] intArrayAttribute( Node xmlElement, String attributeName, int[] otherwise ) {
         if (hasAttribute(xmlElement, attributeName)) {
             return intArrayAttribute(xmlElement, attributeName, ",");
@@ -208,11 +368,26 @@ public final class Xml {
         }
     }
 
+    /**
+     * Boolean attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @return true, if successful
+     */
     public static boolean booleanAttribute( Node xmlElement, String attributeName ) {
 
         return parseTruth( attribute(xmlElement, attributeName) );
     }
 
+    /**
+     * Boolean attribute.
+     *
+     * @param xmlElement the xml element
+     * @param attributeName the attribute name
+     * @param otherwise the otherwise
+     * @return true, if successful
+     */
     public static boolean booleanAttribute( Node xmlElement, String attributeName, boolean otherwise ) {
         if (hasAttribute(xmlElement, attributeName)) {
             return booleanAttribute(xmlElement, attributeName);
@@ -221,6 +396,12 @@ public final class Xml {
         }
     }
 
+    /**
+     * For each child.
+     *
+     * @param xml the xml
+     * @param method the method
+     */
     public static void forEachChild( Node xml, Method method ) {
 
         NodeList  childList = xml.getChildNodes();
@@ -238,6 +419,12 @@ public final class Xml {
 
     // -------------------------------------------------- class support methods
 
+    /**
+     * Document from.
+     *
+     * @param source the source
+     * @return the document
+     */
     private static Document documentFrom( InputSource source ) {
 
         DocumentBuilderFactory  factory = DocumentBuilderFactory.newInstance();
@@ -251,6 +438,12 @@ public final class Xml {
     }
 
 
+    /**
+     * Parses the truth.
+     *
+     * @param truthAsString the truth as string
+     * @return true, if successful
+     */
     private static boolean parseTruth( String truthAsString )
     {
         if ( null !=
@@ -267,14 +460,25 @@ public final class Xml {
 
     // ----------------------------------------------------------- constructors
 
+    /**
+     * Instantiates a new xml.
+     */
     private Xml() {
     }
 
 
     // ----------------------------------------------------------- nested types
 
+    /**
+     * The Interface Method.
+     */
     public interface Method {
 
+        /**
+         * Invoke on.
+         *
+         * @param xml the xml
+         */
         public void invokeOn( Node xml );
     }
 
@@ -291,6 +495,11 @@ public final class Xml {
      */
     public static final class Exception extends RuntimeException {
 
+        /**
+         * Instantiates a new exception.
+         *
+         * @param cause the cause
+         */
         Exception( Throwable cause ) {
 
             super( cause );

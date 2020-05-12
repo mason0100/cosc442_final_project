@@ -23,6 +23,7 @@ import net.sf.freecol.common.io.FreeColModFile;
 import net.sf.freecol.common.model.Specification;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents an option where the valid choice is a list of
  * FreeColModFiles.

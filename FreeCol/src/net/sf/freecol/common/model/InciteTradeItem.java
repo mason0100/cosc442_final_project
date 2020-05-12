@@ -24,10 +24,10 @@ import javax.xml.stream.XMLStreamException;
 import net.sf.freecol.common.i18n.Messages;
 import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
-import net.sf.freecol.common.model.Player;
 import net.sf.freecol.common.util.Utils;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A trade item consisting of a player to incite war against.
  */
@@ -105,8 +105,8 @@ public class InciteTradeItem extends TradeItem {
      * {@inheritDoc}
      */
     public int evaluateFor(Player player) {
-        final Player victim = getVictim();
-        switch (player.getStance(victim)) {
+        final Player victimGet = getVictim();
+        switch (player.getStance(victimGet)) {
         case ALLIANCE:
             return Integer.MIN_VALUE;
         case WAR: // Not invalid, other player may not know our stance
@@ -114,7 +114,7 @@ public class InciteTradeItem extends TradeItem {
         default:
             break;
         }
-        double ratio = player.getStrengthRatio(victim, false);
+        double ratio = player.getStrengthRatio(victimGet, false);
         // FIXME: magic#, needs rebalancing
         int value = (int)Math.round(30 * ratio);
         return (getSource() == player) ? -value : value;
@@ -147,6 +147,7 @@ public class InciteTradeItem extends TradeItem {
 
     // Serialization
 
+    /** The Constant VICTIM_TAG. */
     private static final String VICTIM_TAG = "victim";
 
 

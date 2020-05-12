@@ -61,6 +61,7 @@ import net.sf.freecol.server.model.ServerPlayer;
 import net.sf.freecol.server.networking.DummyConnection;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Objects of this class contains AI-information for a single {@link
  * Player} and is used for controlling this player.
@@ -70,6 +71,7 @@ import net.sf.freecol.server.networking.DummyConnection;
  */
 public abstract class AIPlayer extends AIObject {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(AIPlayer.class.getName());
 
     /** A comparator to sort AI units by location. */
@@ -161,10 +163,7 @@ public abstract class AIPlayer extends AIObject {
      * Sets the ServerPlayer this AIPlayer is controlling.
      * Used by implementing subclasses.
      *
-     * @param p The new <code>Player</code>.
-    protected void setPlayer(ServerPlayer p) {
-        player = p;
-    }
+     * @return the AI random
      */
 
     /**
@@ -577,8 +576,8 @@ public abstract class AIPlayer extends AIObject {
      *
      * @param aiUnit The <code>AIUnit</code> to perform the mission.
      * @param path A <code>PathNode</code> to the target of this mission.
-     * @param value The proposed value.
      * @param type The mission type.
+     * @param value The proposed value.
      * @return A score representing the desirability of this mission.
      */
     public abstract int adjustMission(AIUnit aiUnit, PathNode path, Class type,
@@ -611,7 +610,7 @@ public abstract class AIPlayer extends AIObject {
 
     /**
      * Called after another <code>Player</code> sends a
-     * <code>trade</code> message
+     * <code>trade</code> message.
      *
      * @param goods The goods which we are going to offer
      */
@@ -682,6 +681,7 @@ public abstract class AIPlayer extends AIObject {
 
     // Serialization
 
+    /** The Constant RANDOM_STATE_TAG. */
     private static final String RANDOM_STATE_TAG = "randomState";
 
 

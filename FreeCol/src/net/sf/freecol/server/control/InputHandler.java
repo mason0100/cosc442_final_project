@@ -38,6 +38,7 @@ import net.sf.freecol.server.networking.Server;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Handles the network messages.
  * 
@@ -45,6 +46,7 @@ import org.w3c.dom.Element;
  */
 public abstract class InputHandler extends FreeColServerHolder implements MessageHandler {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(InputHandler.class.getName());
 
     /**
@@ -160,8 +162,14 @@ public abstract class InputHandler extends FreeColServerHolder implements Messag
     protected abstract Element logout(Connection connection, Element element);
 
 
+    /**
+     * The Class DisconnectHandler.
+     */
     private class DisconnectHandler implements NetworkRequestHandler {
 
+        /* (non-Javadoc)
+         * @see net.sf.freecol.common.networking.NetworkRequestHandler#handle(net.sf.freecol.common.networking.Connection, org.w3c.dom.Element)
+         */
         @Override
         public Element handle(Connection connection, Element disconnectElement) {
             // The player should be logged out by now, but just in case:
@@ -178,6 +186,12 @@ public abstract class InputHandler extends FreeColServerHolder implements Messag
             return null;
         }
 
+        /**
+         * Log disconnect.
+         *
+         * @param connection the connection
+         * @param player the player
+         */
         private void logDisconnect(Connection connection, ServerPlayer player) {
             logger.info("Disconnection by: " + connection + ((player != null) ? " (" + player.getName() + ") " : ""));
         }

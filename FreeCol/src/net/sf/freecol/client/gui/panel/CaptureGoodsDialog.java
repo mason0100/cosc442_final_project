@@ -43,24 +43,40 @@ import net.sf.freecol.common.model.Goods;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Panel for choosing the goods to capture.
  */
 public final class CaptureGoodsDialog extends FreeColDialog<List<Goods>> {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(CaptureGoodsDialog.class.getName());
 
 
+    /**
+     * The Class GoodsItem.
+     */
     private static class GoodsItem extends JCheckBox {
 
+        /** The goods. */
         private final Goods goods;
 
 
+        /**
+         * Instantiates a new goods item.
+         *
+         * @param goods the goods
+         */
         public GoodsItem(Goods goods) {
             this.goods = goods;
         }
 
 
+        /**
+         * Gets the goods.
+         *
+         * @return the goods
+         */
         public Goods getGoods() {
             return this.goods;
         }
@@ -74,9 +90,15 @@ public final class CaptureGoodsDialog extends FreeColDialog<List<Goods>> {
         }
     }
 
+    /**
+     * The Class CheckBoxRenderer.
+     */
     private static class CheckBoxRenderer extends JCheckBox
         implements ListCellRenderer<GoodsItem> {
 
+        /**
+         * Instantiates a new check box renderer.
+         */
         public CheckBoxRenderer() {
             //setBackground(UIManager.getColor("List.textBackground"));
             //setForeground(UIManager.getColor("List.textForeground"));

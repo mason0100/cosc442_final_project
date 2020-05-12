@@ -24,6 +24,7 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Returns to the <code>MainPanel</code>.
  * All in-game components are removed.
@@ -32,6 +33,7 @@ import net.sf.freecol.client.FreeColClient;
  */
 public class ShowMainAction extends FreeColAction {
 
+    /** The Constant ID. */
     public static final String ID = "showMainAction";
 
 

@@ -45,20 +45,29 @@ import net.sf.freecol.common.resources.ResourceManager;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the signing of the Declaration of Independence.
  */
 public final class DeclarationPanel extends FreeColPanel {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(DeclarationPanel.class.getName());
 
+    /** The Constant SIGNATURE_Y. */
     private static final int SIGNATURE_Y = 450;
     
+    /** The Constant ANIMATION_STOPPED. */
     private static final String ANIMATION_STOPPED = "AnimationStopped";
 
+    /** The Constant START_DELAY. */
     private static final int START_DELAY = 2000; // 2s before signing
+    
+    /** The Constant ANIMATION_DELAY. */
     private static final int ANIMATION_DELAY = 50; // 50ms between signature steps
+    
+    /** The Constant FINISH_DELAY. */
     private static final int FINISH_DELAY = 5000; // 5s before closing
 
 
@@ -144,16 +153,23 @@ public final class DeclarationPanel extends FreeColPanel {
      */
     private class SignaturePanel extends JPanel {
 
+        /** The fa file. */
         private final FAFile faFile;
 
+        /** The action listeners. */
         private final ArrayList<ActionListener> actionListeners
             = new ArrayList<>();
 
+        /** The points. */
         private Point[] points = null;
 
+        /** The counter. */
         private int counter = 0;
 
 
+        /**
+         * Instantiates a new signature panel.
+         */
         SignaturePanel() {
             faFile = ResourceManager.getFAFile("animatedfont.signature");
             setOpaque(false);
@@ -240,6 +256,9 @@ public final class DeclarationPanel extends FreeColPanel {
             }
         }
 
+        /**
+         * Notify stopped.
+         */
         private void notifyStopped() {
             for (ActionListener actionListener : actionListeners) {
                 actionListener.actionPerformed(new ActionEvent(this,

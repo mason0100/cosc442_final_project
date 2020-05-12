@@ -26,6 +26,7 @@ import net.sf.freecol.common.model.Tension;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The stance one player has towards another player.
  *   Valid transitions:
@@ -40,17 +41,36 @@ import static net.sf.freecol.common.util.StringUtils.*;
  *   ----------------------------------   x = invalid
  */
 public enum Stance implements Named {
+    
+    /** The uncontacted. */
     UNCONTACTED,
+    
+    /** The alliance. */
     ALLIANCE,
+    
+    /** The peace. */
     PEACE,
+    
+    /** The cease fire. */
     CEASE_FIRE,
+    
+    /** The war. */
     WAR;
 
 
+    /**
+     * Bad stance.
+     */
     // Helpers to enforce valid transitions
     private void badStance() {
         throw new IllegalStateException("Bogus stance");
     }
+    
+    /**
+     * Bad transition.
+     *
+     * @param newStance the new stance
+     */
     private void badTransition(Stance newStance) {
         throw new IllegalStateException("Bad transition: " + this
             + " -> " + newStance);

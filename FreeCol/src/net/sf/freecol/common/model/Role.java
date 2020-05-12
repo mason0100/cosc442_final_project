@@ -34,6 +34,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The role of a unit.
  */
@@ -42,18 +43,39 @@ public class Role extends BuildableType {
     /** Container for valid role changes. */
     public static class RoleChange {
 
+        /** The from. */
         public final String from;
+        
+        /** The capture. */
         public final String capture;
 
+        /**
+         * Instantiates a new role change.
+         *
+         * @param from the from
+         * @param capture the capture
+         */
         RoleChange(String from, String capture) {
             this.from = from;
             this.capture = capture;
         }
 
+        /**
+         * Gets the from.
+         *
+         * @param spec the spec
+         * @return the from
+         */
         public Role getFrom(Specification spec) {
             return spec.getRole(from);
         }
 
+        /**
+         * Gets the capture.
+         *
+         * @param spec the spec
+         * @return the capture
+         */
         public Role getCapture(Specification spec) {
             return spec.getRole(capture);
         }
@@ -102,7 +124,7 @@ public class Role extends BuildableType {
 
 
     /**
-     * Is this the default role?
+     * Is this the default role?.
      *
      * @param roleId The role identifier to test.
      * @return True if this is the default role.
@@ -112,7 +134,7 @@ public class Role extends BuildableType {
     }
 
     /**
-     * Is this the default role?
+     * Is this the default role?.
      *
      * @return True if this is the default role.
      */
@@ -267,7 +289,7 @@ public class Role extends BuildableType {
     }
 
     /**
-     * Is this an offensive role?
+     * Is this an offensive role?.
      *
      * @return True if this is an offensive role.
      */
@@ -285,7 +307,7 @@ public class Role extends BuildableType {
     }
 
     /**
-     * Is this an defensive role?
+     * Is this an defensive role?.
      *
      * @return True if this is an defensive role.
      */
@@ -294,7 +316,7 @@ public class Role extends BuildableType {
     }
 
     /**
-     * Is this role compatible with another?
+     * Is this role compatible with another?.
      *
      * @param other The other <code>Role</code> to compare with.
      * @return True if the other role is compatible.
@@ -360,6 +382,11 @@ public class Role extends BuildableType {
         return result;
     }
 
+    /**
+     * Gets the ability index.
+     *
+     * @return the ability index
+     */
     private int getAbilityIndex() {
         if (requiresAbility(Ability.NATIVE)) {
             return 10;
@@ -424,14 +451,29 @@ public class Role extends BuildableType {
 
     // Serialization
 
+    /** The Constant CAPTURE_TAG. */
     private static final String CAPTURE_TAG = "capture";
+    
+    /** The Constant DOWNGRADE_TAG. */
     private static final String DOWNGRADE_TAG = "downgrade";
+    
+    /** The Constant FROM_TAG. */
     private static final String FROM_TAG = "from";
+    
+    /** The Constant EXPERT_UNIT_TAG. */
     private static final String EXPERT_UNIT_TAG = "expert-unit";
+    
+    /** The Constant MAXIMUM_COUNT_TAG. */
     private static final String MAXIMUM_COUNT_TAG = "maximum-count";
+    
+    /** The Constant ROLE_CHANGE_TAG. */
     private static final String ROLE_CHANGE_TAG = "role-change";
+    
+    /** The Constant OLD_EXPERT_UNIT_TAG. */
     // @compat 0.11.3
     private static final String OLD_EXPERT_UNIT_TAG = "expertUnit";
+    
+    /** The Constant OLD_MAXIMUM_COUNT_TAG. */
     private static final String OLD_MAXIMUM_COUNT_TAG = "maximumCount";
     // end @compat 0.11.3
 

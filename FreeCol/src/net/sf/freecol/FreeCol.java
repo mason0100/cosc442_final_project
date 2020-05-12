@@ -65,6 +65,7 @@ import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class is responsible for handling the command-line arguments
  * and starting either the stand-alone server or the client-GUI.
@@ -74,6 +75,7 @@ import org.apache.commons.cli.PosixParser;
  */
 public final class FreeCol {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FreeCol.class.getName());
 
     /** The FreeCol release version number. */
@@ -94,43 +96,89 @@ public final class FreeCol {
     /** The maximum available memory. */
     private static final long MEMORY_MAX = Runtime.getRuntime().maxMemory();
 
+    /** The Constant CLIENT_THREAD. */
     public static final String  CLIENT_THREAD = "FreeColClient:";
+    
+    /** The Constant SERVER_THREAD. */
     public static final String  SERVER_THREAD = "FreeColServer:";
+    
+    /** The Constant METASERVER_THREAD. */
     public static final String  METASERVER_THREAD = "FreeColMetaServer:";
 
+    /** The Constant META_SERVER_ADDRESS. */
     public static final String  META_SERVER_ADDRESS = "meta.freecol.org";
+    
+    /** The Constant META_SERVER_PORT. */
     public static final int     META_SERVER_PORT = 3540;
 
-    /** Specific revision number (currently the git tag of trunk at release) */
+    /**  Specific revision number (currently the git tag of trunk at release). */
     private static String       freeColRevision = null;
 
     /** The locale, either default or command-line specified. */
     private static Locale       locale = null;
 
 
+    /** The Constant ADVANTAGES_DEFAULT. */
     // Cli defaults.
     private static final Advantages ADVANTAGES_DEFAULT = Advantages.SELECTABLE;
+    
+    /** The Constant DIFFICULTY_DEFAULT. */
     private static final String DIFFICULTY_DEFAULT = "model.difficulty.medium";
+    
+    /** The Constant EUROPEANS_DEFAULT. */
     private static final int    EUROPEANS_DEFAULT = 4;
+    
+    /** The Constant EUROPEANS_MIN. */
     private static final int    EUROPEANS_MIN = 1;
+    
+    /** The Constant LOGLEVEL_DEFAULT. */
     private static final Level  LOGLEVEL_DEFAULT = Level.INFO;
+    
+    /** The Constant JAVA_VERSION_MIN. */
     private static final String JAVA_VERSION_MIN = "1.8";
+    
+    /** The Constant MEMORY_MIN. */
     private static final int    MEMORY_MIN = 128; // Mbytes
+    
+    /** The Constant PORT_DEFAULT. */
     private static final int    PORT_DEFAULT = 3541;
+    
+    /** The Constant SPLASH_DEFAULT. */
     private static final String SPLASH_DEFAULT = "splash.jpg";
+    
+    /** The Constant TC_DEFAULT. */
     private static final String TC_DEFAULT = "freecol";
+    
+    /** The Constant TIMEOUT_DEFAULT. */
     public static final int     TIMEOUT_DEFAULT = 60; // 1 minute
+    
+    /** The Constant TIMEOUT_MIN. */
     public static final int     TIMEOUT_MIN = 10; // 10s
+    
+    /** The Constant GUI_SCALE_MIN_PCT. */
     private static final int GUI_SCALE_MIN_PCT = 100;
+    
+    /** The Constant GUI_SCALE_MAX_PCT. */
     private static final int GUI_SCALE_MAX_PCT = 200;
+    
+    /** The Constant GUI_SCALE_STEP_PCT. */
     private static final int GUI_SCALE_STEP_PCT = 25;
+    
+    /** The Constant GUI_SCALE_MIN. */
     public static final float GUI_SCALE_MIN = GUI_SCALE_MIN_PCT / 100.0f;
+    
+    /** The Constant GUI_SCALE_MAX. */
     public static final float GUI_SCALE_MAX = GUI_SCALE_MAX_PCT / 100.0f;
+    
+    /** The Constant GUI_SCALE_STEP. */
     public static final float GUI_SCALE_STEP = GUI_SCALE_STEP_PCT / 100.0f;
+    
+    /** The Constant GUI_SCALE_DEFAULT. */
     public static final float GUI_SCALE_DEFAULT = 1.0f;
 
 
     // Cli values.  Often set to null so the default can be applied in
+    /** The stand alone server. */
     // the accessor function.
     private static boolean checkIntegrity = false,
                            consoleLogging = false,
@@ -164,6 +212,8 @@ public final class FreeCol {
 
     /** How to name and configure the server. */
     private static int serverPort = -1;
+    
+    /** The server name. */
     private static String serverName = null;
 
     /** A stream to get the splash image from. */
@@ -185,6 +235,9 @@ public final class FreeCol {
     private static float guiScale = GUI_SCALE_DEFAULT;
 
    
+    /**
+     * Instantiates a new free col.
+     */
     private FreeCol() {} // Hide constructor
 
     /**
@@ -324,7 +377,9 @@ public final class FreeCol {
     /**
      * Get the JarURLConnection from a class.
      *
+     * @param c the c
      * @return The <code>JarURLConnection</code>.
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     private static JarURLConnection getJarURLConnection(Class c) throws IOException {
         String resourceName = "/" + c.getName().replace('.', '/') + ".class";
@@ -337,6 +392,7 @@ public final class FreeCol {
      *
      * @param juc The <code>JarURLConnection</code> to extract from.
      * @return A value of the package version attribute.
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     private static String readVersion(JarURLConnection juc) throws IOException {
         Manifest mf = juc.getManifest();
@@ -346,12 +402,13 @@ public final class FreeCol {
 
     /**
      * Get a stream for the default splash file.
-     *
+     * 
      * Note: Not bothering to check for nulls as this is called in try
      * block that ignores all exceptions.
      *
      * @param juc The <code>JarURLConnection</code> to extract from.
      * @return A suitable <code>InputStream</code>, or null on error.
+     * @throws IOException Signals that an I/O exception has occurred.
      */
     private static InputStream getDefaultSplashStream(JarURLConnection juc) throws IOException {
         JarFile jf = juc.getJarFile();
@@ -1004,6 +1061,8 @@ public final class FreeCol {
 
     /**
      * Get the number of European nations to enable by default.
+     *
+     * @return the european count
      */
     public static int getEuropeanCount() {
         return europeanCount;

@@ -36,19 +36,25 @@ import net.sf.freecol.client.gui.ChoiceItem;
 import net.sf.freecol.common.i18n.Messages;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A dialog for editing parameters.
  */
 public class ParametersDialog extends FreeColDialog<Parameters> {
     
+    /** The Constant COLUMNS. */
     private static final int COLUMNS = 5;
 
+    /** The Constant DEFAULT_DISTTOLANDFROMHIGHSEAS. */
     private static final int DEFAULT_DISTTOLANDFROMHIGHSEAS = 4;
 
+    /** The Constant DEFAULT_MAXDISTANCETOEDGE. */
     private static final int DEFAULT_MAXDISTANCETOEDGE = 12;
 
+    /** The input D. */
     private final JTextField inputD;
 
+    /** The input M. */
     private final JTextField inputM;
 
 

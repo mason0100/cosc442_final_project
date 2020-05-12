@@ -30,6 +30,7 @@ import net.sf.freecol.client.gui.panel.Utility;
 import net.sf.freecol.common.option.RangeOption;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides visualization for a
  * {@link net.sf.freecol.common.option.RangeOption} in order to enable

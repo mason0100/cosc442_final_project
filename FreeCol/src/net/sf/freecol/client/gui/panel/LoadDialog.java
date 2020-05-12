@@ -32,6 +32,7 @@ import net.sf.freecol.client.gui.ChoiceItem;
 import net.sf.freecol.common.i18n.Messages;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A dialog for choosing a file to load.
  */

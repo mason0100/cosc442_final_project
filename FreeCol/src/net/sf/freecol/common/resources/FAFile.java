@@ -31,6 +31,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents the data within a Font Animation File.
  * 
@@ -38,8 +39,11 @@ import java.util.StringTokenizer;
  */
 public class FAFile {
 
+    /** The letters. */
     // FIXME: Use two hashes, to be safer?
     private final HashMap<Object, Object> letters = new HashMap<>();
+    
+    /** The max height. */
     private int maxHeight = 0;
 
 
@@ -126,6 +130,12 @@ public class FAFile {
         return points.toArray(new Point[0]);
     }
 
+    /**
+     * Load.
+     *
+     * @param is the is
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     private void load(InputStream is) throws IOException {
         letters.clear();
 
@@ -208,22 +218,50 @@ public class FAFile {
     }
 
 
+    /**
+     * Gets the letter.
+     *
+     * @param letter the letter
+     * @return the letter
+     */
     private FALetter getLetter(char letter) {
         return (FALetter) letters.get(letter);
     }
 
+    /**
+     * Gets the FA name.
+     *
+     * @param name the name
+     * @return the FA name
+     */
     private FAName getFAName(String name) {
         return (FAName) letters.get(name);
     }
 
+    /**
+     * The Class FALetter.
+     */
     private static class FALetter {
+        
+        /** The points. */
         public Point[] points;
+        
+        /** The advance. */
         public int advance;
     }
 
+    /**
+     * The Class FAName.
+     */
     private static class FAName {
+        
+        /** The points. */
         public Point[] points;
+        
+        /** The width. */
         public int width;
+        
+        /** The height. */
         public int height;
     }
 
@@ -257,6 +295,7 @@ public class FAFile {
             return c;
         }
         
+        /** The in. */
         private final InputStream in;
     }
 }

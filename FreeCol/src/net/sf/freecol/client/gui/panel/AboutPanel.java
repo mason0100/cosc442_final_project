@@ -41,6 +41,7 @@ import net.sf.freecol.client.gui.FontLibrary;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This is the About panel
  *  
@@ -66,17 +67,22 @@ import net.sf.freecol.common.resources.ResourceManager;
  * | apCopyright    |
  * | ---------------|
  * | okButton       |
- * | ---------------|
- * 
+ * | ---------------|.
  */
 public final class AboutPanel extends FreeColPanel {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(AboutPanel.class.getName());
 
+    /** The Constant SITE_URL. */
     public static final String SITE_URL
         = "http://www.freecol.org";
+    
+    /** The Constant PROJECT_URL. */
     public static final String PROJECT_URL
         = "http://sourceforge.net/projects/freecol/";
+    
+    /** The Constant MANUAL_URL. */
     private static final String MANUAL_URL
         = "http://www.freecol.org/documentation/freecol-user-manual.html";
 

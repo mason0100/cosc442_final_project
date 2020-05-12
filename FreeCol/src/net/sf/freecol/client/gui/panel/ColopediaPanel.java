@@ -44,20 +44,26 @@ import net.sf.freecol.common.i18n.Messages;
 import net.sf.freecol.common.model.FreeColObject;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the Colopedia.
  */
 public final class ColopediaPanel extends FreeColPanel
     implements HyperlinkListener, TreeSelectionListener {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ColopediaPanel.class.getName());
 
+    /** The list panel. */
     private JPanel listPanel;
 
+    /** The detail panel. */
     private JPanel detailPanel;
 
+    /** The tree. */
     private JTree tree;
 
+    /** The node map. */
     private Map<String, DefaultMutableTreeNode> nodeMap = new HashMap<>();
 
 
@@ -115,7 +121,7 @@ public final class ColopediaPanel extends FreeColPanel
 
 
     /**
-     * Builds the JTree which represents the navigation menu and then returns it
+     * Builds the JTree which represents the navigation menu and then returns it.
      *
      * @return The navigation tree.
      */
@@ -175,6 +181,11 @@ public final class ColopediaPanel extends FreeColPanel
         }
     }
 
+    /**
+     * Show details.
+     *
+     * @param nodeItem the node item
+     */
     private void showDetails(ColopediaTreeItem nodeItem) {
         detailPanel.removeAll();
         if (nodeItem.getPanelType() != null && nodeItem.getId() != null) {
@@ -184,6 +195,11 @@ public final class ColopediaPanel extends FreeColPanel
         detailPanel.repaint();
     }
 
+    /**
+     * Select.
+     *
+     * @param id the id
+     */
     private void select(String id) {
         DefaultMutableTreeNode node = nodeMap.get(id);
         if (node == null) {
@@ -201,6 +217,9 @@ public final class ColopediaPanel extends FreeColPanel
         }
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.event.HyperlinkListener#hyperlinkUpdate(javax.swing.event.HyperlinkEvent)
+     */
     @Override
     public void hyperlinkUpdate(HyperlinkEvent e) {
         HyperlinkEvent.EventType type = e.getEventType();

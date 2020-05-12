@@ -72,6 +72,7 @@ import net.sf.freecol.common.resources.ResourceManager;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the compact colony report.
  */
@@ -83,18 +84,39 @@ public final class ReportCompactColonyPanel extends ReportPanel
 
         /** Types of production for a given goods type. */
         public enum ProductionStatus {
-            FAIL,        // Negative production and below low alarm level
-            BAD,         // Negative production
-            NONE,        // No production at all
-            ZERO,        // Production == consumption
-            GOOD,        // Positive production
-            EXPORT,      // Positive production and exporting
-            EXCESS,      // Positive production and above high alarm level
-            OVERFLOW,    // Positive production and above capacity
-            PRODUCTION,  // Positive production but could produce more
+            
+            /** The fail. */
+            FAIL,        
+        /** The bad. */
+        // Negative production and below low alarm level
+            BAD,         
+         /** The none. */
+         // Negative production
+            NONE,        
+        /** The zero. */
+        // No production at all
+            ZERO,        
+        /** The good. */
+        // Production == consumption
+            GOOD,        
+        /** The export. */
+        // Positive production
+            EXPORT,      
+      /** The excess. */
+      // Positive production and exporting
+            EXCESS,      
+      /** The overflow. */
+      // Positive production and above high alarm level
+            OVERFLOW,    
+    /** The production. */
+    // Positive production and above capacity
+            PRODUCTION,  
+  /** The consumption. */
+  // Positive production but could produce more
             CONSUMPTION, // Positive production but could consume more
         }
 
+        /** The goods production accumulator. */
         public static BinaryOperator<GoodsProduction> goodsProductionAccumulator
             = (g1, g2) -> {
                 g1.amount += g2.amount;
@@ -111,10 +133,22 @@ public final class ReportCompactColonyPanel extends ReportPanel
         /** Container class for goods production. */
         public static class GoodsProduction {
 
+            /** The amount. */
             public int amount;
+            
+            /** The status. */
             public ProductionStatus status;
+            
+            /** The extra. */
             public int extra;
 
+            /**
+             * Instantiates a new goods production.
+             *
+             * @param amount the amount
+             * @param status the status
+             * @param extra the extra
+             */
             public GoodsProduction(int amount, ProductionStatus status,
                                    int extra) {
                 this.amount = amount;
@@ -134,7 +168,7 @@ public final class ReportCompactColonyPanel extends ReportPanel
         public final List<TileImprovementSuggestion> tileSuggestions
             = new ArrayList<>();
 
-        /** Famine warning required? */
+        /**  Famine warning required?. */
         public final boolean famine;
 
         /**
@@ -166,7 +200,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
         
         /** Currently building. */
         public final BuildableType build;
+        
+        /** The complete turns. */
         public final int completeTurns;
+        
+        /** The needed. */
         public final AbstractGoods needed;
 
 
@@ -344,6 +382,13 @@ public final class ReportCompactColonyPanel extends ReportPanel
                 new GoodsProduction(p, status, extra));
         }
 
+        /**
+         * Adds the suggestion.
+         *
+         * @param suggestions the suggestions
+         * @param expert the expert
+         * @param suggestion the suggestion
+         */
         private void addSuggestion(Map<UnitType, Suggestion> suggestions,
             UnitType expert, Suggestion suggestion) {
             if (suggestion == null || expert == null) return;
@@ -354,22 +399,52 @@ public final class ReportCompactColonyPanel extends ReportPanel
         }
     }
 
+    /** The Constant BUILDQUEUE. */
     private static final String BUILDQUEUE = "buildQueue.";
+    
+    /** The Constant cAlarmKey. */
     private static final String cAlarmKey = "color.report.colony.alarm";
+    
+    /** The Constant cWarnKey. */
     private static final String cWarnKey = "color.report.colony.warning";
+    
+    /** The Constant cPlainKey. */
     private static final String cPlainKey = "color.report.colony.plain";
+    
+    /** The Constant cExportKey. */
     private static final String cExportKey = "color.report.colony.export";
+    
+    /** The Constant cGoodKey. */
     private static final String cGoodKey = "color.report.colony.good";
+    
+    /** The c alarm. */
     private static Color cAlarm = null;
+    
+    /** The c warn. */
     private static Color cWarn;
+    
+    /** The c plain. */
     private static Color cPlain;
+    
+    /** The c export. */
     private static Color cExport;
+    
+    /** The c good. */
     private static Color cGood;
 
+    /** The spec. */
     private final Specification spec;
+    
+    /** The lib. */
     private final ImageLibrary lib;
+    
+    /** The colonies. */
     private final List<List<Colony>> colonies = new ArrayList<>();
+    
+    /** The market. */
     private final Market market;
+    
+    /** The goods types. */
     private final List<GoodsType> goodsTypes = new ArrayList<>();
 
 
@@ -424,6 +499,9 @@ public final class ReportCompactColonyPanel extends ReportPanel
         update();
     }
 
+    /**
+     * Load resources.
+     */
     private synchronized void loadResources() {
         if (cAlarm != null) return;
 
@@ -445,23 +523,52 @@ public final class ReportCompactColonyPanel extends ReportPanel
     }
 
 
+    /**
+     * Stpl.
+     *
+     * @param messageId the message id
+     * @return the string template
+     */
     private static StringTemplate stpl(String messageId) {
         return (Messages.containsKey(messageId))
             ? StringTemplate.template(messageId)
             : null;
     }
 
+    /**
+     * Stpld.
+     *
+     * @param messageId the message id
+     * @return the string template
+     */
     private static StringTemplate stpld(String messageId) {
         messageId = Messages.descriptionKey(messageId);
         return stpl(messageId);
     }
 
+    /**
+     * New label.
+     *
+     * @param h the h
+     * @param i the i
+     * @param c the c
+     * @return the j label
+     */
     private JLabel newLabel(String h, ImageIcon i, Color c) {
         JLabel l = new JLabel(h, i, SwingConstants.CENTER);
         l.setForeground((c == null) ? Color.BLACK : c);
         return l;
     }
 
+    /**
+     * New label.
+     *
+     * @param h the h
+     * @param i the i
+     * @param c the c
+     * @param t the t
+     * @return the j label
+     */
     private JLabel newLabel(String h, ImageIcon i, Color c, StringTemplate t) {
         if (h != null && Messages.containsKey(h)) h = Messages.message(h);
         JLabel l = newLabel(h, i, c);
@@ -469,6 +576,16 @@ public final class ReportCompactColonyPanel extends ReportPanel
         return l;
     }
 
+    /**
+     * New button.
+     *
+     * @param action the action
+     * @param h the h
+     * @param i the i
+     * @param c the c
+     * @param t the t
+     * @return the j button
+     */
     private JButton newButton(String action, String h, ImageIcon i,
                               Color c, StringTemplate t) {
         if (h != null && Messages.containsKey(h)) h = Messages.message(h);
@@ -479,6 +596,11 @@ public final class ReportCompactColonyPanel extends ReportPanel
         return b;
     }
 
+    /**
+     * Adds the together.
+     *
+     * @param components the components
+     */
     private void addTogether(List<? extends JComponent> components) {
         if (components.isEmpty()) {
             reportJPanel.add(new JLabel());
@@ -812,6 +934,14 @@ public final class ReportCompactColonyPanel extends ReportPanel
         // TODO: notWorking?
     }
     
+    /**
+     * Unit buttons.
+     *
+     * @param suggestions the suggestions
+     * @param have the have
+     * @param colony the colony
+     * @return the list
+     */
     private List<JButton> unitButtons(final Map<UnitType, Suggestion> suggestions,
                                       List<UnitType> have, Colony colony) {
         final String cac = colony.getId();
@@ -1022,6 +1152,14 @@ public final class ReportCompactColonyPanel extends ReportPanel
                 stpld("report.colony.improving.summary")));
     }
 
+    /**
+     * Unit type labels.
+     *
+     * @param unitTypeMap the unit type map
+     * @param maxSize the max size
+     * @param t the t
+     * @return the list
+     */
     private List<JLabel> unitTypeLabels(Map<UnitType, Integer> unitTypeMap,
                                         int maxSize, StringTemplate t) {
         List<JLabel> result = new ArrayList<>();

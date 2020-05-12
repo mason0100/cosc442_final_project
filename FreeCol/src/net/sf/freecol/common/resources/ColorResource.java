@@ -26,6 +26,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A <code>Resource</code> wrapping a <code>Color</code>.
  * 
@@ -34,15 +35,24 @@ import java.util.logging.Logger;
  */
 public class ColorResource extends Resource {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ColorResource.class.getName());
 
+    /** The Constant REPLACEMENT_COLOR. */
     public static final Color REPLACEMENT_COLOR = Color.MAGENTA;
 
+    /** The Constant SCHEME. */
     public static final String SCHEME = "color:";
 
+    /** The color. */
     private final Color color;
 
 
+    /**
+     * Instantiates a new color resource.
+     *
+     * @param color the color
+     */
     public ColorResource(Color color) {
         this.color = color;
     }
@@ -52,6 +62,7 @@ public class ColorResource extends Resource {
      *
      * @param resourceLocator The <code>URI</code> used when loading this
      *     resource.
+     * @throws Exception the exception
      */
     public ColorResource(URI resourceLocator) throws Exception {
         super(resourceLocator);
@@ -71,6 +82,12 @@ public class ColorResource extends Resource {
         return this.color;
     }
 
+    /**
+     * Checks if is hex string.
+     *
+     * @param str the str
+     * @return true, if is hex string
+     */
     private static boolean isHexString(String str) {
         if (str == null
             || !(str.startsWith("0x") || str.startsWith("0X"))

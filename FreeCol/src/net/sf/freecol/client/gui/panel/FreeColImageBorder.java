@@ -32,22 +32,39 @@ import net.sf.freecol.client.gui.ImageLibrary;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A border created from a set of images. 
  */
 public class FreeColImageBorder extends AbstractBorder {
 
+    /** The Constant imageBorder. */
     public static final FreeColImageBorder imageBorder = new FreeColImageBorder();
 
 
+    /** The top left corner image. */
     // The buffered image objects
     private final BufferedImage topLeftCornerImage;
+    
+    /** The top image. */
     private final BufferedImage topImage;
+    
+    /** The top right corner image. */
     private final BufferedImage topRightCornerImage;
+    
+    /** The right image. */
     private final BufferedImage rightImage;
+    
+    /** The bottom right corner image. */
     private final BufferedImage bottomRightCornerImage;
+    
+    /** The bottom image. */
     private final BufferedImage bottomImage;
+    
+    /** The bottom left corner image. */
     private final BufferedImage bottomLeftCornerImage;
+    
+    /** The left image. */
     private final BufferedImage leftImage;
 
 

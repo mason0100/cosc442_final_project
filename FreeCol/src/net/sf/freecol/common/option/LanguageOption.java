@@ -39,12 +39,14 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import net.sf.freecol.common.util.Utils;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Option for selecting a language.  The possible choices are determined
  * using the available language files in the i18n directory.
  */
 public class LanguageOption extends AbstractOption<LanguageOption.Language> {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(LanguageOption.class.getName());
 
     /** Extra languages with alternate names. */
@@ -58,6 +60,9 @@ public class LanguageOption extends AbstractOption<LanguageOption.Language> {
             + "(\u0442\u0430\u0440\u0430\u0448\u043a\u0435\u0432\u0456\u0446\u0430)");
     }
 
+    /**
+     * The Class Language.
+     */
     public static class Language implements Comparable<Language> {
 
         /** The language name. */
@@ -67,6 +72,12 @@ public class LanguageOption extends AbstractOption<LanguageOption.Language> {
         private Locale locale;
 
 
+        /**
+         * Instantiates a new language.
+         *
+         * @param key the key
+         * @param locale the locale
+         */
         public Language(String key, Locale locale) {
             this.key = key;
             this.locale = locale;

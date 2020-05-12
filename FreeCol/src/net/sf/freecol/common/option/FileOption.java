@@ -28,11 +28,13 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.model.Specification;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents an option for specifying a <code>File</code>.
  */
 public class FileOption extends AbstractOption<File> {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(FileOption.class.getName());
 

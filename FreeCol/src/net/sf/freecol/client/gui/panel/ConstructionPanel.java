@@ -46,6 +46,7 @@ import net.sf.freecol.common.model.Turn;
 import static net.sf.freecol.common.util.StringUtils.getBreakingPoint;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel shows the progress of constructing a building or
  * unit in a colony.
@@ -53,13 +54,14 @@ import static net.sf.freecol.common.util.StringUtils.getBreakingPoint;
 public class ConstructionPanel extends MigPanel
     implements PropertyChangeListener {
 
+    /** The Constant EVENT. */
     public static final String EVENT
         = Colony.ColonyChangeEvent.BUILD_QUEUE_CHANGE.toString();
 
     /** The enclosing client. */
     private final FreeColClient freeColClient;
 
-    /** Should a mouse click open the build queue? */
+    /**  Should a mouse click open the build queue?. */
     private final boolean openBuildQueue;
 
     /** The colony performing the construction. */
@@ -93,6 +95,11 @@ public class ConstructionPanel extends MigPanel
     }
 
 
+    /**
+     * Sets the colony.
+     *
+     * @param newColony the new colony
+     */
     public void setColony(Colony newColony) {
         if (newColony != colony) {
             cleanup();
@@ -101,6 +108,9 @@ public class ConstructionPanel extends MigPanel
         }
     }
 
+    /**
+     * Initialize.
+     */
     public void initialize() {
         if (colony != null) {
             // we are interested in changes to the build queue, as well as
@@ -119,6 +129,9 @@ public class ConstructionPanel extends MigPanel
         update();
     }
 
+    /**
+     * Cleanup.
+     */
     public void cleanup() {
         if (colony != null) {
             colony.removePropertyChangeListener(EVENT, this);
@@ -128,10 +141,18 @@ public class ConstructionPanel extends MigPanel
         }
     }
 
+    /**
+     * Update.
+     */
     public void update() {
         update((colony == null) ? null : colony.getCurrentlyBuilding());
     }
 
+    /**
+     * Update.
+     *
+     * @param buildable the buildable
+     */
     public void update(BuildableType buildable) {
         removeAll();
         final ImageLibrary lib = ((SwingGUI)freeColClient.getGUI())
@@ -185,10 +206,20 @@ public class ConstructionPanel extends MigPanel
     }
 
 
+    /**
+     * Gets the default label.
+     *
+     * @return the default label
+     */
     public final StringTemplate getDefaultLabel() {
         return defaultLabel;
     }
 
+    /**
+     * Sets the default label.
+     *
+     * @param newDefaultLabel the new default label
+     */
     public final void setDefaultLabel(final StringTemplate newDefaultLabel) {
         this.defaultLabel = newDefaultLabel;
     }

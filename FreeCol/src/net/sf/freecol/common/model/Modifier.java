@@ -30,6 +30,7 @@ import net.sf.freecol.common.util.Utils;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The <code>Modifier</code> class encapsulates a bonus or penalty
  * that can be applied to any action within the game, most obviously
@@ -38,119 +39,241 @@ import org.w3c.dom.Element;
  */
 public class Modifier extends Feature {
 
+    /** The Constant AMPHIBIOUS_ATTACK. */
     public static final String AMPHIBIOUS_ATTACK
         = "model.modifier.amphibiousAttack";
+    
+    /** The Constant ARTILLERY_AGAINST_RAID. */
     public static final String ARTILLERY_AGAINST_RAID
         = "model.modifier.artilleryAgainstRaid";
+    
+    /** The Constant ARTILLERY_IN_THE_OPEN. */
     public static final String ARTILLERY_IN_THE_OPEN
         = "model.modifier.artilleryInTheOpen";
+    
+    /** The Constant ATTACK_BONUS. */
     public static final String ATTACK_BONUS
         = "model.modifier.attackBonus";
+    
+    /** The Constant BIG_MOVEMENT_PENALTY. */
     public static final String BIG_MOVEMENT_PENALTY
         = "model.modifier.bigMovementPenalty";
+    
+    /** The Constant BOMBARD_BONUS. */
     public static final String BOMBARD_BONUS
         = "model.modifier.bombardBonus";
+    
+    /** The Constant BREEDING_DIVISOR. */
     public static final String BREEDING_DIVISOR
         = "model.modifier.breedingDivisor";
+    
+    /** The Constant BREEDING_FACTOR. */
     public static final String BREEDING_FACTOR
         = "model.modifier.breedingFactor";
+    
+    /** The Constant BUILDING_PRICE_BONUS. */
     public static final String BUILDING_PRICE_BONUS
         = "model.modifier.buildingPriceBonus";
+    
+    /** The Constant CARGO_PENALTY. */
     public static final String CARGO_PENALTY
         = "model.modifier.cargoPenalty";
+    
+    /** The Constant COLONY_GOODS_PARTY. */
     public static final String COLONY_GOODS_PARTY
         = "model.modifier.colonyGoodsParty";
+    
+    /** The Constant CONSUME_ONLY_SURPLUS_PRODUCTION. */
     public static final String CONSUME_ONLY_SURPLUS_PRODUCTION
         = "model.modifier.consumeOnlySurplusProduction";
+    
+    /** The Constant CONVERSION_ALARM_RATE. */
     public static final String CONVERSION_ALARM_RATE
         = "model.modifier.conversionAlarmRate";
+    
+    /** The Constant CONVERSION_SKILL. */
     public static final String CONVERSION_SKILL
         = "model.modifier.conversionSkill";
+    
+    /** The Constant DEFENCE. */
     public static final String DEFENCE
         = "model.modifier.defence";
+    
+    /** The Constant EXPLORE_LOST_CITY_RUMOUR. */
     public static final String EXPLORE_LOST_CITY_RUMOUR
         = "model.modifier.exploreLostCityRumour";
+    
+    /** The Constant EXPOSED_TILES_RADIUS. */
     public static final String EXPOSED_TILES_RADIUS
         = "model.modifier.exposedTilesRadius";
+    
+    /** The Constant FORTIFIED. */
     public static final String FORTIFIED
         = "model.modifier.fortified";
+    
+    /** The Constant IMMIGRATION. */
     public static final String IMMIGRATION
         = "model.modifier.immigration";
+    
+    /** The Constant LAND_PAYMENT_MODIFIER. */
     public static final String LAND_PAYMENT_MODIFIER
         = "model.modifier.landPaymentModifier";
+    
+    /** The Constant LIBERTY. */
     public static final String LIBERTY
         = "model.modifier.liberty";
+    
+    /** The Constant LINE_OF_SIGHT_BONUS. */
     public static final String LINE_OF_SIGHT_BONUS
         = "model.modifier.lineOfSightBonus";
+    
+    /** The Constant MINIMUM_COLONY_SIZE. */
     public static final String MINIMUM_COLONY_SIZE
         = "model.modifier.minimumColonySize";
+    
+    /** The Constant MISSIONARY_TRADE_BONUS. */
     public static final String MISSIONARY_TRADE_BONUS
         = "model.modifier.missionaryTradeBonus";
+    
+    /** The Constant MOVEMENT_BONUS. */
     public static final String MOVEMENT_BONUS
         = "model.modifier.movementBonus";
+    
+    /** The Constant NATIVE_ALARM_MODIFIER. */
     public static final String NATIVE_ALARM_MODIFIER
         = "model.modifier.nativeAlarmModifier";
+    
+    /** The Constant NATIVE_CONVERT_BONUS. */
     public static final String NATIVE_CONVERT_BONUS
         = "model.modifier.nativeConvertBonus";
+    
+    /** The Constant OFFENCE. */
     public static final String OFFENCE
         = "model.modifier.offence";
+    
+    /** The Constant OFFENCE_AGAINST. */
     public static final String OFFENCE_AGAINST
         = "model.modifier.offenceAgainst";
+    
+    /** The Constant PEACE_TREATY. */
     public static final String PEACE_TREATY
         = "model.modifier.peaceTreaty";
+    
+    /** The Constant POPULAR_SUPPORT. */
     public static final String POPULAR_SUPPORT
         = "model.modifier.popularSupport";
+    
+    /** The Constant RELIGIOUS_UNREST_BONUS. */
     public static final String RELIGIOUS_UNREST_BONUS
         = "model.modifier.religiousUnrestBonus";
+    
+    /** The Constant SAIL_HIGH_SEAS. */
     public static final String SAIL_HIGH_SEAS
         = "model.modifier.sailHighSeas";
+    
+    /** The Constant SHIP_TRADE_PENALTY. */
     public static final String SHIP_TRADE_PENALTY
         = "model.modifier.shipTradePenalty";
+    
+    /** The Constant SMALL_MOVEMENT_PENALTY. */
     public static final String SMALL_MOVEMENT_PENALTY
         = "model.modifier.smallMovementPenalty";
+    
+    /** The Constant SOL. */
     public static final String SOL
         = "model.modifier.SoL";
+    
+    /** The Constant TILE_TYPE_CHANGE_PRODUCTION. */
     public static final String TILE_TYPE_CHANGE_PRODUCTION
         = "model.modifier.tileTypeChangeProduction";
+    
+    /** The Constant TRADE_BONUS. */
     public static final String TRADE_BONUS
         = "model.modifier.tradeBonus";
+    
+    /** The Constant TRADE_VOLUME_PENALTY. */
     public static final String TRADE_VOLUME_PENALTY
         = "model.modifier.tradeVolumePenalty";
+    
+    /** The Constant TREASURE_TRANSPORT_FEE. */
     public static final String TREASURE_TRANSPORT_FEE
         = "model.modifier.treasureTransportFee";
+    
+    /** The Constant WAREHOUSE_STORAGE. */
     public static final String WAREHOUSE_STORAGE
         = "model.modifier.warehouseStorage";
 
+    /** The Constant UNKNOWN. */
     public static final float UNKNOWN = Float.MIN_VALUE;
 
+    /** The Constant DEFAULT_MODIFIER_INDEX. */
     public static final int DEFAULT_MODIFIER_INDEX = 0;
 
     // @compat 0.10.x
     // These are now attached to modifiers in the spec, but
+    /** The Constant RESOURCE_PRODUCTION_INDEX. */
     // Specification.fixup010x() still needs them for now.
     public static final int RESOURCE_PRODUCTION_INDEX = 10;
+    
+    /** The Constant COLONY_PRODUCTION_INDEX. */
     public static final int COLONY_PRODUCTION_INDEX = 20;
+    
+    /** The Constant EXPERT_PRODUCTION_INDEX. */
     public static final int EXPERT_PRODUCTION_INDEX = 30;
+    
+    /** The Constant FATHER_PRODUCTION_INDEX. */
     public static final int FATHER_PRODUCTION_INDEX = 40;
+    
+    /** The Constant IMPROVEMENT_PRODUCTION_INDEX. */
     public static final int IMPROVEMENT_PRODUCTION_INDEX = 50;
+    
+    /** The Constant AUTO_PRODUCTION_INDEX. */
     public static final int AUTO_PRODUCTION_INDEX = 60;
+    
+    /** The Constant BUILDING_PRODUCTION_INDEX. */
     public static final int BUILDING_PRODUCTION_INDEX = 70;
+    
+    /** The Constant NATION_PRODUCTION_INDEX. */
     public static final int NATION_PRODUCTION_INDEX = 80;
+    
+    /** The Constant PARTY_PRODUCTION_INDEX. */
     public static final int PARTY_PRODUCTION_INDEX = 90;
+    
+    /** The Constant DISASTER_PRODUCTION_INDEX. */
     public static final int DISASTER_PRODUCTION_INDEX = 100;
+    
+    /** The Constant DEFAULT_PRODUCTION_INDEX. */
     // end @compat 0.10.x
     public static final int DEFAULT_PRODUCTION_INDEX = 100;
 
+    /** The Constant BASE_COMBAT_INDEX. */
     // Specific combat indicies
     public static final int BASE_COMBAT_INDEX = 10;
+    
+    /** The Constant UNIT_ADDITIVE_COMBAT_INDEX. */
     public static final int UNIT_ADDITIVE_COMBAT_INDEX = 20;
+    
+    /** The Constant UNIT_NORMAL_COMBAT_INDEX. */
     public static final int UNIT_NORMAL_COMBAT_INDEX = 40;
+    
+    /** The Constant ROLE_COMBAT_INDEX. */
     public static final int ROLE_COMBAT_INDEX = 30;
+    
+    /** The Constant GENERAL_COMBAT_INDEX. */
     public static final int GENERAL_COMBAT_INDEX = 50;
 
+    /**
+     * The Enum ModifierType.
+     */
     public static enum ModifierType {
+        
+        /** The additive. */
         ADDITIVE,
+        
+        /** The multiplicative. */
         MULTIPLICATIVE,
+        
+        /** The percentage. */
         PERCENTAGE
     }
 
@@ -365,7 +488,7 @@ public class Modifier extends Feature {
     }
 
     /**
-     * Does this modifier have an increment?
+     * Does this modifier have an increment?.
      *
      * @return True if this modifier has an increment.
      */
@@ -581,10 +704,19 @@ public class Modifier extends Feature {
 
     // Serialization
 
+    /** The Constant INCREMENT_TAG. */
     private static final String INCREMENT_TAG = "increment";
+    
+    /** The Constant INCREMENT_TYPE_TAG. */
     private static final String INCREMENT_TYPE_TAG = "increment-type";
+    
+    /** The Constant INDEX_TAG. */
     private static final String INDEX_TAG = "index";
+    
+    /** The Constant TYPE_TAG. */
     private static final String TYPE_TAG = "type";
+    
+    /** The Constant OLD_INCREMENT_TYPE_TAG. */
     // @compat 0.11.3
     private static final String OLD_INCREMENT_TYPE_TAG = "incrementType";
     // end @compat 0.11.3

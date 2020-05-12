@@ -26,6 +26,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.util.Utils;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The <code>Scope</code> class determines whether a given
  * <code>FreeColGameObjectType</code> fulfills certain requirements.
@@ -89,7 +90,7 @@ public class Scope extends FreeColObject {
     }
 
     /**
-     * Does this scope match null?
+     * Does this scope match null?.
      *
      * @return True if this scope matches null.
      */
@@ -97,12 +98,17 @@ public class Scope extends FreeColObject {
         return matchesNull;
     }
 
+    /**
+     * Sets the matches null.
+     *
+     * @param newMatchesNull the new matches null
+     */
     public void setMatchesNull(final boolean newMatchesNull) {
         this.matchesNull = newMatchesNull;
     }
 
     /**
-     * Is the match negated for this scope?
+     * Is the match negated for this scope?.
      *
      * @return True if this match is negated.
      */
@@ -110,14 +116,29 @@ public class Scope extends FreeColObject {
         return matchNegated;
     }
 
+    /**
+     * Sets the match negated.
+     *
+     * @param newMatchNegated the new match negated
+     */
     public void setMatchNegated(final boolean newMatchNegated) {
         this.matchNegated = newMatchNegated;
     }
 
+    /**
+     * Gets the type.
+     *
+     * @return the type
+     */
     public String getType() {
         return type;
     }
 
+    /**
+     * Sets the type.
+     *
+     * @param newType the new type
+     */
     public void setType(final String newType) {
         this.type = newType;
     }
@@ -140,32 +161,62 @@ public class Scope extends FreeColObject {
         this.abilityId = newAbilityId;
     }
 
+    /**
+     * Gets the ability value.
+     *
+     * @return the ability value
+     */
     public boolean getAbilityValue() {
         return abilityValue;
     }
 
+    /**
+     * Sets the ability value.
+     *
+     * @param newAbilityValue the new ability value
+     */
     public void setAbilityValue(final boolean newAbilityValue) {
         this.abilityValue = newAbilityValue;
     }
 
+    /**
+     * Gets the method name.
+     *
+     * @return the method name
+     */
     public String getMethodName() {
         return methodName;
     }
 
+    /**
+     * Sets the method name.
+     *
+     * @param newMethodName the new method name
+     */
     public void setMethodName(final String newMethodName) {
         this.methodName = newMethodName;
     }
 
+    /**
+     * Gets the method value.
+     *
+     * @return the method value
+     */
     public String getMethodValue() {
         return methodValue;
     }
 
+    /**
+     * Sets the method value.
+     *
+     * @param newMethodValue the new method value
+     */
     public void setMethodValue(final String newMethodValue) {
         this.methodValue = newMethodValue;
     }
 
     /**
-     * Does this scope apply to a given object?
+     * Does this scope apply to a given object?.
      *
      * @param object The <code>FreeColGameObjectType</code> to test.
      * @return True if the scope is applicable.
@@ -285,15 +336,32 @@ public class Scope extends FreeColObject {
 
     // Serialization
 
+    /** The Constant ABILITY_ID_TAG. */
     private static final String ABILITY_ID_TAG = "ability-id";
+    
+    /** The Constant ABILITY_VALUE_TAG. */
     private static final String ABILITY_VALUE_TAG = "ability-value";
+    
+    /** The Constant MATCH_NEGATED_TAG. */
     private static final String MATCH_NEGATED_TAG = "match-negated";
+    
+    /** The Constant MATCHES_NULL_TAG. */
     private static final String MATCHES_NULL_TAG = "matches-null";
+    
+    /** The Constant METHOD_NAME_TAG. */
     private static final String METHOD_NAME_TAG = "method-name";
+    
+    /** The Constant METHOD_VALUE_TAG. */
     private static final String METHOD_VALUE_TAG = "method-value";
+    
+    /** The Constant TYPE_TAG. */
     private static final String TYPE_TAG = "type";
+    
+    /** The Constant OLD_MATCH_NEGATED_TAG. */
     // @compat 0.11.3
     private static final String OLD_MATCH_NEGATED_TAG = "matchNegated";
+    
+    /** The Constant OLD_MATCHES_NULL_TAG. */
     private static final String OLD_MATCHES_NULL_TAG = "matchesNull";
     // end @compat 0.11.3
 

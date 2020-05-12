@@ -45,6 +45,7 @@ import net.sf.freecol.common.model.TileImprovementType;
 import net.sf.freecol.common.model.UnitType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays details of goods types in the Colopedia.
  */
@@ -208,6 +209,15 @@ public class GoodsDetailPanel extends ColopediaGameObjectTypePanel<GoodsType> {
     }
 
 
+    /**
+     * Filter buildables.
+     *
+     * @param <T> the generic type
+     * @param input the input
+     * @param output the output
+     * @param type the type
+     * @return true, if successful
+     */
     private <T extends BuildableType> boolean filterBuildables(List<T> input,
         List<T> output, GoodsType type) {
         boolean result = true;

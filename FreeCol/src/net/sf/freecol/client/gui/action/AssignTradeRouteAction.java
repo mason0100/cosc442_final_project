@@ -25,11 +25,13 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for assigning a trade route to the currently selected unit.
  */
 public class AssignTradeRouteAction extends UnitAction {
 
+    /** The Constant ID. */
     public static final String ID = "assignTradeRouteAction";
 
 

@@ -28,6 +28,7 @@ import net.sf.freecol.common.model.Stance;
 import net.sf.freecol.common.util.Utils;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A trade item consisting of a change of stance.
  */
@@ -157,6 +158,7 @@ public class StanceTradeItem extends TradeItem {
 
     // Serialization
 
+    /** The Constant STANCE_TAG. */
     private static final String STANCE_TAG = "stance";
 
 

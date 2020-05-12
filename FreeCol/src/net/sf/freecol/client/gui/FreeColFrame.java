@@ -42,11 +42,13 @@ import net.sf.freecol.client.gui.menu.MenuMouseMotionListener;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The base frame for FreeCol.
  */
 public class FreeColFrame extends JFrame {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FreeColFrame.class.getName());
 
     /** The FreeCol client controlling the frame. */
@@ -118,28 +120,43 @@ public class FreeColFrame extends JFrame {
         }
     }
 
+    /**
+     * Exit full screen.
+     */
     public void exitFullScreen() {
         GraphicsConfiguration graphicsConf = getGraphicsConfiguration();
         GraphicsDevice gd = graphicsConf.getDevice();
         gd.setFullScreenWindow(null);
     }
 
+    /**
+     * Sets the in game menu bar.
+     */
     public void setInGameMenuBar() {
         setJMenuBar(new InGameMenuBar(freeColClient,
             new MenuMouseMotionListener(freeColClient, canvas)));
         validate();
     }
 
+    /**
+     * Sets the map editor menu bar.
+     */
     public void setMapEditorMenuBar() {
         setJMenuBar(new MapEditorMenuBar(freeColClient,
             new MenuMouseMotionListener(freeColClient, canvas)));
     }
 
+    /**
+     * Removes the menu bar.
+     */
     public void removeMenuBar() {
         setJMenuBar(null);
         validate();
     }
 
+    /**
+     * Reset menu bar.
+     */
     public void resetMenuBar() {
         JMenuBar menuBar = getJMenuBar();
         if (menuBar != null) {
@@ -147,6 +164,9 @@ public class FreeColFrame extends JFrame {
         }
     }
 
+    /**
+     * Update menu bar.
+     */
     public void updateMenuBar() {
         JMenuBar menuBar = getJMenuBar();
         if (menuBar != null) {

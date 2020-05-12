@@ -40,14 +40,26 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.client.gui.FreeColFrame;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Test the menus.
  */
 public class FreeColMenuTest implements ActionListener, ItemListener {
+    
+    /** The output. */
     JTextArea output;
+    
+    /** The scroll pane. */
     JScrollPane scrollPane;
+    
+    /** The newline. */
     final String newline = "\n";
 
+    /**
+     * Creates the menu bar.
+     *
+     * @return the j menu bar
+     */
     public JMenuBar createMenuBar() {
         JMenuBar menuBar = null;
 
@@ -62,6 +74,11 @@ public class FreeColMenuTest implements ActionListener, ItemListener {
         return menuBar;
     }
 
+    /**
+     * Creates the content pane.
+     *
+     * @return the container
+     */
     public Container createContentPane() {
         //Create the content-pane-to-be.
         JPanel contentPane = new JPanel(new BorderLayout());
@@ -78,6 +95,9 @@ public class FreeColMenuTest implements ActionListener, ItemListener {
         return contentPane;
     }
 
+    /* (non-Javadoc)
+     * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
         JMenuItem source = (JMenuItem)ae.getSource();
@@ -89,6 +109,9 @@ public class FreeColMenuTest implements ActionListener, ItemListener {
         output.setCaretPosition(output.getDocument().getLength());
     }
 
+    /* (non-Javadoc)
+     * @see java.awt.event.ItemListener#itemStateChanged(java.awt.event.ItemEvent)
+     */
     @Override
     public void itemStateChanged(ItemEvent e) {
         JMenuItem source = (JMenuItem)(e.getSource());
@@ -104,6 +127,12 @@ public class FreeColMenuTest implements ActionListener, ItemListener {
         output.setCaretPosition(output.getDocument().getLength());
     }
 
+    /**
+     * Gets the class name.
+     *
+     * @param o the o
+     * @return the class name
+     */
     // Returns just the class name -- no package info.
     protected String getClassName(Object o) {
         String classString = o.getClass().getName();
@@ -150,6 +179,11 @@ public class FreeColMenuTest implements ActionListener, ItemListener {
         frame.setVisible(true);
     }
 
+    /**
+     * The main method.
+     *
+     * @param args the arguments
+     */
     public static void main(String[] args) {
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.

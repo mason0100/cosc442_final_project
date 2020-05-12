@@ -25,11 +25,13 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.common.model.Player;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for retiring from the game.
  */
 public class RetireAction extends FreeColAction {
 
+    /** The Constant ID. */
     public static final String ID = "retireAction";
 
 

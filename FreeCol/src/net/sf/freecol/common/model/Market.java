@@ -34,6 +34,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class implements a simple economic model where a market holds
  * all goods to be sold and the price of a particular goods type is
@@ -41,6 +42,7 @@ import org.w3c.dom.Element;
  */
 public final class Market extends FreeColGameObject implements Ownable {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Market.class.getName());
 
     /**
@@ -54,7 +56,11 @@ public final class Market extends FreeColGameObject implements Ownable {
      * when selling goods.
      */
     public static enum Access {
+        
+        /** The europe. */
         EUROPE,
+        
+        /** The custom house. */
         CUSTOM_HOUSE,
     }
 
@@ -71,6 +77,9 @@ public final class Market extends FreeColGameObject implements Ownable {
 
     /**
      * Main constructor for creating a market for a new player.
+     *
+     * @param game the game
+     * @param player the player
      */
     public Market(Game game, Player player) {
         super(game);
@@ -101,6 +110,12 @@ public final class Market extends FreeColGameObject implements Ownable {
     }
 
 
+    /**
+     * Put market data.
+     *
+     * @param goodsType the goods type
+     * @param data the data
+     */
     private void putMarketData(GoodsType goodsType, MarketData data) {
         marketData.put(goodsType, data);
     }
@@ -145,7 +160,7 @@ public final class Market extends FreeColGameObject implements Ownable {
     }
 
     /**
-     * Has a type of goods been traded in this market?
+     * Has a type of goods been traded in this market?.
      *
      * @param type The type of goods to consider.
      * @return True if the goods type has been traded.
@@ -355,7 +370,7 @@ public final class Market extends FreeColGameObject implements Ownable {
     }
 
     /**
-     * Has the price of a type of goods changed in this market?
+     * Has the price of a type of goods changed in this market?.
      *
      * @param goodsType The type of goods to consider.
      * @return True if the price has changed.
@@ -419,6 +434,7 @@ public final class Market extends FreeColGameObject implements Ownable {
     /**
      * Get a sale price comparator for this market.
      *
+     * @param <T> the generic type
      * @return A suitable <code>Comparator</code>.
      */
     public <T extends AbstractGoods> Comparator<T> getSalePriceComparator() {
@@ -427,7 +443,7 @@ public final class Market extends FreeColGameObject implements Ownable {
     }
 
     /**
-     * Adds a transaction listener for notification of any transaction
+     * Adds a transaction listener for notification of any transaction.
      *
      * @param listener The <code>TransactionListener</code> to add.
      */
@@ -436,7 +452,7 @@ public final class Market extends FreeColGameObject implements Ownable {
     }
 
     /**
-     * Removes a transaction listener
+     * Removes a transaction listener.
      *
      * @param listener The <code>TransactionListener</code> to remove.
      */
@@ -490,6 +506,7 @@ public final class Market extends FreeColGameObject implements Ownable {
 
     // Serialization
 
+    /** The Constant OWNER_TAG. */
     private static final String OWNER_TAG = "owner";
 
 

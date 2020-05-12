@@ -30,11 +30,13 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A stop along a trade route.
  */
 public class TradeRouteStop extends FreeColObject implements TradeLocation {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(TradeRouteStop.class.getName());
 
     /** The game in play. */
@@ -50,6 +52,7 @@ public class TradeRouteStop extends FreeColObject implements TradeLocation {
     /**
      * Create a stop for the given location from a stream.
      *
+     * @param game the game
      * @param location The <code>Location</code> of this stop.
      */
     public TradeRouteStop(Game game, Location location) {
@@ -104,8 +107,9 @@ public class TradeRouteStop extends FreeColObject implements TradeLocation {
     }
 
     /**
-     * Is this stop valid?
+     * Is this stop valid?.
      *
+     * @param player the player
      * @return True if the stop is valid.
      */
     public boolean isValid(Player player) {
@@ -188,7 +192,7 @@ public class TradeRouteStop extends FreeColObject implements TradeLocation {
     }
 
     /**
-     * Is there work for a unit to do at this stop?
+     * Is there work for a unit to do at this stop?.
      *
      * @param unit The <code>Unit</code> to test.
      * @param turns Account for production from this many turns.
@@ -247,7 +251,10 @@ public class TradeRouteStop extends FreeColObject implements TradeLocation {
 
     // Serialization
 
+    /** The Constant CARGO_TAG. */
     private static final String CARGO_TAG = "cargo";
+    
+    /** The Constant LOCATION_TAG. */
     private static final String LOCATION_TAG = "location";
 
 

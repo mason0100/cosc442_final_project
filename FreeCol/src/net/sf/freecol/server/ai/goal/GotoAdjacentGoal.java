@@ -33,21 +33,36 @@ import net.sf.freecol.server.ai.AIPlayer;
 import net.sf.freecol.server.ai.AIUnit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A goal to make a move to a tile adjacent to a target tile.
  */
 public class GotoAdjacentGoal extends Goal {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(GotoAdjacentGoal.class.getName());
 
+    /** The target. */
     //the destination tile
     private final Tile target;
 
+    /**
+     * Instantiates a new goto adjacent goal.
+     *
+     * @param p the p
+     * @param g the g
+     * @param w the w
+     * @param u the u
+     * @param t the t
+     */
     public GotoAdjacentGoal(AIPlayer p, Goal g, float w, AIUnit u, Tile t) {
         super(p,g,w,u);
         target = t;
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.ai.goal.Goal#getOwnedAIUnitsIterator()
+     */
     @Override
     protected Iterator<AIUnit> getOwnedAIUnitsIterator() {
         //we're keeping units on the availableUnitsList,
@@ -55,11 +70,17 @@ public class GotoAdjacentGoal extends Goal {
         return availableUnitsList.iterator();
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.ai.goal.Goal#getSubGoalIterator()
+     */
     @Override
     protected Iterator<Goal> getSubGoalIterator() {
         return null;
     }
     
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.ai.goal.Goal#removeUnit(net.sf.freecol.server.ai.AIUnit)
+     */
     @Override
     protected void removeUnit(AIUnit u) {
         Iterator<AIUnit> uit = availableUnitsList.iterator();
@@ -71,6 +92,9 @@ public class GotoAdjacentGoal extends Goal {
         }
     }
     
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.ai.goal.Goal#plan()
+     */
     @Override
     protected void plan() {
         isFinished = false;
@@ -119,6 +143,9 @@ public class GotoAdjacentGoal extends Goal {
         }
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.ai.goal.Goal#getGoalDescription()
+     */
     @Override
     public String getGoalDescription() {
         String descr = super.getGoalDescription();
@@ -131,10 +158,16 @@ public class GotoAdjacentGoal extends Goal {
     }
     
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.common.model.FreeColObject#toXML(net.sf.freecol.common.io.FreeColXMLWriter)
+     */
     @Override
     public void toXML(FreeColXMLWriter xw) throws XMLStreamException {
     }
     
+    /* (non-Javadoc)
+     * @see net.sf.freecol.common.model.FreeColObject#readFromXML(net.sf.freecol.common.io.FreeColXMLReader)
+     */
     @Override
     public void readFromXML(FreeColXMLReader xr) throws XMLStreamException {
     }

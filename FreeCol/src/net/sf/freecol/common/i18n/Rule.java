@@ -27,6 +27,7 @@ import java.util.StringTokenizer;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A rule consists of any number of relations combined with "and" and
  * "or" operators. The "and" operator binds more strongly, and there
@@ -34,9 +35,15 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
  */
 public class Rule {
 
+    /** The conditions. */
     private final List<List<Relation>> conditions = new ArrayList<>();
 
 
+    /**
+     * Instantiates a new rule.
+     *
+     * @param input the input
+     */
     public Rule(String input) {
         parse(input);
     }
@@ -85,6 +92,12 @@ public class Rule {
         conditions.add(parseCondition(tokens));
     }
 
+    /**
+     * Parses the condition.
+     *
+     * @param input the input
+     * @return the list
+     */
     private List<Relation> parseCondition(List<String> input) {
         List<String> tokens = new ArrayList<>();
         List<Relation> result = new ArrayList<>();
@@ -100,6 +113,9 @@ public class Rule {
         return result;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         final String andString = " and ";

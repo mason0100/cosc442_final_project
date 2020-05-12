@@ -20,6 +20,7 @@
 
 package net.sf.freecol.common.model;
 
+// TODO: Auto-generated Javadoc
 /**
  * An object with a name that can be changed.
  */

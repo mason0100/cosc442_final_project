@@ -47,6 +47,7 @@ import net.sf.freecol.common.model.Turn;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The dialog that is shown prior to a possible combat.
  */
@@ -164,6 +165,15 @@ public class PreCombatDialog extends FreeColConfirmDialog {
         initializeConfirmDialog(frame, true, panel, null, "ok", "cancel");
     }
 
+    /**
+     * Adds the labels.
+     *
+     * @param panel the panel
+     * @param labels the labels
+     * @param newline the newline
+     * @param skip the skip
+     * @return the int
+     */
     private int addLabels(JPanel panel, JLabel[] labels, boolean newline,
                           int skip) {
         int len = labels.length;

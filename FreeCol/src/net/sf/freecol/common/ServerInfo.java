@@ -25,6 +25,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Contains information about a single server.  This information is
  * normally retrieved from a meta-server.
@@ -33,14 +34,28 @@ import org.w3c.dom.Element;
  */
 public class ServerInfo {
 
+    /** The name. */
     private String name;
+    
+    /** The address. */
     private String address;
+    
+    /** The port. */
     private int port;
 
+    /** The currently playing. */
     private int currentlyPlaying;
+    
+    /** The slots available. */
     private int slotsAvailable;
+    
+    /** The is game started. */
     private boolean isGameStarted;
+    
+    /** The version. */
     private String version;
+    
+    /** The game state. */
     private int gameState;
 
 
@@ -231,6 +246,8 @@ public class ServerInfo {
 
     /**
      * Returns a <code>String</code> representation of this object for debugging purposes.
+     *
+     * @return the string
      */
     @Override
     public String toString() {

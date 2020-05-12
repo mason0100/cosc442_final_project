@@ -52,8 +52,11 @@ import net.sf.freecol.common.model.UnitType;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays details of game objects in the Colopedia.
+ *
+ * @param <T> the generic type
  */
 public abstract class ColopediaGameObjectTypePanel<T extends FreeColGameObjectType>
     extends FreeColPanel implements ColopediaDetailPanel<T> {
@@ -153,6 +156,13 @@ public abstract class ColopediaGameObjectTypePanel<T extends FreeColGameObjectTy
         root.add(node);
     }
 
+    /**
+     * Builds the item.
+     *
+     * @param type the type
+     * @param icon the icon
+     * @return the default mutable tree node
+     */
     protected DefaultMutableTreeNode buildItem(FreeColGameObjectType type,
                                                ImageIcon icon) {
         String name = Messages.getName(type);
@@ -160,6 +170,14 @@ public abstract class ColopediaGameObjectTypePanel<T extends FreeColGameObjectTy
                 type.getId(), name, icon));
     }
 
+    /**
+     * Gets the button.
+     *
+     * @param type the type
+     * @param text the text
+     * @param icon the icon
+     * @return the button
+     */
     protected JButton getButton(FreeColGameObjectType type, String text,
                                 ImageIcon icon) {
         JButton button = Utility.getLinkButton((text != null) ? text
@@ -168,6 +186,14 @@ public abstract class ColopediaGameObjectTypePanel<T extends FreeColGameObjectTy
         return button;
     }
 
+    /**
+     * Gets the button.
+     *
+     * @param panelType the panel type
+     * @param text the text
+     * @param icon the icon
+     * @return the button
+     */
     protected JButton getButton(PanelType panelType, String text,
                                 ImageIcon icon) {
         JButton button = Utility.getLinkButton(text, icon,
@@ -176,27 +202,65 @@ public abstract class ColopediaGameObjectTypePanel<T extends FreeColGameObjectTy
         return button;
     }
 
+    /**
+     * Gets the button.
+     *
+     * @param type the type
+     * @return the button
+     */
     protected JButton getButton(FreeColGameObjectType type) {
         return getButton(type, null, null);
     }
 
+    /**
+     * Gets the resource button.
+     *
+     * @param resourceType the resource type
+     * @return the resource button
+     */
     protected JButton getResourceButton(final ResourceType resourceType) {
         return getButton(resourceType, null, new ImageIcon(getImageLibrary()
             .getMiscImage("image.tileitem." + resourceType.getId())));
     }
 
+    /**
+     * Gets the goods button.
+     *
+     * @param goodsType the goods type
+     * @return the goods button
+     */
     protected JButton getGoodsButton(final GoodsType goodsType) {
         return getGoodsButton(goodsType, null);
     }
 
+    /**
+     * Gets the goods button.
+     *
+     * @param goodsType the goods type
+     * @param amount the amount
+     * @return the goods button
+     */
     protected JButton getGoodsButton(final GoodsType goodsType, int amount) {
         return getGoodsButton(goodsType, Integer.toString(amount));
     }
 
+    /**
+     * Gets the goods button.
+     *
+     * @param goods the goods
+     * @return the goods button
+     */
     protected JButton getGoodsButton(final AbstractGoods goods) {
         return getGoodsButton(goods.getType(), goods.getAmount());
     }
 
+    /**
+     * Gets the goods button.
+     *
+     * @param goodsType the goods type
+     * @param text the text
+     * @return the goods button
+     */
     protected JButton getGoodsButton(final GoodsType goodsType, String text) {
         JButton result = getButton(goodsType, text,
             new ImageIcon(getImageLibrary().getIconImage(goodsType)));
@@ -204,10 +268,23 @@ public abstract class ColopediaGameObjectTypePanel<T extends FreeColGameObjectTy
         return result;
     }
 
+    /**
+     * Gets the unit button.
+     *
+     * @param au the au
+     * @return the unit button
+     */
     protected JButton getUnitButton(AbstractUnit au) {
         return getUnitButton(au.getType(getSpecification()), au.getRoleId());
     }
 
+    /**
+     * Gets the unit button.
+     *
+     * @param unitType the unit type
+     * @param roleId the role id
+     * @return the unit button
+     */
     protected JButton getUnitButton(final UnitType unitType, String roleId) {
         ImageIcon unitIcon = new ImageIcon(
             getImageLibrary().getSmallUnitImage(unitType, roleId, false));
@@ -216,10 +293,22 @@ public abstract class ColopediaGameObjectTypePanel<T extends FreeColGameObjectTy
         return unitButton;
     }
 
+    /**
+     * Gets the unit button.
+     *
+     * @param unitType the unit type
+     * @return the unit button
+     */
     protected JButton getUnitButton(final UnitType unitType) {
         return getUnitButton(unitType, unitType.getDisplayRoleId());
     }
 
+    /**
+     * Gets the modifier component.
+     *
+     * @param modifier the modifier
+     * @return the modifier component
+     */
     public JComponent getModifierComponent(Modifier modifier) {
         try {
             GoodsType goodsType = getSpecification()
@@ -235,6 +324,12 @@ public abstract class ColopediaGameObjectTypePanel<T extends FreeColGameObjectTy
         }
     }
 
+    /**
+     * Gets the ability component.
+     *
+     * @param ability the ability
+     * @return the ability component
+     */
     public JLabel getAbilityComponent(Ability ability) {
         if (ability.getValue()) {
             JLabel label = new JLabel(ModifierFormat.getFeatureAsString(ability));
@@ -245,6 +340,13 @@ public abstract class ColopediaGameObjectTypePanel<T extends FreeColGameObjectTy
         }
     }
 
+    /**
+     * Append required abilities.
+     *
+     * @param doc the doc
+     * @param buildableType the buildable type
+     * @throws BadLocationException the bad location exception
+     */
     public void appendRequiredAbilities(StyledDocument doc, BuildableType buildableType)
         throws BadLocationException {
         List<JButton> requiredTypes = new ArrayList<>();

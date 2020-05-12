@@ -39,20 +39,37 @@ import net.sf.freecol.common.model.Specification;
 import net.sf.freecol.common.option.OptionGroup;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Dialog for changing the options of an {@link OptionGroup}.
  */
 public abstract class OptionsDialog extends FreeColDialog<OptionGroup> {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(OptionsDialog.class.getName());
 
+    /** The editable. */
     private final boolean editable;
+    
+    /** The group. */
     private OptionGroup group;
+    
+    /** The ui. */
     private OptionGroupUI ui;
+    
+    /** The default file name. */
     private final String defaultFileName;
+    
+    /** The option group id. */
     private final String optionGroupId;
+    
+    /** The scroll pane. */
     private JScrollPane scrollPane;
+    
+    /** The option panel. */
     private MigPanel optionPanel;
+    
+    /** The panel. */
     protected MigPanel panel;
 
 
@@ -62,6 +79,10 @@ public abstract class OptionsDialog extends FreeColDialog<OptionGroup> {
      * @param freeColClient The <code>FreeColClient</code> for the game.
      * @param frame The owner frame.
      * @param editable Whether the dialog is editable.
+     * @param group the group
+     * @param headerKey the header key
+     * @param defaultFileName the default file name
+     * @param optionGroupId the option group id
      */
     public OptionsDialog(FreeColClient freeColClient, JFrame frame,
             boolean editable, OptionGroup group,
@@ -78,7 +99,7 @@ public abstract class OptionsDialog extends FreeColDialog<OptionGroup> {
 
 
     /**
-     * Is this dialog editable?
+     * Is this dialog editable?.
      *
      * @return True if the dialog is editable.
      */
@@ -124,6 +145,9 @@ public abstract class OptionsDialog extends FreeColDialog<OptionGroup> {
 
     /**
      * Load the panel.
+     *
+     * @param headerKey the header key
+     * @param ui the ui
      */
     private void preparePanel(String headerKey, OptionGroupUI ui) {
         this.optionPanel = new MigPanel("ReportPanelUI");

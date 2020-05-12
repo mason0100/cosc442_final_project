@@ -31,12 +31,14 @@ import net.miginfocom.swing.MigLayout;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class represents a panel that holds a JColorChooser and OK
  * and cancel buttons.
  */
 public final class ColorChooserPanel extends FreeColPanel {
 
+    /** The color chooser. */
     private final JColorChooser colorChooser;
 
 
@@ -67,6 +69,11 @@ public final class ColorChooserPanel extends FreeColPanel {
     }
 
 
+    /**
+     * Gets the color.
+     *
+     * @return the color
+     */
     public Color getColor() {
         return this.colorChooser.getColor();
     }

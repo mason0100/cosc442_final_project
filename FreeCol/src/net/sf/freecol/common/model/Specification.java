@@ -63,6 +63,7 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class encapsulates any parts of the "specification" for
  * FreeCol that are expressed best using XML.  The XML is loaded
@@ -71,6 +72,7 @@ import static net.sf.freecol.common.util.StringUtils.*;
  */
 public final class Specification {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Specification.class.getName());
 
     /** The difficulty levels option group is special. */
@@ -86,6 +88,9 @@ public final class Specification {
     public static final int NUMBER_OF_AGES = 3;
 
 
+    /**
+     * The Class Source.
+     */
     public static class Source extends FreeColGameObjectType {
 
         /**
@@ -120,30 +125,55 @@ public final class Specification {
         public String getXMLTagName() { return "source"; }
     };
 
+    /** The Constant AMBUSH_BONUS_SOURCE. */
     public static final Source AMBUSH_BONUS_SOURCE
         = new Source("model.source.ambushBonus");
+    
+    /** The Constant AMPHIBIOUS_ATTACK_PENALTY_SOURCE. */
     public static final Source AMPHIBIOUS_ATTACK_PENALTY_SOURCE
         = new Source("model.source.amphibiousAttack");
+    
+    /** The Constant ARTILLERY_PENALTY_SOURCE. */
     public static final Source ARTILLERY_PENALTY_SOURCE
         = new Source("model.source.artilleryInTheOpen");
+    
+    /** The Constant ATTACK_BONUS_SOURCE. */
     public static final Source ATTACK_BONUS_SOURCE
         = new Source("model.source.attackBonus");
+    
+    /** The Constant BASE_DEFENCE_SOURCE. */
     public static final Source BASE_DEFENCE_SOURCE
         = new Source("model.source.baseDefence");
+    
+    /** The Constant BASE_OFFENCE_SOURCE. */
     public static final Source BASE_OFFENCE_SOURCE
         = new Source("model.source.baseOffence");
+    
+    /** The Constant CARGO_PENALTY_SOURCE. */
     public static final Source CARGO_PENALTY_SOURCE
         = new Source("model.source.cargoPenalty");
+    
+    /** The Constant COLONY_GOODS_PARTY_SOURCE. */
     public static final Source COLONY_GOODS_PARTY_SOURCE
         = new Source("model.source.colonyGoodsParty");
+    
+    /** The Constant FORTIFICATION_BONUS_SOURCE. */
     public static final Source FORTIFICATION_BONUS_SOURCE
         = new Source("model.source.fortified");
+    
+    /** The Constant INDIAN_RAID_BONUS_SOURCE. */
     public static final Source INDIAN_RAID_BONUS_SOURCE
         = new Source("model.source.artilleryAgainstRaid");
+    
+    /** The Constant MOVEMENT_PENALTY_SOURCE. */
     public static final Source MOVEMENT_PENALTY_SOURCE
         = new Source("model.source.movementPenalty");
+    
+    /** The Constant SHIP_TRADE_PENALTY_SOURCE. */
     public static final Source SHIP_TRADE_PENALTY_SOURCE
         = new Source("model.source.shipTradePenalty");
+    
+    /** The Constant SOL_MODIFIER_SOURCE. */
     public static final Source SOL_MODIFIER_SOURCE
         = new Source("model.source.solModifier");
     /** All the special static sources. */
@@ -169,87 +199,160 @@ public final class Specification {
 
     /* Containers filled from readers in the readerMap. */
 
+    /** The building type list. */
     // readerMap("building-types")
     private final List<BuildingType> buildingTypeList = new ArrayList<>();
+    
+    /** The disasters. */
     // readerMap("disasters")
     private final List<Disaster> disasters = new ArrayList<>();
+    
+    /** The equipment types. */
     // @compat 0.10.x readerMap("equipment-types")
     private final List<EquipmentType> equipmentTypes = new ArrayList<>();
     // end @compat 0.10.x
+    /** The european nation types. */
     // readerMap("european-nation-types")
     private final List<EuropeanNationType> europeanNationTypes = new ArrayList<>();
+    
+    /** The events. */
     // readerMap("events")
     private final List<Event> events = new ArrayList<>();
+    
+    /** The founding fathers. */
     // readerMap("founding-fathers")
     private final List<FoundingFather> foundingFathers = new ArrayList<>();
+    
+    /** The goods type list. */
     // readerMap("goods-types")
     private final List<GoodsType> goodsTypeList = new ArrayList<>();
+    
+    /** The indian nation types. */
     // readerMap("indian-nation-types")
     private final List<IndianNationType> indianNationTypes = new ArrayList<>();
+    
+    /** The nations. */
     // readerMap("nations")
     private final List<Nation> nations = new ArrayList<>();
+    
+    /** The resource type list. */
     // readerMap("resource-types")
     private final List<ResourceType> resourceTypeList = new ArrayList<>();
+    
+    /** The roles. */
     // readerMap("roles")
     private final List<Role> roles = new ArrayList<>();
+    
+    /** The tile type list. */
     // readerMap("tile-types")
     private final List<TileType> tileTypeList = new ArrayList<>();
+    
+    /** The tile improvement type list. */
     // readerMap("tile-improvement-types")
     private final List<TileImprovementType> tileImprovementTypeList = new ArrayList<>();
+    
+    /** The unit type list. */
     // readerMap("unit-types")
     private final List<UnitType> unitTypeList = new ArrayList<>();
 
+    /** The all modifiers. */
     // readerMap("modifiers")
     private final Map<String, List<Modifier>> allModifiers = new HashMap<>();
+    
+    /** The special modifiers. */
     private final List<Modifier> specialModifiers = new ArrayList<>();
 
+    /** The all options. */
     // readerMap("options")
     private final Map<String, AbstractOption> allOptions = new HashMap<>();
+    
+    /** The all option groups. */
     private final Map<String, OptionGroup> allOptionGroups = new HashMap<>();
 
     /* Containers derived from readerMap containers */
 
+    /** The storable goods type list. */
     // Derived from readerMap container: goodsTypeList
     private final List<GoodsType> storableGoodsTypeList = new ArrayList<>();
+    
+    /** The farmed goods type list. */
     private final List<GoodsType> farmedGoodsTypeList = new ArrayList<>();
+    
+    /** The food goods type list. */
     private final List<GoodsType> foodGoodsTypeList = new ArrayList<>();
+    
+    /** The new world goods type list. */
     private final List<GoodsType> newWorldGoodsTypeList = new ArrayList<>();
+    
+    /** The new world luxury goods type list. */
     private final List<GoodsType> newWorldLuxuryGoodsTypeList = new ArrayList<>();
+    
+    /** The liberty goods type list. */
     private final List<GoodsType> libertyGoodsTypeList = new ArrayList<>();
+    
+    /** The immigration goods type list. */
     private final List<GoodsType> immigrationGoodsTypeList = new ArrayList<>();
+    
+    /** The raw building goods type list. */
     private final List<GoodsType> rawBuildingGoodsTypeList = new ArrayList<>();
 
+    /** The european nations. */
     // Derived from readerMap container: nations
     private final List<Nation> europeanNations = new ArrayList<>();
+    
+    /** The REF nations. */
     private final List<Nation> REFNations = new ArrayList<>();
+    
+    /** The indian nations. */
     private final List<Nation> indianNations = new ArrayList<>();
+    
+    /** The nation types. */
     // Derived from readerMap containers: indianNationTypes europeanNationTypes
     private final List<NationType> nationTypes = new ArrayList<>();
+    
+    /** The REF nation types. */
     // Derived from readerMap container: europeanNationTypes
     private final List<EuropeanNationType> REFNationTypes = new ArrayList<>();
 
+    /** The buildable unit types. */
     // Derived from readerMap container: unitTypeList
     private final ArrayList<UnitType> buildableUnitTypes = new ArrayList<>();
+    
+    /** The experts. */
     private final Map<GoodsType, UnitType> experts = new HashMap<>();
+    
+    /** The unit types trained in europe. */
     private final List<UnitType> unitTypesTrainedInEurope = new ArrayList<>();
+    
+    /** The unit types purchased in europe. */
     private final List<UnitType> unitTypesPurchasedInEurope = new ArrayList<>();
+    
+    /** The fastest land unit type. */
     private UnitType fastestLandUnitType = null;
+    
+    /** The fastest naval unit type. */
     private UnitType fastestNavalUnitType = null;
+    
+    /** The default unit types. */
     private final List<UnitType> defaultUnitTypes = new ArrayList<>();
 
     /* Other containers. */
 
+    /** The father goods fix map. */
     // @compat 0.10.7
     public final Map<String, String> fatherGoodsFixMap = new HashMap<>();
     // end @compat 0.10.7
 
+    /** The all types. */
     private final Map<String, FreeColGameObjectType> allTypes = new HashMap<>();
 
+    /** The all abilities. */
     private final Map<String, List<Ability>> allAbilities = new HashMap<>();
 
     /** A cache of the military roles in decreasing order.  Do not serialize. */
     private List<Role> militaryRoles = null;
 
+    /** The initialized. */
     private boolean initialized = false;
 
     /** The specification identifier. */
@@ -771,12 +874,28 @@ public final class Specification {
     }
 
 
+    /**
+     * The Interface ChildReader.
+     */
     private interface ChildReader {
+        
+        /**
+         * Read children.
+         *
+         * @param xr the xr
+         * @throws XMLStreamException the XML stream exception
+         */
         public void readChildren(FreeColXMLReader xr) throws XMLStreamException;
     }
 
+    /**
+     * The Class ModifierReader.
+     */
     private class ModifierReader implements ChildReader {
 
+        /* (non-Javadoc)
+         * @see net.sf.freecol.common.model.Specification.ChildReader#readChildren(net.sf.freecol.common.io.FreeColXMLReader)
+         */
         @Override
         public void readChildren(FreeColXMLReader xr) throws XMLStreamException {
             while (xr.nextTag() != XMLStreamConstants.END_ELEMENT) {
@@ -787,18 +906,37 @@ public final class Specification {
         }
     }
 
+    /**
+     * The Class TypeReader.
+     *
+     * @param <T> the generic type
+     */
     private class TypeReader<T extends FreeColGameObjectType> implements ChildReader {
 
+        /** The type. */
         private final Class<T> type;
+        
+        /** The result. */
         private final List<T> result;
+        
+        /** The index. */
         private int index = 0;
 
+        /**
+         * Instantiates a new type reader.
+         *
+         * @param type the type
+         * @param listToFill the list to fill
+         */
         // Is there really no easy way to capture T?
         public TypeReader(Class<T> type, List<T> listToFill) {
             result = listToFill;
             this.type = type;
         }
 
+        /* (non-Javadoc)
+         * @see net.sf.freecol.common.model.Specification.ChildReader#readChildren(net.sf.freecol.common.io.FreeColXMLReader)
+         */
         @Override
         public void readChildren(FreeColXMLReader xr) throws XMLStreamException {
             while (xr.nextTag() != XMLStreamConstants.END_ELEMENT) {
@@ -846,8 +984,12 @@ public final class Specification {
      */
     private class OptionReader implements ChildReader {
 
+        /** The Constant RECURSIVE_TAG. */
         private static final String RECURSIVE_TAG = "recursive";
 
+        /* (non-Javadoc)
+         * @see net.sf.freecol.common.model.Specification.ChildReader#readChildren(net.sf.freecol.common.io.FreeColXMLReader)
+         */
         @Override
         public void readChildren(FreeColXMLReader xr) throws XMLStreamException {
             while (xr.nextTag() != XMLStreamConstants.END_ELEMENT) {
@@ -855,6 +997,12 @@ public final class Specification {
             }
         }
 
+        /**
+         * Read child.
+         *
+         * @param xr the xr
+         * @throws XMLStreamException the XML stream exception
+         */
         private void readChild(FreeColXMLReader xr) throws XMLStreamException {
             final String tag = xr.getLocalName();
 
@@ -927,6 +1075,7 @@ public final class Specification {
      * Get all the Abilities with the given identifier.
      *
      * @param id The object identifier to look for.
+     * @return the abilities
      */
     public List<Ability> getAbilities(String id) {
         return allAbilities.get(id);
@@ -949,6 +1098,7 @@ public final class Specification {
      * Get all the Modifiers with the given identifier.
      *
      * @param id The object identifier to look for.
+     * @return the modifiers
      */
     public List<Modifier> getModifiers(String id) {
         List<Modifier> result = allModifiers.get(id);
@@ -1137,6 +1287,11 @@ public final class Specification {
 
     // -- Buildings --
 
+    /**
+     * Gets the building type list.
+     *
+     * @return the building type list
+     */
     public List<BuildingType> getBuildingTypeList() {
         return buildingTypeList;
     }
@@ -1153,38 +1308,83 @@ public final class Specification {
 
     // -- Goods --
 
+    /**
+     * Gets the goods type list.
+     *
+     * @return the goods type list
+     */
     public List<GoodsType> getGoodsTypeList() {
         return new ArrayList<>(goodsTypeList);
     }
 
+    /**
+     * Gets the storable goods type list.
+     *
+     * @return the storable goods type list
+     */
     public List<GoodsType> getStorableGoodsTypeList() {
         return new ArrayList<>(storableGoodsTypeList);
     }
 
+    /**
+     * Gets the farmed goods type list.
+     *
+     * @return the farmed goods type list
+     */
     public List<GoodsType> getFarmedGoodsTypeList() {
         return new ArrayList<>(farmedGoodsTypeList);
     }
 
+    /**
+     * Gets the new world goods type list.
+     *
+     * @return the new world goods type list
+     */
     public List<GoodsType> getNewWorldGoodsTypeList() {
         return new ArrayList<>(newWorldGoodsTypeList);
     }
 
+    /**
+     * Gets the new world luxury goods type list.
+     *
+     * @return the new world luxury goods type list
+     */
     public List<GoodsType> getNewWorldLuxuryGoodsTypeList() {
         return new ArrayList<>(newWorldLuxuryGoodsTypeList);
     }
 
+    /**
+     * Gets the liberty goods type list.
+     *
+     * @return the liberty goods type list
+     */
     public List<GoodsType> getLibertyGoodsTypeList() {
         return new ArrayList<>(libertyGoodsTypeList);
     }
 
+    /**
+     * Gets the immigration goods type list.
+     *
+     * @return the immigration goods type list
+     */
     public List<GoodsType> getImmigrationGoodsTypeList() {
         return new ArrayList<>(immigrationGoodsTypeList);
     }
 
+    /**
+     * Gets the food goods type list.
+     *
+     * @return the food goods type list
+     */
     public List<GoodsType> getFoodGoodsTypeList() {
         return new ArrayList<>(foodGoodsTypeList);
     }
 
+    /**
+     * Gets the raw building goods type list.
+     *
+     * @return the raw building goods type list
+     */
     public final List<GoodsType> getRawBuildingGoodsTypeList() {
         return new ArrayList<>(rawBuildingGoodsTypeList);
     }
@@ -1228,6 +1428,11 @@ public final class Specification {
 
     // -- Resources --
 
+    /**
+     * Gets the resource type list.
+     *
+     * @return the resource type list
+     */
     public List<ResourceType> getResourceTypeList() {
         return resourceTypeList;
     }
@@ -1244,6 +1449,11 @@ public final class Specification {
 
     // -- Tiles --
 
+    /**
+     * Gets the tile type list.
+     *
+     * @return the tile type list
+     */
     public List<TileType> getTileTypeList() {
         return tileTypeList;
     }
@@ -1260,6 +1470,11 @@ public final class Specification {
 
     // -- Improvements --
 
+    /**
+     * Gets the tile improvement type list.
+     *
+     * @return the tile improvement type list
+     */
     public List<TileImprovementType> getTileImprovementTypeList() {
         return tileImprovementTypeList;
     }
@@ -1276,6 +1491,11 @@ public final class Specification {
 
     // -- Units --
 
+    /**
+     * Gets the unit type list.
+     *
+     * @return the unit type list
+     */
     public List<UnitType> getUnitTypeList() {
         return unitTypeList;
     }
@@ -1348,7 +1568,7 @@ public final class Specification {
     }
 
     /**
-     * Get the unit types which have any of the given abilities
+     * Get the unit types which have any of the given abilities.
      *
      * @param abilities The abilities for the search
      * @return A list of <code>UnitType</code>s with the abilities.
@@ -1358,7 +1578,7 @@ public final class Specification {
     }
 
     /**
-     * Get the unit types which have none of the given abilities
+     * Get the unit types which have none of the given abilities.
      *
      * @param abilities The abilities for the search
      * @return A list of <code>UnitType</code>s without the abilities.
@@ -1407,6 +1627,7 @@ public final class Specification {
      * Gets the REF unit types.
      *
      * @param naval If true, choose naval units, if not, land units.
+     * @return the REF unit types
      */
     public List<UnitType> getREFUnitTypes(boolean naval) {
         return getUnitTypesWithAbility(Ability.REF_UNIT).stream()
@@ -1426,6 +1647,11 @@ public final class Specification {
 
     // -- Founding Fathers --
 
+    /**
+     * Gets the founding fathers.
+     *
+     * @return the founding fathers
+     */
     public List<FoundingFather> getFoundingFathers() {
         return foundingFathers;
     }
@@ -1442,18 +1668,38 @@ public final class Specification {
 
     // -- NationTypes --
 
+    /**
+     * Gets the nation types.
+     *
+     * @return the nation types
+     */
     public List<NationType> getNationTypes() {
         return nationTypes;
     }
 
+    /**
+     * Gets the european nation types.
+     *
+     * @return the european nation types
+     */
     public List<EuropeanNationType> getEuropeanNationTypes() {
         return europeanNationTypes;
     }
 
+    /**
+     * Gets the REF nation types.
+     *
+     * @return the REF nation types
+     */
     public List<EuropeanNationType> getREFNationTypes() {
         return REFNationTypes;
     }
 
+    /**
+     * Gets the indian nation types.
+     *
+     * @return the indian nation types
+     */
     public List<IndianNationType> getIndianNationTypes() {
         return indianNationTypes;
     }
@@ -1468,6 +1714,11 @@ public final class Specification {
         return getType(id, NationType.class);
     }
 
+    /**
+     * Gets the default nation type.
+     *
+     * @return the default nation type
+     */
     public NationType getDefaultNationType() {
         return getNationType("model.nationType.default");
     }
@@ -1475,18 +1726,38 @@ public final class Specification {
 
     // -- Nations --
 
+    /**
+     * Gets the nations.
+     *
+     * @return the nations
+     */
     public List<Nation> getNations() {
         return nations;
     }
 
+    /**
+     * Gets the european nations.
+     *
+     * @return the european nations
+     */
     public List<Nation> getEuropeanNations() {
         return europeanNations;
     }
 
+    /**
+     * Gets the indian nations.
+     *
+     * @return the indian nations
+     */
     public List<Nation> getIndianNations() {
         return indianNations;
     }
 
+    /**
+     * Gets the REF nations.
+     *
+     * @return the REF nations
+     */
     public List<Nation> getREFNations() {
         return REFNations;
     }
@@ -1512,6 +1783,11 @@ public final class Specification {
 
     // -- Roles --
 
+    /**
+     * Gets the roles.
+     *
+     * @return the roles
+     */
     public List<Role> getRoles() {
         return roles;
     }
@@ -1596,6 +1872,7 @@ public final class Specification {
      * Gets the roles suitable for a REF unit.
      *
      * @param naval If true, choose roles for naval units, if not, land units.
+     * @return the REF roles
      */
     public List<Role> getREFRoles(boolean naval) {
         return ((naval)
@@ -1694,19 +1971,39 @@ public final class Specification {
         this.difficultyLevel = level.getId();
     }
 
+    /**
+     * Gets the game options.
+     *
+     * @return the game options
+     */
     public OptionGroup getGameOptions() {
         return getOptionGroup(GameOptions.getXMLElementTagName());
     }
 
+    /**
+     * Sets the game options.
+     *
+     * @param go the new game options
+     */
     public void setGameOptions(OptionGroup go) {
         allOptionGroups.put(GameOptions.getXMLElementTagName(), go);
         addOptionGroup(go, true);
     }
 
+    /**
+     * Gets the map generator options.
+     *
+     * @return the map generator options
+     */
     public OptionGroup getMapGeneratorOptions() {
         return getOptionGroup(MapGeneratorOptions.getXMLElementTagName());
     }
 
+    /**
+     * Sets the map generator options.
+     *
+     * @param mgo the new map generator options
+     */
     public void setMapGeneratorOptions(OptionGroup mgo) {
         allOptionGroups.put(MapGeneratorOptions.getXMLElementTagName(), mgo);
         addOptionGroup(mgo, true);
@@ -1715,6 +2012,11 @@ public final class Specification {
 
     // -- Events --
 
+    /**
+     * Gets the events.
+     *
+     * @return the events
+     */
     public List<Event> getEvents() {
         return events;
     }
@@ -1731,6 +2033,11 @@ public final class Specification {
 
     // -- Disasters --
 
+    /**
+     * Gets the disasters.
+     *
+     * @return the disasters
+     */
     public List<Disaster> getDisasters() {
         return disasters;
     }
@@ -1767,6 +2074,7 @@ public final class Specification {
     /**
      * Get the <code>FreeColGameObjectType</code> with the given identifier.
      *
+     * @param <T> the generic type
      * @param id The object identifier to look for.
      * @param type The expected <code>Class</code>.
      * @return The <code>FreeColGameObjectType</code> found.
@@ -1798,6 +2106,7 @@ public final class Specification {
      *
      * @param id The identifier to look for, which must not be null.
      * @return The <code>FreeColGameObjectType</code> found if any.
+     * @throws IllegalArgumentException the illegal argument exception
      */
     public FreeColGameObjectType findType(String id) throws IllegalArgumentException {
         if (id == null) {
@@ -1834,6 +2143,8 @@ public final class Specification {
     /**
      * Get all types which have any of the given abilities.
      *
+     * @param <T> the generic type
+     * @param resultType the result type
      * @param abilities The abilities for the search
      * @return A list of <code>FreeColGameObjectType</code>s with at
      *     least one of the given abilities.
@@ -1851,6 +2162,8 @@ public final class Specification {
     /**
      * Get all types which have none of the given abilities.
      *
+     * @param <T> the generic type
+     * @param resultType the result type
      * @param abilities The abilities for the search
      * @return A list of <code>FreeColGameObjectType</code>s without the
      *     given abilities.
@@ -2485,6 +2798,13 @@ public final class Specification {
         return ret;
     }
 
+    /**
+     * Check difficulty option group.
+     *
+     * @param gr the gr
+     * @param ids the ids
+     * @return true, if successful
+     */
     private boolean checkDifficultyOptionGroup(String gr, String... ids) {
         logger.info("Check group " + gr);
         boolean ret = false;
@@ -2513,6 +2833,14 @@ public final class Specification {
         return ret;
     }
 
+    /**
+     * Check difficulty integer option.
+     *
+     * @param id the id
+     * @param gr the gr
+     * @param defaultValue the default value
+     * @return true, if successful
+     */
     private boolean checkDifficultyIntegerOption(String id, String gr,
                                                  int defaultValue) {
         boolean ret = false;
@@ -2534,6 +2862,13 @@ public final class Specification {
         return ret;
     }
         
+    /**
+     * Check difficulty unit list option.
+     *
+     * @param id the id
+     * @param gr the gr
+     * @return the unit list option
+     */
     private UnitListOption checkDifficultyUnitListOption(String id, String gr) {
         UnitListOption ulo = null;
         for (OptionGroup level : getDifficultyLevels()) {
@@ -2684,6 +3019,12 @@ public final class Specification {
         return ret;
     }
 
+    /**
+     * Check option group.
+     *
+     * @param id the id
+     * @return true, if successful
+     */
     private boolean checkOptionGroup(String id) {
         if (allOptionGroups.containsKey(id)) return false;
         OptionGroup og = new OptionGroup(id, this);
@@ -2691,6 +3032,14 @@ public final class Specification {
         return true;
     }
 
+    /**
+     * Check boolean option.
+     *
+     * @param id the id
+     * @param gr the gr
+     * @param defaultValue the default value
+     * @return true, if successful
+     */
     private boolean checkBooleanOption(String id, String gr, boolean defaultValue) {
         if (hasOption(id)) return false;
         BooleanOption op = new BooleanOption(id, this);
@@ -2699,6 +3048,14 @@ public final class Specification {
         return checkOption(op);
     }
 
+    /**
+     * Check integer option.
+     *
+     * @param id the id
+     * @param gr the gr
+     * @param defaultValue the default value
+     * @return true, if successful
+     */
     private boolean checkIntegerOption(String id, String gr, int defaultValue) {
         if (hasOption(id)) return false;
         IntegerOption op = new IntegerOption(id, this);
@@ -2707,6 +3064,14 @@ public final class Specification {
         return checkOption(op);
     }
 
+    /**
+     * Check string option.
+     *
+     * @param id the id
+     * @param gr the gr
+     * @param defaultValue the default value
+     * @return true, if successful
+     */
     private boolean checkStringOption(String id, String gr, String defaultValue) {
         if (hasOption(id)) return false;
         StringOption op = new StringOption(id, this);
@@ -2715,6 +3080,14 @@ public final class Specification {
         return checkOption(op);
     }
 
+    /**
+     * Check text option.
+     *
+     * @param id the id
+     * @param gr the gr
+     * @param defaultValue the default value
+     * @return true, if successful
+     */
     private boolean checkTextOption(String id, String gr, String defaultValue) {
         if (hasOption(id)) return false;
         TextOption op = new TextOption(id, this);
@@ -2723,6 +3096,12 @@ public final class Specification {
         return checkOption(op);
     }
 
+    /**
+     * Check option.
+     *
+     * @param option the option
+     * @return true, if successful
+     */
     private boolean checkOption(AbstractOption option) {
         getOptionGroup(option.getGroup()).add(option);
         addAbstractOption(option);
@@ -2733,28 +3112,66 @@ public final class Specification {
 
     // Serialization
 
+    /** The Constant BUILDING_TYPES_TAG. */
     private static final String BUILDING_TYPES_TAG = "building-types";
+    
+    /** The Constant DIFFICULTY_LEVEL_TAG. */
     private static final String DIFFICULTY_LEVEL_TAG = "difficulty-level";
+    
+    /** The Constant DISASTERS_TAG. */
     private static final String DISASTERS_TAG = "disasters";
+    
+    /** The Constant EUROPEAN_NATION_TYPES_TAG. */
     private static final String EUROPEAN_NATION_TYPES_TAG = "european-nation-types";
+    
+    /** The Constant EVENTS_TAG. */
     private static final String EVENTS_TAG = "events";
+    
+    /** The Constant FOUNDING_FATHERS_TAG. */
     private static final String FOUNDING_FATHERS_TAG = "founding-fathers";
+    
+    /** The Constant GOODS_TYPES_TAG. */
     private static final String GOODS_TYPES_TAG = "goods-types";
+    
+    /** The Constant INDIAN_NATION_TYPES_TAG. */
     private static final String INDIAN_NATION_TYPES_TAG = "indian-nation-types";
+    
+    /** The Constant MODIFIERS_TAG. */
     private static final String MODIFIERS_TAG = "modifiers";
+    
+    /** The Constant NATIONS_TAG. */
     private static final String NATIONS_TAG = "nations";
+    
+    /** The Constant OPTIONS_TAG. */
     private static final String OPTIONS_TAG = "options";
+    
+    /** The Constant RESOURCE_TYPES_TAG. */
     private static final String RESOURCE_TYPES_TAG = "resource-types";
+    
+    /** The Constant ROLES_TAG. */
     private static final String ROLES_TAG = "roles";
+    
+    /** The Constant TILE_TYPES_TAG. */
     private static final String TILE_TYPES_TAG = "tile-types";
+    
+    /** The Constant TILE_IMPROVEMENT_TYPES_TAG. */
     private static final String TILE_IMPROVEMENT_TYPES_TAG = "tile-improvement-types";
+    
+    /** The Constant UNIT_TYPES_TAG. */
     private static final String UNIT_TYPES_TAG = "unit-types";
+    
+    /** The Constant VERSION_TAG. */
     private static final String VERSION_TAG = "version";
+    
+    /** The Constant EQUIPMENT_TYPES_TAG. */
     // @compat 0.10.x
     private static final String EQUIPMENT_TYPES_TAG = "equipment-types";
     // end @compat 0.10.x
+    /** The Constant OLD_DIFFICULTY_LEVEL_TAG. */
     // @compat 0.11.3
     private static final String OLD_DIFFICULTY_LEVEL_TAG = "difficultyLevel";
+    
+    /** The Constant OLD_TILEIMPROVEMENT_TYPES_TAG. */
     private static final String OLD_TILEIMPROVEMENT_TYPES_TAG = "tileimprovement-types";
     // end @compat 0.11.3
 
@@ -2807,6 +3224,15 @@ public final class Specification {
 
     }
 
+    /**
+     * Write section.
+     *
+     * @param <T> the generic type
+     * @param xw the xw
+     * @param section the section
+     * @param items the items
+     * @throws XMLStreamException the XML stream exception
+     */
     private <T extends FreeColObject> void writeSection(FreeColXMLWriter xw,
         String section, Collection<T> items) throws XMLStreamException {
         xw.writeStartElement(section);

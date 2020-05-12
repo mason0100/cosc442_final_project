@@ -25,6 +25,7 @@ import java.net.URI;
 import net.sf.freecol.common.sound.SoundPlayer;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A <code>Resource</code> wrapping a <code>File</code> containing sounds.
  *
@@ -32,9 +33,15 @@ import net.sf.freecol.common.sound.SoundPlayer;
  */
 public class AudioResource extends Resource {
 
+    /** The file. */
     private File file;
 
 
+    /**
+     * Instantiates a new audio resource.
+     *
+     * @param file the file
+     */
     public AudioResource(File file) {
         this.file = file;
     }

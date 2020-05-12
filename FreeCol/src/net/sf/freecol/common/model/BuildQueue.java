@@ -25,11 +25,17 @@ import java.util.List;
 import java.util.Set;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A queue of things for a colony to build.
+ *
+ * @param <T> the generic type
  */
 public class BuildQueue<T extends BuildableType> implements Consumer {
 
+    /**
+     * The Enum CompletionAction.
+     */
     public enum CompletionAction {
         /**
          * Always remove the completed item. Not used by any build
@@ -64,6 +70,7 @@ public class BuildQueue<T extends BuildableType> implements Consumer {
     /** What to do when an item has been completed. */
     private CompletionAction completionAction = CompletionAction.REMOVE;
 
+    /** The priority. */
     private int priority = COLONY_PRIORITY;
 
     /** The colony to queue buildables for. */
@@ -107,38 +114,81 @@ public class BuildQueue<T extends BuildableType> implements Consumer {
     }
 
 
+    /**
+     * Clear.
+     */
     public void clear() {
         buildQueue.clear();
     }
 
+    /**
+     * Adds the.
+     *
+     * @param buildable the buildable
+     */
     public void add(T buildable) {
         buildQueue.add(buildable);
     }
 
+    /**
+     * Gets the values.
+     *
+     * @return the values
+     */
     public List<T> getValues() {
         return buildQueue;
     }
 
+    /**
+     * Sets the values.
+     *
+     * @param values the new values
+     */
     public void setValues(List<T> values) {
         buildQueue = values;
     }
 
+    /**
+     * Removes the.
+     *
+     * @param index the index
+     */
     public void remove(int index) {
         buildQueue.remove(index);
     }
 
+    /**
+     * Size.
+     *
+     * @return the int
+     */
     public int size() {
         return buildQueue.size();
     }
 
+    /**
+     * Checks if is empty.
+     *
+     * @return true, if is empty
+     */
     public boolean isEmpty() {
         return buildQueue.isEmpty();
     }
 
+    /**
+     * Gets the completion action.
+     *
+     * @return the completion action
+     */
     public final CompletionAction getCompletionAction() {
         return completionAction;
     }
 
+    /**
+     * Sets the completion action.
+     *
+     * @param newCompletionAction the new completion action
+     */
     public final void setCompletionAction(final CompletionAction newCompletionAction) {
         this.completionAction = newCompletionAction;
     }

@@ -67,6 +67,7 @@ import net.sf.freecol.server.ai.mission.UnitWanderHostileMission;
 import net.sf.freecol.server.model.ServerPlayer;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Objects of this class contains AI-information for a single {@link
  * Player} and is used for controlling this player.
@@ -76,14 +77,19 @@ import net.sf.freecol.server.model.ServerPlayer;
  */
 public class NativeAIPlayer extends AIPlayer {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(NativeAIPlayer.class.getName());
 
+    /** The Constant MAX_DISTANCE_TO_BRING_GIFTS. */
     public static final int MAX_DISTANCE_TO_BRING_GIFTS = 5;
 
+    /** The Constant MAX_NUMBER_OF_GIFTS_BEING_DELIVERED. */
     public static final int MAX_NUMBER_OF_GIFTS_BEING_DELIVERED = 1;
 
+    /** The Constant MAX_DISTANCE_TO_MAKE_DEMANDS. */
     public static final int MAX_DISTANCE_TO_MAKE_DEMANDS = 5;
 
+    /** The Constant MAX_NUMBER_OF_DEMANDS. */
     public static final int MAX_NUMBER_OF_DEMANDS = 1;
 
     /**

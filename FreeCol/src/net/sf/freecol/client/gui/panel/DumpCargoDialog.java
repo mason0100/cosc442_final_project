@@ -36,11 +36,13 @@ import net.sf.freecol.common.model.Goods;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel is used to handle dumping cargo.
  */
 public final class DumpCargoDialog extends FreeColDialog<List<Goods>> {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(DumpCargoDialog.class.getName());
 

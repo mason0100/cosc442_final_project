@@ -26,6 +26,10 @@ import net.sf.freecol.common.model.GoodsType;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface DropTarget.
+ */
 public interface DropTarget {
 
     /**

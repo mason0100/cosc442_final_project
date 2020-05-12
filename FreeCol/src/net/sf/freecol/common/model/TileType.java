@@ -30,33 +30,42 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.util.RandomChoice;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The types of tiles.
  */
 public final class TileType extends FreeColGameObjectType {
 
-    public static enum RangeType { HUMIDITY, TEMPERATURE, ALTITUDE };
+    /**
+     * The Enum RangeType.
+     */
+    public static enum RangeType { /** The humidity. */
+ HUMIDITY, /** The temperature. */
+ TEMPERATURE, /** The altitude. */
+ ALTITUDE };
 
     /**
      * Use these tile types only for "land maps", i.e. maps that only
      * distinguish water and land.
      */
     public static final TileType WATER = new TileType("WATER", true);
+    
+    /** The Constant LAND. */
     public static final TileType LAND  = new TileType("LAND", false);
 
-    /** Is this a forested tile? */
+    /**  Is this a forested tile?. */
     private boolean forest;
 
-    /** Is this a water tile? */
+    /**  Is this a water tile?. */
     private boolean water;
 
-    /** Can this tile be settled? */
+    /**  Can this tile be settled?. */
     private boolean canSettle;
 
     /** Whether this TileType is connected to Europe. */
     private boolean connected;
 
-    /** Is this elevated terrain? */
+    /**  Is this elevated terrain?. */
     private boolean elevation;
 
     /** The base movement cost for this tile type. */
@@ -113,7 +122,7 @@ public final class TileType extends FreeColGameObjectType {
 
 
     /**
-     * Is this tile type forested?
+     * Is this tile type forested?.
      *
      * @return True if this is a forested tile type.
      */
@@ -122,7 +131,7 @@ public final class TileType extends FreeColGameObjectType {
     }
 
     /**
-     * Is this a water tile type?
+     * Is this a water tile type?.
      *
      * @return True if this is a water tile type.
      */
@@ -131,7 +140,7 @@ public final class TileType extends FreeColGameObjectType {
     }
 
     /**
-     * Can this tile type be settled?
+     * Can this tile type be settled?.
      *
      * @return True if this is a settleable tile type.
      */
@@ -161,7 +170,7 @@ public final class TileType extends FreeColGameObjectType {
     }
 
     /**
-     * Is this an elevated tile type?
+     * Is this an elevated tile type?.
      *
      * @return True if this is an elevated tile type.
      */
@@ -247,7 +256,7 @@ public final class TileType extends FreeColGameObjectType {
     }
 
     /**
-     * Can this tile type contain a specified resource type?
+     * Can this tile type contain a specified resource type?.
      *
      * @param resourceType The <code>ResourceType</code> to test.
      * @return True if the <code>ResourceType</code> is compatible.
@@ -318,7 +327,7 @@ public final class TileType extends FreeColGameObjectType {
     // Utilities
 
     /**
-     * Can a tile of this type produce a given goods type?
+     * Can a tile of this type produce a given goods type?.
      *
      * @param goodsType The <code>GoodsType</code> to produce.
      * @param unitType An optional <code>UnitType</code> that is to do
@@ -404,37 +413,93 @@ public final class TileType extends FreeColGameObjectType {
 
     // Serialization
 
+    /** The Constant ALTITUDE_MIN_TAG. */
     private static final String ALTITUDE_MIN_TAG = "altitude-minimum";
+    
+    /** The Constant ALTITUDE_MAX_TAG. */
     private static final String ALTITUDE_MAX_TAG = "altitude-maximum";
+    
+    /** The Constant BASIC_MOVE_COST_TAG. */
     private static final String BASIC_MOVE_COST_TAG = "basic-move-cost";
+    
+    /** The Constant BASIC_WORK_TURNS_TAG. */
     private static final String BASIC_WORK_TURNS_TAG = "basic-work-turns";
+    
+    /** The Constant CAN_SETTLE_TAG. */
     private static final String CAN_SETTLE_TAG = "can-settle";
+    
+    /** The Constant DISASTER_TAG. */
     private static final String DISASTER_TAG = "disaster";
+    
+    /** The Constant GEN_TAG. */
     private static final String GEN_TAG = "gen";
+    
+    /** The Constant GOODS_TYPE_TAG. */
     private static final String GOODS_TYPE_TAG = "goods-type";
+    
+    /** The Constant HUMIDITY_MIN_TAG. */
     private static final String HUMIDITY_MIN_TAG = "humidity-minimum";
+    
+    /** The Constant HUMIDITY_MAX_TAG. */
     private static final String HUMIDITY_MAX_TAG = "humidity-maximum";
+    
+    /** The Constant IS_CONNECTED_TAG. */
     private static final String IS_CONNECTED_TAG = "is-connected";
+    
+    /** The Constant IS_ELEVATION_TAG. */
     private static final String IS_ELEVATION_TAG = "is-elevation";
+    
+    /** The Constant IS_FOREST_TAG. */
     private static final String IS_FOREST_TAG = "is-forest";
+    
+    /** The Constant IS_WATER_TAG. */
     private static final String IS_WATER_TAG = "is-water";
+    
+    /** The Constant PROBABILITY_TAG. */
     private static final String PROBABILITY_TAG = "probability";
+    
+    /** The Constant PRODUCTION_TAG. */
     private static final String PRODUCTION_TAG = "production";
+    
+    /** The Constant RESOURCE_TAG. */
     private static final String RESOURCE_TAG = "resource";
+    
+    /** The Constant TEMPERATURE_MIN_TAG. */
     private static final String TEMPERATURE_MIN_TAG = "temperature-minimum";
+    
+    /** The Constant TEMPERATURE_MAX_TAG. */
     private static final String TEMPERATURE_MAX_TAG = "temperature-maximum";
+    
+    /** The Constant TYPE_TAG. */
     private static final String TYPE_TAG = "type";
+    
+    /** The Constant PRIMARY_PRODUCTION_TAG. */
     // @compat 0.10.x
     private static final String PRIMARY_PRODUCTION_TAG = "primary-production";
+    
+    /** The Constant SECONDARY_PRODUCTION_TAG. */
     private static final String SECONDARY_PRODUCTION_TAG = "secondary-production";
+    
+    /** The Constant TILE_PRODUCTION_TAG. */
     private static final String TILE_PRODUCTION_TAG = "tile-production";
     // end @compat 0.10.x
+    /** The Constant OLD_ALTITUDE_MIN_TAG. */
     // @compat 0.11.3
     private static final String OLD_ALTITUDE_MIN_TAG = "altitudeMin";
+    
+    /** The Constant OLD_ALTITUDE_MAX_TAG. */
     private static final String OLD_ALTITUDE_MAX_TAG = "altitudeMax";
+    
+    /** The Constant OLD_HUMIDITY_MIN_TAG. */
     private static final String OLD_HUMIDITY_MIN_TAG = "humidityMin";
+    
+    /** The Constant OLD_HUMIDITY_MAX_TAG. */
     private static final String OLD_HUMIDITY_MAX_TAG = "humidityMax";
+    
+    /** The Constant OLD_TEMPERATURE_MIN_TAG. */
     private static final String OLD_TEMPERATURE_MIN_TAG = "temperatureMin";
+    
+    /** The Constant OLD_TEMPERATURE_MAX_TAG. */
     private static final String OLD_TEMPERATURE_MAX_TAG = "temperatureMax";
     // end @compat 0.11.3
 

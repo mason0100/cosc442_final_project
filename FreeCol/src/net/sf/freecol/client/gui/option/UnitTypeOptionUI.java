@@ -31,6 +31,7 @@ import net.sf.freecol.common.model.UnitType;
 import net.sf.freecol.common.option.UnitTypeOption;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides visualization for a
  * {@link net.sf.freecol.common.option.UnitTypeOption} in order to enable
@@ -38,6 +39,9 @@ import net.sf.freecol.common.option.UnitTypeOption;
  */
 public final class UnitTypeOptionUI extends OptionUI<UnitTypeOption>  {
 
+    /**
+     * The Class ChoiceRenderer.
+     */
     private static class ChoiceRenderer
         extends FreeColComboBoxRenderer<UnitType> {
 
@@ -51,6 +55,7 @@ public final class UnitTypeOptionUI extends OptionUI<UnitTypeOption>  {
         }
     }
 
+    /** The box. */
     private final JComboBox<UnitType> box = new JComboBox<>();
 
 

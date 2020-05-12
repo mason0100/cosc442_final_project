@@ -40,6 +40,7 @@ import net.sf.freecol.common.model.StringTemplate;
 import net.sf.freecol.common.model.UnitType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The panel that allows a user to pay for a new unit in Europe.
  */
@@ -57,7 +58,7 @@ public class NewUnitPanel extends FreeColPanel {
     /** A comparator by ascending unit price. */
     private final Comparator<UnitType> priceComparator;
 
-    /** Is there at least one available unit? */
+    /**  Is there at least one available unit?. */
     private boolean shouldEnable = false;
 
 

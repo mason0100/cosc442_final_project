@@ -52,6 +52,7 @@ import net.sf.freecol.common.util.Utils;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents a player.  The player can be either a human player or an
  * AI-player, which is further subdivided by PlayerType.
@@ -62,6 +63,7 @@ import org.w3c.dom.Element;
  */
 public class Player extends FreeColGameObject implements Nameable {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Player.class.getName());
     //
     // Types
@@ -69,25 +71,62 @@ public class Player extends FreeColGameObject implements Nameable {
 
     /** Types of players. */
     public static enum PlayerType {
-        NATIVE, COLONIAL, REBEL, INDEPENDENT, ROYAL, UNDEAD, RETIRED
+        
+        /** The native. */
+        NATIVE, 
+ /** The colonial. */
+ COLONIAL, 
+ /** The rebel. */
+ REBEL, 
+ /** The independent. */
+ INDEPENDENT, 
+ /** The royal. */
+ ROYAL, 
+ /** The undead. */
+ UNDEAD, 
+ /** The retired. */
+ RETIRED
     }
 
     /** Colony value categories. */
     public static enum ColonyValueCategory {
-        A_OVERRIDE, // override slot containing showstopper NoValueType values
-        A_PROD,     // general production level
-        A_TILE,     // strangeness with the tile
-        A_EUROPE,   // proximity to Europe
-        A_RESOURCE, // penalize building on top of a resource
-        A_ADJACENT, // penalize adjacent units and settlement-owned-tiles
-        A_FOOD,     // penalize food shortage
-        A_LEVEL,    // reward high production potential
-        A_NEARBY,   // penalize nearby units and settlements
+        
+        /** The a override. */
+        A_OVERRIDE, 
+ /** The a prod. */
+ // override slot containing showstopper NoValueType values
+        A_PROD,     
+     /** The a tile. */
+     // general production level
+        A_TILE,     
+     /** The a europe. */
+     // strangeness with the tile
+        A_EUROPE,   
+   /** The a resource. */
+   // proximity to Europe
+        A_RESOURCE, 
+ /** The a adjacent. */
+ // penalize building on top of a resource
+        A_ADJACENT, 
+ /** The a food. */
+ // penalize adjacent units and settlement-owned-tiles
+        A_FOOD,     
+     /** The a level. */
+     // penalize food shortage
+        A_LEVEL,    
+    /** The a nearby. */
+    // reward high production potential
+        A_NEARBY,   
+   /** The a goods. */
+   // penalize nearby units and settlements
         A_GOODS;    // check sufficient critical goods available (e.g. lumber)
         // A_GOODS must be last, the spec is entitled to require checks on
         // as many goods types as it likes
 
-        @Override
+        /* (non-Javadoc)
+     * @see java.lang.Enum#toString()
+     */
+    @Override
         public String toString() {
             return super.toString().substring(2);
         }
@@ -95,19 +134,56 @@ public class Player extends FreeColGameObject implements Nameable {
 
     /** Special return values for showstopper getColonyValue fail. */
     public static enum NoValueType {
-        BOGUS(-1), TERRAIN(-2), RUMOUR(-3), SETTLED(-4), FOOD(-5), INLAND(-6), POLAR(-7);
+        
+        /** The bogus. */
+        BOGUS(-1), 
+ /** The terrain. */
+ TERRAIN(-2), 
+ /** The rumour. */
+ RUMOUR(-3), 
+ /** The settled. */
+ SETTLED(-4), 
+ /** The food. */
+ FOOD(-5), 
+ /** The inland. */
+ INLAND(-6), 
+ /** The polar. */
+ POLAR(-7);
      
+        /** The Constant MAX. */
         private static final int MAX = values().length;
 
+        /** The value. */
         private final int value;
 
 
+        /**
+         * Instantiates a new no value type.
+         *
+         * @param value the value
+         */
         NoValueType(int value) { this.value = value; }
 
+        /**
+         * Gets the value.
+         *
+         * @return the value
+         */
         public int getValue() { return value; }
 
+        /**
+         * Gets the double.
+         *
+         * @return the double
+         */
         public double getDouble() { return (double)value; }
 
+        /**
+         * From value.
+         *
+         * @param i the i
+         * @return the no value type
+         */
         public static NoValueType fromValue(int i) {
             int n = -i - 1;
             return (n >= 0 && n < MAX) ? NoValueType.values()[n] : BOGUS;
@@ -118,6 +194,13 @@ public class Player extends FreeColGameObject implements Nameable {
      * A predicate that can be applied to a unit.
      */
     public abstract class UnitPredicate {
+        
+        /**
+         * Obtains.
+         *
+         * @param unit the unit
+         * @return true, if successful
+         */
         public abstract boolean obtains(Unit unit);
     }
 
@@ -128,8 +211,9 @@ public class Player extends FreeColGameObject implements Nameable {
 
         /**
          * Is the unit active and going nowhere, and thus available to
-         * be moved by the player?
+         * be moved by the player?.
          *
+         * @param unit the unit
          * @return True if the unit can be moved.
          */
         @Override
@@ -144,7 +228,10 @@ public class Player extends FreeColGameObject implements Nameable {
      */
     public class GoingToPredicate extends UnitPredicate {
 
+        /** The player. */
         private final Player player;
+        
+        /** The trade route. */
         private final boolean tradeRoute;
 
 
@@ -161,8 +248,9 @@ public class Player extends FreeColGameObject implements Nameable {
         }
 
         /**
-         * Does this unit have orders to go somewhere?
+         * Does this unit have orders to go somewhere?.
          *
+         * @param unit the unit
          * @return True if the unit has orders to go somewhere.
          */
         @Override
@@ -186,10 +274,13 @@ public class Player extends FreeColGameObject implements Nameable {
      */
     public static class UnitIterator implements Iterator<Unit> {
 
+        /** The owner. */
         private final Player owner;
 
+        /** The predicate. */
         private final UnitPredicate predicate;
 
+        /** The units. */
         private final List<Unit> units = new ArrayList<>();
 
 
@@ -356,16 +447,16 @@ public class Player extends FreeColGameObject implements Nameable {
     /** The name this player uses for the New World. */
     protected String newLandName = null;
 
-    /** Is this player an admin? */
+    /**  Is this player an admin?. */
     protected boolean admin;
 
-    /** Is this player an AI? */
+    /**  Is this player an AI?. */
     protected boolean ai;
 
-    /** Is this player ready to start? */
+    /**  Is this player ready to start?. */
     protected boolean ready;
 
-    /** Is this player dead? */
+    /**  Is this player dead?. */
     protected boolean dead = false;
 
     /** True if player has been attacked by privateers. */
@@ -471,7 +562,8 @@ public class Player extends FreeColGameObject implements Nameable {
 
     /** The tiles the player can see. */
     private boolean[][] canSeeTiles = null;
-    /** Are the canSeeTiles valid or do they need to be recalculated? */
+    
+    /**  Are the canSeeTiles valid or do they need to be recalculated?. */
     private boolean canSeeValid = false;
     /** Do not access canSeeTiles without taking canSeeLock. */
     private final Object canSeeLock = new Object();
@@ -584,7 +676,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Is this player the unknown enemy?
+     * Is this player the unknown enemy?.
      *
      * @return True if this player is the unknown enemy.
      */
@@ -621,7 +713,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Has the player already selected a name for the new world?
+     * Has the player already selected a name for the new world?.
      *
      * @return True if the new world has been named by this player.
      */
@@ -872,7 +964,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Is this a native player?
+     * Is this a native player?.
      *
      * @return True if this player is a native player.
      */
@@ -881,7 +973,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Is this a colonial rebel player?
+     * Is this a colonial rebel player?.
      *
      * @return True if this player is a rebel player.
      */
@@ -890,7 +982,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Is this an undead player?
+     * Is this an undead player?.
      *
      * @return True if this player is undead.
      */
@@ -899,7 +991,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Is this a REF player?
+     * Is this a REF player?.
      *
      * @return True if this is a REF player.
      */
@@ -909,7 +1001,7 @@ public class Player extends FreeColGameObject implements Nameable {
 
     /**
      * Is this player currently on good terms with a given player, and thus
-     * a suitable candidate for a random monarch war declaration?
+     * a suitable candidate for a random monarch war declaration?.
      *
      * @param player The <code>Player</code> to possibly declare war on.
      * @return True if this player is a potential enemy.
@@ -927,7 +1019,7 @@ public class Player extends FreeColGameObject implements Nameable {
     
     /**
      * Is this player currently on bad terms with a given player, and thus
-     * a suitable candidate for a random monarch peace declaration?
+     * a suitable candidate for a random monarch peace declaration?.
      *
      * @param player The <code>Player</code> to possibly declare peace with.
      * @return True if this player is a potential friend.
@@ -972,7 +1064,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Can this player build colonies?
+     * Can this player build colonies?.
      *
      * @return True if this player can found colonies.
      */
@@ -981,7 +1073,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Can this player recruit founding fathers?
+     * Can this player recruit founding fathers?.
      *
      * @return True if this player can recruit founding fathers.
      */
@@ -1031,7 +1123,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Is this an AI player?
+     * Is this an AI player?.
      *
      * @return True if this is an AI player.
      */
@@ -1049,7 +1141,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Is this player ready to start the game?
+     * Is this player ready to start the game?.
      *
      * @return True if this <code>Player</code> is ready to start the game.
      */
@@ -1098,7 +1190,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Has player has been attacked by privateers?
+     * Has player has been attacked by privateers?.
      *
      * @return True if this player has been attacked by privateers.
      */
@@ -1367,7 +1459,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Should a new colonist emigrate?
+     * Should a new colonist emigrate?.
      *
      * @return Whether a new colonist should emigrate.
      */
@@ -1614,7 +1706,7 @@ public class Player extends FreeColGameObject implements Nameable {
 
     /**
      * Gets the <code>Turn</code>s during which FoundingFathers were
-     * elected to the Continental Congress
+     * elected to the Continental Congress.
      *
      * @return A map of father id to <code>Turn</code>s.
      */
@@ -1687,7 +1779,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Sets the current tax
+     * Sets the current tax.
      *
      * @param amount The new tax amount.
      */
@@ -1761,7 +1853,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Can a type of goods can be traded in Europe?
+     * Can a type of goods can be traded in Europe?.
      *
      * @param type The <code>GoodsType</code> to check.
      * @return True if there are no arrears due for this type of goods.
@@ -1771,7 +1863,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Can a type of goods can be traded at a specified place?
+     * Can a type of goods can be traded at a specified place?.
      *
      * @param type The <code>GoodsType</code> to check.
      * @param access The way the goods are traded (Europe OR Custom)
@@ -1808,7 +1900,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Has a type of goods been traded?
+     * Has a type of goods been traded?.
      *
      * @param goodsType The <code>GoodsType</code> to check.
      * @return Whether these goods have been traded.
@@ -1970,7 +2062,7 @@ public class Player extends FreeColGameObject implements Nameable {
     //
 
     /**
-     * Does this player's units list contain the given unit?
+     * Does this player's units list contain the given unit?.
      *
      * @param unit The <code>Unit</code> to test.
      * @return True if the player has the unit.
@@ -2195,6 +2287,7 @@ public class Player extends FreeColGameObject implements Nameable {
      * Get a trade route by name.
      *
      * @param name The trade route name.
+     * @return the trade route by name
      */
     public TradeRoute getTradeRouteByName(String name) {
         return find(tradeRoutes, t -> t.getName().equals(name));
@@ -2212,6 +2305,8 @@ public class Player extends FreeColGameObject implements Nameable {
 
     /**
      * Get a unique name for a new trade route.
+     *
+     * @return the name for trade route
      */
     public String getNameForTradeRoute() {
         return NameCache.getTradeRouteName(this);
@@ -2869,7 +2964,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Does this player ban missions from another player?
+     * Does this player ban missions from another player?.
      *
      * @param player The other <code>Player</code> to test.
      * @return True if the given player is banned.
@@ -2961,7 +3056,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Has this player met contacted the given one?
+     * Has this player met contacted the given one?.
      *
      * @param player The other <code>Player</code> to check.
      * @return True if this <code>Player</code> has contacted the other.
@@ -2971,7 +3066,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Has this player has met with any Europeans at all?
+     * Has this player has met with any Europeans at all?.
      *
      * @return True if this <code>Player</code> has contacted any Europeans.
      */
@@ -2981,7 +3076,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Has this player met any natives at all?
+     * Has this player met any natives at all?.
      *
      * @return True if this <code>Player</code> has contacted any natives.
      */
@@ -3104,14 +3199,32 @@ public class Player extends FreeColGameObject implements Nameable {
      * double negative NONE == "no reason" case.
      */
     public static enum NoClaimReason implements Named {
-        NONE,            // Actually, tile can be claimed
-        TERRAIN,         // Not on settleable terrain
-        RUMOUR,          // Europeans can not claim tiles with LCR
-        WATER,           // Natives do not claim water
-        OCCUPIED,        // Hostile unit present.
-        SETTLEMENT,      // Settlement present
-        WORKED,          // One of our settlements is working this tile
-        EUROPEANS,       // Owned by Europeans and not for sale
+        
+        /** The none. */
+        NONE,            
+            /** The terrain. */
+            // Actually, tile can be claimed
+        TERRAIN,         
+         /** The rumour. */
+         // Not on settleable terrain
+        RUMOUR,          
+          /** The water. */
+          // Europeans can not claim tiles with LCR
+        WATER,           
+           /** The occupied. */
+           // Natives do not claim water
+        OCCUPIED,        
+        /** The settlement. */
+        // Hostile unit present.
+        SETTLEMENT,      
+      /** The worked. */
+      // Settlement present
+        WORKED,          
+          /** The europeans. */
+          // One of our settlements is working this tile
+        EUROPEANS,       
+       /** The natives. */
+       // Owned by Europeans and not for sale
         NATIVES;         // Owned by natives and they want payment for it
 
         /**
@@ -3123,6 +3236,11 @@ public class Player extends FreeColGameObject implements Nameable {
             return "noClaimReason." + getEnumKey(this);
         }
 
+        /**
+         * Gets the description key.
+         *
+         * @return the description key
+         */
         public String getDescriptionKey() {
             return Messages.descriptionKey("model." + getKey());
         }
@@ -3138,7 +3256,7 @@ public class Player extends FreeColGameObject implements Nameable {
     };
 
     /**
-     * Can a tile be owned by this player?
+     * Can a tile be owned by this player?.
      *
      * @param tile The <code>Tile</code> to consider.
      * @return True if the tile can be owned by this player.
@@ -3206,7 +3324,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Can a tile be claimed to found a settlement on?
+     * Can a tile be claimed to found a settlement on?.
      *
      * @param tile The <code>Tile</code> to try to claim.
      * @return True if the tile can be claimed to found a settlement.
@@ -3219,7 +3337,7 @@ public class Player extends FreeColGameObject implements Nameable {
      * Can a tile be claimed to found a settlement on?
      * Almost the same as canClaimForSettlement but there is an extra
      * requirement that the tile be of a settleable type, and some
-     * relaxations that allow free center tile acquisition
+     * relaxations that allow free center tile acquisition.
      *
      * @param tile The <code>Tile</code> to try to claim.
      * @return The reason why/not the tile can be claimed.
@@ -3345,80 +3463,81 @@ public class Player extends FreeColGameObject implements Nameable {
 
     /**
      * Not currently in use.  Leave here for now, it might yet be revived.
-     *
+     * 
      * Calculates the value of an outpost-type colony at this tile.
      * An "outpost" is supposed to be a colony containing one worker, exporting
      * its whole production to europe. The value of such colony is the maximum
      * amount of money it can make in one turn, assuming sale of its secondary
      * goods plus farmed goods from one of the surrounding tiles.
      *
+     * @param tile the tile
      * @return The value of a future colony located on this tile. This value is
      *         used by the AI when deciding where to build a new colony.
-    public int getOutpostValue(Tile t) {
-        Market market = getMarket();
-        if (canClaimToFoundSettlement(t)) {
-            boolean nearbyTileIsOcean = false;
-            float advantages = 1f;
-            int value = 0;
-            for (Tile tile : t.getSurroundingTiles(1)) {
-                if (tile.getColony() != null) {
-                    // can't build next to colony
-                    return 0;
-                } else if (tile.hasSettlement()) {
-                    // can build next to an indian settlement, but shouldn't
-                    SettlementType type = tile.getSettlement().getType();
-                    if (type.getClaimableRadius() > 1) {
-                        // really shouldn't build next to cities
-                        advantages *= 0.25f;
-                    } else {
-                        advantages *= 0.5f;
-                    }
-                } else {
-                    if (tile.isHighSeasConnected()) {
-                        nearbyTileIsOcean = true;
-                    }
-                    if (tile.getType()!=null) {
-                        for (AbstractGoods production : tile.getType().getProduction()) {
-                            GoodsType type = production.getType();
-                            int potential = market.getSalePrice(type, tile.getPotentialProduction(type, null));
-                            if (tile.getOwner() != null &&
-                                !this.owns(tile)) {
-                                // tile is already owned by someone (and not by us!)
-                                if (tile.getOwner().isEuropean()) {
-                                    continue;
-                                } else {
-                                    potential /= 2;
-                                }
-                            }
-                            value = Math.max(value, potential);
-                        }
-                    }
-                }
-            }
-
-            // add good that could be produced by a colony on this tile
-            int bestValue = 0;
-            for (ProductionType productionType : t.getType()
-                     .getAvailableProductionTypes(true)) {
-                if (productionType.getOutputs() != null) {
-                    int newValue = 0;
-                    for (AbstractGoods output: productionType.getOutputs()) {
-                        newValue += market.getSalePrice(output.getType(),
-                                                        t.getPotentialProduction(output.getType(), null));
-                    }
-                    if (newValue > bestValue) {
-                        bestValue = newValue;
-                    }
-                }
-            }
-            value += bestValue;
-            if (nearbyTileIsOcean) {
-                return Math.max(0, (int) (value * advantages));
-            }
-        }
-        return 0;
-    }
-    */
+     *     public int getOutpostValue(Tile t) {
+     *         Market market = getMarket();
+     *         if (canClaimToFoundSettlement(t)) {
+     *             boolean nearbyTileIsOcean = false;
+     *             float advantages = 1f;
+     *             int value = 0;
+     *             for (Tile tile : t.getSurroundingTiles(1)) {
+     *                 if (tile.getColony() != null) {
+     *                     // can't build next to colony
+     *                     return 0;
+     *                 } else if (tile.hasSettlement()) {
+     *                     // can build next to an indian settlement, but shouldn't
+     *                     SettlementType type = tile.getSettlement().getType();
+     *                     if (type.getClaimableRadius() > 1) {
+     *                         // really shouldn't build next to cities
+     *                         advantages *= 0.25f;
+     *                     } else {
+     *                         advantages *= 0.5f;
+     *                     }
+     *                 } else {
+     *                     if (tile.isHighSeasConnected()) {
+     *                         nearbyTileIsOcean = true;
+     *                     }
+     *                     if (tile.getType()!=null) {
+     *                         for (AbstractGoods production : tile.getType().getProduction()) {
+     *                             GoodsType type = production.getType();
+     *                             int potential = market.getSalePrice(type, tile.getPotentialProduction(type, null));
+     *                             if (tile.getOwner() != null &&
+     *                                 !this.owns(tile)) {
+     *                                 // tile is already owned by someone (and not by us!)
+     *                                 if (tile.getOwner().isEuropean()) {
+     *                                     continue;
+     *                                 } else {
+     *                                     potential /= 2;
+     *                                 }
+     *                             }
+     *                             value = Math.max(value, potential);
+     *                         }
+     *                     }
+     *                 }
+     *             }
+     * 
+     *             // add good that could be produced by a colony on this tile
+     *             int bestValue = 0;
+     *             for (ProductionType productionType : t.getType()
+     *                      .getAvailableProductionTypes(true)) {
+     *                 if (productionType.getOutputs() != null) {
+     *                     int newValue = 0;
+     *                     for (AbstractGoods output: productionType.getOutputs()) {
+     *                         newValue += market.getSalePrice(output.getType(),
+     *                                                         t.getPotentialProduction(output.getType(), null));
+     *                     }
+     *                     if (newValue > bestValue) {
+     *                         bestValue = newValue;
+     *                     }
+     *                 }
+     *             }
+     *             value += bestValue;
+     *             if (nearbyTileIsOcean) {
+     *                 return Math.max(0, (int) (value * advantages));
+     *             }
+     *         }
+     *         return 0;
+     *     }
+     */
 
     /**
      * Gets a list of values for building a <code>Colony</code> on the
@@ -3764,7 +3883,7 @@ public class Player extends FreeColGameObject implements Nameable {
     }
 
     /**
-     * Does this player own something?
+     * Does this player own something?.
      *
      * @param ownable The <code>Ownable</code> to check.
      * @return True if the <code>Ownable</code> is ours.
@@ -3776,9 +3895,10 @@ public class Player extends FreeColGameObject implements Nameable {
     /**
      * Get a <code>FreeColGameObject</code> with the specified
      * identifier and class, owned by this player.
-     *
+     * 
      * Used mainly in message decoding.
      *
+     * @param <T> the generic type
      * @param id The object identifier.
      * @param returnClass The expected class of the object.
      * @return The game object, or null if not found.
@@ -3846,35 +3966,94 @@ public class Player extends FreeColGameObject implements Nameable {
 
     // Serialization
 
+    /** The Constant ADMIN_TAG. */
     private static final String ADMIN_TAG = "admin";
+    
+    /** The Constant AI_TAG. */
     private static final String AI_TAG = "ai";
+    
+    /** The Constant ATTACKED_BY_PRIVATEERS_TAG. */
     private static final String ATTACKED_BY_PRIVATEERS_TAG = "attackedByPrivateers";
+    
+    /** The Constant BANKRUPT_TAG. */
     private static final String BANKRUPT_TAG = "bankrupt";
+    
+    /** The Constant BAN_MISSIONS_TAG. */
     private static final String BAN_MISSIONS_TAG = "banMissions";
+    
+    /** The Constant CURRENT_FATHER_TAG. */
     private static final String CURRENT_FATHER_TAG = "currentFather";
+    
+    /** The Constant DEAD_TAG. */
     private static final String DEAD_TAG = "dead";
+    
+    /** The Constant ENTRY_LOCATION_TAG. */
     private static final String ENTRY_LOCATION_TAG = "entryLocation";
+    
+    /** The Constant FOUNDING_FATHERS_TAG. */
     private static final String FOUNDING_FATHERS_TAG = "foundingFathers";
+    
+    /** The Constant GOLD_TAG. */
     private static final String GOLD_TAG = "gold";
+    
+    /** The Constant IMMIGRATION_TAG. */
     private static final String IMMIGRATION_TAG = "immigration";
+    
+    /** The Constant IMMIGRATION_REQUIRED_TAG. */
     private static final String IMMIGRATION_REQUIRED_TAG = "immigrationRequired";
+    
+    /** The Constant LIBERTY_TAG. */
     private static final String LIBERTY_TAG = "liberty";
+    
+    /** The Constant INDEPENDENT_NATION_NAME_TAG. */
     private static final String INDEPENDENT_NATION_NAME_TAG = "independentNationName";
+    
+    /** The Constant INTERVENTION_BELLS_TAG. */
     private static final String INTERVENTION_BELLS_TAG = "interventionBells";
+    
+    /** The Constant NATION_ID_TAG. */
     private static final String NATION_ID_TAG = "nationId";
+    
+    /** The Constant NATION_TYPE_TAG. */
     private static final String NATION_TYPE_TAG = "nationType";
+    
+    /** The Constant NEW_LAND_NAME_TAG. */
     private static final String NEW_LAND_NAME_TAG = "newLandName";
+    
+    /** The Constant NUMBER_OF_SETTLEMENTS_TAG. */
     private static final String NUMBER_OF_SETTLEMENTS_TAG = "numberOfSettlements";
+    
+    /** The Constant OFFERED_FATHERS_TAG. */
     private static final String OFFERED_FATHERS_TAG = "offeredFathers";
+    
+    /** The Constant OLD_SOL_TAG. */
     private static final String OLD_SOL_TAG = "oldSoL";
+    
+    /** The Constant PLAYER_TAG. */
     private static final String PLAYER_TAG = "player";
+    
+    /** The Constant PLAYER_TYPE_TAG. */
     private static final String PLAYER_TYPE_TAG = "playerType";
+    
+    /** The Constant READY_TAG. */
     private static final String READY_TAG = "ready";
+    
+    /** The Constant SCORE_TAG. */
     private static final String SCORE_TAG = "score";
+    
+    /** The Constant STANCE_TAG. */
     private static final String STANCE_TAG = "stance";
+    
+    /** The Constant TAX_TAG. */
     private static final String TAX_TAG = "tax";
+    
+    /** The Constant TENSION_TAG. */
     private static final String TENSION_TAG = "tension";
+    
+    /** The Constant USERNAME_TAG. */
     private static final String USERNAME_TAG = "username";
+    
+    /** The Constant OLD_NATION_ID_TAG. */
     // @compat 0.10.7
     private static final String OLD_NATION_ID_TAG = "nationID";
     // end @compat

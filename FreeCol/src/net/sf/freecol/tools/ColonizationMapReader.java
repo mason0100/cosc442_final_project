@@ -23,6 +23,7 @@ import java.io.RandomAccessFile;
 import java.util.Arrays;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Just pass the name of a Colonization map file (with extension ".MP").
  *
@@ -58,9 +59,13 @@ import java.util.Arrays;
  */
 public class ColonizationMapReader {
 
+    /** The Constant WIDTH. */
     public static final int WIDTH = 0;
+    
+    /** The Constant HEIGHT. */
     public static final int HEIGHT = 2;
 
+    /** The Constant tiletypes. */
     private static final char[] tiletypes = {
         't', // 0x00 tundra
         'd', // 0x01 desert
@@ -100,11 +105,20 @@ public class ColonizationMapReader {
     };
 
 
+    /** The Constant header. */
     private static final byte[] header = {
         58, 0, 72, 0, 4, 0
     };
+    
+    /** The layer 1. */
     private static byte[] layer1;
 
+    /**
+     * The main method.
+     *
+     * @param args the arguments
+     * @throws Exception the exception
+     */
     public static void main(String[] args) throws Exception {
 
         if ("--palette".equals(args[0])) {

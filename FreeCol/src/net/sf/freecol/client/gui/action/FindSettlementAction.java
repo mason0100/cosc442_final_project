@@ -24,11 +24,13 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for finding a settlement on the map.
  */
 public class FindSettlementAction extends MapboardAction {
 
+    /** The Constant ID. */
     public static final String ID = "findSettlementAction";
 
 

@@ -32,6 +32,7 @@ import net.sf.freecol.client.gui.ImageLibrary;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A panel for adjusting the river style.
  *
@@ -40,11 +41,14 @@ import net.sf.freecol.common.resources.ResourceManager;
  */
 public final class RiverStyleDialog extends FreeColChoiceDialog<String> {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(RiverStyleDialog.class.getName());
 
+    /** The Constant DELETE. */
     public static final String DELETE = "DELETE";
 
+    /** The Constant PREFIX. */
     private static final String PREFIX = "image.tile.model.improvement.river";
 
 

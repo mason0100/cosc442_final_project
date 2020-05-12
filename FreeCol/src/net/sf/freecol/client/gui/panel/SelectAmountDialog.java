@@ -34,14 +34,17 @@ import net.sf.freecol.common.model.GoodsType;
 import net.sf.freecol.common.model.Player;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The panel that allows a choice of goods amount.
  */
 public final class SelectAmountDialog extends FreeColInputDialog<Integer> {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(SelectAmountDialog.class.getName());
 
+    /** The Constant SELECT_CANCEL. */
     private static final int SELECT_CANCEL = -1;
 
     /** The default amounts to try. */

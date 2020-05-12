@@ -30,17 +30,26 @@ import net.miginfocom.swing.MigLayout;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A dialog for choosing a map size.
  */
 public final class MapSizeDialog extends FreeColInputDialog<Dimension> {
 
+    /** The Constant COLUMNS. */
     private static final int COLUMNS = 5;
+    
+    /** The Constant DEFAULT_HEIGHT. */
     private static final int DEFAULT_HEIGHT = 100;
+    
+    /** The Constant DEFAULT_WIDTH. */
     private static final int DEFAULT_WIDTH = 40;
 
+    /** The input width. */
     private final JTextField inputWidth
         = new JTextField(Integer.toString(DEFAULT_WIDTH), COLUMNS);
+    
+    /** The input height. */
     private final JTextField inputHeight
         = new JTextField(Integer.toString(DEFAULT_HEIGHT), COLUMNS);
 

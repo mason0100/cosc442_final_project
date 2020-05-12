@@ -37,11 +37,13 @@ import net.sf.freecol.common.option.MapGeneratorOptions;
 import net.sf.freecol.common.option.OptionGroup;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The controller that will be used before the game starts.
  */
 public final class PreGameController {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(PreGameController.class.getName());
 
     /** The main client. */

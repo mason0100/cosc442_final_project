@@ -36,6 +36,7 @@ import net.sf.freecol.common.i18n.Messages;
 import net.sf.freecol.common.model.Player;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Custom component to paint turn progress.
  * <p>
@@ -44,11 +45,13 @@ import net.sf.freecol.common.model.Player;
  */
 public class GrayLayer extends Component {
 
-    /** Color for graying out background component */
+    /**  Color for graying out background component. */
     private static final Color MASK_COLOR = new Color(0f, 0f, 0f, .6f);
-    /** Default font size for message text */
+    
+    /**  Default font size for message text. */
     private static final int DEFAULT_FONT_SIZE = 18;
-    /** Font size decrement for message text to reduce length */
+    
+    /**  Font size decrement for message text to reduce length. */
     private static final int FONT_SIZE_DECREMENT = 2;
     /**
      * Maximum text width to show.  This is additional constraint to
@@ -56,9 +59,10 @@ public class GrayLayer extends Component {
      */
     private static final int MAX_TEXT_WIDTH = 640;
 
-    /** The client for this FreeCol game */
+    /**  The client for this FreeCol game. */
     private final FreeColClient freeColClient;
-    /** Player object or <code>null</code> */
+    
+    /**  Player object or <code>null</code>. */
     private Player player;
 
 

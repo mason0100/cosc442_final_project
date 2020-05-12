@@ -39,6 +39,7 @@ import net.sf.freecol.common.model.ResourceType;
 import net.sf.freecol.common.model.Specification;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays details of resources in the Colopedia.
  */

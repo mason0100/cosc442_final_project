@@ -29,11 +29,13 @@ import net.sf.freecol.FreeCol;
 import net.sf.freecol.common.model.Direction;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Scrolls the view of the Map by moving its focus.
  */
 public class ScrollThread extends Thread {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ScrollThread.class.getName());
 
     /** Delay between scroll steps. */

@@ -29,13 +29,17 @@ import net.sf.freecol.client.gui.panel.Utility;
 import net.sf.freecol.common.option.Option;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides a JSlider as visualization for an
  * {@link net.sf.freecol.common.option.IntegerOption} or one of its
  * subclasses.
+ *
+ * @param <T> the generic type
  */
 public class SliderOptionUI<T extends Option<Integer>> extends OptionUI<T>  {
 
+    /** The slider. */
     private final JSlider slider = new JSlider();
 
     /**

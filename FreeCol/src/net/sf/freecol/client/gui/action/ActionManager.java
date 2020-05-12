@@ -33,14 +33,17 @@ import net.sf.freecol.common.option.Option;
 import net.sf.freecol.common.option.OptionGroup;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Stores all <code>FreeColActions</code> and retrieves them by identifier.
  */
 public class ActionManager extends OptionGroup {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(ActionManager.class.getName());
 
+    /** The free col client. */
     private final FreeColClient freeColClient;
 
 

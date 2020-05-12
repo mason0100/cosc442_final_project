@@ -32,6 +32,7 @@ import net.sf.freecol.common.i18n.Number.Category;
 import net.sf.freecol.common.io.FreeColXMLReader;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * See the
  * <a href="http://cldr.unicode.org/index/cldr-spec/plural-rules">
@@ -39,6 +40,7 @@ import net.sf.freecol.common.io.FreeColXMLReader;
  */
 public class NumberRules {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(NumberRules.class.getName());
 
     /**
@@ -65,6 +67,7 @@ public class NumberRules {
     public static final Number ZERO_ONE_NUMBER_RULE = new ZeroOneNumberRule();
 
 
+    /** The Constant numberMap. */
     private static final Map<String, Number> numberMap = new HashMap<>();
 
 
@@ -92,11 +95,21 @@ public class NumberRules {
         return (number == null) ? OTHER_NUMBER_RULE : number;
     }
 
+    /**
+     * Checks if is initialized.
+     *
+     * @return true, if is initialized
+     */
     public static boolean isInitialized() {
         return !numberMap.isEmpty();
     }
 
 
+    /**
+     * Load.
+     *
+     * @param in the in
+     */
     public static void load(InputStream in) {
         try (
             FreeColXMLReader xr = new FreeColXMLReader(in);
@@ -111,15 +124,34 @@ public class NumberRules {
 
     // Serialization
 
+    /** The Constant COUNT_TAG. */
     private static final String COUNT_TAG = "count";
+    
+    /** The Constant GENERATION_TAG. */
     private static final String GENERATION_TAG = "generation";
+    
+    /** The Constant LOCALES_TAG. */
     private static final String LOCALES_TAG = "locales";
+    
+    /** The Constant PLURALS_TAG. */
     private static final String PLURALS_TAG = "plurals";
+    
+    /** The Constant PLURAL_RULE_TAG. */
     private static final String PLURAL_RULE_TAG = "pluralRule";
+    
+    /** The Constant PLURAL_RULES_TAG. */
     private static final String PLURAL_RULES_TAG = "pluralRules";
+    
+    /** The Constant VERSION_TAG. */
     private static final String VERSION_TAG = "version";
 
 
+    /**
+     * Read from XML.
+     *
+     * @param xr the xr
+     * @throws XMLStreamException the XML stream exception
+     */
     private static void readFromXML(FreeColXMLReader xr) throws XMLStreamException {
         while (xr.nextTag() != XMLStreamConstants.END_ELEMENT) {
             String tag = xr.getLocalName();
@@ -142,6 +174,12 @@ public class NumberRules {
         }
     }
 
+    /**
+     * Read child.
+     *
+     * @param xr the xr
+     * @throws XMLStreamException the XML stream exception
+     */
     private static void readChild(FreeColXMLReader xr) throws XMLStreamException {
         String loc = xr.getAttribute(LOCALES_TAG, (String)null);
         String[] locales = (loc == null) ? null : loc.split(" ");

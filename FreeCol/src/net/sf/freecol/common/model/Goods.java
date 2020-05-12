@@ -30,6 +30,7 @@ import net.sf.freecol.common.util.Utils;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents locatable goods of a specified type and amount. Use
  * AbstractGoods to represent abstract or potential goods that need
@@ -39,6 +40,7 @@ import org.w3c.dom.Element;
  */
 public class Goods extends AbstractGoods implements Locatable, Ownable {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Goods.class.getName());
 
     /** The game containing these goods. */
@@ -228,6 +230,7 @@ public class Goods extends AbstractGoods implements Locatable, Ownable {
 
     // Serialization
 
+    /** The Constant LOCATION_TAG. */
     private static final String LOCATION_TAG = "location";
 
 
@@ -264,7 +267,14 @@ public class Goods extends AbstractGoods implements Locatable, Ownable {
      *
      * @return "goods".
      */
+    static String goodsTag = "goods";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
-        return "goods";
+		return goodsTag;
     }
 }

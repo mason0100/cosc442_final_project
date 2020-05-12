@@ -30,6 +30,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The effect of a natural disaster or other event. How the
  * probability of the effect is interpreted depends on the number of
@@ -43,18 +44,31 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
  */
 public class Effect extends FreeColGameObjectType {
 
+    /** The Constant DAMAGED_UNIT. */
     public static final String DAMAGED_UNIT
         = "model.disaster.effect.damagedUnit";
+    
+    /** The Constant LOSS_OF_UNIT. */
     public static final String LOSS_OF_UNIT
         = "model.disaster.effect.lossOfUnit";
+    
+    /** The Constant LOSS_OF_MONEY. */
     public static final String LOSS_OF_MONEY
         = "model.disaster.effect.lossOfMoney";
+    
+    /** The Constant LOSS_OF_GOODS. */
     public static final String LOSS_OF_GOODS
         = "model.disaster.effect.lossOfGoods";
+    
+    /** The Constant LOSS_OF_TILE_PRODUCTION. */
     public static final String LOSS_OF_TILE_PRODUCTION
         = "model.disaster.effect.lossOfTileProduction";
+    
+    /** The Constant LOSS_OF_BUILDING. */
     public static final String LOSS_OF_BUILDING
         = "model.disaster.effect.lossOfBuilding";
+    
+    /** The Constant LOSS_OF_BUILDING_PRODUCTION. */
     public static final String LOSS_OF_BUILDING_PRODUCTION
         = "model.disaster.effect.lossOfBuildingProduction";
 
@@ -139,6 +153,7 @@ public class Effect extends FreeColGameObjectType {
 
     // Serialization
 
+    /** The Constant PROBABILITY_TAG. */
     private static final String PROBABILITY_TAG = "probability";
 
 
@@ -225,6 +240,12 @@ public class Effect extends FreeColGameObjectType {
      * @return "effect".
      */
     static String effectTag = "effect";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
 		return effectTag;
     }

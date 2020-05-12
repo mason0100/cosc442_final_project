@@ -29,6 +29,7 @@ import net.sf.freecol.common.model.Unit;
 import net.sf.freecol.common.model.UnitType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the Cargo Report.
  */
@@ -44,9 +45,15 @@ public final class ReportCargoPanel extends ReportUnitPanel {
     }
 
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.client.gui.panel.ReportUnitPanel#addREFUnits()
+     */
     @Override
     protected void addREFUnits() {}
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.client.gui.panel.ReportUnitPanel#addOwnUnits()
+     */
     @Override
     protected void addOwnUnits() {
         final Player player = getMyPlayer();
@@ -65,6 +72,9 @@ public final class ReportCargoPanel extends ReportUnitPanel {
         }
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.client.gui.panel.ReportUnitPanel#gatherData()
+     */
     @Override
     protected void gatherData() {
         for (Unit unit : getMyPlayer().getUnits()) {

@@ -27,6 +27,7 @@ import net.sf.freecol.common.io.FreeColDirectories;
 import net.sf.freecol.common.option.OptionGroup;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Dialog for changing the {@link net.sf.freecol.client.ClientOptions}.
  */

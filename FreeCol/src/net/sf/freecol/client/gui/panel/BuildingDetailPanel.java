@@ -54,6 +54,7 @@ import net.sf.freecol.common.model.StringTemplate;
 import net.sf.freecol.common.model.UnitType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays details of buildings in the Colopedia.
  */
@@ -255,6 +256,14 @@ public class BuildingDetailPanel
     }
 
 
+	/**
+	 * Building type.
+	 *
+	 * @param panel the panel
+	 * @param buildingType the building type
+	 * @param textPane the text pane
+	 * @param doc the doc
+	 */
 	private void buildingType(JPanel panel, BuildingType buildingType, JTextPane textPane, StyledDocument doc) {
 		try {
             if (buildingType.getUpgradesFrom() != null) {

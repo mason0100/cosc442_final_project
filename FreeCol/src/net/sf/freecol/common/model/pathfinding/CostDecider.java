@@ -24,6 +24,7 @@ import net.sf.freecol.common.model.Location;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Determines the cost of a single move.
  * Used by {@link net.sf.freecol.common.model.Map#findPath}
@@ -31,6 +32,7 @@ import net.sf.freecol.common.model.Unit;
  */
 public interface CostDecider {
 
+    /** The Constant ILLEGAL_MOVE. */
     public static final int ILLEGAL_MOVE = -1;
     
     /**

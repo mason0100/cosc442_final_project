@@ -24,11 +24,13 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action to show the Foreign Affairs report.
  */
 public class ReportForeignAction extends FreeColAction {
 
+    /** The Constant ID. */
     public static final String ID = "reportForeignAction";
 
 

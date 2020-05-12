@@ -21,12 +21,14 @@
 package net.sf.freecol.server.ai.goal;
 
 
+// TODO: Auto-generated Javadoc
 /**
 * Contains constants used by the Goal classes.
 * These constants are affecting AI behaviour.
 */
 public interface GoalConstants {
 
+    /** The Constant MAX_SEARCH_RADIUS. */
     //Maximum allowed radius for (omniscient) searches
     public static final int MAX_SEARCH_RADIUS = 8;
     

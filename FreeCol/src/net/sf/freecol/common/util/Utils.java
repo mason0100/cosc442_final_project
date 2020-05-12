@@ -36,11 +36,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Collection of small static helper methods.
  */
 public class Utils {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Utils.class.getName());
 
     /** Hex constant digits for get/restoreRandomState. */
@@ -50,6 +52,7 @@ public class Utils {
     /**
      * Check if two objects are equal but also checks for null.
      *
+     * @param <T> the generic type
      * @param one First object to compare
      * @param two Second object to compare
      * @return True if the arguments are either both null or equal in the
@@ -74,6 +77,7 @@ public class Utils {
      * string.  It would have been more convenient to simply return
      * the current seed, but unfortunately it is private.
      *
+     * @param random the random
      * @return A <code>String</code> encapsulating the object state.
      */
     public static synchronized String getRandomState(Random random) {

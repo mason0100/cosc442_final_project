@@ -25,40 +25,98 @@ import java.util.Random;
 import java.util.Set;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A abstract requirements for a FreeCol combat model.
  */
 public abstract class CombatModel {
 
+    /**
+     * The Enum CombatResult.
+     */
     public enum CombatResult {
+        
+        /** The no result. */
         // Special results that set the sense of the result.
         NO_RESULT,
+        
+        /** The lose. */
         LOSE,
+        
+        /** The win. */
         WIN,
+        
+        /** The autoequip unit. */
         // Specific actions
-        AUTOEQUIP_UNIT,       // Defending unit auto-arms
-        BURN_MISSIONS,        // Defending natives burn attackers missions
-        CAPTURE_AUTOEQUIP,    // Winner captures loser auto-equipment
-        CAPTURE_COLONY,       // Winning Europeans capture a colony
-        CAPTURE_CONVERT,      // Winning Europeans cause native to convert
-        CAPTURE_EQUIP,        // Winner captures loser equipment
-        CAPTURE_UNIT,         // Losing unit is captured
-        DAMAGE_COLONY_SHIPS,  // Ships in losing colony are damaged
-        DAMAGE_SHIP_ATTACK,   // Losing ship is damaged by normal attack
-        DAMAGE_SHIP_BOMBARD,  // Losing ship is damaged by bombardment
-        DEMOTE_UNIT,          // Losing unit is demoted
-        DESTROY_COLONY,       // Winning natives burn a colony
-        DESTROY_SETTLEMENT,   // Winner destroys a native settlement
-        EVADE_ATTACK,         // Defending ship evades normal attack
-        EVADE_BOMBARD,        // Defending ship evades bombardment
-        LOOT_SHIP,            // Losing ship is looted
-        LOSE_AUTOEQUIP,       // Losing unit auto-arms and loses the arms
-        LOSE_EQUIP,           // Losing unit loses some equipment
-        PILLAGE_COLONY,       // Winning natives pillage an undefended colony
-        PROMOTE_UNIT,         // Winning unit is promoted
-        SINK_COLONY_SHIPS,    // Ships in losing colony are sunk
-        SINK_SHIP_ATTACK,     // Losing ship is sunk by normal attack
-        SINK_SHIP_BOMBARD,    // Losing ship is sunk by bombardment
+        AUTOEQUIP_UNIT,       
+       /** The burn missions. */
+       // Defending unit auto-arms
+        BURN_MISSIONS,        
+        /** The capture autoequip. */
+        // Defending natives burn attackers missions
+        CAPTURE_AUTOEQUIP,    
+    /** The capture colony. */
+    // Winner captures loser auto-equipment
+        CAPTURE_COLONY,       
+       /** The capture convert. */
+       // Winning Europeans capture a colony
+        CAPTURE_CONVERT,      
+      /** The capture equip. */
+      // Winning Europeans cause native to convert
+        CAPTURE_EQUIP,        
+        /** The capture unit. */
+        // Winner captures loser equipment
+        CAPTURE_UNIT,         
+         /** The damage colony ships. */
+         // Losing unit is captured
+        DAMAGE_COLONY_SHIPS,  
+  /** The damage ship attack. */
+  // Ships in losing colony are damaged
+        DAMAGE_SHIP_ATTACK,   
+   /** The damage ship bombard. */
+   // Losing ship is damaged by normal attack
+        DAMAGE_SHIP_BOMBARD,  
+  /** The demote unit. */
+  // Losing ship is damaged by bombardment
+        DEMOTE_UNIT,          
+          /** The destroy colony. */
+          // Losing unit is demoted
+        DESTROY_COLONY,       
+       /** The destroy settlement. */
+       // Winning natives burn a colony
+        DESTROY_SETTLEMENT,   
+   /** The evade attack. */
+   // Winner destroys a native settlement
+        EVADE_ATTACK,         
+         /** The evade bombard. */
+         // Defending ship evades normal attack
+        EVADE_BOMBARD,        
+        /** The loot ship. */
+        // Defending ship evades bombardment
+        LOOT_SHIP,            
+            /** The lose autoequip. */
+            // Losing ship is looted
+        LOSE_AUTOEQUIP,       
+       /** The lose equip. */
+       // Losing unit auto-arms and loses the arms
+        LOSE_EQUIP,           
+           /** The pillage colony. */
+           // Losing unit loses some equipment
+        PILLAGE_COLONY,       
+       /** The promote unit. */
+       // Winning natives pillage an undefended colony
+        PROMOTE_UNIT,         
+         /** The sink colony ships. */
+         // Winning unit is promoted
+        SINK_COLONY_SHIPS,    
+    /** The sink ship attack. */
+    // Ships in losing colony are sunk
+        SINK_SHIP_ATTACK,     
+     /** The sink ship bombard. */
+     // Losing ship is sunk by normal attack
+        SINK_SHIP_BOMBARD,    
+    /** The slaughter unit. */
+    // Losing ship is sunk by bombardment
         SLAUGHTER_UNIT,       // Losing unit is slaughtered
     }
 
@@ -67,10 +125,18 @@ public abstract class CombatModel {
      * Odds a particular outcome will occur in combat.
      */
     public static class CombatOdds {
+        
+        /** The Constant UNKNOWN_ODDS. */
         public static final double UNKNOWN_ODDS = -1.0;
 
+        /** The win. */
         public final double win;
 
+        /**
+         * Instantiates a new combat odds.
+         *
+         * @param win the win
+         */
         public CombatOdds(double win) {
             this.win = win;
         }
@@ -84,7 +150,7 @@ public abstract class CombatModel {
 
 
     /**
-     * Is this just a measurement of offence power?
+     * Is this just a measurement of offence power?.
      *
      * @param attacker The attacker.
      * @param defender The defender.
@@ -96,7 +162,7 @@ public abstract class CombatModel {
     }
 
     /**
-     * Is this just a measurement of defence power?
+     * Is this just a measurement of defence power?.
      *
      * @param attacker The attacker.
      * @param defender The defender.
@@ -108,7 +174,7 @@ public abstract class CombatModel {
     }
 
     /**
-     * Is this combat a normal attack?
+     * Is this combat a normal attack?.
      *
      * @param attacker The attacker.
      * @param defender The defender.
@@ -135,7 +201,7 @@ public abstract class CombatModel {
     }
 
     /**
-     * Is this combat a bombardment?
+     * Is this combat a bombardment?.
      *
      * @param attacker The attacker.
      * @param defender The defender.
@@ -148,7 +214,7 @@ public abstract class CombatModel {
     }
 
     /**
-     * Could this attack be an amphibious operation?
+     * Could this attack be an amphibious operation?.
      *
      * @param attacker The attacker.
      * @param defender The defender.
@@ -165,8 +231,10 @@ public abstract class CombatModel {
     }
 
     /**
-     * Is this a combat between a rebel player and the REF at a colony?
+     * Is this a combat between a rebel player and the REF at a colony?.
      *
+     * @param attacker the attacker
+     * @param defender the defender
      * @return True if the attack is a war of independence battle for a colony.
      */
     public boolean combatIsWarOfIndependence(FreeColGameObject attacker,

@@ -53,11 +53,13 @@ import net.sf.freecol.common.model.Unit;
 import net.sf.freecol.common.model.UnitType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the Advanced Colony Report.
  */
 public final class ReportRequirementsPanel extends ReportPanel {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ReportRequirementsPanel.class.getName());
 
     /**
@@ -116,6 +118,12 @@ public final class ReportRequirementsPanel extends ReportPanel {
         textPane.setCaretPosition(0);
     }
 
+    /**
+     * Check colony.
+     *
+     * @param colony the colony
+     * @param doc the doc
+     */
     private void checkColony(Colony colony, StyledDocument doc) {
         final Specification spec = getSpecification();
 
@@ -216,6 +224,14 @@ public final class ReportRequirementsPanel extends ReportPanel {
         }
     }
 
+    /**
+     * Adds the tile warning.
+     *
+     * @param doc the doc
+     * @param colony the colony
+     * @param messageId the message id
+     * @param tile the tile
+     */
     private void addTileWarning(StyledDocument doc, Colony colony,
                                 String messageId, Tile tile) {
         if (messageId == null || !Messages.containsKey(messageId)) return;
@@ -230,6 +246,14 @@ public final class ReportRequirementsPanel extends ReportPanel {
         }
     }
 
+    /**
+     * Adds the bad assignment warning.
+     *
+     * @param doc the doc
+     * @param colony the colony
+     * @param expert the expert
+     * @param nonExpert the non expert
+     */
     private void addBadAssignmentWarning(StyledDocument doc, Colony colony,
                                          Unit expert, Unit nonExpert) {
         GoodsType expertGoods = expert.getWorkType();
@@ -254,6 +278,14 @@ public final class ReportRequirementsPanel extends ReportPanel {
         }
     }
 
+    /**
+     * Adds the expert warning.
+     *
+     * @param doc the doc
+     * @param c the c
+     * @param goodsType the goods type
+     * @param workType the work type
+     */
     private void addExpertWarning(StyledDocument doc, Colony c,
                                   GoodsType goodsType, UnitType workType) {
         String newMessage = Messages.message(StringTemplate
@@ -322,6 +354,13 @@ public final class ReportRequirementsPanel extends ReportPanel {
 
     }
 
+    /**
+     * Insert colony buttons.
+     *
+     * @param doc the doc
+     * @param colonies the colonies
+     * @throws Exception the exception
+     */
     private void insertColonyButtons(StyledDocument doc, List<Colony> colonies) throws Exception {
         for (Colony colony : colonies) {
             StyleConstants.setComponent(doc.getStyle("button"), createColonyButton(colony, false));
@@ -331,6 +370,14 @@ public final class ReportRequirementsPanel extends ReportPanel {
         doc.remove(doc.getLength() - 2, 2);
     }
 
+    /**
+     * Adds the production warning.
+     *
+     * @param doc the doc
+     * @param colony the colony
+     * @param output the output
+     * @param input the input
+     */
     private void addProductionWarning(StyledDocument doc, Colony colony,
                                       GoodsType output, GoodsType input) {
         String colonyName = colony.getName();
@@ -381,10 +428,25 @@ public final class ReportRequirementsPanel extends ReportPanel {
 
     }
 
+    /**
+     * Creates the colony button.
+     *
+     * @param colony the colony
+     * @param headline the headline
+     * @return the j button
+     */
     private JButton createColonyButton(Colony colony, boolean headline) {
         return createColonyButton(colony, "", headline);
     }
 
+    /**
+     * Creates the colony button.
+     *
+     * @param colony the colony
+     * @param info the info
+     * @param headline the headline
+     * @return the j button
+     */
     private JButton createColonyButton(Colony colony, String info, boolean headline) {
         String text = colony.getName() + info;
         JButton button = Utility.getLinkButton(text, null, colony.getId());

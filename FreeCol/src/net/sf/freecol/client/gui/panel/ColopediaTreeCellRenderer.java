@@ -30,6 +30,7 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This TreeCellRenderer is responsible for rendering tree items in
  * the Colopedia.

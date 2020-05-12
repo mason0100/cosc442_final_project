@@ -26,6 +26,7 @@ import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A trade item consisting of just some gold.
  */
@@ -142,6 +143,7 @@ public class GoldTradeItem extends TradeItem {
 
     // Serialization
 
+    /** The Constant GOLD_TAG. */
     private static final String GOLD_TAG = "gold";
 
 

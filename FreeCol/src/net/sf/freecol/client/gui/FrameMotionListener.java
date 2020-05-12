@@ -29,20 +29,33 @@ import javax.swing.JInternalFrame;
 import javax.swing.SwingUtilities;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The mouse adapter to handle frame movement.
+ *
+ * @see FrameMotionEvent
  */
 public class FrameMotionListener extends MouseAdapter implements MouseMotionListener {
 
+    /** The f. */
     private final JInternalFrame f;
 
+    /** The loc. */
     private Point loc = null;
 
 
+    /**
+     * Instantiates a new frame motion listener.
+     *
+     * @param f the f
+     */
     FrameMotionListener(JInternalFrame f) {
         this.f = f;
     }
 
+    /* (non-Javadoc)
+     * @see java.awt.event.MouseAdapter#mouseDragged(java.awt.event.MouseEvent)
+     */
     @Override
     public void mouseDragged(MouseEvent e) {
         if (loc == null || f.getDesktopPane() == null || f.getDesktopPane().getDesktopManager() == null) {
@@ -60,6 +73,9 @@ public class FrameMotionListener extends MouseAdapter implements MouseMotionList
     //public void mouseMoved(MouseEvent arg0) {
     //}
 
+    /* (non-Javadoc)
+     * @see java.awt.event.MouseAdapter#mousePressed(java.awt.event.MouseEvent)
+     */
     @Override
     public void mousePressed(MouseEvent e) {
         if (f.getDesktopPane() == null || f.getDesktopPane().getDesktopManager() == null) {
@@ -69,6 +85,9 @@ public class FrameMotionListener extends MouseAdapter implements MouseMotionList
         f.getDesktopPane().getDesktopManager().beginDraggingFrame(f);
     }
 
+    /* (non-Javadoc)
+     * @see java.awt.event.MouseAdapter#mouseReleased(java.awt.event.MouseEvent)
+     */
     @Override
     public void mouseReleased(MouseEvent e) {
         if (loc == null || f.getDesktopPane() == null || f.getDesktopPane().getDesktopManager() == null) {

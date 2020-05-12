@@ -36,17 +36,19 @@ import net.sf.freecol.common.model.StringTemplate;
 import net.sf.freecol.common.model.UnitType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The panel that allows a user to recruit people in Europe.
  */
 public final class RecruitPanel extends FreeColPanel {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(RecruitPanel.class.getName());
 
     /** The array of recruitable units. */
     private final JButton[] person;
 
-    /** Is there at least one recruitable unit? */
+    /**  Is there at least one recruitable unit?. */
     private boolean shouldEnable = false;
 
 

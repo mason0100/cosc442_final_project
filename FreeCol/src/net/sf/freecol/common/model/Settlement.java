@@ -33,6 +33,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The super class of all settlements on the map (that is colonies and
  * indian settlements).
@@ -40,8 +41,10 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 public abstract class Settlement extends GoodsLocation
     implements Nameable, Ownable {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Settlement.class.getName());
 
+    /** The Constant FOOD_PER_COLONIST. */
     public static final int FOOD_PER_COLONIST = 200;
 
     /** The <code>Player</code> owning this <code>Settlement</code>. */
@@ -113,7 +116,7 @@ public abstract class Settlement extends GoodsLocation
     }
 
     /**
-     * Is this settlement landlocked?
+     * Is this settlement landlocked?.
      *
      * @return True if no adjacent tiles are water.
      */
@@ -133,7 +136,7 @@ public abstract class Settlement extends GoodsLocation
     }
 
     /**
-     * Is this a national capital?
+     * Is this a national capital?.
      *
      * @return True if this is a national capital.
      */
@@ -141,6 +144,11 @@ public abstract class Settlement extends GoodsLocation
         return getType().isCapital();
     }
 
+    /**
+     * Sets the capital.
+     *
+     * @param capital the new capital
+     */
     public void setCapital(boolean capital) {
         if (isCapital() != capital) {
             changeType(owner.getNationType().getSettlementType(capital));
@@ -397,7 +405,7 @@ public abstract class Settlement extends GoodsLocation
 
     /**
      * Can this settlement provide the goods to improve a given unit's
-     * role?
+     * role?.
      *
      * @param unit The <code>Unit</code> to check.
      * @return The <code>Role</code> that this settlement could provide.
@@ -643,7 +651,7 @@ public abstract class Settlement extends GoodsLocation
     public abstract double getDefenceRatio();
 
     /**
-     * Is this settlement insufficiently defended?
+     * Is this settlement insufficiently defended?.
      *
      * @return True if this settlement needs more defence.
      */
@@ -705,9 +713,16 @@ public abstract class Settlement extends GoodsLocation
 
     // Serialization
 
+    /** The Constant NAME_TAG. */
     private static final String NAME_TAG = "name";
+    
+    /** The Constant OWNER_TAG. */
     private static final String OWNER_TAG = "owner";
+    
+    /** The Constant SETTLEMENT_TYPE_TAG. */
     private static final String SETTLEMENT_TYPE_TAG = "settlementType";
+    
+    /** The Constant TILE_TAG. */
     private static final String TILE_TAG = "tile";
 
 

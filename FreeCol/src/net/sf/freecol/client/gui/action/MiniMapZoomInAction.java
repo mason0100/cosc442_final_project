@@ -24,11 +24,13 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for zooming in on the minimap.
  */
 public class MiniMapZoomInAction extends MapboardAction {
 
+    /** The Constant ID. */
     public static final String ID = "miniMapZoomInAction";
 
 

@@ -24,12 +24,14 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for changing view mode between move units mode and view terrain
  * mode.
  */
 public class ToggleViewModeAction extends MapboardAction {
 
+    /** The Constant ID. */
     public static final String ID = "toggleViewModeAction";
 
 

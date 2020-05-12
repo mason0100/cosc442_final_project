@@ -24,11 +24,13 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for prompting the user to save before quitting the game.
  */
 public class SaveAndQuitAction extends FreeColAction {
 
+    /** The Constant ID. */
     public static final String ID = "saveAndQuitAction";
 
 

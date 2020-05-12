@@ -29,21 +29,26 @@ import net.sf.freecol.common.model.AbstractGoods;
 import net.sf.freecol.common.model.GoodsType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This label represents AbstractGoods.
  */
 public class AbstractGoodsLabel extends JLabel {
 
+    /** The abstract goods. */
     private final AbstractGoods abstractGoods;
 
+    /** The partial chosen. */
     private boolean partialChosen = false;
 
+    /** The full chosen. */
     private boolean fullChosen = false;
 
 
     /**
      * Initializes this JLabel with the given goods data.
      *
+     * @param lib the lib
      * @param abstractGoods The <code>AbstractGoods</code> that this JLabel
      *     will visually represent.
      */
@@ -57,7 +62,7 @@ public class AbstractGoodsLabel extends JLabel {
 
 
     /**
-     * Has a partial amount been selected?
+     * Has a partial amount been selected?.
      *
      * @return True if a partial amount has been selected.
      */
@@ -75,7 +80,7 @@ public class AbstractGoodsLabel extends JLabel {
     }
 
     /**
-     * Has full amount been selected?
+     * Has full amount been selected?.
      *
      * @return True if a full amount has been selected.
      */

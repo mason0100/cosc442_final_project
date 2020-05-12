@@ -25,11 +25,15 @@ import java.awt.event.WindowListener;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The WindowListener for the WindowedFrame class.
+ *
+ * @see WindowedFrameEvent
  */
 public final class WindowedFrameListener implements WindowListener {
 
+    /** The free col client. */
     private final FreeColClient freeColClient;
 
     /**

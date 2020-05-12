@@ -33,6 +33,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.util.RandomChoice;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents one of the native nations present in the game.
  */
@@ -57,7 +58,7 @@ public class IndianNationType extends NationType {
 
 
     /**
-     * Is this a European nation type?
+     * Is this a European nation type?.
      *
      * @return False.
      */
@@ -67,7 +68,7 @@ public class IndianNationType extends NationType {
     }
 
     /**
-     * Is this a native nation type?
+     * Is this a native nation type?.
      *
      * @return True.
      */
@@ -77,7 +78,7 @@ public class IndianNationType extends NationType {
     }
 
     /**
-     * Is this a REF nation type?
+     * Is this a REF nation type?.
      *
      * @return False.
      */
@@ -117,39 +118,16 @@ public class IndianNationType extends NationType {
     }
 
     /**
-     * Can this Nation can settle the given Tile?
+     * Can this Nation can settle the given Tile?.
      *
-     * @param tile a <code>Tile</code> value
      * @return a <code>boolean</code> value
      */
-    /*
-    public boolean canSettleTile(Tile tile) {
-        if (tile.getType().canSettle()) {
-            return canSettleRegion(tile.getRegion());
-        } else {
-            return false;
-        }
-    }
-    */
     /**
      * Can this Nation can settle the given Region?
      *
      * @param region a <code>Region</code> value
      * @return a <code>boolean</code> value
      */
-    /*
-    public boolean canSettleRegion(Region region) {
-        if (regions.isEmpty()) {
-            return true;
-        } else if (regions.contains(region.getId())) {
-            return true;
-        } else if (region.getParent() == null) {
-            return false;
-        } else {
-            return canSettleRegion(region.getParent());
-        }
-    }
-    */
 
     /**
      * Gets a list of this Nation's skills.
@@ -181,10 +159,10 @@ public class IndianNationType extends NationType {
      * @return A random choice set of skills.
      */
     public List<RandomChoice<UnitType>> generateSkillsForTile(Tile tile) {
-        List<RandomChoice<UnitType>> skills = getSkills();
+        List<RandomChoice<UnitType>> skillsGet = getSkills();
         Map<GoodsType, Integer> scale = new HashMap<>();
 
-        for (RandomChoice<UnitType> skill : skills) {
+        for (RandomChoice<UnitType> skill : skillsGet) {
             scale.put(skill.getObject().getExpertProduction(), 1);
         }
 
@@ -197,7 +175,7 @@ public class IndianNationType extends NationType {
         }
 
         List<RandomChoice<UnitType>> scaledSkills = new ArrayList<>();
-        for (RandomChoice<UnitType> skill : skills) {
+        for (RandomChoice<UnitType> skill : skillsGet) {
             UnitType unitType = skill.getObject();
             int scaleValue = scale.get(unitType.getExpertProduction());
             scaledSkills.add(new RandomChoice<>(unitType,
@@ -210,7 +188,10 @@ public class IndianNationType extends NationType {
 
     // Serialization
 
+    /** The Constant PROBABILITY_TAG. */
     private static final String PROBABILITY_TAG = "probability";
+    
+    /** The Constant SKILL_TAG. */
     private static final String SKILL_TAG = "skill";
 
 
@@ -303,7 +284,14 @@ public class IndianNationType extends NationType {
      *
      * @return "indian-nation-type".
      */
+    static String indianNationTag = "indian-nation-type";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
-        return "indian-nation-type";
+		return indianNationTag;
     }
 }

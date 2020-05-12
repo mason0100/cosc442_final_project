@@ -26,17 +26,26 @@ import java.util.logging.Logger;
 import net.sf.freecol.common.model.Colony.ColonyChangeEvent;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Helper container to remember a colony state prior to some
  * change, and fire off any consequent property changes.
  */
 public class ColonyWas {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ColonyWas.class.getName());
 
+    /** The colony. */
     private final Colony colony;
+    
+    /** The population. */
     private final int population;
+    
+    /** The production bonus. */
     private final int productionBonus;
+    
+    /** The build queue. */
     private final List<BuildableType> buildQueue;
 
 

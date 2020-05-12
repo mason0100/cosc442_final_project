@@ -34,11 +34,13 @@ import net.sf.freecol.common.model.Specification;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Option for selecting an audio mixer.
  */
 public class AudioMixerOption extends AbstractOption<AudioMixerOption.MixerWrapper> {
 
+    /** The logger. */
     @SuppressWarnings("unused")
     private static Logger logger = Logger.getLogger(AudioMixerOption.class.getName());
 
@@ -55,26 +57,48 @@ public class AudioMixerOption extends AbstractOption<AudioMixerOption.MixerWrapp
         private final Mixer.Info mixerInfo;
 
 
+        /**
+         * Instantiates a new mixer wrapper.
+         *
+         * @param name the name
+         * @param mixerInfo the mixer info
+         */
         public MixerWrapper(String name, Mixer.Info mixerInfo) {
             this.name = name;
             this.mixerInfo = mixerInfo;
         }
 
+        /**
+         * Gets the key.
+         *
+         * @return the key
+         */
         public String getKey() {
             return name;
         }
 
+        /**
+         * Gets the mixer info.
+         *
+         * @return the mixer info
+         */
         public Mixer.Info getMixerInfo() {
             return mixerInfo;
         }
 
         // Implement Comparable<MixerWrapper>
 
+        /* (non-Javadoc)
+         * @see java.lang.Comparable#compareTo(java.lang.Object)
+         */
         @Override
         public int compareTo(MixerWrapper mw) {
             return getKey().compareTo(mw.getKey());
         }
 
+        /* (non-Javadoc)
+         * @see java.lang.Object#equals(java.lang.Object)
+         */
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
@@ -84,18 +108,24 @@ public class AudioMixerOption extends AbstractOption<AudioMixerOption.MixerWrapp
             return false;
         }
 
+        /* (non-Javadoc)
+         * @see java.lang.Object#hashCode()
+         */
         @Override
         public int hashCode() {
             return getKey().hashCode();
         }
 
+        /* (non-Javadoc)
+         * @see java.lang.Object#toString()
+         */
         @Override
         public String toString() {
             return name;
         }
     }
 
-    /** Autodetect the mixer? */
+    /**  Autodetect the mixer?. */
     public static final String AUTO_NAME
         = Messages.message("clientOptions.audio.audioMixer.automatic");
 

@@ -37,6 +37,7 @@ import net.sf.freecol.server.ai.AIPlayer;
 import net.sf.freecol.server.ai.AIUnit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A Goal is used to encapsulate a specific part of the
  * decision-making process of an AI.
@@ -55,18 +56,29 @@ import net.sf.freecol.server.ai.AIUnit;
  */
 public abstract class Goal extends AIObject implements GoalConstants {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Goal.class.getName());
 
+    /** The relative weight. */
     private float relativeWeight;
+    
+    /** The needs planning. */
     protected boolean needsPlanning;
+    
+    /** The is finished. */
     protected boolean isFinished;
+    
+    /** The available units list. */
     protected final List<AIUnit> availableUnitsList;
 
+    /** The player. */
     protected final AIPlayer player;
+    
+    /** The parent goal. */
     private final Goal parentGoal;
 
     /**
-     * Standard constructor
+     * Standard constructor.
      *
      * @param p The {@link AIPlayer} this goal belongs to
      * @param g The parent goal; may be null if we're a direct goal of the AIPlayer

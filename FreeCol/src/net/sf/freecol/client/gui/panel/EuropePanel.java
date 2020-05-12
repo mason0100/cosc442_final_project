@@ -64,12 +64,14 @@ import net.sf.freecol.common.model.TransactionListener;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This is a panel for the Europe display.  It shows the ships in Europe and
  * allows the user to send them back.
  */
 public final class EuropePanel extends PortPanel {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(EuropePanel.class.getName());
 
     /**
@@ -78,11 +80,14 @@ public final class EuropePanel extends PortPanel {
      */
     private final class DestinationPanel extends JPanel implements DropTarget {
 
+        /** The destination. */
         private Location destination;
 
 
         /**
          * Initialize this DestinationPanel.
+         *
+         * @param destination the destination
          */
         public void initialize(Location destination) {
             this.destination = destination;
@@ -219,6 +224,9 @@ public final class EuropePanel extends PortPanel {
      */
     public final class DocksPanel extends UnitPanel implements DropTarget {
 
+        /**
+         * Instantiates a new docks panel.
+         */
         public DocksPanel() {
             super(EuropePanel.this, "Europe - docks", true);
 
@@ -226,11 +234,17 @@ public final class EuropePanel extends PortPanel {
         }
 
 
+        /* (non-Javadoc)
+         * @see net.sf.freecol.client.gui.panel.UnitPanel#addPropertyChangeListeners()
+         */
         @Override
         public void addPropertyChangeListeners() {
             europe.addPropertyChangeListener(this);
         }
 
+        /* (non-Javadoc)
+         * @see net.sf.freecol.client.gui.panel.UnitPanel#removePropertyChangeListeners()
+         */
         @Override
         public void removePropertyChangeListeners() {
             europe.removePropertyChangeListener(this);
@@ -279,8 +293,19 @@ public final class EuropePanel extends PortPanel {
         }
     }
 
+    /**
+     * The Class EuropeButton.
+     */
     private static final class EuropeButton extends JButton {
 
+        /**
+         * Instantiates a new europe button.
+         *
+         * @param text the text
+         * @param keyEvent the key event
+         * @param command the command
+         * @param listener the listener
+         */
         public EuropeButton(String text, int keyEvent, String command,
                             ActionListener listener) {
             setOpaque(true);
@@ -304,6 +329,9 @@ public final class EuropePanel extends PortPanel {
      */
     private final class EuropeInPortPanel extends InPortPanel {
 
+        /**
+         * Instantiates a new europe in port panel.
+         */
         public EuropeInPortPanel() {
             super(EuropePanel.this, "Europe - port", true);
         }
@@ -458,7 +486,7 @@ public final class EuropePanel extends PortPanel {
     }
 
     /**
-     * To log transactions made in Europe
+     * To log transactions made in Europe.
      */
     private final class TransactionLog extends JTextPane
         implements TransactionListener {
@@ -547,32 +575,64 @@ public final class EuropePanel extends PortPanel {
     }
 
 
+    /**
+     * The Enum EuropeAction.
+     */
     public enum EuropeAction {
+        
+        /** The exit. */
         EXIT,
+        
+        /** The recruit. */
         RECRUIT,
+        
+        /** The purchase. */
         PURCHASE,
+        
+        /** The train. */
         TRAIN,
+        
+        /** The unload. */
         UNLOAD,
+        
+        /** The sail. */
         SAIL
     }
 
+    /** The to america panel. */
     private DestinationPanel toAmericaPanel;
 
+    /** The to europe panel. */
     private DestinationPanel toEuropePanel;
 
+    /** The docks panel. */
     private DocksPanel docksPanel;
 
+    /** The market panel. */
     private MarketPanel marketPanel;
 
+    /** The log. */
     private TransactionLog log;
 
+    /** The exit button. */
     private JButton exitButton;
+    
+    /** The train button. */
     private JButton trainButton;
+    
+    /** The purchase button. */
     private JButton purchaseButton;
+    
+    /** The recruit button. */
     private JButton recruitButton;
+    
+    /** The unload button. */
     private JButton unloadButton;
+    
+    /** The sail button. */
     private JButton sailButton;
 
+    /** The europe. */
     private final Europe europe;
 
 

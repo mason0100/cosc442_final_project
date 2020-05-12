@@ -31,6 +31,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.util.Utils;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The <code>StringTemplate</code> represents a non-localized string
  * that can be localized by looking up its value in a message bundle
@@ -54,7 +55,15 @@ public class StringTemplate extends FreeColObject {
      * value of the key, or LABEL, a separator string that will be
      * used to join the replacement values.
      */
-    public static enum TemplateType { NAME, KEY, TEMPLATE, LABEL }
+    public static enum TemplateType { 
+ /** The name. */
+ NAME, 
+ /** The key. */
+ KEY, 
+ /** The template. */
+ TEMPLATE, 
+ /** The label. */
+ LABEL }
 
     /** The TemplateType of this StringTemplate. Defaults to KEY. */
     private TemplateType templateType = TemplateType.KEY;
@@ -120,10 +129,23 @@ public class StringTemplate extends FreeColObject {
 
     // Factory methods
 
+    /**
+     * Copy.
+     *
+     * @param id the id
+     * @param template the template
+     * @return the string template
+     */
     public static StringTemplate copy(String id, StringTemplate template) {
         return new StringTemplate(id, template);
     }
 
+    /**
+     * Name.
+     *
+     * @param value the value
+     * @return the string template
+     */
     public static StringTemplate name(String value) {
         if (value == null) {
             logger.warning("NULL NAME TEMPLATE\n" + net.sf.freecol.common.debug.FreeColDebugger.stackTraceToString());
@@ -131,22 +153,52 @@ public class StringTemplate extends FreeColObject {
         return new StringTemplate(value, null, TemplateType.NAME);
     }
 
+    /**
+     * Key.
+     *
+     * @param named the named
+     * @return the string template
+     */
     public static StringTemplate key(Named named) {
         return key(named.getNameKey());
     }
 
+    /**
+     * Key.
+     *
+     * @param value the value
+     * @return the string template
+     */
     public static StringTemplate key(String value) {
         return new StringTemplate(value, null, TemplateType.KEY);
     }
 
+    /**
+     * Template.
+     *
+     * @param named the named
+     * @return the string template
+     */
     public static StringTemplate template(Named named) {
         return template(named.getNameKey());
     }
 
+    /**
+     * Template.
+     *
+     * @param value the value
+     * @return the string template
+     */
     public static StringTemplate template(String value) {
         return new StringTemplate(value, null, TemplateType.TEMPLATE);
     }
 
+    /**
+     * Label.
+     *
+     * @param value the value
+     * @return the string template
+     */
     public static StringTemplate label(String value) {
         return new StringTemplate(value, null, TemplateType.LABEL);
     }
@@ -474,8 +526,13 @@ public class StringTemplate extends FreeColObject {
 
     // Serialization
 
+    /** The Constant DEFAULT_ID_TAG. */
     private static final String DEFAULT_ID_TAG = "defaultId";
+    
+    /** The Constant KEY_TAG. */
     private static final String KEY_TAG = "key";
+    
+    /** The Constant TEMPLATE_TYPE_TAG. */
     private static final String TEMPLATE_TYPE_TAG = "templateType";
 
 

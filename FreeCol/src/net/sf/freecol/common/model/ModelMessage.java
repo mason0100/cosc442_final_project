@@ -34,6 +34,7 @@ import static net.sf.freecol.common.util.StringUtils.*;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Contains a message about a change in the model.
  */
@@ -42,32 +43,80 @@ public class ModelMessage extends StringTemplate {
     /** Constants describing the type of message. */
     public static enum MessageType implements Named {
 
+        /** The default. */
         DEFAULT(""),
+        
+        /** The warning. */
         WARNING("model.option.guiShowWarning"),
+        
+        /** The sons of liberty. */
         SONS_OF_LIBERTY("model.option.guiShowSonsOfLiberty"),
+        
+        /** The government efficiency. */
         GOVERNMENT_EFFICIENCY("model.option.guiShowGovernmentEfficiency"),
+        
+        /** The warehouse capacity. */
         WAREHOUSE_CAPACITY("model.option.guiShowWarehouseCapacity"),
+        
+        /** The unit improved. */
         UNIT_IMPROVED("model.option.guiShowUnitImproved"),
+        
+        /** The unit demoted. */
         UNIT_DEMOTED("model.option.guiShowUnitDemoted"),
+        
+        /** The unit lost. */
         UNIT_LOST("model.option.guiShowUnitLost"),
+        
+        /** The unit added. */
         UNIT_ADDED("model.option.guiShowUnitAdded"),
+        
+        /** The building completed. */
         BUILDING_COMPLETED("model.option.guiShowBuildingCompleted"),
+        
+        /** The foreign diplomacy. */
         FOREIGN_DIPLOMACY("model.option.guiShowForeignDiplomacy"),
+        
+        /** The market prices. */
         MARKET_PRICES("model.option.guiShowMarketPrices"),
-        LOST_CITY_RUMOUR(null), // Displayed during the turn
+        
+        /** The lost city rumour. */
+        LOST_CITY_RUMOUR(null), 
+ /** The missing goods. */
+ // Displayed during the turn
         MISSING_GOODS("model.option.guiShowMissingGoods"),
+        
+        /** The tutorial. */
         TUTORIAL("model.option.guiShowTutorial"),
-        COMBAT_RESULT(null), // No option, always display
+        
+        /** The combat result. */
+        COMBAT_RESULT(null), 
+ /** The gift goods. */
+ // No option, always display
         GIFT_GOODS("model.option.guiShowGifts"),
+        
+        /** The demands. */
         DEMANDS("model.option.guiShowDemands"),
+        
+        /** The goods movement. */
         GOODS_MOVEMENT("model.option.guiShowGoodsMovement");
 
+        /** The option name. */
         private final String optionName;
 
+        /**
+         * Instantiates a new message type.
+         *
+         * @param optionName the option name
+         */
         MessageType(String optionName) {
             this.optionName = optionName;
         }
 
+        /**
+         * Gets the option name.
+         *
+         * @return the option name
+         */
         public String getOptionName() {
             return optionName;
         }
@@ -91,9 +140,16 @@ public class ModelMessage extends StringTemplate {
         }
     }
 
+    /** The source id. */
     private String sourceId;
+    
+    /** The display id. */
     private String displayId;
+    
+    /** The message type. */
     private MessageType messageType;
+    
+    /** The been displayed. */
     private boolean beenDisplayed = false;
 
 
@@ -269,7 +325,7 @@ public class ModelMessage extends StringTemplate {
     }
 
     /**
-     * Has this message been displayed?
+     * Has this message been displayed?.
      *
      * @return True if this message has been displayed.
      */
@@ -507,9 +563,16 @@ public class ModelMessage extends StringTemplate {
 
     // Serialization
 
+    /** The Constant DISPLAY_TAG. */
     private static final String DISPLAY_TAG = "display";
+    
+    /** The Constant HAS_BEEN_DISPLAYED_TAG. */
     private static final String HAS_BEEN_DISPLAYED_TAG = "hasBeenDisplayed";
+    
+    /** The Constant MESSAGE_TYPE_TAG. */
     private static final String MESSAGE_TYPE_TAG = "messageType";
+    
+    /** The Constant SOURCE_TAG. */
     private static final String SOURCE_TAG = "source";
 
 

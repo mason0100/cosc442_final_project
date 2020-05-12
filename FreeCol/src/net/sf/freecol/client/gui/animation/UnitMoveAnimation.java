@@ -31,24 +31,33 @@ import net.sf.freecol.common.model.Tile;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Class for the animation of units movement.
  */
 final class UnitMoveAnimation {
 
+    /** The Constant ANIMATION_DELAY. */
     /*
      * Display delay between one frame and another, in milliseconds.
      * 33ms == 30 fps
      */
     private static final int ANIMATION_DELAY = 33;
 
+    /** The free col client. */
     private final FreeColClient freeColClient;
+    
+    /** The unit. */
     private final Unit unit;
+    
+    /** The source tile. */
     private final Tile sourceTile;
+    
+    /** The destination tile. */
     private final Tile destinationTile;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param freeColClient The enclosing <code>FreeColClient</code>.
      * @param unit The <code>Unit</code> to be animated.

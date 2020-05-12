@@ -57,6 +57,7 @@ import net.sf.freecol.common.util.Utils;
 import javax.xml.stream.events.XMLEvent;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Defines how available client options are displayed on the Setting
  * dialog from File/Preferences Also contains several Comparators used
@@ -79,6 +80,7 @@ import javax.xml.stream.events.XMLEvent;
  */
 public class ClientOptions extends OptionGroup {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ClientOptions.class.getName());
 
     //
@@ -98,6 +100,8 @@ public class ClientOptions extends OptionGroup {
     /** Option for setting the language. */
     public static final String LANGUAGE
         = "model.option.languageOption";
+    
+    /** The Constant AUTOMATIC. */
     // Value for automatic language selection.
     public static final String AUTOMATIC
         = "clientOptions.gui.languageOption.autoDetectLanguage";
@@ -207,8 +211,12 @@ public class ClientOptions extends OptionGroup {
     /** Style of map controls. */
     public static final String MAP_CONTROLS
         = "model.option.mapControls";
+    
+    /** The Constant MAP_CONTROLS_CORNERS. */
     public static final String MAP_CONTROLS_CORNERS
         = "clientOptions.gui.mapControls.CornerMapControls";
+    
+    /** The Constant MAP_CONTROLS_CLASSIC. */
     public static final String MAP_CONTROLS_CLASSIC
         = "clientOptions.gui.mapControls.ClassicMapControls";
 
@@ -225,6 +233,8 @@ public class ClientOptions extends OptionGroup {
     /** What text to display in the tiles. */
     public static final String DISPLAY_TILE_TEXT
         = "model.option.displayTileText";
+    
+    /** The Constant DISPLAY_TILE_TEXT_REGIONS. */
     public static final int DISPLAY_TILE_TEXT_EMPTY = 0,
         DISPLAY_TILE_TEXT_NAMES = 1,
         DISPLAY_TILE_TEXT_OWNERS = 2,
@@ -233,13 +243,21 @@ public class ClientOptions extends OptionGroup {
     /** Style of colony labels. */
     public static final String COLONY_LABELS
         = "model.option.displayColonyLabels";
+    
+    /** The Constant COLONY_LABELS_NONE. */
     public static final int COLONY_LABELS_NONE = 0;
+    
+    /** The Constant COLONY_LABELS_CLASSIC. */
     public static final int COLONY_LABELS_CLASSIC = 1;
+    
+    /** The Constant COLONY_LABELS_MODERN. */
     public static final int COLONY_LABELS_MODERN = 2;
 
     /** Used by GUI to sort colonies. */
     public static final String COLONY_COMPARATOR
         = "model.option.colonyComparator";
+    
+    /** The Constant COLONY_COMPARATOR_SOL. */
     public static final int COLONY_COMPARATOR_NAME = 0,
         COLONY_COMPARATOR_AGE = 1,
         COLONY_COMPARATOR_POSITION = 2,
@@ -270,6 +288,8 @@ public class ClientOptions extends OptionGroup {
      */
     public static final String MESSAGES_GROUP_BY
         = "model.option.guiMessagesGroupBy";
+    
+    /** The Constant MESSAGES_GROUP_BY_SOURCE. */
     public static final int MESSAGES_GROUP_BY_NOTHING = 0,
         MESSAGES_GROUP_BY_TYPE = 1,
         MESSAGES_GROUP_BY_SOURCE = 2;
@@ -282,7 +302,7 @@ public class ClientOptions extends OptionGroup {
     public static final String SHOW_COLONY_WARNINGS
         = "model.option.guiShowColonyWarnings";
 
-    /** Show the pre-combat dialog? */
+    /**  Show the pre-combat dialog?. */
     public static final String SHOW_PRECOMBAT
         = "model.option.guiShowPreCombat";
 
@@ -293,13 +313,21 @@ public class ClientOptions extends OptionGroup {
     /** Option for selecting the compact colony report. */
     public static final String COLONY_REPORT
         = "model.option.colonyReport";
+    
+    /** The Constant COLONY_REPORT_CLASSIC. */
     public static final int COLONY_REPORT_CLASSIC = 0;
+    
+    /** The Constant COLONY_REPORT_COMPACT. */
     public static final int COLONY_REPORT_COMPACT = 1;
 
     /** The type of labour report to display. */
     public static final String LABOUR_REPORT
         = "model.option.labourReport";
+    
+    /** The Constant LABOUR_REPORT_CLASSIC. */
     public static final int LABOUR_REPORT_CLASSIC = 0;
+    
+    /** The Constant LABOUR_REPORT_COMPACT. */
     public static final int LABOUR_REPORT_COMPACT = 1;
 
 
@@ -308,6 +336,8 @@ public class ClientOptions extends OptionGroup {
     /** Use default values for savegames instead of displaying a dialog. */
     public static final String SHOW_SAVEGAME_SETTINGS
         = "model.option.showSavegameSettings";
+    
+    /** The Constant SHOW_SAVEGAME_SETTINGS_ALWAYS. */
     public static final int SHOW_SAVEGAME_SETTINGS_NEVER = 0,
         SHOW_SAVEGAME_SETTINGS_MULTIPLAYER = 1,
         SHOW_SAVEGAME_SETTINGS_ALWAYS = 2;
@@ -367,10 +397,7 @@ public class ClientOptions extends OptionGroup {
     public static final String HIGH_LEVEL
         = "model.option.highLevel";
 
-    /**
-     * Should trade route units check production to determine goods levels at
-     * stops along its route?
-     */
+    /** Should trade route units check production to determine goods levels at stops along its route?. */
     public static final String STOCK_ACCOUNTS_FOR_PRODUCTION
         = "model.option.stockAccountsForProduction";
 
@@ -411,15 +438,27 @@ public class ClientOptions extends OptionGroup {
     /** Set the default native demand action. */
     public static final String INDIAN_DEMAND_RESPONSE
         = "model.option.indianDemandResponse";
+    
+    /** The Constant INDIAN_DEMAND_RESPONSE_ASK. */
     public static final int INDIAN_DEMAND_RESPONSE_ASK = 0;
+    
+    /** The Constant INDIAN_DEMAND_RESPONSE_ACCEPT. */
     public static final int INDIAN_DEMAND_RESPONSE_ACCEPT = 1;
+    
+    /** The Constant INDIAN_DEMAND_RESPONSE_REJECT. */
     public static final int INDIAN_DEMAND_RESPONSE_REJECT = 2;
 
     /** Set the default warehouse overflow on unload action. */
     public static final String UNLOAD_OVERFLOW_RESPONSE
         = "model.option.unloadOverflowResponse";
+    
+    /** The Constant UNLOAD_OVERFLOW_RESPONSE_ASK. */
     public static final int UNLOAD_OVERFLOW_RESPONSE_ASK = 0;
+    
+    /** The Constant UNLOAD_OVERFLOW_RESPONSE_NEVER. */
     public static final int UNLOAD_OVERFLOW_RESPONSE_NEVER = 1;
+    
+    /** The Constant UNLOAD_OVERFLOW_RESPONSE_ALWAYS. */
     public static final int UNLOAD_OVERFLOW_RESPONSE_ALWAYS = 2;
 
 
@@ -456,15 +495,28 @@ public class ClientOptions extends OptionGroup {
         = Comparator.comparingInt(c -> Location.getRank(c));
 
 
+    /**
+     * The Class MessageSourceComparator.
+     */
     private class MessageSourceComparator implements Comparator<ModelMessage> {
+        
+        /** The game. */
         private final Game game;
 
         // sort according to message source
 
+        /**
+         * Instantiates a new message source comparator.
+         *
+         * @param game the game
+         */
         private MessageSourceComparator(Game game) {
             this.game = game;
         }
 
+        /* (non-Javadoc)
+         * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
+         */
         @Override
         public int compare(ModelMessage message1, ModelMessage message2) {
             String sourceId1 = message1.getSourceId();
@@ -483,6 +535,12 @@ public class ClientOptions extends OptionGroup {
             return base;
         }
 
+        /**
+         * Gets the class index.
+         *
+         * @param object the object
+         * @return the class index
+         */
         private int getClassIndex(Object object) {
             if (object instanceof Player) {
                 return 10;
@@ -720,6 +778,7 @@ public class ClientOptions extends OptionGroup {
     /**
      * Return the client's preferred comparator for ModelMessages.
      *
+     * @param game the game
      * @return a <code>Comparator</code> value
      */
     public Comparator<ModelMessage> getModelMessageComparator(Game game) {
@@ -805,6 +864,13 @@ public class ClientOptions extends OptionGroup {
         // end @compat 0.11.3
     }
 
+    /**
+     * Adds the boolean option.
+     *
+     * @param id the id
+     * @param gr the gr
+     * @param val the val
+     */
     private void addBooleanOption(String id, String gr, boolean val) {
         if (getOption(id) == null) {
             BooleanOption op = new BooleanOption(id, null);
@@ -814,6 +880,13 @@ public class ClientOptions extends OptionGroup {
         }
     }
 
+    /**
+     * Adds the integer option.
+     *
+     * @param id the id
+     * @param gr the gr
+     * @param val the val
+     */
     private void addIntegerOption(String id, String gr, int val) {
         if (getOption(id) == null) {
             IntegerOption op = new IntegerOption(id, null);
@@ -823,6 +896,13 @@ public class ClientOptions extends OptionGroup {
         }
     }
 
+    /**
+     * Adds the text option.
+     *
+     * @param id the id
+     * @param gr the gr
+     * @param val the val
+     */
     private void addTextOption(String id, String gr, String val) {
         if (getOption(id) == null) {
             TextOption op = new TextOption(id, null);

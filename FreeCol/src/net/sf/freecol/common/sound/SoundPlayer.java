@@ -41,15 +41,22 @@ import net.sf.freecol.common.option.AudioMixerOption.MixerWrapper;
 import net.sf.freecol.common.option.PercentageOption;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Stripped down class for playing sound.
  */
 public class SoundPlayer {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(SoundPlayer.class.getName());
 
+    /** The mixer. */
     private Mixer mixer;
+    
+    /** The volume. */
     private int volume;
+    
+    /** The sound player thread. */
     private final SoundPlayerThread soundPlayerThread;
 
 
@@ -108,6 +115,11 @@ public class SoundPlayer {
         return mixer;
     }
 
+    /**
+     * Sets the mixer.
+     *
+     * @param mw the new mixer
+     */
     private void setMixer(MixerWrapper mw) {
         try {
             mixer = AudioSystem.getMixer(mw.getMixerInfo());
@@ -126,6 +138,11 @@ public class SoundPlayer {
         return volume;
     }
 
+    /**
+     * Sets the volume.
+     *
+     * @param volume the new volume
+     */
     private void setVolume(int volume) {
         this.volume = volume;
     }
@@ -158,44 +175,78 @@ public class SoundPlayer {
      */
     private class SoundPlayerThread extends Thread {
 
+        /** The Constant BUFSIZ. */
         private static final int BUFSIZ = 8192;
 
+        /** The data. */
         private final byte[] data = new byte[BUFSIZ];
 
+        /** The play list. */
         private final List<AudioInputStream> playList = new ArrayList<>();
 
+        /** The play done. */
         private boolean playDone = true;
 
 
 
+        /**
+         * Instantiates a new sound player thread.
+         */
         public SoundPlayerThread() {
             super(FreeCol.CLIENT_THREAD + "SoundPlayer");
         }
 
+        /**
+         * Awaken.
+         */
         private synchronized void awaken() {
             notify();
         }
 
+        /**
+         * Go to sleep.
+         *
+         * @throws InterruptedException the interrupted exception
+         */
         private synchronized void goToSleep() throws InterruptedException {
             wait();
         }
 
+        /**
+         * Keep playing.
+         *
+         * @return true, if successful
+         */
         public synchronized boolean keepPlaying() {
             return !playDone;
         }
 
+        /**
+         * Start playing.
+         */
         public synchronized void startPlaying() {
             playDone = false;
         }
 
+        /**
+         * Stop playing.
+         */
         public synchronized void stopPlaying() {
             playDone = true;
         }
 
+        /**
+         * Adds the.
+         *
+         * @param ais the ais
+         */
         public synchronized void add(AudioInputStream ais) {
             playList.add(ais);
         }
 
+        /* (non-Javadoc)
+         * @see java.lang.Thread#run()
+         */
         @Override
         public void run() {
             for (;;) {
@@ -217,10 +268,21 @@ public class SoundPlayer {
             }
         }
 
+        /**
+         * Sleep.
+         *
+         * @param t the t
+         */
         private void sleep(int t) {
             try { Thread.sleep(t); } catch (InterruptedException e) {}
         }
 
+        /**
+         * Sets the volume.
+         *
+         * @param line the line
+         * @param vol the vol
+         */
         private void setVolume(SourceDataLine line, int vol) {
             FloatControl.Type type
                 = (line.isControlSupported(FloatControl.Type.VOLUME))
@@ -273,6 +335,12 @@ public class SoundPlayer {
             }
         }
 
+        /**
+         * Open line.
+         *
+         * @param audioFormat the audio format
+         * @return the source data line
+         */
         private SourceDataLine openLine(AudioFormat audioFormat) {
             SourceDataLine line = null;
             DataLine.Info info = new DataLine.Info(SourceDataLine.class,
@@ -298,6 +366,7 @@ public class SoundPlayer {
          *
          * @param in The <code>AudioInputStream</code> to play.
          * @return True if the stream was played without incident.
+         * @throws IOException Signals that an I/O exception has occurred.
          */
         private boolean playSound(AudioInputStream in) throws IOException {
             boolean ret = false;

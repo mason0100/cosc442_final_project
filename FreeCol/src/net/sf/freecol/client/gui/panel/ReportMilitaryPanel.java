@@ -34,6 +34,7 @@ import net.sf.freecol.common.model.Unit;
 import net.sf.freecol.common.model.UnitType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the Military Report.
  */
@@ -50,6 +51,12 @@ public final class ReportMilitaryPanel extends ReportUnitPanel {
     }
 
 
+    /**
+     * Reportable.
+     *
+     * @param unitType the unit type
+     * @return true, if successful
+     */
     private boolean reportable(UnitType unitType) {
         return !unitType.isNaval()
             && unitType.isAvailableTo(getMyPlayer())
@@ -57,12 +64,24 @@ public final class ReportMilitaryPanel extends ReportUnitPanel {
                 || unitType.isOffensive());
     }
 
+    /**
+     * Reportable.
+     *
+     * @param unit the unit
+     * @return true, if successful
+     */
     private boolean reportable(Unit unit) {
         return !unit.isNaval()
             && (unit.hasAbility(Ability.EXPERT_SOLDIER)
                 || unit.isOffensiveUnit());
     }
 
+    /**
+     * Try unit role.
+     *
+     * @param unitType the unit type
+     * @param roleId the role id
+     */
     private void tryUnitRole(UnitType unitType, String roleId) {
         int count = getCount(roleId, unitType);
         if (count > 0) {

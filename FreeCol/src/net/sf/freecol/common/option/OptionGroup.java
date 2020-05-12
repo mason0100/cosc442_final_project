@@ -35,11 +35,13 @@ import net.sf.freecol.common.model.Specification;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Used for grouping {@link Option}s.
  */
 public class OptionGroup extends AbstractOption<OptionGroup> {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(OptionGroup.class.getName());
 
     /** The options in this group. */
@@ -52,7 +54,7 @@ public class OptionGroup extends AbstractOption<OptionGroup> {
      */
     private final Map<String, Option> optionMap = new HashMap<>();
 
-    /** Is this option group user editable? */
+    /**  Is this option group user editable?. */
     private boolean editable = true;
 
 
@@ -100,7 +102,7 @@ public class OptionGroup extends AbstractOption<OptionGroup> {
 
 
     /**
-     * Is this option group editable?
+     * Is this option group editable?.
      *
      * @return True if the option group is editable.
      */
@@ -156,7 +158,7 @@ public class OptionGroup extends AbstractOption<OptionGroup> {
     }
 
     /**
-     * Does this option group contain any subgroups?
+     * Does this option group contain any subgroups?.
      *
      * @return True if there are any child <code>OptionGroup</code>s present.
      */
@@ -537,6 +539,7 @@ public class OptionGroup extends AbstractOption<OptionGroup> {
 
     // Serialization
 
+    /** The Constant EDITABLE_TAG. */
     private static final String EDITABLE_TAG = "editable";
 
 

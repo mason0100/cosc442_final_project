@@ -36,6 +36,7 @@ import net.sf.freecol.common.model.Unit;
 import net.miginfocom.swing.MigLayout;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A panel that holds units and goods that represent Units and cargo
  * that are on board the currently selected ship.
@@ -43,11 +44,13 @@ import net.miginfocom.swing.MigLayout;
 public class CargoPanel extends FreeColPanel
     implements DropTarget, PropertyChangeListener {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(CargoPanel.class.getName());
 
     /** The carrier that contains cargo. */
     private Unit carrier;
 
+    /** The default transfer handler. */
     private DefaultTransferHandler defaultTransferHandler = null;
 
 
@@ -83,6 +86,9 @@ public class CargoPanel extends FreeColPanel
         removePropertyChangeListeners();
     }
 
+    /**
+     * Adds the property change listeners.
+     */
     protected void addPropertyChangeListeners() {
         if (carrier != null) {
             carrier.addPropertyChangeListener(Unit.CARGO_CHANGE, this);
@@ -90,6 +96,9 @@ public class CargoPanel extends FreeColPanel
         }
     }
 
+    /**
+     * Removes the property change listeners.
+     */
     protected void removePropertyChangeListeners() {
         if (carrier != null) {
             carrier.removePropertyChangeListener(Unit.CARGO_CHANGE, this);
@@ -256,6 +265,9 @@ public class CargoPanel extends FreeColPanel
 
     // Interface PropertyChangeListener
 
+    /* (non-Javadoc)
+     * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
+     */
     @Override
     public void propertyChange(PropertyChangeEvent event) {
         logger.finest("CargoPanel change " + event.getPropertyName()

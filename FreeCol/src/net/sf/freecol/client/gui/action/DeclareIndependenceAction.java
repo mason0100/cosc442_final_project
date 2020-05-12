@@ -26,11 +26,13 @@ import net.sf.freecol.common.model.Player;
 import net.sf.freecol.common.model.Player.PlayerType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for declaring independence.
  */
 public class DeclareIndependenceAction extends MapboardAction {
 
+    /** The Constant ID. */
     public static final String ID = "declareIndependenceAction";
 
 

@@ -24,6 +24,7 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for initiating chatting.
  *
@@ -31,6 +32,7 @@ import net.sf.freecol.client.FreeColClient;
  */
 public class ChatAction extends FreeColAction {
 
+    /** The Constant ID. */
     public static final String ID = "chatAction";
 
 

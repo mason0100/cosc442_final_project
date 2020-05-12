@@ -53,6 +53,7 @@ import net.sf.freecol.common.model.Unit.UnitState;
 import net.sf.freecol.common.util.LogBuilder;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Allows the user to obtain more info about a certain tile or to
  * activate a specific unit on the tile, or perform various debug mode
@@ -60,15 +61,26 @@ import net.sf.freecol.common.util.LogBuilder;
  */
 public final class TilePopup extends JPopupMenu {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(TilePopup.class.getName());
 
+    /** The Constant UNIT_LINES_IN_FIRST_MENU. */
     public static final int UNIT_LINES_IN_FIRST_MENU = 9;
+    
+    /** The Constant UNIT_LINES_IN_OTHER_MENUS. */
     public static final int UNIT_LINES_IN_OTHER_MENUS = 19;
 
+    /** The free col client. */
     private final FreeColClient freeColClient;
+    
+    /** The gui. */
     private final SwingGUI gui;
+    
+    /** The canvas. */
     private final Canvas canvas;
+    
+    /** The has an item. */
     private boolean hasAnItem = false;
 
 
@@ -134,6 +146,15 @@ public final class TilePopup extends JPopupMenu {
         }
     }
 
+	/**
+	 * Tile unit count.
+	 *
+	 * @param freeColClient the free col client
+	 * @param tile the tile
+	 * @param player the player
+	 * @param moreUnits the more units
+	 * @param firstUnit the first unit
+	 */
 	private void tileUnitCount(final FreeColClient freeColClient, final Tile tile, final Player player,
 			boolean moreUnits, Unit firstUnit) {
 		if (tile.getUnitCount() > 1 && player.owns(firstUnit)) {
@@ -152,6 +173,12 @@ public final class TilePopup extends JPopupMenu {
         }
 	}
 
+	/**
+	 * Settlement method.
+	 *
+	 * @param player the player
+	 * @param settlement the settlement
+	 */
 	private void settlementMethod(final Player player, Settlement settlement) {
 		if (settlement != null) {
             if (settlement.getOwner() == player) {
@@ -163,6 +190,16 @@ public final class TilePopup extends JPopupMenu {
         }
 	}
 
+	/**
+	 * Active unit.
+	 *
+	 * @param freeColClient the free col client
+	 * @param canvas the canvas
+	 * @param tile the tile
+	 * @param player the player
+	 * @param activeUnit the active unit
+	 * @param owned the owned
+	 */
 	private void activeUnit(final FreeColClient freeColClient, final Canvas canvas, final Tile tile,
 			final Player player, final Unit activeUnit, final boolean owned) {
 		Tile unitTile;

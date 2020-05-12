@@ -61,6 +61,7 @@ import net.sf.freecol.common.model.UnitType;
 import net.sf.freecol.server.model.ServerIndianSettlement;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A panel for choosing the current <code>MapTransform</code>.
  *
@@ -74,11 +75,17 @@ import net.sf.freecol.server.model.ServerIndianSettlement;
  */
 public final class MapEditorTransformPanel extends FreeColPanel {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(MapEditorTransformPanel.class.getName());
 
+    /** The list panel. */
     private final JPanel listPanel;
+    
+    /** The settlement button. */
     private JToggleButton settlementButton;
+    
+    /** The group. */
     private final ButtonGroup group;
 
     /**
@@ -151,6 +158,7 @@ public final class MapEditorTransformPanel extends FreeColPanel {
      * @param image an <code>Image</code> value
      * @param text a <code>String</code> value
      * @param mt a <code>MapTransform</code> value
+     * @return the j toggle button
      */
     private JToggleButton buildButton(Image image, String text, final MapTransform mt) {
 
@@ -207,7 +215,8 @@ public final class MapEditorTransformPanel extends FreeColPanel {
 
         /**
          * Applies this transformation to the given tile.
-         * @param t The <code>Tile</code> to be transformed,
+         *
+         * @return the description panel
          */
         //public abstract void transform(Tile t);
 
@@ -236,17 +245,35 @@ public final class MapEditorTransformPanel extends FreeColPanel {
         }
     }
 
+    /**
+     * The Class TileTypeTransform.
+     */
     public class TileTypeTransform extends MapTransform {
+        
+        /** The tile type. */
         private final TileType tileType;
 
+        /**
+         * Instantiates a new tile type transform.
+         *
+         * @param tileType the tile type
+         */
         private TileTypeTransform(TileType tileType) {
             this.tileType = tileType;
         }
 
+        /**
+         * Gets the tile type.
+         *
+         * @return the tile type
+         */
         public TileType getTileType() {
             return tileType;
         }
 
+        /* (non-Javadoc)
+         * @see net.sf.freecol.client.control.MapEditorController.IMapTransform#transform(net.sf.freecol.common.model.Tile)
+         */
         @Override
         public void transform(Tile t) {
             t.changeType(tileType);
@@ -254,13 +281,26 @@ public final class MapEditorTransformPanel extends FreeColPanel {
         }
     }
 
+    /**
+     * The Class RiverTransform.
+     */
     private class RiverTransform extends MapTransform {
+        
+        /** The magnitude. */
         private final int magnitude;
 
+        /**
+         * Instantiates a new river transform.
+         *
+         * @param magnitude the magnitude
+         */
         private RiverTransform(int magnitude) {
             this.magnitude = magnitude;
         }
 
+        /* (non-Javadoc)
+         * @see net.sf.freecol.client.control.MapEditorController.IMapTransform#transform(net.sf.freecol.common.model.Tile)
+         */
         @Override
         public void transform(Tile tile) {
             TileImprovementType riverType =
@@ -288,6 +328,10 @@ public final class MapEditorTransformPanel extends FreeColPanel {
      * next valid, or removes if end of list.
      */
     private class ResourceTransform extends MapTransform {
+        
+        /* (non-Javadoc)
+         * @see net.sf.freecol.client.control.MapEditorController.IMapTransform#transform(net.sf.freecol.common.model.Tile)
+         */
         @Override
         public void transform(Tile t) {
             // Check if there is a resource already
@@ -326,7 +370,14 @@ public final class MapEditorTransformPanel extends FreeColPanel {
         }
     }
 
+    /**
+     * The Class LostCityRumourTransform.
+     */
     private class LostCityRumourTransform extends MapTransform {
+        
+        /* (non-Javadoc)
+         * @see net.sf.freecol.client.control.MapEditorController.IMapTransform#transform(net.sf.freecol.common.model.Tile)
+         */
         @Override
         public void transform(Tile t) {
             if (t.isLand()) {
@@ -340,7 +391,14 @@ public final class MapEditorTransformPanel extends FreeColPanel {
         }
     }
 
+    /**
+     * The Class SettlementTransform.
+     */
     private class SettlementTransform extends MapTransform {
+        
+        /* (non-Javadoc)
+         * @see net.sf.freecol.client.control.MapEditorController.IMapTransform#transform(net.sf.freecol.common.model.Tile)
+         */
         @Override
         public void transform(Tile t) {
             if (!t.isLand()

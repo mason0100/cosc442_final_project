@@ -31,6 +31,7 @@ import net.sf.freecol.common.util.Utils;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class describes a possible production type of a tile or building.
  */
@@ -295,7 +296,7 @@ public class ProductionType extends FreeColObject {
 
     /**
      * Get the production type with the greatest total output of an
-     * optional goods type from a collection of production types
+     * optional goods type from a collection of production types.
      *
      * @param goodsType An optional <code>GoodsType</code> to restrict the
      *     choice of outputs with.
@@ -386,11 +387,22 @@ public class ProductionType extends FreeColObject {
 
     // Serialization
 
+    /** The Constant UNATTENDED_TAG. */
     private static final String UNATTENDED_TAG = "unattended";
+    
+    /** The Constant GOODS_TYPE_TAG. */
     private static final String GOODS_TYPE_TAG = "goods-type";
+    
+    /** The Constant INPUT_TAG. */
     private static final String INPUT_TAG = "input";
+    
+    /** The Constant OUTPUT_TAG. */
     private static final String OUTPUT_TAG = "output";
+    
+    /** The Constant PRODUCTION_LEVEL_TAG. */
     private static final String PRODUCTION_LEVEL_TAG = "production-level";
+    
+    /** The Constant OLD_PRODUCTION_LEVEL_TAG. */
     // @compat 0.11.3
     private static final String OLD_PRODUCTION_LEVEL_TAG = "productionLevel";
     // end @compat 0.11.3

@@ -27,8 +27,11 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.common.model.Direction;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The outline of a canvas listener.
+ *
+ * @see AbstractCanvasEvent
  */
 public class AbstractCanvasListener {
 
@@ -41,6 +44,7 @@ public class AbstractCanvasListener {
     /** The enclosing client. */
     protected final FreeColClient freeColClient;
 
+    /** The canvas. */
     protected final Canvas canvas;
 
     /** The scroll thread itself. */
@@ -51,6 +55,7 @@ public class AbstractCanvasListener {
      * Create a new AbstractCanvasListener.
      *
      * @param freeColClient The <code>FreeColClient</code> for the game.
+     * @param canvas the canvas
      */
     public AbstractCanvasListener(FreeColClient freeColClient, Canvas canvas) {
         this.freeColClient = freeColClient;

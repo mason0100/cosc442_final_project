@@ -31,6 +31,7 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides common functionality for panels that display
  * ports, such as the ColonyPanel and the EuropePanel.  This includes
@@ -39,10 +40,19 @@ import net.sf.freecol.common.model.Unit;
  */
 public abstract class PortPanel extends FreeColPanel {
 
+    /** The cargo panel. */
     protected CargoPanel cargoPanel;
+    
+    /** The in port panel. */
     protected InPortPanel inPortPanel;
+    
+    /** The selected unit label. */
     protected UnitLabel selectedUnitLabel;
+    
+    /** The default transfer handler. */
     protected DefaultTransferHandler defaultTransferHandler;
+    
+    /** The press listener. */
     protected MouseListener pressListener;
 
 

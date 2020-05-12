@@ -25,6 +25,7 @@ import java.util.logging.Logger;
 import net.sf.freecol.common.model.Specification;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents an option where the valid choice is an integer and the
  * choices are represented by strings. In general, these strings are
@@ -40,6 +41,7 @@ import net.sf.freecol.common.model.Specification;
  */
 public class RangeOption extends SelectOption {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(RangeOption.class.getName());
 
@@ -89,7 +91,7 @@ public class RangeOption extends SelectOption {
     }
 
     /**
-     * Gets the tag name of the item element
+     * Gets the tag name of the item element.
      *
      * @return "rangeValue".
      */

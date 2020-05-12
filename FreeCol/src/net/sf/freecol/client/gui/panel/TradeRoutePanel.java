@@ -49,11 +49,13 @@ import net.sf.freecol.common.model.TradeRoute;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Allows the user to edit trade routes.
  */
 public final class TradeRoutePanel extends FreeColPanel {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(TradeRoutePanel.class.getName());
 
@@ -205,6 +207,8 @@ public final class TradeRoutePanel extends FreeColPanel {
 
     /**
      * Gets the currently selected route.
+     *
+     * @return the route
      */
     private TradeRoute getRoute() {
         return this.tradeRoutes.getSelectedValue();

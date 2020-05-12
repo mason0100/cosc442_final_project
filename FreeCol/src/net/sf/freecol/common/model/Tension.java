@@ -24,41 +24,76 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A measure of the tension between nations.
  */
 public class Tension implements Named {
 
+    /** The Constant TENSION_MIN. */
     // Minimum possible tension value.
     public static final int TENSION_MIN = 0;
+    
+    /** The Constant TENSION_MAX. */
     // Maximum possible tension value.
     public static final int TENSION_MAX = Level.HATEFUL.limit + 100;
+    
+    /** The Constant DELTA. */
     // Hysteresis value
     public static final int DELTA = 10;
+    
+    /** The Constant TENSION_ADD_MINOR. */
     // Unit destroyed, etc
     public static final int TENSION_ADD_MINOR = 100;
+    
+    /** The Constant TENSION_ADD_NORMAL. */
     // Unit destroyed in a Settlement, etc
     public static final int TENSION_ADD_NORMAL = 200;
+    
+    /** The Constant TENSION_ADD_MAJOR. */
     // Unit destroyed in a capital, etc
     public static final int TENSION_ADD_MAJOR = 300;
+    
+    /** The Constant TENSION_ADD_LAND_TAKEN. */
     // Grab land without paying
     public static final int TENSION_ADD_LAND_TAKEN = 200;
+    
+    /** The Constant TENSION_ADD_UNIT_DESTROYED. */
     // Unit destroyed
     public static final int TENSION_ADD_UNIT_DESTROYED = 400;
+    
+    /** The Constant TENSION_ADD_SETTLEMENT_ATTACKED. */
     // Settlement attacked
     public static final int TENSION_ADD_SETTLEMENT_ATTACKED = 500;
+    
+    /** The Constant TENSION_ADD_CAPITAL_ATTACKED. */
     // Capital attacked
     public static final int TENSION_ADD_CAPITAL_ATTACKED = 600;
+    
+    /** The Constant TENSION_ADD_WAR_INCITER. */
     // War inciter
     public static final int TENSION_ADD_WAR_INCITER = 250;
 
+    /** The Constant CONTACT_MODIFIER. */
     // Tension modifiers
     public static final int CONTACT_MODIFIER = 0;
+    
+    /** The Constant ALLIANCE_MODIFIER. */
     public static final int ALLIANCE_MODIFIER = -500;
+    
+    /** The Constant DROP_ALLIANCE_MODIFIER. */
     public static final int DROP_ALLIANCE_MODIFIER = 200;
+    
+    /** The Constant PEACE_TREATY_MODIFIER. */
     public static final int PEACE_TREATY_MODIFIER = -250;
+    
+    /** The Constant CEASE_FIRE_MODIFIER. */
     public static final int CEASE_FIRE_MODIFIER = -250;
+    
+    /** The Constant WAR_MODIFIER. */
     public static final int WAR_MODIFIER = Level.HATEFUL.limit;
+    
+    /** The Constant RESUME_WAR_MODIFIER. */
     public static final int RESUME_WAR_MODIFIER = 750; // War from cease fire
 
     /** Tension level to set when surrendering. */
@@ -69,18 +104,39 @@ public class Tension implements Named {
      * Constants for describing alarm levels.
      */
     public static enum Level { 
+        
+        /** The happy. */
         HAPPY(100),
+        
+        /** The content. */
         CONTENT(600), 
+        
+        /** The displeased. */
         DISPLEASED(700),
+        
+        /** The angry. */
         ANGRY(800), 
+        
+        /** The hateful. */
         HATEFUL(1000);
 
+        /** The limit. */
         private final int limit;
 
+        /**
+         * Instantiates a new level.
+         *
+         * @param limit the limit
+         */
         Level(int limit) {
             this.limit = limit;
         }
 
+        /**
+         * Gets the limit.
+         *
+         * @return the limit
+         */
         public int getLimit() {
             return limit;
         }
@@ -95,6 +151,7 @@ public class Tension implements Named {
         }
     }
     
+    /** The value. */
     private int value;
 
 

@@ -45,36 +45,45 @@ import net.sf.freecol.common.option.Option;
 import net.sf.freecol.common.option.OptionGroup;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays an OptionGroup using a JTree.
  */
 public final class OptionGroupUI extends MigPanel
     implements OptionUpdater, TreeSelectionListener {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(OptionGroupUI.class.getName());
 
+    /** The option updaters. */
     private final List<OptionUpdater> optionUpdaters = new ArrayList<>();
 
+    /** The option U is. */
     private final HashMap<String, OptionUI> optionUIs = new HashMap<>();
 
 
+    /** The detail panel. */
     private final JPanel detailPanel;
 
+    /** The tree. */
     private final JTree tree;
 
+    /** The gui. */
     private final GUI gui;
 
+    /** The group. */
     private final OptionGroup group;
 
+    /** The editable. */
     private final boolean editable;
 
 
     /**
      * The constructor that will add the items to this panel.
      *
-     * @param gui
-     * @param group
-     * @param editable
+     * @param gui the gui
+     * @param group the group
+     * @param editable the editable
      */
     public OptionGroupUI(GUI gui, OptionGroup group, boolean editable) {
         super("ReportPanelUI");
@@ -119,13 +128,21 @@ public final class OptionGroupUI extends MigPanel
         add(detailPanel, "grow");
     }
 
+    /**
+     * Gets the tree.
+     *
+     * @return the tree
+     */
     public JTree getTree() {
         return tree;
     }
 
     /**
      * Builds the JTree which represents the navigation menu and then
-     * returns it
+     * returns it.
+     *
+     * @param group the group
+     * @param parent the parent
      */
     private void buildTree(OptionGroup group, DefaultMutableTreeNode parent) {
         for (Option option : group.getOptions()) {
@@ -178,10 +195,22 @@ public final class OptionGroupUI extends MigPanel
         }
     }
 
+    /**
+     * Gets the option UI.
+     *
+     * @param key the key
+     * @return the option UI
+     */
     public OptionUI getOptionUI(String key) {
         return optionUIs.get(key);
     }
 
+    /**
+     * Adds the option UI.
+     *
+     * @param option the option
+     * @param editable the editable
+     */
     private void addOptionUI(Option option, boolean editable) {
         OptionUI ui = optionUIs.get(option.getId());
         if (ui == null) {

@@ -40,6 +40,7 @@ import net.sf.freecol.common.model.StringTemplate;
 import net.sf.freecol.common.model.Turn;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel provides detailed information about rebels in a colony.
  */

@@ -32,6 +32,7 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import net.sf.freecol.common.util.Utils;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The <code>Feature</code> class encapsulates a bonus or penalty
  * that can be applied to any action within the game, most obviously
@@ -81,7 +82,7 @@ public abstract class Feature extends FreeColObject implements Named {
     }
 
     /**
-     * Does this feature have a time limit?
+     * Does this feature have a time limit?.
      *
      * @return True if the feature is time limited.
      */
@@ -126,7 +127,7 @@ public abstract class Feature extends FreeColObject implements Named {
     }
 
     /**
-     * Does this feature have a scope?
+     * Does this feature have a scope?.
      *
      * @return True if there are any scopes attached to this feature.
      */
@@ -201,8 +202,10 @@ public abstract class Feature extends FreeColObject implements Named {
 
     /**
      * Is this a temporary feature?
-     *
+     * 
      * True if this is a temporary feature.
+     *
+     * @return true, if is temporary
      */
     public final boolean isTemporary() {
         return temporary;
@@ -218,7 +221,7 @@ public abstract class Feature extends FreeColObject implements Named {
     }
 
     /**
-     * Does this feature apply to a given object type?
+     * Does this feature apply to a given object type?.
      *
      * @param objectType The <code>FreeColGameObjectType</code> to test.
      * @return True if there are no scopes, or at least one scope is
@@ -230,7 +233,7 @@ public abstract class Feature extends FreeColObject implements Named {
     }
 
     /**
-     * Does this feature apply to a given turn?
+     * Does this feature apply to a given turn?.
      *
      * @param turn The <code>Turn</code> to test.
      * @return True if the turn is null or not outside a valid time limit.
@@ -254,7 +257,7 @@ public abstract class Feature extends FreeColObject implements Named {
     }
 
     /**
-     * Is this feature out of date with respect to a given turn?
+     * Is this feature out of date with respect to a given turn?.
      *
      * @param turn The <code>Turn</code> to compare to.
      * @return True if the Feature has an lastTurn turn smaller than the
@@ -364,10 +367,19 @@ public abstract class Feature extends FreeColObject implements Named {
 
     // Serialization
 
+    /** The Constant DURATION_TAG. */
     private static final String DURATION_TAG = "duration";
+    
+    /** The Constant FIRST_TURN_TAG. */
     private static final String FIRST_TURN_TAG = "firstTurn";
+    
+    /** The Constant LAST_TURN_TAG. */
     private static final String LAST_TURN_TAG = "lastTurn";
+    
+    /** The Constant SOURCE_TAG. */
     private static final String SOURCE_TAG = "source";
+    
+    /** The Constant TEMPORARY_TAG. */
     private static final String TEMPORARY_TAG = "temporary";
 
 

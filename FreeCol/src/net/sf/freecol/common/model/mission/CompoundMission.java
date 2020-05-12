@@ -32,6 +32,7 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The CompoundMission provides a wrapper for several more basic
  * Missions that will be carried out in order.
@@ -164,6 +165,7 @@ public class CompoundMission extends AbstractMission {
 
     // Serialization.
 
+    /** The Constant INDEX_TAG. */
     private final static String INDEX_TAG = "index";
 
 

@@ -38,17 +38,22 @@ import net.sf.freecol.common.i18n.Messages;
 import net.sf.freecol.common.model.Map;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A dialog to allow resizing of the map.
  */
 public class ScaleMapSizeDialog extends FreeColDialog<Dimension> {
 
+    /** The Constant COLUMNS. */
     private static final int COLUMNS = 5;
 
+    /** The old map. */
     final Map oldMap;
 
+    /** The input width. */
     final JTextField inputWidth;
 
+    /** The input height. */
     final JTextField inputHeight;
 
 
@@ -146,6 +151,9 @@ public class ScaleMapSizeDialog extends FreeColDialog<Dimension> {
 
     // Override Component
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.client.gui.panel.FreeColDialog#requestFocus()
+     */
     @Override
     public void requestFocus() {
         this.inputWidth.requestFocus();

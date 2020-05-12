@@ -23,6 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents the style of a tile improvement, such as a river or
  * road. Since TileImprovementStyles are immutable and some styles are

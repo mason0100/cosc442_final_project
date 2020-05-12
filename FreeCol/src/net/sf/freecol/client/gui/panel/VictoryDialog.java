@@ -32,6 +32,7 @@ import net.sf.freecol.common.i18n.Messages;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This dialog is displayed to a player who has won the game.
  */

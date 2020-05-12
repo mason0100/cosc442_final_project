@@ -26,6 +26,7 @@ import javax.xml.stream.XMLStreamException;
 import net.sf.freecol.common.io.FreeColXMLReader;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents a <code>TileItem</code> item on a <code>Tile</code>.
  */
@@ -86,7 +87,7 @@ public abstract class TileItem extends FreeColGameObject
     public abstract int getZIndex();
 
     /**
-     * Is a tile type compatible with this tile item?
+     * Is a tile type compatible with this tile item?.
      *
      * @param tileType The <code>TileType</code> to check.
      * @return True if the tile type is compatible.
@@ -107,7 +108,7 @@ public abstract class TileItem extends FreeColGameObject
 
     /**
      * Does this tile item allow its enclosing tile to produce a given
-     * goods type?
+     * goods type?.
      *
      * @param goodsType The <code>GoodsType</code> to produce.
      * @param unitType The optional <code>unitType</code> to produce with.
@@ -127,14 +128,14 @@ public abstract class TileItem extends FreeColGameObject
                                                           UnitType unitType);
 
     /**
-     * Is this a natural TileItem?
+     * Is this a natural TileItem?.
      *
      * @return True if this is a natural <code>TileItem</code>.
      */
     public abstract boolean isNatural();
 
     /**
-     * Is this improvement complete?
+     * Is this improvement complete?.
      *
      * @return True if complete.
      */

@@ -25,6 +25,7 @@ import java.util.List;
 import net.sf.freecol.common.ObjectWithId;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A place where a <code>Locatable</code> can be put.
  *
@@ -34,9 +35,14 @@ public interface Location extends ObjectWithId {
 
     // "Rank" constants for location ordering.
     // Tile ranks are distinct and non-negative.
+    /** The Constant LOCATION_RANK_NOWHERE. */
     // Other locations devolve to {europe,highseas,tile} rank.
     public static final int LOCATION_RANK_NOWHERE = -3;
+    
+    /** The Constant LOCATION_RANK_EUROPE. */
     public static final int LOCATION_RANK_EUROPE = -2;
+    
+    /** The Constant LOCATION_RANK_HIGHSEAS. */
     public static final int LOCATION_RANK_HIGHSEAS = -1;
     
     /**

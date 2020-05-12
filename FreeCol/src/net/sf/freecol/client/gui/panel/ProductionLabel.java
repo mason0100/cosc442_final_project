@@ -40,12 +40,14 @@ import net.sf.freecol.common.model.AbstractGoods;
 import net.sf.freecol.common.model.GoodsType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The ProductionLabel represents Goods that are produced in a
  * WorkLocation or Settlement. It is similar to the GoodsLabel.
  */
 public final class ProductionLabel extends AbstractGoodsLabel {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ProductionLabel.class.getName());
 
     /** The maximum number of goodsIcons to display. */
@@ -188,6 +190,13 @@ public final class ProductionLabel extends AbstractGoodsLabel {
         }
     }
 
+	/**
+	 * Gets the type statement.
+	 *
+	 * @param ag the ag
+	 * @param stockNumber the stock number
+	 * @return the type statement
+	 */
 	private void getTypeStatement(AbstractGoods ag, int stockNumber) {
 		if (getType() == null) {
             String loggerWarningBad = "Bad production label (no type)\n"
@@ -198,6 +207,13 @@ public final class ProductionLabel extends AbstractGoodsLabel {
         }
 	}
 
+	/**
+	 * Logger warning.
+	 *
+	 * @param ag the ag
+	 * @param stockNumber the stock number
+	 * @return the string
+	 */
 	private String loggerWarning(AbstractGoods ag, int stockNumber) {
 		return "Bad production label: " + ag
 		    + " stock=" + stockNumber

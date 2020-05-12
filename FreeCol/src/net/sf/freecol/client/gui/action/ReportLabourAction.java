@@ -25,11 +25,13 @@ import net.sf.freecol.client.ClientOptions;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for displaying a Labour Report.
  */
 public class ReportLabourAction extends FreeColAction {
 
+    /** The Constant ID. */
     public static final String ID = "reportLabourAction";
 
 

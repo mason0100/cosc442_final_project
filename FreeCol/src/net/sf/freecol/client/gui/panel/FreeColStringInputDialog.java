@@ -28,6 +28,7 @@ import javax.swing.JTextField;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A simple input dialog to collect a string.
  */

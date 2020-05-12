@@ -26,6 +26,7 @@ import javax.swing.SpinnerNumberModel;
 import net.sf.freecol.common.option.IntegerOption;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides visualization for an
  * {@link net.sf.freecol.common.option.IntegerOption} in order to enable
@@ -33,6 +34,7 @@ import net.sf.freecol.common.option.IntegerOption;
  */
 public final class IntegerOptionUI extends OptionUI<IntegerOption>  {
 
+    /** The spinner. */
     private final JSpinner spinner = new JSpinner();
 
     /**

@@ -33,11 +33,13 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A named region on the map.
  */
 public class Region extends FreeColGameObject implements Nameable, Named {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Region.class.getName());
 
     /** The keys for the valid predefined regions. */
@@ -54,15 +56,29 @@ public class Region extends FreeColGameObject implements Nameable, Named {
 
     /** The type of region. */
     public static enum RegionType implements Named {
+        
+        /** The ocean. */
         OCEAN(false),
+        
+        /** The coast. */
         COAST(false),
+        
+        /** The lake. */
         LAKE(false),
+        
+        /** The river. */
         RIVER(true),
+        
+        /** The land. */
         LAND(true),
+        
+        /** The mountain. */
         MOUNTAIN(true),
+        
+        /** The desert. */
         DESERT(true);
 
-        /** Are regions of this type claimable by default? */
+        /**  Are regions of this type claimable by default?. */
         private final boolean claimable;
 
 
@@ -76,7 +92,8 @@ public class Region extends FreeColGameObject implements Nameable, Named {
         }
         
 
-        /** Is this region claimable by default?
+        /**
+         *  Is this region claimable by default?.
          *
          * @return True if this region type is normally claimable.
          */
@@ -191,7 +208,7 @@ public class Region extends FreeColGameObject implements Nameable, Named {
     }
 
     /**
-     * Does this region have a name?
+     * Does this region have a name?.
      *
      * @return True if the region has been named or was predefined.
      */
@@ -280,7 +297,7 @@ public class Region extends FreeColGameObject implements Nameable, Named {
     }
 
     /**
-     * Is this a leaf region?
+     * Is this a leaf region?.
      *
      * @return True if the region has no children.
      */
@@ -289,7 +306,7 @@ public class Region extends FreeColGameObject implements Nameable, Named {
     }
 
     /**
-     * Can this region be claimed?
+     * Can this region be claimed?.
      *
      * @return True if the region can be claimed.
      */
@@ -307,7 +324,7 @@ public class Region extends FreeColGameObject implements Nameable, Named {
     }
 
     /**
-     * Can this region be discovered?
+     * Can this region be discovered?.
      *
      * @return True if the region can be discovered.
      */
@@ -438,6 +455,7 @@ public class Region extends FreeColGameObject implements Nameable, Named {
     /**
      * Is a key one of the dodgy keys that were generated up to 0.11.3?
      *
+     * @param key the key
      * @return A valid key or null if already null or invalid.
      */
     private String fixRegionKey(String key) {
@@ -486,16 +504,37 @@ public class Region extends FreeColGameObject implements Nameable, Named {
 
     // Serialization
 
+    /** The Constant CHILD_TAG. */
     private static final String CHILD_TAG = "child";
+    
+    /** The Constant CLAIMABLE_TAG. */
     private static final String CLAIMABLE_TAG = "claimable";
+    
+    /** The Constant DISCOVERABLE_TAG. */
     private static final String DISCOVERABLE_TAG = "discoverable";
+    
+    /** The Constant DISCOVERED_BY_TAG. */
     private static final String DISCOVERED_BY_TAG = "discoveredBy";
+    
+    /** The Constant DISCOVERED_IN_TAG. */
     private static final String DISCOVERED_IN_TAG = "discoveredIn";
+    
+    /** The Constant KEY_TAG. */
     private static final String KEY_TAG = "key";
+    
+    /** The Constant NAME_TAG. */
     private static final String NAME_TAG = "name";
+    
+    /** The Constant PARENT_TAG. */
     private static final String PARENT_TAG = "parent";
+    
+    /** The Constant SCORE_VALUE_TAG. */
     private static final String SCORE_VALUE_TAG = "scoreValue";
+    
+    /** The Constant TYPE_TAG. */
     private static final String TYPE_TAG = "type";
+    
+    /** The Constant NAME_KEY_TAG. */
     // @compat 0.11.3
     private static final String NAME_KEY_TAG = "nameKey";
     // end @compat 0.11.3

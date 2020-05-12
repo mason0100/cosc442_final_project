@@ -33,6 +33,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.model.Unit.UnitState;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents Europe in the game.  Each <code>Player</code> has it's
  * own <code>Europe</code>.
@@ -43,6 +44,7 @@ import net.sf.freecol.common.model.Unit.UnitState;
 public class Europe extends UnitLocation
     implements Ownable, Named, TradeLocation {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Europe.class.getName());
 
     /** The initial recruit price. */
@@ -51,8 +53,10 @@ public class Europe extends UnitLocation
     /** The initial lower bound on recruitment price. */
     private static final int LOWER_CAP_INITIAL = 80;
 
+    /** The Constant UNIT_CHANGE. */
     public static final String UNIT_CHANGE = "unitChange";
 
+    /** The Constant ABILITY_DRESS_MISSIONARY. */
     public static final Ability ABILITY_DRESS_MISSIONARY
         = new Ability(Ability.DRESS_MISSIONARY, true);
 
@@ -68,9 +72,17 @@ public class Europe extends UnitLocation
      * behaviour is desired.
      */
     public enum MigrationType {
-        NORMAL,     // Unit decided to migrate
-        RECRUIT,    // Player is paying
-        FOUNTAIN,   // As a result of a Fountain of Youth discovery
+        
+        /** The normal. */
+        NORMAL,     
+     /** The recruit. */
+     // Unit decided to migrate
+        RECRUIT,    
+    /** The fountain. */
+    // Player is paying
+        FOUNTAIN,   
+   /** The survival. */
+   // As a result of a Fountain of Youth discovery
         SURVIVAL;   // Emergency autorecruit in server
 
         /** The number of recruitable unit types. */
@@ -88,43 +100,100 @@ public class Europe extends UnitLocation
          */
         private static final int DEFAULT_MIGRANT_SLOT = 1;
 
+        /**
+         * Gets the migrant count.
+         *
+         * @return the migrant count
+         */
         public static int getMigrantCount() {
             return MIGRANT_COUNT;
         }
 
+        /**
+         * Gets the unspecific slot.
+         *
+         * @return the unspecific slot
+         */
         public static int getUnspecificSlot() {
             return CHOOSE_MIGRANT_SLOT;
         }
 
+        /**
+         * Gets the default slot.
+         *
+         * @return the default slot
+         */
         public static int getDefaultSlot() {
             return DEFAULT_MIGRANT_SLOT;
         }
 
+        /**
+         * Valid migrant index.
+         *
+         * @param x the x
+         * @return true, if successful
+         */
         public static boolean validMigrantIndex(int x) {
             return 0 <= x && x < MIGRANT_COUNT;
         }
 
+        /**
+         * Migrant index to slot.
+         *
+         * @param x the x
+         * @return the int
+         */
         public static int migrantIndexToSlot(int x) {
             return x + 1;
         }
 
+        /**
+         * Migrant slot to index.
+         *
+         * @param x the x
+         * @return the int
+         */
         public static int migrantSlotToIndex(int x) {
             return x - 1;
         }
 
+        /**
+         * Convert to migrant slot.
+         *
+         * @param i the i
+         * @return the int
+         */
         public static int convertToMigrantSlot(Integer i) {
             return (i == null || !validMigrantSlot(i)) ? CHOOSE_MIGRANT_SLOT
                 : i;
         }
 
+        /**
+         * Valid migrant slot.
+         *
+         * @param x the x
+         * @return true, if successful
+         */
         public static boolean validMigrantSlot(int x) {
             return 0 <= x && x <= MIGRANT_COUNT;
         }
 
+        /**
+         * Specific migrant slot.
+         *
+         * @param x the x
+         * @return true, if successful
+         */
         public static boolean specificMigrantSlot(int x) {
             return 1 <= x && x <= MIGRANT_COUNT;
         }
 
+        /**
+         * Unspecific migrant slot.
+         *
+         * @param x the x
+         * @return true, if successful
+         */
         public static boolean unspecificMigrantSlot(int x) {
             return CHOOSE_MIGRANT_SLOT == x;
         }
@@ -475,14 +544,31 @@ public class Europe extends UnitLocation
 
     // Serialization
 
+    /** The Constant OWNER_TAG. */
     private static final String OWNER_TAG = "owner";
+    
+    /** The Constant PRICE_TAG. */
     private static final String PRICE_TAG = "price";
+    
+    /** The Constant RECRUIT_TAG. */
     private static final String RECRUIT_TAG = "recruit";
+    
+    /** The Constant RECRUIT_ID_TAG. */
     private static final String RECRUIT_ID_TAG = "id";
+    
+    /** The Constant RECRUIT_LOWER_CAP_TAG. */
     private static final String RECRUIT_LOWER_CAP_TAG = "recruitLowerCap";
+    
+    /** The Constant RECRUIT_PRICE_TAG. */
     private static final String RECRUIT_PRICE_TAG = "recruitPrice";
+    
+    /** The Constant UNIT_PRICE_TAG. */
     private static final String UNIT_PRICE_TAG = "unitPrice";
+    
+    /** The Constant UNIT_TYPE_TAG. */
     private static final String UNIT_TYPE_TAG = "unitType";
+    
+    /** The Constant UNITS_TAG. */
     // @compat 0.10.0
     private static final String UNITS_TAG = "units";
     // end @compat 0.10.0
@@ -539,6 +625,7 @@ public class Europe extends UnitLocation
         }
     }
 
+    /** The clear recruitables. */
     // @compat 0.10.7
     private boolean clearRecruitables = true;
 

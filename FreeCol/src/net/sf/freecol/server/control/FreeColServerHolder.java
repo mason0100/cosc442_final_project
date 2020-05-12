@@ -23,6 +23,7 @@ import net.sf.freecol.server.FreeColServer;
 import net.sf.freecol.server.model.ServerGame;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This base class provides thread-safe access to a
  * {@link net.sf.freecol.server.FreeColServer} for several subclasses. 

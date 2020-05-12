@@ -40,21 +40,29 @@ import net.sf.freecol.common.model.TileImprovement;
 import net.sf.freecol.server.generator.TerrainGenerator;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Listens to the mouse being moved at the level of the Canvas.
+ *
+ * @see CanvasMapEditorMouseEvent
  */
 public final class CanvasMapEditorMouseListener extends AbstractCanvasListener
     implements MouseListener, MouseMotionListener {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(CanvasMapEditorMouseListener.class.getName());
 
+    /** The end point. */
     private Point endPoint;
+    
+    /** The start point. */
     private Point startPoint;
 
 
     /**
      * The constructor to use.
      *
+     * @param freeColClient the free col client
      * @param canvas The component this object gets created for.
      */
     public CanvasMapEditorMouseListener(FreeColClient freeColClient, Canvas canvas) {
@@ -73,7 +81,9 @@ public final class CanvasMapEditorMouseListener extends AbstractCanvasListener
 
     /**
      * This method can be called to make sure the map is loaded
-     * There is no point executing mouse events if the map is not loaded
+     * There is no point executing mouse events if the map is not loaded.
+     *
+     * @return the map
      */
     private Map getMap() {
         return (freeColClient.getGame() == null) ? null

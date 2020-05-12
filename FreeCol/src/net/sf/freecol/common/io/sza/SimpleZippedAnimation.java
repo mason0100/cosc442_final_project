@@ -43,15 +43,22 @@ import java.util.zip.ZipInputStream;
 import javax.imageio.ImageIO;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An animation made from images stored in a zip-file.
  */
 public final class SimpleZippedAnimation implements Iterable<AnimationEvent> {
 
+    /** The Constant ANIMATION_DESCRIPTOR_FILE. */
     private static final String ANIMATION_DESCRIPTOR_FILE = "animation.txt";
     
+    /** The events. */
     private final List<AnimationEvent> events;
+    
+    /** The width. */
     private final int width;
+    
+    /** The height. */
     private final int height;
 
     /**
@@ -77,12 +84,25 @@ public final class SimpleZippedAnimation implements Iterable<AnimationEvent> {
         this(new ZipInputStream(zipStream));
     }
     
+    /**
+     * Instantiates a new simple zipped animation.
+     *
+     * @param events the events
+     * @param width the width
+     * @param height the height
+     */
     private SimpleZippedAnimation(final List<AnimationEvent> events, final int width, final int height) {
         this.events = events;
         this.width = width;
         this.height = height;
     }
     
+    /**
+     * Instantiates a new simple zipped animation.
+     *
+     * @param zipStream the zip stream
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     private SimpleZippedAnimation(final ZipInputStream zipStream) throws IOException {
         this.events = new ArrayList<>();
 
@@ -193,28 +213,52 @@ public final class SimpleZippedAnimation implements Iterable<AnimationEvent> {
         return new SimpleZippedAnimation(newEvents, (int) (width * scale), (int) (height * scale));
     }
     
+    /**
+     * The Class ImageAnimationEventImpl.
+     */
     private static final class ImageAnimationEventImpl implements ImageAnimationEvent {
         //private static final Component _c = new Component() {};
         
+        /** The image. */
         private final Image image;
+        
+        /** The duration in ms. */
         private final int durationInMs;
         
+        /**
+         * Instantiates a new image animation event impl.
+         *
+         * @param image the image
+         * @param durationInMs the duration in ms
+         */
         private ImageAnimationEventImpl(final Image image,
                 final int durationInMs) {
             this.image = image;
             this.durationInMs = durationInMs;
         }
         
+        /* (non-Javadoc)
+         * @see net.sf.freecol.common.io.sza.ImageAnimationEvent#getImage()
+         */
         @Override
         public Image getImage() {
             return image;
         }
         
+        /* (non-Javadoc)
+         * @see net.sf.freecol.common.io.sza.ImageAnimationEvent#getDurationInMs()
+         */
         @Override
         public int getDurationInMs() {
             return durationInMs;
         }
         
+        /**
+         * Creates the scaled version.
+         *
+         * @param scale the scale
+         * @return the image animation event
+         */
         private ImageAnimationEvent createScaledVersion(float scale) {
             final int width = (int) (image.getWidth(null) * scale);
             final int height = (int) (image.getHeight(null) * scale);

@@ -48,11 +48,13 @@ import net.sf.freecol.common.model.UnitType;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the Native Affairs Advisor.
  */
 public final class ReportIndianPanel extends ReportPanel {
 
+    /** The Constant headlines. */
     private static final String[] headlines = {
         "settlement",
         "mission",
@@ -90,6 +92,12 @@ public final class ReportIndianPanel extends ReportPanel {
         reportJPanel.doLayout();
     }
 
+    /**
+     * Builds the indian advisor panel.
+     *
+     * @param player the player
+     * @param opponent the opponent
+     */
     private void buildIndianAdvisorPanel(Player player, Player opponent) {
         final NationSummary ns = igc().getNationSummary(opponent);
         List<IndianSettlement> nativeSettlements

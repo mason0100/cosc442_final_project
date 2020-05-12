@@ -50,6 +50,7 @@ import net.sf.freecol.common.util.RandomChoice;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays details of nations in the Colopedia.
  */

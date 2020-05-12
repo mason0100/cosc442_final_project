@@ -47,17 +47,26 @@ import net.sf.freecol.common.model.Specification;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the classic version of the colony report.
  */
 public final class ReportClassicColonyPanel extends ReportPanel
     implements ActionListener {
 
+    /** The Constant COLONISTS_PER_ROW. */
     private static final int COLONISTS_PER_ROW = 20;
+    
+    /** The Constant UNITS_PER_ROW. */
     private static final int UNITS_PER_ROW = 14;
+    
+    /** The Constant GOODS_PER_ROW. */
     private static final int GOODS_PER_ROW = 10;
+    
+    /** The Constant BUILDINGS_PER_ROW. */
     private static final int BUILDINGS_PER_ROW = 8;
 
+    /** The Constant colonies. */
     private static final List<Colony> colonies = new ArrayList<>();
 
 
@@ -73,6 +82,9 @@ public final class ReportClassicColonyPanel extends ReportPanel
         update();
     }
 
+    /**
+     * Update.
+     */
     private void update() {
         final Specification spec = getSpecification();
         final ImageLibrary lib = getImageLibrary();

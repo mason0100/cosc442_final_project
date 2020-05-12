@@ -31,6 +31,7 @@ import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.model.Game;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The MissionManager keeps track of all missions defined.
  *
@@ -38,8 +39,10 @@ import net.sf.freecol.common.model.Game;
  */
 public class MissionManager {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(MissionManager.class.getName());
 
+    /** The Constant missionMap. */
     private static final Map<String, Constructor<? extends Mission>> missionMap
                                                      = new HashMap<>();
 

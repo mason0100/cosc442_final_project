@@ -33,6 +33,7 @@ import net.sf.freecol.common.model.StringTemplate;
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Contains information on buildable types.
  */
@@ -97,6 +98,12 @@ public abstract class BuildableType extends FreeColGameObjectType {
             : new HashMap<>(requiredAbilities);
     }
 
+    /**
+     * Requires ability.
+     *
+     * @param key the key
+     * @return true, if successful
+     */
     public boolean requiresAbility(String key) {
         return (requiredAbilities == null) ? false
             : (!requiredAbilities.containsKey(key)) ? false
@@ -126,7 +133,7 @@ public abstract class BuildableType extends FreeColGameObjectType {
     }
 
     /**
-     * Is this buildable available to a given FreeColObject?
+     * Is this buildable available to a given FreeColObject?.
      *
      * @param fco The <code>FreeColObject</code>s to check.
      * @return True if the buildable is available.
@@ -176,7 +183,7 @@ public abstract class BuildableType extends FreeColGameObjectType {
     }
 
     /**
-     * Does this buildable need goods to build?
+     * Does this buildable need goods to build?.
      *
      * @return True if goods are required to build this buildable.
      */
@@ -226,8 +233,13 @@ public abstract class BuildableType extends FreeColGameObjectType {
 
     // Serialization
 
+    /** The Constant REQUIRED_ABILITY_TAG. */
     private static final String REQUIRED_ABILITY_TAG = "required-ability";
+    
+    /** The Constant REQUIRED_GOODS_TAG. */
     private static final String REQUIRED_GOODS_TAG = "required-goods";
+    
+    /** The Constant REQUIRED_POPULATION_TAG. */
     // Subclasses need to check this.
     public static final String REQUIRED_POPULATION_TAG = "required-population";
 

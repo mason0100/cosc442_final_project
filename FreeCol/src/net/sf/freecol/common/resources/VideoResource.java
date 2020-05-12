@@ -22,6 +22,7 @@ package net.sf.freecol.common.resources;
 import java.net.URI;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A <code>Resource</code> wrapping a <code>Video</code>.
  * 
@@ -30,6 +31,7 @@ import java.net.URI;
  */
 public class VideoResource extends Resource {
 
+    /** The video. */
     private final Video video;
 
     
@@ -38,6 +40,7 @@ public class VideoResource extends Resource {
      *
      * @param resourceLocator The <code>URI</code> used when loading this
      *     resource.
+     * @throws Exception the exception
      */
     public VideoResource(URI resourceLocator) throws Exception {
         super(resourceLocator);

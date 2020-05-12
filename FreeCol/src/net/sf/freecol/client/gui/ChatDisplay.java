@@ -28,6 +28,7 @@ import java.util.Date;
 
 import net.sf.freecol.common.resources.ResourceManager;
 
+// TODO: Auto-generated Javadoc
 /**
  * ChatDisplay manages use of <code>GUIMessage</code>.
  */
@@ -39,8 +40,12 @@ public class ChatDisplay {
     /** The amount of time before a message gets deleted (in milliseconds). */
     private static final int MESSAGE_AGE = 30000;
 
+    /** The messages. */
     private final ArrayList<GUIMessage> messages;
 
+    /**
+     * Instantiates a new chat display.
+     */
     ChatDisplay() {
         messages = new ArrayList<>(MESSAGE_COUNT);
     }

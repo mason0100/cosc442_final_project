@@ -30,6 +30,7 @@ import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class contains the mutable tile data visible to a specific player.
  *
@@ -42,6 +43,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
  */
 public class PlayerExploredTile extends FreeColGameObject {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(PlayerExploredTile.class.getName());
 
 
@@ -60,12 +62,18 @@ public class PlayerExploredTile extends FreeColGameObject {
     /** All known TileItems. */
     private List<TileItem> tileItems = null;
 
+    /** The colony unit count. */
     // Visible Colony data.
     private int colonyUnitCount = 0;
 
+    /** The missionary. */
     // Visible IndianSettlement data.
     private Unit missionary = null;
+    
+    /** The alarm. */
     private Tension alarm = null;
+    
+    /** The most hated. */
     private Player mostHated = null;
 
 
@@ -179,16 +187,37 @@ public class PlayerExploredTile extends FreeColGameObject {
 
     // Serialization
     
+    /** The Constant ALARM_TAG. */
     private static final String ALARM_TAG = "alarm";
+    
+    /** The Constant COLONY_UNIT_COUNT_TAG. */
     private static final String COLONY_UNIT_COUNT_TAG = "colonyUnitCount";
+    
+    /** The Constant LEARNABLE_SKILL_TAG. */
     private static final String LEARNABLE_SKILL_TAG = "learnableSkill";
+    
+    /** The Constant MISSIONARY_TAG. */
     private static final String MISSIONARY_TAG = "missionary";
+    
+    /** The Constant MOST_HATED_TAG. */
     private static final String MOST_HATED_TAG = "mostHated";
+    
+    /** The Constant OWNER_TAG. */
     private static final String OWNER_TAG = "owner";
+    
+    /** The Constant OWNING_SETTLEMENT_TAG. */
     private static final String OWNING_SETTLEMENT_TAG = "owningSettlement";
+    
+    /** The Constant PLAYER_TAG. */
     private static final String PLAYER_TAG = "player";
+    
+    /** The Constant TILE_TAG. */
     private static final String TILE_TAG = "tile";
+    
+    /** The Constant WANTED_GOODS_TAG. */
     private static final String WANTED_GOODS_TAG = "wantedGoods";
+    
+    /** The Constant OLD_TILE_IMPROVEMENT_TAG. */
     // @compat 0.11.3
     private static final String OLD_TILE_IMPROVEMENT_TAG = "tileimprovement";
     // end @compat 0.11.3

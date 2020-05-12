@@ -30,6 +30,7 @@ import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents one of the European nations present in the game,
  * i.e. both REFs and possible human players.
@@ -58,7 +59,7 @@ public class EuropeanNationType extends NationType {
 
 
     /**
-     * Is this a REF nation type?
+     * Is this a REF nation type?.
      *
      * @return True if this is a REF nation type.
      */
@@ -68,7 +69,7 @@ public class EuropeanNationType extends NationType {
     }
 
     /**
-     * Is this a European nation type?
+     * Is this a European nation type?.
      *
      * @return True.
      */
@@ -78,7 +79,7 @@ public class EuropeanNationType extends NationType {
     }
 
     /**
-     * Is this a native nation type?
+     * Is this a native nation type?.
      *
      * @return False.
      */
@@ -137,10 +138,19 @@ public class EuropeanNationType extends NationType {
 
     // Serialization
 
+    /** The Constant EXPERT_STARTING_UNITS_TAG. */
     private static final String EXPERT_STARTING_UNITS_TAG = "expert-starting-units";
+    
+    /** The Constant REF_TAG. */
     private static final String REF_TAG = "ref";
+    
+    /** The Constant ROLE_TAG. */
     private static final String ROLE_TAG = "role";
+    
+    /** The Constant TYPE_TAG. */
     private static final String TYPE_TAG = "type";
+    
+    /** The Constant UNIT_TAG. */
     private static final String UNIT_TAG = "unit";
 
 
@@ -178,6 +188,15 @@ public class EuropeanNationType extends NationType {
         }
     }
 
+    /**
+     * Write unit.
+     *
+     * @param xw the xw
+     * @param id the id
+     * @param au the au
+     * @param expert the expert
+     * @throws XMLStreamException the XML stream exception
+     */
     private void writeUnit(FreeColXMLWriter xw, String id,
                            AbstractUnit au,
                            boolean expert) throws XMLStreamException {

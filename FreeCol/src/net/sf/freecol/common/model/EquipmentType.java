@@ -29,6 +29,7 @@ import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This whole class is now @compat 0.10.x.  We no longer use equipment types.
  *
@@ -40,6 +41,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
  */
 public class EquipmentType extends BuildableType {
 
+    /** The Constant NO_EQUIPMENT. */
     public static final EquipmentType[] NO_EQUIPMENT = new EquipmentType[0];
 
     /** The maximum number of equipment items that can be combined. */
@@ -57,12 +59,14 @@ public class EquipmentType extends BuildableType {
      * (if captureEquipmentByIndians is true) or Europeans (otherwise).
      */
     private String captureEquipmentId = null;
+    
+    /** The capture equipment by indians. */
     private boolean captureEquipmentByIndians = false;
 
     /** The default Role of the Unit carrying this type of Equipment. */
     private Role role = null;
 
-    /** Is this military equipment? */
+    /**  Is this military equipment?. */
     private boolean militaryEquipment = false;
 
     /**
@@ -102,7 +106,7 @@ public class EquipmentType extends BuildableType {
     }
 
     /**
-     * Can this equipment type be captured in combat?
+     * Can this equipment type be captured in combat?.
      *
      * @return True if this equipment can be captured.
      */
@@ -126,7 +130,7 @@ public class EquipmentType extends BuildableType {
     }
 
     /**
-     * Is this type of equipment compatible with the given type of equipment?
+     * Is this type of equipment compatible with the given type of equipment?.
      *
      * @param otherType The other <code>EquipmentType</code>.
      * @return True if the equipment is compatible.
@@ -171,7 +175,7 @@ public class EquipmentType extends BuildableType {
 
     /**
      * Is this military equiment?
-     * (True if it grants an offensive or defensive bonus)
+     * (True if it grants an offensive or defensive bonus).
      *
      * @return True if this is military equipment.
      */
@@ -222,12 +226,25 @@ public class EquipmentType extends BuildableType {
 
     // Serialization
 
+    /** The Constant BY_INDIANS_TAG. */
     private static final String BY_INDIANS_TAG = "by-indians";
+    
+    /** The Constant CAPTURE_EQUIPMENT_TAG. */
     private static final String CAPTURE_EQUIPMENT_TAG = "capture-equipment";
+    
+    /** The Constant COMBAT_LOSS_PRIORITY_TAG. */
     private static final String COMBAT_LOSS_PRIORITY_TAG = "combat-loss-priority";
+    
+    /** The Constant COMPATIBLE_EQUIPMENT_TAG. */
     private static final String COMPATIBLE_EQUIPMENT_TAG = "compatible-equipment";
+    
+    /** The Constant MAXIMUM_COUNT_TAG. */
     private static final String MAXIMUM_COUNT_TAG = "maximum-count";
+    
+    /** The Constant ROLE_TAG. */
     private static final String ROLE_TAG = "role";
+    
+    /** The Constant REQUIRED_LOCATION_ABILITY_TAG. */
     // @compat 0.10.0
     private static final String REQUIRED_LOCATION_ABILITY_TAG = "required-location-ability";
     // end @compat
@@ -357,6 +374,12 @@ public class EquipmentType extends BuildableType {
      * @return "equipment-type".
      */
     static String equipmentTag = "equipment-type";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
 		return equipmentTag;
     }

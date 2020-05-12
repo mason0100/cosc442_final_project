@@ -24,11 +24,13 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for starting the Map Editor.
  */
 public class MapEditorAction extends FreeColAction {
 
+    /** The Constant ID. */
     public static final String ID = "mapEditorAction";
 
 

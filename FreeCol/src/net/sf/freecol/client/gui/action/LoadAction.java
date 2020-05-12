@@ -29,11 +29,13 @@ import net.sf.freecol.common.model.GoodsType;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for filling the holds of the currently selected unit.
  */
 public class LoadAction extends MapboardAction {
 
+    /** The Constant ID. */
     public static final String ID = "loadAction";
 
 

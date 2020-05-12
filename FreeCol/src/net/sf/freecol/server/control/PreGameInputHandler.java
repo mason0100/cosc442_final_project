@@ -39,6 +39,7 @@ import net.sf.freecol.server.model.ServerPlayer;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Handles the network messages that arrives before the game starts.
  * 
@@ -46,6 +47,7 @@ import org.w3c.dom.Element;
  */
 public final class PreGameInputHandler extends InputHandler {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(PreGameInputHandler.class.getName());
 
     /** Is the game launching yet. */

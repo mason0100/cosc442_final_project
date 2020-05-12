@@ -29,6 +29,7 @@ import javax.swing.JSlider;
 import net.sf.freecol.common.option.PercentageOption;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides visualization for a
  * {@link net.sf.freecol.common.option.PercentageOption}

@@ -35,12 +35,14 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A TradeRoute holds all information for a unit to follow along a trade route.
  */
 public class TradeRoute extends FreeColGameObject
     implements Nameable, Ownable {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(TradeRoute.class.getName());
 
     /** The name of this trade route. */
@@ -134,7 +136,7 @@ public class TradeRoute extends FreeColGameObject
     }
 
     /**
-     * Does this trade route generate no messages to the player?
+     * Does this trade route generate no messages to the player?.
      *
      * @return True if this trade route is silent.
      */
@@ -232,7 +234,7 @@ public class TradeRoute extends FreeColGameObject
     }
 
     /**
-     * Is a stop valid for a given unit?
+     * Is a stop valid for a given unit?.
      *
      * @param unit The <code>Unit</code> to check.
      * @param stop The <code>TradeRouteStop</code> to check.
@@ -243,7 +245,7 @@ public class TradeRoute extends FreeColGameObject
     }
 
     /**
-     * Is a stop valid for a given player?
+     * Is a stop valid for a given player?.
      *
      * @param player The <code>Player</code> to check.
      * @param stop The <code>TradeRouteStop</code> to check.
@@ -324,8 +326,13 @@ public class TradeRoute extends FreeColGameObject
 
     // Serialization
 
+    /** The Constant NAME_TAG. */
     private static final String NAME_TAG = "name";
+    
+    /** The Constant OWNER_TAG. */
     private static final String OWNER_TAG = "owner";
+    
+    /** The Constant SILENT_TAG. */
     private static final String SILENT_TAG = "silent";
 
 

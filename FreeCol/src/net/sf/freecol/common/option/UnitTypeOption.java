@@ -32,11 +32,13 @@ import net.sf.freecol.common.model.Specification;
 import net.sf.freecol.common.model.UnitType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Option wrapping a UnitType.
  */
 public class UnitTypeOption extends AbstractOption<UnitType> {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(UnitTypeOption.class
             .getName());
@@ -45,7 +47,15 @@ public class UnitTypeOption extends AbstractOption<UnitType> {
      * FIXME: replace with Predicates.
      */
     public static enum TypeSelector {
-        UNITS, IMMIGRANTS, LAND_UNITS, NAVAL_UNITS
+        
+        /** The units. */
+        UNITS, 
+ /** The immigrants. */
+ IMMIGRANTS, 
+ /** The land units. */
+ LAND_UNITS, 
+ /** The naval units. */
+ NAVAL_UNITS
     }
 
     /** The option value. */
@@ -82,7 +92,7 @@ public class UnitTypeOption extends AbstractOption<UnitType> {
 
 
     /**
-     * Is "none" a valid choice for this option?
+     * Is "none" a valid choice for this option?.
      *
      * @return True if "none" is a valid choice.
      */
@@ -221,8 +231,13 @@ public class UnitTypeOption extends AbstractOption<UnitType> {
 
     // Serialization
 
+    /** The Constant ADD_NONE_TAG. */
     private static final String ADD_NONE_TAG = "addNone";
+    
+    /** The Constant CHOICE_TAG. */
     private static final String CHOICE_TAG = "choice";
+    
+    /** The Constant GENERATE_TAG. */
     private static final String GENERATE_TAG = "generate";
 
 

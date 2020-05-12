@@ -33,6 +33,7 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents one FoundingFather to be contained in a Player object.
  * The FoundingFather is able to grant new abilities or bonuses to the
@@ -40,11 +41,24 @@ import static net.sf.freecol.common.util.StringUtils.*;
  */
 public class FoundingFather extends FreeColGameObjectType {
 
+    /**
+     * The Enum FoundingFatherType.
+     */
     public enum FoundingFatherType {
+        
+        /** The trade. */
         TRADE,
+        
+        /** The exploration. */
         EXPLORATION,
+        
+        /** The military. */
         MILITARY,
+        
+        /** The political. */
         POLITICAL,
+        
+        /** The religious. */
         RELIGIOUS;
 
         /**
@@ -285,11 +299,22 @@ public class FoundingFather extends FreeColGameObjectType {
 
     // Serialization
 
+    /** The Constant FROM_ID_TAG. */
     private static final String FROM_ID_TAG = "from-id";
+    
+    /** The Constant TO_ID_TAG. */
     private static final String TO_ID_TAG = "to-id";
+    
+    /** The Constant TYPE_TAG. */
     private static final String TYPE_TAG = "type";
+    
+    /** The Constant UNIT_TAG. */
     private static final String UNIT_TAG = "unit";
+    
+    /** The Constant UPGRADE_TAG. */
     private static final String UPGRADE_TAG = "upgrade";
+    
+    /** The Constant WEIGHT_TAG. */
     private static final String WEIGHT_TAG = "weight";
 
 
@@ -412,6 +437,12 @@ public class FoundingFather extends FreeColGameObjectType {
      * @return "founding-father".
      */
     static String foundingFatherTag = "founding-father";
+    
+    /**
+     * Gets the XML element tag name.
+     *
+     * @return the XML element tag name
+     */
     public static String getXMLElementTagName() {
 		return foundingFatherTag;
     }

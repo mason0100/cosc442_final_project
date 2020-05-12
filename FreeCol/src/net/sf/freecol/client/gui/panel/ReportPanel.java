@@ -43,17 +43,22 @@ import net.sf.freecol.common.model.Unit;
 import net.sf.freecol.common.model.UnitType;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays a report.
  */
 public class ReportPanel extends FreeColPanel {
 
+    /** The Constant logger. */
     protected static final Logger logger = Logger.getLogger(ReportPanel.class.getName());
 
+    /** The report J panel. */
     protected final JPanel reportJPanel;
 
+    /** The header. */
     protected final JLabel header;
 
+    /** The scroll pane. */
     protected JScrollPane scrollPane;
 
 
@@ -94,10 +99,21 @@ public class ReportPanel extends FreeColPanel {
         reportJPanel.doLayout();
     }
 
+    /**
+     * Creates the border.
+     *
+     * @return the border
+     */
     private Border createBorder() {
         return new EmptyBorder(20, 20, 20, 20);
     }
 
+    /**
+     * Creates the unit type label.
+     *
+     * @param au the au
+     * @return the j label
+     */
     protected JLabel createUnitTypeLabel(AbstractUnit au) {
         UnitType unitType = au.getType(getSpecification());
         String roleId = au.getRoleId();
@@ -113,6 +129,12 @@ public class ReportPanel extends FreeColPanel {
         return unitLabel;
     }
 
+    /**
+     * Gets the location label for.
+     *
+     * @param unit the unit
+     * @return the location label for
+     */
     protected String getLocationLabelFor(Unit unit) {
         if (unit.getDestination() instanceof Map) {
             return Messages.message("sailingToAmerica");
@@ -124,6 +146,11 @@ public class ReportPanel extends FreeColPanel {
         }
     }
 
+    /**
+     * Sets the main component.
+     *
+     * @param main the new main component
+     */
     protected void setMainComponent(Component main) {
         remove(scrollPane);
         add(main, "cell 0 1, height 100%, width 100%");

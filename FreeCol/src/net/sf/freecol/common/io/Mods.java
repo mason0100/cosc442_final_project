@@ -33,11 +33,13 @@ import net.sf.freecol.common.io.FreeColModFile;
 import net.sf.freecol.common.util.LogBuilder;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Contains methods for getting a list of available mods.
  */
 public class Mods {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Mods.class.getName());
 
     /** A cache of all the mods. */

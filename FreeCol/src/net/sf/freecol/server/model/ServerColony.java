@@ -60,16 +60,21 @@ import net.sf.freecol.server.control.ChangeSet.See;
 import net.sf.freecol.server.model.ServerPlayer;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The server version of a colony.
  */
 public class ServerColony extends Colony implements ServerModelObject {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ServerColony.class.getName());
 
 
     /**
      * Trivial constructor required for all ServerModelObjects.
+     *
+     * @param game the game
+     * @param id the id
      */
     public ServerColony(Game game, String id) {
         super(game, id);
@@ -552,15 +557,15 @@ public class ServerColony extends Colony implements ServerModelObject {
 
     /**
      * Eject units to any available work location.
-     *
+     * 
      * Called on building type changes, see below and
-     * @see ServerPlayer#csDamageBuilding
-     *
-     * -til: Might change the visible colony size.
      *
      * @param workLocation The <code>WorkLocation</code> to eject from.
      * @param units A list of <code>Unit</code>s to eject.
      * @return True if units were ejected.
+     * @see ServerPlayer#csDamageBuilding
+     * 
+     * -til: Might change the visible colony size.
      */
     public boolean ejectUnits(WorkLocation workLocation, List<Unit> units) {
         if (units == null || units.isEmpty()) return false;

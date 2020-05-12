@@ -76,12 +76,14 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import net.sf.freecol.common.util.LogBuilder;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Select a location as the destination for a given unit.
  */
 public final class SelectDestinationDialog extends FreeColDialog<Location>
     implements ListSelectionListener {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(SelectDestinationDialog.class.getName());
 
@@ -92,12 +94,25 @@ public final class SelectDestinationDialog extends FreeColDialog<Location>
      */
     private class Destination {
 
+        /** The unit. */
         public final Unit unit;
+        
+        /** The location. */
         public final Location location;
+        
+        /** The turns. */
         public final int turns;
+        
+        /** The extras. */
         public final String extras;
+        
+        /** The text. */
         public final String text;
+        
+        /** The score. */
         public final int score;
+        
+        /** The icon. */
         public ImageIcon icon;
 
 
@@ -231,6 +246,11 @@ public final class SelectDestinationDialog extends FreeColDialog<Location>
             return lb.toString();
         }
 
+        /**
+         * Calculate score.
+         *
+         * @return the int
+         */
         private int calculateScore() {
             return (location instanceof Europe || location instanceof Map)
                 ? 10
@@ -242,14 +262,26 @@ public final class SelectDestinationDialog extends FreeColDialog<Location>
         }
     }
 
+    /**
+     * The Class DestinationComparator.
+     */
     private class DestinationComparator implements Comparator<Destination> {
 
+        /** The owner. */
         protected final Player owner;
 
+        /**
+         * Instantiates a new destination comparator.
+         *
+         * @param player the player
+         */
         public DestinationComparator(Player player) {
             this.owner = player;
         }
 
+        /* (non-Javadoc)
+         * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
+         */
         @Override
         public int compare(Destination choice1, Destination choice2) {
             int score1 = choice1.score;
@@ -263,6 +295,7 @@ public final class SelectDestinationDialog extends FreeColDialog<Location>
          *
          * @param loc1 The first <code>Location</code>.
          * @param loc2 The second <code>Location</code>.
+         * @return the int
          */
         protected int compareNames(Location loc1, Location loc2) {
             if (!(loc1 instanceof Settlement)) return -1;
@@ -275,8 +308,16 @@ public final class SelectDestinationDialog extends FreeColDialog<Location>
         }
     }
 
+    /**
+     * The Class NameComparator.
+     */
     private class NameComparator extends DestinationComparator {
 
+        /**
+         * Instantiates a new name comparator.
+         *
+         * @param player the player
+         */
         public NameComparator(Player player) {
             super(player);
         }
@@ -290,8 +331,16 @@ public final class SelectDestinationDialog extends FreeColDialog<Location>
         }
     }
 
+    /**
+     * The Class DistanceComparator.
+     */
     private class DistanceComparator extends DestinationComparator {
 
+        /**
+         * Instantiates a new distance comparator.
+         *
+         * @param player the player
+         */
         public DistanceComparator(Player player) {
             super(player);
         }
@@ -307,6 +356,9 @@ public final class SelectDestinationDialog extends FreeColDialog<Location>
         }
     }
 
+    /**
+     * The Class LocationRenderer.
+     */
     private static class LocationRenderer
         extends FreeColComboBoxRenderer<Destination> {
 
@@ -335,7 +387,7 @@ public final class SelectDestinationDialog extends FreeColDialog<Location>
     /** The list of destinations. */
     private final JList<Destination> destinationList;
 
-    /** Restrict to only the player colonies? */
+    /**  Restrict to only the player colonies?. */
     private JCheckBox onlyMyColoniesBox;
 
     /** Choice of the comparator. */
@@ -347,6 +399,7 @@ public final class SelectDestinationDialog extends FreeColDialog<Location>
      *
      * @param freeColClient The <code>FreeColClient</code> for the game.
      * @param frame The owner frame.
+     * @param unit the unit
      */
     public SelectDestinationDialog(FreeColClient freeColClient, JFrame frame,
             Unit unit) {

@@ -37,6 +37,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Collection of small static helper methods using Collections.
  */
@@ -50,23 +51,34 @@ public class CollectionUtils {
     public static final BinaryOperator<Double> doubleAccumulator
         = (d1, d2) -> d1 + d2;
 
-    /** Useful comparators for mapEntriesBy* */
+    /**  Useful comparators for mapEntriesBy*. */
     public static final Comparator<Integer> ascendingIntegerComparator
         = Comparator.comparingInt(i -> i);
+    
+    /** The Constant descendingIntegerComparator. */
     public static final Comparator<Integer> descendingIntegerComparator
         = ascendingIntegerComparator.reversed();
+    
+    /** The Constant ascendingDoubleComparator. */
     public static final Comparator<Double> ascendingDoubleComparator
         = Comparator.comparingDouble(d -> d);
+    
+    /** The Constant descendingDoubleComparator. */
     public static final Comparator<Double> descendingDoubleComparator
         = ascendingDoubleComparator.reversed();
+    
+    /** The Constant ascendingListLengthComparator. */
     public static final Comparator<List<?>> ascendingListLengthComparator
         = Comparator.comparingInt(l -> l.size());
+    
+    /** The Constant descendingListLengthComparator. */
     public static final Comparator<List<?>> descendingListLengthComparator
         = ascendingListLengthComparator.reversed();
 
     /**
      * Make an unmodifiable set with specified members.
      *
+     * @param <T> the generic type
      * @param members The set members.
      * @return An unmodifiable set containing the members.
      */
@@ -80,6 +92,7 @@ public class CollectionUtils {
     /**
      * Make an unmodifiable list with specified members.
      *
+     * @param <T> the generic type
      * @param members The list members.
      * @return An unmodifiable list containing the members.
      */
@@ -93,6 +106,8 @@ public class CollectionUtils {
     /**
      * Appends a value to a list member of a map with a given key.
      *
+     * @param <T> the generic type
+     * @param <K> the key type
      * @param map The <code>Map</code> to add to.
      * @param key The key with which to look up the list in the map.
      * @param value The value to append.
@@ -109,6 +124,16 @@ public class CollectionUtils {
         }
     }
 
+    /**
+     * Accumulate to map.
+     *
+     * @param <K> the key type
+     * @param <V> the value type
+     * @param map the map
+     * @param key the key
+     * @param value the value
+     * @param accumulator the accumulator
+     */
     public static <K,V> void accumulateToMap(Map<K,V> map, K key, V value,
                                              BinaryOperator<V> accumulator) {
         if (map.containsKey(key)) {
@@ -118,6 +143,15 @@ public class CollectionUtils {
         }
     }
 
+    /**
+     * Accumulate map.
+     *
+     * @param <K> the key type
+     * @param <V> the value type
+     * @param map1 the map 1
+     * @param map2 the map 2
+     * @param accumulator the accumulator
+     */
     public static <K,V> void accumulateMap(Map<K,V> map1, Map<K,V> map2,
                                            BinaryOperator<V> accumulator) {
         for (Entry<K,V> e : map2.entrySet()) {
@@ -128,6 +162,7 @@ public class CollectionUtils {
     /**
      * Increment the count in an integer valued map for a given key.
      *
+     * @param <K> the key type
      * @param map The map to increment within.
      * @param key The key to increment the value for.
      * @return The new count associated with the key.
@@ -141,10 +176,11 @@ public class CollectionUtils {
     /**
      * Given a list, return an iterable that yields all permutations
      * of the original list.
-     *
+     * 
      * Obviously combinatorial explosion will occur, so use with
      * caution only on lists that are known to be short.
      *
+     * @param <T> the generic type
      * @param l The original list.
      * @return A iterable yielding all the permutations of the original list.
      */
@@ -198,6 +234,7 @@ public class CollectionUtils {
     /**
      * Are all members of a collection the same (in the sense of ==).
      *
+     * @param <T> the generic type
      * @param collection The <code>Collection</code> to examine.
      * @return True if all members are the same.
      */
@@ -214,6 +251,7 @@ public class CollectionUtils {
     /**
      * Rotate a list by N places.
      *
+     * @param <T> the generic type
      * @param list The <code>List</code> to rotate.
      * @param n The number of places to rotate by (positive or negative).
      */
@@ -237,6 +275,7 @@ public class CollectionUtils {
     /**
      * Reverse a list.
      *
+     * @param <T> the generic type
      * @param list The <code>List</code> to reverse.
      */
     public static <T> void reverse(final List<T> list) {
@@ -252,6 +291,7 @@ public class CollectionUtils {
     /**
      * Check if two lists contents are equal but also checks for null.
      *
+     * @param <T> the generic type
      * @param one First list to compare
      * @param two Second list to compare
      * @return True if the list contents are all either both null or
@@ -280,6 +320,8 @@ public class CollectionUtils {
     /**
      * Get the entries in a map in a sorted order.
      *
+     * @param <K> the key type
+     * @param <V> the value type
      * @param map The <code>Map</code> to extract entries from.
      * @return A list of entries from the map sorted by key.
      */
@@ -293,6 +335,8 @@ public class CollectionUtils {
     /**
      * Get the entries in a map in a sorted order.
      *
+     * @param <K> the key type
+     * @param <V> the value type
      * @param map The <code>Map</code> to extract entries from.
      * @param comparator A <code>Comparator</code> for the values.
      * @return A list of entries from the map sorted by key.
@@ -307,6 +351,8 @@ public class CollectionUtils {
     /**
      * Get the entries in a map in a sorted order.
      *
+     * @param <K> the key type
+     * @param <V> the value type
      * @param map The <code>Map</code> to extract entries from.
      * @return A list of entries from the map sorted by key.
      */
@@ -320,6 +366,8 @@ public class CollectionUtils {
     /**
      * Get the entries in a map in a sorted order.
      *
+     * @param <K> the key type
+     * @param <V> the value type
      * @param map The <code>Map</code> to extract entries from.
      * @param comparator A <code>Comparator</code> for the values.
      * @return A list of entries from the map sorted by value.
@@ -331,51 +379,124 @@ public class CollectionUtils {
             .collect(Collectors.toList());
     }
 
+    /**
+     * All.
+     *
+     * @param <T> the generic type
+     * @param array the array
+     * @param predicate the predicate
+     * @return true, if successful
+     */
     public static <T> boolean all(T[] array, Predicate<T> predicate) {
         return all(Arrays.stream(array), predicate);
     }
 
+    /**
+     * Any.
+     *
+     * @param <T> the generic type
+     * @param array the array
+     * @param predicate the predicate
+     * @return true, if successful
+     */
     public static <T> boolean any(T[] array, Predicate<T> predicate) {
         return any(Arrays.stream(array), predicate);
     }
 
+    /**
+     * None.
+     *
+     * @param <T> the generic type
+     * @param array the array
+     * @param predicate the predicate
+     * @return true, if successful
+     */
     public static <T> boolean none(T[] array, Predicate<T> predicate) {
         return none(Arrays.stream(array), predicate);
     }
 
+    /**
+     * All.
+     *
+     * @param <T> the generic type
+     * @param collection the collection
+     * @param predicate the predicate
+     * @return true, if successful
+     */
     public static <T> boolean all(Collection<T> collection,
                                   Predicate<T> predicate) {
         return all(collection.stream(), predicate);
     }
 
+    /**
+     * Any.
+     *
+     * @param <T> the generic type
+     * @param collection the collection
+     * @param predicate the predicate
+     * @return true, if successful
+     */
     public static <T> boolean any(Collection<T> collection,
                                   Predicate<T> predicate) {
         return any(collection.stream(), predicate);
     }
 
+    /**
+     * None.
+     *
+     * @param <T> the generic type
+     * @param collection the collection
+     * @param predicate the predicate
+     * @return true, if successful
+     */
     public static <T> boolean none(Collection<T> collection,
                                    Predicate<T> predicate) {
         return none(collection.stream(), predicate);
     }
 
+    /**
+     * All.
+     *
+     * @param <T> the generic type
+     * @param stream the stream
+     * @param predicate the predicate
+     * @return true, if successful
+     */
     public static <T> boolean all(Stream<T> stream,
                                   Predicate<T> predicate) {
         return stream.allMatch(predicate);
     }
 
+    /**
+     * Any.
+     *
+     * @param <T> the generic type
+     * @param stream the stream
+     * @param predicate the predicate
+     * @return true, if successful
+     */
     public static <T> boolean any(Stream<T> stream,
                                   Predicate<T> predicate) {
         return stream.anyMatch(predicate);
     }
 
+    /**
+     * None.
+     *
+     * @param <T> the generic type
+     * @param stream the stream
+     * @param predicate the predicate
+     * @return true, if successful
+     */
     public static <T> boolean none(Stream<T> stream,
                                    Predicate<T> predicate) {
         return stream.noneMatch(predicate);
     }
 
     /**
-     * Does a collection contain at least one element that matches a predicate?
+     * Does a collection contain at least one element that matches a predicate?.
      *
+     * @param <T> the generic type
      * @param collection The <code>Collection</code> to search.
      * @param predicate A <code>Predicate</code> to test with.
      * @return True if the predicate ever succeeds.
@@ -388,8 +509,10 @@ public class CollectionUtils {
     /**
      * Simple stream search for the first item that matches a predicate.
      *
+     * @param <T> the generic type
      * @param array The array to search.
      * @param predicate A <code>Predicate</code> to match with.
+     * @param fail the fail
      * @return The item found, or fail if not found.
      */
     public static <T> T find(T[] array, Predicate<T> predicate, T fail) {
@@ -399,6 +522,7 @@ public class CollectionUtils {
     /**
      * Simple stream search for the first item that matches a predicate.
      *
+     * @param <T> the generic type
      * @param collection The <code>Collection</code> to search.
      * @param predicate A <code>Predicate</code> to match with.
      * @return The item found, or fail if not found.
@@ -410,6 +534,7 @@ public class CollectionUtils {
     /**
      * Simple stream search for the first item that matches a predicate.
      *
+     * @param <T> the generic type
      * @param collection The <code>Collection</code> to search.
      * @param predicate A <code>Predicate</code> to match with.
      * @param fail The value to return if nothing is found.
@@ -423,6 +548,7 @@ public class CollectionUtils {
     /**
      * Simple stream search for the first item that matches a predicate.
      *
+     * @param <T> the generic type
      * @param stream A <code>Stream</code> to search.
      * @param predicate A <code>Predicate</code> to match with.
      * @return The item found, or null if not found.
@@ -434,6 +560,7 @@ public class CollectionUtils {
     /**
      * Simple stream search for the first item that matches a predicate.
      *
+     * @param <T> the generic type
      * @param stream A <code>Stream</code> to search.
      * @param predicate A <code>Predicate</code> to match with.
      * @param fail The value to return if nothing is found.
@@ -447,6 +574,8 @@ public class CollectionUtils {
     /**
      * Create a stream from an array and an immediate mapping transform.
      *
+     * @param <T> the generic type
+     * @param <R> the generic type
      * @param array The array to search.
      * @param mapper A mapping <code>Function</code> to apply.
      * @return The resulting <code>Stream</code>.
@@ -459,6 +588,8 @@ public class CollectionUtils {
     /**
      * Create a stream from a collection and an immediate mapping transform.
      *
+     * @param <T> the generic type
+     * @param <R> the generic type
      * @param collection The <code>Collection</code> to search.
      * @param mapper A mapping <code>Function</code> to apply.
      * @return The resulting <code>Stream</code>.

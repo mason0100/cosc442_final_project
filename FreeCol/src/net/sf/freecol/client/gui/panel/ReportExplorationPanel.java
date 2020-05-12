@@ -34,11 +34,13 @@ import net.sf.freecol.client.gui.FontLibrary;
 import net.sf.freecol.common.model.Region;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the exploration report.
  */
 public final class ReportExplorationPanel extends ReportPanel {
 
+    /** The Constant regionComparator. */
     // only use this for regions that have already been discovered!
     private static final Comparator<Region> regionComparator = new Comparator<Region>() {
         @Override

@@ -25,6 +25,7 @@ import net.sf.freecol.client.FreeColClient;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for making a unit move to a specific location.  This
  * action first displays a panel from which the player can choose a
@@ -32,6 +33,7 @@ import net.sf.freecol.common.model.Unit;
  */
 public class GotoAction extends UnitAction {
 
+    /** The Constant ID. */
     public static final String ID = "gotoAction";
 
 

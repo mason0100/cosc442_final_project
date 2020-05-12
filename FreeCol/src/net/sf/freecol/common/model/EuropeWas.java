@@ -22,18 +22,28 @@ package net.sf.freecol.common.model;
 import java.util.logging.Logger;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Helper container to remember the Europe state prior to some
  * change, and fire off any consequent property changes.
  */
 public class EuropeWas {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(EuropeWas.class.getName());
 
+    /** The europe. */
     private final Europe europe;
+    
+    /** The unit count. */
     private final int unitCount;
 
 
+    /**
+     * Instantiates a new europe was.
+     *
+     * @param europe the europe
+     */
     public EuropeWas(Europe europe) {
         this.europe = europe;
         this.unitCount = europe.getUnitCount();

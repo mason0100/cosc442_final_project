@@ -38,13 +38,16 @@ import net.sf.freecol.common.FreeColException;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Implements the FreeCol look and feel.
  */
 public class FreeColLookAndFeel extends MetalLookAndFeel {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FreeColLookAndFeel.class.getName());
 
+    /** The Constant uiClasses. */
     private static final Class[] uiClasses = {
         FreeColButtonUI.class,
         FreeColCheckBoxUI.class,

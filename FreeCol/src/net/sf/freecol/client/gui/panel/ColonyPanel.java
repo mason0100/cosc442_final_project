@@ -93,6 +93,7 @@ import net.sf.freecol.common.model.UnitType;
 import net.sf.freecol.common.model.WorkLocation;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This is a panel for the Colony display.  It shows the units that
  * are working in the colony, the buildings and much more.
@@ -105,15 +106,31 @@ import net.sf.freecol.common.model.WorkLocation;
 public final class ColonyPanel extends PortPanel
     implements ActionListener, PropertyChangeListener {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ColonyPanel.class.getName());
 
+    /** The Constant EXIT. */
     private static final int EXIT = 0;
+    
+    /** The Constant BUILDQUEUE. */
     private static final int BUILDQUEUE = 1;
+    
+    /** The Constant UNLOAD. */
     private static final int UNLOAD = 2;
+    
+    /** The Constant WAREHOUSE. */
     private static final int WAREHOUSE = 4;
+    
+    /** The Constant FILL. */
     private static final int FILL = 5;
+    
+    /** The Constant COLONY_UNITS. */
     private static final int COLONY_UNITS = 6;
+    
+    /** The Constant SETGOODS. */
     private static final int  SETGOODS = 7;
+    
+    /** The Constant OCCUPATION. */
     private static final int  OCCUPATION = 8;
 
     /** The height of the area in which autoscrolling should happen. */
@@ -122,24 +139,32 @@ public final class ColonyPanel extends PortPanel
     /** The speed of the scrolling. */
     public static final int SCROLL_SPEED = 40;
 
+    /** The unload button. */
     // Buttons
     private JButton unloadButton
         = Utility.localizedButton("unload");
 
+    /** The fill button. */
     private JButton fillButton
         = Utility.localizedButton("load");
 
+    /** The warehouse button. */
     private JButton warehouseButton
         = Utility.localizedButton("colonyPanel.warehouse");
 
+    /** The build queue button. */
     private JButton buildQueueButton
         = Utility.localizedButton("colonyPanel.buildQueue");
 
+    /** The colony units button. */
     private JButton colonyUnitsButton
         = Utility.localizedButton("colonyPanel.colonyUnits");
 
+    /** The set goods button. */
     // Only present in debug mode
     private JButton setGoodsButton = null;
+    
+    /** The trace work button. */
     private JButton traceWorkButton = null;
 
     /** The <code>Colony</code> this panel is displaying. */
@@ -149,33 +174,52 @@ public final class ColonyPanel extends PortPanel
     // inherit PortPanel.defaultTransferHandler
     // inherit PortPanel.selectedUnitLabel
 
+    /** The release listener. */
     private MouseListener releaseListener = null;
 
+    /** The name box. */
     // Subparts
     private final JComboBox<Colony> nameBox = new JComboBox<>();
 
+    /** The net production panel. */
     private JPanel netProductionPanel = null;
 
+    /** The buildings scroll. */
     private JScrollPane buildingsScroll = null;
+    
+    /** The buildings panel. */
     private BuildingsPanel buildingsPanel = null;
 
+    /** The cargo scroll. */
     private JScrollPane cargoScroll = null;
     // inherit protected PortPanel.cargoPanel
 
+    /** The construction panel. */
     private ConstructionPanel constructionPanel = null;
 
+    /** The in port scroll. */
     private JScrollPane inPortScroll = null;
     // inherit protected PortPanel.inPortPanel
 
+    /** The outside colony scroll. */
     private JScrollPane outsideColonyScroll = null;
+    
+    /** The outside colony panel. */
     private OutsideColonyPanel outsideColonyPanel = null;
 
+    /** The population panel. */
     private PopulationPanel populationPanel = null;
 
+    /** The tiles scroll. */
     private JScrollPane tilesScroll = null;
+    
+    /** The tiles panel. */
     private TilesPanel tilesPanel = null;
 
+    /** The warehouse scroll. */
     private JScrollPane warehouseScroll = null;
+    
+    /** The warehouse panel. */
     private WarehousePanel warehousePanel = null;
 
 
@@ -497,6 +541,9 @@ public final class ColonyPanel extends PortPanel
         removeAll();
     }
 
+    /**
+     * Adds the mouse listeners.
+     */
     private void addMouseListeners() {
         if (isEditable()) {
             cargoPanel.addMouseListener(releaseListener);
@@ -506,6 +553,9 @@ public final class ColonyPanel extends PortPanel
         }
     }
 
+    /**
+     * Removes the mouse listeners.
+     */
     private void removeMouseListeners() {
         cargoPanel.removeMouseListener(releaseListener);
         inPortPanel.removeMouseListener(releaseListener);
@@ -513,6 +563,11 @@ public final class ColonyPanel extends PortPanel
         warehousePanel.removeMouseListener(releaseListener);
     }
 
+    /**
+     * Sets the transfer handlers.
+     *
+     * @param enable the new transfer handlers
+     */
     private void setTransferHandlers(boolean enable) {
         DefaultTransferHandler dth = (enable) ? defaultTransferHandler : null;
         cargoPanel.setTransferHandler(dth);
@@ -838,18 +893,30 @@ public final class ColonyPanel extends PortPanel
 
     // Public update routines
 
+    /**
+     * Update buildings panel.
+     */
     public void updateBuildingsPanel() {
         buildingsPanel.update();
     }
 
+    /**
+     * Update construction panel.
+     */
     public void updateConstructionPanel() {
         constructionPanel.update();
     }
 
+    /**
+     * Update in port panel.
+     */
     public void updateInPortPanel() {
         inPortPanel.update();
     }
 
+    /**
+     * Update net production panel.
+     */
     public void updateNetProductionPanel() {
         final Colony colony = getColony();
         final Specification spec = colony.getSpecification();
@@ -868,18 +935,30 @@ public final class ColonyPanel extends PortPanel
         netProductionPanel.revalidate();
     }
 
+    /**
+     * Update outside colony panel.
+     */
     public void updateOutsideColonyPanel() {
         outsideColonyPanel.update();
     }
 
+    /**
+     * Update population panel.
+     */
     public void updatePopulationPanel() {
         populationPanel.update();
     }
 
+    /**
+     * Update tiles panel.
+     */
     public void updateTilesPanel() {
         tilesPanel.update();
     }
 
+    /**
+     * Update warehouse panel.
+     */
     public void updateWarehousePanel() {
         warehousePanel.update();
     }
@@ -1134,7 +1213,7 @@ public final class ColonyPanel extends PortPanel
     // Subpanel classes
 
     /**
-     * This panel shows the content of a carrier in the colony
+     * This panel shows the content of a carrier in the colony.
      */
     public final class ColonyCargoPanel extends CargoPanel {
 
@@ -1165,14 +1244,29 @@ public final class ColonyPanel extends PortPanel
      */
     public final class PopulationPanel extends JPanel {
 
+        /** The rebel shield. */
         // Predefine all the required labels.
         private final JLabel rebelShield = new JLabel();
+        
+        /** The rebel label. */
         private final JLabel rebelLabel = new JLabel();
+        
+        /** The bonus label. */
         private final JLabel bonusLabel = new JLabel();
+        
+        /** The royalist label. */
         private final JLabel royalistLabel = new JLabel();
+        
+        /** The royalist shield. */
         private final JLabel royalistShield = new JLabel();
+        
+        /** The rebel member label. */
         private final JLabel rebelMemberLabel = new JLabel();
+        
+        /** The pop label. */
         private final JLabel popLabel = new JLabel();
+        
+        /** The royalist member label. */
         private final JLabel royalistMemberLabel = new JLabel();
 
 
@@ -1274,6 +1368,9 @@ public final class ColonyPanel extends PortPanel
             repaint();
         }
 
+        /* (non-Javadoc)
+         * @see javax.swing.JComponent#createToolTip()
+         */
         @Override
         public JToolTip createToolTip() {
             return new RebelToolTip(getFreeColClient(), getColony());
@@ -1774,6 +1871,7 @@ public final class ColonyPanel extends PortPanel
         public final class ASingleBuildingPanel extends BuildingPanel
             implements DropTarget  {
 
+            /** The build queue listener. */
             private final MouseAdapter buildQueueListener = new MouseAdapter() {
                     @Override
                     public void mousePressed(MouseEvent e) {
@@ -2061,12 +2159,18 @@ public final class ColonyPanel extends PortPanel
                 removeAll();
             }
 
+            /**
+             * Adds the property change listeners.
+             */
             protected void addPropertyChangeListeners() {
                 if (colonyTile != null) {
                     colonyTile.addPropertyChangeListener(this);
                 }
             }
 
+            /**
+             * Removes the property change listeners.
+             */
             protected void removePropertyChangeListeners() {
                 if (colonyTile != null) {
                     colonyTile.removePropertyChangeListener(this);
@@ -2119,8 +2223,11 @@ public final class ColonyPanel extends PortPanel
             /**
              * Updates the description label, which is a tooltip with
              * the terrain type, road and plow indicator, if any.
-             *
+             * 
              * If a unit is on it update the tooltip of it instead.
+             *
+             * @param unitLabel the unit label
+             * @param toAdd the to add
              */
             private void updateDescriptionLabel(UnitLabel unitLabel, boolean toAdd) {
                 String tileMsg = Messages.message(colonyTile.getLabel());
@@ -2269,6 +2376,7 @@ public final class ColonyPanel extends PortPanel
              *
              * @param px The x coordinate to check.
              * @param py The y coordinate to check.
+             * @return true, if successful
              */
             @Override
             public boolean contains(int px, int py) {

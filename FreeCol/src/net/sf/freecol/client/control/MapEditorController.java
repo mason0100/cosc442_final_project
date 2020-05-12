@@ -50,19 +50,26 @@ import net.sf.freecol.server.generator.MapGenerator;
 import net.sf.freecol.server.model.ServerPlayer;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The map editor controller.
  */
 public final class MapEditorController {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(MapEditorController.class.getName());
 
 
+    /** The free col client. */
     private final FreeColClient freeColClient;
 
+    /** The gui. */
     private final GUI gui;
 
+    /**
+     * The Interface IMapTransform.
+     */
     public interface IMapTransform {
 
         /**
@@ -312,6 +319,9 @@ public final class MapEditorController {
         freeColClient.setWork(loadGameJob);
     }
 
+    /**
+     * Reload main panel.
+     */
     private void reloadMainPanel () {
         SwingUtilities.invokeLater(() -> {
                 gui.closeMainPanel();

@@ -26,6 +26,7 @@ import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Formats a log record's data into human-readable text.
  */

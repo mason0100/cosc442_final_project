@@ -26,29 +26,59 @@ import java.util.logging.Logger;
 import static net.sf.freecol.common.util.RandomUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A class to provide flat and weighted random selection from a collection.
+ *
+ * @param <T> the generic type
  */
 public class RandomChoice<T> {
 
+    /** The probability. */
     private final int probability;
+    
+    /** The object. */
     private final T object;
 
 
+    /**
+     * Instantiates a new random choice.
+     *
+     * @param object the object
+     * @param probability the probability
+     */
     public RandomChoice(T object, int probability) {
         this.probability = probability;
         this.object = object;
     }
 
+    /**
+     * Gets the probability.
+     *
+     * @return the probability
+     */
     public int getProbability() {
         return probability;
     }
 
+    /**
+     * Gets the object.
+     *
+     * @return the object
+     */
     public T getObject() {
         return object;
     }
 
 
+    /**
+     * Select.
+     *
+     * @param <T> the generic type
+     * @param input the input
+     * @param probability the probability
+     * @return the t
+     */
     private static <T> T select(Collection<RandomChoice<T>> input,
                                 int probability) {
         if (input.isEmpty()) return null;
@@ -61,10 +91,27 @@ public class RandomChoice<T> {
         return input.iterator().next().getObject();
     }
 
+    /**
+     * Gets the total probability.
+     *
+     * @param <T> the generic type
+     * @param input the input
+     * @return the total probability
+     */
     public static <T> int getTotalProbability(Collection<RandomChoice<T>> input) {
         return input.stream().mapToInt(c -> c.getProbability()).sum();
     }
 
+    /**
+     * Gets the weighted random.
+     *
+     * @param <T> the generic type
+     * @param logger the logger
+     * @param logMe the log me
+     * @param input the input
+     * @param random the random
+     * @return the weighted random
+     */
     public static <T> T getWeightedRandom(Logger logger, String logMe,
                                           Collection<RandomChoice<T>> input,
                                           Random random) {

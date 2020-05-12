@@ -23,15 +23,19 @@ import java.security.SecureRandom;
 import java.util.logging.Logger;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A wrapper for the pseudo-random number generator seed.
  */
 public class FreeColSeed {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(FreeColSeed.class.getName());
 
+    /** The Constant DEFAULT_SEED. */
     public static final long DEFAULT_SEED = 0L;
 
+    /** The free col default. */
     private static long freeColDefault = DEFAULT_SEED;
     
 

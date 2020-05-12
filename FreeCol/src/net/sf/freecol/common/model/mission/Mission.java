@@ -25,6 +25,7 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The Mission interface describes some kind of order that can be
  * given to a {@link Unit}, such as the order to move to a certain
@@ -34,6 +35,9 @@ import net.sf.freecol.common.model.Unit;
  */
 public interface Mission {
 
+    /**
+     * The Enum MissionState.
+     */
     public static enum MissionState {
         /**
          * Mission is in progress.

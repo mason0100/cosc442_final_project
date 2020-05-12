@@ -54,6 +54,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Changes to be sent to the client.
  */
@@ -64,30 +65,62 @@ public class ChangeSet {
         = Comparator.comparingInt(Change::getPriority);
 
     // Convenient way to specify the relative priorities of the fixed
+    /**
+     * The Enum ChangePriority.
+     */
     // change types in one place.
     public static enum ChangePriority {
-        CHANGE_ATTRIBUTE(-1), // N/A
-        CHANGE_ANIMATION(0),  // Do animations first
-        CHANGE_REMOVE(100),   // Do removes last
-        CHANGE_STANCE(5),     // Do stance before updates
-        CHANGE_OWNED(20),     // Do owned changes after updates
+        
+        /** The change attribute. */
+        CHANGE_ATTRIBUTE(-1), 
+ /** The change animation. */
+ // N/A
+        CHANGE_ANIMATION(0),  
+  /** The change remove. */
+  // Do animations first
+        CHANGE_REMOVE(100),   
+   /** The change stance. */
+   // Do removes last
+        CHANGE_STANCE(5),     
+     /** The change owned. */
+     // Do stance before updates
+        CHANGE_OWNED(20),     
+     /** The change update. */
+     // Do owned changes after updates
         CHANGE_UPDATE(10),    // There are a lot of updates
-        // Symbolic priorities used by various non-fixed types
+        /** The change early. */
+    // Symbolic priorities used by various non-fixed types
         CHANGE_EARLY(1),
+        
+        /** The change normal. */
         CHANGE_NORMAL(15),
+        
+        /** The change late. */
         CHANGE_LATE(90);
 
+        /** The level. */
         private final int level;
 
+        /**
+         * Instantiates a new change priority.
+         *
+         * @param level the level
+         */
         ChangePriority(int level) {
             this.level = level;
         }
 
+        /**
+         * Gets the priority.
+         *
+         * @return the priority
+         */
         public int getPriority() {
             return level;
         }
     }
 
+    /** The changes. */
     private final ArrayList<Change> changes;
 
 
@@ -95,14 +128,33 @@ public class ChangeSet {
      * Class to control the visibility of a change.
      */
     public static class See {
+        
+        /** The Constant ALL. */
         private static final int ALL = 1;
+        
+        /** The Constant PERHAPS. */
         private static final int PERHAPS = 0;
+        
+        /** The Constant ONLY. */
         private static final int ONLY = -1;
+        
+        /** The see always. */
         private ServerPlayer seeAlways;
+        
+        /** The see perhaps. */
         private ServerPlayer seePerhaps;
+        
+        /** The see never. */
         private ServerPlayer seeNever;
+        
+        /** The type. */
         private final int type;
 
+        /**
+         * Instantiates a new see.
+         *
+         * @param type the type
+         */
         private See(int type) {
             this.seeAlways = this.seePerhaps = this.seeNever = null;
             this.type = type;
@@ -226,6 +278,8 @@ public class ChangeSet {
 
         /**
          * Make a new Change.
+         *
+         * @param see the see
          */
         public Change(See see) {
             this.see = see;
@@ -233,7 +287,7 @@ public class ChangeSet {
 
 
         /**
-         * Does this Change operate on the given object?
+         * Does this Change operate on the given object?.
          *
          * @param fcgo The <code>FreeColGameObject</code> to check.
          * @return True if the object is a subject of this change.
@@ -245,11 +299,13 @@ public class ChangeSet {
         /**
          * Gets the sort priority of a change, to be used by the
          * changeComparator.
+         *
+         * @return the priority
          */
         public abstract int getPriority();
 
         /**
-         * Should a player be notified of this Change?
+         * Should a player be notified of this Change?.
          *
          * @param serverPlayer The <code>ServerPlayer</code> to consider.
          * @return True if this <code>Change</code> should be sent.
@@ -274,7 +330,7 @@ public class ChangeSet {
         }
 
         /**
-         * Are the secondary changes consequent to this Change?
+         * Are the secondary changes consequent to this Change?.
          *
          * @param serverPlayer The <code>ServerPlayer</code> to consider.
          * @return A list of secondary <code>Change</code>s or the
@@ -285,7 +341,7 @@ public class ChangeSet {
         }
 
         /**
-         * Can this Change be directly converted to an Element?
+         * Can this Change be directly converted to an Element?.
          *
          * @return True if this change can be directly converted to an Element.
          */
@@ -317,9 +373,16 @@ public class ChangeSet {
      */
     private static class AttackChange extends Change {
 
+        /** The attacker. */
         private final Unit attacker;
+        
+        /** The defender. */
         private final Unit defender;
+        
+        /** The success. */
         private final boolean success;
+        
+        /** The defender in settlement. */
         private final boolean defenderInSettlement;
 
 
@@ -445,7 +508,11 @@ public class ChangeSet {
      * Encapsulate an attribute change.
      */
     private static class AttributeChange extends Change {
+        
+        /** The key. */
         private final String key;
+        
+        /** The value. */
         private final String value;
 
         /**
@@ -524,7 +591,11 @@ public class ChangeSet {
      * Encapsulate a Message.
      */
     private static class MessageChange extends Change {
+        
+        /** The priority. */
         private final ChangePriority priority;
+        
+        /** The message. */
         private final DOMMessage message;
 
         /**
@@ -589,10 +660,22 @@ public class ChangeSet {
      * Encapsulate a move.
      */
     private static class MoveChange extends Change {
+        
+        /** The unit. */
         private final Unit unit;
+        
+        /** The old location. */
         private final Location oldLocation;
+        
+        /** The new tile. */
         private final Tile newTile;
 
+        /**
+         * See old.
+         *
+         * @param serverPlayer the server player
+         * @return true, if successful
+         */
         private boolean seeOld(ServerPlayer serverPlayer) {
             Tile oldTile = oldLocation.getTile();
             return serverPlayer.owns(unit)
@@ -602,6 +685,12 @@ public class ChangeSet {
                     && !(oldLocation instanceof Unit));
         }
 
+        /**
+         * See new.
+         *
+         * @param serverPlayer the server player
+         * @return true, if successful
+         */
         private boolean seeNew(ServerPlayer serverPlayer) {
             return canSeeUnit(serverPlayer, unit);
         }
@@ -634,7 +723,7 @@ public class ChangeSet {
         }
 
         /**
-         * Should a player perhaps be notified of this move?
+         * Should a player perhaps be notified of this move?.
          *
          * @param serverPlayer The <code>ServerPlayer</code> to notify.
          * @return True if the player should be notified.
@@ -717,6 +806,8 @@ public class ChangeSet {
      * Encapsulate a FreeColGameObject update.
      */
     private static class ObjectChange extends Change {
+        
+        /** The fcgo. */
         protected final FreeColGameObject fcgo;
 
         /**
@@ -750,7 +841,7 @@ public class ChangeSet {
         }
 
         /**
-         * Should a player perhaps be notified of this update?
+         * Should a player perhaps be notified of this update?.
          *
          * @param serverPlayer The <code>ServerPlayer</code> to notify.
          * @return True if the object update can is notifiable.
@@ -822,6 +913,8 @@ public class ChangeSet {
      * Encapsulate a partial update of a FreeColGameObject.
      */
     private static class PartialObjectChange extends ObjectChange {
+        
+        /** The fields. */
         private final String[] fields;
 
         /**
@@ -839,7 +932,7 @@ public class ChangeSet {
 
 
         /**
-         * Should a player perhaps be notified of this update?
+         * Should a player perhaps be notified of this update?.
          *
          * @param serverPlayer The <code>ServerPlayer</code> to notify.
          * @return False.  Revert to default from ObjectChange special case.
@@ -883,6 +976,8 @@ public class ChangeSet {
      * Encapsulate a new player change.
      */
     private static class PlayerChange extends Change {
+        
+        /** The player. */
         private final ServerPlayer player;
 
         /**
@@ -952,8 +1047,14 @@ public class ChangeSet {
      * -vis: If removing settlements or units, visibility changes.
      */
     private static class RemoveChange extends Change {
+        
+        /** The tile. */
         private final Tile tile;
+        
+        /** The fcgo. */
         private final FreeColGameObject fcgo;
+        
+        /** The contents. */
         private final List<? extends FreeColGameObject> contents;
 
         /**
@@ -1050,6 +1151,8 @@ public class ChangeSet {
      * Encapsulate an owned object change.
      */
     private static class OwnedChange extends Change {
+        
+        /** The fco. */
         private final FreeColObject fco;
 
         /**
@@ -1115,8 +1218,14 @@ public class ChangeSet {
      * Encapsulate a feature change.
      */
     private static class FeatureChange extends Change {
+        
+        /** The object. */
         private final FreeColGameObject object;
+        
+        /** The feature. */
         private final Feature feature;
+        
+        /** The add. */
         private final boolean add;
 
         /**
@@ -1191,6 +1300,8 @@ public class ChangeSet {
      * Encapsulates a spying action.
      */
     private static class SpyChange extends Change {
+        
+        /** The tile. */
         private final Tile tile;
 
         /**
@@ -1258,8 +1369,14 @@ public class ChangeSet {
      * Encapsulate a stance change.
      */
     private static class StanceChange extends Change {
+        
+        /** The first. */
         private final Player first;
+        
+        /** The stance. */
         private final Stance stance;
+        
+        /** The second. */
         private final Player second;
 
         /**
@@ -1332,8 +1449,14 @@ public class ChangeSet {
      * from its name.
      */
     private static class TrivialChange extends Change {
+        
+        /** The priority. */
         private final int priority;
+        
+        /** The name. */
         private final String name;
+        
+        /** The attributes. */
         private final String[] attributes;
 
         /**
@@ -1342,6 +1465,7 @@ public class ChangeSet {
          * @param see The visibility of this change.
          * @param name The name of the element.
          * @param priority The sort priority of this change.
+         * @param attributes the attributes
          */
         public TrivialChange(See see, String name, int priority,
                              String[] attributes) {
@@ -1388,6 +1512,8 @@ public class ChangeSet {
 
         /**
          * Debug helper.
+         *
+         * @return the string
          */
         @Override
         public String toString() {

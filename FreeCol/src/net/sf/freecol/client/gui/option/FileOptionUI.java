@@ -32,6 +32,7 @@ import net.sf.freecol.client.gui.panel.Utility;
 import net.sf.freecol.common.option.FileOption;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides visualization for a
  * {@link net.sf.freecol.common.option.FileOption} in order to enable values
@@ -39,16 +40,20 @@ import net.sf.freecol.common.option.FileOption;
  */
 public final class FileOptionUI extends OptionUI<FileOption>  {
 
+    /** The panel. */
     private final JPanel panel = new JPanel();
+    
+    /** The file field. */
     private final JTextField fileField;
 
     /**
-    * Creates a new <code>FileOptionUI</code> for the given
-    * <code>FileOption</code>.
-    *
-    * @param option The <code>FileOption</code> to make a user interface for.
-    * @param editable boolean whether user can modify the setting
-    */
+     * Creates a new <code>FileOptionUI</code> for the given
+     * <code>FileOption</code>.
+     *
+     * @param gui the gui
+     * @param option The <code>FileOption</code> to make a user interface for.
+     * @param editable boolean whether user can modify the setting
+     */
     public FileOptionUI(final GUI gui, final FileOption option, boolean editable) {
         super(option, editable);
 
@@ -104,6 +109,8 @@ public final class FileOptionUI extends OptionUI<FileOption>  {
 
     /**
      * Sets the value of this UI's component.
+     *
+     * @param f the new value
      */
     public void setValue(File f) {
         getOption().setValue(f);

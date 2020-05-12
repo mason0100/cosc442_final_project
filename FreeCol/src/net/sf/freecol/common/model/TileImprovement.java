@@ -33,17 +33,25 @@ import net.sf.freecol.common.io.FreeColXMLWriter;
 import net.sf.freecol.common.model.Direction;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Represents a tile improvement, such as a river or road.
  */
 public class TileImprovement extends TileItem implements Named {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(TileImprovement.class.getName());
 
-    /** River magnitudes */
+    /**  River magnitudes. */
     public static final int NO_RIVER = 0;
+    
+    /** The Constant SMALL_RIVER. */
     public static final int SMALL_RIVER = 1;
+    
+    /** The Constant LARGE_RIVER. */
     public static final int LARGE_RIVER = 2;
+    
+    /** The Constant FJORD_RIVER. */
     public static final int FJORD_RIVER = 3;
 
     /** The type of this improvement. */
@@ -139,7 +147,7 @@ public class TileImprovement extends TileItem implements Named {
     }
 
     /**
-     * Is this tile improvement a river?
+     * Is this tile improvement a river?.
      *
      * @return True if this is a river improvement.
      */
@@ -148,7 +156,7 @@ public class TileImprovement extends TileItem implements Named {
     }
 
     /**
-     * Is this tile improvement a road?
+     * Is this tile improvement a road?.
      *
      * @return True if this is a road improvement.
      */
@@ -173,7 +181,7 @@ public class TileImprovement extends TileItem implements Named {
     }
 
     /**
-     * How many turns remain until this improvement is complete?
+     * How many turns remain until this improvement is complete?.
      *
      * @return The current turns to completion.
      */
@@ -218,7 +226,7 @@ public class TileImprovement extends TileItem implements Named {
     }
 
     /**
-     * Is this a virtual improvement?
+     * Is this a virtual improvement?.
      *
      * @return True if this is a virtual improvement.
      */
@@ -238,7 +246,7 @@ public class TileImprovement extends TileItem implements Named {
 
     /**
      * Is this tile improvement connected to a similar improvement on
-     * a neighbouring tile?
+     * a neighbouring tile?.
      *
      * @param direction The <code>Direction</code> to check.
      * @return True if this improvement is connected.
@@ -321,7 +329,7 @@ public class TileImprovement extends TileItem implements Named {
     }
 
     /**
-     * What type of tile does this improvement change a given type to?
+     * What type of tile does this improvement change a given type to?.
      *
      * @param tileType The original <code>TileType</code>.
      * @return The <code>TileType</code> that results from completing this
@@ -332,7 +340,7 @@ public class TileImprovement extends TileItem implements Named {
     }
 
     /**
-     * Can a unit build this improvement?
+     * Can a unit build this improvement?.
      *
      * @param unit A <code>Unit</code> to do the building.
      * @return True if the supplied unit can build this improvement.
@@ -566,11 +574,22 @@ public class TileImprovement extends TileItem implements Named {
 
     // Serialization
 
+    /** The Constant MAGNITUDE_TAG. */
     private static final String MAGNITUDE_TAG = "magnitude";
+    
+    /** The Constant STYLE_TAG. */
     private static final String STYLE_TAG = "style";
+    
+    /** The Constant TILE_TAG. */
     private static final String TILE_TAG = "tile";
+    
+    /** The Constant TURNS_TAG. */
     private static final String TURNS_TAG = "turns";
+    
+    /** The Constant TYPE_TAG. */
     private static final String TYPE_TAG = "type";
+    
+    /** The Constant VIRTUAL_TAG. */
     private static final String VIRTUAL_TAG = "virtual";
 
 

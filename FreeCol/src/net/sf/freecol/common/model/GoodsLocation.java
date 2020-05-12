@@ -34,6 +34,7 @@ import static net.sf.freecol.common.util.CollectionUtils.*;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A <code>GoodsLocation</code> is a place where {@link Unit}s and
  * {@link Goods} can be put.  It can not store any other Locatables,
@@ -43,6 +44,7 @@ import org.w3c.dom.Element;
  */
 public abstract class GoodsLocation extends UnitLocation {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(GoodsLocation.class.getName());
 
     /** The container for the goods. */
@@ -82,6 +84,11 @@ public abstract class GoodsLocation extends UnitLocation {
 
     // getGoodsContainer() is part of the Location interface.
 
+    /**
+     * Sets the goods container.
+     *
+     * @param goodsContainer the new goods container
+     */
     public final void setGoodsContainer(final GoodsContainer goodsContainer) {
         this.goodsContainer = goodsContainer;
     }
@@ -141,7 +148,7 @@ public abstract class GoodsLocation extends UnitLocation {
 
     /**
      * Does this location contain enough goods to satisfy a list of
-     * requirements?
+     * requirements?.
      *
      * @param goods A list of <code>AbstractGoods</code> to check.
      * @return True if the goods are all present.

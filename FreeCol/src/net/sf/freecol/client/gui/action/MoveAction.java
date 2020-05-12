@@ -26,13 +26,16 @@ import net.sf.freecol.client.gui.GUI;
 import net.sf.freecol.common.model.Direction;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for chosing the next unit as the active unit.
  */
 public class MoveAction extends MapboardAction {
 
+    /** The Constant ID. */
     public static final String ID = "moveAction.";
 
+    /** The direction. */
     private final Direction direction;
 
 

@@ -41,6 +41,7 @@ import net.sf.freecol.common.model.Unit;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A general panel for information display.
  */
@@ -52,6 +53,7 @@ public class InformationPanel extends FreeColPanel {
      *
      * @param freeColClient The <code>FreeColClient</code> for the game.
      * @param text The text to be displayed in the panel.
+     * @param fco the fco
      * @param image The image to be displayed in the panel.
      */
     public InformationPanel(FreeColClient freeColClient,
@@ -133,6 +135,9 @@ public class InformationPanel extends FreeColPanel {
 
     // Override JComponent
 
+    /* (non-Javadoc)
+     * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+     */
     @Override
     public void paintComponent(Graphics g) {
         g.drawImage(ResourceManager.getImage("image.skin.InformationPanel"),

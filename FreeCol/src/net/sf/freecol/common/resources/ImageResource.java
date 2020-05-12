@@ -35,6 +35,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A <code>Resource</code> wrapping an <code>Image</code>.
  * @see Resource
@@ -42,11 +43,19 @@ import javax.imageio.ImageIO;
 public class ImageResource extends Resource
                            implements Resource.Preloadable, Resource.Cleanable {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ImageResource.class.getName());
 
+    /** The scaled images. */
     private HashMap<Dimension, BufferedImage> scaledImages = new HashMap<>();
+    
+    /** The grayscale images. */
     private HashMap<Dimension, BufferedImage> grayscaleImages = new HashMap<>();
+    
+    /** The image. */
     private volatile BufferedImage image = null;
+    
+    /** The loading lock. */
     private final Object loadingLock = new Object();
 
 
@@ -221,6 +230,11 @@ public class ImageResource extends Resource
                                                Math.round(im.getHeight() * scale)));
     }
 
+    /**
+     * Gets the count.
+     *
+     * @return the count
+     */
     public int getCount() {
         return grayscaleImages.size() + scaledImages.size();
     }

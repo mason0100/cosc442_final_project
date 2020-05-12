@@ -41,15 +41,18 @@ import net.sf.freecol.client.gui.action.ColopediaAction.PanelType;
 import net.sf.freecol.common.i18n.Messages;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel displays the concepts within the Colopedia.
  */
 public class ConceptDetailPanel extends FreeColPanel
     implements ColopediaDetailPanel<String> {
 
+    /** The Constant ID. */
     private static final String ID = "colopediaAction."
         + PanelType.CONCEPTS.getKey();
 
+    /** The Constant concepts. */
     private static final String[] concepts = {
         "taxes",
         "efficiency",
@@ -60,16 +63,19 @@ public class ConceptDetailPanel extends FreeColPanel
         "interventionForce"
     };
 
+    /** The Constant nodeComparator. */
     private static final Comparator<DefaultMutableTreeNode> nodeComparator
         = Comparator.comparing(tn ->
             ((ColopediaTreeItem)tn.getUserObject()).getText());
 
+    /** The colopedia panel. */
     private ColopediaPanel colopediaPanel;
 
 
     /**
      * Creates a new instance of this ColopediaDetailPanel.
      *
+     * @param freeColClient the free col client
      * @param colopediaPanel the ColopediaPanel
      */
     public ConceptDetailPanel(FreeColClient freeColClient,
@@ -80,6 +86,9 @@ public class ConceptDetailPanel extends FreeColPanel
     }
 
 
+    /* (non-Javadoc)
+     * @see java.awt.Component#getName()
+     */
     @Override
     public String getName() {
         return Messages.getName(ID);

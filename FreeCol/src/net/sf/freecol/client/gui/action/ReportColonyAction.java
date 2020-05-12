@@ -24,11 +24,13 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for displaying a Colony Report.
  */
 public class ReportColonyAction extends FreeColAction {
 
+    /** The Constant ID. */
     public static final String ID = "reportColonyAction";
 
 

@@ -26,15 +26,19 @@ import net.sf.freecol.client.ClientOptions;
 import net.sf.freecol.common.model.Player;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for selecting one of several options.
  */
 public abstract class SelectableAction extends MapboardAction {
 
+    /** The Constant ID. */
     public static final String ID = "selectableAction";
 
+    /** The option id. */
     private final String optionId;
 
+    /** The selected. */
     protected boolean selected = false;
 
 

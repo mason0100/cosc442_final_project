@@ -26,6 +26,7 @@ import javax.swing.plaf.basic.BasicPopupMenuUI;
 import net.sf.freecol.client.gui.ImageLibrary;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Draw the "image.background.FreeColPopupMenu" resource as a tiled
  * background image on popup menus, such as the drop down from the
@@ -34,13 +35,23 @@ import net.sf.freecol.client.gui.ImageLibrary;
  */
 public class FreeColPopupMenuUI extends BasicPopupMenuUI {
 
+    /** The Constant sharedInstance. */
     private static final FreeColPopupMenuUI sharedInstance = new FreeColPopupMenuUI();
 
 
+    /**
+     * Creates the UI.
+     *
+     * @param c the c
+     * @return the component UI
+     */
     public static ComponentUI createUI(@SuppressWarnings("unused") JComponent c) {
         return sharedInstance;
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.plaf.ComponentUI#paint(java.awt.Graphics, javax.swing.JComponent)
+     */
     @Override
     public void paint(java.awt.Graphics g, javax.swing.JComponent c) {
         if (c.isOpaque()) {

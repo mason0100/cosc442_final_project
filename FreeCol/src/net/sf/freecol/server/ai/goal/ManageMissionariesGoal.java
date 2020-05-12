@@ -36,6 +36,7 @@ import net.sf.freecol.server.ai.AIPlayer;
 import net.sf.freecol.server.ai.AIUnit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This {@link Goal} deals with all missionaries of one {@link AIPlayer}.
  * </p><p>
@@ -53,16 +54,28 @@ import net.sf.freecol.server.ai.AIUnit;
  */
 public class ManageMissionariesGoal extends Goal {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ManageMissionariesGoal.class.getName());
 
+    /** The sub goal list. */
     //Since all our subgoals are the same, we're keeping them on a simple list
     private final List<Goal> subGoalList;
 
+    /**
+     * Instantiates a new manage missionaries goal.
+     *
+     * @param p the p
+     * @param g the g
+     * @param w the w
+     */
     public ManageMissionariesGoal(AIPlayer p, Goal g, float w) {
         super(p,g,w);
         subGoalList = new ArrayList<>();
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.ai.goal.Goal#getOwnedAIUnitsIterator()
+     */
     @Override
     protected Iterator<AIUnit> getOwnedAIUnitsIterator() {
         //we're managing units by directly putting them to individual subgoals,
@@ -70,12 +83,18 @@ public class ManageMissionariesGoal extends Goal {
         return availableUnitsList.iterator();
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.ai.goal.Goal#getSubGoalIterator()
+     */
     @Override
     protected Iterator<Goal> getSubGoalIterator() {
         //all our subgoals are on the subGoalList
         return subGoalList.iterator();
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.ai.goal.Goal#removeUnit(net.sf.freecol.server.ai.AIUnit)
+     */
     @Override
     protected void removeUnit(AIUnit u) {
         Iterator<AIUnit> uit = availableUnitsList.iterator();
@@ -151,6 +170,9 @@ public class ManageMissionariesGoal extends Goal {
         }
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.server.ai.goal.Goal#getGoalDescription()
+     */
     @Override
     public String getGoalDescription() {
         String descr = super.getGoalDescription();
@@ -160,7 +182,13 @@ public class ManageMissionariesGoal extends Goal {
 /* INTERNAL *******************************************************************/
 
 
-    private IndianSettlement findSettlement(Tile tile) {
+    /**
+ * Find settlement.
+ *
+ * @param tile the tile
+ * @return the indian settlement
+ */
+private IndianSettlement findSettlement(Tile tile) {
         return (tile == null)
             //FIXME: We're in europe - let's deal with it.
             ? null
@@ -174,11 +202,17 @@ public class ManageMissionariesGoal extends Goal {
     }
 
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.common.model.FreeColObject#toXML(net.sf.freecol.common.io.FreeColXMLWriter)
+     */
     @Override
     public void toXML(FreeColXMLWriter xw) throws XMLStreamException {
         //FIXME
     }
 
+    /* (non-Javadoc)
+     * @see net.sf.freecol.common.model.FreeColObject#readFromXML(net.sf.freecol.common.io.FreeColXMLReader)
+     */
     @Override
     public void readFromXML(FreeColXMLReader xr) throws XMLStreamException {
         //FIXME

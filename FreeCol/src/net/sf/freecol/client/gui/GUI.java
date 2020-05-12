@@ -77,11 +77,13 @@ import net.sf.freecol.common.option.OptionGroup;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The API and common reusable functionality for the overall GUI.
  */
 public class GUI {
 
+    /** The Constant logger. */
     protected static final Logger logger = Logger.getLogger(GUI.class.getName());
 
     /** Warning levels. */
@@ -91,6 +93,8 @@ public class GUI {
 
     /** View modes. */
     public static final int MOVE_UNITS_MODE = 0;
+    
+    /** The Constant VIEW_TERRAIN_MODE. */
     public static final int VIEW_TERRAIN_MODE = 1;
 
     /** The client for the game. */
@@ -114,30 +118,49 @@ public class GUI {
 
     // Simple accessors
 
+    /**
+     * Igc.
+     *
+     * @return the in game controller
+     */
     protected InGameController igc() {
         return freeColClient.getInGameController();
     }
 
+    /**
+     * Gets the image library.
+     *
+     * @return the image library
+     */
     public ImageLibrary getImageLibrary() {
         return imageLibrary;
     }
 
+    /**
+     * Checks if is windowed.
+     *
+     * @return true, if is windowed
+     */
     public boolean isWindowed() {
         return true;
     }
 
     // Initialization related methods
 
-    /** 
+    /**
+     *  
      * Swing system and look-and-feel initialization.
-     * 
+     *
      * @param fontName An optional font name to be used.
+     * @throws FreeColException the free col exception
      */
     public void installLookAndFeel(String fontName) throws FreeColException {
     }
 
     /**
      * Quit the GUI.  All that is required is to exit the full screen.
+     *
+     * @throws Exception the exception
      */
     public void quit() throws Exception {
     }
@@ -271,22 +294,41 @@ public class GUI {
     public void resetMenuBar() {
     }
 
+    /**
+     * Reset map zoom.
+     */
     protected void resetMapZoom() {
         ResourceManager.clean();
     }
 
+    /**
+     * Can zoom in map.
+     *
+     * @return true, if successful
+     */
     public boolean canZoomInMap() {
         return false;
     }
 
+    /**
+     * Can zoom out map.
+     *
+     * @return true, if successful
+     */
     public boolean canZoomOutMap() {
         return false;
     }
 
+    /**
+     * Zoom in map.
+     */
     public void zoomInMap() {
         ResourceManager.clean();
     }
 
+    /**
+     * Zoom out map.
+     */
     public void zoomOutMap() {
         ResourceManager.clean();
     }
@@ -357,26 +399,51 @@ public class GUI {
     public void enableMapControls(boolean enable) {
     }
 
+    /**
+     * Update map controls.
+     */
     public void updateMapControls() {
     }
 
+    /**
+     * Zoom in map controls.
+     */
     public void zoomInMapControls() {
     }
 
+    /**
+     * Zoom out map controls.
+     */
     public void zoomOutMapControls() {
     }
 
+    /**
+     * Can zoom in map controls.
+     *
+     * @return true, if successful
+     */
     public boolean canZoomInMapControls() {
         return false;
     }
 
+    /**
+     * Can zoom out map controls.
+     *
+     * @return true, if successful
+     */
     public boolean canZoomOutMapControls() {
         return false;
     }
 
+    /**
+     * Mini map toggle view controls.
+     */
     public void miniMapToggleViewControls() {
     }
 
+    /**
+     * Mini map toggle fog of war controls.
+     */
     public void miniMapToggleFogOfWarControls() {
     }
 
@@ -424,12 +491,32 @@ public class GUI {
         return false;
     }
 
+    /**
+     * Confirm.
+     *
+     * @param tile the tile
+     * @param template the template
+     * @param settlement the settlement
+     * @param okKey the ok key
+     * @param cancelKey the cancel key
+     * @return true, if successful
+     */
     public boolean confirm(Tile tile, StringTemplate template,
                            Settlement settlement,
                            String okKey, String cancelKey) {
         return false;
     }
 
+    /**
+     * Confirm.
+     *
+     * @param tile the tile
+     * @param template the template
+     * @param goodsType the goods type
+     * @param okKey the ok key
+     * @param cancelKey the cancel key
+     * @return true, if successful
+     */
     public boolean confirm(Tile tile, StringTemplate template,
                            GoodsType goodsType,
                            String okKey, String cancelKey) {
@@ -1000,6 +1087,7 @@ public class GUI {
     /**
      * General modal choice dialog.
      *
+     * @param <T> the generic type
      * @param tile An optional <code>Tile</code> to expose.
      * @param explain An object explaining the choice.
      * @param cancelKey A key for the "cancel" button.
@@ -1012,21 +1100,65 @@ public class GUI {
         return null;
     }
 
+    /**
+     * Gets the choice.
+     *
+     * @param <T> the generic type
+     * @param tile the tile
+     * @param explain the explain
+     * @param unit the unit
+     * @param cancelKey the cancel key
+     * @param choices the choices
+     * @return the choice
+     */
     public <T> T getChoice(Tile tile, Object explain, Unit unit,
                            String cancelKey, List<ChoiceItem<T>> choices) {
         return null;
     }
 
+    /**
+     * Gets the choice.
+     *
+     * @param <T> the generic type
+     * @param tile the tile
+     * @param explain the explain
+     * @param settlement the settlement
+     * @param cancelKey the cancel key
+     * @param choices the choices
+     * @return the choice
+     */
     public <T> T getChoice(Tile tile, Object explain, Settlement settlement,
                            String cancelKey, List<ChoiceItem<T>> choices) {
         return null;
     }
 
+    /**
+     * Gets the choice.
+     *
+     * @param <T> the generic type
+     * @param tile the tile
+     * @param explain the explain
+     * @param goodsType the goods type
+     * @param cancelKey the cancel key
+     * @param choices the choices
+     * @return the choice
+     */
     public <T> T getChoice(Tile tile, Object explain, GoodsType goodsType,
                            String cancelKey, List<ChoiceItem<T>> choices) {
         return null;
     }
 
+    /**
+     * Gets the choice.
+     *
+     * @param <T> the generic type
+     * @param tile the tile
+     * @param explain the explain
+     * @param nation the nation
+     * @param cancelKey the cancel key
+     * @param choices the choices
+     * @return the choice
+     */
     public <T> T getChoice(Tile tile, Object explain, Nation nation,
                            String cancelKey, List<ChoiceItem<T>> choices) {
         return null;
@@ -1048,71 +1180,152 @@ public class GUI {
         return null;
     }
 
+    /**
+     * Close main panel.
+     */
     public void closeMainPanel() {
     }
 
+    /**
+     * Close menus.
+     */
     public void closeMenus() {
     }
 
+    /**
+     * Close status panel.
+     */
     public void closeStatusPanel() {
     }
 
+    /**
+     * Contains in game components.
+     *
+     * @return true, if successful
+     */
     public boolean containsInGameComponents() {
         return false;
     }
 
+    /**
+     * Gets the loading savegame info.
+     *
+     * @return the loading savegame info
+     */
     public LoadingSavegameInfo getLoadingSavegameInfo() {
         return null;
     }
 
+    /**
+     * Checks if is client options dialog showing.
+     *
+     * @return true, if is client options dialog showing
+     */
     public boolean isClientOptionsDialogShowing() {
         return false;
     }
 
+    /**
+     * Checks if is mapboard actions enabled.
+     *
+     * @return true, if is mapboard actions enabled
+     */
     public boolean isMapboardActionsEnabled() {
         return false;
     }
 
+    /**
+     * Checks if is showing sub panel.
+     *
+     * @return true, if is showing sub panel
+     */
     public boolean isShowingSubPanel() {
         return false;
     }
 
+    /**
+     * Paint immediately canvas in.
+     *
+     * @param rectangle the rectangle
+     */
     public void paintImmediatelyCanvasIn(Rectangle rectangle) {
     }
 
+    /**
+     * Paint immediately canvas in its bounds.
+     */
     public void paintImmediatelyCanvasInItsBounds() {
     }
 
+    /**
+     * Refresh players table.
+     */
     public void refreshPlayersTable() {
     }
 
+    /**
+     * Removes the in game components.
+     */
     public void removeInGameComponents() {
     }
 
+    /**
+     * Request focus for sub panel.
+     */
     public void requestFocusForSubPanel() {
     }
 
+    /**
+     * Request focus in window.
+     *
+     * @return true, if successful
+     */
     public boolean requestFocusInWindow() {
         return false;
     }
 
+    /**
+     * Return to title.
+     */
     public void returnToTitle() {
     }
 
+    /**
+     * Show about panel.
+     */
     public void showAboutPanel() {
     }
 
+    /**
+     * Show capture goods dialog.
+     *
+     * @param unit the unit
+     * @param gl the gl
+     * @param handler the handler
+     */
     public void showCaptureGoodsDialog(final Unit unit, List<Goods> gl,
                                        DialogHandler<List<Goods>> handler) {
     }
 
+    /**
+     * Show chat panel.
+     */
     public void showChatPanel() {
     }
 
+    /**
+     * Show choose founding father dialog.
+     *
+     * @param ffs the ffs
+     * @param handler the handler
+     */
     public void showChooseFoundingFatherDialog(final List<FoundingFather> ffs,
             DialogHandler<FoundingFather> handler) {
     }
 
+    /**
+     * Show client options dialog.
+     */
     public void showClientOptionsDialog() {
     }
 
@@ -1135,117 +1348,279 @@ public class GUI {
         }
     }
 
+    /**
+     * Show foreign colony.
+     *
+     * @param settlement the settlement
+     */
     protected void showForeignColony(Settlement settlement) {
     }
 
+    /**
+     * Show colony panel.
+     *
+     * @param colony the colony
+     * @param unit the unit
+     */
     public void showColonyPanel(Colony colony, Unit unit) {
     }
 
+    /**
+     * Show colopedia panel.
+     *
+     * @param nodeId the node id
+     */
     public void showColopediaPanel(String nodeId) {
     }
 
+    /**
+     * Show compact labour report.
+     */
     public void showCompactLabourReport() {
     }
 
+    /**
+     * Show declaration panel.
+     */
     public void showDeclarationPanel() {
     }
 
+    /**
+     * Show difficulty dialog.
+     *
+     * @return the option group
+     */
     public OptionGroup showDifficultyDialog() {
         return null;
     }
 
+    /**
+     * Show dump cargo dialog.
+     *
+     * @param unit the unit
+     * @param handler the handler
+     */
     public void showDumpCargoDialog(Unit unit,
                                     DialogHandler<List<Goods>> handler) {
     }
 
+    /**
+     * Show edit option dialog.
+     *
+     * @param option the option
+     * @return true, if successful
+     */
     public boolean showEditOptionDialog(Option option) {
         return false;
     }
 
+    /**
+     * Show emigration dialog.
+     *
+     * @param player the player
+     * @param fountainOfYouth the fountain of youth
+     * @param handler the handler
+     */
     public void showEmigrationDialog(final Player player,
                                      final boolean fountainOfYouth,
                                      DialogHandler<Integer> handler) {
     }
 
+    /**
+     * Show end turn dialog.
+     *
+     * @param units the units
+     * @param handler the handler
+     */
     public void showEndTurnDialog(final List<Unit> units,
                                   DialogHandler<Boolean> handler) {
     }
 
+    /**
+     * Show error message.
+     *
+     * @param template the template
+     */
     public void showErrorMessage(StringTemplate template) {
     }
 
+    /**
+     * Show error message.
+     *
+     * @param messageId the message id
+     */
     public void showErrorMessage(String messageId) {
     }
 
+    /**
+     * Show error message.
+     *
+     * @param messageID the message ID
+     * @param message the message
+     */
     public void showErrorMessage(String messageID, String message) {
     }
 
+    /**
+     * Show europe panel.
+     */
     public void showEuropePanel() {
     }
 
+    /**
+     * Show event panel.
+     *
+     * @param header the header
+     * @param image the image
+     * @param footer the footer
+     */
     public void showEventPanel(String header, String image, String footer) {
     }
 
+    /**
+     * Show find settlement panel.
+     */
     public void showFindSettlementPanel() {
     }
 
+    /**
+     * Show game options dialog.
+     *
+     * @param editable the editable
+     * @param custom the custom
+     * @return the option group
+     */
     public OptionGroup showGameOptionsDialog(boolean editable, boolean custom) {
         return null;
     }
 
+    /**
+     * Show high scores panel.
+     *
+     * @param messageId the message id
+     * @param scores the scores
+     */
     public void showHighScoresPanel(String messageId, List<HighScore> scores) {
     }
 
+    /**
+     * Show indian settlement panel.
+     *
+     * @param indianSettlement the indian settlement
+     */
     public void showIndianSettlementPanel(IndianSettlement indianSettlement) {
     }
 
+    /**
+     * Show information message.
+     *
+     * @param messageId the message id
+     */
     public void showInformationMessage(String messageId) {
         alertSound();
     }
 
+    /**
+     * Show information message.
+     *
+     * @param template the template
+     */
     public void showInformationMessage(StringTemplate template) {
         alertSound();
     }
 
+    /**
+     * Show information message.
+     *
+     * @param displayObject the display object
+     * @param messageId the message id
+     */
     final public void showInformationMessage(Settlement displayObject,
                                        String messageId) {
         showInformationMessage(displayObject, StringTemplate.key(messageId));
     }
 
+    /**
+     * Show information message.
+     *
+     * @param displayObject the display object
+     * @param template the template
+     */
     public void showInformationMessage(Settlement displayObject,
                                        StringTemplate template) {
         alertSound();
     }
 
+    /**
+     * Show information message.
+     *
+     * @param displayObject the display object
+     * @param template the template
+     */
     public void showInformationMessage(Unit displayObject,
                                        StringTemplate template) {
         alertSound();
     }
 
+    /**
+     * Show information message.
+     *
+     * @param displayObject the display object
+     * @param messageId the message id
+     */
     final public void showInformationMessage(Tile displayObject,
                                        String messageId) {
         showInformationMessage(displayObject, StringTemplate.key(messageId));
     }
 
+    /**
+     * Show information message.
+     *
+     * @param displayObject the display object
+     * @param template the template
+     */
     public void showInformationMessage(Tile displayObject,
                                        StringTemplate template) {
         alertSound();
     }
 
+    /**
+     * Show information message.
+     *
+     * @param displayObject the display object
+     * @param messageId the message id
+     */
     public void showInformationMessage(FreeColObject displayObject,
                                        String messageId) {
         alertSound();
     }
 
+    /**
+     * Show information message.
+     *
+     * @param displayObject the display object
+     * @param template the template
+     */
     public void showInformationMessage(FreeColObject displayObject,
                                        StringTemplate template) {
         alertSound();
     }
 
+    /**
+     * Show load dialog.
+     *
+     * @param directory the directory
+     * @return the file
+     */
     public File showLoadDialog(File directory) {
         return null;
     }
 
+    /**
+     * Show load save file dialog.
+     *
+     * @return the file
+     */
     final public File showLoadSaveFileDialog() {
         File file = showLoadDialog(FreeColDirectories.getSaveDirectory());
         if (file != null && !file.isFile()) {
@@ -1255,37 +1630,84 @@ public class GUI {
         return file;
     }
 
+    /**
+     * Show loading savegame dialog.
+     *
+     * @param publicServer the public server
+     * @param singlePlayer the single player
+     * @return true, if successful
+     */
     public boolean showLoadingSavegameDialog(boolean publicServer,
                                              boolean singlePlayer) {
         return false;
     }
 
+    /**
+     * Show log file panel.
+     */
     public void showLogFilePanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show main panel.
+     *
+     * @param userMsg the user msg
+     */
     public void showMainPanel(String userMsg) {
     	//Ignore for now
     }
 
+    /**
+     * Show map generator options dialog.
+     *
+     * @param editable the editable
+     * @return the option group
+     */
     public OptionGroup showMapGeneratorOptionsDialog(boolean editable) {
         return null;
     }
 
+    /**
+     * Show map size dialog.
+     *
+     * @return the dimension
+     */
     public Dimension showMapSizeDialog() {
         return null;
     }
 
+    /**
+     * Show model messages.
+     *
+     * @param modelMessages the model messages
+     */
     public void showModelMessages(List<ModelMessage> modelMessages) {
     	//Ignore for now
     }
 
+    /**
+     * Show monarch dialog.
+     *
+     * @param action the action
+     * @param template the template
+     * @param monarchKey the monarch key
+     * @param handler the handler
+     */
     public void showMonarchDialog(final MonarchAction action,
                                   StringTemplate template, String monarchKey,
                                   DialogHandler<Boolean> handler) {
     	//Ignore for now
     }
 
+    /**
+     * Show naming dialog.
+     *
+     * @param template the template
+     * @param defaultName the default name
+     * @param unit the unit
+     * @param handler the handler
+     */
     public void showNamingDialog(StringTemplate template,
                                  final String defaultName,
                                  final Unit unit,
@@ -1293,12 +1715,30 @@ public class GUI {
     	//Ignore for now
     }
 
+    /**
+     * Show first contact dialog.
+     *
+     * @param player the player
+     * @param other the other
+     * @param tile the tile
+     * @param settlementCount the settlement count
+     * @param handler the handler
+     */
     public void showFirstContactDialog(final Player player, final Player other,
                                        final Tile tile, int settlementCount,
                                        DialogHandler<Boolean> handler) {
     	//Ignore for now
     }
 
+    /**
+     * Show negotiation dialog.
+     *
+     * @param our the our
+     * @param other the other
+     * @param agreement the agreement
+     * @param comment the comment
+     * @return the diplomatic trade
+     */
     public DiplomaticTrade showNegotiationDialog(FreeColGameObject our,
                                                      FreeColGameObject other,
                                                      DiplomaticTrade agreement,
@@ -1306,175 +1746,362 @@ public class GUI {
         return null;
     }
 
+    /**
+     * Show new panel.
+     */
     public void showNewPanel() {
     }
 
+    /**
+     * Show new panel.
+     *
+     * @param specification the specification
+     */
     public void showNewPanel(Specification specification) {
     }
 
+    /**
+     * Show spy colony panel.
+     *
+     * @param tile the tile
+     * @param callback the callback
+     */
     public void showSpyColonyPanel(final Tile tile, Runnable callback) {
     }
 
+    /**
+     * Show parameters dialog.
+     *
+     * @return the parameters
+     */
     public Parameters showParametersDialog() {
         return null;
     }
 
+    /**
+     * Show pre combat dialog.
+     *
+     * @param attacker the attacker
+     * @param defender the defender
+     * @param tile the tile
+     * @return true, if successful
+     */
     public boolean showPreCombatDialog(Unit attacker,
                                        FreeColGameObject defender, Tile tile) {
         return false;
     }
 
+    /**
+     * Show report cargo panel.
+     */
     public void showReportCargoPanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show report colony panel.
+     */
     public void showReportColonyPanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show report continental congress panel.
+     */
     public void showReportContinentalCongressPanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show report education panel.
+     */
     public void showReportEducationPanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show report exploration panel.
+     */
     public void showReportExplorationPanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show report foreign affair panel.
+     */
     public void showReportForeignAffairPanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show report history panel.
+     */
     public void showReportHistoryPanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show report indian panel.
+     */
     public void showReportIndianPanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show report labour panel.
+     */
     public void showReportLabourPanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show report military panel.
+     */
     public void showReportMilitaryPanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show report naval panel.
+     */
     public void showReportNavalPanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show report production panel.
+     */
     public void showReportProductionPanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show report religious panel.
+     */
     public void showReportReligiousPanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show report requirements panel.
+     */
     public void showReportRequirementsPanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show report trade panel.
+     */
     public void showReportTradePanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show report turn panel.
+     *
+     * @param messages the messages
+     */
     public void showReportTurnPanel(List<ModelMessage> messages) {
     	//Ignore for now
     }
 
+    /**
+     * Show save dialog.
+     *
+     * @param directory the directory
+     * @param defaultName the default name
+     * @return the file
+     */
     public File showSaveDialog(File directory, String defaultName) {
         return null;
     }
 
+    /**
+     * Show scale map size dialog.
+     *
+     * @return the dimension
+     */
     public Dimension showScaleMapSizeDialog() {
         return null;
     }
 
+    /**
+     * Show select amount dialog.
+     *
+     * @param goodsType the goods type
+     * @param available the available
+     * @param defaultAmount the default amount
+     * @param needToPay the need to pay
+     * @return the int
+     */
     public int showSelectAmountDialog(GoodsType goodsType, int available,
                                       int defaultAmount, boolean needToPay) {
         return -1;
     }
 
+    /**
+     * Show select tribute amount dialog.
+     *
+     * @param question the question
+     * @param maximum the maximum
+     * @return the int
+     */
     public int showSelectTributeAmountDialog(StringTemplate question,
                                              int maximum) {
         return -1;
     }
 
+    /**
+     * Show select destination dialog.
+     *
+     * @param unit the unit
+     * @return the location
+     */
     public Location showSelectDestinationDialog(Unit unit) {
         return null;
     }
 
+    /**
+     * Show start game panel.
+     *
+     * @param game the game
+     * @param player the player
+     * @param singlePlayerMode the single player mode
+     */
     public void showStartGamePanel(Game game, Player player,
                                    boolean singlePlayerMode) {
     	//Ignore for now
     }
 
+    /**
+     * Show statistics panel.
+     */
     public void showStatisticsPanel() {
     	//Ignore for now
     }
 
+    /**
+     * Show status panel.
+     *
+     * @param message the message
+     */
     public void showStatusPanel(String message) {
     	//Ignore for now
     }
 
+    /**
+     * Show tile pop up at selected tile.
+     */
     public void showTilePopUpAtSelectedTile() {
     	//Ignore for now
     }
 
+    /**
+     * Show trade route panel.
+     *
+     * @param unit the unit
+     */
     public void showTradeRoutePanel(Unit unit) {
     	//Ignore for now
     }
 
+    /**
+     * Show victory dialog.
+     *
+     * @param handler the handler
+     */
     public void showVictoryDialog(DialogHandler<Boolean> handler) {
     	//Ignore for now
     }
 
+    /**
+     * Update game options.
+     */
     public void updateGameOptions() {
     	//Ignore for now
     }
 
+    /**
+     * Update map generator options.
+     */
     public void updateMapGeneratorOptions() {
     	//Ignore for now
     }
 
+    /**
+     * Center active unit.
+     */
     public void centerActiveUnit() {
     	//Ignore for now
     }
 
+    /**
+     * Change view mode.
+     *
+     * @param newViewMode the new view mode
+     */
     public void changeViewMode(int newViewMode) {
     	//Ignore for now
     }
 
+    /**
+     * Gets the active unit.
+     *
+     * @return the active unit
+     */
     public Unit getActiveUnit() {
         return null;
     }
 
+    /**
+     * Gets the focus.
+     *
+     * @return the focus
+     */
     public Tile getFocus() {
         return null;
     }
 
+    /**
+     * Gets the selected tile.
+     *
+     * @return the selected tile
+     */
     public Tile getSelectedTile() {
         return null;
     }
 
+    /**
+     * Gets the view mode.
+     *
+     * @return the view mode
+     */
     public int getViewMode() {
         return -1;
     }
 
+    /**
+     * Sets the focus.
+     *
+     * @param tileToFocus the new focus
+     */
     public void setFocus(Tile tileToFocus) {
     	//Ignore for now
     }
 
+    /**
+     * Sets the selected tile.
+     *
+     * @param newTileToSelect the new tile to select
+     * @return true, if successful
+     */
     public boolean setSelectedTile(Tile newTileToSelect) {
         return true; // Pretending again.
     }
 
+    /**
+     * Toggle view mode.
+     */
     public void toggleViewMode() {
     	//Ignore for now
     }

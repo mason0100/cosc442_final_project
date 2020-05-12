@@ -24,10 +24,13 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for displaying a High Score Report.
  */
 public class ReportHighScoresAction extends FreeColAction {
+    
+    /** The Constant ID. */
     public static final String ID = "reportHighScoresAction";
 
 

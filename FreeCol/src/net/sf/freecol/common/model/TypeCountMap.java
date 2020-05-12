@@ -25,24 +25,46 @@ import java.util.Map;
 import java.util.Set;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A map that incorporates a count.
- *
+ * 
  * FIXME: implement entire Map interface
+ *
+ * @param <T> the generic type
  */
 public class TypeCountMap<T extends FreeColGameObjectType> {
 
+    /** The values. */
     private final Map<T, Integer> values = new HashMap<>();
 
+    /**
+     * Gets the values.
+     *
+     * @return the values
+     */
     public Map<T, Integer> getValues() {
         return values;
     }
 
+    /**
+     * Gets the count.
+     *
+     * @param key the key
+     * @return the count
+     */
     public int getCount(T key) {
         Integer value = values.get(key);
         return value == null ? 0 : value;
     }
 
+    /**
+     * Increment count.
+     *
+     * @param key the key
+     * @param newCount the new count
+     * @return the integer
+     */
     public Integer incrementCount(T key, int newCount) {
         Integer oldValue = values.get(key);
         if (oldValue == null) {
@@ -55,36 +77,75 @@ public class TypeCountMap<T extends FreeColGameObjectType> {
         }
     }
 
+    /**
+     * Adds the.
+     *
+     * @param other the other
+     */
     public void add(TypeCountMap<T> other) {
         for (Map.Entry<T, Integer> entry : other.values.entrySet()) {
             incrementCount(entry.getKey(), entry.getValue());
         }
     }
 
+    /**
+     * Clear.
+     */
     public void clear() {
         values.clear();
     }
 
+    /**
+     * Key set.
+     *
+     * @return the sets the
+     */
     public Set<T> keySet() {
         return values.keySet();
     }
 
+    /**
+     * Values.
+     *
+     * @return the collection
+     */
     public Collection<Integer> values() {
         return values.values();
     }
 
+    /**
+     * Contains key.
+     *
+     * @param key the key
+     * @return true, if successful
+     */
     public boolean containsKey(T key) {
         return values.containsKey(key);
     }
 
+    /**
+     * Checks if is empty.
+     *
+     * @return true, if is empty
+     */
     public boolean isEmpty() {
         return values.isEmpty();
     }
 
+    /**
+     * Size.
+     *
+     * @return the int
+     */
     public int size() {
         return values.size();
     }
 
+    /**
+     * Put all.
+     *
+     * @param other the other
+     */
     public void putAll(TypeCountMap<T> other) {
         values.putAll(other.values);
     }

@@ -62,11 +62,13 @@ import net.sf.freecol.server.control.ChangeSet.ChangePriority;
 import net.sf.freecol.server.control.ChangeSet.See;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The server representation of the game.
  */
 public class ServerGame extends Game implements ServerModelObject {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(ServerGame.class.getName());
 
     /** Timestamp of last move, if any.  Do not serialize. */
@@ -94,8 +96,8 @@ public class ServerGame extends Game implements ServerModelObject {
      *     this <code>Game</code>.
      * @param xr The input stream containing the XML.
      * @param specification The <code>Specification</code> to use in this game.
-     * @exception XMLStreamException if an error occurred during parsing.
      * @see net.sf.freecol.server.FreeColServer#loadGame
+     * @exception XMLStreamException if an error occurred during parsing.
      */
     public ServerGame(FreeColGameObjectListener freeColGameObjectListener,
                       FreeColXMLReader xr, Specification specification)
@@ -152,6 +154,7 @@ public class ServerGame extends Game implements ServerModelObject {
      * Send a change set to a list of players.
      *
      * @param serverPlayers The list of <code>ServerPlayer</code>s to send to.
+     * @param cs the cs
      */
     public void sendToList(List<ServerPlayer> serverPlayers, ChangeSet cs) {
         for (ServerPlayer s : serverPlayers) s.send(cs);
@@ -165,6 +168,11 @@ public class ServerGame extends Game implements ServerModelObject {
      * @param type The server object tag.
      * @param id The object identifier.
      * @return A trivial server object.
+     * @throws ClassNotFoundException the class not found exception
+     * @throws IllegalAccessException the illegal access exception
+     * @throws InstantiationException the instantiation exception
+     * @throws InvocationTargetException the invocation target exception
+     * @throws NoSuchMethodException the no such method exception
      */
     private Object makeServerObject(String type, String id)
         throws ClassNotFoundException, IllegalAccessException,
@@ -253,7 +261,9 @@ public class ServerGame extends Game implements ServerModelObject {
 
 
     /**
-     * Is the next player in a new turn?
+     * Is the next player in a new turn?.
+     *
+     * @return true, if is next player in new turn
      */
     public boolean isNextPlayerInNewTurn() {
         Player nextPlayer = getNextPlayer();

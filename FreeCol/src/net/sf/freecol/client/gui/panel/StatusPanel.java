@@ -27,14 +27,17 @@ import javax.swing.JLabel;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A <code>Panel</code> for showing status information on screen.
  */
 public final class StatusPanel extends FreeColPanel {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(StatusPanel.class.getName());
 
+    /** The status label. */
     private final JLabel statusLabel;
 
 

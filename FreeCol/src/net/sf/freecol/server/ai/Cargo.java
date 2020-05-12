@@ -43,12 +43,14 @@ import net.sf.freecol.common.model.Unit;
 import net.sf.freecol.common.util.LogBuilder;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An class describing the action needed to make progress in a
  * transportation action for a specific transportable.
  */
 public class Cargo {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(Cargo.class.getName());
 
     /** Abandon cargo after three blockages. */
@@ -56,13 +58,28 @@ public class Cargo {
 
     /** The actions to perform at the target. */
     public static enum CargoMode {
-        LOAD,       // Go to target and load transportable
-        UNLOAD,     // Go to target and unload transportable
-        PICKUP,     // Go to drop node target, transportable unit to embark
-        DROPOFF,    // Go to drop node target, transportable unit to disembark
+        
+        /** The load. */
+        LOAD,       
+       /** The unload. */
+       // Go to target and load transportable
+        UNLOAD,     
+     /** The pickup. */
+     // Go to target and unload transportable
+        PICKUP,     
+     /** The dropoff. */
+     // Go to drop node target, transportable unit to embark
+        DROPOFF,    
+    /** The dump. */
+    // Go to drop node target, transportable unit to disembark
         DUMP;       // Just dump this transportable at the next opportunity
 
-        public boolean isCollection() {
+        /**
+        * Checks if is collection.
+        *
+        * @return true, if is collection
+        */
+       public boolean isCollection() {
             return this == LOAD || this == PICKUP;
         }
     }
@@ -84,7 +101,7 @@ public class Cargo {
         /** Current state of the plan. */
         public CargoMode mode;
 
-        /** Is the destination a fallback destination? */
+        /**  Is the destination a fallback destination?. */
         public boolean fallback;
 
         /**
@@ -330,52 +347,110 @@ public class Cargo {
         return transportable;
     }
 
+    /**
+     * Gets the carrier.
+     *
+     * @return the carrier
+     */
     public Unit getCarrier() {
         return carrier;
     }
 
+    /**
+     * Gets the tries.
+     *
+     * @return the tries
+     */
     public int getTries() {
         return this.tries;
     }
 
+    /**
+     * Gets the space left.
+     *
+     * @return the space left
+     */
     public int getSpaceLeft() {
         return spaceLeft;
     }
 
+    /**
+     * Sets the space left.
+     *
+     * @param spaceLeft the new space left
+     */
     public void setSpaceLeft(int spaceLeft) {
         this.spaceLeft = spaceLeft;
     }
 
+    /**
+     * Checks if is valid.
+     *
+     * @return true, if is valid
+     */
     public boolean isValid() {
         return plan != null && plan.mode != null;
     }
 
+    /**
+     * Gets the mode.
+     *
+     * @return the mode
+     */
     public CargoMode getMode() {
         return plan.mode;
     }
 
+    /**
+     * Gets the mode string.
+     *
+     * @return the mode string
+     */
     public String getModeString() {
         CargoMode mode = getMode();
         return (mode == null) ? "null"
             : mode.toString().toLowerCase(Locale.US);
     }
 
+    /**
+     * Gets the turns.
+     *
+     * @return the turns
+     */
     public int getTurns() {
         return plan.turns;
     }
 
+    /**
+     * Checks if is fallback.
+     *
+     * @return true, if is fallback
+     */
     public boolean isFallback() {
         return plan.fallback;
     }
 
+    /**
+     * Gets the transport target.
+     *
+     * @return the transport target
+     */
     public Location getTransportTarget() {
         return (getMode().isCollection()) ? plan.twait : plan.tdst;
     }
 
+    /**
+     * Gets the carrier target.
+     *
+     * @return the carrier target
+     */
     public Location getCarrierTarget() {
         return (getMode().isCollection()) ? plan.cwait : plan.cdst;
     }
 
+    /**
+     * Clear.
+     */
     public void clear() {
         this.transportable = null;
         this.carrier = null;
@@ -383,7 +458,7 @@ public class Cargo {
     }
 
     /**
-     * Is the transportable on board the carrier?
+     * Is the transportable on board the carrier?.
      *
      * @return True if the transportable is being carried by the carrier.
      */
@@ -417,7 +492,7 @@ public class Cargo {
 
     /**
      * Is this cargo delivered, or otherwise removed?  That is, is the
-     * cargo not on board the carrier in a deliverable mode?
+     * cargo not on board the carrier in a deliverable mode?.
      *
      * @return True if the cargo has been delivered.
      */
@@ -426,7 +501,7 @@ public class Cargo {
     }
 
     /**
-     * Does this cargo have a potential delivery path?
+     * Does this cargo have a potential delivery path?.
      *
      * @return True if the carrier can deliver the cargo.
      */
@@ -459,7 +534,7 @@ public class Cargo {
     }
 
     /**
-     * How much space would be needed to add this transportable?
+     * How much space would be needed to add this transportable?.
      *
      * @return The extra space required.
      */
@@ -475,7 +550,7 @@ public class Cargo {
     }
 
     /**
-     * Does this cargo wrap others?
+     * Does this cargo wrap others?.
      *
      * @return True if wrapped transportables are present.
      */
@@ -543,7 +618,7 @@ public class Cargo {
     }
 
     /**
-     * Does this cargo involve trade with Europe in a given goods type?
+     * Does this cargo involve trade with Europe in a given goods type?.
      *
      * @param type The <code>GoodsType</code> to check.
      * @return True if this cargo is of the given type and to be
@@ -651,19 +726,44 @@ public class Cargo {
     // Serialization
     // Cargo is not yet an AIObject or FreeColObject, but that may happen.
 
+    /** The Constant CDST_TAG. */
     private static final String CDST_TAG = "cdst";
+    
+    /** The Constant CWAIT_TAG. */
     private static final String CWAIT_TAG = "cwait";
+    
+    /** The Constant CARRIER_TAG. */
     private static final String CARRIER_TAG = "carrier";
+    
+    /** The Constant FALLBACK_TAG. */
     private static final String FALLBACK_TAG = "fallback";
+    
+    /** The Constant MODE_TAG. */
     private static final String MODE_TAG = "mode";
+    
+    /** The Constant SPACELEFT_TAG. */
     private static final String SPACELEFT_TAG = "space";
+    
+    /** The Constant TDST_TAG. */
     private static final String TDST_TAG = "tdst";
+    
+    /** The Constant TRIES_TAG. */
     private static final String TRIES_TAG = "tries";
+    
+    /** The Constant TURNS_TAG. */
     private static final String TURNS_TAG = "turns";
+    
+    /** The Constant TWAIT_TAG. */
     private static final String TWAIT_TAG = "twait";
     // Used to use TARGET_TAG = "target"
 
 
+    /**
+     * To XML.
+     *
+     * @param xw the xw
+     * @throws XMLStreamException the XML stream exception
+     */
     public void toXML(FreeColXMLWriter xw) throws XMLStreamException {
         xw.writeStartElement(getXMLElementTagName());
 
@@ -701,6 +801,13 @@ public class Cargo {
         xw.writeEndElement();
     }
 
+    /**
+     * Read from XML.
+     *
+     * @param aiMain the ai main
+     * @param xr the xr
+     * @throws XMLStreamException the XML stream exception
+     */
     public void readFromXML(AIMain aiMain, FreeColXMLReader xr) throws XMLStreamException {
         final Game game = aiMain.getGame();
 

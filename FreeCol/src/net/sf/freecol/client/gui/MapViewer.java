@@ -70,6 +70,7 @@ import net.sf.freecol.common.model.Unit;
 import static net.sf.freecol.common.util.StringUtils.*;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * MapViewer is a private helper class of Canvas and SwingGUI.
  * 
@@ -80,15 +81,33 @@ import static net.sf.freecol.common.util.StringUtils.*;
  */
 public final class MapViewer {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(MapViewer.class.getName());
 
-    private enum BorderType { COUNTRY, REGION }
+    /**
+     * The Enum BorderType.
+     */
+    private enum BorderType { /** The country. */
+ COUNTRY, /** The region. */
+ REGION }
 
+    /**
+     * The Class TextSpecification.
+     */
     private static class TextSpecification {
 
+        /** The text. */
         public final String text;
+        
+        /** The font. */
         public final Font font;
 
+        /**
+         * Instantiates a new text specification.
+         *
+         * @param newText the new text
+         * @param newFont the new font
+         */
         public TextSpecification(String newText, Font newFont) {
             text = newText;
             font = newFont;
@@ -96,21 +115,31 @@ public final class MapViewer {
     }
 
 
+    /** The free col client. */
     private final FreeColClient freeColClient;
 
+    /** The gui. */
     private final SwingGUI gui;
 
+    /** The size. */
     private Dimension size;
 
     /** Scaled ImageLibrary only used for map painting. */
     private ImageLibrary lib;
 
+    /** The tv. */
     private final TileViewer tv;
 
+    /** The cursor. */
     private TerrainCursor cursor;
 
+    /** The selected tile. */
     private Tile selectedTile;
+    
+    /** The focus. */
     private Tile focus = null;
+    
+    /** The active unit. */
     private Unit activeUnit;
 
     /** The view mode in use. */
@@ -121,55 +150,94 @@ public final class MapViewer {
 
     /** A path for a current goto order. */
     private PathNode gotoPath = null;
+    
+    /** The goto started. */
     private boolean gotoStarted = false;
 
+    /** The tile height. */
     // Helper variables for displaying the map.
     private int tileHeight;
+    
+    /** The tile width. */
     private int tileWidth;
+    
+    /** The half height. */
     private int halfHeight;
+    
+    /** The half width. */
     private int halfWidth;
+    
+    /** The top space. */
     private int topSpace;
+    
+    /** The top rows. */
     private int topRows;
+    
+    /** The bottom rows. */
     private int bottomRows;
+    
+    /** The left space. */
     private int leftSpace;
+    
+    /** The right space. */
     private int rightSpace;
 
+    /** The bottom row. */
     // The y-coordinate of the Tiles that will be drawn at the bottom
     private int bottomRow = -1;
 
+    /** The top row. */
     // The y-coordinate of the Tiles that will be drawn at the top
     private int topRow;
 
     // The y-coordinate on the screen (in pixels) of the images of the
+    /** The bottom row Y. */
     // Tiles that will be drawn at the bottom
     private int bottomRowY;
 
     // The y-coordinate on the screen (in pixels) of the images of the
+    /** The top row Y. */
     // Tiles that will be drawn at the top
     private int topRowY;
 
+    /** The left column. */
     // The x-coordinate of the Tiles that will be drawn at the left side
     private int leftColumn;
 
+    /** The right column. */
     // The x-coordinate of the Tiles that will be drawn at the right side
     private int rightColumn;
 
     // The x-coordinate on the screen (in pixels) of the images of the
+    /** The left column X. */
     // Tiles that will be drawn at the left (can be less than 0)
     private int leftColumnX;
 
+    /** The aligned top. */
     // Whether the map is currently aligned with the edge.
     private boolean alignedTop = false;
+    
+    /** The aligned bottom. */
     private boolean alignedBottom = false;
+    
+    /** The aligned left. */
     private boolean alignedLeft = false;
+    
+    /** The aligned right. */
     private boolean	alignedRight = false;
 
 
+    /** The Constant MAP_SCALE_MIN. */
     // How the map can be scaled
     private static final float MAP_SCALE_MIN = 0.25f;
+    
+    /** The Constant MAP_SCALE_MAX. */
     private static final float MAP_SCALE_MAX = 2.0f;
+    
+    /** The Constant MAP_SCALE_STEP. */
     private static final float MAP_SCALE_STEP = 0.25f;
 
+    /** The Constant MAX_OTHER_UNITS. */
     // The height offset to paint a Unit at (in pixels).
     private static final int UNIT_OFFSET = 20,
         OTHER_UNITS_OFFSET_X = -5, // Relative to the state indicator.
@@ -177,18 +245,25 @@ public final class MapViewer {
         OTHER_UNITS_WIDTH = 3,
         MAX_OTHER_UNITS = 10;
 
+    /** The units out for animation. */
     private final java.util.Map<Unit, Integer> unitsOutForAnimation;
+    
+    /** The units out for animation labels. */
     private final java.util.Map<Unit, JLabel> unitsOutForAnimationLabels;
 
+    /** The border points. */
     // borders
     private final EnumMap<Direction, Point2D.Float> borderPoints =
         new EnumMap<>(Direction.class);
 
+    /** The control points. */
     private final EnumMap<Direction, Point2D.Float> controlPoints =
         new EnumMap<>(Direction.class);
 
+    /** The border stroke. */
     private Stroke borderStroke = new BasicStroke(4);
 
+    /** The grid stroke. */
     private Stroke gridStroke = new BasicStroke(1);
 
 
@@ -402,6 +477,13 @@ public final class MapViewer {
         }
     }
 
+    /**
+     * Enter unit out for animation.
+     *
+     * @param unit the unit
+     * @param sourceTile the source tile
+     * @return the j label
+     */
     private JLabel enterUnitOutForAnimation(final Unit unit,
                                             final Tile sourceTile) {
         Integer i = unitsOutForAnimation.get(unit);
@@ -421,6 +503,11 @@ public final class MapViewer {
         return unitsOutForAnimationLabels.get(unit);
     }
 
+    /**
+     * Release unit out for animation.
+     *
+     * @param unit the unit
+     */
     private void releaseUnitOutForAnimation(final Unit unit) {
         Integer i = unitsOutForAnimation.get(unit);
         if (i == null) {
@@ -517,6 +604,11 @@ public final class MapViewer {
         return new Point(x, y);
     }
 
+    /**
+     * Gets the tile width.
+     *
+     * @return the tile width
+     */
     int getTileWidth() {
         return tileWidth;
     }
@@ -577,10 +669,16 @@ public final class MapViewer {
         cursor.startBlinking();
     }
 
+    /**
+     * Stop blinking.
+     */
     void stopBlinking() {
         cursor.stopBlinking();
     }
 
+    /**
+     * Restart blinking.
+     */
     void restartBlinking() {
         cursor.startBlinking();
     }
@@ -665,6 +763,9 @@ public final class MapViewer {
         bottomRow = -1;
     }
 
+    /**
+     * Reposition map if needed.
+     */
     private void repositionMapIfNeeded() {
         if (bottomRow < 0 && focus != null) positionMap(focus);
     }
@@ -806,7 +907,7 @@ public final class MapViewer {
     }
 
     /**
-     * Is a y-coordinate near the bottom?
+     * Is a y-coordinate near the bottom?.
      *
      * @param y The y-coordinate.
      * @return True if near the bottom.
@@ -816,7 +917,7 @@ public final class MapViewer {
     }
 
     /**
-     * Is an x,y coordinate near the left?
+     * Is an x,y coordinate near the left?.
      *
      * @param x The x-coordinate.
      * @param y The y-coordinate.
@@ -827,7 +928,7 @@ public final class MapViewer {
     }
 
     /**
-     * Is an x,y coordinate near the right?
+     * Is an x,y coordinate near the right?.
      *
      * @param x The x-coordinate.
      * @param y The y-coordinate.
@@ -909,7 +1010,7 @@ public final class MapViewer {
     }
 
     /**
-     * Is a y-coordinate near the top?
+     * Is a y-coordinate near the top?.
      *
      * @param y The y-coordinate.
      * @return True if near the top.
@@ -918,6 +1019,12 @@ public final class MapViewer {
         return y < topRows;
     }
 
+    /**
+     * Checks if is tile visible.
+     *
+     * @param tile the tile
+     * @return true, if is tile visible
+     */
     private boolean isTileVisible(Tile tile) {
         if (tile == null) return false;
         return tile.getY() >= topRow && tile.getY() <= bottomRow
@@ -1186,6 +1293,11 @@ public final class MapViewer {
         this.currentPath = path;
     }
 
+    /**
+     * Sets the size.
+     *
+     * @param size the new size
+     */
     void setSize(Dimension size) {
         this.size = size;
         updateMapDisplayVariables();
@@ -1199,14 +1311,27 @@ public final class MapViewer {
         updateMapDisplayVariables();
     }
 
+    /**
+     * Checks if is at max map scale.
+     *
+     * @return true, if is at max map scale
+     */
     boolean isAtMaxMapScale() {
         return lib.getScaleFactor() == MAP_SCALE_MAX;
     }
 
+    /**
+     * Checks if is at min map scale.
+     *
+     * @return true, if is at min map scale
+     */
     boolean isAtMinMapScale() {
         return lib.getScaleFactor() == MAP_SCALE_MIN;
     }
 
+    /**
+     * Increase map scale.
+     */
     void increaseMapScale() {
         float newScale = lib.getScaleFactor() + MAP_SCALE_STEP;
         if (newScale >= MAP_SCALE_MAX)
@@ -1215,6 +1340,9 @@ public final class MapViewer {
         updateMapDisplayVariables();
     }
 
+    /**
+     * Decrease map scale.
+     */
     void decreaseMapScale() {
         float newScale = lib.getScaleFactor() - MAP_SCALE_STEP;
         if (newScale <= MAP_SCALE_MIN)
@@ -1223,6 +1351,9 @@ public final class MapViewer {
         updateMapDisplayVariables();
     }
 
+    /**
+     * Update map display variables.
+     */
     private void updateMapDisplayVariables() {
         // Calculate the amount of rows that will be drawn above the
         // central Tile
@@ -1580,6 +1711,17 @@ public final class MapViewer {
         }
     }
 
+    /**
+     * Display settlement labels.
+     *
+     * @param g the g
+     * @param settlement the settlement
+     * @param player the player
+     * @param colonyLabels the colony labels
+     * @param font the font
+     * @param italicFont the italic font
+     * @param productionFont the production font
+     */
     private void displaySettlementLabels(Graphics2D g, Settlement settlement,
                                          Player player, int colonyLabels,
                                          Font font, Font italicFont,
@@ -1699,6 +1841,11 @@ public final class MapViewer {
 
     /**
      * Draws the pentagram indicating a native capital.
+     *
+     * @param extent the extent
+     * @param padding the padding
+     * @param backgroundColor the background color
+     * @return the buffered image
      */
     private static BufferedImage createCapitalLabel(int extent, int padding,
                                                     Color backgroundColor) {
@@ -1808,6 +1955,12 @@ public final class MapViewer {
     /**
      * Draws a cross indicating a religious mission is present in the
      * native village.
+     *
+     * @param extent the extent
+     * @param padding the padding
+     * @param backgroundColor the background color
+     * @param expertMissionary the expert missionary
+     * @return the buffered image
      */
     private static BufferedImage createReligiousMissionLabel(int extent,
             int padding, Color backgroundColor, boolean expertMissionary) {
@@ -1991,6 +2144,11 @@ public final class MapViewer {
         return new Point(unitX, unitY);
     }
 
+    /**
+     * Display cursor.
+     *
+     * @param g the g
+     */
     private void displayCursor(Graphics2D g) {
         BufferedImage cursorImage = lib.getMiscImage(ImageLibrary.UNIT_SELECT);
         g.drawImage(cursorImage, 0, 0, null);

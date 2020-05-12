@@ -35,6 +35,7 @@ import net.sf.freecol.common.option.AudioMixerOption;
 import net.sf.freecol.common.option.AudioMixerOption.MixerWrapper;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides visualization for an
  * {@link net.sf.freecol.common.option.AudioMixerOption}
@@ -42,11 +43,22 @@ import net.sf.freecol.common.option.AudioMixerOption.MixerWrapper;
  */
 public final class AudioMixerOptionUI extends OptionUI<AudioMixerOption> {
 
+    /** The gui. */
     private final GUI gui;
+    
+    /** The panel. */
     private final JPanel panel = new JPanel();
+    
+    /** The cbox. */
     private final JComboBox<MixerWrapper> cbox;
+    
+    /** The button 1. */
     private final JButton button1;
+    
+    /** The button 2. */
     private final JButton button2;
+    
+    /** The current mixer label. */
     private final JLabel currentMixerLabel;
 
 
@@ -108,6 +120,9 @@ public final class AudioMixerOptionUI extends OptionUI<AudioMixerOption> {
         initialize();
     }
 
+    /**
+     * Update mixer label.
+     */
     private void updateMixerLabel() {
         currentMixerLabel.setText(gui.getSoundMixerLabelText());
     }

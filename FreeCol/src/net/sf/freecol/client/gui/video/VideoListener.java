@@ -19,8 +19,11 @@
 
 package net.sf.freecol.client.gui.video;
 
+// TODO: Auto-generated Javadoc
 /**
  * A listener for video playback events.
+ *
+ * @see VideoEvent
  */
 public interface VideoListener {
     

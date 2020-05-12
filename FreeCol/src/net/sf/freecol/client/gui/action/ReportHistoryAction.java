@@ -24,11 +24,13 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Show history messages in report panel.
  */
 public class ReportHistoryAction extends FreeColAction {
 
+    /** The Constant ID. */
     public static final String ID = "reportHistoryAction";
 
 

@@ -24,16 +24,18 @@ import java.awt.event.ActionEvent;
 import net.sf.freecol.client.FreeColClient;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * An action for starting a new game.
  */
 public class NewAction extends FreeColAction {
 
+    /** The Constant ID. */
     public static final String ID = "newAction";
 
 
     /**
-     * Creates this action
+     * Creates this action.
      *
      * @param freeColClient The <code>FreeColClient</code> for the game.
      */

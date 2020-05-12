@@ -37,14 +37,22 @@ import net.sf.freecol.common.model.Tile;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Dialog to display on first contact with a native player.
  */
 public class FirstContactDialog extends FreeColConfirmDialog {
 
+    /** The Constant BASE_KEY. */
     private static final String BASE_KEY = "firstContactDialog.meeting.";
+    
+    /** The Constant IMAGE_BASE_KEY. */
     private static final String IMAGE_BASE_KEY = "image.flavor.event.meeting.";
+    
+    /** The Constant NATIVES_KEY. */
     private static final String NATIVES_KEY = "natives";
+    
+    /** The Constant TUTORIAL_KEY. */
     private static final String TUTORIAL_KEY = BASE_KEY + NATIVES_KEY + ".tutorial";
 
 

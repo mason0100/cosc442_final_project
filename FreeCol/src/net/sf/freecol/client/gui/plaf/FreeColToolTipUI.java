@@ -37,38 +37,64 @@ import javax.swing.plaf.basic.BasicToolTipUI;
 import net.sf.freecol.client.gui.ImageLibrary;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * Draw the "image.background.FreeColToolTip" resource as a tiled background
  * image on tool tip popups.
  */
 public class FreeColToolTipUI extends BasicToolTipUI {
 
+    /** The Constant sharedInstance. */
     private static final FreeColToolTipUI sharedInstance = new FreeColToolTipUI();
 
     // FIXME: find out why we can't use the FontRenderContext of the
+    /** The Constant frc. */
     // component.  And should we use fractional metrics?
     private static final FontRenderContext frc
         = new FontRenderContext(null, true, false);
 
+    /** The Constant MARGIN. */
     private static final int MARGIN = 5;
+    
+    /** The maximum width. */
     private static int maximumWidth = 300;
+    
+    /** The Constant LEADING. */
     private static final int LEADING = 5;
 
+    /** The Constant lineBreak. */
     private static final Pattern lineBreak = Pattern.compile("\n");
 
 
+    /**
+     * Instantiates a new free col tool tip UI.
+     */
     private FreeColToolTipUI() {
         super();
     }
 
+    /**
+     * Creates the UI.
+     *
+     * @param c the c
+     * @return the component UI
+     */
     public static ComponentUI createUI(@SuppressWarnings("unused") JComponent c) {
         return sharedInstance;
     }
 
+    /**
+     * Sets the maximum width.
+     *
+     * @param width the new maximum width
+     */
     public static void setMaximumWidth(int width) {
         maximumWidth = width;
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.plaf.basic.BasicToolTipUI#paint(java.awt.Graphics, javax.swing.JComponent)
+     */
     @Override
     public void paint(Graphics g, JComponent c) {
         if (c.isOpaque()) {
@@ -104,6 +130,9 @@ public class FreeColToolTipUI extends BasicToolTipUI {
         }
      }
 
+    /* (non-Javadoc)
+     * @see javax.swing.plaf.basic.BasicToolTipUI#getPreferredSize(javax.swing.JComponent)
+     */
     @Override
     public Dimension getPreferredSize(JComponent c) {
         String tipText = ((JToolTip)c).getTipText();
@@ -136,11 +165,17 @@ public class FreeColToolTipUI extends BasicToolTipUI {
 
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.plaf.basic.BasicToolTipUI#getMinimumSize(javax.swing.JComponent)
+     */
     @Override
     public Dimension getMinimumSize(JComponent c) {
         return getPreferredSize(c);
     }
 
+    /* (non-Javadoc)
+     * @see javax.swing.plaf.basic.BasicToolTipUI#getMaximumSize(javax.swing.JComponent)
+     */
     @Override
     public Dimension getMaximumSize(JComponent c) {
         return getPreferredSize(c);

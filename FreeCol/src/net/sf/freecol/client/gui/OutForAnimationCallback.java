@@ -22,6 +22,7 @@ package net.sf.freecol.client.gui;
 import javax.swing.JLabel;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A callback interface for
  * {@link MapViewer#executeWithUnitOutForAnimation(net.sf.freecol.common.model.Unit, net.sf.freecol.common.model.Tile, OutForAnimationCallback)}.

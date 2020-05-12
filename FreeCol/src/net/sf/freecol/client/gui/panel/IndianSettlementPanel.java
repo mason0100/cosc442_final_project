@@ -39,11 +39,13 @@ import net.sf.freecol.common.model.UnitType;
 import net.sf.freecol.common.resources.ResourceManager;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This panel is used to show information about an Indian settlement.
  */
 public final class IndianSettlementPanel extends FreeColPanel {
 
+    /** The Constant logger. */
     @SuppressWarnings("unused")
     private static final Logger logger = Logger.getLogger(IndianSettlementPanel.class.getName());
 

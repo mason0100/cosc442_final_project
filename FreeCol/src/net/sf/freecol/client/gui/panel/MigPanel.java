@@ -24,21 +24,36 @@ import java.awt.LayoutManager;
 import javax.swing.JPanel;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * A panel that clears its layout on close, working around a bug in
  * some versions of MigLayout.
  */
 public class MigPanel extends JPanel {
 
+    /** The ui class id. */
     private String uiClassId = null;
 
 
+    /**
+     * Instantiates a new mig panel.
+     */
     public MigPanel() {}
 
+    /**
+     * Instantiates a new mig panel.
+     *
+     * @param uiClassId the ui class id
+     */
     public MigPanel(String uiClassId) {
         this.uiClassId = uiClassId;
     }
 
+    /**
+     * Instantiates a new mig panel.
+     *
+     * @param layout the layout
+     */
     public MigPanel(LayoutManager layout) {
         super(layout);
     }

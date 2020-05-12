@@ -30,6 +30,7 @@ import net.sf.freecol.common.model.Unit;
 import org.w3c.dom.Element;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The AbstractMission provides basic methods for building Missions.
  */
@@ -182,8 +183,13 @@ public abstract class AbstractMission extends FreeColGameObject implements Missi
 
     // Serialization
 
+    /** The Constant REPEAT_COUNT_TAG. */
     private static final String REPEAT_COUNT_TAG = "repeatCount";
+    
+    /** The Constant TURN_COUNT_TAG. */
     private static final String TURN_COUNT_TAG = "turnCount";
+    
+    /** The Constant UNIT_TAG. */
     private static final String UNIT_TAG = "unit";
 
 

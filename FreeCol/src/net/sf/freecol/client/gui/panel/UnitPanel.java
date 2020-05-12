@@ -28,6 +28,7 @@ import net.sf.freecol.common.model.TradeRoute;
 import net.sf.freecol.common.model.Unit;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * This class provides common functionality for sub-panels of a
  * PortPanel that display UnitLabels.
@@ -35,6 +36,7 @@ import net.sf.freecol.common.model.Unit;
 public abstract class UnitPanel extends MigPanel
     implements PropertyChangeListener {
 
+    /** The Constant logger. */
     private static final Logger logger = Logger.getLogger(UnitPanel.class.getName());
 
     /** The panel containing the units to display. */
@@ -133,7 +135,7 @@ public abstract class UnitPanel extends MigPanel
     }
 
     /**
-     * Is this panel editable?
+     * Is this panel editable?.
      *
      * @return True if the panel is editable.
      */
