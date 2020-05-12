@@ -224,7 +224,8 @@ public class Effect extends FreeColGameObjectType {
      *
      * @return "effect".
      */
+    static String effectTag = "effect";
     public static String getXMLElementTagName() {
-        return "effect";
+		return effectTag;
     }
 }

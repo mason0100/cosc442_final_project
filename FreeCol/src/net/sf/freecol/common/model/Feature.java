@@ -425,11 +425,11 @@ public abstract class Feature extends FreeColObject implements Named {
             setSource(spec.findType(str));
         }
 
-        int firstTurn = xr.getAttribute(FIRST_TURN_TAG, UNDEFINED);
-        if (firstTurn != UNDEFINED) setFirstTurn(new Turn(firstTurn));
+        int firstTurnGet = xr.getAttribute(FIRST_TURN_TAG, UNDEFINED);
+        if (firstTurnGet != UNDEFINED) setFirstTurn(new Turn(firstTurnGet));
 
-        int lastTurn = xr.getAttribute(LAST_TURN_TAG, UNDEFINED);
-        if (lastTurn != UNDEFINED) setLastTurn(new Turn(lastTurn));
+        int lastTurnGet = xr.getAttribute(LAST_TURN_TAG, UNDEFINED);
+        if (lastTurnGet != UNDEFINED) setLastTurn(new Turn(lastTurnGet));
 
         duration = xr.getAttribute(DURATION_TAG, 0);
 

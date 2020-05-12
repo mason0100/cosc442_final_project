@@ -356,7 +356,8 @@ public class EquipmentType extends BuildableType {
      *
      * @return "equipment-type".
      */
+    static String equipmentTag = "equipment-type";
     public static String getXMLElementTagName() {
-        return "equipment-type";
+		return equipmentTag;
     }
 }

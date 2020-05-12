@@ -30,7 +30,7 @@ import java.util.Set;
  */
 public class BuildQueue<T extends BuildableType> implements Consumer {
 
-    public static enum CompletionAction {
+    public enum CompletionAction {
         /**
          * Always remove the completed item. Not used by any build
          * queue at the moment.
@@ -55,7 +55,7 @@ public class BuildQueue<T extends BuildableType> implements Consumer {
          * implemented as a build queue at the moment, however).
          */
         ADD_RANDOM
-    };
+    }
 
 
     /** A list of Buildable items. */

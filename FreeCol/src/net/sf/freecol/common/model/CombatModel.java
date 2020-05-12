@@ -30,7 +30,7 @@ import java.util.Set;
  */
 public abstract class CombatModel {
 
-    public static enum CombatResult {
+    public enum CombatResult {
         // Special results that set the sense of the result.
         NO_RESULT,
         LOSE,

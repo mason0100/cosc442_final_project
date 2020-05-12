@@ -44,19 +44,19 @@ public enum Direction implements Named {
     W  (-1,  0, -1,  0),
     NW ( 0, -1, -1, -1);
 
-    public final static int NUMBER_OF_DIRECTIONS = values().length;
+    public static final int NUMBER_OF_DIRECTIONS = values().length;
 
-    public static final List<Direction> allDirections
+    protected static final List<Direction> allDirections
         = makeUnmodifiableList(Direction.N, Direction.NE,
                                Direction.E, Direction.SE,
                                Direction.S, Direction.SW,
                                Direction.W, Direction.NW);
 
-    public static final List<Direction> longSides
+    protected static final List<Direction> longSides
         = makeUnmodifiableList(Direction.NE, Direction.SE,
                                Direction.SW, Direction.NW);
 
-    public static final List<Direction> corners
+    protected static final List<Direction> corners
         = makeUnmodifiableList(Direction.N, Direction.E,
                                Direction.S, Direction.W);
     

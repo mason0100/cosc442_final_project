@@ -508,7 +508,8 @@ public final class BuildingType extends BuildableType {
      *
      * @return "building-type".
      */
+    static String buildingType = "building-type";
     public static String getXMLElementTagName() {
-        return "building-type";
+		return buildingType;
     }
 }

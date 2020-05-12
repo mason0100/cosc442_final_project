@@ -40,7 +40,7 @@ import static net.sf.freecol.common.util.StringUtils.*;
  */
 public class FoundingFather extends FreeColGameObjectType {
 
-    public static enum FoundingFatherType {
+    public enum FoundingFatherType {
         TRADE,
         EXPLORATION,
         MILITARY,
@@ -411,7 +411,8 @@ public class FoundingFather extends FreeColGameObjectType {
      *
      * @return "founding-father".
      */
+    static String foundingFatherTag = "founding-father";
     public static String getXMLElementTagName() {
-        return "founding-father";
+		return foundingFatherTag;
     }
 }

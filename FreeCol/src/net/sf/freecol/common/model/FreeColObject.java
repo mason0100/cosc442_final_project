@@ -139,8 +139,8 @@ public abstract class FreeColObject
      * @return The usual identifier suffix.
      */
     public final String getSuffix() {
-        String id = getId();
-        return (id == null) ? null : lastPart(id, ".");
+        String idGet = getId();
+        return (idGet == null) ? null : lastPart(idGet, ".");
     }
 
     /**
@@ -199,7 +199,9 @@ public abstract class FreeColObject
             if (col >= 0) {
                 try {
                     return Integer.parseInt(id.substring(col + 1));
-                } catch (NumberFormatException nfe) {}
+                } catch (NumberFormatException nfe) {
+                	//Ignore for now
+                }
             }
         }
         return -1;
@@ -1165,7 +1167,8 @@ public abstract class FreeColObject
      */
     protected void writeAttributes(FreeColXMLWriter xw) throws XMLStreamException {
         if (getId() == null) {
-            logger.warning("FreeColObject with null identifier: " + this);
+            String loggerWarning = "FreeColObject with null identifier: " + this;
+			logger.warning(loggerWarning);
         } else {
             xw.writeAttribute(ID_ATTRIBUTE_TAG, getId());
         }

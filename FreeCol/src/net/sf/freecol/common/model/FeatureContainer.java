@@ -483,16 +483,16 @@ public final class FeatureContainer {
     public String toString() {
         StringBuilder sb = new StringBuilder(256);
         sb.append("[FeatureContainer");
-        Set<Ability> abilities = getAbilities(null, null, null);
-        if (!abilities.isEmpty()) {
+        Set<Ability> abilitiesGet = getAbilities(null, null, null);
+        if (!abilitiesGet.isEmpty()) {
             sb.append(" [abilities");
             for (Ability ability : getAbilities(null, null, null)) {
                 sb.append(" ").append(ability);
             }
             sb.append("]");
         }
-        Set<Modifier> modifiers = getModifiers(null, null, null);
-        if (!modifiers.isEmpty()) {
+        Set<Modifier> modifiersGet = getModifiers(null, null, null);
+        if (!modifiersGet.isEmpty()) {
             sb.append(" [modifiers");
             for (Modifier modifier : getModifiers(null, null, null)) {
                 sb.append(" ").append(modifier);

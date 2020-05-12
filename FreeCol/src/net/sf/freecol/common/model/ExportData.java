@@ -204,7 +204,8 @@ public class ExportData extends FreeColObject {
      *
      * @return "exportData".
      */
+    static String exportDataTag = "exportData";
     public static String getXMLElementTagName() {
-        return "exportData";
+		return exportDataTag;
     }
 }

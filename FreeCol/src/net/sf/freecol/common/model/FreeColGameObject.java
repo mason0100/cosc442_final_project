@@ -197,17 +197,17 @@ public abstract class FreeColGameObject extends FreeColObject {
      * @return The "clone" of the <code>FreeColGameObject</code>.
      */
     public <T extends FreeColGameObject> T cloneFreeColGameObject(Class<T> returnClass) {
-        final Game game = getGame();
+        final Game gameGet = getGame();
         try {
             String xml = this.serialize();
 
             Field nextId = Game.class.getDeclaredField("nextId");
             nextId.setAccessible(true);
-            int id = nextId.getInt(game);
-            nextId.setInt(game, id + 1);
+            int id = nextId.getInt(gameGet);
+            nextId.setInt(gameGet, id + 1);
             xml = xml.replace(getId(), T.getXMLElementTagName() + ":" + id);
 
-            return game.unserialize(xml, returnClass);
+            return gameGet.unserialize(xml, returnClass);
 
         } catch (Exception e) {
             logger.log(Level.WARNING, "Failed to clone " + getId(), e);

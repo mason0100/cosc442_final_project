@@ -61,7 +61,9 @@ public class EuropeWas {
                     idMax = id;
                     newUnit = u;
                 }
-            } catch (NumberFormatException nfe) {}
+            } catch (NumberFormatException nfe) {
+            	//Ignore for now
+            }
         }
         return newUnit;        
     }

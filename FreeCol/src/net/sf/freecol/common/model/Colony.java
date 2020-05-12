@@ -37,8 +37,6 @@ import javax.xml.stream.XMLStreamException;
 
 import net.sf.freecol.common.io.FreeColXMLReader;
 import net.sf.freecol.common.io.FreeColXMLWriter;
-import net.sf.freecol.common.model.Occupation;
-import net.sf.freecol.common.model.Stance;
 
 import static net.sf.freecol.common.util.CollectionUtils.*;
 
@@ -60,7 +58,7 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
     /** The number of turns of advanced warning of starvation. */
     public static final int FAMINE_TURNS = 3;
     
-    public static enum ColonyChangeEvent {
+    public enum ColonyChangeEvent {
         POPULATION_CHANGE,
         PRODUCTION_CHANGE,
         BONUS_CHANGE,
@@ -70,7 +68,7 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
     }
 
     /** Reasons for not building a buildable. */
-    public static enum NoBuildReason {
+    public enum NoBuildReason {
         NONE,
         NOT_BUILDING,
         NOT_BUILDABLE,
@@ -623,7 +621,9 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
     public <T extends WorkLocation> T getWorkLocationWithAbility(String ability,
         Class<T> returnClass) {
         WorkLocation wl = getWorkLocationWithAbility(ability);
-        if (wl != null) try { return returnClass.cast(wl); } catch (ClassCastException cce) {};
+        if (wl != null) try { return returnClass.cast(wl); } catch (ClassCastException cce) {
+        	//Ignore for now
+        }
         return null;
     }
 
@@ -652,7 +652,9 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
     public <T extends WorkLocation> T getWorkLocationWithModifier(String modifier,
         Class<T> returnClass) {
         WorkLocation wl = getWorkLocationWithModifier(modifier);
-        if (wl != null) try { return returnClass.cast(wl); } catch (ClassCastException cce) {}
+        if (wl != null) try { return returnClass.cast(wl); } catch (ClassCastException cce) {
+        	//Ignore for now
+        }
         return null;
     }
     
@@ -842,7 +844,10 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
     public int getTurnsToComplete(BuildableType buildable,
                                   AbstractGoods needed) {
         final List<AbstractGoods> required = buildable.getRequiredGoods();
-        int turns = 0, satisfied = 0, failing = 0, underway = 0;
+        int turns = 0;
+        int satisfied = 0;
+        int failing = 0;
+        int underway = 0;
         
         ProductionInfo info = productionCache.getProductionInfo(buildQueue);
         for (AbstractGoods ag : required) {
@@ -1256,7 +1261,9 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
      *      the negation of the number of units to remove.
      */
     public int getPreferredSizeChange() {
-        int i, limit, pop = getUnitCount();
+        int i;
+        int limit;
+        int pop = getUnitCount();
         if (productionBonus < 0) {
             limit = pop;
             for (i = 1; i < limit; i++) {
@@ -2074,7 +2081,7 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
         public boolean isExploration() {
             return this.tileImprovementType == null;
         }
-    };
+    }
     
     /**
      * Collect suggestions for tiles that need exploration or
@@ -2311,8 +2318,8 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
 
         mods = goodsType.getModifiers(Modifier.LIBERTY);
         if (!mods.isEmpty()) {
-            int liberty = (int)applyModifiers(amount, turn, mods);
-            modifyLiberty(liberty);
+            int libertyMod = (int)applyModifiers(amount, turn, mods);
+            modifyLiberty(libertyMod);
         }
 
         mods = goodsType.getModifiers(Modifier.IMMIGRATION);
@@ -3030,7 +3037,8 @@ public class Colony extends Settlement implements Nameable, TradeLocation {
      *
      * @return "colony".
      */
+    static String colonyTagName = "colony";
     public static String getXMLElementTagName() {
-        return "colony";
+		return colonyTagName;
     }
 }

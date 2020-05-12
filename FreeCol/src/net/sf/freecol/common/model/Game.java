@@ -57,11 +57,11 @@ public class Game extends FreeColGameObject {
     private static final Logger logger = Logger.getLogger(Game.class.getName());
 
     /** State for the FCGO iterator, out here because it has to be static. */
-    private static enum FcgoState {
+    private enum FcgoState {
         INVALID,
         VALID,
         CONSUMED,
-    };
+    }
 
     /** Map of all classes with corresponding server classes. */
     private static final java.util.Map<Class<? extends FreeColObject>,
@@ -86,7 +86,7 @@ public class Game extends FreeColGameObject {
                           net.sf.freecol.server.model.ServerPlayer.class);
         serverClasses.put(net.sf.freecol.common.model.Unit.class,
                           net.sf.freecol.server.model.ServerUnit.class);
-    };
+    }
 
     /**
      * Map of class name to class for the location classes, to speed
@@ -113,7 +113,7 @@ public class Game extends FreeColGameObject {
                             net.sf.freecol.common.model.Tile.class);
         locationClasses.put("Unit",
                             net.sf.freecol.common.model.Unit.class);
-    };
+    }
 
 
     /**
@@ -345,8 +345,7 @@ public class Game extends FreeColGameObject {
                 + id + " : " + old.getClass()
                 + " with " + fcgo.getId() + " : " + fcgo.getClass());
         }
-
-        //logger.finest("Added FCGO: " + id);
+        
         final WeakReference<FreeColGameObject> wr
             = new WeakReference<>(fcgo);
         freeColGameObjects.put(id, wr);
@@ -365,7 +364,8 @@ public class Game extends FreeColGameObject {
         if (id == null) throw new IllegalArgumentException("Null identifier.");
         if (id.isEmpty()) throw new IllegalArgumentException("Empty identifier.");
 
-        logger.finest("removeFCGO/" + reason + ": " + id);
+        String loggerFinest = "removeFCGO/" + reason + ": " + id;
+		logger.finest(loggerFinest);
         freeColGameObjects.remove(id);
         notifyRemoveFreeColGameObject(id);
 
@@ -1152,8 +1152,8 @@ public class Game extends FreeColGameObject {
             lb.log(logger, Level.WARNING);
         }
 
-        Map map = getMap();
-        if (map != null) {
+        Map mapGet = getMap();
+        if (mapGet != null) {
             result = Math.min(result, getMap().checkIntegrity(fix));
         }
         for (Player player : getPlayers()) {
@@ -1243,10 +1243,10 @@ public class Game extends FreeColGameObject {
 
         nationOptions.toXML(xw);
 
-        List<Player> players = getSortedCopy(getPlayers());
+        List<Player> playersGet = getSortedCopy(getPlayers());
         Player unknown = getUnknownEnemy();
-        if (unknown != null) players.add(unknown);
-        for (Player p : players) p.toXML(xw);
+        if (unknown != null) playersGet.add(unknown);
+        for (Player p : playersGet) p.toXML(xw);
 
         if (map != null) map.toXML(xw);
     }
@@ -1269,7 +1269,7 @@ public class Game extends FreeColGameObject {
                 UUID u = UUID.fromString(str);
                 this.uuid = u;
             } catch (IllegalArgumentException iae) {
-                ;// Preserve existing uuid
+                // Ignore for now
             }
         }
 
@@ -1316,7 +1316,6 @@ public class Game extends FreeColGameObject {
     protected void readChild(FreeColXMLReader xr) throws XMLStreamException {
         final Game game = getGame();
         final String tag = xr.getLocalName();
-        //logger.finest("Found game tag " + tag + " id=" + xr.readId());
 
         if (CIBOLA_TAG.equals(tag)) {
             String cibola = xr.readId();
@@ -1362,7 +1361,8 @@ public class Game extends FreeColGameObject {
      *
      * @return "game".
      */
+    static String gameGet = "game";
     public static String getXMLElementTagName() {
-        return "game";
+		return gameGet;
     }
 }

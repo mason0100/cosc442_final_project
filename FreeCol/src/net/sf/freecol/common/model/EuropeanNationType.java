@@ -189,7 +189,6 @@ public class EuropeanNationType extends NationType {
 
         xw.writeAttribute(ROLE_TAG, au.getRoleId());
 
-        //xw.writeAttribute("number", unit.getNumber());
 
         if (expert) xw.writeAttribute(EXPERT_STARTING_UNITS_TAG, expert);
 

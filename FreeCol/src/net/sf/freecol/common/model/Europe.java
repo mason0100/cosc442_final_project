@@ -67,7 +67,7 @@ public class Europe extends UnitLocation
      * The following constant should be used when the random choice
      * behaviour is desired.
      */
-    public static enum MigrationType {
+    public enum MigrationType {
         NORMAL,     // Unit decided to migrate
         RECRUIT,    // Player is paying
         FOUNTAIN,   // As a result of a Fountain of Youth discovery
@@ -446,10 +446,10 @@ public class Europe extends UnitLocation
      */
     @Override
     public void disposeResources() {
-        Player owner = getOwner();
-        if (owner != null) {
-            owner.setEurope(null);
-            HighSeas highSeas = owner.getHighSeas();
+        Player ownerResource = getOwner();
+        if (ownerResource != null) {
+            ownerResource.setEurope(null);
+            HighSeas highSeas = ownerResource.getHighSeas();
             if (highSeas != null) highSeas.removeDestination(this);
         }
         super.disposeResources();
